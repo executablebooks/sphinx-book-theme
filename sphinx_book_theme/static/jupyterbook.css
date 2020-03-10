@@ -1,0 +1,47 @@
+main a.headerlink {
+    opacity: 0;
+    margin-left: .2em;
+    color: #005b81;
+}
+
+main a.headerlink:hover {
+    background-color: transparent;
+    color: #005b81;
+}
+
+main h1:hover a.headerlink,
+main h2:hover a.headerlink,
+main h3:hover a.headerlink,
+main h4:hover a.headerlink,
+main h5:hover a.headerlink {
+    opacity: 1;
+}
+
+
+body {
+    padding-top: 0px !important;
+}
+
+.bd-sidebar {
+    top: 0px !important;
+    padding-top: 2em;
+    height: 100vh !important;
+    overflow-y: auto;
+}
+
+.bd-toc {
+    top: 0px !important;
+}
+
+.navbar-brand img {
+    max-height: 120px !important;
+    height: 100% !important;
+    margin: 0 auto;
+}
+
+h1.site-logo {
+    margin: .5em 0 0 0;
+    font-size: 1.3em;
+    color: black;
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+{% extends "pandas_sphinx_theme/layout.html" %}
+
+<!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
+
+{% block docs_main %}
+<main class="col-12 col-md-6 col-xl-7 py-md-3 bd-content" role="main">
+    {% block docs_body %}
+    {% include "topbar.html" %}
+    {{ super() }}
+    {% endblock %}
+    {% if theme_show_prev_next %}
+    <div class='prev-next-bottom'>
+        {{ prev_next(prev, next) }}
+    </div>
+    {% endif %}
+</main>
+{% endblock %}
+
+{% block docs_sidebar %}
+<div class="col-12 col-md-4 col-xl-3 bd-sidebar">
+{% include "sidebar.html" %}
+</div>
+{%- endblock %}
+
+{% block docs_navbar %}
+{%- endblock %}
