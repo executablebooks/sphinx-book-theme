@@ -3,7 +3,7 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_main %}
-<main class="col-12 col-md-6 col-xl-7 py-md-3 bd-content" role="main">
+<main class="flex-grow-1 py-md-3 bd-content" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
     {{ super() }}
@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block docs_sidebar %}
-<div class="col-12 col-md-4 col-xl-3 bd-sidebar">
+<div class="col-12 col-md-4 col-xl-3 bd-sidebar show" id="site-navigation">
 {% include "sidebar.html" %}
 </div>
 {%- endblock %}

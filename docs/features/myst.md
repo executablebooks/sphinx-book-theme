@@ -218,20 +218,4 @@ Results in the following output:
 Here's the admonition content
 ```
 
-### Sidebar content
-
-You can also specify content that should exist in the sidebar. This content
-will be placed to the right, allowing it to exist separately from your main
-content. To add sidebar content, use this syntax:
-
-````
-```{sidebar}
-**Here is my sidebar content**, it is pretty cool!
-```
-````
-
-```{sidebar} **Here is my sidebar content**
-It is pretty cool!
-```
-
 [myst-parser]: https://myst-parser.readthedocs.io/en/latest/
