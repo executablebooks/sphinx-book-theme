@@ -39,7 +39,7 @@ setup(
         "setuptools",
         (
             "pandas_sphinx_theme @ "
-            "https://github.com/pandas-dev/pandas-sphinx-theme/archive/master.zip"
+            "https://github.com/choldgraf/pydata-bootstrap-sphinx-theme/archive/test_template.zip"
         ),
     ],
     extras_require={

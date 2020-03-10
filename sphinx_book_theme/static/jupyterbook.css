@@ -113,13 +113,20 @@ body * {
 
 .navbar-brand img {
     max-height: 120px !important;
-    height: 100% !important;
     margin: 0 auto;
     display: block;
 }
 
 ul.nav li {
     width: 100%;
+}
+
+ul.sidenav_l1 > li {
+    font-size: 1.2em
+}
+
+ul.sidenav_l2 li {
+    font-size: .8em
 }
 
 /* Adding .collapse:not( to keep it displayed when visible so transitions work */
