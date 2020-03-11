@@ -31,7 +31,7 @@ body {
 }
 
 
-body * {
+body img {
     max-width: 100%;
 }
 
@@ -115,6 +115,16 @@ body * {
     max-height: 120px !important;
     margin: 0 auto;
     display: block;
+    height: auto !important;
+}
+
+nav.bd-links {
+    margin-left: 0px;
+}
+
+nav.bd-links ul.nav > li > a, nav.bd-links ul.nav ul {
+    padding-left: 1rem !important;
+    padding-right: 0rem !important;
 }
 
 ul.nav li {
@@ -125,7 +135,7 @@ ul.sidenav_l1 > li {
     font-size: 1.2em
 }
 
-ul.sidenav_l2 li {
+ul.sidenav_l2  {
     font-size: .8em
 }
 
