@@ -91,6 +91,10 @@ body img {
     transform: rotate(-180deg) scale(.5);
 }
 
+a.download-buttons i {
+    margin-right: .5em;
+}
+
 
 /*********************************************
 * Table of Contents *
@@ -109,6 +113,10 @@ body img {
     padding-top: 2em;
     height: 100vh !important;
     overflow-y: auto;
+}
+
+a.navbar-brand {
+    width: 100%;
 }
 
 .navbar-brand img {
