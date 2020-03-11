@@ -112,7 +112,7 @@ def update_page_context(self, pagename, templatename, ctx, event_arg):
         # Now convert our docutils nodes into dicts that Jinja can use
         nav = [docutils_node_to_jinja(child, only_pages=True)
                for child in toc_items]
-
+        nav = [item for item in nav if item is not None]
         return nav
 
     def get_page_toc_object():
@@ -131,7 +131,6 @@ def update_page_context(self, pagename, templatename, ctx, event_arg):
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level
         next_level = level+1 if include_item_names else level
-
         for child in nav:
             # If we're not rendering title names and have no children, skip
             if not (include_item_names or child['children']):
