@@ -47,6 +47,8 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
 html_theme = "sphinx_book_theme"
 html_logo = "_static/logo.png"
 html_title = "Sphinx Book Theme"
+html_copy_source = True
+html_sourcelink_suffix = ""
 # html_theme_options = {"github_url": "https://github.com/ExecutableBookProject/myst-nb"}
 
 # Add any paths that contain custom static files (such as style sheets) here,
