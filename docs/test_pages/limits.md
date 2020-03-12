@@ -16,6 +16,21 @@ All of the sections on here allow us to test that. And they'll give you a full g
 
 The following test is all thanks to @adam-p's great [wiki](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
+## Toggle buttons
+
+Here's some sidebar content, let's see how it interacts w/ the toggle button
+
+```{sidebar} My sidebar
+Here's my sidebar content
+```
+
+Here's a toggleable note:
+
+```{note}
+:class: toggle
+My note
+```
+
 ## Really wide content
 
 Here's how really wide content alters the page:
