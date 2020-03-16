@@ -1,6 +1,18 @@
 /*********************************************
+* Whole page *
+*********************************************/
+
+.container-fluid {
+    max-width: 1450px;
+}
+/*********************************************
 * Main body *
 *********************************************/
+
+main.bd-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
 
 main a.headerlink {
     opacity: 0;
@@ -21,40 +33,52 @@ main h5:hover a.headerlink {
     opacity: 1;
 }
 
-main.bd-content {
-    padding-left: 2em;
-    padding-right: 1em;
-}
-
 body {
     padding-top: 0px !important;
 }
 
+div.section {
+    padding-right: 1em;
+}
 
 body img {
     max-width: 100%;
 }
 
-
 /* Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/ */
-.tag_popout, div.sidebar {
-    float: right;
-    clear: right;
-    margin-right: -29%;
-    width: 26%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    line-height: 1.3;
-    vertical-align: baseline;
-    position: relative;
+/* 992px is the L breakpoint in bootstrap */
+@media (min-width: 992px) {
+    .tag_popout, div.sidebar {
+        float: right;
+        clear: right;
+        width: 33%;
+        margin-right: -40%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-right: 1em;
+        font-size: 0.9rem;
+        line-height: 1.3;
+        vertical-align: baseline;
+        position: relative;
+    }
 }
+
+@media (max-width: 992px) {
+    .tag_popout, div.sidebar {
+        border-left: 3px solid #c3c3c3;
+        padding-left: 5%;
+    }
+}
+
 
 /*********************************************
 * Top Bar *
 *********************************************/
 .topbar {
+    padding-top: 1em;
+    padding-bottom: .5em;
     margin-bottom: 1em;
+    background-color: white;
 }
 
 #navbar-toggler {
@@ -102,8 +126,17 @@ a.download-buttons i {
 
 .bd-toc {
     top: 0px !important;
+    padding-top: 0px !important;
+    z-index: 999;
 }
 
+.bd-toc .tocsection {
+    padding-top: 1.5rem;
+}
+
+.bd-toc .tocsection, .bd-toc nav {
+    background-color: white;
+}
 
 /*********************************************
 * Left Nav Bar *
@@ -113,6 +146,11 @@ a.download-buttons i {
     padding-top: 2em;
     height: 100vh !important;
     overflow-y: auto;
+    opacity: 0.6;
+}
+
+.bd-sidebar:hover {
+    opacity: 1;
 }
 
 a.navbar-brand {
@@ -120,7 +158,7 @@ a.navbar-brand {
 }
 
 .navbar-brand img {
-    max-height: 120px !important;
+    max-height: 100px !important;
     margin: 0 auto;
     display: block;
     height: auto !important;
@@ -130,7 +168,12 @@ nav.bd-links {
     margin-left: 0px;
 }
 
-nav.bd-links ul.nav > li > a, nav.bd-links ul.nav ul {
+nav.bd-links ul.nav > li > a {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+nav.bd-links ul.nav ul {
     padding-left: 1rem !important;
     padding-right: 0rem !important;
 }
@@ -149,7 +192,7 @@ ul.sidenav_l2  {
 
 /* Adding .collapse:not( to keep it displayed when visible so transitions work */
 #site-navigation {
-    transition: flex .2s ease 0s;
+    transition: flex .2s ease 0s, opacity 0.2s ease-in-out;;
 }
 
 /* Hidden without display: none */
@@ -163,7 +206,14 @@ ul.sidenav_l2  {
 
 h1.site-logo {
     margin: .5em 0 0 0;
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: black;
     text-align: center;
+}
+
+/*********************************************
+* Footer *
+*********************************************/
+.prev-next-bottom {
+    height: 3em;
 }

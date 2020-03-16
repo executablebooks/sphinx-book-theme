@@ -8,15 +8,28 @@ It is taken from the Markdown
 documentation, and is meant to give an idea of how Jupyter Book renders really long pages of
 very diverse content!
 
-### Amount of Content
+## Custom layout items
 
-You should be able to put as much content, and as many headings, within each chapter as you want.
-In order to enable this we allow the table of contents on the right hand side to be scrollable.
-All of the sections on here allow us to test that. And they'll give you a full guide too all of markdown's awesome features.
+### Sidebars
 
-The following test is all thanks to @adam-p's great [wiki](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+Sidebar content can include all kinds of things, such as code blocks:
 
-## Toggle buttons
+````{sidebar} Code blocks in sidebars
+```python
+print("here is some python")
+```
+````
+
+as well as admonitions and images:
+
+````{sidebar} **Notes in sidebars**
+```{note}
+Wow, a note with an image in a sidebar!
+![](../images/cool.jpg)
+```
+````
+
+### Toggle buttons
 
 Here's some sidebar content, let's see how it interacts w/ the toggle button
 
@@ -30,6 +43,15 @@ Here's a toggleable note:
 :class: toggle
 My note
 ```
+
+### Full-width content
+
+```{note}
+:class: tag_fullwidth
+This is my test
+```
+
+Let's see what happens
 
 ## Really wide content
 

@@ -1,8 +1,12 @@
-# Sphinx Book Theme
+# The Sphinx Book Theme
+
+A book-like theme for Sphinx.
+
 
 A test book theme
 
 ```{toctree}
 features/index
-test_pages/index
+demochapter1/index
+demochapter2/index
 ```
