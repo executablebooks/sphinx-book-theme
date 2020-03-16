@@ -1,10 +1,7 @@
-# Features
-
-This section covers some of the main features in Jupyter Book. Browse
-the chapers to the left to learn more about what you can do.
+# Features and configuration
 
 ```{toctree}
-layout
-myst
+layout_elements
 notebooks
+limits
 ```

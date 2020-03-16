@@ -2,25 +2,39 @@
 
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
+{% block docs_sidebar %}
+<div class="col-12 col-md-3 col-xl-2 bd-sidebar show" id="site-navigation">
+{% include "sidebar.html" %}
+</div>
+{%- endblock %}
+
 {% block docs_main %}
-<main class="flex-grow-1 py-md-3 bd-content" role="main">
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 pr-0 bd-content" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
-    {{ super() }}
+    <div class="row">
+        <div class="col-12 {{ shrink_if_sidebar() }}">
+        {{ super() }}
+        </div>
+    </div>
     {% endblock %}
     {% if theme_show_prev_next %}
     <div class='prev-next-bottom'>
         {{ prev_next(prev, next) }}
     </div>
     {% endif %}
+    {%- include "footer.html" %}
 </main>
 {% endblock %}
 
-{% block docs_sidebar %}
-<div class="col-12 col-md-4 col-xl-3 bd-sidebar show" id="site-navigation">
-{% include "sidebar.html" %}
+{% block docs_toc %}
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+    {%- include "docs-toc.html" %}
 </div>
-{%- endblock %}
+{% endblock %}
 
 {% block docs_navbar %}
+{%- endblock %}
+
+{%- block footer %}
 {%- endblock %}
