@@ -70,6 +70,25 @@ body img {
     }
 }
 
+blockquote {
+    padding: .5em 1.5em;
+}
+
+blockquote.pull-quote, blockquote.epigraph, blockquote.highlights {
+    font-size:1.25em;
+}
+
+blockquote div > p {
+    margin-bottom: .5em;
+}
+
+blockquote div > p + p.attribution {
+    font-style: normal;
+    font-size: .9em;
+    text-align: right;
+    color: #6c757d;
+    padding-right: 2em;
+}
 
 /*********************************************
 * Top Bar *

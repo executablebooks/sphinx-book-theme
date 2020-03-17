@@ -1,7 +1,7 @@
 # Features and configuration
 
 ```{toctree}
-layout_elements
+layout
 notebooks
 limits
 ```
