@@ -230,6 +230,12 @@ h1.site-logo {
     text-align: center;
 }
 
+p.sidebar-header {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 /*********************************************
 * Footer *
 *********************************************/

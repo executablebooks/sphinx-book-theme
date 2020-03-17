@@ -7,6 +7,10 @@ from myst_nb.parser import CellNode
 
 __version__ = "0.0.1dev0"
 
+
+TOC_SPECIAL_PREFIX = "++ "
+HTTP_TOC_SPECIAL_PREFIX = f"http://{TOC_SPECIAL_PREFIX}"
+
 def get_html_theme_path():
     """Return list of HTML theme paths."""
     theme_path = str(Path(__file__).parent.absolute())
@@ -31,15 +35,42 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
 
     def nav_to_html_list(nav, level=1, include_item_names=False):
+
         if len(nav) == 0:
             return ''
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level
         next_level = level+1 if include_item_names else level
+
         for child in nav:
             # If we're not rendering title names and have no children, skip
             if (child is None) or not (include_item_names or child['children']):
                 continue
+
+            # Handle special-case TOC entries
+            if child.get("url", "").startswith("http"):
+                url = child.get("url")
+                if HTTP_TOC_SPECIAL_PREFIX in url:
+                    parts = url.split(HTTP_TOC_SPECIAL_PREFIX)[-1].split(':')
+                    if len(parts) == 1:
+                        parts.append(True)
+                    elif len(parts) > 2:
+                        url_orig = url.replace("http://", "")
+                        raise ValueError(("Sidebar configuration must be given in the form of:"
+                                          f"{TOC_SPECIAL_PREFIX}`key`:`val`, got {url_orig}"))
+                    key, val = parts
+
+                    ul.append('<li class="sidebar-special">')
+                    if key == "divider":
+                        ul.append("<hr />")
+                    elif key == "heading":
+                        ul.append(f'<p class="sidebar-header">{val}</p>')
+                    else:
+                        raise ValueError(f"Unidentified TOC special key found: {key}")
+                    ul.append("</li>")
+                    continue
+
+            # If no special case, insert the list item for the page and children if needed
             active = 'active' if child['active'] else ''
             ul.append("  " + f'<li class="{active}">')
             # Render links for the top-level names if we wish
@@ -64,8 +95,13 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["nav_to_html_list"] = nav_to_html_list
 
 
+def replace_toc_inserts(app, docname, source):
+    source[0] = source[0].replace(TOC_SPECIAL_PREFIX, HTTP_TOC_SPECIAL_PREFIX)
+
+
 def setup(app):
     app.connect("builder-inited", add_static_path)
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     pandas_setup(app)
     app.connect("html-page-context", add_to_context)
+    app.connect("source-read", replace_toc_inserts)
