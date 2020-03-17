@@ -8,7 +8,11 @@ It tries to keep a simplified style and visual layout in a book-like theme.
 A test book theme
 
 ```{toctree}
-features/index
+:maxdepth: 1
+layout
+notebooks
+BLAH
 demochapter1/index
 demochapter2/index
+limits
 ```

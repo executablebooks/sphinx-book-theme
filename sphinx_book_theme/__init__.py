@@ -38,7 +38,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         next_level = level+1 if include_item_names else level
         for child in nav:
             # If we're not rendering title names and have no children, skip
-            if not (include_item_names or child['children']):
+            if (child is None) or not (include_item_names or child['children']):
                 continue
             active = 'active' if child['active'] else ''
             ul.append("  " + f'<li class="{active}">')
