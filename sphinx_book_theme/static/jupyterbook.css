@@ -12,6 +12,7 @@
 main.bd-content {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+    overflow-y: hidden !important;
 }
 
 main a.headerlink {
@@ -107,6 +108,10 @@ blockquote div > p + p.attribution {
     padding-bottom: .75em;
     margin-bottom: 1em;
     background-color: white;
+}
+
+button.topbarbtn {
+    margin: 0 .2em;
 }
 
 #navbar-toggler {
@@ -220,19 +225,10 @@ div.top {
 *********************************************/
 .bd-sidebar  {
     top: 0px !important;
-    padding-top: 2em;
     overflow-y: auto;
     opacity: 0.6;
     scrollbar-width: thin;
     height: 100vh !important;
-}
-
-.bd-sidebar  {
-    top: 0px !important;
-    padding-top: 2em;
-    overflow-y: auto;
-    opacity: 0.6;
-    scrollbar-width: thin;
 }
 
 @media (max-width: 768px) {
@@ -257,6 +253,9 @@ div.top {
     opacity: 1;
 }
 
+div.navbar-brand-box {
+    padding-top: 2em;
+}
 a.navbar-brand {
     width: 100%;
 }
@@ -296,7 +295,7 @@ ul.sidenav_l2  {
 
 /* Adding .collapse:not( to keep it displayed when visible so transitions work */
 #site-navigation {
-    transition: flex .2s ease 0s, opacity 0.2s ease, height .35s ease, flex-grow .35s ease, flex-shrink .35s ease;
+    transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease
 }
 
 /* Hidden without display: none */
@@ -306,10 +305,9 @@ ul.sidenav_l2  {
 
 #site-navigation.collapsing {
     border: none;
-    margin: 0;
     overflow: hidden;
     position: relative;
-    transition: height .35s ease, flex-grow .35s ease, flex-shrink .35s ease;
+    padding-top: 0;
 }
 
 
@@ -324,8 +322,8 @@ ul.sidenav_l2  {
 
 @media (min-width: 768px) {
     #site-navigation.collapsing {
-        width: 0 !important;
-        flex-shrink: 1;
+        flex: 0 0 0px;
+        padding: 0;
     }
 }
 h1.site-logo {
