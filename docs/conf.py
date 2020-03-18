@@ -42,10 +42,10 @@ html_static_path = ["_static"]
 jupyter_sphinx_require_url = ""
 
 html_theme_options = {
-"binder_config": {
-    "use_binder_button": True,
-    "binderhub_url": "https://mybinder.org",
-    "path_to_docs": "docs",
-    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme"
-}
+    "binder_config": {
+        "use_binder_button": True,
+        "binderhub_url": "https://mybinder.org",
+        "path_to_docs": "docs",
+        "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
+    }
 }
