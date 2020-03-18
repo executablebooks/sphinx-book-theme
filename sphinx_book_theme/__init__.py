@@ -81,9 +81,9 @@ def add_binder_url(app, pagename, templatename, context, doctree):
 
     NTBK_EXTENSIONS = [".ipynb"]
 
-    config = app.config["html_theme_options"]["binder_config"]
+    config = app.config["html_theme_options"].get("binder_config", {})
 
-    if not config["use_binder_button"]:
+    if not config.get("use_binder_button"):
         return
 
     for key in ["binderhub_url", "repository_url"]:
