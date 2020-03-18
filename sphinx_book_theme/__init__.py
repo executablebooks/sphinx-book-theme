@@ -46,8 +46,8 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if include_item_names:
                 ul.append("  "*2 + f'<a href="{ child["url"] }">{ child["title"] }</a>')
 
-            # Render HTML lists for children
-            if child["children"]:
+            # Render HTML lists for children if we're on an active section
+            if active and child["children"]:
                 # Always include the names of the children
                 child_list = nav_to_html_list(child["children"], level=next_level, include_item_names=True)
                 ul.append(child_list)

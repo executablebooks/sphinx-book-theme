@@ -14,6 +14,6 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  {% set nav = get_nav_object(maxdepth=3, collapse=True) %}
+  {% set nav = get_nav_object(maxdepth=3, collapse=False) %}
   {{ nav_to_html_list(nav, include_item_names=True) }}
 </nav>
