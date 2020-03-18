@@ -12,6 +12,5 @@ A test book theme
 layout
 notebooks
 demochapter1/index
-demochapter2/index
 limits
 ```

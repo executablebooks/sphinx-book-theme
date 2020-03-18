@@ -1,5 +1,5 @@
 <div class="navbar-brand-box">
-<a class="navbar-brand" href="{{ pathto('index') }}">
+<a class="navbar-brand text-wrap" href="{{ pathto('index') }}">
   {% if logo %}
   <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="logo">
   {% endif %}
@@ -17,3 +17,4 @@
   {% set nav = get_nav_object(maxdepth=3, collapse=False) %}
   {{ nav_to_html_list(nav, include_item_names=True) }}
 </nav>
+<p class="sidebar_footer">{{ theme_sidebar_footer_text }}</p>

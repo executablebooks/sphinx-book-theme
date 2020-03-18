@@ -63,7 +63,7 @@ setup(
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     package_data={
-        "sphinx_book_theme": ["theme.conf", "*.html", "static/*"]
+        "sphinx_book_theme": ["theme.conf", "*.html", "static/*", "static/images/*"]
     },
     include_package_data=True,
 )

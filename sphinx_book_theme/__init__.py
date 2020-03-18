@@ -71,7 +71,7 @@ def add_binder_url(app, pagename, templatename, context, doctree):
 
     NTBK_EXTENSIONS = [".ipynb"]
 
-    config = app.config["jupyter_book_config"]
+    config = app.config['html_theme_options']['binder_config']
 
     if not config["use_binder_button"]:
         return
@@ -97,19 +97,10 @@ def add_binder_url(app, pagename, templatename, context, doctree):
         url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}/{pagename}{extension}"
         context["binder_url"] = url
 
-JB_DEFAULT_CONFIG = {
-    "use_binder_button": False,
-    "binderhub_url": None,
-    "path_to_docs": None,
-    "repository_url": None
-}
-
 def setup(app):
     # Configuration for Juypter Book
-    app.add_config_value("jupyter_book_config", JB_DEFAULT_CONFIG, "html")
     app.connect("html-page-context", add_binder_url)
 
     app.connect("builder-inited", add_static_path)
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
-    pandas_setup(app)
     app.connect("html-page-context", add_to_context)

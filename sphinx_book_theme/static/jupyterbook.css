@@ -21,10 +21,12 @@ main a.headerlink {
 }
 
 :target::before {
-    content: "";
     display: block;
-    height: 71px; /* fixed header height*/
-    margin: -71px 0 0; /* negative fixed header height */
+    content: " ";
+    margin-top: -71px;
+    height: 71px;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 main a.headerlink:hover {
@@ -101,8 +103,8 @@ blockquote div > p + p.attribution {
 * Top Bar *
 *********************************************/
 .topbar {
-    padding-top: 1em;
-    padding-bottom: .5em;
+    padding-top: .75em;
+    padding-bottom: .75em;
     margin-bottom: 1em;
     background-color: white;
 }
@@ -185,6 +187,17 @@ button.topbarbtn img {
     height: 100vh !important;
     overflow-y: auto;
     opacity: 0.6;
+    scrollbar-width: thin;
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
 }
 
 .bd-sidebar:hover {
@@ -247,6 +260,12 @@ h1.site-logo {
     font-size: 1.1em;
     color: black;
     text-align: center;
+}
+
+p.sidebar_footer {
+    text-align: center;
+    font-size: .9em;
+    padding-top: .5em;
 }
 
 /*********************************************
