@@ -1,4 +1,4 @@
-# Placeholder 1
+# Sub-sections example
 
 A sample chapter, there's no content here, just a placeholder to demo the sidebar.
 

@@ -20,6 +20,15 @@ main a.headerlink {
     color: #005b81;
 }
 
+:target::before {
+    display: block;
+    content: " ";
+    margin-top: -71px;
+    height: 71px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
 main a.headerlink:hover {
     background-color: transparent;
     color: #005b81;
@@ -94,8 +103,8 @@ blockquote div > p + p.attribution {
 * Top Bar *
 *********************************************/
 .topbar {
-    padding-top: 1em;
-    padding-bottom: .5em;
+    padding-top: .75em;
+    padding-bottom: .75em;
     margin-bottom: 1em;
     background-color: white;
 }
@@ -134,8 +143,20 @@ blockquote div > p + p.attribution {
     transform: rotate(-180deg) scale(.5);
 }
 
+button.topbarbtn {
+    background-color: #5a5a5a;
+    margin-right: .2em;
+    margin-left: .2em;
+}
+
 a.download-buttons i {
     margin-right: .5em;
+}
+
+button.topbarbtn img {
+    height: 1.15em;
+    padding-right: 6px;
+    margin-left: -5px;
 }
 
 
@@ -166,6 +187,17 @@ a.download-buttons i {
     height: 100vh !important;
     overflow-y: auto;
     opacity: 0.6;
+    scrollbar-width: thin;
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
 }
 
 .bd-sidebar:hover {
@@ -228,6 +260,12 @@ h1.site-logo {
     font-size: 1.1em;
     color: black;
     text-align: center;
+}
+
+p.sidebar_footer {
+    text-align: center;
+    font-size: .9em;
+    padding-top: .5em;
 }
 
 /*********************************************

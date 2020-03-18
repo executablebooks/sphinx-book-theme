@@ -1,23 +1,6 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
-
 # -- Project information -----------------------------------------------------
 
-project = "MyST-NB"
+project = "Sphinx Book Theme"
 copyright = "2020, Executable Book Project"
 author = "Executable Book Project"
 
@@ -57,3 +40,12 @@ html_favicon = "_static/logo.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 jupyter_sphinx_require_url = ""
+
+html_theme_options = {
+"binder_config": {
+    "use_binder_button": True,
+    "binderhub_url": "https://mybinder.org",
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme"
+}
+}
