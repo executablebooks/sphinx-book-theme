@@ -37,7 +37,7 @@ setup(
         "sphinx",
         "click",
         "setuptools",
-        "libsass-python"
+        "libsass",
         (
             "pandas_sphinx_theme @ "
             "https://github.com/pandas-dev/pydata-bootstrap-sphinx-theme/archive/master.zip"

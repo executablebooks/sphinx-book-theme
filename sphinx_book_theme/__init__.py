@@ -10,6 +10,7 @@ import sass
 __version__ = "0.0.1dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
 
+
 def get_html_theme_path():
     """Return list of HTML theme paths."""
     theme_path = str(Path(__file__).parent.absolute())
@@ -27,40 +28,48 @@ def add_to_context(app, pagename, templatename, context, doctree):
         if doctree is not None:
             sidebar_elements = doctree.traverse(docutils.nodes.sidebar)
             cell_containers = list(doctree.traverse(CellNode))
-            popout_tags = [cl for cell in cell_containers for cl in cell.attributes['classes'] if "tag_popout" == cl]
+            popout_tags = [
+                cl
+                for cell in cell_containers
+                for cl in cell.attributes["classes"]
+                if "tag_popout" == cl
+            ]
             if any(len(ii) > 0 for ii in [sidebar_elements, popout_tags]):
                 out = "col-xl-9"
         return out
 
-
     def nav_to_html_list(nav, level=1, include_item_names=False):
         if len(nav) == 0:
-            return ''
+            return ""
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level
-        next_level = level+1 if include_item_names else level
+        next_level = level + 1 if include_item_names else level
         for child in nav:
             # If we're not rendering title names and have no children, skip
-            if (child is None) or not (include_item_names or child['children']):
+            if (child is None) or not (include_item_names or child["children"]):
                 continue
-            active = 'active' if child['active'] else ''
+            active = "active" if child["active"] else ""
             ul.append("  " + f'<li class="{active}">')
             # Render links for the top-level names if we wish
             if include_item_names:
-                ul.append("  "*2 + f'<a href="{ child["url"] }">{ child["title"] }</a>')
+                ul.append(
+                    "  " * 2 + f'<a href="{ child["url"] }">{ child["title"] }</a>'
+                )
 
             # Render HTML lists for children if we're on an active section
             if active and child["children"]:
                 # Always include the names of the children
-                child_list = nav_to_html_list(child["children"], level=next_level, include_item_names=True)
+                child_list = nav_to_html_list(
+                    child["children"], level=next_level, include_item_names=True
+                )
                 ul.append(child_list)
-            ul.append("  " + '</li>')
+            ul.append("  " + "</li>")
         ul.append("</ul>")
 
         # Now add indentation for our level
         base_indent = "  " * (level - 1)
         ul = [base_indent + line for line in ul]
-        ul = '\n'.join(ul)
+        ul = "\n".join(ul)
         return ul
 
     context["shrink_if_sidebar"] = shrink_if_sidebar
@@ -72,7 +81,7 @@ def add_binder_url(app, pagename, templatename, context, doctree):
 
     NTBK_EXTENSIONS = [".ipynb"]
 
-    config = app.config['html_theme_options']['binder_config']
+    config = app.config["html_theme_options"]["binder_config"]
 
     if not config["use_binder_button"]:
         return
