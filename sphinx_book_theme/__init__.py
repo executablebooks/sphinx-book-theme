@@ -5,6 +5,7 @@ import docutils
 from pandas_sphinx_theme import setup as pandas_setup
 from myst_nb.parser import CellNode
 from sphinx.util import logging
+import sass
 
 __version__ = "0.0.1dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -97,7 +98,17 @@ def add_binder_url(app, pagename, templatename, context, doctree):
         url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}/{pagename}{extension}"
         context["binder_url"] = url
 
+
+def compile_scss():
+    path_css_folder = Path(__file__).parent.joinpath("static")
+    scss = path_css_folder.joinpath("jupyterbook.scss")
+    css = sass.compile(filename=str(scss))
+    path_css_folder.joinpath("jupyterbook.css").write_text(css)
+
+
 def setup(app):
+    compile_scss()
+
     # Configuration for Juypter Book
     app.connect("html-page-context", add_binder_url)
 
