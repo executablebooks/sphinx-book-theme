@@ -11,7 +11,6 @@ A test book theme
 :maxdepth: 1
 layout
 notebooks
-BLAH
 demochapter1/index
 demochapter2/index
 limits

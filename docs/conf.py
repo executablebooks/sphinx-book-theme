@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "MyST-NB"
+project = "Sphinx Book Theme"
 copyright = "2020, Executable Book Project"
 author = "Executable Book Project"
 
@@ -57,3 +57,10 @@ html_favicon = "_static/logo.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 jupyter_sphinx_require_url = ""
+
+jupyter_book_config = {
+    "use_binder_button": True,
+    "binderhub_url": "https://mybinder.org",
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme"
+}

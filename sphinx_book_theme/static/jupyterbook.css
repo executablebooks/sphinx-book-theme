@@ -20,6 +20,13 @@ main a.headerlink {
     color: #005b81;
 }
 
+:target::before {
+    content: "";
+    display: block;
+    height: 71px; /* fixed header height*/
+    margin: -71px 0 0; /* negative fixed header height */
+}
+
 main a.headerlink:hover {
     background-color: transparent;
     color: #005b81;
@@ -134,8 +141,20 @@ blockquote div > p + p.attribution {
     transform: rotate(-180deg) scale(.5);
 }
 
+button.topbarbtn {
+    background-color: #5a5a5a;
+    margin-right: .2em;
+    margin-left: .2em;
+}
+
 a.download-buttons i {
     margin-right: .5em;
+}
+
+button.topbarbtn img {
+    height: 1.15em;
+    padding-right: 6px;
+    margin-left: -5px;
 }
 
 

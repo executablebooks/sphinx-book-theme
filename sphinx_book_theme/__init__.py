@@ -4,8 +4,10 @@ import sphinx
 import docutils
 from pandas_sphinx_theme import setup as pandas_setup
 from myst_nb.parser import CellNode
+from sphinx.util import logging
 
 __version__ = "0.0.1dev0"
+SPHINX_LOGGER = logging.getLogger(__name__)
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
@@ -64,7 +66,49 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["nav_to_html_list"] = nav_to_html_list
 
 
+def add_binder_url(app, pagename, templatename, context, doctree):
+    """Builds a binder link and inserts it in HTML context for use in templating."""
+
+    NTBK_EXTENSIONS = [".ipynb"]
+
+    config = app.config["jupyter_book_config"]
+
+    if not config["use_binder_button"]:
+        return
+
+    for key in ["binderhub_url", "repository_url"]:
+        if not config.get(key):
+            raise ValueError(f"You must provide the key: {key} to add Binder buttons.")
+
+    hub_url = config["binderhub_url"]
+    book_relpath = config["path_to_docs"].strip("/")
+    repo_url = config["repository_url"]
+
+    if "github.com" in repo_url:
+        end = repo_url.split("github.com/")[-1]
+        org, repo = end.split("/")[:2]
+    else:
+        SPHINX_LOGGER.warning(f"Repo URL will not work with Binder links: {repo_url}")
+
+    path = app.env.doc2path(pagename)
+    extension = Path(path).suffix
+
+    if hub_url and extension in NTBK_EXTENSIONS:
+        url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}/{pagename}{extension}"
+        context["binder_url"] = url
+
+JB_DEFAULT_CONFIG = {
+    "use_binder_button": False,
+    "binderhub_url": None,
+    "path_to_docs": None,
+    "repository_url": None
+}
+
 def setup(app):
+    # Configuration for Juypter Book
+    app.add_config_value("jupyter_book_config", JB_DEFAULT_CONFIG, "html")
+    app.connect("html-page-context", add_binder_url)
+
     app.connect("builder-inited", add_static_path)
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     pandas_setup(app)
