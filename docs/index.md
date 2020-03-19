@@ -9,8 +9,13 @@ A test book theme
 
 ```{toctree}
 :maxdepth: 1
+:caption: Main docs
 layout
 notebooks
+```
+```{toctree}
+:divider:
+:caption: Reference items
 demochapter1/index
 limits
 ```
