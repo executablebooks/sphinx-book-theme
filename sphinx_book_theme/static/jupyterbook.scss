@@ -44,6 +44,13 @@ main {
     div.section {
         padding-right: 1em;
     }
+
+    // Math equations
+    span.eqno {
+        float: right;
+        margin: 1em 0em;
+        font-size: 1.2em;
+    }
 }
 
 :target::before {
@@ -55,8 +62,8 @@ main {
     pointer-events: none;
 }
 
-/* Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/ */
-/* 992px is the L breakpoint in bootstrap */
+// Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/
+// 992px is the L breakpoint in bootstrap
 @media (min-width: 992px) {
     .tag_popout, div.sidebar {
         float: right;
@@ -283,7 +290,7 @@ div.top {
 }
 
 
-/* Scrollbar width */
+// Scrollbar width
 ::-webkit-scrollbar {
   width: 5px;
   background: #f1f1f1;
