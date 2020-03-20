@@ -1,7 +1,4 @@
 from setuptools import setup, find_packages
-import os
-import os.path as op
-from glob import glob
 from pathlib import Path
 
 version = [
@@ -39,8 +36,8 @@ setup(
         "setuptools",
         "libsass",
         (
-            "pandas_sphinx_theme @ "
-            "https://github.com/pandas-dev/pydata-bootstrap-sphinx-theme/archive/master.zip"
+            "pydata_sphinx_theme @ "
+            "https://github.com/pandas-dev/pydata-sphinx-theme/archive/master.zip"
         ),
     ],
     extras_require={

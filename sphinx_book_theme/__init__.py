@@ -1,8 +1,6 @@
 """A lightweight book theme based on the pydata sphinx theme."""
 from pathlib import Path
-import sphinx
 import docutils
-from pandas_sphinx_theme import setup as pandas_setup
 from myst_nb.parser import CellNode
 from sphinx.util import logging
 import sass
