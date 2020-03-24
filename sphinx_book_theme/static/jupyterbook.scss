@@ -269,6 +269,12 @@ div.top {
         position: relative;
         padding-top: 0;
     }
+
+    p.sidebar-caption {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
 }
 
 @media (max-width: 768px) {
