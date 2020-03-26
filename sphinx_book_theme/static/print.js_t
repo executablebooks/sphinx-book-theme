@@ -9,7 +9,7 @@ printContent = () => {
     });
 
     // Print the actual content object
-    var css_paths = ["_static/css/index.css", "_static/copybutton.css", "_static/jupyterbook.css", "_static/mystnb.css", "_static/pygments.css", "_static/togglebutton.css", "_static/bootstrap.min.css"]
+    // css_paths are defined in the `layout` HTML template - so that we can use a templating function
     printJS({
         printable: 'main-content',
         type: 'html',
