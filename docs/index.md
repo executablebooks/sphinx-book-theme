@@ -10,7 +10,7 @@ A test book theme
 ```{toctree}
 :maxdepth: 1
 :caption: Main docs
-layout
+Page elements and configuration <layout>
 notebooks
 ```
 ```{toctree}

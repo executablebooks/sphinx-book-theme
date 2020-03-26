@@ -5,6 +5,7 @@ from myst_nb.parser import CellNode
 from docutils.parsers.rst import directives
 from sphinx.util import logging
 from sphinx.directives.other import TocTree
+from sphinx.util.nodes import explicit_title_re
 import sass
 
 __version__ = "0.0.1dev0"
@@ -74,6 +75,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
         def lookup_extra_toc(pagename, extra_toc_list, kind="parent"):
             for first_child_page, parent_page, val in extra_toc_list:
                 lookup_page = first_child_page if kind == "child" else parent_page
+                # Check whether we have an explicit title given and pull the path if so
+                explicit = explicit_title_re.match(lookup_page)
+                if explicit:
+                    lookup_page = explicit.group(2)
                 if str(pagename) == lookup_page:
                     return val
 
