@@ -12,7 +12,7 @@
 <main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
-    <div class="row">
+    <div id="main-content" class="row">
         <div class="col-12 {{ shrink_if_sidebar() }}">
         {{ super() }}
         </div>

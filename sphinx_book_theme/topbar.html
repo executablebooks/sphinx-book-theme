@@ -3,7 +3,15 @@
         <i class="fas fa-bars"></i>
         <i class="fas fa-arrow-left"></i>
     </button>
-    <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i>{{ page_source_suffix }}</button></a>
+    <div class="download-buttons-dropdown">
+        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+        <div class="download-buttons">
+            <!-- Download raw file -->
+            <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
+            <!-- Download PDF via PrintJS -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
+        </div>
+    </div>
     {% if binder_url %}
     <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">binder</button></a>
     {% endif %}

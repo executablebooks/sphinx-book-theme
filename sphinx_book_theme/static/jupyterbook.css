@@ -56,7 +56,9 @@ main span.eqno {
     font-size: 0.9rem;
     line-height: 1.3;
     vertical-align: baseline;
-    position: relative; } }
+    position: relative; }
+  .tag-fullwidth {
+    width: 134%; } }
 
 @media (max-width: 992px) {
   .tag_popout, div.sidebar {
@@ -87,6 +89,18 @@ blockquote {
   .topbar button.topbarbtn {
     margin: 0 .2em;
     background-color: #5a5a5a; }
+
+div.download-buttons-dropdown div.download-buttons {
+  display: none;
+  position: absolute;
+  max-width: 100px; }
+  div.download-buttons-dropdown div.download-buttons button {
+    min-width: 100px !important;
+    border: 1px white solid !important;
+    border-radius: 0 !important; }
+
+div.download-buttons-dropdown:hover div.download-buttons {
+  display: block; }
 
 a.download-buttons i {
   margin-right: .5em; }
@@ -235,3 +249,42 @@ nav.bd-links {
 *********************************************/
 .prev-next-bottom {
   height: 3em; }
+
+/*********************************************
+* Print-specific CSS *
+*********************************************/
+@media print {
+  .tag_popout, div.sidebar {
+    float: right;
+    clear: right;
+    width: 50%;
+    margin-right: -56%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 1em;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+    border-left: none;
+    padding-left: 0; }
+  div#main-content {
+    width: 66% !important;
+    max-width: 66% !important; }
+  pre {
+    word-wrap: break-word; }
+  a.copybtn, a.headerlink {
+    display: none; }
+  .tag-fullwidth {
+    width: 145%;
+    clear: both; }
+  div.toggle-hidden {
+    visibility: inherit;
+    opacity: 1;
+    height: auto; }
+  button.toggle-button {
+    display: none; }
+  blockquote.epigraph {
+    border: none; }
+  div.container {
+    min-width: 50% !important; } }
