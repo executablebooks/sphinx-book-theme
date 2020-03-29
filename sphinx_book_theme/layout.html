@@ -18,15 +18,22 @@ var css_paths = [
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}
+{% if not theme_single_page %}
 <div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
 {% include "sidebar.html" %}
 </div>
-{%- endblock %}
+{% else %}
+<div class="col-12 col-md-1 col-xl-2 bd-sidebar" id="site-navigation">
+</div>
+{%- endif %}
+{% endblock %}
 
 {% block docs_main %}
 <main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
     {% block docs_body %}
-    {% include "topbar.html" %}
+    {% if not theme_single_page %}
+      {% include "topbar.html" %}
+    {% endif %}
     <div id="main-content" class="row">
         <div class="col-12 {{ shrink_if_sidebar() }}">
         {{ super() }}
