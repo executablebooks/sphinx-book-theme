@@ -81,8 +81,9 @@ blockquote {
   margin: 1em;
   padding: .2em 1.5em;
   border-left: 4px solid #ccc; }
-  blockquote .pull-quote, blockquote .epigraph, blockquote .highlights {
-    font-size: 1.25em; }
+  blockquote.pull-quote, blockquote.epigraph, blockquote.highlights {
+    font-size: 1.25em;
+    border-left: none; }
   blockquote div > p {
     margin-bottom: .5em; }
   blockquote div > p + p.attribution {

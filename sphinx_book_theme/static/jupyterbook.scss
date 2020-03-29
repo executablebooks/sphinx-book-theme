@@ -119,8 +119,9 @@ blockquote {
     padding: .2em 1.5em;
     border-left: 4px solid #ccc;
 
-    .pull-quote, .epigraph, .highlights {
+    &.pull-quote, &.epigraph, &.highlights {
         font-size:1.25em;
+        border-left: none;
     }
 
     div > p {
