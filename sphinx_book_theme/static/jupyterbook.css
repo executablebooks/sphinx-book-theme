@@ -230,7 +230,8 @@ div.navbar-brand-box {
       height: auto !important; }
 
 nav.bd-links {
-  margin-left: 0px; }
+  margin-left: 0px;
+  max-height: none !important; }
   nav.bd-links ul.nav li {
     width: 100%; }
   nav.bd-links ul.sidenav_l1 > li {
