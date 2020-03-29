@@ -44,31 +44,46 @@ main span.eqno {
   visibility: hidden;
   pointer-events: none; }
 
+div.cell div.cell_output {
+  padding-right: 0; }
+
+div.cell.tag_output_scroll div.cell_output {
+  max-height: 24em;
+  overflow-y: auto; }
+
 @media (min-width: 992px) {
-  .tag_popout, div.sidebar {
+  div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
     float: right;
     clear: right;
-    width: 33%;
-    margin-right: -40%;
+    width: 33% !important;
+    margin-right: -40% !important;
     margin-top: 0;
     margin-bottom: 0;
-    padding-right: 1em;
+    padding-right: 1em !important;
     font-size: 0.9rem;
     line-height: 1.3;
     vertical-align: baseline;
     position: relative; }
-  .tag-fullwidth {
-    width: 134%; } }
+  div.cell.tag_sidebar .cell_output {
+    padding-left: 0;
+    margin-bottom: 0; } }
 
 @media (max-width: 992px) {
-  .tag_popout, div.sidebar {
+  div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
     border-left: 3px solid #c3c3c3;
-    padding-left: 5%; } }
+    margin: 1em;
+    padding: .2em 1.5em; } }
+
+div.cell.tag_full_width, div.full-width {
+  width: 134% !important; }
 
 blockquote {
-  padding: .5em 1.5em; }
-  blockquote .pull-quote, blockquote .epigraph, blockquote .highlights {
-    font-size: 1.25em; }
+  margin: 1em;
+  padding: .2em 1.5em;
+  border-left: 4px solid #ccc; }
+  blockquote.pull-quote, blockquote.epigraph, blockquote.highlights {
+    font-size: 1.25em;
+    border-left: none; }
   blockquote div > p {
     margin-bottom: .5em; }
   blockquote div > p + p.attribution {
@@ -77,6 +92,12 @@ blockquote {
     text-align: right;
     color: #6c757d;
     padding-right: 2em; }
+
+dl.footnote dt.label {
+  float: left; }
+
+dl.footnote dd p {
+  padding-left: 1.5em; }
 
 /*********************************************
 * Top Bar *

@@ -33,7 +33,6 @@ html_title = "Sphinx Book Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/logo.png"
-# html_theme_options = {"github_url": "https://github.com/ExecutableBookProject/myst-nb"}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -47,5 +46,6 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         "path_to_docs": "docs",
         "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
-    }
+    },
+    # "single_page": True
 }

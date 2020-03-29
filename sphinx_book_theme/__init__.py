@@ -157,10 +157,10 @@ def add_binder_url(app, pagename, templatename, context, doctree):
             raise ValueError(f"You must provide the key: {key} to add Binder buttons.")
 
     hub_url = config["binderhub_url"]
-    book_relpath = config.get("path_to_docs", "").strip("/")
-    if book_relpath:
-        # Make sure we have a divider if there is a relative path
-        book_relpath += "/"
+    if config.get("path_to_docs"):
+        book_relpath = config.get("path_to_docs").strip("/") + "/"
+    else:
+        book_relpath = ""
     repo_url = config["repository_url"]
 
     if "github.com" in repo_url:
