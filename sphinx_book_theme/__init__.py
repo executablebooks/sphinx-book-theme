@@ -157,7 +157,10 @@ def add_binder_url(app, pagename, templatename, context, doctree):
             raise ValueError(f"You must provide the key: {key} to add Binder buttons.")
 
     hub_url = config["binderhub_url"]
-    book_relpath = config["path_to_docs"].strip("/")
+    book_relpath = config.get("path_to_docs", "").strip("/")
+    if book_relpath:
+        # Make sure we have a divider if there is a relative path
+        book_relpath += "/"
     repo_url = config["repository_url"]
 
     if "github.com" in repo_url:
@@ -170,7 +173,7 @@ def add_binder_url(app, pagename, templatename, context, doctree):
     extension = Path(path).suffix
 
     if hub_url and extension in NTBK_EXTENSIONS:
-        url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}/{pagename}{extension}"
+        url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}{pagename}{extension}"
         context["binder_url"] = url
 
 
