@@ -12,7 +12,8 @@ body {
 /*********************************************
 * Main body *
 *********************************************/
-main .bd-content {
+main.bd-content {
+  font-family: Georgia !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   overflow-y: hidden !important; }
@@ -35,6 +36,11 @@ main span.eqno {
   float: right;
   margin: 1em 0em;
   font-size: 1.2em; }
+
+main div.section ul, main div.section ol {
+  margin-bottom: 0; }
+  main div.section ul p, main div.section ol p {
+    margin-bottom: 0; }
 
 :target::before {
   display: block;

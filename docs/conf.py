@@ -39,6 +39,7 @@ html_favicon = "_static/logo.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 jupyter_sphinx_require_url = ""
+jupyter_execute_notebooks = "cache"
 
 html_theme_options = {
     "binder_config": {
