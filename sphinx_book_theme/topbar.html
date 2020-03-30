@@ -8,8 +8,8 @@
         <div class="download-buttons">
             <!-- Download raw file -->
             <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
-            <!-- Download PDF via PrintJS -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn">.pdf</button>
+            <!-- Download PDF via print -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
         </div>
     </div>
     {% if binder_url %}
