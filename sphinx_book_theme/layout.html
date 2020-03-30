@@ -18,11 +18,7 @@ var css_paths = [
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}
-{% if theme_single_page == True %}
-<!-- Just add a skinny empty sidebar to give padding -->
-<div class="col-12 col-md-1 col-xl-2 bd-sidebar" id="site-navigation">
-</div>
-{% else %}
+{% if theme_single_page == False %}
 <div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
     {% include "sidebar.html" %}
 </div>    
