@@ -18,7 +18,8 @@ body {
 *********************************************/
 
 main {
-    .bd-content {
+    &.bd-content {
+        font-family: Georgia !important;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
         overflow-y: hidden !important;
@@ -50,6 +51,15 @@ main {
         float: right;
         margin: 1em 0em;
         font-size: 1.2em;
+    }
+
+    // List styles to avoid too much whitespace
+    div.section ul, div.section ol {
+        margin-bottom: 0;
+
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -182,8 +192,6 @@ div.download-buttons-dropdown {
     &:hover div.download-buttons {
         display: block;
     }
-
-    
 }
 
 a.download-buttons i {
@@ -195,8 +203,6 @@ button.topbarbtn img {
     padding-right: 6px;
     margin-left: -5px;
 }
-
-
 
 #navbar-toggler {
     position: relative;
