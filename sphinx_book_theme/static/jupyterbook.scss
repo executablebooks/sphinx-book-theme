@@ -19,7 +19,6 @@ body {
 
 main {
     &.bd-content {
-        font-family: Georgia !important;
         padding-top: 0px !important;
         padding-bottom: 0px !important;
         overflow-y: hidden !important;
@@ -446,8 +445,17 @@ nav.bd-links {
     }
 
     div#main-content {
+        margin-top: 5em;
         width: 66% !important;
         max-width: 66% !important;
+    }
+
+    h1, h2, h3, h4 {
+        break-after: avoid;
+    }
+
+    table {
+        break-inside: avoid;
     }
 
     pre {
@@ -480,5 +488,9 @@ nav.bd-links {
     // For some reason this fixes the containers from taking up the whole screen
     div.container {
         min-width: 50% !important;
+    }
+
+    div.bd-sidebar, div.prev-next-bottom, div.topbar {
+        display: none;
     }
 }

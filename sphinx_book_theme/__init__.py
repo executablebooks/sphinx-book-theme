@@ -216,8 +216,3 @@ def setup(app):
     app.connect("html-page-context", add_to_context)
     directives.register_directive("toctree", NewTocTree)
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
-
-    # Printing libraries
-    app.add_css_file("bootstrap.min.css")
-    app.add_js_file("https://printjs-4de6.kxcdn.com/print.min.js")
-    app.add_js_file("print.js")
