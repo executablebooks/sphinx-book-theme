@@ -42,11 +42,10 @@ jupyter_sphinx_require_url = ""
 jupyter_execute_notebooks = "cache"
 
 html_theme_options = {
-    "binder_config": {
-        "use_binder_button": True,
-        "binderhub_url": "https://mybinder.org",
-        "path_to_docs": "docs",
-        "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
-    },
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
+    "binderhub_url": "https://mybinder.org",
+    "jupyterhub_url": "https://datahub.berkeley.edu",
+    "notebook_ui": "jupyterlab",
     # "single_page": True
 }
