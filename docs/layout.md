@@ -64,7 +64,7 @@ This is my test
 
 Let's see what happens.
 
-## Binder and JupyterHub links
+## Launch buttons with Binder and JupyterHub
 
 You can automatically add Binder and JupyterHub links to pages that were build from
 notebooks. This lets users quickly click to interact with your documentation's content.
@@ -115,7 +115,7 @@ html_theme_options = {
 ```python
 html_theme_options = {
     ...
-    "notebook_ui": "jupyterlab",
+    "notebook_interface": "jupyterlab",
     ...
 }
 ```

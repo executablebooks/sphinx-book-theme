@@ -153,36 +153,41 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
 
     # If so, insert the URLs depending on the configuration
     config_theme = app.config["html_theme_options"]
-
-    jupyterhub_url = config_theme.get("jupyterhub_url")
-    binderhub_url = config_theme.get("binderhub_url")
-
-    if not (binderhub_url or jupyterhub_url) or (extension not in NTBK_EXTENSIONS):
+    launch_buttons = config_theme.get("launch_buttons", {})
+    if not launch_buttons or (extension not in NTBK_EXTENSIONS):
         return
 
     repo_url = config_theme.get("repository_url")
-
     if not repo_url:
-        raise ValueError(f"You must provide the key: `repo_url` to add Binder/JupyterHub buttons.")
+        raise ValueError(
+            f"You must provide the key: `repo_url` to add Binder/JupyterHub buttons."
+        )
     if "github.com" in repo_url:
         end = repo_url.split("github.com/")[-1]
         org, repo = end.split("/")[:2]
     else:
-        SPHINX_LOGGER.warning(f"Currently Binder/JupyterHub repositories must be on GitHub, got {repo_url}")
+        SPHINX_LOGGER.warning(
+            f"Currently Binder/JupyterHub repositories must be on GitHub, got {repo_url}"
+        )
         return
 
-    # Construct the app-specific URL
-    notebook_ui_prefixes = {
-        "classic": "tree",
-        "jupyterlab": "lab/tree"
-    }
-    notebook_ui = config_theme.get("notebook_ui", "classic")
-    if notebook_ui not in notebook_ui_prefixes:
-        raise ValueError((f"Notebook UI for Binder/JupyterHub links must be one" "of {tuple(notebook_ui_prefixes.keys())}, not {notebook_ui}"))
-    ui_pre = notebook_ui_prefixes[notebook_ui]
+    # Construct the extra URL parts (app and relative path)
+    notebook_interface_prefixes = {"classic": "tree", "jupyterlab": "lab/tree"}
+    notebook_interface = launch_buttons.get("notebook_interface", "classic")
+    if notebook_interface not in notebook_interface_prefixes:
+        raise ValueError(
+            (
+                "Notebook UI for Binder/JupyterHub links must be one"
+                f"of {tuple(notebook_interface_prefixes.keys())}, not {notebook_interface}"
+            )
+        )
+    ui_pre = notebook_interface_prefixes[notebook_interface]
 
-    book_relpath = config_theme.get("path_to_docs", "").strip("/")
+    book_relpath = launch_buttons.get("path_to_docs", "").strip("/")
 
+    # Now build infrastructure-specific links
+    jupyterhub_url = launch_buttons.get("jupyterhub_url")
+    binderhub_url = launch_buttons.get("binderhub_url")
     if binderhub_url:
         url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{book_relpath}/{pagename}{extension}"
         context["binder_url"] = url
