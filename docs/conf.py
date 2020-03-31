@@ -44,8 +44,10 @@ jupyter_execute_notebooks = "cache"
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
-    "binderhub_url": "https://mybinder.org",
-    "jupyterhub_url": "https://datahub.berkeley.edu",
-    "notebook_ui": "jupyterlab",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "jupyterhub_url": "https://datahub.berkeley.edu",
+        "notebook_interface": "jupyterlab",
+    }
     # "single_page": True
 }
