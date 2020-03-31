@@ -320,5 +320,5 @@ nav.bd-links {
     border: none; }
   div.container {
     min-width: 50% !important; }
-  div.bd-sidebar, div.prev-next-bottom, div.topbar {
+  div.bd-sidebar, div.prev-next-bottom, div.topbar, div.bd-toc {
     display: none; } }
