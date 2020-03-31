@@ -142,39 +142,54 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["nav_to_html_list"] = nav_to_html_list
 
 
-def add_binder_url(app, pagename, templatename, context, doctree):
+def add_hub_urls(app, pagename, templatename, context, doctree):
     """Builds a binder link and inserts it in HTML context for use in templating."""
 
     NTBK_EXTENSIONS = [".ipynb"]
 
-    config = app.config["html_theme_options"].get("binder_config", {})
+    # First decide if we'll insert any links
+    path = app.env.doc2path(pagename)
+    extension = Path(path).suffix
 
-    if not config.get("use_binder_button"):
+    # If so, insert the URLs depending on the configuration
+    config_theme = app.config["html_theme_options"]
+
+    jupyterhub_url = config_theme.get("jupyterhub_url")
+    binderhub_url = config_theme.get("binderhub_url")
+
+    if not (binderhub_url or jupyterhub_url) or (extension not in NTBK_EXTENSIONS):
         return
 
-    for key in ["binderhub_url", "repository_url"]:
-        if not config.get(key):
-            raise ValueError(f"You must provide the key: {key} to add Binder buttons.")
+    repo_url = config_theme.get("repository_url")
 
-    hub_url = config["binderhub_url"]
-    if config.get("path_to_docs"):
-        book_relpath = config.get("path_to_docs").strip("/") + "/"
-    else:
-        book_relpath = ""
-    repo_url = config["repository_url"]
-
+    if not repo_url:
+        raise ValueError(f"You must provide the key: `repo_url` to add Binder/JupyterHub buttons.")
     if "github.com" in repo_url:
         end = repo_url.split("github.com/")[-1]
         org, repo = end.split("/")[:2]
     else:
-        SPHINX_LOGGER.warning(f"Repo URL will not work with Binder links: {repo_url}")
+        SPHINX_LOGGER.warning(f"Currently Binder/JupyterHub repositories must be on GitHub, got {repo_url}")
+        return
 
-    path = app.env.doc2path(pagename)
-    extension = Path(path).suffix
+    # Construct the app-specific URL
+    notebook_ui_prefixes = {
+        "classic": "tree",
+        "jupyterlab": "lab/tree"
+    }
+    notebook_ui = config_theme.get("notebook_ui", "classic")
+    if notebook_ui not in notebook_ui_prefixes:
+        raise ValueError((f"Notebook UI for Binder/JupyterHub links must be one" "of {tuple(notebook_ui_prefixes.keys())}, not {notebook_ui}"))
+    ui_pre = notebook_ui_prefixes[notebook_ui]
 
-    if hub_url and extension in NTBK_EXTENSIONS:
-        url = f"{hub_url}/v2/gh/{org}/{repo}/master?filepath={book_relpath}{pagename}{extension}"
+    book_relpath = config_theme.get("path_to_docs", "").strip("/")
+
+    if binderhub_url:
+        url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{book_relpath}/{pagename}{extension}"
         context["binder_url"] = url
+
+    if jupyterhub_url:
+        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{book_relpath}/{pagename}{extension}"
+        context["jupyterhub_url"] = url
 
 
 def compile_scss():
@@ -209,7 +224,7 @@ def setup(app):
     compile_scss()
 
     # Configuration for Juypter Book
-    app.connect("html-page-context", add_binder_url)
+    app.connect("html-page-context", add_hub_urls)
 
     app.connect("builder-inited", add_static_path)
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())

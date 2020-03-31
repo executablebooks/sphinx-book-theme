@@ -1,20 +1,5 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 
-{% block extrahead %}
-{{ super() }}
-<script>
-var css_paths = [
-    "{{ pathto('_static/css/index.css', 1) }}",
-    "{{ pathto('_static/copybutton.css', 1) }}",
-    "{{ pathto('_static/jupyterbook.css', 1) }}",
-    "{{ pathto('_static/mystnb.css', 1) }}",
-    "{{ pathto('_static/pygments.css', 1) }}",
-    "{{ pathto('_static/togglebutton.css', 1) }}",
-    "{{ pathto('_static/bootstrap.min.css', 1) }}"
-]
-</script>
-{% endblock %}
-
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}

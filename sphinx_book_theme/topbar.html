@@ -13,6 +13,9 @@
         </div>
     </div>
     {% if binder_url %}
-    <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">binder</button></a>
+    <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
+    {% endif %}
+    {% if jupyterhub_url %}
+    <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
     {% endif %}
 </div>
