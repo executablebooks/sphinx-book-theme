@@ -183,17 +183,21 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]
 
-    book_relpath = launch_buttons.get("path_to_docs", "").strip("/")
+    # Construct a path to the file relative to the repository root
+    book_relpath = config_theme.get("path_to_docs", "").strip("/")
+    if book_relpath != "":
+        book_relpath += "/"
+    path_rel_repo = f"{book_relpath}{pagename}{extension}"
 
     # Now build infrastructure-specific links
     jupyterhub_url = launch_buttons.get("jupyterhub_url")
     binderhub_url = launch_buttons.get("binderhub_url")
     if binderhub_url:
-        url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{book_relpath}/{pagename}{extension}"
+        url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{path_rel_repo}"
         context["binder_url"] = url
 
     if jupyterhub_url:
-        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{book_relpath}/{pagename}{extension}"
+        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
         context["jupyterhub_url"] = url
 
 
