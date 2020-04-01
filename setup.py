@@ -3,11 +3,10 @@ from pathlib import Path
 
 version = [
     line
-    for line in Path("sphinx_book_theme/__init__.py").read_text().split()
+    for line in Path("sphinx_book_theme/__init__.py").read_text().split('\n')
     if "__version__" in line
 ]
-version = version[0].split(" = ")[-1]
-
+version = version[0].split(" = ")[-1].strip('"')
 setup(
     name="sphinx-book-theme",
     version=version,
