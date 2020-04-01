@@ -35,10 +35,7 @@ setup(
         "click",
         "setuptools",
         "libsass",
-        (
-            "pydata_sphinx_theme @ "
-            "https://github.com/pandas-dev/pydata-sphinx-theme/archive/master.zip"
-        ),
+        "pydata-sphinx-theme",
     ],
     extras_require={
         "sphinx": [
@@ -48,14 +45,8 @@ setup(
             "ipywidgets",
             "pandas",
             "nbclient",
-            (
-                "myst_parser @ "
-                "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"
-            ),
-            (
-                "myst_nb @ "
-                "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"
-            ),
+            "myst-parser",
+            "myst-nb",
         ],
         "testing": ["coverage", "pytest>=3.6,<4", "pytest-cov", "beautifulsoup4"],
     },
