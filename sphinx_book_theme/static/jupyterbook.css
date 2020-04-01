@@ -1,4 +1,7 @@
 /*********************************************
+* Variables *
+*********************************************/
+/*********************************************
 * Whole page *
 *********************************************/
 .container-fluid {
@@ -36,10 +39,8 @@ main span.eqno {
   margin: 1em 0em;
   font-size: 1.2em; }
 
-main div.section ul, main div.section ol {
+main div.section ul p, main div.section ol p {
   margin-bottom: 0; }
-  main div.section ul p, main div.section ol p {
-    margin-bottom: 0; }
 
 :target::before {
   display: block;
