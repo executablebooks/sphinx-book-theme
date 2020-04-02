@@ -4,7 +4,7 @@
 
 {% block docs_sidebar %}
 {% if theme_single_page != True %}
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+<div class="col-12 col-md-3 col-xl-3 bd-sidebar site-navigation show" id="site-navigation">
     {% include "sidebar.html" %}
 </div>    
 {%- endif %}
@@ -17,7 +17,7 @@
       {% include "topbar.html" %}
     {% endif %}
     <div id="main-content" class="row">
-        <div class="col-12 {{ shrink_if_sidebar() }}">
+        <div class="col-12 col-md-9 col-xl-7">
         {{ super() }}
         </div>
     </div>
@@ -35,13 +35,6 @@
 {% endblock %}
 
 {% block docs_navbar %}
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 {%- endblock %}
 
 {%- block footer %}

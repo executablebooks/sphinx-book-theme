@@ -16,7 +16,7 @@ body {
 * Main body *
 *********************************************/
 main.bd-content {
-  padding-top: 0px !important;
+  padding-top: 3.5em !important;
   padding-bottom: 0px !important;
   overflow-y: hidden !important; }
 
@@ -57,7 +57,7 @@ div.cell.tag_output_scroll div.cell_output {
   max-height: 24em;
   overflow-y: auto; }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
     float: right;
     clear: right;
@@ -74,7 +74,7 @@ div.cell.tag_output_scroll div.cell_output {
     padding-left: 0;
     margin-bottom: 0; } }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
     border-left: 3px solid #c3c3c3;
     margin: 1em;
@@ -109,17 +109,28 @@ dl.footnote dd p {
 * Top Bar *
 *********************************************/
 .topbar {
+  max-width: 1450px;
+  margin: 0em auto 1em auto;
   padding-top: .75em;
   padding-bottom: .75em;
-  margin-bottom: 1em;
   background-color: white;
-  height: 3em; }
-  .topbar button.navbar-toggler, .topbar .download-buttons-dropdown {
+  height: 4em;
+  transition: left .2s; }
+  .topbar > div {
+    height: 2.5em;
+    top: 0px; }
+  .topbar .topbar-main button.navbar-toggler, .topbar .topbar-main .download-buttons-dropdown {
     float: left;
     height: 100%; }
-  .topbar button.topbarbtn {
+  .topbar .topbar-main button.topbarbtn {
     margin: 0 .2em;
     background-color: #5a5a5a; }
+
+.bd-topbar-whitespace {
+  padding-right: none; }
+  @media (max-width: 768px) {
+    .bd-topbar-whitespace {
+      display: none; } }
 
 div.download-buttons-dropdown div.download-buttons {
   display: none;
@@ -164,48 +175,43 @@ button.topbarbtn img {
     opacity: 0;
     transform: rotate(-180deg) scale(0.5); }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   #navbar-toggler i.fa-arrow-up {
     display: inherit; }
   #navbar-toggler i.fa-arrow-left {
     display: none; } }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   #navbar-toggler i.fa-arrow-up {
     display: none; }
   #navbar-toggler i.fa-arrow-left {
     display: inherit; } }
 
-div.top {
-  display: none; }
-
-@media (max-width: 768px) {
-  div.top {
-    height: 3em;
-    display: block; }
-  main button.navbar-toggler {
-    display: none; } }
-
 /*********************************************
 * Table of Contents *
 *********************************************/
 .bd-toc {
-  top: 0px !important;
-  padding-top: 0px !important;
-  height: 3em;
-  overflow-y: auto;
+  padding: 0px !important;
+  overflow-y: hidden !important;
+  background: white;
   right: 0;
-  z-index: 999; }
+  z-index: 999;
+  transition: height .35s ease; }
   .bd-toc nav {
-    opacity: .5;
-    height: 2em; }
-  .bd-toc:hover nav {
-    opacity: 1;
-    height: auto; }
+    opacity: 0;
+    transition: opacity 0.2s ease; }
+  @media (min-width: 1200px) {
+    .bd-toc {
+      height: auto !important; }
+      .bd-toc nav {
+        opacity: 1; } }
+  .bd-toc:hover, .bd-toc.show {
+    height: auto !important; }
+    .bd-toc:hover nav, .bd-toc.show nav {
+      opacity: 1; }
   .bd-toc .tocsection {
-    padding-top: 1.5rem; }
-    .bd-toc .tocsection .bd-toc nav {
-      background-color: white; }
+    padding-top: .5rem;
+    padding-bottom: .5rem; }
 
 /*********************************************
 * Left Nav Bar *
@@ -213,10 +219,11 @@ div.top {
 .bd-sidebar {
   top: 0px !important;
   overflow-y: auto;
-  opacity: 0.6;
   scrollbar-width: thin;
-  height: 100vh !important;
-  transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease; }
+  height: 100vh !important; }
+  @media (min-width: 768px) {
+    .bd-sidebar {
+      opacity: 0.6; } }
   .bd-sidebar:hover {
     opacity: 1; }
   .bd-sidebar h1.site-logo {
@@ -228,8 +235,6 @@ div.top {
     text-align: center;
     font-size: .9em;
     padding-top: .5em; }
-  .bd-sidebar.collapse:not(.show) {
-    display: none; }
   .bd-sidebar.collapsing {
     border: none;
     overflow: hidden;
@@ -240,7 +245,19 @@ div.top {
     font-weight: bold;
     font-size: 1.1em; }
 
+.site-navigation {
+  transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease; }
+
 @media (max-width: 768px) {
+  #site-navigation {
+    position: fixed;
+    margin-top: 3.5em;
+    z-index: 2000;
+    background: white; } }
+
+@media (max-width: 768px) {
+  div#main-content {
+    margin-top: 3.5em; }
   .bd-sidebar {
     height: 60vh !important;
     border-bottom: 3px solid #c3c3c3; }
@@ -248,7 +265,9 @@ div.top {
       height: 0px !important; } }
 
 @media (min-width: 768px) {
-  #site-navigation.collapsing {
+  .bd-sidebar {
+    z-index: 2000 !important; }
+  .site-navigation.collapsing {
     flex: 0 0 0px;
     padding: 0; } }
 
@@ -309,10 +328,9 @@ nav.bd-links {
     position: relative;
     border-left: none;
     padding-left: 0; }
-  div#main-content {
-    margin-top: 5em;
-    width: 66% !important;
-    max-width: 66% !important; }
+  .bd-content div#main-content > div {
+    flex: 0 0 75%;
+    max-width: 75%; }
   h1, h2, h3, h4 {
     break-after: avoid; }
   table {
@@ -334,5 +352,23 @@ nav.bd-links {
     border: none; }
   div.container {
     min-width: 50% !important; }
-  div.bd-sidebar, div.prev-next-bottom, div.topbar, div.bd-toc {
-    display: none; } }
+  div.bd-sidebar, div.prev-next-bottom {
+    display: none; }
+  div.topbar {
+    height: 0;
+    padding: 0;
+    position: inherit; }
+    div.topbar div.topbar-main {
+      opacity: 0; }
+    div.topbar .bd-toc {
+      flex: 0 0 25%;
+      max-width: 25%;
+      height: auto !important; }
+      div.topbar .bd-toc > nav, div.topbar .bd-toc > nav > nav {
+        opacity: 1;
+        display: block; }
+      div.topbar .bd-toc .nav-link.active {
+        font-weight: inherit;
+        color: inherit;
+        background-color: inherit;
+        border-left: inherit; } }

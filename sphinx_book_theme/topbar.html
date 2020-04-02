@@ -1,8 +1,11 @@
-<div class="row topbar sticky-top">
-    <div class="col">
-        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+<div class="row topbar fixed-top">
+    <div class="col-12 col-md-3 col-xl-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col topbar-main">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
         </button>
         <div class="download-buttons-dropdown">
             <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
@@ -20,7 +23,7 @@
         <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
         {% endif %}
     </div>
-    <div class="d-none d-md-block col-md-2 position-fixed bd-toc">
+    <div class="d-none d-md-block col-md-2 bd-toc {{ show_if_no_sidebar() }}">
         {%- include "docs-toc.html" %}
     </div>
 </div>
