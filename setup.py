@@ -47,6 +47,8 @@ setup(
             "ipywidgets",
             "pandas",
             "nbclient",
+            "sphinx-togglebutton",
+            "sphinx-copybutton",
             (
                 "myst_parser @ "
                 "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"
