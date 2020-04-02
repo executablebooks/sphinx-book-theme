@@ -4,9 +4,6 @@
 /*********************************************
 * Whole page *
 *********************************************/
-.container-fluid {
-  max-width: 1450px; }
-
 body {
   padding-top: 0px !important; }
   body img {
@@ -15,10 +12,23 @@ body {
 /*********************************************
 * Main body *
 *********************************************/
+@media (min-width: 1500px) {
+  .col-xxl-7 {
+    flex: 0 0 58.33333% !important;
+    max-width: 58.33333% !important;
+    position: relative !important;
+    width: 100% !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important; } }
+
+@media (max-width: 1500px) {
+  div.bd-sidebar.collapse:not(.show) + main.bd-content {
+    flex: 0 0 100%;
+    max-width: 100%; } }
+
 main.bd-content {
   padding-top: 3.5em !important;
-  padding-bottom: 0px !important;
-  overflow-y: hidden !important; }
+  padding-bottom: 0px !important; }
 
 main a.headerlink {
   opacity: 0;
@@ -32,7 +42,8 @@ main h1:hover a.headerlink, main h2:hover a.headerlink, main h3:hover a.headerli
   opacity: 1; }
 
 main div.section {
-  padding-right: 1em; }
+  padding-right: 1em;
+  overflow: visible !important; }
 
 main span.eqno {
   float: right;
@@ -41,14 +52,6 @@ main span.eqno {
 
 main div.section ul p, main div.section ol p {
   margin-bottom: 0; }
-
-:target::before {
-  display: block;
-  content: " ";
-  margin-top: -71px;
-  height: 71px;
-  visibility: hidden;
-  pointer-events: none; }
 
 div.cell div.cell_output {
   padding-right: 0; }
@@ -109,8 +112,7 @@ dl.footnote dd p {
 * Top Bar *
 *********************************************/
 .topbar {
-  max-width: 1450px;
-  margin: 0em auto 1em auto;
+  margin: 0em auto 1em auto !important;
   padding-top: .75em;
   padding-bottom: .75em;
   background-color: white;
@@ -175,13 +177,13 @@ button.topbarbtn img {
     opacity: 0;
     transform: rotate(-180deg) scale(0.5); }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   #navbar-toggler i.fa-arrow-up {
     display: inherit; }
   #navbar-toggler i.fa-arrow-left {
     display: none; } }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   #navbar-toggler i.fa-arrow-up {
     display: none; }
   #navbar-toggler i.fa-arrow-left {
@@ -200,7 +202,7 @@ button.topbarbtn img {
   .bd-toc nav {
     opacity: 0;
     transition: opacity 0.2s ease; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1500px) {
     .bd-toc {
       height: auto !important; }
       .bd-toc nav {
@@ -210,8 +212,9 @@ button.topbarbtn img {
     .bd-toc:hover nav, .bd-toc.show nav {
       opacity: 1; }
   .bd-toc .tocsection {
-    padding-top: .5rem;
-    padding-bottom: .5rem; }
+    padding: .5rem 0 .5rem 1rem !important; }
+  .bd-toc .toc-entry a {
+    padding: .125rem 1rem !important; }
 
 /*********************************************
 * Left Nav Bar *
@@ -245,7 +248,7 @@ button.topbarbtn img {
     font-weight: bold;
     font-size: 1.1em; }
 
-.site-navigation {
+.site-navigation, .site-navigation.collapsing {
   transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease; }
 
 @media (max-width: 768px) {
@@ -364,7 +367,7 @@ nav.bd-links {
       flex: 0 0 25%;
       max-width: 25%;
       height: auto !important; }
-      div.topbar .bd-toc > nav, div.topbar .bd-toc > nav > nav {
+      div.topbar .bd-toc nav, div.topbar .bd-toc nav > ul.nav, div.topbar .bd-toc nav > ul.nav > li > ul.nav {
         opacity: 1;
         display: block; }
       div.topbar .bd-toc .nav-link.active {

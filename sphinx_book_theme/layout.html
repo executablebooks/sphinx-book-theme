@@ -4,20 +4,20 @@
 
 {% block docs_sidebar %}
 {% if theme_single_page != True %}
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar site-navigation show" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     {% include "sidebar.html" %}
 </div>    
 {%- endif %}
 {% endblock %}
 
 {% block docs_main %}
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% if theme_single_page != True %}
       {% include "topbar.html" %}
     {% endif %}
     <div id="main-content" class="row">
-        <div class="col-12 col-md-9 col-xl-7">
+        <div class="col-12 col-md-9 col-xxl-7">
         {{ super() }}
         </div>
     </div>

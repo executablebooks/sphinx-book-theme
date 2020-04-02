@@ -2,6 +2,7 @@
 * Variables *
 *********************************************/
 // Breakpoints from Bootstrap: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+$breakpoint-xxl: 1500px;  // Custom one
 $breakpoint-xl: 1200px;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
@@ -11,12 +12,7 @@ $breakpoint-sm: 576px;
 * Whole page *
 *********************************************/
 
-$content-max-width: 1450px;
 $topbar-height: 3.5em;
-
-.container-fluid {
-    max-width: $content-max-width;
-}
 
 body {
     padding-top: 0px !important;
@@ -29,11 +25,30 @@ body {
 * Main body *
 *********************************************/
 
+// Custom XXL breakpoint
+@media (min-width: $breakpoint-xxl) {
+    .col-xxl-7 {
+        flex: 0 0 58.33333% !important;
+        max-width: 58.33333% !important;
+        position: relative !important;
+        width: 100% !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+}
+
+// If the sidebar is collapsed, our main content should expand fully
+div.bd-sidebar.collapse:not(.show) + main.bd-content {
+    @media (max-width: $breakpoint-xxl) {
+        flex: 0 0 100%;
+        max-width: 100%;    
+    }
+}
+
 main {
     &.bd-content {
         padding-top: $topbar-height !important;
         padding-bottom: 0px !important;
-        overflow-y: hidden !important;
     }
 
     a.headerlink {
@@ -55,6 +70,7 @@ main {
 
     div.section {
         padding-right: 1em;
+        overflow: visible !important;  // So that sidebars don't cause a scroll
     }
 
     // Math equations
@@ -70,15 +86,6 @@ main {
             margin-bottom: 0;
         }   
     }
-}
-
-:target::before {
-    display: block;
-    content: " ";
-    margin-top: -71px;
-    height: 71px;
-    visibility: hidden;
-    pointer-events: none;
 }
 
 // Cell-specific controls
@@ -173,8 +180,7 @@ dl.footnote {
 * Top Bar *
 *********************************************/
 .topbar {
-    max-width: $content-max-width;
-    margin: 0em auto 1em auto;
+    margin: 0em auto 1em auto !important;
     padding-top: .75em;
     padding-bottom: .75em;
     background-color: white;
@@ -272,7 +278,7 @@ button.topbarbtn img {
 }
 
 
-@media (max-width: $breakpoint-sm) {
+@media (max-width: $breakpoint-md) {
     #navbar-toggler {
         i.fa-arrow-up {
             display: inherit;
@@ -284,7 +290,7 @@ button.topbarbtn img {
     }
 }
 
-@media (min-width: $breakpoint-sm) {
+@media (min-width: $breakpoint-md) {
     #navbar-toggler {
         i.fa-arrow-up {
             display: none;
@@ -315,7 +321,7 @@ button.topbarbtn img {
     }
 
     // On really wide screens, we always show the nav
-    @media (min-width: 1200px) {
+    @media (min-width: $breakpoint-xxl) {
         height: auto !important;
         nav {
             opacity: 1;
@@ -331,8 +337,11 @@ button.topbarbtn img {
     }
 
     .tocsection {
-        padding-top: .5rem;
-        padding-bottom: .5rem;
+        padding: .5rem 0 .5rem 1rem !important
+    }
+
+    .toc-entry a {
+        padding: .125rem 1rem !important;
     }
 }
 
@@ -345,7 +354,7 @@ button.topbarbtn img {
     scrollbar-width: thin;
     height: 100vh !important;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         opacity: 0.6;
     }
     
@@ -380,7 +389,7 @@ button.topbarbtn img {
     }
 }
 
-.site-navigation {
+.site-navigation, .site-navigation.collapsing {
     transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease;
 }
 
@@ -568,7 +577,7 @@ nav.bd-links {
             max-width: 25%;
             height: auto !important;
             // All 1st and 2nd items should be displayed
-            > nav, > nav > nav {
+            nav, nav > ul.nav, nav > ul.nav > li > ul.nav {
                 opacity: 1;
                 display: block;
             }
