@@ -112,7 +112,11 @@ dl.footnote dd p {
   padding-top: .75em;
   padding-bottom: .75em;
   margin-bottom: 1em;
-  background-color: white; }
+  background-color: white;
+  height: 3em; }
+  .topbar button.navbar-toggler, .topbar .download-buttons-dropdown {
+    float: left;
+    height: 100%; }
   .topbar button.topbarbtn {
     margin: 0 .2em;
     background-color: #5a5a5a; }
@@ -188,7 +192,16 @@ div.top {
 .bd-toc {
   top: 0px !important;
   padding-top: 0px !important;
+  height: 3em;
+  overflow-y: auto;
+  right: 0;
   z-index: 999; }
+  .bd-toc nav {
+    opacity: .5;
+    height: 2em; }
+  .bd-toc:hover nav {
+    opacity: 1;
+    height: auto; }
   .bd-toc .tocsection {
     padding-top: 1.5rem; }
     .bd-toc .tocsection .bd-toc nav {

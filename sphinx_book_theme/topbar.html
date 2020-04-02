@@ -1,21 +1,26 @@
 <div class="row topbar sticky-top">
-    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-arrow-left"></i>
-    </button>
-    <div class="download-buttons-dropdown">
-        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-        <div class="download-buttons">
-            <!-- Download raw file -->
-            <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
-            <!-- Download PDF via print -->
-            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+    <div class="col">
+        <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="download-buttons-dropdown">
+            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+            <div class="download-buttons">
+                <!-- Download raw file -->
+                <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+            </div>
         </div>
+        {% if binder_url %}
+        <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
+        {% endif %}
+        {% if jupyterhub_url %}
+        <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
+        {% endif %}
     </div>
-    {% if binder_url %}
-    <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
-    {% endif %}
-    {% if jupyterhub_url %}
-    <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
-    {% endif %}
+    <div class="d-none d-md-block col-md-2 position-fixed bd-toc">
+        {%- include "docs-toc.html" %}
+    </div>
 </div>
