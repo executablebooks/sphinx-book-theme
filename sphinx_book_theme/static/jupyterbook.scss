@@ -382,11 +382,16 @@ button.topbarbtn img {
         padding-top: 0;
     }
 
+    // Captions
+    li + li.sidebar-special {
+        margin-top: 1em;
+    }
+
     p.sidebar-caption {
         margin-bottom: 0;
-        font-weight: bold;
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
+
 }
 
 .site-navigation, .site-navigation.collapsing {
