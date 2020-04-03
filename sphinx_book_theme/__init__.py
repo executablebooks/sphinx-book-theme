@@ -51,8 +51,10 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-    def shrink_if_sidebar():
-        out = ""
+    def show_if_no_sidebar():
+        # By default we'll show, unless there are sidebar items
+        out = "show"
+        # Check for sidebar items in this doctree
         if doctree is not None:
             sidebar_elements = doctree.traverse(docutils.nodes.sidebar)
             cell_containers = list(doctree.traverse(CellNode))
@@ -60,10 +62,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 cl
                 for cell in cell_containers
                 for cl in cell.attributes["classes"]
-                if "tag_popout" == cl
+                if any(ii == cl for ii in ["tag_popout", "tag_sidebar"])
             ]
+            # If we found sidebar elements, then we won't show
             if any(len(ii) > 0 for ii in [sidebar_elements, popout_tags]):
-                out = "col-xl-9"
+                out = ""
         return out
 
     def nav_to_html_list(nav, level=1, include_item_names=False):
@@ -138,7 +141,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         ul = "\n".join(ul)
         return ul
 
-    context["shrink_if_sidebar"] = shrink_if_sidebar
+    context["show_if_no_sidebar"] = show_if_no_sidebar
     context["nav_to_html_list"] = nav_to_html_list
 
 

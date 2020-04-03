@@ -9,12 +9,17 @@ It relies on [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/int
 via the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
 structure and configuration.
 
+## Site contents
+
 ```{toctree}
 :maxdepth: 1
 :caption: Main docs
 Page elements and configuration <layout>
 notebooks
 ```
+
+## Reference pages
+
 ```{toctree}
 :divider:
 :caption: Reference items
