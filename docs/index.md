@@ -21,7 +21,6 @@ notebooks
 ## Reference pages
 
 ```{toctree}
-:divider:
 :caption: Reference items
 demochapter1/index
 limits

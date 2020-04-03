@@ -243,10 +243,11 @@ button.topbarbtn img {
     overflow: hidden;
     position: relative;
     padding-top: 0; }
+  .bd-sidebar li + li.sidebar-special {
+    margin-top: 1em; }
   .bd-sidebar p.sidebar-caption {
     margin-bottom: 0;
-    font-weight: bold;
-    font-size: 1.1em; }
+    font-size: 1.2em; }
 
 .site-navigation, .site-navigation.collapsing {
   transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease; }

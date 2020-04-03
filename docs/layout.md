@@ -201,8 +201,3 @@ To make all sub-pages of the left Table of Contents expanded, add `:expand_secti
 
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`
 in your `toctree` directive for that section.
-
-### Add a divider to your TOC
-
-If you'd like to add a divider above a section of TOC links, use `:divider:`
-in your `toctree` directive for that section.
