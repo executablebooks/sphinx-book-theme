@@ -10,8 +10,13 @@
 {%- endif %}
 {% endblock %}
 
+{% set single_page = "" %}
+{% if theme_single_page %}
+{% set single_page = " single-page" %}
+{% endif %}
+
 {% block docs_main %}
-<main class="col py-md-3 pl-md-5 bd-content overflow-auto" role="main">
+<main class="col py-md-3 pl-md-5 bd-content overflow-auto{{ single_page }}" role="main">
     {% block docs_body %}
     {% if theme_single_page != True %}
       {% include "topbar.html" %}

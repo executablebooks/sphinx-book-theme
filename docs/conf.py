@@ -48,6 +48,6 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         "jupyterhub_url": "https://datahub.berkeley.edu",
         "notebook_interface": "jupyterlab",
-    }
+    },
     # "single_page": True
 }
