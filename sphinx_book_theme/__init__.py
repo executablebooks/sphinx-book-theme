@@ -212,9 +212,9 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
 
 def compile_scss():
     path_css_folder = Path(__file__).parent.joinpath("static")
-    scss = path_css_folder.joinpath("jupyterbook.scss")
+    scss = path_css_folder.joinpath("sphinx-book-theme.scss")
     css = sass.compile(filename=str(scss))
-    path_css_folder.joinpath("jupyterbook.css").write_text(css)
+    path_css_folder.joinpath("sphinx-book-theme.css").write_text(css)
 
 
 class NewTocTree(TocTree):
@@ -248,5 +248,6 @@ def setup(app):
     app.connect("builder-inited", add_static_path)
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
+    app.add_js_file("sphinx-book-theme.js")
     directives.register_directive("toctree", NewTocTree)
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
