@@ -422,9 +422,6 @@ button.topbarbtn img {
 }
 
 @media (max-width: $breakpoint-md) {
-    div#main-content {
-        margin-top: $topbar-height;
-    }
 
     .bd-sidebar {
         height: 60vh !important;
