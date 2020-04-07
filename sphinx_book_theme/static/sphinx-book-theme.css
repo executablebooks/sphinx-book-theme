@@ -82,8 +82,7 @@ div.cell.tag_output_scroll div.cell_output {
     vertical-align: baseline;
     position: relative; }
   div.cell.tag_sidebar .cell_output {
-    padding-left: 0;
-    margin-bottom: 0; } }
+    padding-left: 0; } }
 
 @media (max-width: 768px) {
   div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
@@ -129,7 +128,7 @@ dl.footnote dd p {
   .topbar > div {
     height: 2.5em;
     top: 0px; }
-  .topbar .topbar-main button.navbar-toggler, .topbar .topbar-main .download-buttons-dropdown {
+  .topbar .topbar-main button.navbar-toggler, .topbar .topbar-main .dropdown-buttons-trigger {
     float: left;
     height: 100%; }
   .topbar .topbar-main button.topbarbtn {
@@ -142,19 +141,25 @@ dl.footnote dd p {
     .bd-topbar-whitespace {
       display: none; } }
 
-div.download-buttons-dropdown div.download-buttons {
+div.dropdown-buttons-trigger span.dropdown-trigger-text {
+  margin-left: 0.4em; }
+  @media (max-width: 768px) {
+    div.dropdown-buttons-trigger span.dropdown-trigger-text {
+      display: none; } }
+
+div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;
-  max-width: 100px; }
-  div.download-buttons-dropdown div.download-buttons button {
-    min-width: 100px !important;
+  max-width: 120px; }
+  div.dropdown-buttons-trigger div.dropdown-buttons button {
+    min-width: 120px !important;
     border: 1px white solid !important;
     border-radius: 0 !important; }
 
-div.download-buttons-dropdown:hover div.download-buttons {
+div.dropdown-buttons-trigger:hover div.dropdown-buttons {
   display: block; }
 
-a.download-buttons i {
+a.dropdown-buttons i {
   margin-right: .5em; }
 
 button.topbarbtn img {
@@ -382,3 +387,34 @@ nav.bd-links {
         color: inherit;
         background-color: inherit;
         border-left: inherit; } }
+
+.thebelab-cell {
+  position: relative;
+  z-index: 999;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important; }
+
+.thebelab-button {
+  z-index: 999;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  margin: 0px 1px;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #dddddd;
+  border: 0.05em solid white;
+  color: #000000; }
+
+.thebelab-button:hover {
+  border: 0.05em solid black;
+  background-color: #fcfcfc; }
+
+div.jp-OutputArea-output {
+  padding: 5px; }

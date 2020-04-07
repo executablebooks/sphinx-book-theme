@@ -7,20 +7,32 @@
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
-        <div class="download-buttons-dropdown">
-            <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
-            <div class="download-buttons">
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <div class="dropdown-buttons">
                 <!-- Download raw file -->
-                <a class="download-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
+                <a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn">{{ page_source_suffix }}</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
             </div>
         </div>
-        {% if binder_url %}
-        <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
-        {% endif %}
-        {% if jupyterhub_url %}
-        <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
+
+        <!-- Launch buttons -->
+        {% if binder_url or jupyterhub_url or use_thebelab %}
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <div class="dropdown-buttons">
+                {% if binder_url %}
+                <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
+                {% endif %}
+                {% if jupyterhub_url %}
+                <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
+                {% endif %}
+                {% if use_thebelab -%}
+                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
+                {% endif %}
+            </div>
+        </div>
         {% endif %}
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc {{ show_if_no_sidebar() }}">

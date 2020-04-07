@@ -10,11 +10,11 @@ from sphinx.directives.other import TocTree
 from sphinx.util.nodes import explicit_title_re
 import sass
 
+from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
+
 __version__ = "0.0.1dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
-EXTRA_TOC_OPTIONS = {
-    "expand_sections": directives.flag,
-}
+EXTRA_TOC_OPTIONS = {"expand_sections": directives.flag}
 
 
 def get_html_theme_path():
@@ -86,12 +86,14 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     return val
 
         # Figure out the top-lever pages that need a TOC in front of them
-        master_toctrees = app.env.tocs[app.env.config['master_doc']]
+        master_toctrees = app.env.tocs[app.env.config["master_doc"]]
         toc_captions = []
         for master_toctree in master_toctrees.traverse(addnodes.toctree):
             if master_toctree.attributes.get("caption"):
                 caption = master_toctree.attributes.get("caption")
-                toctree_first_page = master_toctree.attributes['entries'][0][1]  # Entries are (title, ref) pairs
+                toctree_first_page = master_toctree.attributes["entries"][0][
+                    1
+                ]  # Entries are (title, ref) pairs
                 toc_captions.append((toctree_first_page, caption))
 
         ul = [f'<ul class="nav sidenav_l{level}">']
@@ -151,65 +153,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["nav_to_html_list"] = nav_to_html_list
 
 
-def add_hub_urls(app, pagename, templatename, context, doctree):
-    """Builds a binder link and inserts it in HTML context for use in templating."""
-
-    NTBK_EXTENSIONS = [".ipynb"]
-
-    # First decide if we'll insert any links
-    path = app.env.doc2path(pagename)
-    extension = Path(path).suffix
-
-    # If so, insert the URLs depending on the configuration
-    config_theme = app.config["html_theme_options"]
-    launch_buttons = config_theme.get("launch_buttons", {})
-    if not launch_buttons or (extension not in NTBK_EXTENSIONS):
-        return
-
-    repo_url = config_theme.get("repository_url")
-    if not repo_url:
-        raise ValueError(
-            f"You must provide the key: `repo_url` to add Binder/JupyterHub buttons."
-        )
-    if "github.com" in repo_url:
-        end = repo_url.split("github.com/")[-1]
-        org, repo = end.split("/")[:2]
-    else:
-        SPHINX_LOGGER.warning(
-            f"Currently Binder/JupyterHub repositories must be on GitHub, got {repo_url}"
-        )
-        return
-
-    # Construct the extra URL parts (app and relative path)
-    notebook_interface_prefixes = {"classic": "tree", "jupyterlab": "lab/tree"}
-    notebook_interface = launch_buttons.get("notebook_interface", "classic")
-    if notebook_interface not in notebook_interface_prefixes:
-        raise ValueError(
-            (
-                "Notebook UI for Binder/JupyterHub links must be one"
-                f"of {tuple(notebook_interface_prefixes.keys())}, not {notebook_interface}"
-            )
-        )
-    ui_pre = notebook_interface_prefixes[notebook_interface]
-
-    # Construct a path to the file relative to the repository root
-    book_relpath = config_theme.get("path_to_docs", "").strip("/")
-    if book_relpath != "":
-        book_relpath += "/"
-    path_rel_repo = f"{book_relpath}{pagename}{extension}"
-
-    # Now build infrastructure-specific links
-    jupyterhub_url = launch_buttons.get("jupyterhub_url")
-    binderhub_url = launch_buttons.get("binderhub_url")
-    if binderhub_url:
-        url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{path_rel_repo}"
-        context["binder_url"] = url
-
-    if jupyterhub_url:
-        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
-        context["jupyterhub_url"] = url
-
-
 def compile_scss():
     path_css_folder = Path(__file__).parent.joinpath("static")
     scss = path_css_folder.joinpath("sphinx-book-theme.scss")
@@ -219,6 +162,7 @@ def compile_scss():
 
 class NewTocTree(TocTree):
     """A monkey-patch of the TocTree so we can intercept extra keywords without raising Sphinx errors."""
+
     newtoctree_spec = TocTree.option_spec.copy()
     newtoctree_spec.update(EXTRA_TOC_OPTIONS)
     option_spec = newtoctree_spec
@@ -246,8 +190,13 @@ def setup(app):
     app.connect("html-page-context", add_hub_urls)
 
     app.connect("builder-inited", add_static_path)
+
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
     app.add_js_file("sphinx-book-theme.js")
     directives.register_directive("toctree", NewTocTree)
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
+
+    # Include Thebelab for interactive code if it's enabled
+    app.connect("env-before-read-docs", init_thebelab_core)
+    app.connect("doctree-resolved", update_thebelab_context)
