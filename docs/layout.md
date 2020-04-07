@@ -57,12 +57,30 @@ Wow, a note with an image in a sidebar!
 
 ## Full-width content
 
+Full-width content extends into the right sidebar, making it stand out against
+the rest of your book's content. To add full-width content to your sidebar, add the
+class `full-width` to any of the elements in your documentation. For example, you can
+add a `full-width` tag to a note element like this:
+
+````
 ```{note}
-:class: tag_full_width
-This is my test
+:class: full-width
+This content will be full-width
+```
+````
+
+This code results in the following output:
+
+```{note}
+:class: full-width
+This content will be full-width
 ```
 
-Let's see what happens.
+```{sidebar} A note for ipynb users
+If you are using a Jupyter Notebook as inputs to your documentation using the
+[MyST-NB extension](https://myst-nb.readthedocs.io/en/latest/), you can trigger
+this behavior with a code cell by adding a `full-width` tag to the cell.
+```
 
 ## Launch buttons with Binder and JupyterHub
 
