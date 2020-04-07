@@ -235,6 +235,13 @@ button.topbarbtn img {
   @media (min-width: 768px) {
     .bd-sidebar {
       opacity: 0.6; } }
+  @media (min-width: 992px) {
+    .bd-sidebar:not(:hover) {
+      -ms-overflow-style: none; }
+      .bd-sidebar:not(:hover)::-webkit-scrollbar {
+        background: #FFFFFF; }
+      .bd-sidebar:not(:hover)::-webkit-scrollbar-thumb {
+        background: #FFFFFF; } }
   .bd-sidebar:hover {
     opacity: 1; }
   .bd-sidebar h1.site-logo {

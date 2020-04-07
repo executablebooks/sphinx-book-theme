@@ -371,6 +371,21 @@ button.topbarbtn img {
     @media (min-width: $breakpoint-md) {
         opacity: 0.6;
     }
+
+    // Hide the scrollbar until hover on wide screens
+    @media (min-width: $breakpoint-lg) {
+        &:not(:hover) {
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+              background: #FFFFFF;
+            }
+              
+            &::-webkit-scrollbar-thumb {
+              background: #FFFFFF;
+            }
+        }
+    }
     
     &:hover {
         opacity: 1;
