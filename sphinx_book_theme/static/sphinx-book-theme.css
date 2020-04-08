@@ -236,8 +236,14 @@ button.topbarbtn img {
 .bd-sidebar {
   top: 0px !important;
   overflow-y: auto;
-  scrollbar-width: thin;
-  height: 100vh !important; }
+  height: 100vh !important;
+  scrollbar-width: thin; }
+  .bd-sidebar::-webkit-scrollbar {
+    width: 5px; }
+  .bd-sidebar::-webkit-scrollbar {
+    background: #f1f1f1; }
+  .bd-sidebar::-webkit-scrollbar-thumb {
+    background: #c1c1c1; }
   @media (min-width: 768px) {
     .bd-sidebar {
       opacity: 0.6; } }
@@ -293,13 +299,6 @@ button.topbarbtn img {
   .site-navigation.collapsing {
     flex: 0 0 0px;
     padding: 0; } }
-
-::-webkit-scrollbar {
-  width: 5px;
-  background: #f1f1f1; }
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1; }
 
 div.navbar-brand-box {
   padding-top: 2em; }
