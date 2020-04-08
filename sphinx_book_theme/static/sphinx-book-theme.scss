@@ -149,8 +149,10 @@ div.cell {
     }
 }
 
-div.cell.tag_full_width, div.full-width {
-    width: 134% !important;
+@media (min-width: $breakpoint-md) {
+    div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
+        width: 134% !important;
+    }
 }
 
 blockquote {

@@ -90,8 +90,9 @@ div.cell.tag_output_scroll div.cell_output {
     margin: 1em;
     padding: .2em 1.5em; } }
 
-div.cell.tag_full_width, div.full-width {
-  width: 134% !important; }
+@media (min-width: 768px) {
+  div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
+    width: 134% !important; } }
 
 blockquote {
   margin: 1em;
