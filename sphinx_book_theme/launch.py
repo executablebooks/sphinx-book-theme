@@ -1,6 +1,8 @@
 from pathlib import Path
 from docutils import nodes
+from sphinx.util import logging
 
+SPHINX_LOGGER = logging.getLogger(__name__)
 
 def init_thebelab_core(app, env, docnames):
     config_theme = app.config["html_theme_options"]
@@ -75,8 +77,6 @@ def update_thebelab_context(app, doctree, docname):
 def add_hub_urls(app, pagename, templatename, context, doctree):
     """Builds a binder link and inserts it in HTML context for use in templating."""
 
-    NTBK_EXTENSIONS = [".ipynb"]
-
     # First decide if we'll insert any links
     path = app.env.doc2path(pagename)
     extension = Path(path).suffix
@@ -84,7 +84,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     # If so, insert the URLs depending on the configuration
     config_theme = app.config["html_theme_options"]
     launch_buttons = config_theme.get("launch_buttons", {})
-    if not launch_buttons or (extension not in NTBK_EXTENSIONS):
+    if not launch_buttons or not _is_notebook(app, pagename):
         return
 
     repo_url = _get_repo_url(config_theme)
@@ -150,3 +150,7 @@ def _get_repo_url(config):
             f"You must provide the key: `repository_url` to use launch buttons."
         )
     return repo_url
+
+
+def _is_notebook(app, pagename):
+    return app.env.metadata[pagename].get("kernelspec")
