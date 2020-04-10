@@ -82,62 +82,6 @@ If you are using a Jupyter Notebook as inputs to your documentation using the
 this behavior with a code cell by adding a `full-width` tag to the cell.
 ```
 
-## Launch buttons with Binder and JupyterHub
-
-You can automatically add Binder and JupyterHub links to pages that were build from
-notebooks. This lets users quickly click to interact with your documentation's content.
-
-To use either Binder or JupyterHub links, you'll first need to configure your
-documentation's repository url:
-
-```python
-html_theme_options = {
-    ...
-    "repository_url": "https://github.com/{your-docs-url}"
-    ...
-}
-```
-
-**To add Binder links** to your page, next add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "binderhub_url": "https://{your-binderhub-url}"
-    ...
-}
-```
-
-**To add JupyterHub links** to your page, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "jupyterhub_url": "https://{your-binderhub-url}"
-    ...
-}
-```
-
-**To configure a relative path to your documentation**, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "path_to_docs" = "{path-relative-to-repo-root}"
-    ...
-}
-```
-
-**To control the user interface that is opened with links**, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "notebook_interface": "jupyterlab",
-    ...
-}
-```
-
 ## Quotations and epigraphs
 
 Here is what quotations and epigraphs look like in `sphinx-book-theme`:

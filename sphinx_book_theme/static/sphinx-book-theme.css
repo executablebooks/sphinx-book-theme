@@ -154,8 +154,7 @@ div.dropdown-buttons-trigger div.dropdown-buttons {
   max-width: 120px; }
   div.dropdown-buttons-trigger div.dropdown-buttons button {
     min-width: 120px !important;
-    border: 1px white solid !important;
-    border-radius: 0 !important; }
+    border: 1px white solid !important; }
 
 div.dropdown-buttons-trigger:hover div.dropdown-buttons {
   display: block; }
@@ -275,6 +274,9 @@ button.topbarbtn img {
   .bd-sidebar p.sidebar-caption {
     margin-bottom: 0;
     font-size: 1.2em; }
+  .bd-sidebar li > a > i {
+    font-size: .8em;
+    margin-left: 0.3em; }
 
 .site-navigation, .site-navigation.collapsing {
   transition: flex .2s ease 0s, height .35s ease, opacity 0.2s ease; }

@@ -244,7 +244,6 @@ div.dropdown-buttons-trigger {
         button {
             min-width: 120px !important;
             border: 1px white solid !important;
-            border-radius: 0 !important;
         }
     }
 
@@ -441,6 +440,11 @@ button.topbarbtn img {
         font-size: 1.2em;
     }
 
+    // External links
+    li > a > i {
+        font-size: .8em;
+        margin-left: 0.3em;
+    }
 }
 
 .site-navigation, .site-navigation.collapsing {

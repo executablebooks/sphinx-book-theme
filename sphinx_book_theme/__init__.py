@@ -121,9 +121,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
             ul.append("  " + f'<li class="{active}">')
             # Render links for the top-level names if we wish
             if include_item_names:
-                ul.append(
-                    "  " * 2 + f'<a href="{ child["url"] }">{ child["title"] }</a>'
-                )
+                item_title = child["title"]
+                if child["url"].startswith("http"):
+                    # Add an external icon for external sidebar links
+                    item_title += '<i class="fas fa-external-link-alt"></i>'
+                ul.append("  " * 2 + f'<a href="{child["url"]}">{item_title}</a>')
 
             # Check whether we should expand children if it was given in the toctree
             if child["children"]:
