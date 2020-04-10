@@ -16,6 +16,8 @@ structure and configuration.
 :caption: Main docs
 Page elements and configuration <layout>
 notebooks
+launch
+GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>
 ```
 
 ## Reference pages

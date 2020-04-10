@@ -5,6 +5,7 @@ from shutil import copy2
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
+
 def init_thebelab_core(app, env, docnames):
     config_theme = app.config["html_theme_options"]
     config_launch = config_theme.get("launch_buttons", {})
@@ -89,7 +90,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         return
 
     # Check if we have a markdown notebook, and if so then add a link to the context
-    if _is_notebook(app, pagename) and context['sourcename'].endswith(".md"):
+    if _is_notebook(app, pagename) and context["sourcename"].endswith(".md"):
         # Figure out the folders we want
         build_dir = Path(app.outdir).parent
         ntbk_dir = build_dir.joinpath("jupyter_execute")
@@ -99,7 +100,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         path_new_notebook = sources_dir.joinpath(pagename).with_suffix(".ipynb")
         # New folder should already exist in `_sources`, so just copy
         copy2(path_ntbk, path_new_notebook)
-        context['ipynb_source'] = pagename + ".ipynb"
+        context["ipynb_source"] = pagename + ".ipynb"
 
     repo_url = _get_repo_url(config_theme)
 
@@ -123,6 +124,11 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]
 
+    # Check if we have a non-ipynb file, but an ipynb of same name exists
+    # If so, we'll use the ipynb extension instead of the text extension
+    if extension != ".ipynb" and Path(path).with_suffix(".ipynb").exists():
+        extension = ".ipynb"
+
     # Construct a path to the file relative to the repository root
     book_relpath = config_theme.get("path_to_docs", "").strip("/")
     if book_relpath != "":
@@ -139,10 +145,11 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     if jupyterhub_url:
         url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
         context["jupyterhub_url"] = url
-    
+
     # Add thebelab flag in context
     if launch_buttons.get("thebelab", False):
         context["use_thebelab"] = True
+
 
 def _split_repo_url(url):
     """Split a repository URL into an org / repo combination."""
