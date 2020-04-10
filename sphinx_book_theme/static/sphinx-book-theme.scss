@@ -25,26 +25,6 @@ body {
 * Main body *
 *********************************************/
 
-// Custom XXL breakpoint
-@media (min-width: $breakpoint-xxl) {
-    .col-xxl-7 {
-        flex: 0 0 58.33333% !important;
-        max-width: 58.33333% !important;
-        position: relative !important;
-        width: 100% !important;
-        padding-right: 15px !important;
-        padding-left: 15px !important;
-    }
-}
-
-// If the sidebar is collapsed, our main content should expand fully
-div.bd-sidebar.collapse:not(.show) + main.bd-content {
-    @media (max-width: $breakpoint-xxl) {
-        flex: 0 0 100%;
-        max-width: 100%;    
-    }
-}
-
 main {
     &.bd-content {
         padding-top: $topbar-height !important;
@@ -99,6 +79,26 @@ main {
         p {
             margin-bottom: 0;
         }   
+    }
+
+    // Admonitions
+    div.alert {
+        p.admonition-title {
+            margin-bottom: .2em;
+            font-size: 1.1em;
+
+            &::after {
+                font-family: "FontAwesome";
+                margin-left: 0.5em;
+                // Default content is exclamation point
+                content: "\f06a";  
+            }
+        }
+
+        &.alert-warning p.admonition-title::after {
+            content: "\f071";
+            color: red;
+        }
     }
 }
 

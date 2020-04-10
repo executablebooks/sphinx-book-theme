@@ -4,9 +4,11 @@ A sample chapter, there's no content here, just a placeholder to demo the sideba
 
 ```{toctree}
 :expand_sections:
-subchapter1a/index.md
-subchapter1b/index.md
-chapterpage1.md
-chapterpage2.md
-chapterpage3.md
+admonitions
+limits
+subchapter1a/index
+subchapter1b/index
+chapterpage1
+chapterpage2
+chapterpage3
 ```
