@@ -1,6 +1,7 @@
 from pathlib import Path
 from docutils import nodes
 from sphinx.util import logging
+from shutil import copy2
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -86,6 +87,19 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     launch_buttons = config_theme.get("launch_buttons", {})
     if not launch_buttons or not _is_notebook(app, pagename):
         return
+
+    # Check if we have a markdown notebook, and if so then add a link to the context
+    if _is_notebook(app, pagename) and context['sourcename'].endswith(".md"):
+        # Figure out the folders we want
+        build_dir = Path(app.outdir).parent
+        ntbk_dir = build_dir.joinpath("jupyter_execute")
+        sources_dir = build_dir.joinpath("html", "_sources")
+        # Paths to old and new notebooks
+        path_ntbk = ntbk_dir.joinpath(pagename).with_suffix(".ipynb")
+        path_new_notebook = sources_dir.joinpath(pagename).with_suffix(".ipynb")
+        # New folder should already exist in `_sources`, so just copy
+        copy2(path_ntbk, path_new_notebook)
+        context['ipynb_source'] = pagename + ".ipynb"
 
     repo_url = _get_repo_url(config_theme)
 
