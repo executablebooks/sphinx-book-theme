@@ -197,7 +197,7 @@ as well as admonitions and images:
 ````{sidebar} **Notes in sidebars**
 ```{note}
 Wow, a note with an image in a sidebar!
-![](images/cool.jpg)
+![](../images/cool.jpg)
 ```
 ````
 ### Toggle buttons
