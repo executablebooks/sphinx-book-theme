@@ -12,6 +12,20 @@ body {
 /*********************************************
 * Main body *
 *********************************************/
+@media (min-width: 1500px) {
+  .col-xxl-7 {
+    flex: 0 0 58.33333% !important;
+    max-width: 58.33333% !important;
+    position: relative !important;
+    width: 100% !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important; } }
+
+@media (max-width: 1500px) {
+  div.bd-sidebar.collapse:not(.show) + main.bd-content {
+    flex: 0 0 100%;
+    max-width: 100%; } }
+
 main.bd-content {
   padding-top: 3.5em !important;
   padding-bottom: 0px !important; }
