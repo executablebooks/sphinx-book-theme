@@ -40,6 +40,7 @@ setup(
         ),
     ],
     extras_require={
+        "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
         "sphinx": [
             "folium",
             "numpy",
@@ -51,14 +52,20 @@ setup(
             "sphinx-copybutton",
             (
                 "myst_parser @ "
-                "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"
+                "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"  # noqa E501
             ),
             (
                 "myst_nb @ "
                 "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"
             ),
         ],
-        "testing": ["coverage", "pytest>=3.6,<4", "pytest-cov", "beautifulsoup4"],
+        "testing": [
+            "coverage",
+            "pytest>=3.6,<4",
+            "pytest-cov",
+            "beautifulsoup4",
+            "pytest-regressions",
+        ],
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     package_data={

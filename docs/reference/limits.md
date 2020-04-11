@@ -172,7 +172,7 @@ Link to above: {eq}`my_label2`
 
 * $$
 \mathcal{O}(f) = \{ g |
-    \exists c > 0, 
+    \exists c > 0,
     \exists n_0 \in \mathbb{N}_0,
     \forall n \geq n_0
         :

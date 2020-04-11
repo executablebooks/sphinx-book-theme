@@ -2,7 +2,7 @@
 var initTriggerSidebar = () => {
     if ($(window).width() < 768) {
         $("#navbar-toggler").trigger("click")
-    }    
+    }
 }
 
 
