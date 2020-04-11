@@ -119,7 +119,8 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         raise ValueError(
             (
                 "Notebook UI for Binder/JupyterHub links must be one"
-                f"of {tuple(notebook_interface_prefixes.keys())}, not {notebook_interface}"
+                f"of {tuple(notebook_interface_prefixes.keys())},"
+                "not {notebook_interface}"
             )
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]
@@ -139,11 +140,17 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     jupyterhub_url = launch_buttons.get("jupyterhub_url")
     binderhub_url = launch_buttons.get("binderhub_url")
     if binderhub_url:
-        url = f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?urlpath={ui_pre}/{path_rel_repo}"
+        url = (
+            f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
+            "urlpath={ui_pre}/{path_rel_repo}"
+        )
         context["binder_url"] = url
 
     if jupyterhub_url:
-        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
+        url = (
+            f"{jupyterhub_url}/hub/user-redirect/git-pull?"
+            f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
+        )
         context["jupyterhub_url"] = url
 
     # Add thebelab flag in context

@@ -3,7 +3,6 @@ from pathlib import Path
 import docutils
 from myst_nb.parser import CellNode
 from docutils.parsers.rst import directives
-from docutils import nodes
 from sphinx.util import logging
 from sphinx import addnodes
 from sphinx.directives.other import TocTree
@@ -74,6 +73,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             return ""
         # Lists of pages where we want to trigger extra TOC behavior
         extra_toc = app.env.jb_extra_toc_info
+
         # And a function we'll use to parse it
         def lookup_extra_toc(pagename, extra_toc_list, kind="parent"):
             for first_child_page, parent_page, val in extra_toc_list:
@@ -112,7 +112,8 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 if caption_page == str(page_rel_root):
                     ul.append('<li class="sidebar-special">')
                     if caption:
-                        # TODO: whenever pydata-sphinx-theme gets support for captions, we should just use that and remove this
+                        # TODO: whenever pydata-sphinx-theme gets support for captions
+                        #       we should just use that and remove this
                         ul.append(f'<p class="sidebar-caption">{caption_text}</p>')
                     ul.append("</li>")
 
@@ -163,7 +164,9 @@ def compile_scss():
 
 
 class NewTocTree(TocTree):
-    """A monkey-patch of the TocTree so we can intercept extra keywords without raising Sphinx errors."""
+    """A monkey-patch of the TocTree so we can intercept extra keywords
+    without raising Sphinx errors.
+    """
 
     newtoctree_spec = TocTree.option_spec.copy()
     newtoctree_spec.update(EXTRA_TOC_OPTIONS)
