@@ -61,6 +61,29 @@ main span.eqno {
 main div.section ul p, main div.section ol p {
   margin-bottom: 0; }
 
+main div.figure {
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: center; }
+  main div.figure.align-left {
+    text-align: left; }
+    main div.figure.align-left p.caption {
+      margin-left: 0; }
+  main div.figure.align-right {
+    text-align: right; }
+    main div.figure.align-right p.caption {
+      margin-right: 0; }
+  main div.figure p.caption {
+    margin: .5em 10%; }
+  main div.figure.sidebar p.caption, main div.figure.sidebar-caption p.caption {
+    margin: .5em 0; }
+  main div.figure.sidebar-caption p.caption {
+    text-align: left; }
+  main div.figure span.caption-number {
+    font-weight: bold; }
+  main div.figure span {
+    font-size: .9em; }
+
 main div.alert p.admonition-title {
   margin-bottom: .2em;
   font-size: 1.1em; }
@@ -81,7 +104,7 @@ div.cell.tag_output_scroll div.cell_output {
   overflow-y: auto; }
 
 @media (min-width: 768px) {
-  div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
+  div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar, div.sidebar-caption p.caption {
     float: right;
     clear: right;
     width: 33% !important;
@@ -153,13 +176,11 @@ dl.footnote dd p {
   @media (max-width: 768px) {
     .bd-topbar-whitespace {
       display: none; } }
-
 div.dropdown-buttons-trigger span.dropdown-trigger-text {
   margin-left: 0.4em; }
   @media (max-width: 768px) {
     div.dropdown-buttons-trigger span.dropdown-trigger-text {
       display: none; } }
-
 div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;

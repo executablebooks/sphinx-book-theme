@@ -288,6 +288,81 @@ The remaining part of this page has been taken from the Markdown
 documentation, and is meant to give an idea of how Jupyter Book renders really long pages of
 very diverse content!
 
+### Common publishing items
+
+```{figure} ../images/cool.jpg
+---
+width: 200px
+alt: My figure text
+name: myfig
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig`. Or a numbered reference like
+{numref}`myfig`.
+
+```{figure} ../images/cool.jpg
+---
+width: 200px
+align: left
+alt: My figure text
+name: myfig2
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig2`. Or a numbered reference like
+{numref}`myfig2`.
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+align: right
+alt: My figure text
+name: myfig3
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig3`. Or a numbered reference like
+{numref}`myfig3`.
+
+### Sidebar figure captions
+
+There are a few theme-specific figure configurations. Here is a figure with
+a caption to the right.
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+figclass: sidebar-caption
+alt: My figure text
+name: myfig5
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig5`. Or a numbered reference like
+{numref}`myfig5`.
+
+And here is a figure with a caption below. We'll add a note below to create
+some vertical space to see better.
+
+```{figure} ../images/cool.jpg
+---
+figclass: sidebar
+alt: My figure text
+name: myfig4
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig4`. Or a numbered reference like
+{numref}`myfig4`.
+
+
+
 ### Custom layout items
 
 
