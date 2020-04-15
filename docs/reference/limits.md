@@ -17,6 +17,20 @@ This page contains a number of reference elements to see how they look in this
 theme. The information is not meant to be easy to read or understand, just browse
 through and see how things look!
 
+## Interactive code
+
+```{code-cell} ipython3
+import plotly.io as pio
+import plotly.express as px
+import plotly.offline as py
+
+pio.renderers.default = "notebook"
+
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", size="sepal_length")
+fig
+```
+
 +++
 
 ## Hiding elements
