@@ -1,5 +1,12 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 
+{% block extrahead %}
+{{ super() }}
+<!-- Put requirejs at the end so it's always after bootstrap -->
+<!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+{% endblock %}
+
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}

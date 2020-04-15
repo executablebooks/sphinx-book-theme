@@ -50,6 +50,7 @@ setup(
             "nbclient",
             "sphinx-togglebutton",
             "sphinx-copybutton",
+            "plotly",
             (
                 "myst_parser @ "
                 "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"  # noqa E501
