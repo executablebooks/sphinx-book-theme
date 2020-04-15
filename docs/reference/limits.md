@@ -381,6 +381,10 @@ Here's how really wide content alters the page:
 
 <img src="https://jupyter.org/assets/nav_logo.svg" style="width: 1000px" />
 
+### Testing `code in headers`
+
+The above should be roughly the same size...
+
 ### Testing Unicode headers
 
 The following headers test that we are able to render non-American characters
