@@ -22,17 +22,19 @@ def test_build_book(tmpdir):
     path_index = path_html.joinpath("index.html")
     assert path_index.exists()
 
-    # Check interact links
-    path_ntbk = path_html.joinpath("section1", "ntbk.html")
-    ntbk_text = path_ntbk.read_text()
-    assert (
-        "https://mybinder.org/v2/gh/ExecutableBookProject/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/section1/ntbk.ipynb"  # noqa E501
-        in ntbk_text
-    )
-    assert (
-        "https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ExecutableBookProject/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/section1/ntbk.ipynb"  # noqa E501
-        in ntbk_text
-    )
+    # Check interact links for both ipynb and myst-nb
+    for path in ["section1/ntbk.ipynb", "section1/ntbkmd.md"]:
+        path_ntbk = path_html.joinpath(*path.split("/"))
+        ntbk_text = path_ntbk.with_suffix(".html").read_text()
+        assert (
+            f"https://mybinder.org/v2/gh/ExecutableBookProject/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/{path}"  # noqa E501
+            in ntbk_text
+        )
+        assert (
+            f"https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ExecutableBookProject/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/{path}"  # noqa E501
+            in ntbk_text
+        )
+
     # Index should *not* be in sidebar
     assert "Index</a>" not in ntbk_text
     rmtree(path_build)
@@ -40,6 +42,7 @@ def test_build_book(tmpdir):
     # Check sidebar numbering
     cmd = cmd_base + ["-D", "html_theme_options.number_toc_sections=True"]
     run(cmd, cwd=path_tmp_base, check=True)
+    path_ntbk = path_html.joinpath("section1", "ntbk.html")
     ntbk_text = path_ntbk.read_text()
     # Pages and sub-pages should be numbered
     assert "1. Page 1</a>" in ntbk_text

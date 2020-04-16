@@ -15,7 +15,7 @@ extensions = ["myst_nb", "sphinx_copybutton", "sphinx_togglebutton"]
 html_theme = "sphinx_book_theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
-jupyter_execute_notebooks = "off"
+jupyter_execute_notebooks = "auto"
 
 # Base options, we can add other key/vals later
 html_theme_options = {
