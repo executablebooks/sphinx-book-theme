@@ -28,6 +28,38 @@ jobs:
         pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )
 
 
+  tests:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[sphinx,testing]
+
+    # Tests
+    - name: Run pytest
+      run: |
+        pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
+        coverage xml
+    - name: Upload to Codecov
+      if: matrix.python-version == 3.7 && github.repository == 'ExecutableBookProject/sphinx-book-theme'
+      uses: codecov/codecov-action@v1
+      with:
+        name: ebp-sbt-pytests-py3.7
+        flags: pytests
+        file: ./coverage.xml
+        fail_ci_if_error: true
+
   publish:
 
     name: Publish to PyPi

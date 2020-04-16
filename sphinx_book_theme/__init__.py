@@ -69,7 +69,19 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 out = ""
         return out
 
-    def nav_to_html_list(nav, level=1, include_item_names=False, with_home_page=False):
+    def nav_to_html_list(
+        nav,
+        level=1,
+        include_item_names=False,
+        with_home_page=False,
+        number_sections=False,
+    ):
+        # In case users give a string configuration
+        if isinstance(number_sections, str):
+            number_sections = number_sections.lower() == "true"
+        if isinstance(with_home_page, str):
+            with_home_page = with_home_page.lower() == "true"
+
         if len(nav) == 0:
             return ""
         # Lists of pages where we want to trigger extra TOC behavior
@@ -98,10 +110,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 toc_captions.append((toctree_first_page, caption))
 
         # Add the master_doc page as the first item if specified
-        if with_home_page == True:
-            master_doc = app.env.config['master_doc']
+        if with_home_page:
+            master_doc = app.env.config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
-            master_url = context['pathto'](master_doc)
+            master_url = context["pathto"](master_doc)
             master_title = list(master_doctree.traverse(nodes.title))[0].astext()
             nav.insert(
                 0,
@@ -115,6 +127,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level
+        ii_num = 1
         next_level = level + 1 if include_item_names else level
         for child in nav:
             # If we're not rendering title names and have no children, skip
@@ -140,6 +153,9 @@ def add_to_context(app, pagename, templatename, context, doctree):
             # Render links for the top-level names if we wish
             if include_item_names:
                 item_title = child["title"]
+                if number_sections and not child["url"].startswith("http"):
+                    item_title = f"{ii_num}. {item_title}"
+                    ii_num += 1
                 if child["url"].startswith("http"):
                     # Add an external icon for external sidebar links
                     item_title += '<i class="fas fa-external-link-alt"></i>'
@@ -157,7 +173,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if active and child["children"]:
                 # Always include the names of the children
                 child_list = nav_to_html_list(
-                    child["children"], level=next_level, include_item_names=True
+                    child["children"],
+                    level=next_level,
+                    include_item_names=True,
+                    number_sections=number_sections,
                 )
                 ul.append(child_list)
             ul.append("  " + "</li>")
