@@ -163,3 +163,16 @@ To make all sub-pages of the left Table of Contents expanded, add `:expand_secti
 
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`
 in your `toctree` directive for that section.
+
+### Adding the home page to your TOC
+
+If you'd like to have the home page listed in your TOC links, use the following
+configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "home_page_in_toc": True
+    ...
+}
+```

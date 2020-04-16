@@ -3,6 +3,7 @@ from pathlib import Path
 import docutils
 from myst_nb.parser import CellNode
 from docutils.parsers.rst import directives
+from docutils import nodes
 from sphinx.util import logging
 from sphinx import addnodes
 from sphinx.directives.other import TocTree
@@ -68,7 +69,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 out = ""
         return out
 
-    def nav_to_html_list(nav, level=1, include_item_names=False):
+    def nav_to_html_list(nav, level=1, include_item_names=False, with_home_page=False):
         if len(nav) == 0:
             return ""
         # Lists of pages where we want to trigger extra TOC behavior
@@ -95,6 +96,22 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     1
                 ]  # Entries are (title, ref) pairs
                 toc_captions.append((toctree_first_page, caption))
+
+        # Add the master_doc page as the first item if specified
+        if with_home_page == True:
+            master_doc = app.env.config['master_doc']
+            master_doctree = app.env.get_doctree(master_doc)
+            master_url = context['pathto'](master_doc)
+            master_title = list(master_doctree.traverse(nodes.title))[0].astext()
+            nav.insert(
+                0,
+                {
+                    "title": master_title,
+                    "url": master_url,
+                    "active": pagename == master_doc,
+                    "children": [],
+                },
+            )
 
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level

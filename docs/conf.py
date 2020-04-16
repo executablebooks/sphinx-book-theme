@@ -52,5 +52,7 @@ html_theme_options = {
         "notebook_interface": "jupyterlab",
         "thebelab": True,
     },
+    # For testing
+    # "home_page_in_toc": True,
     # "single_page": True
 }
