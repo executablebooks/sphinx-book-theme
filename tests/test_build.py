@@ -35,8 +35,15 @@ def test_build_book(tmpdir):
             in ntbk_text
         )
 
+    # Check a few components that should be true on each page
+    path_index = path_html.joinpath("index.html")
+    index_text = path_index.read_text()
     # Index should *not* be in sidebar
-    assert "Index</a>" not in ntbk_text
+    assert "Index</a>" not in index_text
+    # Captions make it into sidebar
+    assert '<p class="sidebar-caption">My caption</p>' in index_text
+    # Explicitly expanded sections are expanded when not active
+    assert "Section 1 page1</a>" in index_text
     rmtree(path_build)
 
     # Check sidebar numbering
