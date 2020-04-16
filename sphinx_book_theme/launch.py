@@ -142,7 +142,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     if binderhub_url:
         url = (
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
-            "urlpath={ui_pre}/{path_rel_repo}"
+            f"urlpath={ui_pre}/{path_rel_repo}"
         )
         context["binder_url"] = url
 

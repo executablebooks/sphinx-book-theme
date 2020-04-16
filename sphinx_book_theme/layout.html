@@ -10,7 +10,7 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}
-{% if theme_single_page != True %}
+{% if (theme_single_page != True) and (theme_single_page != "True") %}
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     {% include "sidebar.html" %}
 </div>

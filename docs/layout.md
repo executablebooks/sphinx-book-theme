@@ -176,3 +176,18 @@ html_theme_options = {
     ...
 }
 ```
+
+### Numbering your TOC sections
+
+If you'd like to number your Table of Contents sections, use the following
+configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "number_toc_sections": True
+    ...
+}
+```
+
+Note: external links will be skipped in numbering.
