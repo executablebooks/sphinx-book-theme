@@ -78,7 +78,7 @@ main div.figure {
       margin-right: 0; }
   main div.figure p.caption {
     margin: .5em 10%; }
-  main div.figure.sidebar p.caption, main div.figure.margin-caption p.caption {
+  main div.figure.margin p.caption, main div.figure.margin-caption p.caption {
     margin: .5em 0; }
   main div.figure.margin-caption p.caption {
     text-align: left; }
@@ -87,17 +87,18 @@ main div.figure {
   main div.figure span {
     font-size: .9em; }
 
-main div.alert p.admonition-title {
-  margin-bottom: .2em;
-  font-size: 1.1em; }
-  main div.alert p.admonition-title::after {
-    font-family: "FontAwesome";
-    margin-left: 0.5em;
-    content: "\f06a"; }
-
-main div.alert.alert-warning p.admonition-title::after {
-  content: "\f071";
-  color: red; }
+main div.alert {
+  padding-bottom: .75em; }
+  main div.alert p.admonition-title {
+    margin-bottom: .2em;
+    font-size: 1.1em; }
+    main div.alert p.admonition-title::after {
+      font-family: "FontAwesome";
+      margin-left: 0.5em;
+      content: "\f06a"; }
+  main div.alert.alert-warning p.admonition-title::after {
+    content: "\f071";
+    color: red; }
 
 main dl.glossary dd {
   margin-left: 1.5em; }
@@ -122,14 +123,14 @@ div.sidebar {
   border-left: 1px #a4a6a7 solid;
   margin-left: 0.5em;
   padding: .2em 0 .2em 1em; }
+  div.sidebar p {
+    margin-bottom: 0; }
   div.sidebar p.sidebar-title {
     font-weight: bold;
     font-size: 1.2em; }
-  div.sidebar p {
-    margin-bottom: 0; }
 
 @media (min-width: 768px) {
-  div.cell.tag_popout, div.cell.tag_sidebar, div.margin, div.margin-caption p.caption {
+  div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
     border: none;
     clear: right;
     width: 33% !important;
@@ -139,9 +140,11 @@ div.sidebar {
     line-height: 1.3;
     vertical-align: baseline;
     position: relative; }
-    div.cell.tag_popout p.sidebar-title, div.cell.tag_sidebar p.sidebar-title, div.margin p.sidebar-title, div.margin-caption p.caption p.sidebar-title {
-      font-size: 1em; }
-  div.cell.tag_sidebar .cell_output {
+    div.cell.tag_popout p, div.cell.tag_margin p, div.margin p, div.margin-caption p.caption p {
+      margin-bottom: .5em; }
+      div.cell.tag_popout p.sidebar-title, div.cell.tag_margin p.sidebar-title, div.margin p.sidebar-title, div.margin-caption p.caption p.sidebar-title {
+        font-size: 1em; }
+  div.cell.tag_margin .cell_output {
     padding-left: 0; } }
 
 @media (min-width: 768px) {
@@ -198,13 +201,11 @@ dl.footnote dd p {
   @media (max-width: 768px) {
     .bd-topbar-whitespace {
       display: none; } }
-
 div.dropdown-buttons-trigger span.dropdown-trigger-text {
   margin-left: 0.4em; }
   @media (max-width: 768px) {
     div.dropdown-buttons-trigger span.dropdown-trigger-text {
       display: none; } }
-
 div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;
@@ -317,7 +318,7 @@ button.topbarbtn img {
     font-size: 1.1em;
     color: black;
     text-align: center; }
-  .bd-sidebar p.sidebar_footer {
+  .bd-sidebar p.navbar_footer {
     text-align: center;
     font-size: .9em;
     padding-top: .5em; }
@@ -326,7 +327,7 @@ button.topbarbtn img {
     overflow: hidden;
     position: relative;
     padding-top: 0; }
-  .bd-sidebar li + li.sidebar-special {
+  .bd-sidebar li + li.navbar-special {
     margin-top: 1em; }
   .bd-sidebar p.margin-caption {
     margin-bottom: 0;

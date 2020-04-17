@@ -128,7 +128,7 @@ main {
             margin: .5em 10%;
         }
 
-        &.sidebar, &.margin-caption {
+        &.margin, &.margin-caption {
             p.caption {
                 margin: .5em 0;
             }
@@ -149,6 +149,8 @@ main {
 
     // Admonitions
     div.alert {
+        padding-bottom: .75em;  // Overriding an override
+
         p.admonition-title {
             margin-bottom: .2em;
             font-size: 1.1em;
@@ -209,13 +211,13 @@ div.sidebar {
     margin-left: 0.5em;
     padding: .2em 0 .2em 1em;
 
+    p {
+        margin-bottom: 0;
+    }
+
     p.sidebar-title {
         font-weight: bold;
         font-size: 1.2em;
-    }
-
-    p {
-        margin-bottom: 0;
     }
 }
 
@@ -223,7 +225,7 @@ div.sidebar {
 // Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
 @media (min-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_sidebar, div.margin, div.margin-caption p.caption {
+    div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
         border: none;
         clear: right;
         width: 33% !important;
@@ -234,13 +236,19 @@ div.sidebar {
         vertical-align: baseline;
         position: relative;
 
-        p.sidebar-title {
-            font-size: 1em;
+        p {
+            margin-bottom: .5em;
+
+            &.sidebar-title {
+                font-size: 1em;
+            }
         }
+
+
     }
 
-    // Make cell outputs take up more space if they're in the sidebar
-    div.cell.tag_sidebar .cell_output {
+    // Make cell outputs take up more space if they're in the margin
+    div.cell.tag_margin .cell_output {
         padding-left: 0;
     }
 }
@@ -519,7 +527,7 @@ button.topbarbtn img {
         text-align: center;
     }
 
-    p.sidebar_footer {
+    p.navbar_footer {
         text-align: center;
         font-size: .9em;
         padding-top: .5em;
@@ -533,7 +541,7 @@ button.topbarbtn img {
     }
 
     // Captions
-    li + li.sidebar-special {
+    li + li.navbar-special {
         margin-top: 1em;
     }
 

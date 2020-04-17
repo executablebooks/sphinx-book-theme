@@ -3,7 +3,7 @@
 There are a number of ways to configure `sphinx-book-theme`. This page covers some of the main ways
 to do so. It also serves as a reference to make sure that visual elements look correct
 
-## Sidebar content
+## Sidebars
 
 There are two different kinds of sidebar-like content in `sphinx-book-theme`,
 typical `{sidebar}` directives, as well as a theme-specific `{margin}` directive.
@@ -26,11 +26,11 @@ Here is my margin content, it is pretty cool!
 It is pretty cool!
 ```
 
-### Sidebars
+### Content sidebars
 
-You can specify content that should exist in the right margin. This will behave
-like a regular sidebar until the screen hits a certain width, at which point this
-content will "pop out" to the right white space. To add sidebar content, use this syntax:
+Content sidebars exist in-line with your text, but allow the rest of the
+page to flow around them, rather than moving to the right margin.
+To add content sidebars, use this syntax:
 
 ```{sidebar} **My sidebar title**
 Here is my sidebar content, it is pretty cool!
