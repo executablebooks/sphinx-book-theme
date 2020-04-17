@@ -17,6 +17,20 @@ This page contains a number of reference elements to see how they look in this
 theme. The information is not meant to be easy to read or understand, just browse
 through and see how things look!
 
+## Glossary
+
+```{glossary}
+term one
+  An indented explanation of term 1
+
+A second term
+  An indented explanation of term2
+```
+
+To reference terms in your glossary, use the `{term}` role. For example,
+`` {term}`term one` `` becomes {term}`term one`. And `` {term}`A second term` ``
+becomes {term}`A second term`.
+
 ## Interactive code
 
 ```{code-cell} ipython3
@@ -293,10 +307,6 @@ Also to make sure you can still interact with the popout content.
 +++
 
 ## Markdown limits
-
-```{warning}
-None of the following information on this page applies to Jupyter Books.
-```
 
 The remaining part of this page has been taken from the Markdown
 documentation, and is meant to give an idea of how Jupyter Book renders really long pages of

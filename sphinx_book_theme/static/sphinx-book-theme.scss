@@ -166,6 +166,24 @@ main {
             color: red;
         }
     }
+
+    // Glossaries
+    dl.glossary {
+        dd {
+            margin-left: 1.5em;
+        }
+    }
+
+    // Table of contents
+    div.contents p.topic-title {
+        font-size: 1.5em;
+        padding: .5em 0 0 1em;
+    }
+
+    // Misc text and directives
+    p.centered {
+        text-align: center;
+    }
 }
 
 // Cell-specific controls

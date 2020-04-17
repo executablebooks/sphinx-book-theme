@@ -4,8 +4,8 @@ A sample chapter, there's no content here, just a placeholder to demo the sideba
 
 ```{toctree}
 :expand_sections:
-admonitions
-limits
+demo
+markdown_limits
 subchapter1a/index
 subchapter1b/index
 chapterpage1
