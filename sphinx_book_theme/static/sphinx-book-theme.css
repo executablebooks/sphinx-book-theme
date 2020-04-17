@@ -40,75 +40,70 @@ main.bd-content {
       border-bottom: 1px solid #130654;
       padding-bottom: .2em;
       font-size: 3em; }
-
-main a.headerlink {
-  opacity: 0;
-  margin-left: .2em;
-  color: #005b81; }
-  main a.headerlink:hover {
-    background-color: transparent;
-    color: #005b81; }
-
-main h1:hover a.headerlink, main h2:hover a.headerlink, main h3:hover a.headerlink, main h4:hover a.headerlink, main h5:hover a.headerlink {
-  opacity: 1; }
-
-main div.section {
-  padding-right: 1em;
-  overflow: visible !important; }
-
-main span.eqno {
-  float: right;
-  margin: 1em 0em;
-  font-size: 1.2em; }
-
-main div.section ul p, main div.section ol p {
-  margin-bottom: 0; }
-
-main div.figure {
-  width: 100%;
-  margin-bottom: 1em;
-  text-align: center; }
-  main div.figure.align-left {
-    text-align: left; }
-    main div.figure.align-left p.caption {
-      margin-left: 0; }
-  main div.figure.align-right {
-    text-align: right; }
-    main div.figure.align-right p.caption {
-      margin-right: 0; }
-  main div.figure p.caption {
-    margin: .5em 10%; }
-  main div.figure.margin p.caption, main div.figure.margin-caption p.caption {
-    margin: .5em 0; }
-  main div.figure.margin-caption p.caption {
-    text-align: left; }
-  main div.figure span.caption-number {
-    font-weight: bold; }
-  main div.figure span {
-    font-size: .9em; }
-
-main div.alert {
-  padding-bottom: .75em; }
-  main div.alert p.admonition-title {
-    margin-bottom: .2em;
-    font-size: 1.1em; }
-    main div.alert p.admonition-title::after {
-      font-family: "FontAwesome";
-      margin-left: 0.5em;
-      content: "\f06a"; }
-  main div.alert.alert-warning p.admonition-title::after {
-    content: "\f071";
-    color: red; }
-
-main dl.glossary dd {
-  margin-left: 1.5em; }
-
-main div.contents p.topic-title {
-  font-size: 1.5em;
-  padding: .5em 0 0 1em; }
-
-main p.centered {
-  text-align: center; }
+  main.bd-content #main-content a.headerlink {
+    opacity: 0;
+    margin-left: .2em; }
+    main.bd-content #main-content a.headerlink:hover {
+      background-color: transparent;
+      color: #0071bc; }
+  main.bd-content #main-content a, main.bd-content #main-content a:visited {
+    color: #0071bc; }
+  main.bd-content #main-content h1, main.bd-content #main-content h2, main.bd-content #main-content h3, main.bd-content #main-content h4, main.bd-content #main-content h5 {
+    color: black; }
+    main.bd-content #main-content h1:hover a.headerlink, main.bd-content #main-content h2:hover a.headerlink, main.bd-content #main-content h3:hover a.headerlink, main.bd-content #main-content h4:hover a.headerlink, main.bd-content #main-content h5:hover a.headerlink {
+      opacity: 1; }
+    main.bd-content #main-content h1 a.toc-backref, main.bd-content #main-content h2 a.toc-backref, main.bd-content #main-content h3 a.toc-backref, main.bd-content #main-content h4 a.toc-backref, main.bd-content #main-content h5 a.toc-backref {
+      color: inherit; }
+  main.bd-content #main-content div.section {
+    padding-right: 1em;
+    overflow: visible !important; }
+    main.bd-content #main-content div.section ul p, main.bd-content #main-content div.section ol p {
+      margin-bottom: 0; }
+  main.bd-content #main-content span.eqno {
+    float: right;
+    margin: 1em 0em;
+    font-size: 1.2em; }
+  main.bd-content #main-content div.figure {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center; }
+    main.bd-content #main-content div.figure.align-left {
+      text-align: left; }
+      main.bd-content #main-content div.figure.align-left p.caption {
+        margin-left: 0; }
+    main.bd-content #main-content div.figure.align-right {
+      text-align: right; }
+      main.bd-content #main-content div.figure.align-right p.caption {
+        margin-right: 0; }
+    main.bd-content #main-content div.figure p.caption {
+      margin: .5em 10%; }
+    main.bd-content #main-content div.figure.margin p.caption, main.bd-content #main-content div.figure.margin-caption p.caption {
+      margin: .5em 0; }
+    main.bd-content #main-content div.figure.margin-caption p.caption {
+      text-align: left; }
+    main.bd-content #main-content div.figure span.caption-number {
+      font-weight: bold; }
+    main.bd-content #main-content div.figure span {
+      font-size: .9em; }
+  main.bd-content #main-content div.alert {
+    padding-bottom: .75em; }
+    main.bd-content #main-content div.alert p.admonition-title {
+      margin-bottom: .2em;
+      font-size: 1.1em; }
+      main.bd-content #main-content div.alert p.admonition-title::after {
+        font-family: "FontAwesome";
+        margin-left: 0.5em;
+        content: "\f06a"; }
+    main.bd-content #main-content div.alert.alert-warning p.admonition-title::after {
+      content: "\f071";
+      color: red; }
+  main.bd-content #main-content dl.glossary dd {
+    margin-left: 1.5em; }
+  main.bd-content #main-content div.contents p.topic-title {
+    font-size: 1.5em;
+    padding: .5em 0 0 1em; }
+  main.bd-content #main-content p.centered {
+    text-align: center; }
 
 div.cell div.cell_output {
   padding-right: 0; }
@@ -273,6 +268,10 @@ button.topbarbtn img {
   .bd-toc nav {
     opacity: 0;
     transition: opacity 0.2s ease; }
+    .bd-toc nav a:hover, .bd-toc nav li.active > a.active {
+      color: #0071bc; }
+    .bd-toc nav li.active > a.active {
+      border-left: 2px solid #0071bc; }
   @media (min-width: 1500px) {
     .bd-toc {
       height: auto !important; }
@@ -295,6 +294,8 @@ button.topbarbtn img {
   overflow-y: auto;
   height: 100vh !important;
   scrollbar-width: thin; }
+  .bd-sidebar nav ul.nav a:hover, .bd-sidebar nav ul.nav li.active > a, .bd-sidebar nav ul.nav li.active > a:hover {
+    color: #0071bc; }
   .bd-sidebar::-webkit-scrollbar {
     width: 5px; }
   .bd-sidebar::-webkit-scrollbar {
@@ -392,6 +393,37 @@ nav.bd-links {
 .prev-next-bottom {
   height: 3em; }
 
+.thebelab-cell {
+  position: relative;
+  z-index: 999;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important; }
+
+.thebelab-button {
+  z-index: 999;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  margin: 0px 1px;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #dddddd;
+  border: 0.05em solid white;
+  color: #000000; }
+
+.thebelab-button:hover {
+  border: 0.05em solid black;
+  background-color: #fcfcfc; }
+
+div.jp-OutputArea-output {
+  padding: 5px; }
+
 /*********************************************
 * Print-specific CSS *
 *********************************************/
@@ -442,46 +474,15 @@ nav.bd-links {
     position: inherit; }
     div.topbar div.topbar-main {
       opacity: 0; }
-    div.topbar .bd-toc {
+    div.topbar div.bd-toc {
       flex: 0 0 25%;
       max-width: 25%;
       height: auto !important; }
-      div.topbar .bd-toc nav, div.topbar .bd-toc nav > ul.nav, div.topbar .bd-toc nav > ul.nav > li > ul.nav {
+      div.topbar div.bd-toc nav, div.topbar div.bd-toc nav > ul.nav, div.topbar div.bd-toc nav > ul.nav > li > ul.nav {
         opacity: 1;
         display: block; }
-      div.topbar .bd-toc .nav-link.active {
+      div.topbar div.bd-toc .nav-link.active {
         font-weight: inherit;
         color: inherit;
         background-color: inherit;
         border-left: inherit; } }
-
-.thebelab-cell {
-  position: relative;
-  z-index: 999;
-  border: 0 !important;
-  border-radius: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 8px !important; }
-
-.thebelab-button {
-  z-index: 999;
-  display: inline-block;
-  padding: 0.35em 1.2em;
-  margin: 0px 1px;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  transition: all 0.2s;
-  background-color: #dddddd;
-  border: 0.05em solid white;
-  color: #000000; }
-
-.thebelab-button:hover {
-  border: 0.05em solid black;
-  background-color: #fcfcfc; }
-
-div.jp-OutputArea-output {
-  padding: 5px; }

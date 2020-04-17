@@ -49,142 +49,151 @@ div.bd-sidebar.collapse:not(.show) + main.bd-content {
     }
 }
 
-main {
-    &.bd-content {
-        padding-top: $topbar-height !important;
-        padding-bottom: 0px !important;
+main.bd-content {
+    padding-top: $topbar-height !important;
+    padding-bottom: 0px !important;
 
-        // CSS unique to a single page
-        &.single-page {
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
+    // CSS unique to a single page
+    &.single-page {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
 
-            // Page title styling
-            div#main-content div.section:first-of-type > h1:first-of-type {
-                border-bottom: 1px solid #130654;
-                padding-bottom: .2em;
-                font-size: 3em;
+        // Page title styling
+        div#main-content div.section:first-of-type > h1:first-of-type {
+            border-bottom: 1px solid #130654;
+            padding-bottom: .2em;
+            font-size: 3em;
+        }
+    }
+
+    #main-content {
+        // Content links and link color
+        a.headerlink {
+            opacity: 0;
+            margin-left: .2em;
+
+            &:hover {
+                background-color: transparent;
+                color: #0071bc;
             }
         }
-    }
 
-    a.headerlink {
-        opacity: 0;
-        margin-left: .2em;
-        color: #005b81;
-
-        &:hover {
-            background-color: transparent;
-            color: #005b81;
+        a, a:visited {
+            color: #0071bc;
         }
-    }
 
-    h1, h2, h3, h4, h5 {
-        &:hover a.headerlink {
-            opacity: 1;
+        h1, h2, h3, h4, h5 {
+            color: black;
+            &:hover a.headerlink {
+                opacity: 1;
+            }
+            // Make sure titles don't become hyperlink color when there are labels
+            a.toc-backref {
+                color: inherit;
+            }
         }
-    }
 
-    div.section {
-        padding-right: 1em;
-        overflow: visible !important;  // So that sidebars don't cause a scroll
-    }
+        div.section {
+            padding-right: 1em;
+            overflow: visible !important;  // So that sidebars don't cause a scroll
 
-    // Math equations
-    span.eqno {
-        float: right;
-        margin: 1em 0em;
-        font-size: 1.2em;
-    }
-
-    // List styles to avoid too much whitespace
-    div.section ul, div.section ol {
-        p {
-            margin-bottom: 0;
+            // List styles to avoid too much whitespace
+            ul, ol {
+                p {
+                    margin-bottom: 0;
+                }
+            }
         }
-    }
 
-    // Figures
-    div.figure {
-        width: 100%;
-        margin-bottom: 1em;
-        text-align: center;
+        // Math equations
+        span.eqno {
+            float: right;
+            margin: 1em 0em;
+            font-size: 1.2em;
+        }
 
-        &.align-left {
-            text-align: left;
+        // Figures
+        div.figure {
+            width: 100%;
+            margin-bottom: 1em;
+            text-align: center;
+
+            &.align-left {
+                text-align: left;
+                p.caption {
+                    margin-left: 0;
+                }
+            }
+            &.align-right {
+                text-align: right;
+                p.caption {
+                    margin-right: 0;
+                }
+            }
+
             p.caption {
-                margin-left: 0;
+                margin: .5em 10%;
             }
-        }
-        &.align-right {
-            text-align: right;
-            p.caption {
-                margin-right: 0;
+
+            &.margin, &.margin-caption {
+                p.caption {
+                    margin: .5em 0;
+                }
             }
-        }
 
-        p.caption {
-            margin: .5em 10%;
-        }
-
-        &.margin, &.margin-caption {
-            p.caption {
-                margin: .5em 0;
+            &.margin-caption p.caption {
+                text-align: left;
             }
-        }
 
-        &.margin-caption p.caption {
-            text-align: left;
-        }
+            span.caption-number {
+                font-weight: bold;
+            }
 
-        span.caption-number {
-            font-weight: bold;
-        }
-
-        span {
-            font-size: .9em;
-        }
-    }
-
-    // Admonitions
-    div.alert {
-        padding-bottom: .75em;  // Overriding an override
-
-        p.admonition-title {
-            margin-bottom: .2em;
-            font-size: 1.1em;
-
-            &::after {
-                font-family: "FontAwesome";
-                margin-left: 0.5em;
-                // Default content is exclamation point
-                content: "\f06a";
+            span {
+                font-size: .9em;
             }
         }
 
-        &.alert-warning p.admonition-title::after {
-            content: "\f071";
-            color: red;
+        // Admonitions
+        div.alert {
+            padding-bottom: .75em;  // Overriding an override
+
+            p.admonition-title {
+                margin-bottom: .2em;
+                font-size: 1.1em;
+
+                &::after {
+                    font-family: "FontAwesome";
+                    margin-left: 0.5em;
+                    // Default content is exclamation point
+                    content: "\f06a";
+                }
+            }
+
+            &.alert-warning p.admonition-title::after {
+                content: "\f071";
+                color: red;
+            }
         }
-    }
 
-    // Glossaries
-    dl.glossary {
-        dd {
-            margin-left: 1.5em;
+        // Glossaries
+        dl.glossary {
+            dd {
+                margin-left: 1.5em;
+            }
         }
-    }
 
-    // Table of contents
-    div.contents p.topic-title {
-        font-size: 1.5em;
-        padding: .5em 0 0 1em;
-    }
+        // Table of contents
+        div.contents p.topic-title {
+            font-size: 1.5em;
+            padding: .5em 0 0 1em;
+        }
 
-    // Misc text and directives
-    p.centered {
-        text-align: center;
+        // Misc text and directives
+        p.centered {
+            text-align: center;
+        }
     }
 }
 
@@ -449,6 +458,15 @@ button.topbarbtn img {
     nav {
         opacity: 0;
         transition: opacity 0.2s ease;
+
+        // TOC link color
+        a:hover, li.active > a.active {
+            color: #0071bc;
+        }
+
+        li.active > a.active {
+            border-left: 2px solid #0071bc;
+        }
     }
 
     // On really wide screens, we always show the nav
@@ -483,6 +501,13 @@ button.topbarbtn img {
     top: 0px !important;
     overflow-y: auto;
     height: 100vh !important;
+
+    // Sidebar link color
+    nav ul.nav {
+        a:hover, li.active > a, li.active > a:hover {
+            color: #0071bc;
+        }
+    }
 
     scrollbar-width: thin;
     &::-webkit-scrollbar {
@@ -644,110 +669,6 @@ nav.bd-links {
 }
 
 
-/*********************************************
-* Print-specific CSS *
-*********************************************/
-@media print {
-    .tag_popout, div.margin {
-        float: right;
-        clear: right;
-        width: 50%;
-        margin-right: -56%;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-right: 1em;
-        font-size: 0.9rem;
-        line-height: 1.3;
-        vertical-align: baseline;
-        position: relative;
-
-        border-left: none;
-        padding-left: 0;
-    }
-
-    .bd-content {
-        // Widen the main div since we won't have a TOC
-        div#main-content > div {
-            flex: 0 0 75%;
-            max-width: 75%;
-        }
-    }
-
-    h1, h2, h3, h4 {
-        break-after: avoid;
-    }
-
-    table {
-        break-inside: avoid;
-    }
-
-    pre {
-        word-wrap: break-word;
-    }
-
-    a.copybtn, a.headerlink {
-        display: none;
-    }
-
-    .tag-fullwidth {
-        width: 145%;
-        clear: both;
-    }
-
-    div.toggle-hidden {
-        visibility: inherit;
-        opacity: 1;
-        height: auto;
-    }
-
-    button.toggle-button {
-        display: none;
-    }
-
-    blockquote.epigraph {
-        border: none;
-    }
-
-    // For some reason this fixes the containers from taking up the whole screen
-    div.container {
-        min-width: 50% !important;
-    }
-
-    div.bd-sidebar, div.prev-next-bottom {
-        display: none;
-    }
-
-    div.topbar {
-        height: 0;
-        padding: 0;
-        position: inherit;  // So that TOC isn't printed on each page
-
-        div.topbar-main {
-            opacity: 0;
-        }
-
-        // Grow and show the TOC on print
-        .bd-toc {
-            flex: 0 0 25%;
-            max-width: 25%;
-            height: auto !important;
-            // All 1st and 2nd items should be displayed
-            nav, nav > ul.nav, nav > ul.nav > li > ul.nav {
-                opacity: 1;
-                display: block;
-            }
-
-            // No fancy styling for nav links
-            .nav-link.active {
-                font-weight: inherit;
-                color: inherit;
-                background-color: inherit;
-                border-left: inherit;
-            }
-        }
-    }
-}
-
 // Thebelab buttons
 .thebelab-cell {
     // To ensure that thebelab cells are always the top of the Z-stack
@@ -787,3 +708,5 @@ nav.bd-links {
 div.jp-OutputArea-output {
     padding: 5px;
 }
+
+@import 'print';
