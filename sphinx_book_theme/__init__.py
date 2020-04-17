@@ -51,21 +51,27 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-    def show_if_no_sidebar():
-        # By default we'll show, unless there are sidebar items
+    def show_if_no_margin():
+        # By default we'll show, unless there are margin items
         out = "show"
-        # Check for sidebar items in this doctree
+        # Check for margin items in this doctree
         if doctree is not None:
-            sidebar_elements = doctree.traverse(docutils.nodes.sidebar)
+
+            def is_margin(node):
+                return isinstance(
+                    node, docutils.nodes.sidebar
+                ) and "margin" in node.attributes.get("classes", [])
+
+            margin_elements = doctree.traverse(is_margin)
             cell_containers = list(doctree.traverse(CellNode))
             popout_tags = [
                 cl
                 for cell in cell_containers
                 for cl in cell.attributes["classes"]
-                if any(ii == cl for ii in ["tag_popout", "tag_sidebar"])
+                if any(ii == cl for ii in ["tag_popout", "tag_margin"])
             ]
-            # If we found sidebar elements, then we won't show
-            if any(len(ii) > 0 for ii in [sidebar_elements, popout_tags]):
+            # If we found margin elements, then we won't show
+            if any(len(ii) > 0 for ii in [margin_elements, popout_tags]):
                 out = ""
         return out
 
@@ -140,11 +146,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
             )
             for caption_page, caption_text in toc_captions:
                 if caption_page == str(page_rel_root):
-                    ul.append('<li class="sidebar-special">')
+                    ul.append('<li class="navbar-special">')
                     if caption:
                         # TODO: whenever pydata-sphinx-theme gets support for captions
                         #       we should just use that and remove this
-                        ul.append(f'<p class="sidebar-caption">{caption_text}</p>')
+                        ul.append(f'<p class="margin-caption">{caption_text}</p>')
                     ul.append("</li>")
 
             # Now begin rendering the links
@@ -157,7 +163,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     item_title = f"{ii_num}. {item_title}"
                     ii_num += 1
                 if child["url"].startswith("http"):
-                    # Add an external icon for external sidebar links
+                    # Add an external icon for external navbar links
                     item_title += '<i class="fas fa-external-link-alt"></i>'
                 ul.append("  " * 2 + f'<a href="{child["url"]}">{item_title}</a>')
 
@@ -188,7 +194,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         ul = "\n".join(ul)
         return ul
 
-    context["show_if_no_sidebar"] = show_if_no_sidebar
+    context["show_if_no_margin"] = show_if_no_margin
     context["nav_to_html_list"] = nav_to_html_list
 
 
@@ -224,6 +230,24 @@ class NewTocTree(TocTree):
         return msg_nodes
 
 
+class Margin(directives.body.Sidebar):
+    """Goes in the margin to the right of the page."""
+
+    optional_arguments = 1
+    required_arguments = 0
+
+    def run(self):
+        if not self.arguments:
+            self.arguments = [""]
+        nodes = super().run()
+        nodes[0].attributes["classes"].append("margin")
+
+        # Remove the "title" node if it is empty
+        if not self.arguments:
+            nodes[0].children.pop(0)
+        return nodes
+
+
 def setup(app):
     compile_scss()
 
@@ -236,6 +260,8 @@ def setup(app):
     app.connect("html-page-context", add_to_context)
     app.add_js_file("sphinx-book-theme.js")
     directives.register_directive("toctree", NewTocTree)
+    app.add_directive("margin", Margin)
+
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
 
     # Include Thebelab for interactive code if it's enabled

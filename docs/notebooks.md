@@ -102,7 +102,7 @@ ax.legend(custom_lines, ['Cold', 'Medium', 'Hot'])
 ax.set(title="Smoother lines");
 ```
 
-```{sidebar} You can also pop out content to the sidebar
+```{margin} You can also pop out content to the margin
 For more information on how to do this,
 check out {doc}`layout`.
 ```

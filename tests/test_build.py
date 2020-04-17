@@ -38,15 +38,15 @@ def test_build_book(tmpdir):
     # Check a few components that should be true on each page
     path_index = path_html.joinpath("index.html")
     index_text = path_index.read_text()
-    # Index should *not* be in sidebar
+    # Index should *not* be in navbar
     assert "Index</a>" not in index_text
-    # Captions make it into sidebar
-    assert '<p class="sidebar-caption">My caption</p>' in index_text
+    # Captions make it into navbar
+    assert '<p class="margin-caption">My caption</p>' in index_text
     # Explicitly expanded sections are expanded when not active
     assert "Section 1 page1</a>" in index_text
     rmtree(path_build)
 
-    # Check sidebar numbering
+    # Check navbar numbering
     cmd = cmd_base + ["-D", "html_theme_options.number_toc_sections=True"]
     run(cmd, cwd=path_tmp_base, check=True)
     path_ntbk = path_html.joinpath("section1", "ntbk.html")

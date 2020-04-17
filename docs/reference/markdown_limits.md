@@ -208,13 +208,13 @@ Link to above: {eq}`my_label2`
 
 +++
 
-### Sidebar
+### Margins
 
 +++
 
-Sidebar content can include all kinds of things, such as code blocks:
+Margin content can include all kinds of things, such as code blocks:
 
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
@@ -222,18 +222,18 @@ print("here is some python")
 
 as well as admonitions and images:
 
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in margins**
 ```{note}
-Wow, a note with an image in a sidebar!
+Wow, a note with an image in a margin!
 ![](../images/cool.jpg)
 ```
 ````
 ### Toggle buttons
 
-Here's some sidebar content, let's see how it interacts w/ the toggle button
+Here's some margin content, let's see how it interacts w/ the toggle button
 
-```{sidebar} My sidebar
-Here's my sidebar content
+```{margin} My margin
+Here's my margin content
 ```
 
 Here's a toggleable note:
@@ -255,14 +255,14 @@ Let's see what happens
 ```{code-cell} ipython3
 :tags: [popout]
 
-## code cell in the sidebar with output
+## code cell in the margin with output
 fig, ax = plt.subplots()
 ax.imshow(wide)
 ```
 
 +++ {"tags": ["popout"]}
 
-Markdown cell with code in sidebar
+Markdown cell with code in margin
 
 ```python
 a = 2
@@ -352,7 +352,7 @@ And here is my figure caption
 We can reference the figure with {ref}`myfig3`. Or a numbered reference like
 {numref}`myfig3`.
 
-### Sidebar figure captions
+### Margin figure captions
 
 There are a few theme-specific figure configurations. Here is a figure with
 a caption to the right.
@@ -360,7 +360,7 @@ a caption to the right.
 ```{figure} ../images/cool.jpg
 ---
 width: 60%
-figclass: sidebar-caption
+figclass: margin-caption
 alt: My figure text
 name: myfig5
 ---
@@ -375,7 +375,7 @@ some vertical space to see better.
 
 ```{figure} ../images/cool.jpg
 ---
-figclass: sidebar
+figclass: margin
 alt: My figure text
 name: myfig4
 ---

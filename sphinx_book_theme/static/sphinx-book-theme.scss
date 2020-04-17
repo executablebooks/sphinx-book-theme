@@ -128,13 +128,13 @@ main {
             margin: .5em 10%;
         }
 
-        &.sidebar, &.sidebar-caption {
+        &.margin, &.margin-caption {
             p.caption {
                 margin: .5em 0;
             }
         }
 
-        &.sidebar-caption p.caption {
+        &.margin-caption p.caption {
             text-align: left;
         }
 
@@ -149,6 +149,8 @@ main {
 
     // Admonitions
     div.alert {
+        padding-bottom: .75em;  // Overriding an override
+
         p.admonition-title {
             margin-bottom: .2em;
             font-size: 1.1em;
@@ -201,37 +203,56 @@ div.cell {
     }
 }
 
+// Margin and content-sidebar rules
+div.sidebar {
+    width: 40%;
+    float: right;
+    border-left: 1px #a4a6a7 solid;
+    margin-left: 0.5em;
+    padding: .2em 0 .2em 1em;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    p.sidebar-title {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+}
+
 
 // Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
 @media (min-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar, div.sidebar-caption p.caption {
-        float: right;
+    div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
+        border: none;
         clear: right;
         width: 33% !important;
-        margin-right: -40% !important;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-right: 1em !important;
+        margin: 0 -40% 0 0 !important;
+        padding: 0 1em 0 0 !important;
         font-size: 0.9rem;
         line-height: 1.3;
         vertical-align: baseline;
         position: relative;
+
+        p {
+            margin-bottom: .5em;
+
+            &.sidebar-title {
+                font-size: 1em;
+            }
+        }
+
+
     }
 
-    // Make cell outputs take up more space if they're in the sidebar
-    div.cell.tag_sidebar .cell_output {
+    // Make cell outputs take up more space if they're in the margin
+    div.cell.tag_margin .cell_output {
         padding-left: 0;
     }
 }
 
-@media (max-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
-        border-left: 3px solid #c3c3c3;
-        margin: 1em;
-        padding: .2em 1.5em;
-    }
-}
 
 @media (min-width: $breakpoint-md) {
     div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
@@ -260,6 +281,11 @@ blockquote {
         color: #6c757d;
         padding-right: 2em;
     }
+}
+
+// Code cells have background at the `pre` level so remove from here
+div.highlight {
+    background: none;
 }
 
 // Footnotes
@@ -501,7 +527,7 @@ button.topbarbtn img {
         text-align: center;
     }
 
-    p.sidebar_footer {
+    p.navbar_footer {
         text-align: center;
         font-size: .9em;
         padding-top: .5em;
@@ -515,11 +541,11 @@ button.topbarbtn img {
     }
 
     // Captions
-    li + li.sidebar-special {
+    li + li.navbar-special {
         margin-top: 1em;
     }
 
-    p.sidebar-caption {
+    p.margin-caption {
         margin-bottom: 0;
         font-size: 1.2em;
     }
@@ -622,7 +648,7 @@ nav.bd-links {
 * Print-specific CSS *
 *********************************************/
 @media print {
-    .tag_popout, div.sidebar {
+    .tag_popout, div.margin {
         float: right;
         clear: right;
         width: 50%;

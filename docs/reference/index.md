@@ -1,6 +1,6 @@
 # Sub-sections example
 
-A sample chapter, there's no content here, just a placeholder to demo the sidebar.
+A sample chapter, there's no content here, just a placeholder to demo the navbar.
 
 ```{toctree}
 :expand_sections:
