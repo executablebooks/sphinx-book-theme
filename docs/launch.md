@@ -16,7 +16,7 @@ html_theme_options = {
 }
 ```
 
-```{sidebar} Paired ipynb files
+```{margin} Paired ipynb files
 
 If you're using [Jupytext](https://jupytext.readthedocs.io/en/latest/) to
 pair an ipynb file with your text files, and that ipynb file is in the same

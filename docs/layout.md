@@ -5,9 +5,41 @@ to do so. It also serves as a reference to make sure that visual elements look c
 
 ## Sidebar content
 
-You can also specify content that should exist in the sidebar. This content
-will be placed to the right, allowing it to exist separately from your main
-content. To add sidebar content, use this syntax:
+There are two different kinds of sidebar-like content in `sphinx-book-theme`,
+typical `{sidebar}` directives, as well as a theme-specific `{margin}` directive.
+This section covers both. Both allow you to place extra content
+separately from your main content.
+
+### Margins
+
+You can specify content that should exist in the right margin. This will behave
+like a regular sidebar until the screen hits a certain width, at which point this
+content will "pop out" to the right white space. To add margin content, use this syntax:
+
+````
+```{margin} **My margin title**
+Here is my margin content, it is pretty cool!
+```
+````
+
+```{margin} **Here is my margin content**
+It is pretty cool!
+```
+
+### Sidebars
+
+You can specify content that should exist in the right margin. This will behave
+like a regular sidebar until the screen hits a certain width, at which point this
+content will "pop out" to the right white space. To add sidebar content, use this syntax:
+
+```{sidebar} **My sidebar title**
+Here is my sidebar content, it is pretty cool!
+```
+
+Note how the content wraps around the sidebar to the right.
+However, the sidebar text will still be in line with your content. There are
+certain kinds of elements, such as "note" blocks and code cells, that may
+clash with your sidebar. If this happens, try using a `{margin}` instead.
 
 ````
 ```{sidebar} **My sidebar title**
@@ -15,22 +47,18 @@ Here is my sidebar content, it is pretty cool!
 ```
 ````
 
-```{sidebar} **Here is my sidebar content**
-It is pretty cool!
-```
+### Adding content to margins and sidebars
 
-### Adding content to sidebars
+Sidebar/margin content can include all kinds of things, such as code blocks:
 
-Sidebar content can include all kinds of things, such as code blocks:
-
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
 ````
 
 `````
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
@@ -39,17 +67,17 @@ print("here is some python")
 
 as well as admonitions and images:
 
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in margins**
 ```{note}
-Wow, a note with an image in a sidebar!
+Wow, a note with an image in a margin!
 ![](images/cool.jpg)
 ```
 ````
 
 `````
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in margins**
 ```{note}
-Wow, a note with an image in a sidebar!
+Wow, a note with an image in a margin!
 ![](images/cool.jpg)
 ```
 ````
@@ -57,8 +85,8 @@ Wow, a note with an image in a sidebar!
 
 ## Full-width content
 
-Full-width content extends into the right sidebar, making it stand out against
-the rest of your book's content. To add full-width content to your sidebar, add the
+Full-width content extends into the right margin, making it stand out against
+the rest of your book's content. To add full-width content to your page, add the
 class `full-width` to any of the elements in your documentation. For example, you can
 add a `full-width` tag to a note element like this:
 
@@ -76,7 +104,7 @@ This code results in the following output:
 This content will be full-width
 ```
 
-```{sidebar} A note for ipynb users
+```{margin} A note for ipynb users
 If you are using a Jupyter Notebook as inputs to your documentation using the
 [MyST-NB extension](https://myst-nb.readthedocs.io/en/latest/), you can trigger
 this behavior with a code cell by adding a `full-width` tag to the cell.

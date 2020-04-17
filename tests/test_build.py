@@ -41,7 +41,7 @@ def test_build_book(tmpdir):
     # Index should *not* be in sidebar
     assert "Index</a>" not in index_text
     # Captions make it into sidebar
-    assert '<p class="sidebar-caption">My caption</p>' in index_text
+    assert '<p class="margin-caption">My caption</p>' in index_text
     # Explicitly expanded sections are expanded when not active
     assert "Section 1 page1</a>" in index_text
     rmtree(path_build)

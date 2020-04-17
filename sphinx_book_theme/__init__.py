@@ -144,7 +144,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     if caption:
                         # TODO: whenever pydata-sphinx-theme gets support for captions
                         #       we should just use that and remove this
-                        ul.append(f'<p class="sidebar-caption">{caption_text}</p>')
+                        ul.append(f'<p class="margin-caption">{caption_text}</p>')
                     ul.append("</li>")
 
             # Now begin rendering the links
@@ -224,6 +224,24 @@ class NewTocTree(TocTree):
         return msg_nodes
 
 
+class Margin(directives.body.Sidebar):
+    """Goes in the margin to the right of the page."""
+
+    optional_arguments = 1
+    required_arguments = 0
+
+    def run(self):
+        if not self.arguments:
+            self.arguments = [""]
+        nodes = super().run()
+        nodes[0].attributes["classes"].append("margin")
+
+        # Remove the "title" node if it is empty
+        if not self.arguments:
+            nodes[0].children.pop(0)
+        return nodes
+
+
 def setup(app):
     compile_scss()
 
@@ -236,6 +254,8 @@ def setup(app):
     app.connect("html-page-context", add_to_context)
     app.add_js_file("sphinx-book-theme.js")
     directives.register_directive("toctree", NewTocTree)
+    app.add_directive("margin", Margin)
+
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
 
     # Include Thebelab for interactive code if it's enabled

@@ -212,9 +212,9 @@ Link to above: {eq}`my_label2`
 
 +++
 
-Sidebar content can include all kinds of things, such as code blocks:
+Margin content can include all kinds of things, such as code blocks:
 
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in sidebars
 ```python
 print("here is some python")
 ```
@@ -222,7 +222,7 @@ print("here is some python")
 
 as well as admonitions and images:
 
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in sidebars**
 ```{note}
 Wow, a note with an image in a sidebar!
 ![](../images/cool.jpg)
@@ -232,7 +232,7 @@ Wow, a note with an image in a sidebar!
 
 Here's some sidebar content, let's see how it interacts w/ the toggle button
 
-```{sidebar} My sidebar
+```{margin} My sidebar
 Here's my sidebar content
 ```
 
@@ -360,7 +360,7 @@ a caption to the right.
 ```{figure} ../images/cool.jpg
 ---
 width: 60%
-figclass: sidebar-caption
+figclass: margin-caption
 alt: My figure text
 name: myfig5
 ---

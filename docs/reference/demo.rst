@@ -220,6 +220,18 @@ on the universe and of its action on the world of men. In relation to the univer
 creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage,
 of the ruler or leader of men, who through his power awakens and develops their higher nature.
 
+.. sidebar:: A more normal sidebar
+
+   The first hexagram is made up of six unbroken lines. These unbroken
+   lines stand for the primal power,    which is light-giving, active,
+   strong, and of the spirit.
+
+.. margin:: And here's a margin
+
+   The first hexagram is made up of six unbroken lines. These unbroken
+   lines stand for the primal power,    which is light-giving, active,
+   strong, and of the spirit.
+
 References
 ==========
 

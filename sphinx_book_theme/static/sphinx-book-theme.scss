@@ -128,13 +128,13 @@ main {
             margin: .5em 10%;
         }
 
-        &.sidebar, &.sidebar-caption {
+        &.sidebar, &.margin-caption {
             p.caption {
                 margin: .5em 0;
             }
         }
 
-        &.sidebar-caption p.caption {
+        &.margin-caption p.caption {
             text-align: left;
         }
 
@@ -201,22 +201,42 @@ div.cell {
     }
 }
 
+// Margin and content-sidebar rules
+div.sidebar {
+    width: 40%;
+    float: right;
+    border-left: 1px #a4a6a7 solid;
+    margin-left: 0.5em;
+    padding: .2em 0 .2em 1em;
+
+    p.sidebar-title {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
 
 // Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
 @media (min-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar, div.sidebar-caption p.caption {
-        float: right;
+    div.cell.tag_popout, div.cell.tag_sidebar, div.margin, div.margin-caption p.caption {
+        border: none;
         clear: right;
         width: 33% !important;
-        margin-right: -40% !important;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-right: 1em !important;
+        margin: 0 -40% 0 0 !important;
+        padding: 0 1em 0 0 !important;
         font-size: 0.9rem;
         line-height: 1.3;
         vertical-align: baseline;
         position: relative;
+
+        p.sidebar-title {
+            font-size: 1em;
+        }
     }
 
     // Make cell outputs take up more space if they're in the sidebar
@@ -225,13 +245,6 @@ div.cell {
     }
 }
 
-@media (max-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_sidebar, div.sidebar {
-        border-left: 3px solid #c3c3c3;
-        margin: 1em;
-        padding: .2em 1.5em;
-    }
-}
 
 @media (min-width: $breakpoint-md) {
     div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
@@ -260,6 +273,11 @@ blockquote {
         color: #6c757d;
         padding-right: 2em;
     }
+}
+
+// Code cells have background at the `pre` level so remove from here
+div.highlight {
+    background: none;
 }
 
 // Footnotes
@@ -519,7 +537,7 @@ button.topbarbtn img {
         margin-top: 1em;
     }
 
-    p.sidebar-caption {
+    p.margin-caption {
         margin-bottom: 0;
         font-size: 1.2em;
     }
@@ -622,7 +640,7 @@ nav.bd-links {
 * Print-specific CSS *
 *********************************************/
 @media print {
-    .tag_popout, div.sidebar {
+    .tag_popout, div.margin {
         float: right;
         clear: right;
         width: 50%;
