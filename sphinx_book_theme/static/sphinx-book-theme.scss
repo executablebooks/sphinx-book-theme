@@ -76,6 +76,7 @@ main.bd-content {
             &:hover {
                 background-color: transparent;
                 color: #0071bc;
+                opacity: 1 !important;
             }
         }
 
@@ -86,7 +87,7 @@ main.bd-content {
         h1, h2, h3, h4, h5 {
             color: black;
             &:hover a.headerlink {
-                opacity: 1;
+                opacity: .5;
             }
             // Make sure titles don't become hyperlink color when there are labels
             a.toc-backref {
