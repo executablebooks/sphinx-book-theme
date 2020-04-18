@@ -213,7 +213,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         )
 
     # Add HTML context variables that the pydata theme uses that we configure elsewhere
-    if pagename not in ["genindex", "modindex", "search"]:
+    if doctree:
         config_theme = app.config.html_theme_options
         repo_url = config_theme.get("repository_url", "")
         branch = config_theme.get("repository_branch", "")
