@@ -57,3 +57,4 @@ html_theme_options = {
     # "single_page": True
     # "number_toc_sections": True,
 }
+html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
