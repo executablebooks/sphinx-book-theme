@@ -347,14 +347,15 @@ dl.footnote {
 }
 
 // Download buttons
-div.dropdown-buttons-trigger {
-    span.dropdown-trigger-text {
-        margin-left: 0.4em;
+span.topbar-button-text {
+    margin-left: 0.4em;
 
-        @media (max-width: $breakpoint-md) {
-            display: none;
-        }
+    @media (max-width: $breakpoint-md) {
+        display: none;
     }
+}
+
+div.dropdown-buttons-trigger {
 
     div.dropdown-buttons {
         display: none;

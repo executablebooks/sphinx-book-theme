@@ -8,7 +8,7 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="dropdown-trigger-text">Download</span></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="topbar-button-text">Download</span></button>
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
                 {% if ipynb_source %}<a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ ipynb_source }}"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>{% endif %}
@@ -22,7 +22,7 @@
         <!-- Launch buttons -->
         {% if binder_url or jupyterhub_url or use_thebelab %}
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="dropdown-trigger-text">Launch</span></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-rocket"></i><span class="topbar-button-text">Launch</span></button>
             <div class="dropdown-buttons">
                 {% if binder_url %}
                 <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
@@ -36,6 +36,9 @@
             </div>
         </div>
         {% endif %}
+
+        <!-- Extra buttons -->
+        {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn"><i class="fas fa-pencil-alt"></i><span class="topbar-button-text">Edit</span></button></a>{% endif %}
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc {{ show_if_no_margin() }}">
         {%- include "docs-toc.html" %}

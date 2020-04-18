@@ -11,7 +11,9 @@ documentation's repository url:
 ```python
 html_theme_options = {
     ...
-    "repository_url": "https://github.com/{your-docs-url}"
+    "repository_url": "https://github.com/{your-docs-url}",
+    "repository_branch": "{your-branch}",
+    "path_to_docs": "{path-relative-to-site-root},
     ...
 }
 ```
