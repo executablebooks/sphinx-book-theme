@@ -5,6 +5,17 @@
 <!-- Put requirejs at the end so it's always after bootstrap -->
 <!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+{% if pageurl %}
+<!-- Opengraph tags -->
+<meta property="og:url"         content="{{ pageurl }}" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="{% if title %}{{ title }}{% else %}{{ docstitle }}{% endif %}" />
+<meta property="og:description" content="{{ page_description }}" />
+{% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
+
+<meta name="twitter:card" content="summary">
+{% endif %}
 {% endblock %}
 
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->

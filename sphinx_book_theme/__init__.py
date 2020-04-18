@@ -197,6 +197,21 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["show_if_no_margin"] = show_if_no_margin
     context["nav_to_html_list"] = nav_to_html_list
 
+    # Add a shortened page text to the context using the sections text
+    if doctree:
+        description = ""
+        for section in doctree.traverse(nodes.section):
+            description += section.astext().replace("\n", " ")
+        description = description[:160]
+        context["page_description"] = description
+
+    # Absolute URLs for logo if `html_baseurl` is given
+    # pageurl will already be set by Sphinx if so
+    if app.config.html_baseurl and app.config.html_logo:
+        context["logourl"] = "/".join(
+            (app.config.html_baseurl.rstrip("/"), "_static/" + context["logo"])
+        )
+
 
 def compile_scss():
     path_css_folder = Path(__file__).parent.joinpath("static")

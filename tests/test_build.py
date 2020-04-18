@@ -44,6 +44,11 @@ def test_build_book(tmpdir):
     assert '<p class="margin-caption">My caption</p>' in index_text
     # Explicitly expanded sections are expanded when not active
     assert "Section 1 page1</a>" in index_text
+    # Opengraph should not be in the HTML because we have no baseurl specified
+    assert (
+        '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
+        not in ntbk_text
+    )
     rmtree(path_build)
 
     # Check navbar numbering
@@ -68,4 +73,20 @@ def test_build_book(tmpdir):
     run(cmd, cwd=path_tmp_base, check=True)
     ntbk_text = path_ntbk.read_text()
     assert 'id="site-navigation"' not in ntbk_text
+    rmtree(path_build)
+
+    # opengraph is generated when baseurl is given
+    baseurl = "https://blah.com/foo/"
+    path_logo = path_tests.parent.joinpath("docs", "_static", "logo.png")
+    cmd = cmd_base + ["-D", f"html_baseurl={baseurl}", "-D", f"html_logo={path_logo}"]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = path_ntbk.read_text()
+    assert (
+        '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
+        in ntbk_text
+    )
+    assert (
+        '<meta property="og:image"       content="https://blah.com/foo/_static/logo.png" />'  # noqa E501
+        in ntbk_text
+    )
     rmtree(path_build)
