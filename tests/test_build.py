@@ -49,6 +49,8 @@ def test_build_book(tmpdir):
         '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
         not in ntbk_text
     )
+    # Edit button should not be on page
+    assert '<a class="edit-button"' not in index_text
     rmtree(path_build)
 
     # Check navbar numbering
@@ -85,8 +87,15 @@ def test_build_book(tmpdir):
         '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
         in ntbk_text
     )
+    assert '<meta property="og:image"       content="https://blah.com/foo/_static/logo.png" />'  # noqa E501
+    rmtree(path_build)
+
+    # Test edit button
+    cmd = cmd_base + ["-D", "html_theme_options.use_edit_page_button=True"]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = path_ntbk.read_text()
     assert (
-        '<meta property="og:image"       content="https://blah.com/foo/_static/logo.png" />'  # noqa E501
+        '<a class="edit-button" href="https://github.com/ExecutableBookProject/sphinx-book-theme/edit/master/TESTPATH/section1/ntbk.ipynb">'  # noqa E501
         in ntbk_text
     )
     rmtree(path_build)

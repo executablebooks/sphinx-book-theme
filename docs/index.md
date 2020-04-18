@@ -14,7 +14,8 @@ structure and configuration.
 ```{toctree}
 :maxdepth: 1
 :caption: Main docs
-Page elements and configuration <layout>
+configure
+Controlling page elements <layout>
 notebooks
 launch
 GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>

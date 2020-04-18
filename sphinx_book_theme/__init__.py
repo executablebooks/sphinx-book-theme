@@ -212,6 +212,36 @@ def add_to_context(app, pagename, templatename, context, doctree):
             (app.config.html_baseurl.rstrip("/"), "_static/" + context["logo"])
         )
 
+    # Add HTML context variables that the pydata theme uses that we configure elsewhere
+    if pagename not in ["genindex", "modindex", "search"]:
+        config_theme = app.config.html_theme_options
+        repo_url = config_theme.get("repository_url", "")
+        branch = config_theme.get("repository_branch", "")
+        relpath = config_theme.get("path_to_docs", "")
+        org, repo = repo_url.strip("/").split("/")[-2:]
+        context.update(
+            {
+                "github_user": org,
+                "github_repo": repo,
+                "github_version": branch,
+                "doc_path": relpath,
+            }
+        )
+
+    # Make sure the context values are bool
+    for key in ["theme_use_edit_page_button"]:
+        if key in context:
+            context[key] = _string_or_bool(context[key])
+
+
+def _string_or_bool(var):
+    if isinstance(var, str):
+        return var.lower() == "true"
+    elif isinstance(var, bool):
+        return var
+    else:
+        return var is None
+
 
 def compile_scss():
     path_css_folder = Path(__file__).parent.joinpath("static")
