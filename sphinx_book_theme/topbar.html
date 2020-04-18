@@ -9,6 +9,8 @@
         </button>
         <div class="dropdown-buttons-trigger">
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i><span class="topbar-button-text">Download</span></button>
+
+            {% if page_source_suffix %}
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
                 {% if ipynb_source %}<a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ ipynb_source }}"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>{% endif %}
@@ -17,6 +19,7 @@
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
             </div>
+            {% endif %}
         </div>
 
         <!-- Launch buttons -->

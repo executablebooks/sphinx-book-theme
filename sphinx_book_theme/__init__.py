@@ -213,7 +213,8 @@ def add_to_context(app, pagename, templatename, context, doctree):
         )
 
     # Add HTML context variables that the pydata theme uses that we configure elsewhere
-    if pagename not in ["genindex", "modindex", "search"]:
+    # For some reason the source_suffix sometimes isn't there even when doctree is
+    if doctree and context.get("page_source_suffix"):
         config_theme = app.config.html_theme_options
         repo_url = config_theme.get("repository_url", "")
         branch = config_theme.get("repository_branch", "")
@@ -227,6 +228,9 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 "doc_path": relpath,
             }
         )
+    else:
+        # Disable using the button so we don't get errors
+        context["theme_use_edit_page_button"] = False
 
     # Make sure the context values are bool
     for key in ["theme_use_edit_page_button"]:
