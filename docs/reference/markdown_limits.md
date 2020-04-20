@@ -352,45 +352,6 @@ And here is my figure caption
 We can reference the figure with {ref}`myfig3`. Or a numbered reference like
 {numref}`myfig3`.
 
-### Margin figure captions
-
-There are a few theme-specific figure configurations. Here is a figure with
-a caption to the right.
-
-```{figure} ../images/cool.jpg
----
-width: 60%
-figclass: margin-caption
-alt: My figure text
-name: myfig5
----
-And here is my figure caption
-```
-
-We can reference the figure with {ref}`myfig5`. Or a numbered reference like
-{numref}`myfig5`.
-
-And here is a figure with a caption below. We'll add a note below to create
-some vertical space to see better.
-
-```{figure} ../images/cool.jpg
----
-figclass: margin
-alt: My figure text
-name: myfig4
----
-And here is my figure caption
-```
-
-We can reference the figure with {ref}`myfig4`. Or a numbered reference like
-{numref}`myfig4`.
-
-
-
-### Custom layout items
-
-
-
 ### Really wide content
 
 Here's how really wide content alters the page:

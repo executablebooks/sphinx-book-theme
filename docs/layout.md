@@ -83,6 +83,39 @@ Wow, a note with an image in a margin!
 ````
 `````
 
+### Margin figure captions
+
+There are a few theme-specific figure configurations. Here is a figure with
+a caption to the right.
+
+```{figure} images/cool.jpg
+---
+width: 60%
+figclass: margin-caption
+alt: My figure text
+name: myfig5
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig5`. Or a numbered reference like
+{numref}`myfig5`.
+
+And here is a figure with a caption below. We'll add a note below to create
+some vertical space to see better.
+
+```{figure} images/cool.jpg
+---
+figclass: margin
+alt: My figure text
+name: myfig4
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig4`. Or a numbered reference like
+{numref}`myfig4`.
+
 ## Full-width content
 
 Full-width content extends into the right margin, making it stand out against
@@ -178,11 +211,11 @@ but I'll stop here.
 ````
 `````
 
-## Controlling the left table of contents
+## Controlling the left nav bar
 
-You can control some elements of the left table of contents. Here are the main features:
+You can control some elements of the navigation bar. Here are the main features:
 
-### Expand sections of your TOC
+### Expand sections of your navbar
 
 To make all sub-pages of the left Table of Contents expanded, add `:expand_sections:` to the
 `toctree` for that section.
