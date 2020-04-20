@@ -286,6 +286,8 @@ button.topbarbtn img {
     padding: .5rem 0 .5rem 1rem !important; }
   .bd-toc .toc-entry a {
     padding: .125rem 1rem !important; }
+  .bd-toc div.editthispage {
+    display: none; }
 
 /*********************************************
 * Left Nav Bar *
