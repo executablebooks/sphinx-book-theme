@@ -113,15 +113,15 @@ div.cell.tag_output_scroll div.cell_output {
   max-height: 24em;
   overflow-y: auto; }
 
-div.sidebar {
+div.sidebar, div.margin, div.margin-caption p.caption {
   width: 40%;
   float: right;
   border-left: 1px #a4a6a7 solid;
   margin-left: 0.5em;
   padding: .2em 0 .2em 1em; }
-  div.sidebar p {
+  div.sidebar p, div.margin p, div.margin-caption p.caption p {
     margin-bottom: 0; }
-  div.sidebar p.sidebar-title {
+  div.sidebar p.sidebar-title, div.margin p.sidebar-title, div.margin-caption p.caption p.sidebar-title {
     font-weight: bold;
     font-size: 1.2em; }
 
@@ -286,6 +286,8 @@ button.topbarbtn img {
     padding: .5rem 0 .5rem 1rem !important; }
   .bd-toc .toc-entry a {
     padding: .125rem 1rem !important; }
+  .bd-toc div.editthispage {
+    display: none; }
 
 /*********************************************
 * Left Nav Bar *

@@ -214,7 +214,7 @@ div.cell {
 }
 
 // Margin and content-sidebar rules
-div.sidebar {
+div.sidebar, div.margin, div.margin-caption p.caption {
     width: 40%;
     float: right;
     border-left: 1px #a4a6a7 solid;
@@ -232,7 +232,7 @@ div.sidebar {
 }
 
 
-// Right sidebar CSS, largely copied from https://edwardtufte.github.io/tufte-css/
+// Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
 @media (min-width: $breakpoint-md) {
     div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
@@ -493,6 +493,11 @@ button.topbarbtn img {
 
     .toc-entry a {
         padding: .125rem 1rem !important;
+    }
+
+    // Make sure the pydata sphinx theme edit button doesn't show up
+    div.editthispage {
+        display: none;
     }
 }
 
