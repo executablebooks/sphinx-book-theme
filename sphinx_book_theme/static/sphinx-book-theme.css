@@ -17,8 +17,8 @@ code {
 *********************************************/
 @media (min-width: 1500px) {
   .col-xxl-7 {
-    flex: 0 0 58.33333% !important;
-    max-width: 58.33333% !important;
+    flex: 0 0 61% !important;
+    max-width: 61% !important;
     position: relative !important;
     width: 100% !important;
     padding-right: 15px !important;
@@ -113,15 +113,15 @@ div.cell.tag_output_scroll div.cell_output {
   max-height: 24em;
   overflow-y: auto; }
 
-div.sidebar, div.margin, div.margin-caption p.caption {
+div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.tag_margin {
   width: 40%;
   float: right;
   border-left: 1px #a4a6a7 solid;
   margin-left: 0.5em;
   padding: .2em 0 .2em 1em; }
-  div.sidebar p, div.margin p, div.margin-caption p.caption p {
+  div.sidebar p, div.margin p, div.margin-caption p.caption p, .cell.tag_popout p, .cell.tag_margin p {
     margin-bottom: 0; }
-  div.sidebar p.sidebar-title, div.margin p.sidebar-title, div.margin-caption p.caption p.sidebar-title {
+  div.sidebar p.sidebar-title, div.margin p.sidebar-title, div.margin-caption p.caption p.sidebar-title, .cell.tag_popout p.sidebar-title, .cell.tag_margin p.sidebar-title {
     font-weight: bold;
     font-size: 1.2em; }
 
@@ -129,9 +129,9 @@ div.sidebar, div.margin, div.margin-caption p.caption {
   div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
     border: none;
     clear: right;
-    width: 33% !important;
-    margin: 0 -40% 0 0 !important;
-    padding: 0 1em 0 0 !important;
+    width: 32% !important;
+    margin: 0 -38% 0 0 !important;
+    padding: 0 !important;
     font-size: 0.9rem;
     line-height: 1.3;
     vertical-align: baseline;
@@ -145,7 +145,7 @@ div.sidebar, div.margin, div.margin-caption p.caption {
 
 @media (min-width: 768px) {
   div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
-    width: 134% !important; } }
+    width: 136% !important; } }
 
 blockquote {
   margin: 1em;
@@ -389,6 +389,10 @@ nav.bd-links {
   nav.bd-links ul.nav ul {
     padding-left: 1rem !important;
     padding-right: 0rem !important; }
+
+@media (min-width: 768px) {
+  .bd-sidebar, .bd-topbar-whitespace {
+    max-width: 275px; } }
 
 /*********************************************
 * Footer *
