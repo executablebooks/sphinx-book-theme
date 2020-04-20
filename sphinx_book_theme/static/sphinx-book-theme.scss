@@ -32,8 +32,8 @@ code {
 // Custom XXL breakpoint
 @media (min-width: $breakpoint-xxl) {
     .col-xxl-7 {
-        flex: 0 0 58.33333% !important;
-        max-width: 58.33333% !important;
+        flex: 0 0 61% !important;
+        max-width: 61% !important;
         position: relative !important;
         width: 100% !important;
         padding-right: 15px !important;
@@ -214,7 +214,8 @@ div.cell {
 }
 
 // Margin and content-sidebar rules
-div.sidebar, div.margin, div.margin-caption p.caption {
+// Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
+div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.tag_margin {
     width: 40%;
     float: right;
     border-left: 1px #a4a6a7 solid;
@@ -238,9 +239,9 @@ div.sidebar, div.margin, div.margin-caption p.caption {
     div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
         border: none;
         clear: right;
-        width: 33% !important;
-        margin: 0 -40% 0 0 !important;
-        padding: 0 1em 0 0 !important;
+        width: 32% !important;
+        margin: 0 -38% 0 0 !important;
+        padding: 0 !important;
         font-size: 0.9rem;
         line-height: 1.3;
         vertical-align: baseline;
@@ -266,7 +267,7 @@ div.sidebar, div.margin, div.margin-caption p.caption {
 
 @media (min-width: $breakpoint-md) {
     div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
-        width: 134% !important;
+        width: 136% !important;
     }
 }
 
@@ -667,6 +668,14 @@ nav.bd-links {
         padding-right: 0rem !important;
     }
 }
+
+// Navbar and topbar sidebar padding should max at 300px
+@media (min-width: $breakpoint-md) {
+    .bd-sidebar, .bd-topbar-whitespace {
+        max-width: 275px;
+    }
+}
+
 
 /*********************************************
 * Footer *
