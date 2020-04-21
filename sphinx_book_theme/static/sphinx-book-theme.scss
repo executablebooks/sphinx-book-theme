@@ -632,12 +632,17 @@ div.navbar-brand-box {
 
     a.navbar-brand {
         width: 100%;
+        height: auto;
 
         img {
-            max-height: 100px !important;
+            min-height: 100px;
+            max-height:10vh;
             margin: 0 auto;
             display: block;
             height: auto !important;
+            @media (min-width: $breakpoint-md) {
+                max-height: 15vh !important;
+            }
         }
     }
 }
