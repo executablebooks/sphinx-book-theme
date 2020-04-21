@@ -3,11 +3,43 @@
 There are a number of ways to configure `sphinx-book-theme`. This page covers some of the main ways
 to do so. It also serves as a reference to make sure that visual elements look correct
 
-## Sidebar content
+## Sidebars
 
-You can also specify content that should exist in the sidebar. This content
-will be placed to the right, allowing it to exist separately from your main
-content. To add sidebar content, use this syntax:
+There are two different kinds of sidebar-like content in `sphinx-book-theme`,
+typical `{sidebar}` directives, as well as a theme-specific `{margin}` directive.
+This section covers both. Both allow you to place extra content
+separately from your main content.
+
+### Margins
+
+You can specify content that should exist in the right margin. This will behave
+like a regular sidebar until the screen hits a certain width, at which point this
+content will "pop out" to the right white space. To add margin content, use this syntax:
+
+````
+```{margin} **My margin title**
+Here is my margin content, it is pretty cool!
+```
+````
+
+```{margin} **Here is my margin content**
+It is pretty cool!
+```
+
+### Content sidebars
+
+Content sidebars exist in-line with your text, but allow the rest of the
+page to flow around them, rather than moving to the right margin.
+To add content sidebars, use this syntax:
+
+```{sidebar} **My sidebar title**
+Here is my sidebar content, it is pretty cool!
+```
+
+Note how the content wraps around the sidebar to the right.
+However, the sidebar text will still be in line with your content. There are
+certain kinds of elements, such as "note" blocks and code cells, that may
+clash with your sidebar. If this happens, try using a `{margin}` instead.
 
 ````
 ```{sidebar} **My sidebar title**
@@ -15,22 +47,18 @@ Here is my sidebar content, it is pretty cool!
 ```
 ````
 
-```{sidebar} **Here is my sidebar content**
-It is pretty cool!
-```
+### Adding content to margins and sidebars
 
-### Adding content to sidebars
+Sidebar/margin content can include all kinds of things, such as code blocks:
 
-Sidebar content can include all kinds of things, such as code blocks:
-
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
 ````
 
 `````
-````{sidebar} Code blocks in sidebars
+````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
@@ -39,85 +67,80 @@ print("here is some python")
 
 as well as admonitions and images:
 
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in margins**
 ```{note}
-Wow, a note with an image in a sidebar!
+Wow, a note with an image in a margin!
 ![](images/cool.jpg)
 ```
 ````
 
 `````
-````{sidebar} **Notes in sidebars**
+````{margin} **Notes in margins**
 ```{note}
-Wow, a note with an image in a sidebar!
+Wow, a note with an image in a margin!
 ![](images/cool.jpg)
 ```
 ````
 `````
+
+### Margin figure captions
+
+There are a few theme-specific figure configurations. Here is a figure with
+a caption to the right.
+
+```{figure} images/cool.jpg
+---
+width: 60%
+figclass: margin-caption
+alt: My figure text
+name: myfig5
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig5`. Or a numbered reference like
+{numref}`myfig5`.
+
+And here is a figure with a caption below. We'll add a note below to create
+some vertical space to see better.
+
+```{figure} images/cool.jpg
+---
+figclass: margin
+alt: My figure text
+name: myfig4
+---
+And here is my figure caption
+```
+
+We can reference the figure with {ref}`myfig4`. Or a numbered reference like
+{numref}`myfig4`.
 
 ## Full-width content
 
+Full-width content extends into the right margin, making it stand out against
+the rest of your book's content. To add full-width content to your page, add the
+class `full-width` to any of the elements in your documentation. For example, you can
+add a `full-width` tag to a note element like this:
+
+````
 ```{note}
-:class: tag_full_width
-This is my test
+:class: full-width
+This content will be full-width
+```
+````
+
+This code results in the following output:
+
+```{note}
+:class: full-width
+This content will be full-width
 ```
 
-Let's see what happens.
-
-## Launch buttons with Binder and JupyterHub
-
-You can automatically add Binder and JupyterHub links to pages that were build from
-notebooks. This lets users quickly click to interact with your documentation's content.
-
-To use either Binder or JupyterHub links, you'll first need to configure your
-documentation's repository url:
-
-```python
-html_theme_options = {
-    ...
-    "repository_url": "https://github.com/{your-docs-url}"
-    ...
-}
-```
-
-**To add Binder links** to your page, next add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "binderhub_url": "https://{your-binderhub-url}"
-    ...
-}
-```
-
-**To add JupyterHub links** to your page, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "jupyterhub_url": "https://{your-binderhub-url}"
-    ...
-}
-```
-
-**To configure a relative path to your documentation**, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "path_to_docs" = "{path-relative-to-repo-root}"
-    ...
-}
-```
-
-**To control the user interface that is opened with links**, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "notebook_interface": "jupyterlab",
-    ...
-}
+```{margin} A note for ipynb users
+If you are using a Jupyter Notebook as inputs to your documentation using the
+[MyST-NB extension](https://myst-nb.readthedocs.io/en/latest/), you can trigger
+this behavior with a code cell by adding a `full-width` tag to the cell.
 ```
 
 ## Quotations and epigraphs
@@ -188,11 +211,11 @@ but I'll stop here.
 ````
 `````
 
-## Controlling the left table of contents
+## Controlling the left nav bar
 
-You can control some elements of the left table of contents. Here are the main features:
+You can control some elements of the navigation bar. Here are the main features:
 
-### Expand sections of your TOC
+### Expand sections of your navbar
 
 To make all sub-pages of the left Table of Contents expanded, add `:expand_sections:` to the
 `toctree` for that section.
@@ -202,7 +225,50 @@ To make all sub-pages of the left Table of Contents expanded, add `:expand_secti
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`
 in your `toctree` directive for that section.
 
-### Add a divider to your TOC
+### Adding the home page to your TOC
 
-If you'd like to add a divider above a section of TOC links, use `:divider:`
-in your `toctree` directive for that section.
+If you'd like to have the home page listed in your TOC links, use the following
+configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "home_page_in_toc": True
+    ...
+}
+```
+
+### Numbering your TOC sections
+
+If you'd like to number your Table of Contents sections, use the following
+configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "number_toc_sections": True
+    ...
+}
+```
+
+Note: external links will be skipped in numbering.
+
+## Add metadata open graph tags to your site
+
+OpenGraph tags can be used to generate previews and descriptions of your
+website. These will be automatically generated based on your page's content
+and title. However, generating them requires knowing the full URL of your
+website ahead of time.
+
+To enable metadata tags for your documentation, use the following
+configuration in `conf.py`:
+
+```python
+html_baseurl = "https://<your-site-baseurl>"
+```
+
+For example, the value of this field for this documentation is:
+
+```python
+html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+```

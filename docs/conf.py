@@ -11,7 +11,7 @@ master_doc = "index"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser", "myst_nb", "sphinx_copybutton", "sphinx_togglebutton"]
+extensions = ["myst_nb", "sphinx_copybutton", "sphinx_togglebutton"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -21,6 +21,7 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
 
+numfig = True
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -44,10 +45,17 @@ jupyter_execute_notebooks = "cache"
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
+    "repository_branch": "master",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "jupyterhub_url": "https://datahub.berkeley.edu",
         "notebook_interface": "jupyterlab",
-    }
+        "thebelab": True,
+    },
+    "use_edit_page_button": True,
+    # For testing
+    # "home_page_in_toc": True,
     # "single_page": True
+    # "number_toc_sections": True,
 }
+html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"

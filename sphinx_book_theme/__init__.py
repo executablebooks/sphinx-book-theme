@@ -3,18 +3,18 @@ from pathlib import Path
 import docutils
 from myst_nb.parser import CellNode
 from docutils.parsers.rst import directives
+from docutils import nodes
 from sphinx.util import logging
+from sphinx import addnodes
 from sphinx.directives.other import TocTree
 from sphinx.util.nodes import explicit_title_re
 import sass
 
+from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
+
 __version__ = "0.0.1dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
-EXTRA_TOC_OPTIONS = {
-    "expand_sections": directives.flag,
-    "caption": directives.unchanged_required,
-    "divider": directives.flag,
-}
+EXTRA_TOC_OPTIONS = {"expand_sections": directives.flag}
 
 
 def get_html_theme_path():
@@ -51,26 +51,48 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-    def shrink_if_sidebar():
-        out = ""
+    def show_if_no_margin():
+        # By default we'll show, unless there are margin items
+        out = "show"
+        # Check for margin items in this doctree
         if doctree is not None:
-            sidebar_elements = doctree.traverse(docutils.nodes.sidebar)
+
+            def is_margin(node):
+                return isinstance(
+                    node, docutils.nodes.sidebar
+                ) and "margin" in node.attributes.get("classes", [])
+
+            margin_elements = doctree.traverse(is_margin)
             cell_containers = list(doctree.traverse(CellNode))
             popout_tags = [
                 cl
                 for cell in cell_containers
                 for cl in cell.attributes["classes"]
-                if "tag_popout" == cl
+                if any(ii == cl for ii in ["tag_popout", "tag_margin"])
             ]
-            if any(len(ii) > 0 for ii in [sidebar_elements, popout_tags]):
-                out = "col-xl-9"
+            # If we found margin elements, then we won't show
+            if any(len(ii) > 0 for ii in [margin_elements, popout_tags]):
+                out = ""
         return out
 
-    def nav_to_html_list(nav, level=1, include_item_names=False):
+    def nav_to_html_list(
+        nav,
+        level=1,
+        include_item_names=False,
+        with_home_page=False,
+        number_sections=False,
+    ):
+        # In case users give a string configuration
+        if isinstance(number_sections, str):
+            number_sections = number_sections.lower() == "true"
+        if isinstance(with_home_page, str):
+            with_home_page = with_home_page.lower() == "true"
+
         if len(nav) == 0:
             return ""
         # Lists of pages where we want to trigger extra TOC behavior
         extra_toc = app.env.jb_extra_toc_info
+
         # And a function we'll use to parse it
         def lookup_extra_toc(pagename, extra_toc_list, kind="parent"):
             for first_child_page, parent_page, val in extra_toc_list:
@@ -82,37 +104,68 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 if str(pagename) == lookup_page:
                     return val
 
+        # Figure out the top-lever pages that need a TOC in front of them
+        master_toctrees = app.env.tocs[app.env.config["master_doc"]]
+        toc_captions = []
+        for master_toctree in master_toctrees.traverse(addnodes.toctree):
+            if master_toctree.attributes.get("caption"):
+                caption = master_toctree.attributes.get("caption")
+                toctree_first_page = master_toctree.attributes["entries"][0][
+                    1
+                ]  # Entries are (title, ref) pairs
+                toc_captions.append((toctree_first_page, caption))
+
+        # Add the master_doc page as the first item if specified
+        if with_home_page:
+            master_doc = app.env.config["master_doc"]
+            master_doctree = app.env.get_doctree(master_doc)
+            master_url = context["pathto"](master_doc)
+            master_title = list(master_doctree.traverse(nodes.title))[0].astext()
+            nav.insert(
+                0,
+                {
+                    "title": master_title,
+                    "url": master_url,
+                    "active": pagename == master_doc,
+                    "children": [],
+                },
+            )
+
         ul = [f'<ul class="nav sidenav_l{level}">']
         # If we don't include parents, next `ul` should be the same level
+        ii_num = 1
         next_level = level + 1 if include_item_names else level
         for child in nav:
             # If we're not rendering title names and have no children, skip
             if (child is None) or not (include_item_names or child["children"]):
                 continue
 
-            # Add captions and dividers if so-given
+            # Add captions if so-given
             page_rel_root = find_url_relative_to_root(
                 pagename, child["url"], app.srcdir
             )
-            divider = lookup_extra_toc(page_rel_root, extra_toc["divider"], "child")
-            caption = lookup_extra_toc(page_rel_root, extra_toc["caption"], "child")
-            if any((divider, caption)):
-                ul.append('<li class="sidebar-special">')
-                if divider:
-                    ul.append("<hr />")
-                if caption:
-                    # TODO: whenever pydata-sphinx-theme gets support for captions, we should just use that and remove this
-                    ul.append(f'<p class="sidebar-caption">{caption}</p>')
-                ul.append("</li>")
+            for caption_page, caption_text in toc_captions:
+                if caption_page == str(page_rel_root):
+                    ul.append('<li class="navbar-special">')
+                    if caption:
+                        # TODO: whenever pydata-sphinx-theme gets support for captions
+                        #       we should just use that and remove this
+                        ul.append(f'<p class="margin-caption">{caption_text}</p>')
+                    ul.append("</li>")
 
             # Now begin rendering the links
             active = "active" if child["active"] else ""
             ul.append("  " + f'<li class="{active}">')
             # Render links for the top-level names if we wish
             if include_item_names:
-                ul.append(
-                    "  " * 2 + f'<a href="{ child["url"] }">{ child["title"] }</a>'
-                )
+                item_title = child["title"]
+                if number_sections and not child["url"].startswith("http"):
+                    item_title = f"{ii_num}. {item_title}"
+                    ii_num += 1
+                if child["url"].startswith("http"):
+                    # Add an external icon for external navbar links
+                    item_title += '<i class="fas fa-external-link-alt"></i>'
+                ul.append("  " * 2 + f'<a href="{child["url"]}">{item_title}</a>')
 
             # Check whether we should expand children if it was given in the toctree
             if child["children"]:
@@ -126,7 +179,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if active and child["children"]:
                 # Always include the names of the children
                 child_list = nav_to_html_list(
-                    child["children"], level=next_level, include_item_names=True
+                    child["children"],
+                    level=next_level,
+                    include_item_names=True,
+                    number_sections=number_sections,
                 )
                 ul.append(child_list)
             ul.append("  " + "</li>")
@@ -138,77 +194,71 @@ def add_to_context(app, pagename, templatename, context, doctree):
         ul = "\n".join(ul)
         return ul
 
-    context["shrink_if_sidebar"] = shrink_if_sidebar
+    context["show_if_no_margin"] = show_if_no_margin
     context["nav_to_html_list"] = nav_to_html_list
 
+    # Add a shortened page text to the context using the sections text
+    if doctree:
+        description = ""
+        for section in doctree.traverse(nodes.section):
+            description += section.astext().replace("\n", " ")
+        description = description[:160]
+        context["page_description"] = description
 
-def add_hub_urls(app, pagename, templatename, context, doctree):
-    """Builds a binder link and inserts it in HTML context for use in templating."""
-
-    NTBK_EXTENSIONS = [".ipynb"]
-
-    # First decide if we'll insert any links
-    path = app.env.doc2path(pagename)
-    extension = Path(path).suffix
-
-    # If so, insert the URLs depending on the configuration
-    config_theme = app.config["html_theme_options"]
-    launch_buttons = config_theme.get("launch_buttons", {})
-    if not launch_buttons or (extension not in NTBK_EXTENSIONS):
-        return
-
-    repo_url = config_theme.get("repository_url")
-    if not repo_url:
-        raise ValueError(
-            f"You must provide the key: `repo_url` to add Binder/JupyterHub buttons."
+    # Absolute URLs for logo if `html_baseurl` is given
+    # pageurl will already be set by Sphinx if so
+    if app.config.html_baseurl and app.config.html_logo:
+        context["logourl"] = "/".join(
+            (app.config.html_baseurl.rstrip("/"), "_static/" + context["logo"])
         )
-    if "github.com" in repo_url:
-        end = repo_url.split("github.com/")[-1]
-        org, repo = end.split("/")[:2]
+
+    # Add HTML context variables that the pydata theme uses that we configure elsewhere
+    # For some reason the source_suffix sometimes isn't there even when doctree is
+    if doctree and context.get("page_source_suffix"):
+        config_theme = app.config.html_theme_options
+        repo_url = config_theme.get("repository_url", "")
+        branch = config_theme.get("repository_branch", "")
+        relpath = config_theme.get("path_to_docs", "")
+        org, repo = repo_url.strip("/").split("/")[-2:]
+        context.update(
+            {
+                "github_user": org,
+                "github_repo": repo,
+                "github_version": branch,
+                "doc_path": relpath,
+            }
+        )
     else:
-        SPHINX_LOGGER.warning(
-            f"Currently Binder/JupyterHub repositories must be on GitHub, got {repo_url}"
-        )
-        return
+        # Disable using the button so we don't get errors
+        context["theme_use_edit_page_button"] = False
 
-    # Construct the extra URL parts (app and relative path)
-    notebook_interface_prefixes = {"classic": "tree", "jupyterlab": "lab/tree"}
-    notebook_interface = launch_buttons.get("notebook_interface", "classic")
-    if notebook_interface not in notebook_interface_prefixes:
-        raise ValueError(
-            (
-                "Notebook UI for Binder/JupyterHub links must be one"
-                f"of {tuple(notebook_interface_prefixes.keys())}, not {notebook_interface}"
-            )
-        )
-    ui_pre = notebook_interface_prefixes[notebook_interface]
+    # Make sure the context values are bool
+    for key in ["theme_use_edit_page_button"]:
+        if key in context:
+            context[key] = _string_or_bool(context[key])
 
-    # Construct a path to the file relative to the repository root
-    book_relpath = config_theme.get("path_to_docs", "").strip("/")
-    if book_relpath != "":
-        book_relpath += "/"
-    path_rel_repo = f"{book_relpath}{pagename}{extension}"
 
-    # Now build infrastructure-specific links
-    jupyterhub_url = launch_buttons.get("jupyterhub_url")
-    binderhub_url = launch_buttons.get("binderhub_url")
-    if binderhub_url:
-        url = f"{binderhub_url}/v2/gh/{org}/{repo}/master?urlpath={ui_pre}/{path_rel_repo}"
-        context["binder_url"] = url
-
-    if jupyterhub_url:
-        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
-        context["jupyterhub_url"] = url
+def _string_or_bool(var):
+    if isinstance(var, str):
+        return var.lower() == "true"
+    elif isinstance(var, bool):
+        return var
+    else:
+        return var is None
 
 
 def compile_scss():
     path_css_folder = Path(__file__).parent.joinpath("static")
-    scss = path_css_folder.joinpath("jupyterbook.scss")
+    scss = path_css_folder.joinpath("sphinx-book-theme.scss")
     css = sass.compile(filename=str(scss))
-    path_css_folder.joinpath("jupyterbook.css").write_text(css)
+    path_css_folder.joinpath("sphinx-book-theme.css").write_text(css)
 
 
 class NewTocTree(TocTree):
+    """A monkey-patch of the TocTree so we can intercept extra keywords
+    without raising Sphinx errors.
+    """
+
     newtoctree_spec = TocTree.option_spec.copy()
     newtoctree_spec.update(EXTRA_TOC_OPTIONS)
     option_spec = newtoctree_spec
@@ -229,6 +279,24 @@ class NewTocTree(TocTree):
         return msg_nodes
 
 
+class Margin(directives.body.Sidebar):
+    """Goes in the margin to the right of the page."""
+
+    optional_arguments = 1
+    required_arguments = 0
+
+    def run(self):
+        if not self.arguments:
+            self.arguments = [""]
+        nodes = super().run()
+        nodes[0].attributes["classes"].append("margin")
+
+        # Remove the "title" node if it is empty
+        if not self.arguments:
+            nodes[0].children.pop(0)
+        return nodes
+
+
 def setup(app):
     compile_scss()
 
@@ -236,7 +304,15 @@ def setup(app):
     app.connect("html-page-context", add_hub_urls)
 
     app.connect("builder-inited", add_static_path)
+
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
+    app.add_js_file("sphinx-book-theme.js")
     directives.register_directive("toctree", NewTocTree)
+    app.add_directive("margin", Margin)
+
     app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
+
+    # Include Thebelab for interactive code if it's enabled
+    app.connect("env-before-read-docs", init_thebelab_core)
+    app.connect("doctree-resolved", update_thebelab_context)

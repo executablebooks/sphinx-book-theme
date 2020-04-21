@@ -9,15 +9,22 @@ It relies on [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/int
 via the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
 structure and configuration.
 
+## Site contents
+
 ```{toctree}
 :maxdepth: 1
 :caption: Main docs
-Page elements and configuration <layout>
+configure
+Controlling page elements <layout>
 notebooks
+launch
+GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>
 ```
+
+## Reference pages
+
 ```{toctree}
-:divider:
 :caption: Reference items
-demochapter1/index
-limits
+:expand_sections:
+reference/index
 ```

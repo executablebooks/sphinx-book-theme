@@ -1,23 +1,46 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 
+{% block extrahead %}
+{{ super() }}
+<!-- Put requirejs at the end so it's always after bootstrap -->
+<!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+
+{% if pageurl %}
+<!-- Opengraph tags -->
+<meta property="og:url"         content="{{ pageurl }}" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="{% if title %}{{ title }}{% else %}{{ docstitle }}{% endif %}" />
+<meta property="og:description" content="{{ page_description }}" />
+{% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
+
+<meta name="twitter:card" content="summary">
+{% endif %}
+{% endblock %}
+
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}
-{% if theme_single_page != True %}
-<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+{% if (theme_single_page != True) and (theme_single_page != "True") %}
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     {% include "sidebar.html" %}
-</div>    
+</div>
 {%- endif %}
 {% endblock %}
 
+{% set single_page = "" %}
+{% if theme_single_page == True %}
+{% set single_page = " single-page" %}
+{% endif %}
+
 {% block docs_main %}
-<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto{{ single_page }}" role="main">
     {% block docs_body %}
     {% if theme_single_page != True %}
       {% include "topbar.html" %}
     {% endif %}
     <div id="main-content" class="row">
-        <div class="col-12 {{ shrink_if_sidebar() }}">
+        <div class="col-12 col-md-9 col-xxl-7 pl-md-3 pr-md-0">
         {{ super() }}
         </div>
     </div>
@@ -32,19 +55,9 @@
 {% endblock %}
 
 {% block docs_toc %}
-<div class="d-none d-xl-block col-xl-2 bd-toc">
-    {%- include "docs-toc.html" %}
-</div>
 {% endblock %}
 
 {% block docs_navbar %}
-<div class='top'>
-<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
-    <i class="fas fa-bars"></i>
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-arrow-up"></i>
-</button>
-</div>
 {%- endblock %}
 
 {%- block footer %}

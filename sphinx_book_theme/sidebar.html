@@ -10,11 +10,12 @@
 </div>
 
 <form class="bd-search d-flex align-items-center" action="{{ pathto('search') }}" method="get">
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="{{ theme_search_bar_text }}" aria-label="{{ theme_search_bar_text }}" autocomplete="off" >
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   {% set nav = get_nav_object(maxdepth=3, collapse=False) %}
-  {{ nav_to_html_list(nav, include_item_names=True) }}
+  {{ nav_to_html_list(nav, include_item_names=True, with_home_page=theme_home_page_in_toc, number_sections=theme_number_toc_sections) }}
 </nav>
-<p class="sidebar_footer">{{ theme_sidebar_footer_text }}</p>
+<p class="navbar_footer">{{ theme_navbar_footer_text }}</p>

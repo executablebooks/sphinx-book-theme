@@ -3,11 +3,10 @@ from pathlib import Path
 
 version = [
     line
-    for line in Path("sphinx_book_theme/__init__.py").read_text().split()
+    for line in Path("sphinx_book_theme/__init__.py").read_text().split("\n")
     if "__version__" in line
 ]
-version = version[0].split(" = ")[-1]
-
+version = version[0].split(" = ")[-1].strip('"')
 setup(
     name="sphinx-book-theme",
     version=version,
@@ -38,6 +37,7 @@ setup(
         "pydata-sphinx-theme",
     ],
     extras_require={
+        "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
         "sphinx": [
             "folium",
             "numpy",
@@ -47,8 +47,17 @@ setup(
             "nbclient",
             "myst-parser",
             "myst-nb",
+            "sphinx-togglebutton",
+            "sphinx-copybutton",
+            "plotly",
         ],
-        "testing": ["coverage", "pytest>=3.6,<4", "pytest-cov", "beautifulsoup4"],
+        "testing": [
+            "coverage",
+            "pytest>=3.6,<4",
+            "pytest-cov",
+            "beautifulsoup4",
+            "pytest-regressions",
+        ],
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     package_data={

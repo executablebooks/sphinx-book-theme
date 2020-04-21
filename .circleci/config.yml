@@ -23,8 +23,7 @@ jobs:
       - run:
           name: Build docs to store
           command: |
-            cd docs
-            make html
+            sphinx-build -b html docs/ docs/_build/html
 
       - store_artifacts:
           path: docs/_build/html/
