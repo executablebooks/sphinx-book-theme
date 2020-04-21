@@ -635,10 +635,13 @@ div.navbar-brand-box {
         height: auto;
 
         img {
-            max-height: 100px !important;
+            max-height:10vh;
             margin: 0 auto;
             display: block;
             height: auto !important;
+            @media (min-width: $breakpoint-md) {
+                max-height: 15vh !important;
+            }
         }
     }
 }

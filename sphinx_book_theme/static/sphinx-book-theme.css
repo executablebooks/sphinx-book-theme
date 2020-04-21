@@ -370,11 +370,13 @@ div.navbar-brand-box {
     width: 100%;
     height: auto; }
     div.navbar-brand-box a.navbar-brand img {
-      max-height: 150px !important;
+      max-height: 10vh;
       margin: 0 auto;
       display: block;
       height: auto !important; }
-
+      @media (min-width: 768px) {
+        div.navbar-brand-box a.navbar-brand img {
+          max-height: 15vh !important; } }
 nav.bd-links {
   margin-left: 0px;
   max-height: none !important; }
