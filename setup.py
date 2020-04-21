@@ -30,14 +30,11 @@ setup(
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
-        "sphinx",
+        "sphinx<3",
         "click",
         "setuptools",
         "libsass",
-        (
-            "pydata_sphinx_theme @ "
-            "https://github.com/pandas-dev/pydata-sphinx-theme/archive/master.zip"
-        ),
+        "pydata-sphinx-theme",
     ],
     extras_require={
         "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
@@ -51,14 +48,8 @@ setup(
             "sphinx-togglebutton",
             "sphinx-copybutton",
             "plotly",
-            (
-                "myst_parser @ "
-                "https://github.com/ExecutableBookProject/myst_parser/archive/master.zip"  # noqa E501
-            ),
-            (
-                "myst_nb @ "
-                "https://github.com/ExecutableBookProject/myst-nb/archive/master.zip"
-            ),
+            "myst-parser",
+            "myst-nb",
         ],
         "testing": [
             "coverage",
