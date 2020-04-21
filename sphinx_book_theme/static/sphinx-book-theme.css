@@ -370,6 +370,7 @@ div.navbar-brand-box {
     width: 100%;
     height: auto; }
     div.navbar-brand-box a.navbar-brand img {
+      min-height: 100px;
       max-height: 10vh;
       margin: 0 auto;
       display: block;
