@@ -1,7 +1,6 @@
 """A lightweight book theme based on the pydata sphinx theme."""
 from pathlib import Path
 import docutils
-from myst_nb.parser import CellNode
 from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
@@ -63,10 +62,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 ) and "margin" in node.attributes.get("classes", [])
 
             margin_elements = doctree.traverse(is_margin)
-            cell_containers = list(doctree.traverse(CellNode))
+            containers = list(doctree.traverse(nodes.container))
             popout_tags = [
                 cl
-                for cell in cell_containers
+                for cell in containers
                 for cl in cell.attributes["classes"]
                 if any(ii == cl for ii in ["tag_popout", "tag_margin"])
             ]
