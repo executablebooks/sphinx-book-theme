@@ -1,12 +1,6 @@
 name: continuous-integration
 
-on:
-  push:
-    branches:
-    - master
-  pull_request:
-    branches:
-    - master
+on: [push, pull_request]
 
 jobs:
   pre-commit:
@@ -63,7 +57,7 @@ jobs:
   publish:
 
     name: Publish to PyPi
-    needs: [pre-commit]
+    needs: [pre-commit, test]
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     runs-on: ubuntu-latest
     steps:

@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-version = [
-    line
-    for line in Path("sphinx_book_theme/__init__.py").read_text().split("\n")
-    if "__version__" in line
-]
-version = version[0].split(" = ")[-1].strip('"')
+lines = Path("sphinx_book_theme").joinpath("__init__.py")
+for line in lines.read_text().split("\n"):
+    if line.startswith("__version__ ="):
+        version = line.split(" = ")[-1].strip('"')
+        break
+
 setup(
     name="sphinx-book-theme",
     version=version,
