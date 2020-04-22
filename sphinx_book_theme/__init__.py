@@ -11,7 +11,7 @@ import sass
 
 from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
 
-__version__ = "0.0.2"
+__version__ = "0.0.3dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
 EXTRA_TOC_OPTIONS = {"expand_sections": directives.flag}
 
