@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from pathlib import Path
 from subprocess import run
 from shutil import copytree, rmtree
@@ -38,19 +39,21 @@ def test_build_book(tmpdir):
     # Check a few components that should be true on each page
     path_index = path_html.joinpath("index.html")
     index_text = path_index.read_text()
+    index_html = BeautifulSoup(index_text, "html.parser")
+    sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
     # Index should *not* be in navbar
     assert "Index</a>" not in index_text
     # Captions make it into navbar
     assert '<p class="margin-caption">My caption</p>' in index_text
-    # Explicitly expanded sections are expanded when not active
-    assert "Section 1 page1</a>" in index_text
     # Opengraph should not be in the HTML because we have no baseurl specified
     assert (
         '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
-        not in ntbk_text
+        not in index_text
     )
     # Edit button should not be on page
     assert '<a class="edit-button"' not in index_text
+    # Sub-sections shouldn't be in the TOC because we haven't expanded it yet
+    assert "Section 1 page1</a>" not in str(sidebar)
     rmtree(path_build)
 
     # Check navbar numbering
@@ -98,4 +101,12 @@ def test_build_book(tmpdir):
         '<a class="edit-button" href="https://github.com/ExecutableBookProject/sphinx-book-theme/edit/master/TESTPATH/section1/ntbk.ipynb">'  # noqa E501
         in ntbk_text
     )
+    rmtree(path_build)
+
+    # Explicitly expanded sections are expanded when not active
+    cmd = cmd_base + ["-D", "html_theme_options.expand_sections=section1/index"]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    sidebar = ntbk_text.find_all(attrs={"class": "bd-sidebar"})[0]
+    assert "Section 1 page1</a>" in str(sidebar)
     rmtree(path_build)

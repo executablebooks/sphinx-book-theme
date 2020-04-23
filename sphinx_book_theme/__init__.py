@@ -5,15 +5,12 @@ from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
 from sphinx import addnodes
-from sphinx.directives.other import TocTree
-from sphinx.util.nodes import explicit_title_re
 import sass
 
 from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
 
 __version__ = "0.0.3dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
-EXTRA_TOC_OPTIONS = {"expand_sections": directives.flag}
 
 
 def get_html_theme_path():
@@ -89,22 +86,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         if len(nav) == 0:
             return ""
-        # Lists of pages where we want to trigger extra TOC behavior
-        extra_toc = app.env.jb_extra_toc_info
 
-        # And a function we'll use to parse it
-        def lookup_extra_toc(pagename, extra_toc_list, kind="parent"):
-            for first_child_page, parent_page, val in extra_toc_list:
-                lookup_page = first_child_page if kind == "child" else parent_page
-                # Check whether we have an explicit title given and pull the path if so
-                explicit = explicit_title_re.match(lookup_page)
-                if explicit:
-                    lookup_page = explicit.group(2)
-                if str(pagename) == lookup_page:
-                    return val
+        config = app.env.config
 
         # Figure out the top-lever pages that need a TOC in front of them
-        master_toctrees = app.env.tocs[app.env.config["master_doc"]]
+        master_toctrees = app.env.tocs[config["master_doc"]]
         toc_captions = []
         for master_toctree in master_toctrees.traverse(addnodes.toctree):
             if master_toctree.attributes.get("caption"):
@@ -116,7 +102,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         # Add the master_doc page as the first item if specified
         if with_home_page:
-            master_doc = app.env.config["master_doc"]
+            master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
             master_title = list(master_doctree.traverse(nodes.title))[0].astext()
@@ -166,12 +152,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     item_title += '<i class="fas fa-external-link-alt"></i>'
                 ul.append("  " * 2 + f'<a href="{child["url"]}">{item_title}</a>')
 
-            # Check whether we should expand children if it was given in the toctree
+            # Check whether we should expand children
             if child["children"]:
-                is_expanded = lookup_extra_toc(
-                    page_rel_root, extra_toc["expand_sections"], kind="parent"
-                )
-                if is_expanded:
+                expand_sections = config.html_theme_options.get("expand_sections", [])
+                if isinstance(expand_sections, str):
+                    expand_sections = []
+                if str(page_rel_root) in expand_sections:
                     active = True
 
             # Render HTML lists for children if we're on an active section
@@ -253,31 +239,6 @@ def compile_scss():
     path_css_folder.joinpath("sphinx-book-theme.css").write_text(css)
 
 
-class NewTocTree(TocTree):
-    """A monkey-patch of the TocTree so we can intercept extra keywords
-    without raising Sphinx errors.
-    """
-
-    newtoctree_spec = TocTree.option_spec.copy()
-    newtoctree_spec.update(EXTRA_TOC_OPTIONS)
-    option_spec = newtoctree_spec
-
-    def run(self):
-        # Check for special TocTree options that we'll use but must be removed
-        for key in EXTRA_TOC_OPTIONS:
-            if key in self.options:
-                val = self.options.pop(key)
-                if val is None:
-                    val = True
-                first_toc_page = str(Path(self.content[0]).with_suffix(""))
-                parent_page = self.env.docname
-                self.env.jb_extra_toc_info[key].append(
-                    (first_toc_page, parent_page, val)
-                )
-        msg_nodes = super().run()
-        return msg_nodes
-
-
 class Margin(directives.body.Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -307,10 +268,7 @@ def setup(app):
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
     app.add_js_file("sphinx-book-theme.js")
-    directives.register_directive("toctree", NewTocTree)
     app.add_directive("margin", Margin)
-
-    app.env.jb_extra_toc_info = {key: [] for key in EXTRA_TOC_OPTIONS.keys()}
 
     # Include Thebelab for interactive code if it's enabled
     app.connect("env-before-read-docs", init_thebelab_core)

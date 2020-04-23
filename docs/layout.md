@@ -217,8 +217,19 @@ You can control some elements of the navigation bar. Here are the main features:
 
 ### Expand sections of your navbar
 
-To make all sub-pages of the left Table of Contents expanded, add `:expand_sections:` to the
-`toctree` for that section.
+You can keep certain sub-sections of pages to be permanently expanded in your
+left Table of Contents. To do so, add a list of any pages you wish to be expanded
+in the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "expand_sections": ["list", "of", "pages"]
+    ...
+}
+```
+
+Each page that is in `expand_sections` will be expanded in your left TOC.
 
 ### Add a header to your TOC
 

@@ -26,6 +26,5 @@ GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>
 
 ```{toctree}
 :caption: Reference items
-:expand_sections:
 reference/index
 ```
