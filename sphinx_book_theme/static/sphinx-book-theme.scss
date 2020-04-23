@@ -165,8 +165,9 @@ main.bd-content {
                 font-size: 1.1em;
 
                 &::after {
-                    font-family: "FontAwesome";
+                    font-family: "Font Awesome 5 Free";
                     margin-left: 0.5em;
+                    font-weight: 900;
                     // Default content is exclamation point
                     content: "\f06a";
                 }

@@ -92,8 +92,9 @@ main.bd-content {
       margin-bottom: .2em;
       font-size: 1.1em; }
       main.bd-content #main-content div.alert p.admonition-title::after {
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 5 Free";
         margin-left: 0.5em;
+        font-weight: 900;
         content: "\f06a"; }
     main.bd-content #main-content div.alert.alert-warning p.admonition-title::after {
       content: "\f071";
