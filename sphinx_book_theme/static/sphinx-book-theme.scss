@@ -196,6 +196,13 @@ main.bd-content {
         p.centered {
             text-align: center;
         }
+
+        // Tables from sphinx-tabs
+
+        div.sphinx-tabs > div.menu > a.item {
+            width: auto;
+            margin: 0;
+        }
     }
 }
 

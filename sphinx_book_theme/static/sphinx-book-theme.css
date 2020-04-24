@@ -106,6 +106,9 @@ main.bd-content {
     padding: .5em 0 0 1em; }
   main.bd-content #main-content p.centered {
     text-align: center; }
+  main.bd-content #main-content div.sphinx-tabs > div.menu > a.item {
+    width: auto;
+    margin: 0; }
 
 div.cell div.cell_output {
   padding-right: 0; }
