@@ -327,7 +327,7 @@ dl.footnote {
     padding-top: .75em;
     padding-bottom: .75em;
     background-color: white;
-    height: 4em;
+    height: $topbar-height;
     transition: left .2s;
 
     > div {
@@ -344,6 +344,7 @@ dl.footnote {
         button.topbarbtn {
             margin: 0 .2em;
             background-color: #5a5a5a;
+            font-size: .9em;
         }
     }
 }
@@ -403,7 +404,7 @@ button.topbarbtn img {
         top: 16%;
         left: 0;
         display: block;
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     i.fa-bars {
@@ -636,7 +637,9 @@ button.topbarbtn img {
 
 
 div.navbar-brand-box {
-    padding-top: 2em;
+    @media (min-width: $breakpoint-md) {
+        padding-top: 2em;
+    }
 
     a.navbar-brand {
         width: 100%;

@@ -184,7 +184,7 @@ dl.footnote dd p {
   padding-top: .75em;
   padding-bottom: .75em;
   background-color: white;
-  height: 4em;
+  height: 3.5em;
   transition: left .2s; }
   .topbar > div {
     height: 2.5em;
@@ -194,7 +194,8 @@ dl.footnote dd p {
     height: 100%; }
   .topbar .topbar-main button.topbarbtn {
     margin: 0 .2em;
-    background-color: #5a5a5a; }
+    background-color: #5a5a5a;
+    font-size: .9em; }
 
 .bd-topbar-whitespace {
   padding-right: none; }
@@ -235,7 +236,7 @@ button.topbarbtn img {
     top: 16%;
     left: 0;
     display: block;
-    font-size: 1.3em; }
+    font-size: 1.2em; }
   #navbar-toggler i.fa-bars {
     opacity: 0;
     transform: rotate(180deg) scale(0.5); }
@@ -368,20 +369,22 @@ button.topbarbtn img {
     flex: 0 0 0px;
     padding: 0; } }
 
-div.navbar-brand-box {
-  padding-top: 2em; }
-  div.navbar-brand-box a.navbar-brand {
-    width: 100%;
-    height: auto; }
-    div.navbar-brand-box a.navbar-brand img {
-      min-height: 100px;
-      max-height: 10vh;
-      margin: 0 auto;
-      display: block;
-      height: auto !important; }
-      @media (min-width: 768px) {
-        div.navbar-brand-box a.navbar-brand img {
-          max-height: 15vh !important; } }
+@media (min-width: 768px) {
+  div.navbar-brand-box {
+    padding-top: 2em; } }
+
+div.navbar-brand-box a.navbar-brand {
+  width: 100%;
+  height: auto; }
+  div.navbar-brand-box a.navbar-brand img {
+    min-height: 100px;
+    max-height: 10vh;
+    margin: 0 auto;
+    display: block;
+    height: auto !important; }
+    @media (min-width: 768px) {
+      div.navbar-brand-box a.navbar-brand img {
+        max-height: 15vh !important; } }
 nav.bd-links {
   margin-left: 0px;
   max-height: none !important; }
