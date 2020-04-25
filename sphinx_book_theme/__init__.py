@@ -202,17 +202,19 @@ def add_to_context(app, pagename, templatename, context, doctree):
     if doctree and context.get("page_source_suffix"):
         config_theme = app.config.html_theme_options
         repo_url = config_theme.get("repository_url", "")
-        branch = config_theme.get("repository_branch", "")
-        relpath = config_theme.get("path_to_docs", "")
-        org, repo = repo_url.strip("/").split("/")[-2:]
-        context.update(
-            {
-                "github_user": org,
-                "github_repo": repo,
-                "github_version": branch,
-                "doc_path": relpath,
-            }
-        )
+        # Only add the edit button if `repository_url` is given
+        if repo_url:
+            branch = config_theme.get("repository_branch", "")
+            relpath = config_theme.get("path_to_docs", "")
+            org, repo = repo_url.strip("/").split("/")[-2:]
+            context.update(
+                {
+                    "github_user": org,
+                    "github_repo": repo,
+                    "github_version": branch,
+                    "doc_path": relpath,
+                }
+            )
     else:
         # Disable using the button so we don't get errors
         context["theme_use_edit_page_button"] = False
