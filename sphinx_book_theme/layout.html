@@ -36,9 +36,7 @@
 {% block docs_main %}
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto{{ single_page }}" role="main">
     {% block docs_body %}
-    {% if theme_single_page != True %}
-      {% include "topbar.html" %}
-    {% endif %}
+    {% include "topbar.html" %}
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 col-xxl-7 pl-md-3 pr-md-0">
         {{ super() }}

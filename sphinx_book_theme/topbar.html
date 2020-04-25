@@ -2,6 +2,7 @@
     <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
     <div class="col pl-2 topbar-main">
+        {% if theme_single_page != True %}
         <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
@@ -42,6 +43,8 @@
 
         <!-- Extra buttons -->
         {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn"><i class="fas fa-pencil-alt"></i><span class="topbar-button-text">Edit</span></button></a>{% endif %}
+
+        {% endif %}
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc {{ show_if_no_margin() }}">
         {%- include "docs-toc.html" %}
