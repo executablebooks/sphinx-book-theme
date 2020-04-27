@@ -30,7 +30,7 @@ code {
     max-width: 100%; } }
 
 main.bd-content {
-  padding-top: 3.5em !important;
+  padding-top: 3em !important;
   padding-bottom: 0px !important; }
   main.bd-content.single-page {
     max-width: 1100px;
@@ -181,10 +181,10 @@ dl.footnote dd p {
 *********************************************/
 .topbar {
   margin: 0em auto 1em auto !important;
-  padding-top: .75em;
-  padding-bottom: .75em;
+  padding-top: .25em;
+  padding-bottom: .25em;
   background-color: white;
-  height: 3.5em;
+  height: 3em;
   transition: left .2s; }
   .topbar > div {
     height: 2.5em;
@@ -366,7 +366,7 @@ button.topbarbtn img {
 @media (max-width: 768px) {
   #site-navigation {
     position: fixed;
-    margin-top: 3.5em;
+    margin-top: 3em;
     z-index: 2000;
     background: white; } }
 

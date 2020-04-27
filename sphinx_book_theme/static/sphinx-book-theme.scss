@@ -15,7 +15,7 @@ $non-content-grey: #5a5a5a;
 * Whole page *
 *********************************************/
 
-$topbar-height: 3.5em;
+$topbar-height: 3em;
 
 body {
     padding-top: 0px !important;
@@ -327,8 +327,8 @@ dl.footnote {
 *********************************************/
 .topbar {
     margin: 0em auto 1em auto !important;
-    padding-top: .75em;
-    padding-bottom: .75em;
+    padding-top: .25em;
+    padding-bottom: .25em;
     background-color: white;
     height: $topbar-height;
     transition: left .2s;

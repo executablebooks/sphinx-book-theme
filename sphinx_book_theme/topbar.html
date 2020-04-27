@@ -9,7 +9,7 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" title="download this page"><i class="fas fa-download"></i></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" title="Download this page"><i class="fas fa-download"></i></button>
 
             {% if page_source_suffix %}
             <div class="dropdown-buttons">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Edit this page -->
-        {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn" title="edit this page"><i class="fas fa-pencil-alt"></i></button></a>{% endif %}
+        {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>{% endif %}
 
         <!-- Launch buttons -->
         {% if binder_url or jupyterhub_url or use_thebelab %}
