@@ -342,9 +342,13 @@ dl.footnote {
         }
 
         button.topbarbtn {
-            margin: 0 .2em;
-            background-color: #5a5a5a;
-            font-size: .9em;
+            margin: 0 .1em;
+            background-color: white;
+            color: #5a5a5a;
+            font-size: 1.4em;
+            border: none;
+            padding-top: .1rem;
+            padding-bottom: .1rem;
         }
     }
 }
@@ -372,9 +376,14 @@ div.dropdown-buttons-trigger {
         position: absolute;
         max-width: 120px;
 
-        button {
+        button.topbarbtn {
+            padding-top: .35rem;
+            padding-bottom: .35rem;
             min-width: 120px !important;
             border: 1px white solid !important;
+            background-color: #5a5a5a;
+            color: white;
+            font-size: 1em;
         }
     }
 
@@ -397,6 +406,7 @@ button.topbarbtn img {
     position: relative;
     margin-right: 1em;
     margin-left: .5em;
+    color: #5a5a5a;
 
     i {
         transition: opacity .3s, transform .3s;

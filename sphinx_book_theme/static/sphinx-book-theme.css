@@ -193,9 +193,13 @@ dl.footnote dd p {
     float: left;
     height: 100%; }
   .topbar .topbar-main button.topbarbtn {
-    margin: 0 .2em;
-    background-color: #5a5a5a;
-    font-size: .9em; }
+    margin: 0 .1em;
+    background-color: white;
+    color: #5a5a5a;
+    font-size: 1.4em;
+    border: none;
+    padding-top: .1rem;
+    padding-bottom: .1rem; }
 
 .bd-topbar-whitespace {
   padding-right: none; }
@@ -211,9 +215,14 @@ div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;
   max-width: 120px; }
-  div.dropdown-buttons-trigger div.dropdown-buttons button {
+  div.dropdown-buttons-trigger div.dropdown-buttons button.topbarbtn {
+    padding-top: .35rem;
+    padding-bottom: .35rem;
     min-width: 120px !important;
-    border: 1px white solid !important; }
+    border: 1px white solid !important;
+    background-color: #5a5a5a;
+    color: white;
+    font-size: 1em; }
 
 div.dropdown-buttons-trigger:hover div.dropdown-buttons {
   display: block; }
@@ -229,7 +238,8 @@ button.topbarbtn img {
 #navbar-toggler {
   position: relative;
   margin-right: 1em;
-  margin-left: .5em; }
+  margin-left: .5em;
+  color: #5a5a5a; }
   #navbar-toggler i {
     transition: opacity .3s, transform .3s;
     position: absolute;
