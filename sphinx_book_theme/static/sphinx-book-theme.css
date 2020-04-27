@@ -281,6 +281,8 @@ button.topbarbtn img {
   right: 0;
   z-index: 999;
   transition: height .35s ease; }
+  .bd-toc div.onthispage, .bd-toc .toc-entry a {
+    color: #5a5a5a; }
   .bd-toc nav {
     opacity: 0;
     transition: opacity 0.2s ease; }
@@ -312,6 +314,8 @@ button.topbarbtn img {
   overflow-y: auto;
   height: 100vh !important;
   scrollbar-width: thin; }
+  .bd-sidebar nav ul.nav li a, .bd-sidebar nav ul.nav ul li a {
+    color: #5a5a5a; }
   .bd-sidebar nav ul.nav a:hover, .bd-sidebar nav ul.nav li.active > a, .bd-sidebar nav ul.nav li.active > a:hover {
     color: #0071bc; }
   .bd-sidebar::-webkit-scrollbar {
@@ -340,7 +344,8 @@ button.topbarbtn img {
   .bd-sidebar p.navbar_footer {
     text-align: center;
     font-size: .9em;
-    padding-top: .5em; }
+    padding-top: .5em;
+    color: #5a5a5a; }
   .bd-sidebar.collapsing {
     border: none;
     overflow: hidden;

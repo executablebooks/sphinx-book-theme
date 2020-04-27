@@ -8,6 +8,9 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
+// Colors
+$non-content-grey: #5a5a5a;
+
 /*********************************************
 * Whole page *
 *********************************************/
@@ -344,7 +347,7 @@ dl.footnote {
         button.topbarbtn {
             margin: 0 .1em;
             background-color: white;
-            color: #5a5a5a;
+            color: $non-content-grey;
             font-size: 1.4em;
             border: none;
             padding-top: .1rem;
@@ -381,7 +384,7 @@ div.dropdown-buttons-trigger {
             padding-bottom: .35rem;
             min-width: 120px !important;
             border: 1px white solid !important;
-            background-color: #5a5a5a;
+            background-color: $non-content-grey;
             color: white;
             font-size: 1em;
         }
@@ -406,7 +409,7 @@ button.topbarbtn img {
     position: relative;
     margin-right: 1em;
     margin-left: .5em;
-    color: #5a5a5a;
+    color: $non-content-grey;
 
     i {
         transition: opacity .3s, transform .3s;
@@ -476,6 +479,11 @@ button.topbarbtn img {
     z-index: 999;
     transition: height .35s ease;
 
+    // Colors
+    div.onthispage, .toc-entry a {
+        color: $non-content-grey;
+    }
+
     // By default the nav is hidden unless a few conditions are met
     nav {
         opacity: 0;
@@ -531,6 +539,9 @@ button.topbarbtn img {
 
     // Sidebar link color
     nav ul.nav {
+        li a, ul li a {
+            color: $non-content-grey;
+        }
         a:hover, li.active > a, li.active > a:hover {
             color: #0071bc;
         }
@@ -583,6 +594,7 @@ button.topbarbtn img {
         text-align: center;
         font-size: .9em;
         padding-top: .5em;
+        color: $non-content-grey;
     }
 
     &.collapsing {
