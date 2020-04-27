@@ -189,7 +189,7 @@ dl.footnote dd p {
   .topbar > div {
     height: 2.5em;
     top: 0px; }
-  .topbar .topbar-main button.navbar-toggler, .topbar .topbar-main .dropdown-buttons-trigger {
+  .topbar .topbar-main > button, .topbar .topbar-main > div, .topbar .topbar-main > a {
     float: left;
     height: 100%; }
   .topbar .topbar-main button.topbarbtn {

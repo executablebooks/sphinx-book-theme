@@ -339,7 +339,7 @@ dl.footnote {
     }
 
     .topbar-main {
-        button.navbar-toggler, .dropdown-buttons-trigger {
+        > button, > div, > a {
             float: left;
             height: 100%;
         }
