@@ -32,11 +32,18 @@ var sbRunWhenDOMLoaded = cb => {
 
 // Toggle full-screen with button
 function toggleFullScreen() {
+  var navToggler = $("#navbar-toggler");
   if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
+      if (!navToggler.hasClass("collapsed")) {
+        navToggler.click();
+      }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
+      if (navToggler.hasClass("collapsed")) {
+        navToggler.click();
+      }
     }
   }
 }
