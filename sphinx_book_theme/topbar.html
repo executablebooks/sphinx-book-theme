@@ -26,6 +26,9 @@
         <!-- Edit this page -->
         {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>{% endif %}
 
+        <!-- Full screen -->
+        <button type="button" class="btn btn-secondary topbarbtn" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button>
+
         <!-- Launch buttons -->
         {% if binder_url or jupyterhub_url or use_thebelab %}
         <div class="dropdown-buttons-trigger">
