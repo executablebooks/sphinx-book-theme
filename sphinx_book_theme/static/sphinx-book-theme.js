@@ -41,5 +41,13 @@ function toggleFullScreen() {
   }
 }
 
+// Enable tooltips
+var initTooltips = () => {
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+}
+
+sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
