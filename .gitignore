@@ -130,4 +130,4 @@ dmypy.json
 .pyre/
 
 # Generated CSS file
-sphinx-book-theme.css
+*sphinx-book-theme.css
