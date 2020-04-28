@@ -30,7 +30,7 @@ code {
     max-width: 100%; } }
 
 main.bd-content {
-  padding-top: 3.5em !important;
+  padding-top: 3em !important;
   padding-bottom: 0px !important; }
   main.bd-content.single-page {
     max-width: 1100px;
@@ -181,21 +181,25 @@ dl.footnote dd p {
 *********************************************/
 .topbar {
   margin: 0em auto 1em auto !important;
-  padding-top: .75em;
-  padding-bottom: .75em;
+  padding-top: .25em;
+  padding-bottom: .25em;
   background-color: white;
-  height: 3.5em;
+  height: 3em;
   transition: left .2s; }
   .topbar > div {
     height: 2.5em;
     top: 0px; }
-  .topbar .topbar-main button.navbar-toggler, .topbar .topbar-main .dropdown-buttons-trigger {
+  .topbar .topbar-main > button, .topbar .topbar-main > div, .topbar .topbar-main > a {
     float: left;
     height: 100%; }
   .topbar .topbar-main button.topbarbtn {
-    margin: 0 .2em;
-    background-color: #5a5a5a;
-    font-size: .9em; }
+    margin: 0 .1em;
+    background-color: white;
+    color: #5a5a5a;
+    font-size: 1.4em;
+    border: none;
+    padding-top: .1rem;
+    padding-bottom: .1rem; }
 
 .bd-topbar-whitespace {
   padding-right: none; }
@@ -211,9 +215,14 @@ div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;
   max-width: 120px; }
-  div.dropdown-buttons-trigger div.dropdown-buttons button {
+  div.dropdown-buttons-trigger div.dropdown-buttons button.topbarbtn {
+    padding-top: .35rem;
+    padding-bottom: .35rem;
     min-width: 120px !important;
-    border: 1px white solid !important; }
+    border: 1px white solid !important;
+    background-color: #5a5a5a;
+    color: white;
+    font-size: 1em; }
 
 div.dropdown-buttons-trigger:hover div.dropdown-buttons {
   display: block; }
@@ -229,7 +238,8 @@ button.topbarbtn img {
 #navbar-toggler {
   position: relative;
   margin-right: 1em;
-  margin-left: .5em; }
+  margin-left: .5em;
+  color: #5a5a5a; }
   #navbar-toggler i {
     transition: opacity .3s, transform .3s;
     position: absolute;
@@ -271,6 +281,8 @@ button.topbarbtn img {
   right: 0;
   z-index: 999;
   transition: height .35s ease; }
+  .bd-toc div.onthispage, .bd-toc .toc-entry a {
+    color: #5a5a5a; }
   .bd-toc nav {
     opacity: 0;
     transition: opacity 0.2s ease; }
@@ -302,6 +314,8 @@ button.topbarbtn img {
   overflow-y: auto;
   height: 100vh !important;
   scrollbar-width: thin; }
+  .bd-sidebar nav ul.nav li a, .bd-sidebar nav ul.nav ul li a {
+    color: #5a5a5a; }
   .bd-sidebar nav ul.nav a:hover, .bd-sidebar nav ul.nav li.active > a, .bd-sidebar nav ul.nav li.active > a:hover {
     color: #0071bc; }
   .bd-sidebar::-webkit-scrollbar {
@@ -330,7 +344,8 @@ button.topbarbtn img {
   .bd-sidebar p.navbar_footer {
     text-align: center;
     font-size: .9em;
-    padding-top: .5em; }
+    padding-top: .5em;
+    color: #5a5a5a; }
   .bd-sidebar.collapsing {
     border: none;
     overflow: hidden;
@@ -351,7 +366,7 @@ button.topbarbtn img {
 @media (max-width: 768px) {
   #site-navigation {
     position: fixed;
-    margin-top: 3.5em;
+    margin-top: 3em;
     z-index: 2000;
     background: white; } }
 

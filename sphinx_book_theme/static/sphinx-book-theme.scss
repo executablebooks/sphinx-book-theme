@@ -8,11 +8,14 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
+// Colors
+$non-content-grey: #5a5a5a;
+
 /*********************************************
 * Whole page *
 *********************************************/
 
-$topbar-height: 3.5em;
+$topbar-height: 3em;
 
 body {
     padding-top: 0px !important;
@@ -324,8 +327,8 @@ dl.footnote {
 *********************************************/
 .topbar {
     margin: 0em auto 1em auto !important;
-    padding-top: .75em;
-    padding-bottom: .75em;
+    padding-top: .25em;
+    padding-bottom: .25em;
     background-color: white;
     height: $topbar-height;
     transition: left .2s;
@@ -336,15 +339,19 @@ dl.footnote {
     }
 
     .topbar-main {
-        button.navbar-toggler, .dropdown-buttons-trigger {
+        > button, > div, > a {
             float: left;
             height: 100%;
         }
 
         button.topbarbtn {
-            margin: 0 .2em;
-            background-color: #5a5a5a;
-            font-size: .9em;
+            margin: 0 .1em;
+            background-color: white;
+            color: $non-content-grey;
+            font-size: 1.4em;
+            border: none;
+            padding-top: .1rem;
+            padding-bottom: .1rem;
         }
     }
 }
@@ -372,9 +379,14 @@ div.dropdown-buttons-trigger {
         position: absolute;
         max-width: 120px;
 
-        button {
+        button.topbarbtn {
+            padding-top: .35rem;
+            padding-bottom: .35rem;
             min-width: 120px !important;
             border: 1px white solid !important;
+            background-color: $non-content-grey;
+            color: white;
+            font-size: 1em;
         }
     }
 
@@ -397,6 +409,7 @@ button.topbarbtn img {
     position: relative;
     margin-right: 1em;
     margin-left: .5em;
+    color: $non-content-grey;
 
     i {
         transition: opacity .3s, transform .3s;
@@ -466,6 +479,11 @@ button.topbarbtn img {
     z-index: 999;
     transition: height .35s ease;
 
+    // Colors
+    div.onthispage, .toc-entry a {
+        color: $non-content-grey;
+    }
+
     // By default the nav is hidden unless a few conditions are met
     nav {
         opacity: 0;
@@ -521,6 +539,9 @@ button.topbarbtn img {
 
     // Sidebar link color
     nav ul.nav {
+        li a, ul li a {
+            color: $non-content-grey;
+        }
         a:hover, li.active > a, li.active > a:hover {
             color: #0071bc;
         }
@@ -573,6 +594,7 @@ button.topbarbtn img {
         text-align: center;
         font-size: .9em;
         padding-top: .5em;
+        color: $non-content-grey;
     }
 
     &.collapsing {
