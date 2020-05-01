@@ -322,6 +322,18 @@ dl.footnote {
     }
 }
 
+// Citations
+
+dl.citation {
+    margin-left: 5%;
+}
+
+a.bibtex.internal {
+    /* margin-bottom: .1em; */
+    font-size: .8em;
+    vertical-align: top;
+}
+
 /*********************************************
 * Top Bar *
 *********************************************/

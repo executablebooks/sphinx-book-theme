@@ -197,6 +197,17 @@ Emphasized lines with line numbers
        print 'This one is not...'
        print '...but this one is.'
 
+Citations
+=========
+
+Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
+Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
+Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
+
+And here is the bibliography:
+
+.. bibliography:: ../references.bib
+
 Sidebar
 =======
 
