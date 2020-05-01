@@ -480,7 +480,7 @@ button.topbarbtn img {
 
 .bd-toc {
     padding: 0px !important;
-    overflow-y: hidden !important;
+    overflow-y: hidden;
     background: white;
     right: 0;
     z-index: 999;
@@ -514,9 +514,10 @@ button.topbarbtn img {
         }
     }
 
-    // On hover or w/ a show calss, we show the TOC
+    // On hover or w/ a show class, we show the TOC
     &:hover, &.show {
-        height: auto !important;
+        overflow-y: visible;
+        height: auto;
         nav {
             opacity: 1;
         }
