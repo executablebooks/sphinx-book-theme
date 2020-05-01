@@ -50,6 +50,7 @@ setup(
             "sphinx-togglebutton",
             "sphinx-copybutton",
             "plotly",
+            "sphinxcontrib-bibtex",
         ],
         "testing": [
             "coverage",
