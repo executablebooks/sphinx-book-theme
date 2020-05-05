@@ -1,13 +1,18 @@
 # The Sphinx Book Theme
 
-A book-like theme for Sphinx.
+**An interactive book theme for Sphinx**.
 
-This is a lightweight Sphinx theme, primarily made for use by [Jupyter Book](https://beta.jupyterbook.org).
-It tries to keep a simplified style and visual layout in a book-like theme.
+This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
+interactive book. It has the following primary features:
 
-It relies on [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-via the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
-structure and configuration.
+* **[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)**
+  for visual elements and functionality.
+* **[Flexible content layout](layout)** that is inspired by beautiful online books,
+  such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
+* **[Visual classes designed for Jupyter Notebooks](notebooks)**. Cell inputs, outputs,
+  and interactive functionality are all supported.
+* **[Launch buttons for online interactivity](launch)**. For pages that are built with
+  computational material, connect your site to an online BinderHub for interactive content.
 
 ## Site contents
 
@@ -28,3 +33,9 @@ GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>
 :caption: Reference items
 reference/index
 ```
+
+## Acknowledgements
+
+This theme is heavily inspired by (and dependent on)
+[PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
+structure and configuration.
