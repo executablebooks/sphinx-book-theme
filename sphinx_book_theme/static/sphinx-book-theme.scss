@@ -163,9 +163,13 @@ main.bd-content {
         div.alert {
             padding-bottom: .75em;  // Overriding an override
 
+            p:last-child {
+                margin-bottom: 0;
+            }
+
             p.admonition-title {
                 margin-bottom: .2em;
-                font-size: 1.1em;
+                font-weight: bold;
 
                 &::after {
                     font-family: "Font Awesome 5 Free";
