@@ -2,7 +2,6 @@
 * Variables *
 *********************************************/
 // Breakpoints from Bootstrap: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
-$breakpoint-xxl: 1500px;  // Custom one
 $breakpoint-xl: 1200px;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
@@ -31,26 +30,6 @@ code {
 /*********************************************
 * Main body *
 *********************************************/
-
-// Custom XXL breakpoint
-@media (min-width: $breakpoint-xxl) {
-    .col-xxl-7 {
-        flex: 0 0 61% !important;
-        max-width: 61% !important;
-        position: relative !important;
-        width: 100% !important;
-        padding-right: 15px !important;
-        padding-left: 15px !important;
-    }
-}
-
-// If the sidebar is collapsed, our main content should expand fully
-div.bd-sidebar.collapse:not(.show) + main.bd-content {
-    @media (max-width: $breakpoint-xxl) {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
 
 main.bd-content {
     padding-top: $topbar-height !important;
@@ -277,6 +256,13 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
     div.cell.tag_margin .cell_output {
         padding-left: 0;
     }
+
+    div.sidebar:not(.margin) {
+        width: 60%;
+        margin-left: 1.5em;
+        margin-right: -28%;
+    }
+
 }
 
 
@@ -519,14 +505,6 @@ button.topbarbtn img {
 
         li.active > a.active {
             border-left: 2px solid #0071bc;
-        }
-    }
-
-    // On really wide screens, we always show the nav
-    @media (min-width: $breakpoint-xxl) {
-        height: auto !important;
-        nav {
-            opacity: 1;
         }
     }
 

@@ -1,6 +1,5 @@
 """A lightweight book theme based on the pydata sphinx theme."""
 from pathlib import Path
-import docutils
 from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
@@ -47,30 +46,6 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-    def show_if_no_margin():
-        # By default we'll show, unless there are margin items
-        out = "show"
-        # Check for margin items in this doctree
-        if doctree is not None:
-
-            def is_margin(node):
-                return isinstance(
-                    node, docutils.nodes.sidebar
-                ) and "margin" in node.attributes.get("classes", [])
-
-            margin_elements = doctree.traverse(is_margin)
-            containers = list(doctree.traverse(nodes.container))
-            popout_tags = [
-                cl
-                for cell in containers
-                for cl in cell.attributes["classes"]
-                if any(ii == cl for ii in ["tag_popout", "tag_margin"])
-            ]
-            # If we found margin elements, then we won't show
-            if any(len(ii) > 0 for ii in [margin_elements, popout_tags]):
-                out = ""
-        return out
-
     def nav_to_html_list(
         nav,
         level=1,
@@ -179,7 +154,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
         ul = "\n".join(ul)
         return ul
 
-    context["show_if_no_margin"] = show_if_no_margin
     context["nav_to_html_list"] = nav_to_html_list
 
     # Add a shortened page text to the context using the sections text
@@ -189,6 +163,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
             description += section.astext().replace("\n", " ")
         description = description[:160]
         context["page_description"] = description
+
+    # Add the author if it exists
+    if app.config.author != "unknown":
+        context["author"] = app.config.author
 
     # Absolute URLs for logo if `html_baseurl` is given
     # pageurl will already be set by Sphinx if so

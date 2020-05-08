@@ -32,20 +32,25 @@ Content sidebars exist in-line with your text, but allow the rest of the
 page to flow around them, rather than moving to the right margin.
 To add content sidebars, use this syntax:
 
+````
 ```{sidebar} **My sidebar title**
 Here is my sidebar content, it is pretty cool!
 ```
+````
 
 Note how the content wraps around the sidebar to the right.
 However, the sidebar text will still be in line with your content. There are
 certain kinds of elements, such as "note" blocks and code cells, that may
 clash with your sidebar. If this happens, try using a `{margin}` instead.
 
-````
-```{sidebar} **My sidebar title**
+
+````{sidebar} **My sidebar title**
+```{note}
 Here is my sidebar content, it is pretty cool!
 ```
+![](images/cool.jpg)
 ````
+
 
 ### Adding content to margins and sidebars
 
