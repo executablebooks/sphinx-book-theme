@@ -3,6 +3,13 @@
 This page contains developer documentation to help others contribute to
 `sphinx-book-theme`.
 
+
+## Code of Conduct
+
+The `sphinx-book-theme` project follows the
+[Executable Book Project code of conduct](https://executablebooks.org/en/latest/about.html#code-of-conduct).
+
+
 ## Releases
 
 `sphinx-book-theme` uses [a GitHub Action](https://github.com/ExecutableBookProject/sphinx-book-theme/blob/master/.github/workflows/tests.yml#L57)

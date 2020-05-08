@@ -1,5 +1,7 @@
 # The Sphinx Book Theme
 
+[![badge-url](https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social)](https://github.com/executablebooks/sphinx-book-theme)
+
 **An interactive book theme for Sphinx**.
 
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
