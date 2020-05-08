@@ -55,6 +55,30 @@ var initTooltips = () => {
   });
 }
 
+var initTocHide = () => {
+  // Hide the TOC when we scroll down
+  var scrollTimeout;
+  var throttle = 100;  // in milliseconds
+  var hideTocAfter = 200;  // in pixels
+  var checkTocScroll = function () {
+      if (window.pageYOffset > hideTocAfter) {
+        $("div.bd-toc").removeClass("show")
+      } else {
+        $("div.bd-toc").addClass("show")
+      };
+  };
+
+  $(window).on('scroll', function () {
+      if (!scrollTimeout) {
+          scrollTimeout = setTimeout(function () {
+              checkTocScroll();
+              scrollTimeout = null;
+          }, throttle);
+      }
+  });
+}
+
 sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
+sbRunWhenDOMLoaded(initTocHide)

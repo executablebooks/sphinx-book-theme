@@ -1,8 +1,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "Sphinx Book Theme"
-copyright = "2020, Executable Book Project"
-author = "Executable Book Project"
+copyright = "2020"
+author = "the Executable Book Project"
 
 master_doc = "index"
 
