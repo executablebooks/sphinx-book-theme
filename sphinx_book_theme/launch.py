@@ -175,7 +175,7 @@ def _get_repo_url(config):
     repo_url = config.get("repository_url")
     if not repo_url:
         raise ValueError(
-            f"You must provide the key: `repository_url` to use launch buttons."
+            "You must provide the key: `repository_url` to use launch buttons."
         )
     return repo_url
 
