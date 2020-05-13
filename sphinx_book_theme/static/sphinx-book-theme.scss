@@ -172,10 +172,13 @@ main.bd-content {
             }
         }
 
-        // Table of contents
-        div.contents p.topic-title {
-            font-size: 1.5em;
-            padding: .5em 0 0 1em;
+        // Within-page Table of contents
+        div.contents {
+            padding: 1em;
+            p.topic-title {
+                font-size: 1.5em;
+                padding: .5em 0 0 1em;
+            }
         }
 
         // Misc text and directives
@@ -188,6 +191,52 @@ main.bd-content {
         div.sphinx-tabs > div.menu > a.item {
             width: auto;
             margin: 0;
+        }
+
+        // Footnotes and Citations
+        span.brackets, a.brackets {
+            &:before {
+                content: "[";
+            }
+
+            &:after {
+                content: "]";
+            }
+        }
+
+        .footnote-reference, a.bibtex.internal {
+            font-size: .8em;
+            vertical-align: top;
+        }
+
+        dl.footnote {
+
+            span.fn-backref {
+                font-size: .8em;
+                vertical-align: top;
+                padding-left:.1em;
+            }
+
+            dd {
+                font-size:.9em;
+                margin-left: 3em;
+            }
+        }
+
+        dl.citation {
+            margin-left: 3em;
+        }
+
+        // Footnotes
+
+        dl.footnote {
+            dt.label {
+                float: left;
+            }
+
+            dd p {
+                padding-left: 1.5em;
+            }
         }
     }
 }
@@ -300,29 +349,6 @@ div.highlight {
     background: none;
 }
 
-// Footnotes
-
-dl.footnote {
-    dt.label {
-        float: left;
-    }
-
-    dd p {
-        padding-left: 1.5em;
-    }
-}
-
-// Citations
-
-dl.citation {
-    margin-left: 5%;
-}
-
-a.bibtex.internal {
-    /* margin-bottom: .1em; */
-    font-size: .8em;
-    vertical-align: top;
-}
 
 /*********************************************
 * Top Bar *
