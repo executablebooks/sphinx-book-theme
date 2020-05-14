@@ -508,7 +508,7 @@ button.topbarbtn img {
 
 .bd-toc {
     padding: 0px !important;
-    overflow-y: hidden;
+    overflow-y: visible;
     background: white;
     right: 0;
     z-index: 999;
@@ -522,7 +522,10 @@ button.topbarbtn img {
     // By default the nav is hidden unless a few conditions are met
     nav {
         opacity: 0;
-        transition: opacity 0.2s ease;
+        max-height: 0;
+        transition: opacity 0.2s ease, max-height 0.2s ease;
+        overflow-y: hidden;
+        background: white;
 
         // TOC link color
         a:hover, li.active > a.active {
@@ -536,9 +539,8 @@ button.topbarbtn img {
 
     // On hover or w/ a show class, we show the TOC
     &:hover, &.show {
-        overflow-y: visible;
-        height: auto;
         nav {
+            max-height: 100vh;
             opacity: 1;
         }
     }
