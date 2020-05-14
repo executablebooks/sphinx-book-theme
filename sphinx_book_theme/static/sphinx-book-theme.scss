@@ -543,10 +543,23 @@ button.topbarbtn img {
             max-height: 100vh;
             opacity: 1;
         }
+
+        // Hide the arrow when we display the toc
+        .tocsection:after {
+            opacity: 0;
+        }
     }
 
     .tocsection {
-        padding: .5rem 0 .5rem 1rem !important
+        padding: .5rem 0 .5rem 1rem !important;
+
+        &:after {
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            padding-left: .5em;
+            transition: opacity .3s ease;
+        }
     }
 
     .toc-entry a {
