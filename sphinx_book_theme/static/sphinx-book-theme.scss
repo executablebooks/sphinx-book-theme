@@ -523,7 +523,7 @@ button.topbarbtn img {
     nav {
         opacity: 0;
         max-height: 0;
-        transition: opacity 0.2s ease, max-height 0.2s ease;
+        transition: opacity 0.2s ease, max-height .7s ease;
         overflow-y: hidden;
         background: white;
 
