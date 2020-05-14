@@ -59,7 +59,7 @@ var initTocHide = () => {
   // Hide the TOC when we scroll down
   var scrollTimeout;
   var throttle = 100;  // in milliseconds
-  var hideTocAfter = 150;  // in pixels
+  var hideTocAfter = 50;  // in pixels
   var checkTocScroll = function () {
       if (window.pageYOffset > hideTocAfter) {
         $("div.bd-toc").removeClass("show")
