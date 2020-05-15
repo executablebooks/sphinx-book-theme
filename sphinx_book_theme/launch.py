@@ -2,6 +2,8 @@ from pathlib import Path
 from docutils import nodes
 from sphinx.util import logging
 from shutil import copy2
+import json
+
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -40,7 +42,9 @@ def update_thebelab_context(app, doctree, docname):
     # Thebelab configuration
     # Choose the kernel we'll use
     meta = app.env.metadata.get(docname, {})
-    kernel_name = meta.get("kernel_name", "python3")
+    kernel_name = "python3"
+    if meta.get("kernelspec") is not None:
+        kernel_name = json.loads(meta["kernelspec"]).get("name", "python3")
     cm_language = kernel_name
     if "python" in cm_language:
         cm_language = "python"
