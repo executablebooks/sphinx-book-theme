@@ -52,13 +52,15 @@ def add_to_context(app, pagename, templatename, context, doctree):
         include_item_names=False,
         with_home_page=False,
         number_sections=False,
+        prev_section_numbers=None,
     ):
         # In case users give a string configuration
         if isinstance(number_sections, str):
             number_sections = number_sections.lower() == "true"
         if isinstance(with_home_page, str):
             with_home_page = with_home_page.lower() == "true"
-
+        if prev_section_numbers is None:
+            prev_section_numbers = []
         if len(nav) == 0:
             return ""
 
@@ -121,7 +123,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if include_item_names:
                 item_title = child["title"]
                 if number_sections and not child["url"].startswith("http"):
-                    item_title = f"{ii_num}. {item_title}"
+                    this_section_numbers = prev_section_numbers + [ii_num]
+                    number_title = ".".join(str(ii) for ii in this_section_numbers)
+                    # Handle the case of top-level section numbers
+                    if "." not in number_title:
+                        number_title += "."
+                    item_title = f"{number_title} {item_title}"
                     ii_num += 1
                 if child["url"].startswith("http"):
                     # Add an external icon for external navbar links
@@ -144,6 +151,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     level=next_level,
                     include_item_names=True,
                     number_sections=number_sections,
+                    prev_section_numbers=this_section_numbers,
                 )
                 ul.append(child_list)
             ul.append("  " + "</li>")
