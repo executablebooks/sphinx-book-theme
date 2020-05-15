@@ -151,7 +151,14 @@ main.bd-content {
             }
         }
 
-        // Glossaries
+        ul.ls-none {
+            list-style: none;
+        }
+
+        li.fs-1-2 {
+            font-size: 1.2em;
+        }
+                // Glossaries
         dl.glossary {
             dd {
                 margin-left: 1.5em;
