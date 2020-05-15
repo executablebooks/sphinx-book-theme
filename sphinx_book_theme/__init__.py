@@ -116,6 +116,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             # Now begin rendering the links
             active = "active" if child["active"] else ""
             ul.append("  " + f'<li class="{active}">')
+
             # Render links for the top-level names if we wish
             if include_item_names:
                 item_title = child["title"]
