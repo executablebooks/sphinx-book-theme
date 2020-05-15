@@ -60,24 +60,28 @@ def test_build_book(tmpdir):
     cmd = cmd_base + ["-D", "html_theme_options.number_toc_sections=True"]
     run(cmd, cwd=path_tmp_base, check=True)
     path_ntbk = path_html.joinpath("section1", "ntbk.html")
-    ntbk_text = path_ntbk.read_text()
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    navbar = ntbk_text.find("nav", id="bd-docs-nav")
     # Pages and sub-pages should be numbered
-    assert "1. Page 1</a>" in ntbk_text
-    assert "1. Section 1 page1</a>" in ntbk_text
+    assert "1. Page 1</a>" in str(navbar)
+    assert "3.1 Section 1 page1</a>" in str(navbar)
+
     rmtree(path_build)
 
     # "home_page_in_toc": True,
     cmd = cmd_base + ["-D", "html_theme_options.home_page_in_toc=True"]
     run(cmd, cwd=path_tmp_base, check=True)
-    ntbk_text = path_ntbk.read_text()
-    assert "Index</a>" in ntbk_text
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    navbar = ntbk_text.find("nav", id="bd-docs-nav")
+    assert "Index</a>" in str(navbar)
     rmtree(path_build)
 
     # "single_page": True
     cmd = cmd_base + ["-D", "html_theme_options.single_page=True"]
     run(cmd, cwd=path_tmp_base, check=True)
-    ntbk_text = path_ntbk.read_text()
-    assert 'id="site-navigation"' not in ntbk_text
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    sidebar = ntbk_text.find("div", id="site-navigation")
+    assert len(sidebar.find_all("div")) == 0
     rmtree(path_build)
 
     # opengraph is generated when baseurl is given
@@ -85,12 +89,16 @@ def test_build_book(tmpdir):
     path_logo = path_tests.parent.joinpath("docs", "_static", "logo.png")
     cmd = cmd_base + ["-D", f"html_baseurl={baseurl}", "-D", f"html_logo={path_logo}"]
     run(cmd, cwd=path_tmp_base, check=True)
-    ntbk_text = path_ntbk.read_text()
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    header = ntbk_text.find("head")
     assert (
-        '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
-        in ntbk_text
+        '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url">'
+        in str(header)
     )
-    assert '<meta property="og:image"       content="https://blah.com/foo/_static/logo.png" />'  # noqa E501
+    assert (
+        '<meta content="https://blah.com/foo/_static/logo.png" property="og:image"/>'
+        in str(header)
+    )
     rmtree(path_build)
 
     # Test edit button

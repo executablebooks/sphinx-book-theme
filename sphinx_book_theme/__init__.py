@@ -130,6 +130,9 @@ def add_to_context(app, pagename, templatename, context, doctree):
                         number_title += "."
                     item_title = f"{number_title} {item_title}"
                     ii_num += 1
+                else:
+                    this_section_numbers = None
+
                 if child["url"].startswith("http"):
                     # Add an external icon for external navbar links
                     item_title += '<i class="fas fa-external-link-alt"></i>'
