@@ -44,7 +44,7 @@ def update_thebelab_context(app, doctree, docname):
     meta = app.env.metadata.get(docname, {})
     kernel_name = "python3"
     if meta.get("kernelspec") is not None:
-        kernel_name = json.loads(meta["kernelspec"]).get("name", "python3")
+        kernel_name = json.loads(meta["kernelspec"]).get("name", kernel_name)
     cm_language = kernel_name
     if "python" in cm_language:
         cm_language = "python"
