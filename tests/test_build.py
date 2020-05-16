@@ -36,6 +36,17 @@ def test_build_book(tmpdir):
             in ntbk_text
         )
 
+    # Check for correct kernel name in jupyter notebooks
+    kernels_expected = {
+        "section1/ntbk.ipynb": "python3",
+        "section1/ntbk_octave.ipynb": "octave",
+        "section1/ntbk_julia.ipynb": "julia-1.4",
+    }
+    for path, kernel in kernels_expected.items():
+        path_ntbk = path_html.joinpath(*path.split("/"))
+        ntbk_text = path_ntbk.with_suffix(".html").read_text()
+        assert 'kernelName: "{}",'.format(kernel) in ntbk_text
+
     # Check a few components that should be true on each page
     path_index = path_html.joinpath("index.html")
     index_text = path_index.read_text()
