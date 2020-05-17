@@ -28,11 +28,11 @@ def test_build_book(tmpdir):
         path_ntbk = path_html.joinpath(*path.split("/"))
         ntbk_text = path_ntbk.with_suffix(".html").read_text()
         assert (
-            f"https://mybinder.org/v2/gh/ExecutableBookProject/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/{path}"  # noqa E501
+            f"https://mybinder.org/v2/gh/executablebooks/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/{path}"  # noqa E501
             in ntbk_text
         )
         assert (
-            f"https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/ExecutableBookProject/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/{path}"  # noqa E501
+            f"https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/executablebooks/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/{path}"  # noqa E501
             in ntbk_text
         )
 
@@ -117,7 +117,7 @@ def test_build_book(tmpdir):
     run(cmd, cwd=path_tmp_base, check=True)
     ntbk_text = path_ntbk.read_text()
     assert (
-        '<a class="edit-button" href="https://github.com/ExecutableBookProject/sphinx-book-theme/edit/master/TESTPATH/section1/ntbk.ipynb">'  # noqa E501
+        '<a class="edit-button" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/TESTPATH/section1/ntbk.ipynb">'  # noqa E501
         in ntbk_text
     )
     rmtree(path_build)

@@ -47,7 +47,7 @@ Controlling page elements <layout>
 notebooks
 launch
 contributing
-GitHub repository <https://github.com/executablebookproject/sphinx-book-theme>
+GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 ```
 
 ## Reference pages

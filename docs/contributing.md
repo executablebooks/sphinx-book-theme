@@ -12,7 +12,7 @@ The `sphinx-book-theme` project follows the
 
 ## Releases
 
-`sphinx-book-theme` uses [a GitHub Action](https://github.com/ExecutableBookProject/sphinx-book-theme/blob/master/.github/workflows/tests.yml#L57)
+`sphinx-book-theme` uses [a GitHub Action](https://github.com/executablebooks/sphinx-book-theme/blob/master/.github/workflows/tests.yml#L57)
 to automate as much of the release process as possible. There is a secret stored in
 the repository that can push new releases to PyPI when new tags are created.
 
