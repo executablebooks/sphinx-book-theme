@@ -20,7 +20,7 @@ jupyter_execute_notebooks = "auto"
 # Base options, we can add other key/vals later
 html_theme_options = {
     "path_to_docs": "TESTPATH",
-    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
+    "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
     "repository_branch": "master",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",

@@ -46,7 +46,7 @@ jobs:
         pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
         coverage xml
     - name: Upload to Codecov
-      if: matrix.python-version == 3.7 && github.repository == 'ExecutableBookProject/sphinx-book-theme'
+      if: matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
       uses: codecov/codecov-action@v1
       with:
         name: ebp-sbt-pytests-py3.7
