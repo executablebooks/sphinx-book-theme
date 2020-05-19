@@ -24,6 +24,19 @@
             {% endif %}
         </div>
 
+        <!-- Extra links -->
+        {% if theme_extra_links %}
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-link"></i></button>
+
+            <div class="dropdown-buttons">
+                {% for link_title, link in theme_extra_links.items() %}
+                    <a class="dropdown-buttons" href="{{ link }}"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">{{ link_title }}</button></a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
         <!-- Edit this page -->
         {% if theme_use_edit_page_button and github_repo %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>{% endif %}
 

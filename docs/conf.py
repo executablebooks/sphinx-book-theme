@@ -58,6 +58,9 @@ html_theme_options = {
     },
     "use_edit_page_button": True,
     "expand_sections": ["reference/index"],
+    "extra_links": {
+        "github": "https://github.com/executablebooks/sphinx-book-theme",
+    }
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True
