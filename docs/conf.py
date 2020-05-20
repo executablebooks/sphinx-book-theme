@@ -63,5 +63,6 @@ html_theme_options = {
     # "single_page": True
     # "number_toc_sections": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",
+    # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"

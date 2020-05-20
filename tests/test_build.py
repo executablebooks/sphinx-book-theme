@@ -122,6 +122,23 @@ def test_build_book(tmpdir):
     )
     rmtree(path_build)
 
+    # Test extra navbar
+    cmd = cmd_base + ["-D", "html_theme_options.extra_navbar='<div>EXTRA NAVBAR</div>'"]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = path_ntbk.read_text()
+    assert "<div>EXTRA NAVBAR</div>" in ntbk_text
+    rmtree(path_build)
+
+    # Test extra navbar deprecated key
+    cmd = cmd_base + [
+        "-D",
+        "html_theme_options.navbar_footer_text='<div>EXTRA NAVBAR</div>'",
+    ]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = path_ntbk.read_text()
+    assert "<div>EXTRA NAVBAR</div>" in ntbk_text
+    rmtree(path_build)
+
     # Test extra footer
     cmd = cmd_base + ["-D", "html_theme_options.extra_footer='<div>EXTRA FOOTER</div>'"]
     run(cmd, cwd=path_tmp_base, check=True)

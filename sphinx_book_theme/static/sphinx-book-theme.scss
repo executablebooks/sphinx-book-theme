@@ -623,11 +623,11 @@ button.topbarbtn img {
         text-align: center;
     }
 
-    p.navbar_footer {
+    div.navbar_extra_footer {
         text-align: center;
         font-size: .9em;
-        padding-top: .5em;
         color: $non-content-grey;
+        margin-bottom: 3em;
     }
 
     &.collapsing {
