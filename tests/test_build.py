@@ -122,6 +122,13 @@ def test_build_book(tmpdir):
     )
     rmtree(path_build)
 
+    # Test extra footer
+    cmd = cmd_base + ["-D", "html_theme_options.extra_footer='<div>EXTRA FOOTER</div>'"]
+    run(cmd, cwd=path_tmp_base, check=True)
+    ntbk_text = path_ntbk.read_text()
+    assert "<div>EXTRA FOOTER</div>" in ntbk_text
+    rmtree(path_build)
+
     # Explicitly expanded sections are expanded when not active
     cmd = cmd_base + ["-D", "html_theme_options.expand_sections=section1/index"]
     run(cmd, cwd=path_tmp_base, check=True)
