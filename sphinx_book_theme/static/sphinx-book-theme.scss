@@ -136,16 +136,16 @@ main.bd-content {
                 margin-bottom: .2em;
                 font-weight: bold;
 
-                &::after {
+                &::before {
                     font-family: "Font Awesome 5 Free";
-                    margin-left: 0.5em;
+                    margin-right: 0.5em;
                     font-weight: 900;
                     // Default content is exclamation point
                     content: "\f06a";
                 }
             }
 
-            &.alert-warning p.admonition-title::after {
+            &.alert-warning p.admonition-title::before {
                 content: "\f071";
                 color: red;
             }
