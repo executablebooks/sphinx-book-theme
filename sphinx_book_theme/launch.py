@@ -124,7 +124,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
             (
                 "Notebook UI for Binder/JupyterHub links must be one"
                 f"of {tuple(notebook_interface_prefixes.keys())},"
-                "not {notebook_interface}"
+                f"not {notebook_interface}"
             )
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]
