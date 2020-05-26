@@ -1,5 +1,12 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 
+{% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
+{% if is_single_page %}
+    {%- set sidebar_width_class = "col-md-2" %}
+{% else %}
+    {%- set sidebar_width_class = "col-md-3" %}
+{% endif %}
+
 {% block extrahead %}
 {{ super() }}
 
@@ -18,17 +25,12 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    {% if (theme_single_page != True) and (theme_single_page != "True") %}
+<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show" id="site-navigation">
+    {% if not is_single_page %}
         {% include "sidebar.html" %}
     {%- endif %}
 </div>
 {% endblock %}
-
-{% set single_page = "" %}
-{% if theme_single_page == True %}
-{% set single_page = " single-page" %}
-{% endif %}
 
 {% block docs_main %}
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">

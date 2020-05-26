@@ -93,6 +93,7 @@ def test_build_book(tmpdir):
     ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
     sidebar = ntbk_text.find("div", id="site-navigation")
     assert len(sidebar.find_all("div")) == 0
+    assert "col-md-2" in sidebar.attrs["class"]
     rmtree(path_build)
 
     # opengraph is generated when baseurl is given
