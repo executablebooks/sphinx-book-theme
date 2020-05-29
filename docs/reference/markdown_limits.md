@@ -108,13 +108,13 @@ ax.imshow(wide)
 
 ### Hiding markdown
 
-+++ {"tags": ["hide_input"]}
-
+````{toggle}
 ```{note}
 This is a hidden markdown cell
 
 It should be hidden!
 ```
+````
 
 +++
 

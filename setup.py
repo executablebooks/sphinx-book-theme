@@ -34,7 +34,7 @@ setup(
         "click",
         "setuptools",
         "libsass",
-        "pydata-sphinx-theme==0.2.2",
+        "pydata-sphinx-theme~=0.3.0",
     ],
     extras_require={
         "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
