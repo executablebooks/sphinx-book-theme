@@ -166,7 +166,20 @@ def add_to_context(app, pagename, templatename, context, doctree):
         ul = "\n".join(ul)
         return ul
 
+    def fix_sourcename(sourcename):
+        if not sourcename:
+            return sourcename
+
+        sourcename = Path(sourcename)
+        if sourcename.suffix == ".txt":
+            # Check if .txt has been added to a pre-existing suffix. If so, remove .txt.
+            # This seems to happen in some sphinx versions
+            if sourcename.with_suffix("").suffix in [".md", ".rst", ".ipynb"]:
+                sourcename = sourcename.with_suffix("")
+        return str(sourcename)
+
     context["nav_to_html_list"] = nav_to_html_list
+    context["fix_sourcename"] = fix_sourcename
 
     # Add a shortened page text to the context using the sections text
     if doctree:
