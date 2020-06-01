@@ -2,6 +2,13 @@
 
 A few configuration options for this theme
 
+```{note}
+This documentation and the examples below are written with MyST Markdown, a form
+of markdown that works with Sphinx. For more information about MyST markdown, and
+to use MyST markdown with your Sphinx website,
+see [the MyST-parser documentation](https://myst-parser.readthedocs.io/)
+```
+
 ## Add an Edit this Page button
 
 You can add a button to each page that will allow users to edit the page text
@@ -23,8 +30,18 @@ and configure your documentations repository information:
 html_theme_options = {
     ...
     "repository_url": "https://github.com/{your-docs-url}",
-    "repository_branch": "{your-branch}",
     "path_to_docs": "{path-relative-to-site-root},
+    ...
+}
+```
+
+By default, the edit button will point to the `master` branch, but if you'd like
+to change this, use the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "repository_branch": "{your-branch}",
     ...
 }
 ```
