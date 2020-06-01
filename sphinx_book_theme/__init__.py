@@ -8,7 +8,7 @@ import sass
 
 from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
 
-__version__ = "0.0.20"
+__version__ = "0.0.21dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
