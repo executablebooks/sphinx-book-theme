@@ -366,10 +366,15 @@ div.highlight {
             margin: 0 .1em;
             background-color: white;
             color: $non-content-grey;
-            font-size: 1.4em;
             border: none;
             padding-top: .1rem;
             padding-bottom: .1rem;
+            font-size: 1.4em;
+
+            i.fab {
+                vertical-align: baseline;
+                line-height: 1;
+            }
         }
 
         // buttons float right
@@ -400,9 +405,15 @@ div.dropdown-buttons-trigger {
     div.dropdown-buttons {
         display: none;
         position: absolute;
-        max-width: 120px;
+        max-width: 130px;
         margin-top: .2em;
         z-index: 1000;
+
+        &.sourcebuttons .topbarbtn i {
+            padding-right: 6px;
+            margin-left: -5px;
+            font-size: .9em !important;
+        }
 
         button.topbarbtn {
             padding-top: .35rem;
