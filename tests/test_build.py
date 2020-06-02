@@ -8,7 +8,7 @@ path_tests = Path(__file__).parent.resolve()
 path_base = path_tests.joinpath("sites", "base")
 
 
-def test_build_book(tmpdir):
+def test_build_book(tmpdir, file_regression):
     """Test building the book template and a few test configs."""
     # Copy over the base build content and config to tmpdir
     path_tmpdir = Path(tmpdir)
@@ -113,14 +113,19 @@ def test_build_book(tmpdir):
     )
     rmtree(path_build)
 
-    # Test edit button
-    cmd = cmd_base + ["-D", "html_theme_options.use_edit_page_button=True"]
+    # Test source buttons edit button
+    cmd = cmd_base + [
+        "-D",
+        "html_theme_options.use_edit_page_button=True",
+        "-D",
+        "html_theme_options.use_repository_button=True",
+        "-D",
+        "html_theme_options.use_issues_button=True",
+    ]
     run(cmd, cwd=path_tmp_base, check=True)
-    ntbk_text = path_ntbk.read_text()
-    assert (
-        '<a class="edit-button" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/TESTPATH/section1/ntbk.ipynb">'  # noqa E501
-        in ntbk_text
-    )
+    ntbk_text = BeautifulSoup(path_ntbk.read_text(), "html.parser")
+    source_btns = ntbk_text.find_all("div", attrs={"class": "sourcebuttons"})[0]
+    file_regression.check(source_btns.prettify(), extension=".html")
     rmtree(path_build)
 
     # Test extra navbar
