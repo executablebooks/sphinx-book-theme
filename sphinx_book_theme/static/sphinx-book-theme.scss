@@ -124,37 +124,6 @@ main.bd-content {
             }
         }
 
-        // Admonitions
-        div.alert {
-            padding-bottom: .75em;  // Overriding an override
-
-            p:last-child {
-                margin-bottom: 0;
-            }
-
-            p.admonition-title {
-                margin-bottom: .2em;
-                font-weight: bold;
-
-                &:before {
-                    font-family: "Font Awesome 5 Free";
-                    margin-right: 0.5em;
-                    font-weight: 900;
-                    content: "\f05a";  /* info-circle */
-                }
-            }
-
-            &.alert-warning, &.alert-danger {
-                p.admonition-title:before {
-                    content: "\f071";
-                }
-            }
-
-            &.alert-primary p.admonition-title:before {
-                content: "\f06a" /* exclamation-circle */
-            }
-        }
-
         // Glossaries
         dl.glossary {
             dd {
@@ -244,6 +213,16 @@ div.cell {
             overflow-y: auto;
         }
     }
+}
+
+// Extension over-rides
+// Toggle-button overrides
+.toggle.admonition button.toggle-button {
+    top: 0.5em !important;
+}
+
+button.toggle-button-hidden:before {
+    bottom: 0.2em !important;
 }
 
 // Margin and content-sidebar rules

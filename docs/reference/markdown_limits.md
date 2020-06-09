@@ -116,6 +116,11 @@ It should be hidden!
 ```
 ````
 
+```{admonition} And here's a toggleable note
+:class: dropdown
+With a body!
+```
+
 +++
 
 ### Hiding both inputs and outputs
