@@ -210,7 +210,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
         context["theme_use_edit_page_button"] = False
 
     # Make sure the context values are bool
-    for key in ["theme_use_edit_page_button"]:
+    btns = [
+        "theme_use_edit_page_button",
+        "theme_use_repository_button",
+        "theme_use_issues_button",
+    ]
+    for key in btns:
         if key in context:
             context[key] = _string_or_bool(context[key])
 
