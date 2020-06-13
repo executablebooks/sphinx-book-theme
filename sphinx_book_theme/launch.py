@@ -2,6 +2,8 @@ from pathlib import Path
 from docutils import nodes
 from sphinx.util import logging
 from shutil import copy2
+import json
+
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -40,7 +42,9 @@ def update_thebelab_context(app, doctree, docname):
     # Thebelab configuration
     # Choose the kernel we'll use
     meta = app.env.metadata.get(docname, {})
-    kernel_name = meta.get("kernel_name", "python3")
+    kernel_name = "python3"
+    if meta.get("kernelspec") is not None:
+        kernel_name = json.loads(meta["kernelspec"]).get("name", kernel_name)
     cm_language = kernel_name
     if "python" in cm_language:
         cm_language = "python"
@@ -98,7 +102,8 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         # Paths to old and new notebooks
         path_ntbk = ntbk_dir.joinpath(pagename).with_suffix(".ipynb")
         path_new_notebook = sources_dir.joinpath(pagename).with_suffix(".ipynb")
-        # New folder should already exist in `_sources`, so just copy
+        # Copy the notebook to `_sources` dir so it can be downloaded
+        path_new_notebook.parent.mkdir(exist_ok=True)
         copy2(path_ntbk, path_new_notebook)
         context["ipynb_source"] = pagename + ".ipynb"
 
@@ -120,7 +125,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
             (
                 "Notebook UI for Binder/JupyterHub links must be one"
                 f"of {tuple(notebook_interface_prefixes.keys())},"
-                "not {notebook_interface}"
+                f"not {notebook_interface}"
             )
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]

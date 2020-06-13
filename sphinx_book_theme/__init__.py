@@ -8,7 +8,7 @@ import sass
 
 from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
 
-__version__ = "0.0.17dev0"
+__version__ = "0.0.24dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
@@ -194,7 +194,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         repo_url = config_theme.get("repository_url", "")
         # Only add the edit button if `repository_url` is given
         if repo_url:
-            branch = config_theme.get("repository_branch", "")
+            branch = config_theme.get("repository_branch", "master")
             relpath = config_theme.get("path_to_docs", "")
             org, repo = repo_url.strip("/").split("/")[-2:]
             context.update(
@@ -210,7 +210,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
         context["theme_use_edit_page_button"] = False
 
     # Make sure the context values are bool
-    for key in ["theme_use_edit_page_button"]:
+    btns = [
+        "theme_use_edit_page_button",
+        "theme_use_repository_button",
+        "theme_use_issues_button",
+    ]
+    for key in btns:
         if key in context:
             context[key] = _string_or_bool(context[key])
 

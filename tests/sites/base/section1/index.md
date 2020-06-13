@@ -4,4 +4,6 @@
 page1
 ntbk
 ntbkmd
+ntbk_octave
+ntbk_julia
 ```

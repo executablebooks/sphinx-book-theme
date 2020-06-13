@@ -78,7 +78,6 @@ main.bd-content {
         // Math equations
         span.eqno {
             float: right;
-            margin: 1em 0em;
             font-size: 1.2em;
         }
 
@@ -124,33 +123,6 @@ main.bd-content {
             }
         }
 
-        // Admonitions
-        div.alert {
-            padding-bottom: .75em;  // Overriding an override
-
-            p:last-child {
-                margin-bottom: 0;
-            }
-
-            p.admonition-title {
-                margin-bottom: .2em;
-                font-weight: bold;
-
-                &::after {
-                    font-family: "Font Awesome 5 Free";
-                    margin-left: 0.5em;
-                    font-weight: 900;
-                    // Default content is exclamation point
-                    content: "\f06a";
-                }
-            }
-
-            &.alert-warning p.admonition-title::after {
-                content: "\f071";
-                color: red;
-            }
-        }
-
         // list styles
         .ls-none {
             list-style: none;
@@ -159,7 +131,7 @@ main.bd-content {
         li.fs-1-2 {
             font-size: 1.2em;
         }
-
+        
         // Glossaries
         dl.glossary {
             dd {
@@ -249,6 +221,16 @@ div.cell {
             overflow-y: auto;
         }
     }
+}
+
+// Extension over-rides
+// Toggle-button overrides
+.toggle.admonition button.toggle-button {
+    top: 0.5em !important;
+}
+
+button.toggle-button-hidden:before {
+    bottom: 0.2em !important;
 }
 
 // Margin and content-sidebar rules
@@ -371,10 +353,15 @@ div.highlight {
             margin: 0 .1em;
             background-color: white;
             color: $non-content-grey;
-            font-size: 1.4em;
             border: none;
             padding-top: .1rem;
             padding-bottom: .1rem;
+            font-size: 1.4em;
+
+            i.fab {
+                vertical-align: baseline;
+                line-height: 1;
+            }
         }
 
         // buttons float right
@@ -405,9 +392,15 @@ div.dropdown-buttons-trigger {
     div.dropdown-buttons {
         display: none;
         position: absolute;
-        max-width: 120px;
+        max-width: 130px;
         margin-top: .2em;
         z-index: 1000;
+
+        &.sourcebuttons .topbarbtn i {
+            padding-right: 6px;
+            margin-left: -5px;
+            font-size: .9em !important;
+        }
 
         button.topbarbtn {
             padding-top: .35rem;
@@ -628,11 +621,11 @@ button.topbarbtn img {
         text-align: center;
     }
 
-    p.navbar_footer {
+    div.navbar_extra_footer {
         text-align: center;
         font-size: .9em;
-        padding-top: .5em;
         color: $non-content-grey;
+        margin-bottom: 3em;
     }
 
     &.collapsing {

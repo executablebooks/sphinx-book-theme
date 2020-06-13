@@ -18,4 +18,10 @@
   {% set nav = get_nav_object(maxdepth=3, collapse=False) %}
   {{ nav_to_html_list(nav, include_item_names=True, with_home_page=theme_home_page_in_toc, number_sections=theme_number_toc_sections) }}
 </nav>
-<p class="navbar_footer">{{ theme_navbar_footer_text }}</p>
+
+{% if theme_navbar_footer_text %}{% set theme_extra_navbar=theme_navbar_footer_text %}{% endif %} <!-- To handle the deprecated key -->
+{% if theme_extra_navbar %}
+<div class="navbar_extra_footer">
+  {{ theme_extra_navbar }}
+</div>
+{% endif %}

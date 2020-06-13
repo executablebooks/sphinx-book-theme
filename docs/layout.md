@@ -10,6 +10,12 @@ typical `{sidebar}` directives, as well as a theme-specific `{margin}` directive
 This section covers both. Both allow you to place extra content
 separately from your main content.
 
+```{tip}
+Sidebar content will generally overlap with the white space where your site's
+table of contents lives. When the reader scrolls sidebar content into view, the
+right TOC should hide itself automatically.
+```
+
 ### Margins
 
 You can specify content that should exist in the right margin. This will behave

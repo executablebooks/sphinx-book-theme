@@ -48,8 +48,7 @@ jupyter_execute_notebooks = "cache"
 
 html_theme_options = {
     "path_to_docs": "docs",
-    "repository_url": "https://github.com/ExecutableBookProject/sphinx-book-theme",
-    "repository_branch": "master",
+    "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "jupyterhub_url": "https://datahub.berkeley.edu",
@@ -62,5 +61,7 @@ html_theme_options = {
     # "home_page_in_toc": True,
     # "single_page": True
     # "number_toc_sections": True,
+    # "extra_footer": "<a href='https://google.com'>Test</a>",
+    # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
