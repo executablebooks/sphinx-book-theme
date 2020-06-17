@@ -52,6 +52,7 @@ html_theme_options = {
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "jupyterhub_url": "https://datahub.berkeley.edu",
+        "colab_url": "https://colab.research.google.com",
         "notebook_interface": "jupyterlab",
         "thebelab": True,
     },

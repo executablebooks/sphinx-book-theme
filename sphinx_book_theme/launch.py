@@ -144,6 +144,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     # Now build infrastructure-specific links
     jupyterhub_url = launch_buttons.get("jupyterhub_url")
     binderhub_url = launch_buttons.get("binderhub_url")
+    colab_url = launch_buttons.get("colab_url")
     if binderhub_url:
         url = (
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
@@ -157,6 +158,10 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
             f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
         )
         context["jupyterhub_url"] = url
+
+    if colab_url:
+        url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
+        context["colab_url"] = url
 
     # Add thebelab flag in context
     if launch_buttons.get("thebelab", False):
