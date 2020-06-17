@@ -161,6 +161,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
 
     if colab_url:
         url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
+        url = f"{colab_url}/github/{org}/{repo}/tree/{branch}/{path_rel_repo}"
         context["colab_url"] = url
 
     # Add thebelab flag in context
