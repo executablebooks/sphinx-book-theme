@@ -131,3 +131,6 @@ dmypy.json
 
 # Generated CSS file
 *sphinx-book-theme.css
+
+# mac OS
+.DS_Store
