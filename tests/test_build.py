@@ -59,6 +59,10 @@ def test_build_book(file_regression, sphinx_build):
             f"https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/executablebooks/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/{path}"  # noqa E501
             in ntbk_text
         )
+        assert (
+            f"https://colab.research.google.com/github/executablebooks/sphinx-book-theme/blob/master/TESTPATH/{path}"  # noqa E501
+            in ntbk_text
+        )
 
     # Check for correct kernel name in jupyter notebooks
     kernels_expected = {
