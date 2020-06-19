@@ -214,3 +214,12 @@ def test_topbar(file_regression, sphinx_build):
         source_btns.prettify(), basename="test_topbar_hidebtns", extension=".html"
     )
     sphinx_build.clean()
+
+    # Test launch buttons
+    sphinx_build.build()
+    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
+    launch_btns = ntbk_text.find_all("div", attrs={"class": "dropdown-buttons"})[1]
+    file_regression.check(
+        launch_btns.prettify(), basename="test_topbar_launchbtns", extension=".html"
+    )
+    sphinx_build.clean()
