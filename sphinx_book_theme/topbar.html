@@ -3,23 +3,33 @@
     </div>
     <div class="col pl-2 topbar-main">
         {% if theme_single_page != True %}
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         {% endif %}
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+                    class="fas fa-download"></i></button>
 
             {% if page_source_suffix %}
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                {% if ipynb_source %}<a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ ipynb_source }}"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>{% endif %}
+                {% if ipynb_source %}<a class="dropdown-buttons"
+                    href="{{ pathto('_sources', 1) }}/{{ ipynb_source }}"><button type="button"
+                        class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                        data-placement="left">.ipynb</button></a>{% endif %}
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">{{ page_source_suffix }}</button></a>
+                <a class="dropdown-buttons" href="{{ pathto('_sources', 1) }}/{{ sourcename }}"><button type="button"
+                        class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                        data-placement="left">{{ page_source_suffix }}</button></a>
                 <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                    onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
             {% endif %}
         </div>
@@ -27,31 +37,59 @@
         <!-- Source interaction buttons -->
         {% if theme_repository_url and (theme_use_repository_button or theme_use_issues_button or theme_use_edit_page_button) %}
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+                aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
             <div class="dropdown-buttons sourcebuttons">
-                {% if theme_use_repository_button %}<a class="repository-button" href="{{ theme_repository_url }}"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>{% endif %}
-                {% if theme_use_issues_button %}<a class="issues-button" href="{{ theme_repository_url }}/issues/new?title=Issue%20on%20page%20%2F{{ pagename }}.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>{% endif %}
-                {% if theme_use_edit_page_button %}<a class="edit-button" href="{{ get_edit_url() }}"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>{% endif %}
+                {% if theme_use_repository_button %}<a class="repository-button"
+                    href="{{ theme_repository_url }}"><button type="button" class="btn btn-secondary topbarbtn"
+                        data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                            class="fab fa-github"></i>repository</button></a>{% endif %}
+                {% if theme_use_issues_button %}<a class="issues-button"
+                    href="{{ theme_repository_url }}/issues/new?title=Issue%20on%20page%20%2F{{ pagename }}.html&body=Your%20issue%20content%20here."><button
+                        type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                        title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>{% endif %}
+                {% if theme_use_edit_page_button %}<a class="edit-button" href="{{ get_edit_url() }}"><button
+                        type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                        title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>{% endif %}
             </div>
         </div>
         {% endif %}
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        {% if binder_url or jupyterhub_url or use_thebelab %}
+        {% if binder_url or jupyterhub_url or colab_url or use_thebelab %}
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+                aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
             <div class="dropdown-buttons">
                 {% if binder_url %}
-                <a class="binder-button" href="{{ binder_url }}"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="{{ pathto('_static/images/logo_binder.svg', 1) }}" alt="Interact on binder">Binder</button></a>
+                <a class="binder-button" href="{{ binder_url }}"><button type="button"
+                        class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                        data-placement="left"><img class="binder-button-logo"
+                            src="{{ pathto('_static/images/logo_binder.svg', 1) }}"
+                            alt="Interact on binder">Binder</button></a>
                 {% endif %}
                 {% if jupyterhub_url %}
-                <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button" class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip" data-placement="left"><img class="jupyterhub-button-logo" src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}" alt="Interact on JupyterHub">JupyterHub</button></a>
+                <a class="jupyterhub-button" href="{{ jupyterhub_url }}"><button type="button"
+                        class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                        data-placement="left"><img class="jupyterhub-button-logo"
+                            src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}"
+                            alt="Interact on JupyterHub">JupyterHub</button></a>
+                {% endif %}
+                {% if colab_url %}
+                <a class="colab-button" href="{{ colab_url }}"><button type="button" class="btn btn-secondary topbarbtn"
+                        title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                            src="{{ pathto('_static/images/logo_colab.png', 1) }}"
+                            alt="Interact on Colab">Colab</button></a>
                 {% endif %}
                 {% if use_thebelab -%}
-                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
+                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button"
+                    onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
+                        class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
                 {% endif %}
             </div>
         </div>

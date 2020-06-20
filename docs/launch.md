@@ -55,6 +55,20 @@ html_theme_options = {
 }
 ```
 
+### Google Colab
+
+To add Google Colab links to your page, add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "colab_url": "https://{your-colab-url}"
+    },
+    ...
+}
+```
+
 ### Thebelab
 
 Thebelab asks for a BinderHub kernele *under the hood* and converts all of your
