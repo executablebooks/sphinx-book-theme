@@ -47,23 +47,6 @@ def test_build_book(file_regression, sphinx_build):
     sphinx_build.build()
     assert sphinx_build.path_pg_index.exists()
 
-    # Check interact links for both ipynb and myst-nb
-    for path in ["section1/ntbk.ipynb", "section1/ntbkmd.md"]:
-        path_ntbk = sphinx_build.path_html.joinpath(*path.split("/"))
-        ntbk_text = path_ntbk.with_suffix(".html").read_text()
-        assert (
-            f"https://mybinder.org/v2/gh/executablebooks/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/{path}"  # noqa E501
-            in ntbk_text
-        )
-        assert (
-            f"https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/executablebooks/sphinx-book-theme&urlpath=lab/tree/sphinx-book-theme/TESTPATH/{path}"  # noqa E501
-            in ntbk_text
-        )
-        assert (
-            f"https://colab.research.google.com/github/executablebooks/sphinx-book-theme/blob/master/TESTPATH/{path}"  # noqa E501
-            in ntbk_text
-        )
-
     # Check for correct kernel name in jupyter notebooks
     kernels_expected = {
         "section1/ntbk.ipynb": "python3",
