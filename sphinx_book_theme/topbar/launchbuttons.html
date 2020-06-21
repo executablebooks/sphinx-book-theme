@@ -18,7 +18,7 @@
                     src="{{ pathto('_static/images/logo_jupyterhub.svg', 1) }}"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         {% endif %}
-        {% if colab_url %}
+        {% if colab_url and page_source_suffix==".ipynb" %}
         <a class="colab-button" href="{{ colab_url }}"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="{{ pathto('_static/images/logo_colab.png', 1) }}"
