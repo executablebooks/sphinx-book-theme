@@ -21,7 +21,7 @@ jupyter_execute_notebooks = "auto"
 html_theme_options = {
     "path_to_docs": "TESTPATH",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
-    "repository_branch": "master",
+    # "repository_branch": "master",  # Not using this, should default to master
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "jupyterhub_url": "https://datahub.berkeley.edu",

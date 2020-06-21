@@ -206,3 +206,16 @@ def test_topbar(file_regression, sphinx_build):
         launch_btns.prettify(), basename="test_topbar_launchbtns", extension=".html"
     )
     sphinx_build.clean()
+
+    # Test custom branch for launch buttons
+    cmd = [
+        "-D",
+        "html_theme_options.repository_branch=foo",
+    ]
+    sphinx_build.build(cmd)
+    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
+    launch_btns = ntbk_text.find_all("div", attrs={"class": "dropdown-buttons"})[1]
+    file_regression.check(
+        launch_btns.prettify(), basename="test_repo_custombranch", extension=".html"
+    )
+    sphinx_build.clean()
