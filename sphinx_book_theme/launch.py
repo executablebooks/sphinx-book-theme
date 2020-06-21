@@ -50,7 +50,7 @@ def update_thebelab_context(app, doctree, docname):
         cm_language = "python"
 
     repo_url = _get_repo_url(config_theme)
-    branch = config_theme.get("repository_branch", "master")
+    branch = _get_branch(config_theme)
     org, repo = _split_repo_url(repo_url)
 
     # Update the doctree with some nodes for the thebelab configuration
@@ -115,7 +115,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         # Skip the rest because the repo_url isn't right
         return
 
-    branch = config_theme.get("repository_branch", "master")
+    branch = _get_branch(config_theme)
 
     # Construct the extra URL parts (app and relative path)
     notebook_interface_prefixes = {"classic": "tree", "jupyterlab": "lab/tree"}
@@ -192,3 +192,10 @@ def _get_repo_url(config):
 
 def _is_notebook(app, pagename):
     return app.env.metadata[pagename].get("kernelspec")
+
+
+def _get_branch(config_theme):
+    branch = config_theme.get("repository_branch")
+    if not branch:
+        branch = "master"
+    return branch
