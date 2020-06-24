@@ -63,7 +63,7 @@ def test_build_book(file_regression, sphinx_build):
     index_html = BeautifulSoup(index_text, "html.parser")
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
     # Index should *not* be in navbar
-    assert "Index</a>" not in index_text
+    assert "Index with code in title</a>" not in index_text
     # Captions make it into navbar
     assert '<p class="margin-caption">My caption</p>' in index_text
     # Opengraph should not be in the HTML because we have no baseurl specified
@@ -75,6 +75,8 @@ def test_build_book(file_regression, sphinx_build):
     assert '<a class="edit-button"' not in index_text
     # Sub-sections shouldn't be in the TOC because we haven't expanded it yet
     assert "Section 1 page1</a>" not in str(sidebar)
+    # Title should be just text, no HTML
+    assert "Index with code in title" in index_text
     sphinx_build.clean()
 
 
@@ -96,7 +98,7 @@ def test_navbar_options(file_regression, sphinx_build):
     sphinx_build.build(cmd)
     ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
     navbar = ntbk_text.find("nav", id="bd-docs-nav")
-    assert "Index</a>" in str(navbar)
+    assert "Index with code in title</a>" in str(navbar)
     sphinx_build.clean()
 
     # "single_page": True

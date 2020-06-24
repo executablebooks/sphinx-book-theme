@@ -14,7 +14,7 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="{{ pageurl }}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="{% if title %}{{ title }}{% else %}{{ docstitle }}{% endif %}" />
+<meta property="og:title"       content="{% if pagetitle %}{{ pagetitle }}{% else %}{{ docstitle }}{% endif %}" />
 <meta property="og:description" content="{{ page_description }}" />
 {% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
 
