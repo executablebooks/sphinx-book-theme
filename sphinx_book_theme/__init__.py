@@ -6,7 +6,7 @@ from sphinx.util import logging
 from sphinx import addnodes
 import sass
 
-from .launch import update_thebelab_context, init_thebelab_core, add_hub_urls
+from .launch import add_hub_urls
 
 __version__ = "0.0.28dev0"
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -223,6 +223,43 @@ def add_to_context(app, pagename, templatename, context, doctree):
             context[key] = _string_or_bool(context[key])
 
 
+def update_thebelab_config(app, env, docnames):
+    """Update thebelab configuration with SBT-specific values"""
+    # Will be empty if it doesn't exist
+    thebe_config = env.config.thebelab_config
+    theme_options = env.config.html_theme_options
+
+    if not theme_options.get("launch_buttons", {}).get("thebelab"):
+        return
+
+    # Update the repository branch and URL
+    # Assume that if there's already a thebe_config, then we don't want to over-ride
+    if "repository_url" not in thebe_config:
+        thebe_config["repository_url"] = theme_options.get("repository_url")
+    if "repository_branch" not in thebe_config:
+        branch = theme_options.get("repository_branch")
+        if not branch:
+            # Explicitly check in cae branch is ""
+            branch = "master"
+        thebe_config["repository_branch"] = branch
+
+    # Update the selectors to find thebe-enabled cells
+    comma = ", " if "selector" in thebe_config else ""
+    thebe_config["selector"] = thebe_config.get("selector", "") + comma + ".cell"
+
+    comma = ", " if "selector_input" in thebe_config else ""
+    thebe_config["selector_input"] = (
+        thebe_config.get("selector_input", "") + comma + ".cell_input div.highlight"
+    )
+
+    comma = ", " if "selector_output" in thebe_config else ""
+    thebe_config["selector_output"] = (
+        thebe_config.get("selector_output", "") + comma + ".cell_output"
+    )
+
+    env.config.thebelab_config = thebe_config
+
+
 def _string_or_bool(var):
     if isinstance(var, str):
         return var.lower() == "true"
@@ -260,6 +297,8 @@ class Margin(directives.body.Sidebar):
 def setup(app):
     compile_scss()
 
+    app.connect("env-before-read-docs", update_thebelab_config)
+
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
 
@@ -267,9 +306,8 @@ def setup(app):
 
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
+
     app.add_js_file("sphinx-book-theme.js")
     app.add_directive("margin", Margin)
 
-    # Include Thebelab for interactive code if it's enabled
-    app.connect("env-before-read-docs", init_thebelab_core)
-    app.connect("doctree-resolved", update_thebelab_context)
+    app.setup_extension("sphinx_thebelab")
