@@ -1,4 +1,4 @@
-# Index
+# Index `with code` in title
 
 ```{toctree}
 :caption: My caption

@@ -168,6 +168,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
     context["nav_to_html_list"] = nav_to_html_list
 
+    # Update the page title because HTML makes it into the page title occasionally
+    if pagename in app.env.titles:
+        title = app.env.titles[pagename]
+        context["pagetitle"] = title.astext()
+
     # Add a shortened page text to the context using the sections text
     if doctree:
         description = ""
