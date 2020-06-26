@@ -1,83 +1,9 @@
 from pathlib import Path
-from docutils import nodes
 from sphinx.util import logging
 from shutil import copy2
-import json
 
 
 SPHINX_LOGGER = logging.getLogger(__name__)
-
-
-def init_thebelab_core(app, env, docnames):
-    config_theme = app.config["html_theme_options"]
-    config_launch = config_theme.get("launch_buttons", {})
-    config_thebe = config_launch.get("thebelab", False)
-    if not config_thebe:
-        return
-
-    # Add core libraries
-    opts = {"async": "async"}
-    app.add_js_file(filename="https://unpkg.com/thebelab@latest/lib/index.js", **opts)
-    app.add_js_file(filename="thebelab.js", **opts)
-
-
-def update_thebelab_context(app, doctree, docname):
-    """Add thebelab config nodes to this doctree."""
-
-    config_theme = app.config["html_theme_options"]
-    config_launch = config_theme.get("launch_buttons", {})
-    config_thebe = config_launch.get("thebelab", False)
-    if not config_thebe:
-        return
-
-    # Thebe configuration
-    if config_thebe is True:
-        config_thebe = {}
-    if not isinstance(config_thebe, dict):
-        raise ValueError(
-            "thebelab configuration must be `True` or a dictionary for configuration."
-        )
-    codemirror_theme = config_thebe.get("codemirror_theme", "abcdef")
-
-    # Thebelab configuration
-    # Choose the kernel we'll use
-    meta = app.env.metadata.get(docname, {})
-    kernel_name = "python3"
-    if meta.get("kernelspec") is not None:
-        kernel_name = json.loads(meta["kernelspec"]).get("name", kernel_name)
-    cm_language = kernel_name
-    if "python" in cm_language:
-        cm_language = "python"
-
-    repo_url = _get_repo_url(config_theme)
-    branch = _get_branch(config_theme)
-    org, repo = _split_repo_url(repo_url)
-
-    # Update the doctree with some nodes for the thebelab configuration
-    thebelab_html_config = f"""
-    <script type="text/x-thebe-config">
-    {{
-        requestKernel: true,
-        binderOptions: {{
-            repo: "{org}/{repo}",
-            ref: "{branch}",
-        }},
-        codeMirrorConfig: {{
-            theme: "{codemirror_theme}",
-            mode: "{cm_language}"
-        }},
-        kernelOptions: {{
-            kernelName: "{kernel_name}",
-            path: "{str(Path(docname).parent)}"
-        }}
-    }}
-    </script>
-    """
-
-    doctree.append(nodes.raw(text=thebelab_html_config, format="html"))
-    doctree.append(
-        nodes.raw(text=f"<script>kernelName = '{kernel_name}'</script>", format="html")
-    )
 
 
 def add_hub_urls(app, pagename, templatename, context, doctree):

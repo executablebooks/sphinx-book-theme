@@ -91,6 +91,14 @@ var initTocHide = () => {
   });
 }
 
+var initThebelabSBT = () => {
+  var title  = $("div.section h1")[0]
+  if (!$(title).next().hasClass("thebelab-launch-button")) {
+    $("<button class='thebelab-launch-button'></button>").insertAfter($(title))
+  }
+  initThebelab();
+}
+
 sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)

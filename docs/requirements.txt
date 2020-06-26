@@ -1,3 +1,4 @@
 matplotlib
 numpy
 folium
+git+https://github.com/executablebooks/sphinx-thebelab.git

@@ -7,3 +7,4 @@ python:
         path: .
         extra_requirements:
           - sphinx
+      - requirements: docs/requirements.txt
