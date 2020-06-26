@@ -244,18 +244,16 @@ def update_thebelab_config(app, env, docnames):
         thebe_config["repository_branch"] = branch
 
     # Update the selectors to find thebe-enabled cells
-    comma = ", " if "selector" in thebe_config else ""
-    thebe_config["selector"] = thebe_config.get("selector", "") + comma + ".cell"
+    selector = thebe_config.get("selector", "") + ",.cell"
+    thebe_config["selector"] = selector.lstrip(",")
 
-    comma = ", " if "selector_input" in thebe_config else ""
-    thebe_config["selector_input"] = (
-        thebe_config.get("selector_input", "") + comma + ".cell_input div.highlight"
+    selector_input = (
+        thebe_config.get("selector_input", "") + ",.cell_input div.highlight"
     )
+    thebe_config["selector_input"] = selector_input.lstrip(",")
 
-    comma = ", " if "selector_output" in thebe_config else ""
-    thebe_config["selector_output"] = (
-        thebe_config.get("selector_output", "") + comma + ".cell_output"
-    )
+    selector_output = thebe_config.get("selector_output", "") + ",.cell_output"
+    thebe_config["selector_output"] = selector_output.lstrip(",")
 
     env.config.thebelab_config = thebe_config
 
