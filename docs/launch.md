@@ -69,7 +69,7 @@ html_theme_options = {
 }
 ```
 
-### Thebelab
+### Live code cells with Thebelab
 
 Thebelab asks for a BinderHub kernele *under the hood* and converts all of your
 code cells into *interactive* code cells. This allows users to run the code on
@@ -88,6 +88,10 @@ html_theme_options = {
     ...
 }
 ```
+
+Note that this uses the Sphinx extension
+[`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/),
+and adds some custom UI elements around it.
 
 ```{tip}
 You can also manually customize Thebelab with the `thebelab_config` dictionary.
