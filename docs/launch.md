@@ -71,7 +71,8 @@ html_theme_options = {
 
 ### Live code cells with Thebelab
 
-Thebelab asks for a BinderHub kernele *under the hood* and converts all of your
+[Thebelab])http://thebelab.readthedocs.org/) asks for a BinderHub kernel
+*under the hood* and converts all of your
 code cells into *interactive* code cells. This allows users to run the code on
 your page without leaving the page.
 
