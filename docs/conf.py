@@ -66,3 +66,8 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+
+thebelab_config = {
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
+}
