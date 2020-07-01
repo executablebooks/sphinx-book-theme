@@ -111,22 +111,6 @@ will use this repository for its environment:
 ```python
 html_theme_options = {
     ...
-
-    "launch_buttons": {
-        "binderhub_url": "https://{your-binderhub-url}",
-        "thebelab": True,
-    },
-    ...
-}
-```
-
-To control the repository that provides the environment for your Thebelab session,
-first configure your page as you would for
-a BinderHub launch button, then add the following configuration:
-
-```python
-html_theme_options = {
-    ...
     "repository_url": "https://github.com/{your-docs-url}",
     ...
 }
