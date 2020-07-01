@@ -16,6 +16,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
+    "sphinx_thebelab",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -45,6 +46,10 @@ html_favicon = "_static/logo.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 jupyter_execute_notebooks = "cache"
+thebelab_config = {
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
+}
 
 html_theme_options = {
     "path_to_docs": "docs",
@@ -66,8 +71,3 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
-
-thebelab_config = {
-    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
-    "repository_branch": "master",
-}

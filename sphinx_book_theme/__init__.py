@@ -299,7 +299,6 @@ class Margin(directives.body.Sidebar):
 
 def setup(app):
     compile_scss()
-
     app.connect("env-before-read-docs", update_thebelab_config)
 
     # Configuration for Juypter Book
@@ -312,5 +311,3 @@ def setup(app):
 
     app.add_js_file("sphinx-book-theme.js")
     app.add_directive("margin", Margin)
-
-    app.setup_extension("sphinx_thebelab")

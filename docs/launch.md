@@ -71,17 +71,47 @@ html_theme_options = {
 
 ### Live code cells with Thebelab
 
-[Thebelab])http://thebelab.readthedocs.org/) asks for a BinderHub kernel
+[Thebelab])http://thebelab.readthedocs.org/) converts your static code blocks into
+*interactive* code blocks powered by a Jupyter kernel. It does this by asking for a BinderHub kernel
 *under the hood* and converts all of your
 code cells into *interactive* code cells. This allows users to run the code on
 your page without leaving the page.
 
-To add Thebelab links to your page, first configure your page as you would for
-a BinderHub launch button, then add the following configuration:
+You can use the Sphinx extension
+[`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/) to add
+live code functionality to your documentation. You can install `sphinx-thebelab` from `pip`,
+then activate it by putting it in your `conf.py` extensions list:
+
+```python
+extensions = [
+    ...
+    "sphinx_thebelab"
+    ...
+]
+```
+
+If you'd like to activate UI elements for `sphinx-thebelab` in the `sphinx-book-theme`,
+add the following theme configuration:
 
 ```python
 html_theme_options = {
     ...
+    "launch_buttons": {
+        "thebelab": True,
+    },
+    ...
+}
+```
+
+This will add a custom launch button and some UI elements will be added for Thebelab.
+
+If you also specify a `repository_url` with your theme configuration, `sphinx-thebelab`
+will use this repository for its environment:
+
+```python
+html_theme_options = {
+    ...
+
     "launch_buttons": {
         "binderhub_url": "https://{your-binderhub-url}",
         "thebelab": True,
@@ -90,9 +120,17 @@ html_theme_options = {
 }
 ```
 
-Note that this uses the Sphinx extension
-[`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/),
-and adds some custom UI elements around it.
+To control the repository that provides the environment for your Thebelab session,
+first configure your page as you would for
+a BinderHub launch button, then add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "repository_url": "https://github.com/{your-docs-url}",
+    ...
+}
+```
 
 ```{tip}
 You can also manually customize Thebelab with the `thebelab_config` dictionary.
