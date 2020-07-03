@@ -49,7 +49,7 @@ Jupyter Book will also embed your code blocks and output in your book.
 For example, here's some sample Matplotlib code:
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [hide_cell, thebe-init]
 
 from matplotlib import rcParams, cycler
 import matplotlib.pyplot as plt

@@ -117,7 +117,7 @@ html_theme_options = {
 ```
 
 ```{tip}
-You can also manually customize Thebelab with the `thebelab_config` dictionary.
+You can also manually customize Thebelab with the `thebe_config` dictionary.
 This will over-ride any configuration that is pulled from your `html_theme_options`
 configuration. See the [`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/)
 documentation for what you can configure.

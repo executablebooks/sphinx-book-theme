@@ -46,7 +46,7 @@ html_favicon = "_static/logo.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 jupyter_execute_notebooks = "cache"
-thebelab_config = {
+thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
     "repository_branch": "master",
 }
