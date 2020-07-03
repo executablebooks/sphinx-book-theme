@@ -230,9 +230,20 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
 def update_thebe_config(app, env, docnames):
     """Update thebelab configuration with SBT-specific values"""
-    # Will be empty if it doesn't exist
-    thebe_config = env.config.thebe_config
     theme_options = env.config.html_theme_options
+    if theme_options.get("launch_buttons", {}).get("thebelab") is True:
+        if not hasattr(env.config, "thebe_config"):
+            SPHINX_LOGGER.warning(
+                (
+                    "Thebelab is activated but not added to extensions list. "
+                    "Add `sphinx_thebelab` to your site's extensions list."
+                )
+            )
+            return
+        # Will be empty if it doesn't exist
+        thebe_config = env.config.thebe_config
+    else:
+        return
 
     if not theme_options.get("launch_buttons", {}).get("thebelab"):
         return
