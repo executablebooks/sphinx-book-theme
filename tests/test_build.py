@@ -18,8 +18,7 @@ def sphinx_build(tmpdir_factory):
         path_html = path_build.joinpath("html")
         path_pg_index = path_html.joinpath("index.html")
         path_pg_ntbk = path_html.joinpath("section1", "ntbk.html")
-        # TODO: add back -W when jupyter-sphinx uses sphinx-thebelab for its button
-        cmd_base = ["sphinx-build", ".", "_build/html", "-a"]
+        cmd_base = ["sphinx-build", ".", "_build/html", "-a", "-W"]
 
         def copy(self, path=None):
             """Copy the specified book to our tests folder for building."""
