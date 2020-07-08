@@ -260,21 +260,6 @@ html_theme_options = {
 }
 ```
 
-### Numbering your TOC sections
-
-If you'd like to number your Table of Contents sections, use the following
-configuration in `conf.py`:
-
-```python
-html_theme_options = {
-    ...
-    "number_toc_sections": True
-    ...
-}
-```
-
-Note: external links will be skipped in numbering.
-
 ## Add metadata open graph tags to your site
 
 OpenGraph tags can be used to generate previews and descriptions of your

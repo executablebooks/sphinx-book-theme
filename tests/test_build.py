@@ -32,6 +32,9 @@ def sphinx_build(tmpdir_factory):
             cmd = [] if cmd is None else cmd
             run(self.cmd_base + cmd, cwd=self.path_book, check=True)
 
+            self.ix_html = BeautifulSoup(self.path_pg_index.read_text(), "html.parser")
+            self.ntbk_html = BeautifulSoup(self.path_pg_ntbk.read_text(), "html.parser")
+
         def clean(self):
             """Clean the _build folder so files don't clash with new tests."""
             rmtree(self.path_build)
@@ -59,53 +62,42 @@ def test_build_book(file_regression, sphinx_build):
         assert 'kernelName: "{}",'.format(kernel) in ntbk_text
 
     # Check a few components that should be true on each page
-    index_text = sphinx_build.path_pg_index.read_text()
-    index_html = BeautifulSoup(index_text, "html.parser")
+    index_html = sphinx_build.ix_html
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
-    # Index should *not* be in navbar
-    assert "Index with code in title</a>" not in index_text
-    # Captions make it into navbar
-    assert '<p class="margin-caption">My caption</p>' in index_text
+    file_regression.check(sidebar.prettify(), extension=".html")
+
     # Opengraph should not be in the HTML because we have no baseurl specified
     assert (
         '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
-        not in index_text
+        not in str(index_html)
     )
     # Edit button should not be on page
-    assert '<a class="edit-button"' not in index_text
-    # Sub-sections shouldn't be in the TOC because we haven't expanded it yet
-    assert "Section 1 page1</a>" not in str(sidebar)
+    assert '<a class="edit-button"' not in str(index_html)
     # Title should be just text, no HTML
-    assert "Index with code in title" in index_text
+    assert "Index with code in title" in str(index_html)
+    # Check navbar numbering
+    sidebar_ntbk = sphinx_build.ntbk_html.find("nav", id="bd-docs-nav")
+    # Pages and sub-pages should be numbered
+    assert "1. Page 1" in str(sidebar_ntbk)
+    assert "3.1. Section 1 page1" in str(sidebar_ntbk)
+
     sphinx_build.clean()
 
 
 def test_navbar_options(file_regression, sphinx_build):
     sphinx_build.copy()
 
-    # Check navbar numbering
-    cmd = ["-D", "html_theme_options.number_toc_sections=True"]
-    sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    navbar = ntbk_text.find("nav", id="bd-docs-nav")
-    # Pages and sub-pages should be numbered
-    assert "1. Page 1</a>" in str(navbar)
-    assert "3.1 Section 1 page1</a>" in str(navbar)
-    sphinx_build.clean()
-
     # "home_page_in_toc": True,
     cmd = ["-D", "html_theme_options.home_page_in_toc=True"]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    navbar = ntbk_text.find("nav", id="bd-docs-nav")
-    assert "Index with code in title</a>" in str(navbar)
+    navbar = sphinx_build.ntbk_html.find("nav", id="bd-docs-nav")
+    assert "Index with code in title" in str(navbar)
     sphinx_build.clean()
 
     # "single_page": True
     cmd = ["-D", "html_theme_options.single_page=True"]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    sidebar = ntbk_text.find("div", id="site-navigation")
+    sidebar = sphinx_build.ntbk_html.find("div", id="site-navigation")
     assert len(sidebar.find_all("div")) == 0
     assert "col-md-2" in sidebar.attrs["class"]
     sphinx_build.clean()
@@ -113,8 +105,7 @@ def test_navbar_options(file_regression, sphinx_build):
     # Test extra navbar
     cmd = ["-D", "html_theme_options.extra_navbar='<div>EXTRA NAVBAR</div>'"]
     sphinx_build.build(cmd)
-    ntbk_text = sphinx_build.path_pg_ntbk.read_text()
-    assert "<div>EXTRA NAVBAR</div>" in ntbk_text
+    assert "<div>EXTRA NAVBAR</div>" in str(sphinx_build.ntbk_html)
     sphinx_build.clean()
 
     # Test extra navbar deprecated key
@@ -123,23 +114,20 @@ def test_navbar_options(file_regression, sphinx_build):
         "html_theme_options.navbar_footer_text='<div>EXTRA NAVBAR</div>'",
     ]
     sphinx_build.build(cmd)
-    ntbk_text = sphinx_build.path_pg_ntbk.read_text()
-    assert "<div>EXTRA NAVBAR</div>" in ntbk_text
+    assert "<div>EXTRA NAVBAR</div>" in str(sphinx_build.ntbk_html)
     sphinx_build.clean()
 
     # Test extra footer
     cmd = ["-D", "html_theme_options.extra_footer='<div>EXTRA FOOTER</div>'"]
     sphinx_build.build(cmd)
-    ntbk_text = sphinx_build.path_pg_ntbk.read_text()
-    assert "<div>EXTRA FOOTER</div>" in ntbk_text
+    assert "<div>EXTRA FOOTER</div>" in str(sphinx_build.ntbk_html)
     sphinx_build.clean()
 
     # Explicitly expanded sections are expanded when not active
     cmd = ["-D", "html_theme_options.expand_sections=section1/index"]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    sidebar = ntbk_text.find_all(attrs={"class": "bd-sidebar"})[0]
-    assert "Section 1 page1</a>" in str(sidebar)
+    sidebar = sphinx_build.ntbk_html.find_all(attrs={"class": "bd-sidebar"})[0]
+    assert "Section 1 page1" in str(sidebar)
     sphinx_build.clean()
 
 
@@ -152,8 +140,7 @@ def test_header_info(file_regression, sphinx_build):
     cmd = ["-D", f"html_baseurl={baseurl}", "-D", f"html_logo={path_logo}"]
     sphinx_build.build(cmd)
 
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    header = ntbk_text.find("head")
+    header = sphinx_build.ntbk_html.find("head")
     assert (
         '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url">'
         in str(header)
@@ -178,8 +165,9 @@ def test_topbar(file_regression, sphinx_build):
         "html_theme_options.use_issues_button=True",
     ]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    source_btns = ntbk_text.find_all("div", attrs={"class": "sourcebuttons"})[0]
+    source_btns = sphinx_build.ntbk_html.find_all(
+        "div", attrs={"class": "sourcebuttons"}
+    )[0]
     file_regression.check(source_btns.prettify(), extension=".html")
     sphinx_build.clean()
 
@@ -193,8 +181,9 @@ def test_topbar(file_regression, sphinx_build):
         "html_theme_options.use_issues_button=True",
     ]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    source_btns = ntbk_text.find_all("div", attrs={"class": "sourcebuttons"})[0]
+    source_btns = sphinx_build.ntbk_html.find_all(
+        "div", attrs={"class": "sourcebuttons"}
+    )[0]
     file_regression.check(
         source_btns.prettify(), basename="test_topbar_hidebtns", extension=".html"
     )
@@ -202,8 +191,9 @@ def test_topbar(file_regression, sphinx_build):
 
     # Test launch buttons
     sphinx_build.build()
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    launch_btns = ntbk_text.find_all("div", attrs={"class": "dropdown-buttons"})[1]
+    launch_btns = sphinx_build.ntbk_html.find_all(
+        "div", attrs={"class": "dropdown-buttons"}
+    )[1]
     file_regression.check(
         launch_btns.prettify(), basename="test_topbar_launchbtns", extension=".html"
     )
@@ -215,8 +205,9 @@ def test_topbar(file_regression, sphinx_build):
         "html_theme_options.repository_branch=foo",
     ]
     sphinx_build.build(cmd)
-    ntbk_text = BeautifulSoup(sphinx_build.path_pg_ntbk.read_text(), "html.parser")
-    launch_btns = ntbk_text.find_all("div", attrs={"class": "dropdown-buttons"})[1]
+    launch_btns = sphinx_build.ntbk_html.find_all(
+        "div", attrs={"class": "dropdown-buttons"}
+    )[1]
     file_regression.check(
         launch_btns.prettify(), basename="test_repo_custombranch", extension=".html"
     )

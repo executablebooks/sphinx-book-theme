@@ -3,8 +3,9 @@ from pathlib import Path
 from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
-from sphinx import addnodes
 import sass
+from bs4 import BeautifulSoup as bs
+
 
 from .launch import add_hub_urls
 
@@ -46,127 +47,119 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-    def nav_to_html_list(
-        nav,
+    def generate_nav_html(
         level=1,
         include_item_names=False,
         with_home_page=False,
-        number_sections=False,
         prev_section_numbers=None,
     ):
-        # In case users give a string configuration
-        if isinstance(number_sections, str):
-            number_sections = number_sections.lower() == "true"
+        # Config stuff
+        config = app.env.config
         if isinstance(with_home_page, str):
             with_home_page = with_home_page.lower() == "true"
-        if prev_section_numbers is None:
-            prev_section_numbers = []
-        if len(nav) == 0:
-            return ""
 
-        config = app.env.config
+        # Grab the raw toctree object and structure it so we can manipulate it
+        toc_sphinx = context["toctree"](
+            maxdepth=-1, collapse=False, titles_only=True, includehidden=True
+        )
+        toctree = bs(toc_sphinx, "html.parser")
 
-        # Figure out the top-lever pages that need a TOC in front of them
-        master_toctrees = app.env.tocs[config["master_doc"]]
-        toc_captions = []
-        for master_toctree in master_toctrees.traverse(addnodes.toctree):
-            if master_toctree.attributes.get("caption"):
-                caption = master_toctree.attributes.get("caption")
-                toctree_first_page = master_toctree.attributes["entries"][0][
-                    1
-                ]  # Entries are (title, ref) pairs
-                toc_captions.append((toctree_first_page, caption))
+        # pair "current" with "active" since that's what we use w/ bootstrap
+        for li in toctree("li", {"class": "current"}):
+            li["class"].append("active")
 
         # Add the master_doc page as the first item if specified
         if with_home_page:
+            # Pull metadata about the master doc
             master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
             master_title = list(master_doctree.traverse(nodes.title))[0].astext()
-            nav.insert(
-                0,
-                {
-                    "title": master_title,
-                    "url": master_url,
-                    "active": pagename == master_doc,
-                    "children": [],
-                },
+
+            # Insert it into our toctree
+            ul_home = bs(
+                f"""
+            <ul>
+                <li class="toctree-l1">
+                    <a href="{master_url}" class="reference internal">{master_title}</a>
+                </li>
+            </ul>""",
+                "html.parser",
+            )
+            toctree.insert(0, ul_home("ul")[0])
+
+        # Add an icon for external links
+        for a_ext in toctree("a", attrs={"class": ["external"]}):
+            a_ext.append(
+                toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
             )
 
-        ul = [f'<ul class="nav sidenav_l{level}">']
-        # If we don't include parents, next `ul` should be the same level
-        ii_num = 1
-        next_level = level + 1 if include_item_names else level
-        for child in nav:
-            # If we're not rendering title names and have no children, skip
-            if (child is None) or not (include_item_names or child["children"]):
-                continue
+        # Remove children of all top-level pages unless config says to expand them
+        expand_sections = config.html_theme_options.get("expand_sections", [])
+        if isinstance(expand_sections, str):
+            expand_sections = []
 
-            # Add captions if so-given
+        for li in toctree("li", attrs={"class": "toctree-l1"}):
             page_rel_root = find_url_relative_to_root(
-                pagename, child["url"], app.srcdir
+                pagename, li.find("a").attrs["href"], app.srcdir
             )
-            for caption_page, caption_text in toc_captions:
-                if caption_page == str(page_rel_root):
-                    ul.append('<li class="navbar-special">')
-                    if caption:
-                        # TODO: whenever pydata-sphinx-theme gets support for captions
-                        #       we should just use that and remove this
-                        ul.append(f'<p class="margin-caption">{caption_text}</p>')
-                    ul.append("</li>")
-
-            # Now begin rendering the links
-            active = "active" if child["active"] else ""
-            ul.append("  " + f'<li class="{active}">')
-
-            # Render links for the top-level names if we wish
-            if include_item_names:
-                item_title = child["title"]
-                if number_sections and not child["url"].startswith("http"):
-                    this_section_numbers = prev_section_numbers + [ii_num]
-                    number_title = ".".join(str(ii) for ii in this_section_numbers)
-                    # Handle the case of top-level section numbers
-                    if "." not in number_title:
-                        number_title += "."
-                    item_title = f"{number_title} {item_title}"
-                    ii_num += 1
-                else:
-                    this_section_numbers = None
-
-                if child["url"].startswith("http"):
-                    # Add an external icon for external navbar links
-                    item_title += '<i class="fas fa-external-link-alt"></i>'
-                ul.append("  " * 2 + f'<a href="{child["url"]}">{item_title}</a>')
-
-            # Check whether we should expand children
-            if child["children"]:
-                expand_sections = config.html_theme_options.get("expand_sections", [])
-                if isinstance(expand_sections, str):
-                    expand_sections = []
-                if str(page_rel_root) in expand_sections:
-                    active = True
-
-            # Render HTML lists for children if we're on an active section
-            if active and child["children"]:
-                # Always include the names of the children
-                child_list = nav_to_html_list(
-                    child["children"],
-                    level=next_level,
-                    include_item_names=True,
-                    number_sections=number_sections,
-                    prev_section_numbers=this_section_numbers,
+            if li.find("ul"):
+                do_collapse = (
+                    "active" not in li.attrs["class"]
+                    and str(page_rel_root) not in expand_sections
                 )
-                ul.append(child_list)
-            ul.append("  " + "</li>")
-        ul.append("</ul>")
+                if do_collapse:
+                    li.find("ul").decompose()
 
-        # Now add indentation for our level
-        base_indent = "  " * (level - 1)
-        ul = [base_indent + line for line in ul]
-        ul = "\n".join(ul)
-        return ul
+        # Add bootstrap classes for first `ul` items
+        for ul in toctree("ul", recursive=False):
+            ul.attrs["class"] = ul.attrs.get("class", []) + ["nav", "sidenav_l1"]
 
-    context["nav_to_html_list"] = nav_to_html_list
+        return toctree.prettify()
+
+    context["generate_nav_html"] = generate_nav_html
+
+    def generate_toc_html():
+        """Return the within-page TOC links in HTML."""
+
+        if "toc" not in context:
+            return ""
+
+        soup = bs(context["toc"], "html.parser")
+
+        # Add toc-hN classes
+        def add_header_level_recursive(ul, level):
+            for li in ul("li", recursive=False):
+                li["class"] = li.get("class", []) + [f"toc-h{level}"]
+                ul = li.find("ul", recursive=False)
+                if ul:
+                    add_header_level_recursive(ul, level + 1)
+
+        add_header_level_recursive(soup.find("ul"), 1)
+
+        # Add in CSS classes for bootstrap
+        for ul in soup("ul"):
+            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
+        for li in soup("li"):
+            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
+            if li.find("a"):
+                a = li.find("a")
+                a["class"] = a.get("class", []) + ["nav-link"]
+
+        # Keep only the sub-sections of the title (so no title is shown)
+        title = soup.find("a", attrs={"href": "#"})
+        if title:
+            title = title.parent
+            # Only show if children of the title item exist
+            if title.select("ul li"):
+                out = title.find("ul").prettify()
+            else:
+                out = ""
+        else:
+            out = ""
+        return out
+
+    context["generate_toc_html"] = generate_toc_html
 
     # Update the page title because HTML makes it into the page title occasionally
     if pagename in app.env.titles:

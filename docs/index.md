@@ -42,6 +42,7 @@ theme. See the pages to the left for information about what you can configure wi
 ```{toctree}
 :maxdepth: 1
 :caption: Main docs
+
 configure
 Controlling page elements <layout>
 notebooks
@@ -55,6 +56,7 @@ GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 ```{toctree}
 :caption: Reference items
 :maxdepth: 2
+
 reference/index
 ```
 
