@@ -66,7 +66,6 @@ html_theme_options = {
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True
-    # "number_toc_sections": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }

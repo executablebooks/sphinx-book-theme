@@ -25,9 +25,7 @@ folder as your content, then Binder/JupyterHub links will point to the ipynb
 file instead of the text file.
 ```
 
-## Types of Launch Buttons
-
-### Binder / BinderHub
+## Binder / BinderHub
 
 To add Binder links your page, add the following configuration:
 
@@ -41,7 +39,7 @@ html_theme_options = {
 }
 ```
 
-### JupyterHub
+## JupyterHub
 
 To add JupyterHub links to your page, add the following configuration:
 
@@ -55,7 +53,7 @@ html_theme_options = {
 }
 ```
 
-### Google Colab
+## Google Colab
 
 To add Google Colab links to your page, add the following configuration:
 
@@ -69,9 +67,9 @@ html_theme_options = {
 }
 ```
 
-### Live code cells with Thebelab
+## Live code cells with Thebelab
 
-[Thebelab])http://thebelab.readthedocs.org/) converts your static code blocks into
+[Thebelab](http://thebelab.readthedocs.org/) converts your static code blocks into
 *interactive* code blocks powered by a Jupyter kernel. It does this by asking for a BinderHub kernel
 *under the hood* and converts all of your
 code cells into *interactive* code cells. This allows users to run the code on
