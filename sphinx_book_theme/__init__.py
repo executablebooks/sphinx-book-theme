@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup as bs
 
 from .launch import add_hub_urls
 
-__version__ = "0.0.31dev0"
+__version__ = "0.0.31"
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
