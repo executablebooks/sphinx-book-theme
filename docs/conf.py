@@ -56,6 +56,7 @@ html_theme_options = {
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
         "notebook_interface": "jupyterlab",
         "thebe": True,
     },
