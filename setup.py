@@ -52,7 +52,7 @@ setup(
             "sphinx-copybutton",
             "plotly",
             "sphinxcontrib-bibtex",
-            "sphinx-thebelab",
+            "sphinx-thebe",
         ],
         "testing": [
             "coverage",

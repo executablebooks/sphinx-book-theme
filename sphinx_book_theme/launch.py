@@ -89,9 +89,9 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
         context["colab_url"] = url
 
-    # Add thebelab flag in context
-    if launch_buttons.get("thebelab", False):
-        context["use_thebelab"] = True
+    # Add thebe flag in context
+    if launch_buttons.get("thebe", False):
+        context["use_thebe"] = True
 
 
 def _split_repo_url(url):

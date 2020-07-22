@@ -16,7 +16,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
-    "sphinx_thebelab",
+    "sphinx_thebe",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,7 +57,7 @@ html_theme_options = {
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "notebook_interface": "jupyterlab",
-        "thebelab": True,
+        "thebe": True,
     },
     "use_edit_page_button": True,
     "use_issues_button": True,
