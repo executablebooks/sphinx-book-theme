@@ -2,7 +2,7 @@
 
 You can automatically add buttons that allow users to interact with your
 book's content. This is either by directing them to a BinderHub or JupyterHub
-that runs in the cloud, or by making your page interactive using Thebelab.
+that runs in the cloud, or by making your page interactive using Thebe.
 
 To use either Binder or JupyterHub links, you'll first need to configure your
 documentation's repository url:
@@ -67,43 +67,43 @@ html_theme_options = {
 }
 ```
 
-## Live code cells with Thebelab
+## Live code cells with Thebe
 
-[Thebelab](http://thebelab.readthedocs.org/) converts your static code blocks into
+[Thebe](http://thebe.readthedocs.org/) converts your static code blocks into
 *interactive* code blocks powered by a Jupyter kernel. It does this by asking for a BinderHub kernel
 *under the hood* and converts all of your
 code cells into *interactive* code cells. This allows users to run the code on
 your page without leaving the page.
 
 You can use the Sphinx extension
-[`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/) to add
-live code functionality to your documentation. You can install `sphinx-thebelab` from `pip`,
+[`sphinx-thebe`](https://sphinx-thebe.readthedocs.io/en/latest/) to add
+live code functionality to your documentation. You can install `sphinx-thebe` from `pip`,
 then activate it by putting it in your `conf.py` extensions list:
 
 ```python
 extensions = [
     ...
-    "sphinx_thebelab"
+    "sphinx_thebe"
     ...
 ]
 ```
 
-If you'd like to activate UI elements for `sphinx-thebelab` in the `sphinx-book-theme`,
+If you'd like to activate UI elements for `sphinx-thebe` in the `sphinx-book-theme`,
 add the following theme configuration:
 
 ```python
 html_theme_options = {
     ...
     "launch_buttons": {
-        "thebelab": True,
+        "thebe": True,
     },
     ...
 }
 ```
 
-This will add a custom launch button and some UI elements will be added for Thebelab.
+This will add a custom launch button and some UI elements will be added for Thebe.
 
-If you also specify a `repository_url` with your theme configuration, `sphinx-thebelab`
+If you also specify a `repository_url` with your theme configuration, `sphinx-thebe`
 will use this repository for its environment:
 
 ```python
@@ -115,9 +115,9 @@ html_theme_options = {
 ```
 
 ```{tip}
-You can also manually customize Thebelab with the `thebe_config` dictionary.
+You can also manually customize Thebe with the `thebe_config` dictionary.
 This will over-ride any configuration that is pulled from your `html_theme_options`
-configuration. See the [`sphinx-thebelab`](https://sphinx-thebelab.readthedocs.io/en/latest/)
+configuration. See the [`sphinx-thebe`](https://sphinx-thebe.readthedocs.io/en/latest/)
 documentation for what you can configure.
 ```
 

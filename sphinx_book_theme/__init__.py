@@ -222,14 +222,14 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
 
 def update_thebe_config(app, env, docnames):
-    """Update thebelab configuration with SBT-specific values"""
+    """Update thebe configuration with SBT-specific values"""
     theme_options = env.config.html_theme_options
-    if theme_options.get("launch_buttons", {}).get("thebelab") is True:
+    if theme_options.get("launch_buttons", {}).get("thebe") is True:
         if not hasattr(env.config, "thebe_config"):
             SPHINX_LOGGER.warning(
                 (
-                    "Thebelab is activated but not added to extensions list. "
-                    "Add `sphinx_thebelab` to your site's extensions list."
+                    "Thebe is activated but not added to extensions list. "
+                    "Add `sphinx_thebe` to your site's extensions list."
                 )
             )
             return
@@ -238,7 +238,7 @@ def update_thebe_config(app, env, docnames):
     else:
         return
 
-    if not theme_options.get("launch_buttons", {}).get("thebelab"):
+    if not theme_options.get("launch_buttons", {}).get("thebe"):
         return
 
     # Update the repository branch and URL

@@ -11,7 +11,7 @@ master_doc = "index"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_nb", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_thebelab"]
+extensions = ["myst_nb", "sphinx_copybutton", "sphinx_togglebutton", "sphinx_thebe"]
 html_theme = "sphinx_book_theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
@@ -27,6 +27,6 @@ html_theme_options = {
         "jupyterhub_url": "https://datahub.berkeley.edu",
         "colab_url": "https://colab.research.google.com",
         "notebook_interface": "jupyterlab",
-        "thebelab": True,
+        "thebe": True,
     },
 }

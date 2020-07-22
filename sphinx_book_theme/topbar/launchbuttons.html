@@ -1,5 +1,5 @@
 <!-- Launch buttons -->
-{% if binder_url or jupyterhub_url or colab_url or use_thebelab %}
+{% if binder_url or jupyterhub_url or colab_url or use_thebe %}
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
@@ -24,9 +24,9 @@
                     src="{{ pathto('_static/images/logo_colab.png', 1) }}"
                     alt="Interact on Colab">Colab</button></a>
         {% endif %}
-        {% if use_thebelab -%}
+        {% if use_thebe -%}
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         {% endif %}
     </div>
