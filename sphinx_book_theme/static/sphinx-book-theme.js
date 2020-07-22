@@ -91,12 +91,12 @@ var initTocHide = () => {
   });
 }
 
-var initThebelabSBT = () => {
+var initThebeSBT = () => {
   var title  = $("div.section h1")[0]
   if (!$(title).next().hasClass("thebe-launch-button")) {
     $("<button class='thebe-launch-button'></button>").insertAfter($(title))
   }
-  initThebelab();
+  initThebe();
 }
 
 sbRunWhenDOMLoaded(initTooltips)
