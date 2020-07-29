@@ -64,6 +64,7 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "expand_sections": ["reference/index"],
+    "superscript_citations": False
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True
