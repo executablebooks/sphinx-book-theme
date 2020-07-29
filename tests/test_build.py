@@ -212,3 +212,12 @@ def test_topbar(file_regression, sphinx_build):
         launch_btns.prettify(), basename="test_repo_custombranch", extension=".html"
     )
     sphinx_build.clean()
+
+
+def test_singlehtml(file_regression, sphinx_build):
+    """Test building with a single HTML page."""
+    sphinx_build.copy()
+
+    # Ensure that it works without error
+    cmd = ["-b", "singlehtml"]
+    run(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book, check=True)
