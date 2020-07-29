@@ -122,7 +122,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
     def generate_toc_html():
         """Return the within-page TOC links in HTML."""
 
-        if "toc" not in context:
+        if not context.get("toc"):
             return ""
 
         soup = bs(context["toc"], "html.parser")
