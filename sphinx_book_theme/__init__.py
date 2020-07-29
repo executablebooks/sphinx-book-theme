@@ -162,16 +162,17 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["generate_toc_html"] = generate_toc_html
 
     def edit_body_html():
-        soup = bs(context["body"],"html.parser")
+        soup = bs(context["body"], "html.parser")
 
         # update reference style
-        if "theme_superscript_citations" in context and context["theme_superscript_citations"]:
-            citation_tags = soup.find_all("a", class_ = "bibtex")
+        if (
+            "theme_superscript_citations" in context
+            and context["theme_superscript_citations"]
+        ):
+            citation_tags = soup.find_all("a", class_="bibtex")
             for tag in citation_tags:
-                old_class = tag["class"]
-                old_class.append("superscript")
-                tag["class"] = old_class
-        
+                tag["class"] = tag["class"].append("superscript")
+
         return soup.prettify()
 
     if "body" in context:
