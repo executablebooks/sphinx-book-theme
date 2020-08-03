@@ -14,11 +14,11 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="{{ pageurl }}" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="{% if pagetitle %}{{ pagetitle }}{% else %}{{ docstitle }}{% endif %}" />
-<meta property="og:description" content="{{ page_description }}" />
+<meta property="og:title"       content="{% if pagetitle %}{{ pagetitle | e }}{% else %}{{ docstitle | e }}{% endif %}" />
+<meta property="og:description" content="{{ page_description | e }}" />
 {% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary" />
 {% endif %}
 {% endblock %}
 
