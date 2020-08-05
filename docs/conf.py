@@ -63,7 +63,7 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_issues_button": True,
     "use_repository_button": True,
-    "expand_sections": ["reference/index"],
+    "expand_sections": ["reference/index"]
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True
