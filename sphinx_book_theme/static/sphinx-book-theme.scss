@@ -724,7 +724,9 @@ nav.bd-links {
     max-height: none !important;
 
     p.caption {
-        font-size: 1.4em;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        font-weight: bold;
 
         &:first-child {
             margin-top: 0;
