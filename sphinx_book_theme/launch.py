@@ -29,7 +29,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
         path_ntbk = ntbk_dir.joinpath(pagename).with_suffix(".ipynb")
         path_new_notebook = sources_dir.joinpath(pagename).with_suffix(".ipynb")
         # Copy the notebook to `_sources` dir so it can be downloaded
-        path_new_notebook.parent.mkdir(exist_ok=True)
+        path_new_notebook.parent.mkdir(exist_ok=True, parents=True)
         copy2(path_ntbk, path_new_notebook)
         context["ipynb_source"] = pagename + ".ipynb"
 
