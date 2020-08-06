@@ -23,7 +23,7 @@ setup(
     # this should be a whitespace separated string of keywords, not a list
     keywords="reproducible science environments scholarship notebook",
     description="Jupyter Book: Create an online book with Jupyter Notebooks",
-    long_description=open("./README.md", "r").read(),
+    long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
     license="BSD",
     packages=find_packages(),
