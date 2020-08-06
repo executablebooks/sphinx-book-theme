@@ -601,10 +601,6 @@ button.topbarbtn img {
         background: #c1c1c1;
     }
 
-    @media (min-width: $breakpoint-md) {
-        opacity: 0.6;
-    }
-
     // Hide the scrollbar until hover on wide screens
     @media (min-width: $breakpoint-lg) {
         &:not(:hover) {
@@ -618,10 +614,6 @@ button.topbarbtn img {
               background: #FFFFFF;
             }
         }
-    }
-
-    &:hover {
-        opacity: 1;
     }
 
     h1.site-logo {
