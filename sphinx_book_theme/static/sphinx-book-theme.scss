@@ -741,12 +741,11 @@ nav.bd-links {
         width: 100%;
     }
 
-    li.toctree-l1 {
-        font-size: 1.2em
-    }
-
-    li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
-        font-size: .8em
+    li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
+        > a {
+            font-size: 0.9em;
+        }
+        font-size: 1em;
     }
 
     > ul.nav {
