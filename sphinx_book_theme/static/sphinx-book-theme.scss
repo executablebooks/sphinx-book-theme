@@ -750,18 +750,17 @@ nav.bd-links {
 
     > ul.nav {
         // Make sure the first items don't have any padding
-        padding-left: 0px !important;
+        padding-left: 0;
 
         // Subsequent items should have padding
         ul {
-            padding-left: 1rem !important;
-            padding-right: 0rem !important;
+            // Only left padding
+            padding: 0 0 0 1rem;
         }
 
-        // Links don't have the padding, uls do
+        // Links don't have the horizontal padding, uls do
         a {
-            padding-left: 0rem !important;
-            padding-right: 0rem !important;
+            padding: .15rem 0 !important;
         }
     }
 }
