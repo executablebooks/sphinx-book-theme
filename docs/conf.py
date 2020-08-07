@@ -1,3 +1,6 @@
+from pathlib import Path
+import requests
+
 # -- Project information -----------------------------------------------------
 
 project = "Sphinx Book Theme"
@@ -71,3 +74,12 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+
+
+# -- Custom scripts ----------------------------------------------------------
+# Grab the latest contributing docs
+url_contributing = (
+    "https://raw.githubusercontent.com/executablebooks/.github/master/CONTRIBUTING.md"
+)
+resp = requests.get(url_contributing, allow_redirects=True)
+Path("contributing-ebp.md").write_bytes(resp.content)

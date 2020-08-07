@@ -137,3 +137,6 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# Auto-generated docs page
+docs/contributing-ebp.md
