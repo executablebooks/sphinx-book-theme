@@ -48,7 +48,7 @@ setup(
             "nbclient",
             "myst-parser",
             "myst-nb",
-            "sphinx-togglebutton",
+            "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
             "sphinxcontrib-bibtex",
