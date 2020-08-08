@@ -81,7 +81,7 @@ def add_hub_urls(app, pagename, templatename, context, doctree):
     if jupyterhub_url:
         url = (
             f"{jupyterhub_url}/hub/user-redirect/git-pull?"
-            f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}"
+            f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}&branch={branch}"
         )
         context["jupyterhub_url"] = url
 
