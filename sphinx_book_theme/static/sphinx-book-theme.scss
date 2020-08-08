@@ -685,6 +685,11 @@ button.topbarbtn img {
         &.collapsing {
             height: 0px !important;
         }
+
+        // If we're only a single page, sidebar should hide at narrow widths.
+        &.single-page {
+            display: none;
+        }
     }
 }
 
