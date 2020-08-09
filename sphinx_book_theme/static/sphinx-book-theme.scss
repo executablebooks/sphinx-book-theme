@@ -177,6 +177,10 @@ main.bd-content {
                 font-size: .8em;
                 vertical-align: top;
                 padding-left:.1em;
+
+                a {
+                    vertical-align: top;  // This needs to be explicit on Safari
+                }
             }
 
             dd {
