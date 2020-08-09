@@ -651,8 +651,11 @@ button.topbarbtn img {
     }
 }
 
-.toc-h2, .toc-h3, .toc-h4 {
-    font-size: inherit !important;
+.toc-h1, .toc-h2, .toc-h3, .toc-h4 {
+    > a {
+        font-size: 0.9em;
+    }
+    font-size: 1em;
 }
 
 .site-navigation, .site-navigation.collapsing {
