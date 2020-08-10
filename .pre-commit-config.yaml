@@ -25,3 +25,13 @@ repos:
     rev: stable
     hooks:
     - id: black
+
+  - repo: local
+    hooks:
+    - id: scss
+      name: boussole
+      types: [scss]
+      language: python
+      additional_dependencies: [boussole]
+      entry: boussole compile --config=.boussole.json
+      pass_filenames: false

@@ -2,7 +2,7 @@
   "SOURCES_PATH": "sphinx_book_theme/scss",
   "TARGET_PATH": "sphinx_book_theme/static",
   "LIBRARY_PATHS": [],
-  "OUTPUT_STYLES": "nested",
+  "OUTPUT_STYLES": "compressed",
   "SOURCE_COMMENTS": false,
   "EXCLUDES": []
 }
