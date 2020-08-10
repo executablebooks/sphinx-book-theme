@@ -1,3 +1,5 @@
+# Changelog
+
 # v0.0.34...v0.0.35
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.34...v0.0.35))
 
