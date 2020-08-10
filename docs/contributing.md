@@ -49,6 +49,15 @@ correctly handled. The tests can be run using:
 nox -s tests
 ```
 
+This will run tests against all supported version of Python that are installed.
+
+If you want to run tests for a specific version of Python (say, 3.8), you can
+do so using:
+
+```bash
+nox -s tests-3.8
+```
+
 ### Running Linters
 
 The code style in this project is enforced with multiple automated linters. You

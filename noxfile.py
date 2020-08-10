@@ -21,7 +21,7 @@ def in_the_background(session, executable_name, *args):
         yield
 
 
-@nox.session
+@nox.session(python=["3.6", "3.7", "3.8"])
 def tests(session):
     """Enforce code-style with appropriately configured linters."""
     session.install(".[sphinx,testing]")
