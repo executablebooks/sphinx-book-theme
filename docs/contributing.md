@@ -9,35 +9,71 @@ It contains information about our conventions around coding style, pull request 
 This page contains information to help you get started with development on this
 project.
 
-## Set up your dev environment
+## Development
 
-To set up your developer environment, do the following:
+### Set-up
 
-* Clone the repository
+Get the source code of this project using git:
 
-  ```bash
-  git clone https://github.com/executablebooks/sphinx-book-theme
-  cd sphinx-book-theme
-  ```
-* Install it locally with the developer tools
+```bash
+git clone https://github.com/executablebooks/sphinx-book-theme
+cd sphinx-book-theme
+```
 
-  ```bash
-  pip install -e .[sphinx,testing,code_style]
-  ```
+To work on this project, you need Python 3.6 or newer. Most of this project's
+development workflow commands use `nox`, which can be installed with pip:
 
-* Install `pre-commit` and activate it for this repository
+```bash
+pip install nox
+```
 
-  ```bash
-  pre-commit install
-  ```
+### Building documentation
 
 You can now build documentation with your local copy of this theme! Try it
 out on the theme's documentation like so:
 
 ```bash
-cd docs/
-make html
+nox -s docs
 ```
+
+This will generate the HTML documentation and compile the relevant stylesheets.
+The generated documentation which can be viewed by opening
+`docs/_build/html/index.html` in your browser.
+
+### Running Tests
+
+This theme has a test suite to ensure that all the relevant user content is
+correctly handled. The tests can be run using:
+
+```bash
+nox -s tests
+```
+
+### Running Linters
+
+The code style in this project is enforced with multiple automated linters. You
+can run them using:
+
+```bash
+nox -s lint
+```
+
+### Working on the theme "live"
+
+If you're making changes to your local copy of this theme, there is a helper
+command :
+
+```bash
+nox -s docs-live
+```
+
+This will start a development server at localhost:8000, which generates this
+theme's documentation, and open it in your default browser. The development
+server will watch for changes. When a change occurs, it will automagically
+regenerate the documentation and auto-reload your browser.
+
+With this, you can modify the theme in an editor, and (after a small delay) see
+how those modifications render on the browser.
 
 ## Repository structure
 
