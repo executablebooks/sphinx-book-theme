@@ -1,6 +1,11 @@
 name: continuous-integration
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+    tags:
+      - 'v*'
+  pull_request:
 
 jobs:
   pre-commit:

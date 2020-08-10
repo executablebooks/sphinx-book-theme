@@ -73,3 +73,14 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+
+# -- Custom configuration ---------------------------------------------------
+
+
+# Always regenerate the index page, to ensure assets are correctly copied.
+def env_get_outdated(app, env, added, changed, removed):
+    return ["index"]
+
+
+def setup(app):
+    app.connect("env-get-outdated", env_get_outdated)
