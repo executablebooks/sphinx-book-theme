@@ -45,10 +45,10 @@ jobs:
         fail_ci_if_error: true
 
   publish:
-
     name: Publish to PyPI
     needs: [pre-commit, tests]
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -57,10 +57,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
+
+      - name: Install build dependecies
+        run: pip install wheel
+
       - name: Build package
-        run: |
-          pip install wheel
-          python setup.py sdist bdist_wheel
+        run: python setup.py sdist bdist_wheel
+
       - name: Publish
         uses: pypa/gh-action-pypi-publish@v1.1.0
         with:
