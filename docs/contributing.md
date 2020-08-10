@@ -75,6 +75,14 @@ regenerate the documentation and auto-reload your browser.
 With this, you can modify the theme in an editor, and (after a small delay) see
 how those modifications render on the browser.
 
+### Pre-commit
+
+To ensure a commit will pass the linting and compilation CI checks, it is recommended that you also install the [pre-commit](https://pre-commit.com) hooks.
+
+```console
+$ pre-commit install
+```
+
 ## Repository structure
 
 This repository is a combination of a few parts:
