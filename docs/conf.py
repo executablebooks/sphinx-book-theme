@@ -1,6 +1,3 @@
-from pathlib import Path
-import requests
-
 # -- Project information -----------------------------------------------------
 
 project = "Sphinx Book Theme"
@@ -76,12 +73,3 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
-
-
-# -- Custom scripts ----------------------------------------------------------
-# Grab the latest contributing docs
-url = "https://raw.githubusercontent.com/executablebooks/.github/master/CONTRIBUTING.md"
-destination = Path("contributing-ebp.md")
-if not destination.exists():
-    resp = requests.get(url, allow_redirects=True)
-    destination.write_bytes(resp.content)

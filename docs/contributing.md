@@ -3,17 +3,11 @@
 Thank you for being interested in contributing to the `sphinx-book-theme`! You
 are awesome ✨.
 
-This page contains developer documentation to help you get started.
+This project follows the Executable Books Project [contribution guidelines](https://executablebooks.org/en/latest/contributing.html).
+It contains information about our conventions around coding style, pull request workflow, commit messages and more.
 
-```{toctree}
-:hidden:
-contributing-ebp
-```
-
-## The EBP Contributing Guide
-
-This repository follows the `executablebooks/` contributors guide, which
-you can find at [](contributing-ebp). It contains information
+This page contains information to help you get started with development on this
+project.
 
 ## Set up your dev environment
 
