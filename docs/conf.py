@@ -80,8 +80,8 @@ html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
 
 # -- Custom scripts ----------------------------------------------------------
 # Grab the latest contributing docs
-url_contributing = (
-    "https://raw.githubusercontent.com/executablebooks/.github/master/CONTRIBUTING.md"
-)
-resp = requests.get(url_contributing, allow_redirects=True)
-Path("contributing-ebp.md").write_bytes(resp.content)
+url = "https://raw.githubusercontent.com/executablebooks/.github/master/CONTRIBUTING.md"
+destination = Path("contributing-ebp.md")
+if not destination.exists():
+    resp = requests.get(url, allow_redirects=True)
+    destination.write_bytes(resp.content)
