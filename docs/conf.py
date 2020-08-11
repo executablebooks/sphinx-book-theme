@@ -1,6 +1,3 @@
-from pathlib import Path
-import requests
-
 # -- Project information -----------------------------------------------------
 
 project = "Sphinx Book Theme"
@@ -77,11 +74,13 @@ html_theme_options = {
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
 
+# -- Custom configuration ---------------------------------------------------
 
-# -- Custom scripts ----------------------------------------------------------
-# Grab the latest contributing docs
-url_contributing = (
-    "https://raw.githubusercontent.com/executablebooks/.github/master/CONTRIBUTING.md"
-)
-resp = requests.get(url_contributing, allow_redirects=True)
-Path("contributing-ebp.md").write_bytes(resp.content)
+
+# Always regenerate the index page, to ensure assets are correctly copied.
+def env_get_outdated(app, env, added, changed, removed):
+    return ["index"]
+
+
+def setup(app):
+    app.connect("env-get-outdated", env_get_outdated)

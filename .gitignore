@@ -129,9 +129,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Generated CSS file
-*sphinx-book-theme.css
-
 # mac OS
 .DS_Store
 

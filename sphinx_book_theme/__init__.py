@@ -3,7 +3,6 @@ from pathlib import Path
 from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
-import sass
 from bs4 import BeautifulSoup as bs
 
 
@@ -276,13 +275,6 @@ def _string_or_bool(var):
         return var is None
 
 
-def compile_scss():
-    path_css_folder = Path(__file__).parent.joinpath("static")
-    scss = path_css_folder.joinpath("sphinx-book-theme.scss")
-    css = sass.compile(filename=str(scss))
-    path_css_folder.joinpath("sphinx-book-theme.css").write_text(css)
-
-
 class Margin(directives.body.Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -302,7 +294,6 @@ class Margin(directives.body.Sidebar):
 
 
 def setup(app):
-    compile_scss()
     app.connect("env-before-read-docs", update_thebe_config)
 
     # Configuration for Juypter Book
