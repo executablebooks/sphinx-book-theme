@@ -69,6 +69,6 @@ def docs_live(session):
             # open the browser after 5 seconds
             "--open-browser",
             # sphinx-build arguments
-            "-b", "html", "docs", "docs/_build/html",
+            "-a", "-b", "html", "docs", "docs/_build/html",
         )
         # fmt: on
