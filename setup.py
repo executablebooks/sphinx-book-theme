@@ -66,10 +66,14 @@ setup(
     package_data={
         "sphinx_book_theme": [
             "theme.conf",
+            # Templates
             "*.html",
+            "topbar/*.html",
+            # Stylesheets
+            "scss/*",
+            # Other static files
             "static/*",
             "static/images/*",
-            "topbar/*.html",
         ]
     },
     include_package_data=True,
