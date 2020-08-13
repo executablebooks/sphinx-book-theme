@@ -35,6 +35,8 @@ jobs:
         nox -s tests-${{ matrix.python-version }} --
         --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
 
+    - run: ls
+
     - name: Upload to Codecov
       if: matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
       uses: codecov/codecov-action@v1
