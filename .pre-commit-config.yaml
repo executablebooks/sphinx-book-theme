@@ -26,12 +26,7 @@ repos:
     hooks:
     - id: black
 
-  - repo: local
+  - repo: https://github.com/mgedmin/check-manifest
+    rev: "0.39"
     hooks:
-    - id: scss
-      name: boussole
-      types: [scss]
-      language: python
-      additional_dependencies: [boussole]
-      entry: boussole compile --config=.boussole.json
-      pass_filenames: false
+    - id: check-manifest
