@@ -46,7 +46,6 @@ setup(
             "ipywidgets",
             "pandas",
             "nbclient",
-            "myst-parser",
             "myst-nb",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
