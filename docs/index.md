@@ -58,6 +58,7 @@ GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 :maxdepth: 2
 
 reference/index
+api/index
 ```
 
 ## Acknowledgements

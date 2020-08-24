@@ -46,7 +46,7 @@ def compile_scss(session):
 def docs(session):
     """Build documentation for this project."""
     session.install(".[sphinx]")
-    session.run("sphinx-build", "-b", "html", "docs", "docs/_build/html")
+    session.run("sphinx-build", "-nW", "--keep-going", "-b", "html", "docs", "docs/_build/html")
 
     session.notify("compile-scss")
 
@@ -69,6 +69,6 @@ def docs_live(session):
             # open the browser after 5 seconds
             "--open-browser",
             # sphinx-build arguments
-            "-a", "-b", "html", "docs", "docs/_build/html",
+            "-a", "-n", "-b", "html", "docs", "docs/_build/html",
         )
         # fmt: on

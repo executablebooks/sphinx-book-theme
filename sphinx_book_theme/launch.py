@@ -1,4 +1,8 @@
 from pathlib import Path
+from typing import Any, Dict, Optional
+
+from docutils.nodes import document
+from sphinx.application import Sphinx
 from sphinx.util import logging
 from shutil import copy2
 
@@ -6,8 +10,18 @@ from shutil import copy2
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
-def add_hub_urls(app, pagename, templatename, context, doctree):
-    """Builds a binder link and inserts it in HTML context for use in templating."""
+def add_hub_urls(app: Sphinx, pagename: str, templatename: str, context: Dict[str, Any], doctree: Optional[document]):
+    """Builds a binder link and inserts it in HTML context for use in templating.
+
+    This is a ``html-page-context`` sphinx event (see :ref:`sphinx:events`).
+    
+    :param pagename: The sphinx docname related to the page
+    :param context: A dictionary of values that are given to the template engine,
+        to render the page and can be modified to include custom values.
+    :param doctree: A doctree when the page is created from a reST documents;
+        it will be None when the page is created from an HTML template alone.
+
+    """
 
     # First decide if we'll insert any links
     path = app.env.doc2path(pagename)
