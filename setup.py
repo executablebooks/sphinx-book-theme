@@ -45,7 +45,7 @@ setup(
             "matplotlib",
             "ipywidgets",
             "pandas",
-            "nbclient",
+            "nbclient~=0.2.0",
             "myst-nb~=0.9.1",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
