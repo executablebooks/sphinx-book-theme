@@ -197,4 +197,9 @@ m
 Because notebooks have rich text outputs, you can store these in
 your Jupyter Book as well!
 
+```{code-cell} ipython3
+# The ! causes this to run as a shell command
+!jupyter -h
+```
+
 
