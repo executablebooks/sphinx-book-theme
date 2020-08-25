@@ -9,6 +9,8 @@ from sass import compile as sass_compile
 from .launch import add_hub_urls
 
 __version__ = "0.0.35"
+"""sphinx-book-theme version"""
+
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
@@ -289,6 +291,7 @@ class Margin(directives.body.Sidebar):
     required_arguments = 0
 
     def run(self):
+        """Run the directive."""
         if not self.arguments:
             self.arguments = [""]
         nodes = super().run()
