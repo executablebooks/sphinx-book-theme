@@ -46,7 +46,9 @@ def compile_scss(session):
 def docs(session):
     """Build documentation for this project."""
     session.install(".[sphinx]")
-    session.run("sphinx-build", "-nW", "--keep-going", "-b", "html", "docs", "docs/_build/html")
+    session.run(
+        "sphinx-build", "-nW", "--keep-going", "-b", "html", "docs", "docs/_build/html"
+    )
 
     session.notify("compile-scss")
 

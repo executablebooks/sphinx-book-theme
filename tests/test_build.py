@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from pathlib import Path
-from subprocess import run
+from subprocess import check_output
 from shutil import copytree, rmtree
 import pytest
 
@@ -28,7 +28,7 @@ def sphinx_build(tmpdir_factory):
         def build(self, cmd=None):
             """Build the test book"""
             cmd = [] if cmd is None else cmd
-            run(self.cmd_base + cmd, cwd=self.path_book, check=True)
+            return check_output(self.cmd_base + cmd, cwd=self.path_book).decode("utf8")
 
         def path(self, *args):
             return self.path_html.joinpath(*args)
@@ -63,7 +63,9 @@ def test_build_book(file_regression, sphinx_build):
     for path, kernel in kernels_expected.items():
         ntbk_text = sphinx_build.get(*path.split("/"))
         thebe_config = ntbk_text.find("script", attrs={"type": "text/x-thebe-config"})
-        assert 'kernelName: "{}",'.format(kernel) in thebe_config.prettify()
+        kernel_name = 'kernelName: "{}",'.format(kernel)
+        if kernel_name not in thebe_config.prettify():
+            raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
     # Check a few components that should be true on each page
     index_html = sphinx_build.get("index.html")
@@ -237,4 +239,4 @@ def test_singlehtml(file_regression, sphinx_build):
 
     # Ensure that it works without error
     cmd = ["-b", "singlehtml"]
-    run(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book, check=True)
+    check_output(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book).decode("utf8")

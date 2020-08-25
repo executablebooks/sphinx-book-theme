@@ -168,7 +168,7 @@ Field List:
     (and sundry other good-natured folks)
 
 :Version: 1.0 of 2001/08/08
-:Dedication: To my father. 
+:Dedication: To my father.
 
 Doctest Blocks
 --------------
@@ -506,4 +506,3 @@ Download Links
 ==============
 
 :download:`This long long long long long long long long long long long long long long long download link should be blue, normal weight text with a leading icon, and should wrap white-spaces <../images/cool.jpg>`
-

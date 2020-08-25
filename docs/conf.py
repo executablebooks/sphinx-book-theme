@@ -19,7 +19,7 @@ extensions = [
     "sphinx_thebe",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.viewcode"
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -36,7 +36,7 @@ intersphinx_mapping = {
 }
 nitpick_ignore = [
     ("py:class", "docutils.nodes.document"),
-    ("py:class", "docutils.parsers.rst.directives.body.Sidebar")
+    ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
 ]
 
 numfig = True
