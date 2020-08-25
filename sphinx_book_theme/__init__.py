@@ -8,7 +8,7 @@ from sass import compile as sass_compile
 
 from .launch import add_hub_urls
 
-__version__ = "0.0.35"
+__version__ = "0.0.36"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
