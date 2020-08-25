@@ -1,6 +1,6 @@
 # sphinx-book-theme
 
-[![codecov](https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/master/graph/badge.svg)](https://codecov.io/gh/executablebooks/sphinx-book-theme) | [![Documentation Status](https://readthedocs.org/projects/sphinx-book-theme/badge/?version=latest)](https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest)
+[![codecov][codecov-badge]][codecov-link] [![Documentation Status][rtd-badge]][rtd-link] [![PyPI][pypi-badge]][pypi-link]
 
 **An interactive book theme for Sphinx**.
 
@@ -41,3 +41,12 @@ theme. See the pages to the left for information about what you can configure wi
 
 See [the Sphinx Book Theme documentation](https://sphinx-book-theme.readthedocs.io/en/latest/)
 for more information.
+
+[codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/executablebooks/sphinx-book-theme
+
+[rtd-badge]: https://readthedocs.org/projects/sphinx-book-theme/badge/?version=latest
+[rtd-link]: https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
+
+[pypi-badge]: https://img.shields.io/pypi/v/sphinx-book-theme.svg
+[pypi-link]: https://pypi.org/project/sphinx-book-theme
