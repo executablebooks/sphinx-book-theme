@@ -149,3 +149,28 @@ Testing popouts before headers
 
 +++
 
+## Interactive outputs
+
+We can even do the same for *interactive* material. Below we'll display a map using [folium](https://python-visualization.github.io/folium/). When the notebook
+is converted to Markdown, the code for creating the interactive map is retained.
+
+**Note that this will only work for some packages.** They need to be able to output standalone HTML/Javascript, and not
+depend on an underlying Python kernel to work.
+
+## Rich outputs from notebook cells
+
++++
+
+Because notebooks have rich text outputs, you can store these in
+your Jupyter Book as well!
+
+```{code-cell} ipython3
+# The ! causes this to run as a shell command
+!jupyter -h
+```
+
+```{code-cell} ipython3
+:tags: [raises-exception]
+
+this_will_error
+```
