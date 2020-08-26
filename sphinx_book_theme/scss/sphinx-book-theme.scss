@@ -18,8 +18,24 @@ $topbar-height: 3em;
 
 body {
     padding-top: 0px !important;
+
     img {
         max-width: 100%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+
+        &.align-left {
+            display: block;
+            margin-right: left;
+            margin-left: left;
+        }
+
+        &.align-right {
+            display: block;
+            margin-right: right;
+            margin-left: right;
+        }
     }
 }
 
@@ -80,6 +96,7 @@ main.bd-content {
             float: right;
             font-size: 1.2em;
         }
+
 
         // Figures
         div.figure {
