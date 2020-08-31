@@ -1,3 +1,7 @@
 matplotlib
 numpy
 folium
+myst-nb
+sphinx-copybutton
+sphinxcontrib-bibtex
+sphinx-thebe
