@@ -379,6 +379,34 @@ An image directive (also clickable -- a hyperlink reference):
 .. image:: ../images/cool.jpg
    :target: directives_
 
+An image directive can be aligned using the option ``:align: right`` or ``:align: left``. By default, images are aligned to the center.
+
+.. code-block:: rst
+
+   .. image:: ../images/cool.jpg
+      :align: left
+
+.. image:: ../images/cool.jpg
+   :align: left
+
+.. raw:: html
+
+   <br/><br/><br/><br/><br/><br/>
+
+.. code-block:: rst
+
+   .. image:: ../images/cool.jpg
+      :align: right
+
+
+.. image:: ../images/cool.jpg
+   :align: right
+
+.. raw:: html
+
+   <br/><br/><br/><br/><br/>
+
+
 Figures
 ^^^^^^^
 
