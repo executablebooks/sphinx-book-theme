@@ -161,7 +161,7 @@ def test_header_info(file_regression, sphinx_build):
 
     header = sphinx_build.get("section1", "ntbk.html").find("head")
     assert (
-        '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url">'
+        '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url"/>'
         in str(header)
     )
     assert (
