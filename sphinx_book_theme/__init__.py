@@ -4,7 +4,7 @@ from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
 from bs4 import BeautifulSoup as bs
-from sass import compile as sass_compile
+from scss.compiler import compile_file
 
 from .launch import add_hub_urls
 
@@ -27,9 +27,10 @@ def add_static_path(app):
     # Compile the css file if it's not been compiled already
     compiled_css_file = static_path / "sphinx-book-theme.css"
     if not compiled_css_file.exists():
-        source_dir = str(static_path.parent / "scss")
-        output_dir = str(static_path)
-        sass_compile(dirname=(source_dir, output_dir), output_style="compressed")
+        source_file = str(static_path.parent / "scss" / "sphinx-book-theme.scss")
+        css = compile_file(source_file, output_style="compressed")
+        with open(compiled_css_file, "w") as f:
+            f.write(css)
 
 
 def find_url_relative_to_root(pagename, relative_page, path_docs_source):
