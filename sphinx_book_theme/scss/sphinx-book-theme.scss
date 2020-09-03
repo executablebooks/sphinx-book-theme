@@ -81,6 +81,26 @@ main.bd-content {
             font-size: 1.2em;
         }
 
+        // Images
+        img {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+
+            &.align-left {
+                clear: left;
+                float: left;
+                margin-right: 1em;
+
+            }
+
+            &.align-right {
+                clear: right;
+                float: right;
+                margin-left: 1em;
+            }
+        }
+
         // Figures
         div.figure {
             width: 100%;

@@ -33,7 +33,7 @@ setup(
         "sphinx",
         "click",
         "setuptools",
-        "libsass",
+        "pyScss",
         "pydata-sphinx-theme~=0.4.0",
         "beautifulsoup4",
     ],
