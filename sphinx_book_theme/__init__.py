@@ -50,7 +50,7 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
     path_rel_from_page_dir = source_dir.joinpath(
         path_parent.parent.joinpath(path_rel.parent)
     )
-    path_from_page_dir = path_rel_from_page_dir.resolve()
+    path_from_page_dir = path_rel_from_page_dir.absolute()
     page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
     return page_rel_root
 
