@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from pathlib import Path
-from subprocess import check_output
+from subprocess import check_output, run, PIPE
 from shutil import copytree, rmtree
 import pytest
 
@@ -9,7 +9,7 @@ path_tests = Path(__file__).parent.resolve()
 path_base = path_tests.joinpath("sites", "base")
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def sphinx_build(tmpdir_factory):
     class SphinxBuild:
         path_tmp = Path(tmpdir_factory.mktemp("build"))
@@ -240,3 +240,17 @@ def test_singlehtml(file_regression, sphinx_build):
     # Ensure that it works without error
     cmd = ["-b", "singlehtml"]
     check_output(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book).decode("utf8")
+
+
+def test_missing_title(sphinx_build):
+    """Test building with a book w/ no title on the master page."""
+    sphinx_build.copy(path_base.joinpath("..", "notitle"))
+
+    # Ensure that it works without error
+    out = run(
+        ["sphinx-build", ".", "_build/html"],
+        cwd=sphinx_build.path_book,
+        stderr=PIPE,
+        stdout=PIPE,
+    )
+    assert "Landing page missing a title: index" in out.stderr.decode()
