@@ -248,6 +248,8 @@ def test_singlehtml(file_regression, sphinx_build):
 
 def test_missing_title(sphinx_build):
     """Test building with a book w/ no title on the master page."""
+    if sphinx_build.path_book.exists():
+        sphinx_build.clean()
     sphinx_build.copy(path_base.joinpath("..", "notitle"))
 
     # Ensure that it works without error
