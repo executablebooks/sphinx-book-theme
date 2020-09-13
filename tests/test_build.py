@@ -1,10 +1,6 @@
 from bs4 import BeautifulSoup
 from pathlib import Path
-<<<<<<< HEAD
-from subprocess import check_output
-=======
-from subprocess import run, PIPE
->>>>>>> testing the title error
+from subprocess import check_output, run, PIPE
 from shutil import copytree, rmtree
 import pytest
 
