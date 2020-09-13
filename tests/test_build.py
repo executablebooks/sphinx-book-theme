@@ -1,6 +1,10 @@
 from bs4 import BeautifulSoup
 from pathlib import Path
+<<<<<<< HEAD
 from subprocess import check_output
+=======
+from subprocess import run, PIPE
+>>>>>>> testing the title error
 from shutil import copytree, rmtree
 import pytest
 
@@ -240,3 +244,17 @@ def test_singlehtml(file_regression, sphinx_build):
     # Ensure that it works without error
     cmd = ["-b", "singlehtml"]
     check_output(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book).decode("utf8")
+
+
+def test_missing_title(sphinx_build):
+    """Test building with a book w/ no title on the master page."""
+    sphinx_build.copy(path_base.joinpath("..", "notitle"))
+
+    # Ensure that it works without error
+    out = run(
+        ["sphinx-build", ".", "_build/html"],
+        cwd=sphinx_build.path_book,
+        stderr=PIPE,
+        stdout=PIPE,
+    )
+    assert "Landing page missing a title: index" in out.stderr.decode()
