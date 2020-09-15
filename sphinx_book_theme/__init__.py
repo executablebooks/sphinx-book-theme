@@ -1,5 +1,6 @@
 """A lightweight book theme based on the pydata sphinx theme."""
 from pathlib import Path
+import os
 from docutils.parsers.rst import directives
 from docutils import nodes
 from sphinx.util import logging
@@ -50,7 +51,7 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
     path_rel_from_page_dir = source_dir.joinpath(
         path_parent.parent.joinpath(path_rel.parent)
     )
-    path_from_page_dir = path_rel_from_page_dir.absolute()
+    path_from_page_dir = Path(os.path.abspath(path_rel_from_page_dir))
     page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
     return page_rel_root
 
