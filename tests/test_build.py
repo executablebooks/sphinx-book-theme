@@ -1,5 +1,6 @@
+import os
 from pathlib import Path
-from shutil import copytree, rmtree
+from shutil import copytree
 
 from bs4 import BeautifulSoup
 import pytest
@@ -8,8 +9,7 @@ from sphinx.testing.util import SphinxTestApp
 from sphinx.testing.path import path as sphinx_path
 
 
-path_tests = Path(__file__).parent.resolve()
-path_base = path_tests.joinpath("sites", "base")
+path_tests = Path(__file__).parent
 
 
 class SphinxBuild:
@@ -40,17 +40,13 @@ class SphinxBuild:
             raise ValueError(f"{path_page} does not exist")
         return BeautifulSoup(path_page.read_text("utf8"), "html.parser")
 
-    def clean(self):
-        self.app.cleanup()
-        rmtree(self.src.parent, self.src.name)
-
 
 @pytest.fixture()
 def sphinx_build_factory(make_app, tmp_path):
     def _func(src_folder, **kwargs):
         copytree(path_tests / "sites" / src_folder, tmp_path / src_folder)
         app = make_app(
-            srcdir=sphinx_path(str((tmp_path / src_folder).absolute())), **kwargs
+            srcdir=sphinx_path(os.path.abspath((tmp_path / src_folder))), **kwargs
         )
         return SphinxBuild(app, tmp_path / src_folder)
 
@@ -168,7 +164,9 @@ def test_navbar_options_expand_sections(sphinx_build_factory):
 def test_header_info(sphinx_build_factory):
     confoverrides = {
         "html_baseurl": "https://blah.com/foo/",
-        "html_logo": str(path_tests.parent.joinpath("docs", "_static", "logo.png")),
+        "html_logo": os.path.abspath(
+            path_tests.parent.joinpath("docs", "_static", "logo.png")
+        ),
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
@@ -238,6 +236,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
     file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
+@pytest.mark.skipif(os.name == "nt", reason="myst-nb path concatenation error (#212)")
 def test_singlehtml(sphinx_build_factory):
     """Test building with a single HTML page."""
     sphinx_build = sphinx_build_factory("base", buildername="singlehtml").build(
