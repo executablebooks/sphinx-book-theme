@@ -1,0 +1,13 @@
+web-compile:
+  sass:
+    files:
+      src/scss/sphinx-book-theme.scss: sphinx_book_theme/static/sphinx-book-theme.[hash].css
+    precision: 5
+    sourcemap: false
+    format: compressed
+  js:
+    files:
+      src/js/sphinx-book-theme.js: sphinx_book_theme/static/sphinx-book-theme.[hash].js
+  jinja:
+    files:
+      src/jinja/theme.conf.j2: sphinx_book_theme/theme.conf

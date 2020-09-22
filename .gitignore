@@ -134,6 +134,3 @@ dmypy.json
 
 # VS Code
 .vscode/
-
-# Auto-generated CSS
-sphinx-book-theme.css
