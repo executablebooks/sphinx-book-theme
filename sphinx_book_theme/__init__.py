@@ -1,4 +1,5 @@
 """A lightweight book theme based on the pydata sphinx theme."""
+import os
 from pathlib import Path
 
 try:
@@ -23,7 +24,7 @@ SPHINX_LOGGER = logging.getLogger(__name__)
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    theme_path = str(Path(__file__).parent.absolute())
+    theme_path = os.path.abspath(Path(__file__).parent)
     return theme_path
 
 
@@ -88,7 +89,7 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
     path_rel_from_page_dir = source_dir.joinpath(
         path_parent.parent.joinpath(path_rel.parent)
     )
-    path_from_page_dir = path_rel_from_page_dir.resolve()
+    path_from_page_dir = Path(os.path.abspath(path_rel_from_page_dir))
     page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
     return page_rel_root
 

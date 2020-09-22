@@ -54,8 +54,6 @@ setup(
         ],
         "testing": [
             "myst_nb~=0.10.1",
-            "sphinx_copybutton",
-            "sphinx_togglebutton>=0.2.1",
             "sphinx_thebe",
             "coverage",
             "pytest~=6.0.1",
