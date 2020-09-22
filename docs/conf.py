@@ -41,6 +41,11 @@ nitpick_ignore = [
 
 numfig = True
 
+myst_admonition_enable = True
+myst_deflist_enable = True
+myst_url_schemes = ("http", "https", "mailto")
+panels_add_bootstrap_css = False
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -64,6 +69,7 @@ thebe_config = {
 }
 
 html_theme_options = {
+    "theme_dev_mode": True,
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
     # "repository_branch": "gh-pages",  # For testing

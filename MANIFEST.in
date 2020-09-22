@@ -4,21 +4,21 @@ exclude docs
 recursive-exclude docs *
 exclude tests
 recursive-exclude tests *
+exclude src
+recursive-exclude src *
 
 exclude .flake8
 exclude .pre-commit-config.yaml
 exclude .readthedocs.yml
-exclude .boussole.json
-exclude noxfile.py
+exclude codecov.yml
+exclude tox.ini
 
 include CHANGELOG.md
 include LICENSE
 include MANIFEST.in
 include README.md
+include web-compile-config.yml
 
 include sphinx_book_theme/theme.conf
 recursive-include sphinx_book_theme *.html
-recursive-include sphinx_book_theme *.js
-recursive-include sphinx_book_theme *.png
-recursive-include sphinx_book_theme *.scss
-recursive-include sphinx_book_theme *.svg
+recursive-include sphinx_book_theme/static *.js *.png *.css *.svg

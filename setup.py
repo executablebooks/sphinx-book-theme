@@ -32,13 +32,12 @@ setup(
         "docutils>=0.15",
         "sphinx",
         "click",
-        "setuptools",
-        "pyScss",
         "pydata-sphinx-theme~=0.4.0",
         "beautifulsoup4",
+        'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     extras_require={
-        "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
+        "code_style": ["pre-commit~=2.7.0"],
         "sphinx": [
             "folium",
             "numpy",
@@ -46,7 +45,7 @@ setup(
             "ipywidgets",
             "pandas",
             "nbclient",
-            "myst-nb~=0.9.1",
+            "myst-nb~=0.10.1",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
@@ -54,26 +53,17 @@ setup(
             "sphinx-thebe",
         ],
         "testing": [
+            "myst_nb~=0.10.1",
+            "sphinx_copybutton",
+            "sphinx_togglebutton>=0.2.1",
+            "sphinx_thebe",
             "coverage",
-            "pytest>=3.6,<4",
+            "pytest~=6.0.1",
             "pytest-cov",
-            "beautifulsoup4",
-            "pytest-regressions",
+            "pytest-regressions~=2.0.1",
         ],
+        "live-dev": ["sphinx-autobuild", "web-compile~=0.2.1"],
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
-    package_data={
-        "sphinx_book_theme": [
-            "theme.conf",
-            # Templates
-            "*.html",
-            "topbar/*.html",
-            # Stylesheets
-            "scss/*",
-            # Other static files
-            "static/*",
-            "static/images/*",
-        ]
-    },
     include_package_data=True,
 )
