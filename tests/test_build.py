@@ -1,76 +1,85 @@
-from bs4 import BeautifulSoup
 from pathlib import Path
-from subprocess import check_output, run, PIPE
 from shutil import copytree, rmtree
+
+from bs4 import BeautifulSoup
 import pytest
+from sphinx.errors import ThemeError
+from sphinx.testing.util import SphinxTestApp
+from sphinx.testing.path import path as sphinx_path
 
 
 path_tests = Path(__file__).parent.resolve()
 path_base = path_tests.joinpath("sites", "base")
 
 
-@pytest.fixture(scope="function")
-def sphinx_build(tmpdir_factory):
-    class SphinxBuild:
-        path_tmp = Path(tmpdir_factory.mktemp("build"))
-        path_book = path_tmp.joinpath("book")
-        path_build = path_book.joinpath("_build")
-        path_html = path_build.joinpath("html")
-        cmd_base = ["sphinx-build", ".", "_build/html", "-a", "-W"]
+class SphinxBuild:
+    def __init__(self, app: SphinxTestApp, src: Path):
+        self.app = app
+        self.src = src
 
-        def copy(self, path=None):
-            """Copy the specified book to our tests folder for building."""
-            if path is None:
-                path = path_base
-            if not self.path_book.exists():
-                copytree(path, self.path_book)
+    def build(self, assert_pass=True):
+        self.app.build()
+        assert self.warnings == "", self.status
+        return self
 
-        def build(self, cmd=None):
-            """Build the test book"""
-            cmd = [] if cmd is None else cmd
-            return check_output(self.cmd_base + cmd, cwd=self.path_book).decode("utf8")
+    @property
+    def status(self):
+        return self.app._status.getvalue()
 
-        def path(self, *args):
-            return self.path_html.joinpath(*args)
+    @property
+    def warnings(self):
+        return self.app._warning.getvalue()
 
-        def get(self, *args):
-            path_page = self.path(*args)
-            if not path_page.exists():
-                raise ValueError(f"{path_page} does not exist")
-            return BeautifulSoup(path_page.read_text(), "html.parser")
+    @property
+    def outdir(self):
+        return Path(self.app.outdir)
 
-        def clean(self):
-            """Clean the _build folder so files don't clash with new tests."""
-            rmtree(self.path_build)
+    def html_tree(self, *path):
+        path_page = self.outdir.joinpath(*path)
+        if not path_page.exists():
+            raise ValueError(f"{path_page} does not exist")
+        return BeautifulSoup(path_page.read_text("utf8"), "html.parser")
 
-    return SphinxBuild()
+    def clean(self):
+        self.app.cleanup()
+        rmtree(self.src.parent, self.src.name)
 
 
-def test_build_book(file_regression, sphinx_build):
+@pytest.fixture()
+def sphinx_build_factory(make_app, tmp_path):
+    def _func(src_folder, **kwargs):
+        copytree(path_tests / "sites" / src_folder, tmp_path / src_folder)
+        app = make_app(
+            srcdir=sphinx_path(str((tmp_path / src_folder).absolute())), **kwargs
+        )
+        return SphinxBuild(app, tmp_path / src_folder)
+
+    yield _func
+
+
+def test_build_book(sphinx_build_factory, file_regression):
     """Test building the base book template and config."""
-    sphinx_build.copy()
-
-    # Basic build with defaults
-    sphinx_build.build()
-    assert sphinx_build.path("index.html").exists()
+    sphinx_build = sphinx_build_factory("base")  # type: SphinxBuild
+    sphinx_build.build(assert_pass=True)
+    assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
 
     # Check for correct kernel name in jupyter notebooks
     kernels_expected = {
-        "section1/ntbk.html": "python3",
-        "section1/ntbk_octave.html": "octave",
-        "section1/ntbk_julia.html": "julia-1.4",
+        "ntbk.html": "python3",
+        "ntbk_octave.html": "octave",
+        "ntbk_julia.html": "julia-1.4",
     }
-    for path, kernel in kernels_expected.items():
-        ntbk_text = sphinx_build.get(*path.split("/"))
-        thebe_config = ntbk_text.find("script", attrs={"type": "text/x-thebe-config"})
+    for filename, kernel in kernels_expected.items():
+        ntbk_html = sphinx_build.html_tree("section1", filename)
+        thebe_config = ntbk_html.find("script", attrs={"type": "text/x-thebe-config"})
         kernel_name = 'kernelName: "{}",'.format(kernel)
         if kernel_name not in thebe_config.prettify():
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
     # Check a few components that should be true on each page
-    index_html = sphinx_build.get("index.html")
+    index_html = sphinx_build.html_tree("index.html")
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
-    file_regression.check(sidebar.prettify(), extension=".html")
+    file_regression.check(sidebar.prettify(), extension=".html", encoding="utf8")
 
     # Opengraph should not be in the HTML because we have no baseurl specified
     assert (
@@ -82,84 +91,91 @@ def test_build_book(file_regression, sphinx_build):
     # Title should be just text, no HTML
     assert "Index with code in title" in str(index_html)
     # Check navbar numbering
-    sidebar_ntbk = sphinx_build.get("section1", "ntbk.html").find(
+    sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
         "nav", id="bd-docs-nav"
     )
     # Pages and sub-pages should be numbered
     assert "1. Page 1" in str(sidebar_ntbk)
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
     # Check opengraph metadata
-    html_escaped = sphinx_build.get("page1.html")
+    html_escaped = sphinx_build.html_tree("page1.html")
     escaped_description = html_escaped.find("meta", property="og:description")
     file_regression.check(
         escaped_description.prettify(),
         basename="escaped_description",
         extension=".html",
+        encoding="utf8",
     )
-    sphinx_build.clean()
 
 
-def test_navbar_options(file_regression, sphinx_build):
-    sphinx_build.copy()
+def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
-    # "home_page_in_toc": True,
-    cmd = ["-D", "html_theme_options.home_page_in_toc=True"]
-    sphinx_build.build(cmd)
-    navbar = sphinx_build.get("section1", "ntbk.html").find("nav", id="bd-docs-nav")
+    sphinx_build = sphinx_build_factory(
+        "base", confoverrides={"html_theme_options.home_page_in_toc": True}
+    ).build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    navbar = sphinx_build.html_tree("section1", "ntbk.html").find(
+        "nav", id="bd-docs-nav"
+    )
     assert "Index with code in title" in str(navbar)
-    sphinx_build.clean()
 
-    # "single_page": True
-    cmd = ["-D", "html_theme_options.single_page=True"]
-    sphinx_build.build(cmd)
-    sidebar = sphinx_build.get("section1", "ntbk.html").find(
+
+def test_navbar_options_single_page(sphinx_build_factory):
+    sphinx_build = sphinx_build_factory(
+        "base", confoverrides={"html_theme_options.single_page": True}
+    ).build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
         "div", id="site-navigation"
     )
     assert len(sidebar.find_all("div")) == 0
     assert "col-md-2" in sidebar.attrs["class"]
-    sphinx_build.clean()
 
-    # Test extra navbar
-    cmd = ["-D", "html_theme_options.extra_navbar='<div>EXTRA NAVBAR</div>'"]
-    sphinx_build.build(cmd)
-    assert "<div>EXTRA NAVBAR</div>" in str(sphinx_build.get("section1", "ntbk.html"))
-    sphinx_build.clean()
 
-    # Test extra navbar deprecated key
-    cmd = [
-        "-D",
-        "html_theme_options.navbar_footer_text='<div>EXTRA NAVBAR</div>'",
-    ]
-    sphinx_build.build(cmd)
-    assert "<div>EXTRA NAVBAR</div>" in str(sphinx_build.get("section1", "ntbk.html"))
-    sphinx_build.clean()
+@pytest.mark.parametrize(
+    "option,value",
+    [
+        ("extra_navbar", "<div>EXTRA NAVBAR</div>"),
+        ("navbar_footer_text", "<div>EXTRA NAVBAR</div>"),
+        ("extra_footer", "<div>EXTRA FOOTER</div>"),
+    ],
+)
+def test_navbar_options(sphinx_build_factory, option, value):
+    sphinx_build = sphinx_build_factory(
+        "base", confoverrides={f"html_theme_options.{option}": value}
+    ).build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
 
-    # Test extra footer
-    cmd = ["-D", "html_theme_options.extra_footer='<div>EXTRA FOOTER</div>'"]
-    sphinx_build.build(cmd)
-    assert "<div>EXTRA FOOTER</div>" in str(sphinx_build.get("section1", "ntbk.html"))
-    sphinx_build.clean()
 
-    # Explicitly expanded sections are expanded when not active
-    cmd = ["-D", "html_theme_options.expand_sections=section1/index"]
-    sphinx_build.build(cmd)
-    sidebar = sphinx_build.get("section1", "ntbk.html").find_all(
+def test_navbar_options_expand_sections(sphinx_build_factory):
+    """Explicitly expanded sections are expanded when not active."""
+    sphinx_build = sphinx_build_factory(
+        "base",
+        confoverrides={"html_theme_options.expand_sections": "section1/index"},
+    ).build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         attrs={"class": "bd-sidebar"}
     )[0]
     assert "Section 1 page1" in str(sidebar)
-    sphinx_build.clean()
 
 
-def test_header_info(file_regression, sphinx_build):
-    sphinx_build.copy()
+def test_header_info(sphinx_build_factory):
+    confoverrides = {
+        "html_baseurl": "https://blah.com/foo/",
+        "html_logo": str(path_tests.parent.joinpath("docs", "_static", "logo.png")),
+    }
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
 
     # opengraph is generated when baseurl is given
-    baseurl = "https://blah.com/foo/"
-    path_logo = path_tests.parent.joinpath("docs", "_static", "logo.png")
-    cmd = ["-D", f"html_baseurl={baseurl}", "-D", f"html_logo={path_logo}"]
-    sphinx_build.build(cmd)
-
-    header = sphinx_build.get("section1", "ntbk.html").find("head")
+    header = sphinx_build.html_tree("section1", "ntbk.html").find("head")
     assert (
         '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url"/>'
         in str(header)
@@ -168,89 +184,69 @@ def test_header_info(file_regression, sphinx_build):
         '<meta content="https://blah.com/foo/_static/logo.png" property="og:image"/>'
         in str(header)
     )
-    sphinx_build.clean()
 
 
-def test_topbar(file_regression, sphinx_build):
-    sphinx_build.copy()
+def test_topbar_edit_buttons_on(sphinx_build_factory, file_regression):
+    confoverrides = {
+        "html_theme_options.use_edit_page_button": True,
+        "html_theme_options.use_repository_button": True,
+        "html_theme_options.use_issues_button": True,
+    }
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
 
-    # Test source buttons edit button
-    cmd = [
-        "-D",
-        "html_theme_options.use_edit_page_button=True",
-        "-D",
-        "html_theme_options.use_repository_button=True",
-        "-D",
-        "html_theme_options.use_issues_button=True",
-    ]
-    sphinx_build.build(cmd)
-    source_btns = sphinx_build.get("section1", "ntbk.html").find_all(
+    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "sourcebuttons"}
     )[0]
-    file_regression.check(source_btns.prettify(), extension=".html")
-    sphinx_build.clean()
+    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
 
-    # Test that turning buttons off works
-    cmd = [
-        "-D",
-        "html_theme_options.use_edit_page_button=False",
-        "-D",
-        "html_theme_options.use_repository_button=False",
-        "-D",
-        "html_theme_options.use_issues_button=True",
-    ]
-    sphinx_build.build(cmd)
-    source_btns = sphinx_build.get("section1", "ntbk.html").find_all(
+
+def test_topbar_edit_buttons_off(sphinx_build_factory, file_regression):
+    confoverrides = {
+        "html_theme_options.use_edit_page_button": False,
+        "html_theme_options.use_repository_button": False,
+        "html_theme_options.use_issues_button": True,
+    }
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "sourcebuttons"}
     )[0]
-    file_regression.check(
-        source_btns.prettify(), basename="test_topbar_hidebtns", extension=".html"
-    )
-    sphinx_build.clean()
+    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
 
-    # Test launch buttons
-    sphinx_build.build()
-    launch_btns = sphinx_build.get("section1", "ntbk.html").find_all(
+
+def test_topbar_launchbtns(sphinx_build_factory, file_regression):
+    """Test launch buttons."""
+    sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
+    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
     )[1]
-    file_regression.check(
-        launch_btns.prettify(), basename="test_topbar_launchbtns", extension=".html"
-    )
-    sphinx_build.clean()
+    file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
-    # Test custom branch for launch buttons
-    cmd = [
-        "-D",
-        "html_theme_options.repository_branch=foo",
-    ]
-    sphinx_build.build(cmd)
-    launch_btns = sphinx_build.get("section1", "ntbk.html").find_all(
+
+def test_repo_custombranch(sphinx_build_factory, file_regression):
+    """Test custom branch for launch buttons."""
+    sphinx_build = sphinx_build_factory(
+        "base", confoverrides={"html_theme_options.repository_branch": "foo"}
+    ).build(assert_pass=True)
+    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
     )[1]
-    file_regression.check(
-        launch_btns.prettify(), basename="test_repo_custombranch", extension=".html"
-    )
-    sphinx_build.clean()
+    file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
-def test_singlehtml(file_regression, sphinx_build):
+def test_singlehtml(sphinx_build_factory):
     """Test building with a single HTML page."""
-    sphinx_build.copy()
-
-    # Ensure that it works without error
-    cmd = ["-b", "singlehtml"]
-    check_output(sphinx_build.cmd_base + cmd, cwd=sphinx_build.path_book).decode("utf8")
-
-
-def test_missing_title(sphinx_build):
-    """Test building with a book w/ no title on the master page."""
-    sphinx_build.copy(path_base.joinpath("..", "notitle"))
-
-    # Ensure that it works without error
-    out = run(
-        ["sphinx-build", ".", "_build/html"],
-        cwd=sphinx_build.path_book,
-        stderr=PIPE,
-        stdout=PIPE,
+    sphinx_build = sphinx_build_factory("base", buildername="singlehtml").build(
+        assert_pass=True
     )
-    assert "Landing page missing a title: index" in out.stderr.decode()
+    assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
+
+
+def test_missing_title(sphinx_build_factory):
+    """Test building with a book w/ no title on the master page."""
+    with pytest.raises(ThemeError, match="Landing page missing a title: index"):
+        sphinx_build_factory("notitle").build()
