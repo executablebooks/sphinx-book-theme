@@ -12,7 +12,7 @@ var scrollToActive = () => {
   var active_pages = navbar.querySelectorAll(".active")
   var active_page = active_pages[active_pages.length-1]
   // Only scroll the navbar if the active link is lower than 50% of the page
-  if (active_page.offsetTop > ($(window).height() * .5)) {
+  if (active_page !== undefined && active_page.offsetTop > ($(window).height() * .5)) {
     navbar.scrollTop = active_page.offsetTop - ($(window).height() * .2)
   }
 }
