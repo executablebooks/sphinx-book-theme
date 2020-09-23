@@ -176,10 +176,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
     def generate_toc_html():
         """Return the within-page TOC links in HTML."""
 
-        if not context.get("toc"):
+        toc = context.get("toc")
+        if not toc:
             return ""
 
-        soup = bs(context["toc"], "html.parser")
+        soup = bs(toc, "html.parser")
 
         # Add toc-hN classes
         def add_header_level_recursive(ul, level):
@@ -200,17 +201,28 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 a = li.find("a")
                 a["class"] = a.get("class", []) + ["nav-link"]
 
-        # Keep only the sub-sections of the title (so no title is shown)
-        title = soup.find("a", attrs={"href": "#"})
-        if title:
-            title = title.parent
-            # Only show if children of the title item exist
-            if title.select("ul li"):
-                out = title.find("ul").prettify()
-            else:
-                out = ""
+        # If we only have one h1 header, assume it's a title
+        h1_headers = soup.select(".toc-h1")
+        if len(h1_headers) == 1:
+            title = h1_headers[0]
+            # If we have no sub-headers of a title then we won't have a TOC
+            if not title.select(".toc-h2"):
+                return ""
+
+            toc_out = title.find("ul").prettify()
+
+        # Else treat the h1 headers as sections
         else:
-            out = ""
+            toc_out = soup.prettify()
+
+        out = f"""
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> { context["translate"]('Contents') }
+        </div>
+        <nav id="bd-toc-nav">
+            {toc_out}
+        </nav>
+        """
         return out
 
     context["generate_toc_html"] = generate_toc_html

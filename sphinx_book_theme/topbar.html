@@ -25,13 +25,6 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-        {%- if toc %}
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> {{ translate('Contents') }}
-        </div>
-        {%- endif %}
-        <nav id="bd-toc-nav">
-            {{ generate_toc_html() }}
-        </nav>
+        {{ generate_toc_html() }}
     </div>
 </div>
