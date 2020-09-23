@@ -5,8 +5,8 @@
         {% if theme_single_page != True %}
         <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
             data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            aria-expanded="true" aria-label="{{ translate('Toggle navigation') }}" aria-controls="site-navigation"
+            title="{{ translate('Toggle navigation') }}" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
@@ -17,7 +17,7 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" title="{{ translate('Fullscreen mode') }}"><i
                     class="fas fa-expand"></i></button></a>
 
         {% include "topbar/launchbuttons.html" %}
@@ -27,7 +27,7 @@
     <div class="d-none d-md-block col-md-2 bd-toc show">
         {%- if toc %}
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> {{ translate("Contents") }}
+            <i class="fas fa-list"></i> {{ translate('Contents') }}
         </div>
         {%- endif %}
         <nav id="bd-toc-nav">

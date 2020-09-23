@@ -11,6 +11,7 @@ except ImportError:
 from bs4 import BeautifulSoup as bs
 from docutils.parsers.rst import directives
 from docutils import nodes
+from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
@@ -21,6 +22,7 @@ __version__ = "0.0.36"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
+MESSAGE_CATALOG_NAME = "booktheme"
 
 
 def get_html_theme_path():
@@ -272,7 +274,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
         if key in context:
             context[key] = _string_or_bool(context[key])
 
-    context["translate"] = get_translation("sphinx")
+    translation = get_translation(MESSAGE_CATALOG_NAME)
+    context["translate"] = translation
+    # this is set in the html_theme
+    context["theme_search_bar_text"] = translation(
+        context.get("theme_search_bar_text", "Search the docs ...")
+    )
 
 
 def update_thebe_config(app, env, docnames):
@@ -349,7 +356,7 @@ class Margin(directives.body.Sidebar):
         return nodes
 
 
-def setup(app):
+def setup(app: Sphinx):
     app.connect("env-before-read-docs", update_thebe_config)
 
     # Configuration for Juypter Book
@@ -357,6 +364,11 @@ def setup(app):
 
     app.connect("builder-inited", add_static_paths)
     app.connect("env-updated", update_all)
+
+    # add translations
+    package_dir = os.path.abspath(os.path.dirname(__file__))
+    locale_dir = os.path.join(package_dir, "translations", "locales")
+    app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.add_html_theme("sphinx_book_theme", get_html_theme_path())
     app.connect("html-page-context", add_to_context)
