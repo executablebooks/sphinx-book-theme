@@ -8,10 +8,11 @@ except ImportError:
     # python < 3.7
     import importlib_resources as resources
 
+from bs4 import BeautifulSoup as bs
 from docutils.parsers.rst import directives
 from docutils import nodes
+from sphinx.locale import get_translation
 from sphinx.util import logging
-from bs4 import BeautifulSoup as bs
 
 from .launch import add_hub_urls
 from . import static as theme_static
@@ -270,6 +271,8 @@ def add_to_context(app, pagename, templatename, context, doctree):
     for key in btns:
         if key in context:
             context[key] = _string_or_bool(context[key])
+
+    context["translate"] = get_translation("sphinx")
 
 
 def update_thebe_config(app, env, docnames):
