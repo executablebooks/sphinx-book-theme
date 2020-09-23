@@ -257,6 +257,16 @@ Wow, a note with an image in a margin!
 ![](../images/cool.jpg)
 ```
 ````
+
+#### Margin under lower level shouldn't have different left-alignment
+
+````{margin} **Notes in margins**
+```{note}
+Wow, a note with an image in a margin!
+![](../images/cool.jpg)
+```
+````
+
 ### Toggle buttons
 
 Here's some margin content, let's see how it interacts w/ the toggle button

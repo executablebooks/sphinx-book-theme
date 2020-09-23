@@ -63,8 +63,12 @@ main.bd-content {
             }
         }
 
-        div.section {
+        // Top-level sections have some padding to avoid overlap w/ sidebar
+        > div > div > div.section {
             padding-right: 1em;
+        }
+
+        div.section {
             overflow: visible !important;  // So that sidebars don't cause a scroll
 
             // List styles to avoid too much whitespace
