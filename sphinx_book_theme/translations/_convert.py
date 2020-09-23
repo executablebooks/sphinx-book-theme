@@ -3,8 +3,9 @@ import os
 from pathlib import Path
 import subprocess
 
-if __name__ == "__main__":
-    folder = Path(__file__).parent
+
+def convert_json(folder=None):
+    folder = folder or Path(__file__).parent
 
     # remove exising
     for path in (folder / "locales").glob("**/booktheme.po"):
@@ -21,8 +22,7 @@ if __name__ == "__main__":
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
             if not out_path.exists():
-                out_path.write_text(
-                    f"""
+                header = f"""
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx-Book-Theme\\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Language: {language}\\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\\n"
 """
-                )
+                out_path.write_text(header)
 
             with out_path.open("a") as f:
                 f.write("\n")
@@ -40,7 +40,7 @@ msgstr ""
                 text = item["text"].replace('"', '\\"')
                 f.write(f'msgstr "{text}"\n')
 
-    # remove mo
+    # compile mo
     for path in (folder / "locales").glob("**/booktheme.po"):
         print(path)
         subprocess.check_call(
@@ -51,3 +51,7 @@ msgstr ""
                 os.path.abspath(path.parent / "booktheme.mo"),
             ]
         )
+
+
+if __name__ == "__main__":
+    convert_json()
