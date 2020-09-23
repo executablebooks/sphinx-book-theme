@@ -81,6 +81,10 @@ main.bd-content {
             font-size: 1.2em;
         }
 
+        div.math {
+            overflow-x: auto;
+        }
+
         // Images
         img {
             display: block;
