@@ -41,10 +41,6 @@ jobs:
     - name: Run pytest
       run: >
         pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
-    - name: Run parallel build test
-      run: >
-        make -C tests/sites/parallel-build html
-
     - name: Upload to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
       uses: codecov/codecov-action@v1

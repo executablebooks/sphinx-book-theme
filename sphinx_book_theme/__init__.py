@@ -387,4 +387,7 @@ def setup(app: Sphinx):
 
     app.add_directive("margin", Margin)
 
-    return {"parallel_read_safe": True}
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
