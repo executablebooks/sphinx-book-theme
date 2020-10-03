@@ -386,3 +386,8 @@ def setup(app: Sphinx):
     app.connect("html-page-context", add_to_context)
 
     app.add_directive("margin", Margin)
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }

@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from shutil import copytree
+from subprocess import check_call
 
 from bs4 import BeautifulSoup
 import pytest
@@ -51,6 +52,15 @@ def sphinx_build_factory(make_app, tmp_path):
         return SphinxBuild(app, tmp_path / src_folder)
 
     yield _func
+
+
+def test_parallel_build():
+    # We cannot use the sphinx_build_factory because SpinxTestApp does
+    # not have a way to pass parallel=2 to the Sphinx constructor
+    # https://github.com/sphinx-doc/sphinx/blob/d8c006f1c0e612d0dc595ae463b8e4c3ebee5ca4/sphinx/testing/util.py#L101
+    check_call(
+        "sphinx-build -j 2 -W -b html tests/sites/parallel-build build", shell=True
+    )
 
 
 def test_build_book(sphinx_build_factory, file_regression):
