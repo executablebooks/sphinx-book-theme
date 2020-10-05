@@ -8,6 +8,12 @@ function toggleFullScreen(){var navToggler=$("#navbar-toggler");if(!document.ful
 var initTooltips=()=>{$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});}
 var initTocHide=()=>{var scrollTimeout;var throttle=200;var tocHeight=$("#bd-toc-nav").outerHeight(true)+$(".bd-toc").outerHeight(true);var hideTocAfter=tocHeight+200;var checkTocScroll=function(){var margin_content=$(".margin, .tag_margin, .full-width, .full_width, .tag_full-width, .tag_full_width, .sidebar, .tag_sidebar, .popout, .tag_popout");margin_content.each((index,item)=>{var topOffset=$(item).offset().top-$(window).scrollTop();var bottomOffset=topOffset+$(item).outerHeight(true);var topOverlaps=((topOffset>=0)&&(topOffset<hideTocAfter));var bottomOverlaps=((bottomOffset>=0)&&(bottomOffset<hideTocAfter));var removeToc=(topOverlaps||bottomOverlaps);if(removeToc&&window.pageYOffset>20){$("div.bd-toc").removeClass("show")
 return false}else{$("div.bd-toc").addClass("show")};})};$(window).on('scroll',function(){if(!scrollTimeout){scrollTimeout=setTimeout(function(){checkTocScroll();scrollTimeout=null;},throttle);}});}
+var collapsibleListener=()=>{$(".collapsible-ul>a").on("click",function(){$collapsibleUl=$(this).closest(".collapsible-ul")
+$ul=$collapsibleUl.find("ul")
+$i=$collapsibleUl.find("i")
+$ul.toggle("slow",function(){if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
+$i.addClass("fa-chevron-down")}else{$i.removeClass("fa-chevron-down")
+$i.addClass("fa-chevron-up")}})})}
 var initThebeSBT=()=>{var title=$("div.section h1")[0]
 if(!$(title).next().hasClass("thebe-launch-button")){$("<button class='thebe-launch-button'></button>").insertAfter($(title))}
 initThebe();}
@@ -15,3 +21,4 @@ sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)
+sbRunWhenDOMLoaded(collapsibleListener)

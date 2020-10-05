@@ -91,6 +91,23 @@ var initTocHide = () => {
   });
 }
 
+var collapsibleListener = () => {
+  $(".collapsible-ul>a").on("click", function() {
+    $collapsibleUl = $(this).closest(".collapsible-ul")
+    $ul = $collapsibleUl.find("ul")
+    $i = $collapsibleUl.find("i")
+    $ul.toggle("slow", function() {
+      if ($i.hasClass("fa-chevron-up")) {
+        $i.removeClass("fa-chevron-up")
+        $i.addClass("fa-chevron-down")
+      } else {
+        $i.removeClass("fa-chevron-down")
+        $i.addClass("fa-chevron-up")
+      }
+    })
+  })
+}
+
 var initThebeSBT = () => {
   var title  = $("div.section h1")[0]
   if (!$(title).next().hasClass("thebe-launch-button")) {
@@ -103,3 +120,4 @@ sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)
+sbRunWhenDOMLoaded(collapsibleListener)

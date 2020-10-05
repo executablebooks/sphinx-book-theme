@@ -503,6 +503,11 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
     }
 }
 
+.collapse-ul {
+    display: none;
+    overflow: hidden;
+}
+
 
 // Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
