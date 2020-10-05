@@ -171,7 +171,9 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 if do_collapse:
                     ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
                     li.find("a").append(
-                        toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-down"]})
+                        toctree.new_tag(
+                            "i", attrs={"class": ["fas", "fa-chevron-down"]}
+                        )
                     )
                 else:
                     li.find("a").append(
