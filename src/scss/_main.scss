@@ -1020,8 +1020,16 @@ nav.bd-links {
         > a {
             font-size: 0.9em;
         }
+        .fa-chevron-up, .fa-chevron-down {
+            float: right;
+            font-size: 1em;
+            margin-top: 0.4em;
+            margin-right: 0.4em;
+        }
         font-size: 1em;
+
     }
+
 
     > ul.nav {
         // Make sure the first items don't have any padding
