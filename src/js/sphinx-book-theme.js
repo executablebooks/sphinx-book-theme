@@ -92,7 +92,7 @@ var initTocHide = () => {
 }
 
 var collapsibleListener = () => {
-  $(".collapsible-ul>a").on("click", function() {
+  $(".collapsible-ul>a>i").on("click", function() {
     $collapsibleUl = $(this).closest(".collapsible-ul")
     $ul = $collapsibleUl.find("ul")
     $i = $collapsibleUl.find("i")
