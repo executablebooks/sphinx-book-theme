@@ -572,9 +572,14 @@ blockquote {
     }
 }
 
-// Code cells have background at the `pre` level so remove from here
+// Code blocks should have a margin, but code *cells* get margin from a parent
 div.highlight {
     background: none;
+    margin-bottom: 1em;
+}
+
+div.cell div.highlight {
+    margin-bottom: 0em;
 }
 
 // Thebelab over-rides
