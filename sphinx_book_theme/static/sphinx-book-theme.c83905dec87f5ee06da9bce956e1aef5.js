@@ -11,7 +11,7 @@ return false}else{$("div.bd-toc").addClass("show")};})};$(window).on('scroll',fu
 var collapsibleListener=()=>{$(".collapsible-ul>a").on("click",function(){$collapsibleUl=$(this).closest(".collapsible-ul")
 $ul=$collapsibleUl.find("ul")
 $i=$collapsibleUl.find("i")
-$ul.toggle("slow",function(){if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
+$ul.toggle("fast",function(){if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
 $i.addClass("fa-chevron-down")}else{$i.removeClass("fa-chevron-down")
 $i.addClass("fa-chevron-up")}})})}
 var initThebeSBT=()=>{var title=$("div.section h1")[0]

@@ -96,7 +96,7 @@ var collapsibleListener = () => {
     $collapsibleUl = $(this).closest(".collapsible-ul")
     $ul = $collapsibleUl.find("ul")
     $i = $collapsibleUl.find("i")
-    $ul.toggle("slow", function() {
+    $ul.toggle("fast", function() {
       if ($i.hasClass("fa-chevron-up")) {
         $i.removeClass("fa-chevron-up")
         $i.addClass("fa-chevron-down")
