@@ -86,12 +86,16 @@ def find_url_relative_to_root(pagename, relative_page, path_docs_source):
 
     # Convert everything to paths for use later
     path_rel = Path(relative_page).with_suffix("")
-    path_parent = Path(pagename)  # pagename is relative to docs root
+    if relative_page.endswith(".html"):
+        # HTML file Sphinx builder
+        path_parent = Path(pagename).parent  # pagename is .html relative to docs root
+    else:
+        # DirHTML Sphinx builder.
+        path_parent = Path(pagename)  # pagename is the parent folder if dirhtml builder
+
     source_dir = Path(path_docs_source)
     # This should be the path to `relative_page`, relative to `pagename`
-    path_rel_from_page_dir = source_dir.joinpath(
-        path_parent.parent.joinpath(path_rel.parent)
-    )
+    path_rel_from_page_dir = source_dir.joinpath(path_parent.joinpath(path_rel.parent))
     path_from_page_dir = Path(os.path.abspath(path_rel_from_page_dir))
     page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
     return page_rel_root

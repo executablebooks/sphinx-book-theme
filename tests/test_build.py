@@ -270,3 +270,11 @@ def test_missing_title(sphinx_build_factory):
     """Test building with a book w/ no title on the master page."""
     with pytest.raises(ThemeError, match="Landing page missing a title: index"):
         sphinx_build_factory("notitle").build()
+
+
+def test_docs_dirhtml(sphinx_build_factory):
+    """Test that builds with dirhtml pass without error."""
+    sphinx_build = sphinx_build_factory("base", buildername="dirhtml").build(
+        assert_pass=True
+    )
+    assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
