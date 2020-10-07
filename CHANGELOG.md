@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.38
+
+## Enhancements made
+👌 IMPROVE: Add missing aria-label to fullscreen button [#228](https://github.com/executablebooks/sphinx-book-theme/pull/228) ([@foster999](https://github.com/foster999))
+
+👌 IMPROVE: declare parallel read safe [#225](https://github.com/executablebooks/sphinx-book-theme/pull/225) ([@rscohn2](https://github.com/rscohn2))
+
+🐛 FIX: fixing dirhtml builds [#230](https://github.com/executablebooks/sphinx-book-theme/pull/230) ([@choldgraf](https://github.com/choldgraf))
+
+🐛 FIX: fixing margin for code blocks [#229](https://github.com/executablebooks/sphinx-book-theme/pull/229) ([@choldgraf](https://github.com/choldgraf))
+
+
 ## v0.0.37
 
 ✨ NEW: Sphinx translations for all buttons and tooltips in major UI elements. See [the Sphinx i18n documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language) for how to activate other languages. [#214](https://github.com/executablebooks/sphinx-book-theme/pull/214) ([@chrisjsewell](https://github.com/chrisjsewell))
