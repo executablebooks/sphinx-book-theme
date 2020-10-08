@@ -92,10 +92,14 @@ var initTocHide = () => {
 }
 
 var collapsibleListener = () => {
-  $(".collapsible-ul>i").on("click", function() {
-    $collapsibleUl = $(this).closest(".collapsible-ul")
-    $ul = $collapsibleUl.find("ul")
-    $i = $collapsibleUl.find("i")
+  $(".collapsible-parent>i").on("click", function() {
+    $collapsibleParent = $(this).closest(".collapsible-parent")
+    if ($collapsibleParent.prop("tagName") == "P") {
+      $ul = $collapsibleParent.next("ul")
+    } else {
+      $ul = $collapsibleParent.find("ul")
+    }
+    $i = $(this)
     $ul.toggle("fast", function() {
       if ($i.hasClass("fa-chevron-up")) {
         $i.removeClass("fa-chevron-up")

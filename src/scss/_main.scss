@@ -1002,6 +1002,7 @@ nav.bd-links {
         font-size: 0.9em;
         text-transform: uppercase;
         font-weight: bold;
+        position: relative;
 
         &:first-child {
             margin-top: 0;
@@ -1020,17 +1021,17 @@ nav.bd-links {
         > a {
             font-size: 0.9em;
         }
-        .fa-chevron-up, .fa-chevron-down {
-            position: absolute;
-            font-size: 0.75em;
-            right: 1.25em;
-            top: 0.5em;
-            cursor: pointer;
-        }
         font-size: 1em;
         position: relative;
     }
 
+    .fa-chevron-up, .fa-chevron-down {
+        position: absolute;
+        font-size: 0.75em;
+        right: 1rem; // gives the same padding as 1.25em
+        top: 0.5rem;
+        cursor: pointer;
+    }
 
     > ul.nav {
         // Make sure the first items don't have any padding
@@ -1042,9 +1043,9 @@ nav.bd-links {
             padding: 0 0 0 1rem;
         }
 
-        // Links don't have the horizontal padding, uls do
+        // right horizontal padding to accomodate chevron icons
         a {
-            padding: .25rem 0 !important;
+            padding: .25rem 2rem 0.25rem 0 !important;
         }
     }
 }

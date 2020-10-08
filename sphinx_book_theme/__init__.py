@@ -157,15 +157,16 @@ def add_to_context(app, pagename, templatename, context, doctree):
         if isinstance(expand_sections, str):
             expand_sections = []
 
-        for li in toctree("li", attrs={"class": "toctree-l1"}):
-            page_rel_root = find_url_relative_to_root(
-                pagename, li.find("a").attrs["href"], app.srcdir
-            )
+        for li in toctree("li"):
             ul = li.find("ul")
             if ul:
-                li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-ul"]
+                li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
+                page_rel_root = find_url_relative_to_root(
+                    pagename, li.find("a").attrs["href"], app.srcdir
+                )
                 do_collapse = (
-                    "active" not in li.attrs["class"]
+                    "toctree-l1" in li.attrs["class"]
+                    and "active" not in li.attrs["class"]
                     and str(page_rel_root) not in expand_sections
                 )
                 if do_collapse:
@@ -179,6 +180,10 @@ def add_to_context(app, pagename, templatename, context, doctree):
                     li.append(
                         toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
                     )
+
+        for p in toctree("p", attrs={"class": ["caption"]}):
+            p.attrs["class"] = p.attrs.get("class", []) + ["collapsible-parent"]
+            p.append(toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]}))
 
         # Add bootstrap classes for first `ul` items
         for ul in toctree("ul", recursive=False):
