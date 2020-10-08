@@ -898,6 +898,11 @@ button.topbarbtn img {
         padding-top: 0;
     }
 
+    // Single page
+    &.single-page {
+        border-right: 0;
+    }
+
     // Captions
     p.caption {
         margin-top: 1.25em;
