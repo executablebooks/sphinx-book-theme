@@ -1,6 +1,12 @@
 # The Sphinx Book Theme
 
-[![badge-url](https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social)](https://github.com/executablebooks/sphinx-book-theme)
+```{image} https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social
+:target: https://github.com/executablebooks/sphinx-book-theme
+:alt: badge-url
+:class: float-left
+```
+
+<br />
 
 **An interactive book theme for Sphinx**.
 
