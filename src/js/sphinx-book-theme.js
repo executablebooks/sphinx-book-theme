@@ -93,13 +93,13 @@ var initTocHide = () => {
 
 var collapsibleListener = () => {
   $(".collapsible-parent>i").on("click", function() {
-    $collapsibleParent = $(this).closest(".collapsible-parent")
+    $i = $(this)
+    $collapsibleParent = $i.closest(".collapsible-parent")
     if ($collapsibleParent.prop("tagName") == "P") {
       $ul = $collapsibleParent.next("ul")
     } else {
       $ul = $collapsibleParent.find("ul")
     }
-    $i = $(this)
     $ul.toggle("fast", function() {
       if ($i.hasClass("fa-chevron-up")) {
         $i.removeClass("fa-chevron-up")

@@ -181,6 +181,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                         toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
                     )
 
+        # for top-level captions
         for p in toctree("p", attrs={"class": ["caption"]}):
             p.attrs["class"] = p.attrs.get("class", []) + ["collapsible-parent"]
             p.append(toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]}))
