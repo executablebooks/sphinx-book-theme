@@ -1035,6 +1035,13 @@ nav.bd-links {
             color: #007bff;
         }
     }
+    .collapsible-parent > i {
+        visibility: hidden;
+    }
+
+    .collapsible-parent:hover > i {
+        visibility: visible;
+    }
 
     > ul.nav {
         // Make sure the first items don't have any padding
