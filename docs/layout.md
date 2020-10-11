@@ -226,7 +226,7 @@ but I'll stop here.
 
 You can control some elements of the navigation bar. Here are the main features:
 
-### Expand sections of your navbar
+### Expand sections of your sidebar
 
 You can keep certain sub-sections of pages to be permanently expanded in your
 left Table of Contents. To do so, add a list of any pages you wish to be expanded

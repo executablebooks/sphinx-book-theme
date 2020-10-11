@@ -9,18 +9,7 @@
 </a>
 </div>
 
-<form class="bd-search d-flex align-items-center" action="{{ pathto('search') }}" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="{{ theme_search_bar_text }}" aria-label="{{ theme_search_bar_text }}" autocomplete="off" >
-</form>
 
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  {{ generate_nav_html(include_item_names=True, with_home_page=theme_home_page_in_toc) }}
-</nav>
-
-{% if theme_navbar_footer_text %}{% set theme_extra_navbar=theme_navbar_footer_text %}{% endif %} <!-- To handle the deprecated key -->
-{% if theme_extra_navbar %}
-<div class="navbar_extra_footer">
-  {{ theme_extra_navbar }}
-</div>
-{% endif %}
+{%- for sidebartemplate in sidebars %}
+{%- include sidebartemplate %}
+{%- endfor %}
