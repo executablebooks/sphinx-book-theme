@@ -101,3 +101,57 @@ html_theme_options = {
     ...
 }
 ```
+
+## Add the home page to your table of contents
+
+By default, your table of contents will begin with the first file that you add to a `toctree`. You can also configure the theme to show the **landing page** of the theme in your navigation bar as well.
+
+To add the landing page of your site to the table of contents, use the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "home_page_in_toc": True
+    ...
+}
+```
+
+
+## Add a header to your Table of Contents
+
+If you'd like to add a header above a section of TOC links, use `:caption: My header text`
+in your `toctree` directive for that section.
+
+
+## Customize the logo, title, and favicon
+
+You can customize the logo, title, and favicon of your site with the following Sphinx configuration in `conf.py`:
+
+```python
+html_title = "Your title"
+html_logo = "path/to/logo.png"
+html_favicon = "path/to/favicon.ico"
+```
+
+These will be placed in the top-left of your page.
+
+
+## Add metadata open graph tags to your site
+
+OpenGraph tags can be used to generate previews and descriptions of your
+website. These will be automatically generated based on your page's content
+and title. However, generating them requires knowing the full URL of your
+website ahead of time.
+
+To enable metadata tags for your documentation, use the following
+configuration in `conf.py`:
+
+```python
+html_baseurl = "https://<your-site-baseurl>"
+```
+
+For example, the value of this field for this documentation is:
+
+```python
+html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+```
