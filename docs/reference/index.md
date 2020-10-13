@@ -11,4 +11,13 @@ chapterpage1
 chapterpage2
 chapterpage3
 notebookpage1
+blog
+```
+
+Here's a sample post list:
+
+```{postlist}
+:date: "%Y-%m-%d"
+:format: "{date} - {title}"
+:excerpts:
 ```

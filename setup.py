@@ -32,7 +32,7 @@ setup(
         "docutils>=0.15",
         "sphinx",
         "click",
-        "pydata-sphinx-theme~=0.4.0",
+        "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
@@ -51,6 +51,7 @@ setup(
             "plotly",
             "sphinxcontrib-bibtex",
             "sphinx-thebe",
+            "ablog~=0.10.11",
         ],
         "testing": [
             "myst_nb~=0.10.1",
