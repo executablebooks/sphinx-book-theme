@@ -152,39 +152,23 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
             )
 
-        # Remove children of all top-level pages unless config says to expand them
-        expand_sections = config.html_theme_options.get("expand_sections", [])
-        if isinstance(expand_sections, str):
-            expand_sections = []
+        # for top-level captions
+        for para in toctree("p", attrs={"class": ["caption"]}):
+            para.attrs["class"] = para.attrs.get("class", []) + ["collapsible-parent"]
+            para.append(
+                toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-down"]})
+            )
+            ul = para.find_next_sibling()
+            ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
 
         for li in toctree("li"):
             ul = li.find("ul")
             if ul:
                 li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
-                page_rel_root = find_url_relative_to_root(
-                    pagename, li.find("a").attrs["href"], app.srcdir
+                ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
+                li.append(
+                    toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-down"]})
                 )
-                do_collapse = (
-                    "toctree-l1" in li.attrs["class"]
-                    and "active" not in li.attrs["class"]
-                    and str(page_rel_root) not in expand_sections
-                )
-                if do_collapse:
-                    ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
-                    li.append(
-                        toctree.new_tag(
-                            "i", attrs={"class": ["fas", "fa-chevron-down"]}
-                        )
-                    )
-                else:
-                    li.append(
-                        toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
-                    )
-
-        # for top-level captions
-        for p in toctree("p", attrs={"class": ["caption"]}):
-            p.attrs["class"] = p.attrs.get("class", []) + ["collapsible-parent"]
-            p.append(toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]}))
 
         # Add bootstrap classes for first `ul` items
         for ul in toctree("ul", recursive=False):

@@ -1044,6 +1044,10 @@ nav.bd-links {
         visibility: visible;
     }
 
+    .collapse-ul {
+        display: none;
+    }
+
     > ul.nav {
         // Make sure the first items don't have any padding
         padding-left: 0;

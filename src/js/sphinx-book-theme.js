@@ -92,13 +92,19 @@ var initTocHide = () => {
 }
 
 var collapsibleListener = () => {
+  // to keep the relevant sidebar open according to the url
+  $elem = $("li.active")
+  for (el of $elem) {
+    $(el).closest("ul").removeClass("collapse-ul")
+  }
+  // click handler
   $(".collapsible-parent>i").on("click", function() {
     $i = $(this)
     $collapsibleParent = $i.closest(".collapsible-parent")
     if ($collapsibleParent.prop("tagName") == "P") {
       $ul = $collapsibleParent.next("ul")
     } else {
-      $ul = $collapsibleParent.find("ul")
+      $ul = $collapsibleParent.find("ul:first")
     }
     $ul.toggle("fast", function() {
       if ($i.hasClass("fa-chevron-up")) {

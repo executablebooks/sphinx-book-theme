@@ -168,20 +168,6 @@ def test_navbar_options(sphinx_build_factory, option, value):
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
 
 
-def test_navbar_options_expand_sections(sphinx_build_factory):
-    """Explicitly expanded sections are expanded when not active."""
-    sphinx_build = sphinx_build_factory(
-        "base",
-        confoverrides={"html_theme_options.expand_sections": "section1/index"},
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
-    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        attrs={"class": "bd-sidebar"}
-    )[0]
-    assert "Section 1 page1" in str(sidebar)
-
-
 def test_header_info(sphinx_build_factory):
     confoverrides = {
         "html_baseurl": "https://blah.com/foo/",

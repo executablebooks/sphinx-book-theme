@@ -226,18 +226,40 @@ but I'll stop here.
 
 You can control some elements of the navigation bar. Here are the main features:
 
-### Expand sections of your sidebar
+### Add a header to your TOC
 
-You can keep certain sub-sections of pages to be permanently expanded in your
-left Table of Contents. To do so, add a list of any pages you wish to be expanded
-in the following configuration:
+If you'd like to add a header above a section of TOC links, use `:caption: My header text`
+in your `toctree` directive for that section.
+
+### Adding the home page to your TOC
+
+If you'd like to have the home page listed in your TOC links, use the following
+configuration in `conf.py`:
 
 ```python
 html_theme_options = {
     ...
-    "expand_sections": ["list", "of", "pages"]
+    "home_page_in_toc": True
     ...
 }
 ```
 
-Each page that is in `expand_sections` will be expanded in your left TOC.
+## Add metadata open graph tags to your site
+
+OpenGraph tags can be used to generate previews and descriptions of your
+website. These will be automatically generated based on your page's content
+and title. However, generating them requires knowing the full URL of your
+website ahead of time.
+
+To enable metadata tags for your documentation, use the following
+configuration in `conf.py`:
+
+```python
+html_baseurl = "https://<your-site-baseurl>"
+```
+
+For example, the value of this field for this documentation is:
+
+```python
+html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+```
