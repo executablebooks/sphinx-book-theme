@@ -101,3 +101,17 @@ html_theme_options = {
     ...
 }
 ```
+
+## Add the home page to your table of contents
+
+By default, your table of contents will begin with the first file that you add to a `toctree`. You can also configure the theme to show the **landing page** of the theme in your navigation bar as well.
+
+To add the landing page of your site to the table of contents, use the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "home_page_in_toc": True
+    ...
+}
+```
