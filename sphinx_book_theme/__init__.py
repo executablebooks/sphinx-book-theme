@@ -391,6 +391,9 @@ def setup(app: Sphinx):
 
     app.add_directive("margin", Margin)
 
+    # Update templates for sidebar
+    app.config.templates_path.append(os.path.join(package_dir, "_templates"))
+
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,

@@ -117,6 +117,50 @@ html_theme_options = {
 ```
 
 
+## Control the left sidebar items
+
+You can control what kind of content goes underneath the logo and name of your website in the top left.
+
+To do so, use the `html_sidebars` variable in your `conf.py` file. This takes a dictionary of filename patterns as keys, and a list of sidebar elements as values. Any files that match a key will have the corresponding sidebar elements placed in that page's sidebar.
+
+For example, the following configuration would include *only the footer* on pages under the `posts/` folder:
+
+```python
+html_sidebars = {
+    "posts/*": ["sbt-sidebar-footer.html"]
+}
+```
+
+You can also use `**` to apply a set of sidebars to **all** pages of your book. For example:
+
+```python
+html_sidebars = {
+    "**": ["sbt-sidebar-nav.html", "sbt-sidebar-footer.html"]
+}
+```
+
+See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars) for more information.
+
+### Default sidebar elements
+
+By default, this theme comes with these three theme-specific sidebar elements enabled on all pages:
+
+- `sidebar-search-bs.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
+- `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
+- `sbt-sidebar-footer`: A [configurable](custom-footer) snippet of HTML to add to the sidebar (by default it is placed at the bottom).
+
+(custom-footer)=
+## Customize the sidebar footer
+
+You may choose your own HTML to include in the footer of your sidebar (or set it to be empty). To do so, use the following configuration variable in `conf.py`:
+
+```python
+extra_sidebar = "<p>Your HTML</p>"
+```
+
+This text will be placed at the bottom of the sidebar by default.
+
+
 ## Add a header to your Table of Contents
 
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`

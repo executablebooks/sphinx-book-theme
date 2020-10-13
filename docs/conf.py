@@ -20,6 +20,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
+    "ablog",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,6 +59,18 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/logo.png"
 
+html_sidebars = {
+    "reference/blog/*": [
+        "sidebar-search-bs.html",
+        "postcard.html",
+        "recentposts.html",
+        "tagcloud.html",
+        "categories.html",
+        "archives.html",
+        "sbt-sidebar-nav.html",
+        "sbt-sidebar-footer.html",
+    ]
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -87,7 +100,15 @@ html_theme_options = {
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True,
-    # "extra_footer": "<a href='https://google.com'>Test</a>",
+    # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
 }
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
+
+# -- ABlog config -------------------------------------------------
+blog_path = "reference/blog"
+blog_post_pattern = "reference/blog/*.md"
+blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
+fontawesome_included = True
+post_auto_image = 1
+post_auto_excerpt = 2
