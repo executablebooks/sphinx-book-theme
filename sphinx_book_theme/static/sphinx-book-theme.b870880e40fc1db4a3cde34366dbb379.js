@@ -17,7 +17,8 @@ if($p.is(".caption, .collapsible-parent")){$p.find("i").removeClass("fa-chevron-
 $(".collapsible-parent>i").on("click",function(){$i=$(this)
 $collapsibleParent=$i.closest(".collapsible-parent")
 if($collapsibleParent.prop("tagName")=="P"){$ul=$collapsibleParent.next("ul")}else{$ul=$collapsibleParent.find("ul:first")}
-$ul.toggle("fast",function(){if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
+$ul.toggle(0,function(){if(!$i.is(".fas")){$i=$i.find("i")}
+if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
 $i.addClass("fa-chevron-down")}else{$i.removeClass("fa-chevron-down")
 $i.addClass("fa-chevron-up")}})})}
 var initThebeSBT=()=>{var title=$("div.section h1")[0]

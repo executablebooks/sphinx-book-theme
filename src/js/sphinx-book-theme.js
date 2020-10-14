@@ -114,7 +114,10 @@ var collapsibleListener = () => {
     } else {
       $ul = $collapsibleParent.find("ul:first")
     }
-    $ul.toggle("fast", function() {
+    $ul.toggle(0, function() {
+      if (!$i.is(".fas")) {
+        $i = $i.find("i")
+      }
       if ($i.hasClass("fa-chevron-up")) {
         $i.removeClass("fa-chevron-up")
         $i.addClass("fa-chevron-down")
