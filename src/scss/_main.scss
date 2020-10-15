@@ -1003,7 +1003,9 @@ nav.bd-links {
         text-transform: uppercase;
         font-weight: bold;
         position: relative;
-
+        &.collapsible-parent {
+            cursor: pointer;
+        }
         &:first-child {
             margin-top: 0;
         }
@@ -1017,14 +1019,6 @@ nav.bd-links {
         width: 100%;
     }
 
-    li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
-        > a {
-            font-size: 0.9em;
-        }
-        font-size: 1em;
-        position: relative;
-    }
-
     .fa-chevron-up, .fa-chevron-down {
         position: absolute;
         font-size: 0.75em;
@@ -1034,6 +1028,17 @@ nav.bd-links {
         cursor: pointer;
         &:hover {
             color: #007bff;
+        }
+    }
+
+    li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
+        > a {
+            font-size: 0.9em;
+        }
+        font-size: 1em;
+        position: relative;
+        .fa-chevron-up, .fa-chevron-down {
+            right: 0.35em;
         }
     }
 

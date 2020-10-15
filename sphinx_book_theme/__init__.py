@@ -152,26 +152,14 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
             )
 
+        # get level specified in conf
         navbar_level = int(context["theme_show_navbar_depth"])
-        # for top-level captions
-        for para in toctree("p", attrs={"class": ["caption"]}):
-            para.attrs["class"] = para.attrs.get("class", []) + ["collapsible-parent"]
-            if navbar_level:
-                para.append(
-                    toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
-                )
-            else:
-                para.append(
-                    toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-down"]})
-                )
-                ul = para.find_next_sibling()
-                ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
 
-        def collapse_li(li, level):
-            ul = li.find("ul")
+        # function to open/close list and add icon
+        def collapse_list(li, ul, level):
             if ul:
                 li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
-                if not level:
+                if level <= 0:
                     ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
                     li.append(
                         toctree.new_tag(
@@ -183,9 +171,16 @@ def add_to_context(app, pagename, templatename, context, doctree):
                         toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
                     )
 
+        # for top-level caption's collapse functionality
+        for para in toctree("p", attrs={"class": ["caption"]}):
+            ul = para.find_next_sibling()
+            collapse_list(para, ul, navbar_level)
+
+        # iterate through all the lists in the sideabar and open/close
         def iterate_toc_li(li, level):
             if hasattr(li, "name") and li.name == "li":
-                collapse_li(li, level)
+                ul = li.find("ul")
+                collapse_list(li, ul, level)
             if isinstance(li, list) or hasattr(li, "name"):
                 for entry in li:
                     if isinstance(entry, str):
@@ -198,15 +193,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
             return
 
         iterate_toc_li(toctree, navbar_level)
-
-        # for li in toctree("li"):
-        #     ul = li.find("ul")
-        #     if ul:
-        #         li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
-        #         ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
-        #         li.append(
-        #             toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-down"]})
-        #         )
 
         # Add bootstrap classes for first `ul` items
         for ul in toctree("ul", recursive=False):

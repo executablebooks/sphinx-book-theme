@@ -14,7 +14,8 @@ if($ul.hasClass("collapse-ul")){$ul.removeClass("collapse-ul")
 $ul.next("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")}
 $p=$ul.prev()
 if($p.is(".caption, .collapsible-parent")){$p.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")}}
-$(".collapsible-parent>i").on("click",function(){$i=$(this)
+$(".collapsible-parent>i, .caption.collapsible-parent").on("click",function(e){e.stopPropagation()
+$i=$(this)
 $collapsibleParent=$i.closest(".collapsible-parent")
 if($collapsibleParent.prop("tagName")=="P"){$ul=$collapsibleParent.next("ul")}else{$ul=$collapsibleParent.find("ul:first")}
 $ul.toggle(0,function(){if(!$i.is(".fas")){$i=$i.find("i")}

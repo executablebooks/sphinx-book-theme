@@ -106,7 +106,8 @@ var collapsibleListener = () => {
     }
   }
   // click handler
-  $(".collapsible-parent>i").on("click", function() {
+  $(".collapsible-parent>i, .caption.collapsible-parent").on("click", function(e) {
+    e.stopPropagation()
     $i = $(this)
     $collapsibleParent = $i.closest(".collapsible-parent")
     if ($collapsibleParent.prop("tagName") == "P") {
