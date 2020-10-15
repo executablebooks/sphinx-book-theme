@@ -124,6 +124,13 @@ def test_build_book(sphinx_build_factory, file_regression):
             encoding="utf8",
         )
 
+    # navbar lists should be uncollapsed till two levels
+    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
+        attrs={"class": "bd-sidebar"}
+    )[0]
+    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
+    assert len(collapsed_uls) == 0
+
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
@@ -264,3 +271,18 @@ def test_docs_dirhtml(sphinx_build_factory):
         assert_pass=True
     )
     assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
+
+
+def test_show_navbar_depth(sphinx_build_factory):
+    """Test with different levels of show_navbar_depth."""
+    sphinx_build = sphinx_build_factory(
+        "base",
+        confoverrides={"html_theme_options.show_navbar_depth": 0},
+    ).build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
+        attrs={"class": "bd-sidebar"}
+    )[0]
+    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
+    assert len(collapsed_uls) == 3
