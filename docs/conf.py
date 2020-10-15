@@ -1,4 +1,5 @@
 # -- Project information -----------------------------------------------------
+import os
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -111,3 +112,4 @@ blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
 fontawesome_included = True
 post_auto_image = 1
 post_auto_excerpt = 2
+execution_show_tb = "READTHEDOCS" in os.environ
