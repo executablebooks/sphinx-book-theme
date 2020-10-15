@@ -129,7 +129,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         attrs={"class": "bd-sidebar"}
     )[0]
     collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 0
+    assert len(collapsed_uls) == 2
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):

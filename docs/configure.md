@@ -209,5 +209,5 @@ using the following configuration in `conf.py`:
 show_navbar_depth = <level>
 ```
 
-The default value is 2, which is used in this documentation.
-Value of 0 will collapse all the sections and sub-sections.
+The default value is 1, which is used in this documentation.
+Value of 0 will collapse all the sections and sub-sections by default.
