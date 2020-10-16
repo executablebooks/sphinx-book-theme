@@ -152,22 +152,47 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
             )
 
-        # Remove children of all top-level pages unless config says to expand them
-        expand_sections = config.html_theme_options.get("expand_sections", [])
-        if isinstance(expand_sections, str):
-            expand_sections = []
+        # get level specified in conf
+        navbar_level = int(context["theme_show_navbar_depth"])
 
-        for li in toctree("li", attrs={"class": "toctree-l1"}):
-            page_rel_root = find_url_relative_to_root(
-                pagename, li.find("a").attrs["href"], app.srcdir
-            )
-            if li.find("ul"):
-                do_collapse = (
-                    "active" not in li.attrs["class"]
-                    and str(page_rel_root) not in expand_sections
-                )
-                if do_collapse:
-                    li.find("ul").decompose()
+        # function to open/close list and add icon
+        def collapse_list(li, ul, level):
+            if ul:
+                li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
+                if level <= 0:
+                    ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
+                    li.append(
+                        toctree.new_tag(
+                            "i", attrs={"class": ["fas", "fa-chevron-down"]}
+                        )
+                    )
+                else:
+                    li.append(
+                        toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
+                    )
+
+        # for top-level caption's collapse functionality
+        for para in toctree("p", attrs={"class": ["caption"]}):
+            ul = para.find_next_sibling()
+            collapse_list(para, ul, navbar_level)
+
+        # iterate through all the lists in the sideabar and open/close
+        def iterate_toc_li(li, level):
+            if hasattr(li, "name") and li.name == "li":
+                ul = li.find("ul")
+                collapse_list(li, ul, level)
+            if isinstance(li, list) or hasattr(li, "name"):
+                for entry in li:
+                    if isinstance(entry, str):
+                        continue
+                    if hasattr(entry, "name"):
+                        if entry.name == "li":
+                            iterate_toc_li(entry, level - 1)
+                        else:
+                            iterate_toc_li(entry, level)
+            return
+
+        iterate_toc_li(toctree, navbar_level)
 
         # Add bootstrap classes for first `ul` items
         for ul in toctree("ul", recursive=False):

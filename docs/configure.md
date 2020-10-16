@@ -199,3 +199,15 @@ For example, the value of this field for this documentation is:
 ```python
 html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
 ```
+
+## Control the depth of the left sidebar lists to expand
+
+You can control the level of toc items in the left sidebar to remain expanded,
+using the following configuration in `conf.py`:
+
+```python
+show_navbar_depth = <level>
+```
+
+The default value is 1, which is used in this documentation.
+Value of 0 will collapse all the sections and sub-sections by default.

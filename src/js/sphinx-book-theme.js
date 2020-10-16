@@ -91,6 +91,50 @@ var initTocHide = () => {
   });
 }
 
+var collapsibleListener = () => {
+  // to keep the relevant sidebar open according to the url
+  let expandUl = ($ul) => {
+    if ($ul.hasClass("collapse-ul")) {
+      $ul.removeClass("collapse-ul")
+      $ul.next("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+    }
+  }
+  $elem = $("li.active")
+  for (el of $elem) {
+    $ul = $(el).closest("ul")
+    expandUl($ul)
+    $ulChild = $(el).children("ul")
+    expandUl($ulChild)
+    $p = $ul.prev()
+    if ($p.is(".caption, .collapsible-parent")) {
+      $p.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+    }
+  }
+  // click handler
+  $(".collapsible-parent>i, .caption.collapsible-parent").on("click", function(e) {
+    e.stopPropagation()
+    $i = $(this)
+    $collapsibleParent = $i.closest(".collapsible-parent")
+    if ($collapsibleParent.prop("tagName") == "P") {
+      $ul = $collapsibleParent.next("ul")
+    } else {
+      $ul = $collapsibleParent.find("ul:first")
+    }
+    $ul.toggle(0, function() {
+      if (!$i.is(".fas")) {
+        $i = $i.find("i")
+      }
+      if ($i.hasClass("fa-chevron-up")) {
+        $i.removeClass("fa-chevron-up")
+        $i.addClass("fa-chevron-down")
+      } else {
+        $i.removeClass("fa-chevron-down")
+        $i.addClass("fa-chevron-up")
+      }
+    })
+  })
+}
+
 var initThebeSBT = () => {
   var title  = $("div.section h1")[0]
   if (!$(title).next().hasClass("thebe-launch-button")) {
@@ -103,3 +147,4 @@ sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)
+sbRunWhenDOMLoaded(collapsibleListener)

@@ -1,4 +1,5 @@
 # -- Project information -----------------------------------------------------
+import os
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -95,8 +96,7 @@ html_theme_options = {
     },
     "use_edit_page_button": True,
     "use_issues_button": True,
-    "use_repository_button": True,
-    "expand_sections": ["reference/index"],
+    "use_repository_button": True
     # For testing
     # "home_page_in_toc": True,
     # "single_page": True,
@@ -112,3 +112,4 @@ blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
 fontawesome_included = True
 post_auto_image = 1
 post_auto_excerpt = 2
+execution_show_tb = "READTHEDOCS" in os.environ

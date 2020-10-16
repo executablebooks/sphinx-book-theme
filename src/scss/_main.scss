@@ -503,6 +503,11 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
     }
 }
 
+.collapse-ul {
+    display: none;
+    overflow: hidden;
+}
+
 
 // Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
 // 992px is the L breakpoint in bootstrap
@@ -997,7 +1002,10 @@ nav.bd-links {
         font-size: 0.9em;
         text-transform: uppercase;
         font-weight: bold;
-
+        position: relative;
+        &.collapsible-parent {
+            cursor: pointer;
+        }
         &:first-child {
             margin-top: 0;
         }
@@ -1011,11 +1019,31 @@ nav.bd-links {
         width: 100%;
     }
 
+    .fa-chevron-up, .fa-chevron-down {
+        position: absolute;
+        font-size: 0.75em;
+        right: 0.5em;
+        top: 0;
+        padding: 0.5em;
+        cursor: pointer;
+        &:hover {
+            color: #007bff;
+        }
+    }
+
     li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
         > a {
             font-size: 0.9em;
         }
         font-size: 1em;
+        position: relative;
+        .fa-chevron-up, .fa-chevron-down {
+            right: 0.35em;
+        }
+    }
+
+    .collapse-ul {
+        display: none;
     }
 
     > ul.nav {
@@ -1028,9 +1056,9 @@ nav.bd-links {
             padding: 0 0 0 1rem;
         }
 
-        // Links don't have the horizontal padding, uls do
+        // right horizontal padding to accomodate chevron icons
         a {
-            padding: .25rem 0 !important;
+            padding: .25rem 2rem 0.25rem 0 !important;
         }
     }
 }
