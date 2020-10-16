@@ -93,13 +93,18 @@ var initTocHide = () => {
 
 var collapsibleListener = () => {
   // to keep the relevant sidebar open according to the url
-  $elem = $("li.active")
-  for (el of $elem) {
-    $ul = $(el).closest("ul")
+  let expandUl = ($ul) => {
     if ($ul.hasClass("collapse-ul")) {
       $ul.removeClass("collapse-ul")
       $ul.next("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
     }
+  }
+  $elem = $("li.active")
+  for (el of $elem) {
+    $ul = $(el).closest("ul")
+    expandUl($ul)
+    $ulChild = $(el).children("ul")
+    expandUl($ulChild)
     $p = $ul.prev()
     if ($p.is(".caption, .collapsible-parent")) {
       $p.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
