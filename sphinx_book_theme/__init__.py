@@ -167,9 +167,13 @@ def add_to_context(app, pagename, templatename, context, doctree):
                         )
                     )
                 else:
-                    li.append(
-                        toctree.new_tag("i", attrs={"class": ["fas", "fa-chevron-up"]})
-                    )
+                    # Icon won't show up unless captions are collapsed
+                    if not li.name == "p" and "caption" not in li["class"]:
+                        li.append(
+                            toctree.new_tag(
+                                "i", attrs={"class": ["fas", "fa-chevron-up"]}
+                            )
+                        )
 
         # for top-level caption's collapse functionality
         for para in toctree("p", attrs={"class": ["caption"]}):
