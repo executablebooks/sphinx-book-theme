@@ -167,6 +167,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
                         )
                     )
                 else:
+                    # Icon won't show up unless captions are collapsed
                     if not li.name == "p" and "caption" not in li["class"]:
                         li.append(
                             toctree.new_tag(
