@@ -8,53 +8,83 @@
 {% endif %}
 
 {% block extrahead %}
-{{ super() }}
 
-{% if pageurl %}
-<!-- Opengraph tags -->
-<meta property="og:url"         content="{{ pageurl }}" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="{% if pagetitle %}{{ pagetitle | e }}{% else %}{{ docstitle | e }}{% endif %}" />
-<meta property="og:description" content="{{ page_description | e }}" />
-{% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
+    {{ super() }}
 
-<meta name="twitter:card" content="summary" />
-{% endif %}
-{% endblock %}
+    {% if pageurl %}
+    <!-- Opengraph tags -->
+    <meta property="og:url"         content="{{ pageurl }}" />
+    <meta property="og:type"        content="article" />
+    <meta property="og:title"       content="{% if pagetitle %}{{ pagetitle | e }}{% else %}{{ docstitle | e }}{% endif %}" />
+    <meta property="og:description" content="{{ page_description | e }}" />
+    {% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
 
-<!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
-
-{% block docs_sidebar %}
-<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
-    {% if not is_single_page %}
-        {% include "sidebar.html" %}
-    {%- endif %}
-</div>
-{% endblock %}
-
-{% block docs_main %}
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    {% block docs_body %}
-    {% include "topbar.html" %}
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        {{ super() }}
-        </div>
-    </div>
-    {% endblock %}
-    {% if theme_show_prev_next %}
-    <div class='prev-next-bottom'>
-        {{ prev_next(prev, next) }}
-    </div>
+    <meta name="twitter:card" content="summary" />
     {% endif %}
-    {%- include "footer.html" %}
-</main>
+
 {% endblock %}
 
-{% block docs_toc %}
-{% endblock %}
+{%- block content %}
 
-{% block docs_navbar %}
+    <div class="container-xl">
+      <div class="row">
+
+        {% block docs_sidebar %}
+
+            <div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+                {% if not is_single_page %}
+                    {% include "layout/leftbar.html.j2" %}
+                {%- endif %}
+            </div>
+
+        {% endblock %}
+
+        {% block docs_main %}
+
+            <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+
+                {% block docs_body %}
+
+                    {% include "layout/topbar.html.j2" %}
+                    <div id="main-content" class="row">
+                        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+                        {{ super() }}
+                        </div>
+                    </div>
+
+                {% endblock %}
+
+                {% if theme_show_prev_next %}
+
+                    <div class='prev-next-bottom'>
+                        {{ prev_next(prev, next) }}
+                    </div>
+
+                {% endif %}
+
+                {%- include "layout/footer.html.j2" %}
+
+            </main>
+
+        {% endblock %}
+
+      </div>
+    </div>
+
+    {{ _webpack.body_post() }}
+
+    {% if theme_google_analytics_id %}
+        <!-- Google Analytics -->
+        <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', '{{ theme_google_analytics_id }}', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+        <!-- End Google Analytics -->
+    {% endif %}
+
 {%- endblock %}
 
 {%- block footer %}
