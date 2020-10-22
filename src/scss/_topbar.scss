@@ -1,0 +1,169 @@
+/*********************************************
+* Top Bar *
+*********************************************/
+.topbar {
+    margin: 0em auto 1em auto !important;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    background-color: white;
+    height: $topbar-height;
+    transition: left .2s;
+
+    > div {
+        height: 2.5em;
+        top: 0px;
+    }
+
+    .topbar-main {
+        > button, > div, > a {
+            float: left;
+            height: 100%;
+        }
+
+        button.topbarbtn {
+            margin: 0 .1em;
+            background-color: white;
+            color: $non-content-grey;
+            border: none;
+            padding-top: .1rem;
+            padding-bottom: .1rem;
+            font-size: 1.4em;
+
+            i.fab {
+                vertical-align: baseline;
+                line-height: 1;
+            }
+        }
+
+        // buttons float right
+        div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
+            float: right;
+        }
+    }
+}
+
+.bd-topbar-whitespace {
+    padding-right: none;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+// Download buttons
+span.topbar-button-text {
+    margin-left: 0.4em;
+
+    @media (max-width: $breakpoint-md) {
+        display: none;
+    }
+}
+
+div.dropdown-buttons-trigger {
+
+    div.dropdown-buttons {
+        display: none;
+        position: absolute;
+        max-width: 130px;
+        margin-top: .2em;
+        z-index: 1000;
+
+        &.sourcebuttons .topbarbtn i {
+            padding-right: 6px;
+            margin-left: -5px;
+            font-size: .9em !important;
+        }
+
+        button.topbarbtn {
+            padding-top: .35rem;
+            padding-bottom: .35rem;
+            min-width: 120px !important;
+            border: 1px white solid !important;
+            background-color: $non-content-grey;
+            color: white;
+            font-size: 1em;
+        }
+    }
+
+    &:hover div.dropdown-buttons {
+        display: block;
+    }
+}
+
+a.dropdown-buttons i {
+    margin-right: .5em;
+}
+
+button.topbarbtn img {
+    height: 1.15em;
+    padding-right: 6px;
+    margin-left: -5px;
+}
+
+#navbar-toggler {
+    position: relative;
+    margin-right: 1em;
+    margin-left: .5em;
+    color: $non-content-grey;
+
+    i {
+        transition: opacity .3s, transform .3s;
+        position: absolute;
+        top: 16%;
+        left: 0;
+        display: block;
+        font-size: 1.2em;
+    }
+
+    i.fa-bars {
+        opacity: 0;
+        transform: rotate(180deg) scale(.5);
+    }
+
+    i.fa-arrow-left, i.fa-arrow-up {
+        opacity: 1;
+    }
+
+    &.collapsed {
+        i.fa-bars {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+        }
+
+        i.fa-arrow-left, i.fa-arrow-up {
+            opacity: 0;
+            transform: rotate(-180deg) scale(.5);
+        }
+    }
+}
+
+
+@media (max-width: $breakpoint-md) {
+    #navbar-toggler {
+        i.fa-arrow-up {
+            display: inherit;
+        }
+
+        i.fa-arrow-left {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) {
+    #navbar-toggler {
+        i.fa-arrow-up {
+            display: none;
+        }
+
+        i.fa-arrow-left {
+            display: inherit;
+        }
+    }
+}
+
+// Navbar and topbar sidebar padding should max at 300px
+@media (min-width: $breakpoint-md) {
+    .bd-topbar-whitespace {
+        max-width: 275px;
+    }
+}
