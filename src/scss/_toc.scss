@@ -1,0 +1,69 @@
+/*********************************************
+* Table of Contents *
+*********************************************/
+
+.bd-toc {
+    padding: 0px !important;
+    overflow-y: visible;
+    background: white;
+    right: 0;
+    z-index: 999;
+    transition: height .35s ease;
+
+    // Colors
+    div.onthispage, .toc-entry a {
+        color: $non-content-grey;
+    }
+
+    // By default the nav is hidden unless a few conditions are met
+    nav {
+        opacity: 0;
+        max-height: 0;
+        transition: opacity 0.2s ease, max-height .7s ease;
+        overflow-y: hidden;
+        background: white;
+
+        // TOC link color
+        a:hover, li.active > a.active {
+            color: #0071bc;
+        }
+
+        li.active > a.active {
+            border-left: 2px solid #0071bc;
+        }
+    }
+
+    // On hover or w/ a show class, we show the TOC
+    &:hover, &.show {
+        nav {
+            max-height: 100vh;
+            opacity: 1;
+        }
+
+        // Hide the arrow when we display the toc
+        .tocsection:after {
+            opacity: 0;
+        }
+    }
+
+    .tocsection {
+        padding: .5rem 0 .5rem 1rem !important;
+
+        &:after {
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            padding-left: .5em;
+            transition: opacity .3s ease;
+        }
+    }
+
+    .toc-entry a {
+        padding: .125rem 1rem !important;
+    }
+
+    // Make sure the pydata sphinx theme edit button doesn't show up
+    div.editthispage {
+        display: none;
+    }
+}
