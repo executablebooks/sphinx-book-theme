@@ -119,10 +119,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
         )
         toctree = bs(toc_sphinx, "html.parser")
 
-        # pair "current" with "active" since that's what we use w/ bootstrap
-        for li in toctree("li", {"class": "current"}):
-            li["class"].append("active")
-
         # Add the master_doc page as the first item if specified
         if with_home_page:
             # Pull metadata about the master doc
@@ -133,18 +129,24 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if len(master_title) == 0:
                 raise ValueError(f"Landing page missing a title: {master_doc}")
             master_title = master_title[0].astext()
-
+            li_class = "toctree-l1"
+            if context["pagename"] == master_doc:
+                li_class += " current"
             # Insert it into our toctree
             ul_home = bs(
                 f"""
             <ul>
-                <li class="toctree-l1">
+                <li class="{li_class}">
                     <a href="{master_url}" class="reference internal">{master_title}</a>
                 </li>
             </ul>""",
                 "html.parser",
             )
             toctree.insert(0, ul_home("ul")[0])
+
+        # pair "current" with "active" since that's what we use w/ bootstrap
+        for li in toctree("li", {"class": "current"}):
+            li["class"].append("active")
 
         # Add an icon for external links
         for a_ext in toctree("a", attrs={"class": ["external"]}):

@@ -139,10 +139,10 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     ).build(
         assert_pass=True
     )  # type: SphinxBuild
-    navbar = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "nav", id="bd-docs-nav"
-    )
-    assert "Index with code in title" in str(navbar)
+    navbar = sphinx_build.html_tree("index.html").find("nav", id="bd-docs-nav")
+    # double checks if the master_doc has the current class
+    li = navbar.find("li", attrs={"class": "current"})
+    assert "Index with code in title" in str(li)
 
 
 def test_navbar_options_single_page(sphinx_build_factory):
