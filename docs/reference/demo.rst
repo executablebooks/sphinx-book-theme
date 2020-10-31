@@ -379,15 +379,15 @@ An image directive (also clickable -- a hyperlink reference):
 .. image:: ../images/cool.jpg
    :target: directives_
 
-An image directive can be aligned using the option ``:align: right`` or ``:align: left``. By default, images are aligned to the center.
+An image directive can be aligned using the option ``:align: right`` or ``:align: left``. By default, images are aligned to the left.
 
 .. code-block:: rst
 
    .. image:: ../images/cool.jpg
-      :align: left
+      :align: center
 
 .. image:: ../images/cool.jpg
-   :align: left
+   :align: center
 
 .. raw:: html
 
@@ -425,12 +425,12 @@ Figures
 
    This paragraph is also part of the legend.
 
-A figure directive with center alignment
+A figure directive with left alignment
 
 .. figure:: ../images/cool.jpg
-   :align: center
+   :align: left
 
-   This caption should be centered.
+   This caption should be aligned to the left.
 
 Admonitions
 -----------
