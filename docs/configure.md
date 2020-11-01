@@ -89,7 +89,7 @@ html_theme_options = {
 ```
 ## Download page button
 
-You can add a button allowing users to download the currently viewed page in several formats: raw, pdf or ipynb if available. To include this button, use the following configuration: 
+You can add a button allowing users to download the currently viewed page in several formats: raw, pdf or ipynb if available. To include this button, use the following configuration:
 
 ```python
 html_theme_options = {
