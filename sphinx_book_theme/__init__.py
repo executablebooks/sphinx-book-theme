@@ -316,6 +316,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         "theme_use_edit_page_button",
         "theme_use_repository_button",
         "theme_use_issues_button",
+        "theme_use_download_button",
     ]
     for key in btns:
         if key in context:

@@ -1,8 +1,8 @@
+{% if page_source_suffix and theme_use_download_button %}
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="{{ translate('Download this page') }}"><i
             class="fas fa-download"></i></button>
 
-    {% if page_source_suffix %}
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         {% if ipynb_source %}<a class="dropdown-buttons"
@@ -17,5 +17,5 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="{{ translate('Print to PDF') }}"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    {% endif %}
 </div>
+{% endif %}
