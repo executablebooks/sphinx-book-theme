@@ -449,7 +449,7 @@ div.cell {
         padding-right: 0;
     }
 
-    &.tag_output_scroll {
+    &.tag_output_scroll, &.tag_scroll-output {
         div.cell_output {
             max-height: 24em;
             overflow-y: auto;
