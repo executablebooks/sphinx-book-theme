@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 
 execution:
-  timeout: 30
+  timeout: -1
 ---
 
 # Content with notebooks
@@ -52,7 +52,7 @@ Jupyter Book will also embed your code blocks and output in your book.
 For example, here's some sample Matplotlib code:
 
 ```{code-cell} ipython3
-:tags: [hide_cell, thebe-init]
+:tags: [hide-cell, thebe-init]
 
 from matplotlib import rcParams, cycler
 import matplotlib.pyplot as plt
