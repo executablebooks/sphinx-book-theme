@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 
 execution:
-  timeout: 30
+  timeout: -1
 ---
 
 # Content with notebooks
