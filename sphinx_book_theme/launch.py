@@ -40,7 +40,10 @@ def add_hub_urls(
         return
 
     # Check if we have a markdown notebook, and if so then add a link to the context
-    if _is_notebook(app, pagename) and context["sourcename"].endswith(".md"):
+    if _is_notebook(app, pagename) and (
+        context["sourcename"].endswith(".md")
+        or context["sourcename"].endswith(".md.txt")
+    ):
         # Figure out the folders we want
         build_dir = Path(app.outdir).parent
         ntbk_dir = build_dir.joinpath("jupyter_execute")

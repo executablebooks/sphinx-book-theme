@@ -1,10 +1,7 @@
 # The Sphinx Book Theme
 
-```{image} https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social
-:target: https://github.com/executablebooks/sphinx-book-theme
-:alt: badge-url
-:class: float-left
-```
+[![badge-url](https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social)](https://github.com/executablebooks/sphinx-book-theme)
+[![PyPI][pypi-badge]][pypi-link]
 
 <br />
 
@@ -21,6 +18,10 @@ interactive book. It has the following primary features:
   and interactive functionality are all supported.
 * **[Launch buttons for online interactivity](launch)**. For pages that are built with
   computational material, connect your site to an online BinderHub for interactive content.
+
+:::{seealso}
+This is the default theme in [Jupyter Book](https://jupyterbook.org).
+::
 
 ## Get started
 
@@ -72,3 +73,6 @@ api/index
 This theme is heavily inspired by (and dependent on)
 [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
 structure and configuration.
+
+[pypi-badge]: https://img.shields.io/pypi/v/sphinx-book-theme.svg
+[pypi-link]: https://pypi.org/project/sphinx-book-theme
