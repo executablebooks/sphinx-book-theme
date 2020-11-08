@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 
 execution:
-  timeout: 30
+  timeout: -1
 ---
 
 # Layout and demo and reference
