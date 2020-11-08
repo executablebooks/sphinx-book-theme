@@ -463,6 +463,22 @@ div.cell {
     top: 0.5em !important;
 }
 
+// Admonition seealso styling
+.admonition {
+    &.seealso {
+        border-color: #28a7464b;
+
+        .admonition-title {
+            background-color:rgba(40, 167, 70, 0.1);
+
+            &:before {
+                color: #28a745;
+                content: "\f064"
+            }
+        }
+    }
+}
+
 button.toggle-button-hidden:before {
     bottom: 0.2em !important;
 }

@@ -19,6 +19,10 @@ interactive book. It has the following primary features:
 * **[Launch buttons for online interactivity](launch)**. For pages that are built with
   computational material, connect your site to an online BinderHub for interactive content.
 
+:::{seealso}
+This is the default theme in [Jupyter Book](https://jupyterbook.org).
+::
+
 ## Get started
 
 To get started with `sphinx-book-theme`, first install it with `pip`:
@@ -62,6 +66,7 @@ GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 
 reference/index
 api/index
+test
 ```
 
 ## Acknowledgements
