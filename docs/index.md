@@ -66,7 +66,6 @@ GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 
 reference/index
 api/index
-test
 ```
 
 ## Acknowledgements
