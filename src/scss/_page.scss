@@ -50,7 +50,8 @@ main.bd-content {
         }
 
         // Top-level sections have some padding to avoid overlap w/ sidebar
-        > div > div > div.section {
+        // Also add it to the bottom-of-page next/prev container
+        > div > div > div.section, .prev-next-bottom {
             padding-right: 1em;
         }
 
