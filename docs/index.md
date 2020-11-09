@@ -21,7 +21,7 @@ interactive book. It has the following primary features:
 
 :::{seealso}
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
-::
+:::
 
 ## Get started
 
