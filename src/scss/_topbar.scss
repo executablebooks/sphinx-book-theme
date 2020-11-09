@@ -13,6 +13,10 @@
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
 
+        .scrolled & {
+            box-shadow: 0px 4px 4px -4px rgba(50, 50, 50, 0.75);
+        }
+
         > button, > div, > a {
             float: left;
             height: 100%;
