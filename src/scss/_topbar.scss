@@ -1,20 +1,18 @@
 /*********************************************
 * Top Bar *
 *********************************************/
-.topbar {
-    margin: 0em auto 1em auto !important;
-    padding-top: .25em;
-    padding-bottom: .25em;
-    background-color: white;
+.topbar, .topbar-contents, .topbar-main {
     height: $topbar-height;
+}
+
+.topbar {
+    background-color: white;
     transition: left .2s;
 
-    > div {
-        height: 2.5em;
-        top: 0px;
-    }
-
     .topbar-main {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+
         > button, > div, > a {
             float: left;
             height: 100%;
