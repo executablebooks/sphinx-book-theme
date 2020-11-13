@@ -458,6 +458,12 @@ div.cell {
     }
 }
 
+.highlighttable {
+    .linenos {
+        vertical-align: baseline;
+    }
+}
+
 // Extension over-rides
 // Toggle-button overrides
 .toggle.admonition button.toggle-button {
