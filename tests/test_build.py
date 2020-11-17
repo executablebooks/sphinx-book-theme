@@ -288,20 +288,6 @@ def test_show_navbar_depth(sphinx_build_factory):
     assert len(collapsed_uls) == 3
 
 
-def test_topbar_download_button_on(sphinx_build_factory, file_regression):
-    confoverrides = {
-        "html_theme_options.use_download_button": True,
-    }
-    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
-        assert_pass=True
-    )
-
-    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "topbar-main"}
-    )[0]
-    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
-
-
 def test_topbar_download_button_off(sphinx_build_factory, file_regression):
     confoverrides = {
         "html_theme_options.use_download_button": False,
