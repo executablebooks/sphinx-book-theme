@@ -1,3 +1,17 @@
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.2
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Configuration and page elements
 
 There are a number of ways to configure `sphinx-book-theme`. This page covers some of the main ways
@@ -221,3 +235,71 @@ but I'll stop here.
 ```
 ````
 `````
+
+## Formatting code cells
+
+### Scrolling cell outputs
+
+The traditional Jupyter Notebook interface allows you to toggle **output scrolling**
+for your cells. This allows you to visualize part of a long output without it taking up
+the entire page.
+
+You can trigger this behavior in Jupyter Book by adding the following
+tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-output",
+    ]
+}
+```
+
+For example, the following cell has a long output, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [output_scroll]
+for ii in range(40):
+    print(f"this is output line {ii}")
+```
+
+### Scrolling cell inputs
+
+If your input code is long and takes up a lot of your page, you can make it scrollable
+as well by adding the following tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-input",
+    ]
+}
+```
+
+For example, the following cell has a long input, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [scroll-input]
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+print(b)
+```
