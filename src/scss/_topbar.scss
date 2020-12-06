@@ -9,13 +9,14 @@
     background-color: white;
     transition: left .2s;
 
+    .scrolled & {
+        box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    }
+
     .topbar-main {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
-
-        .scrolled & {
-            box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
-        }
+        padding-right: 0;
 
         > button, > div, > a {
             float: left;
