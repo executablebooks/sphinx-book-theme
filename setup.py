@@ -30,10 +30,10 @@ setup(
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
-        "sphinx",
+        "sphinx>=2,<4",
         "click",
         "pydata-sphinx-theme~=0.4.1",
-        "beautifulsoup4",
+        "beautifulsoup4>=4.6.1,<5",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     extras_require={
@@ -49,7 +49,7 @@ setup(
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
-            "sphinxcontrib-bibtex",
+            "sphinxcontrib-bibtex~=2.1",
             "sphinx-thebe",
             "ablog~=0.10.11",
         ],

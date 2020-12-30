@@ -227,13 +227,13 @@ Emphasized lines with line numbers
 Citations
 =========
 
-Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
-Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
-Here is a :cite:`project_jupyter-proc-scipy-2018` citation, and here :cite:`holdgraf_rapid_2016` is another.
+Here is a citation :cite:`project_jupyter-proc-scipy-2018`, and here is another :cite:`holdgraf_rapid_2016`.
+
+Here is the same citation :cite:`project_jupyter-proc-scipy-2018`.
 
 And here is the bibliography:
 
-.. bibliography:: ../references.bib
+.. bibliography::
 
 Sidebar
 =======
