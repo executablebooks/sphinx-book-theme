@@ -1,4 +1,5 @@
 ---
+blogpost: true
 author: Jo the Jovyan
 date: 2020-01-01
 ---
