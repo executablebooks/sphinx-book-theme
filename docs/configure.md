@@ -225,7 +225,7 @@ Value of 0 will collapse all the sections and sub-sections by default.
 
 ## Customize CSS
 
-To customize the look of your site further, you can cusomize your CSS stylesheets,
+To customize the look of your site further, you can customize your CSS stylesheets,
 as described in the [ReadTheDocs Docs](https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html#adding-custom-css-or-javascript-to-sphinx-documentation).
 
 First, create a CSS file and place it in `_static/custom.css`.
