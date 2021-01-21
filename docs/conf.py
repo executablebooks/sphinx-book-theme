@@ -43,8 +43,18 @@ nitpick_ignore = [
 
 numfig = True
 
-myst_admonition_enable = True
-myst_deflist_enable = True
+myst_enable_extensions = [
+    "dollarmath",
+    # "amsmath",
+    "deflist",
+    # "html_admonition",
+    # "html_image",
+    "colon_fence",
+    # "smartquotes",
+    # "replacements",
+    # "linkify",
+    # "substitution",
+]
 myst_url_schemes = ("http", "https", "mailto")
 panels_add_bootstrap_css = False
 
