@@ -69,6 +69,7 @@ html_title = "Sphinx Book Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/logo.png"
+html_last_updated_fmt = ""
 
 html_sidebars = {
     "reference/blog/*": [
