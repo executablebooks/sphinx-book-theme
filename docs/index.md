@@ -10,14 +10,20 @@
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
 interactive book. It has the following primary features:
 
-* **[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)**
-  for visual elements and functionality.
-* **[Flexible content layout](layout)** that is inspired by beautiful online books,
-  such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
-* **[Visual classes designed for Jupyter Notebooks](notebooks)**. Cell inputs, outputs,
-  and interactive functionality are all supported.
-* **[Launch buttons for online interactivity](launch)**. For pages that are built with
-  computational material, connect your site to an online BinderHub for interactive content.
+[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+: To style visual elements and add functionality.
+
+[Flexible content layout](layout)
+: Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
+
+[Visual classes designed for Jupyter Notebooks](notebooks)
+: Cell inputs, outputs, and interactive functionality are all supported.
+
+[Launch buttons for online interactivity](launch)
+: For pages that are built with computational material, connect your site to an online BinderHub for interactive content.
+
+International
+: All text integrated in the theme is translated to the specified [Sphinx language](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
 
 :::{seealso}
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
