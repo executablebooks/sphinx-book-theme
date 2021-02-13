@@ -4,15 +4,12 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: '0.8'
-    jupytext_version: 1.4.2
+    format_version: 0.12
+    jupytext_version: 1.8.2
 kernelspec:
   display_name: Python 3
   language: python
   name: python3
-
-execution:
-  timeout: -1
 ---
 
 # Content with notebooks
@@ -114,6 +111,7 @@ check out {doc}`layout`.
 
 ```{code-cell} ipython3
 :tags: [margin]
+
 print("this works for code cells too, if you add a `margin` tag to them")
 ```
 
@@ -167,7 +165,45 @@ from [this original notebook](https://github.com/jupyter/textbooks-with-jupyter/
 :tags: [hide_input]
 
 import pandas as pd
-pd.DataFrame([['hi', 'there'], ['this', 'is'], ['a', 'DataFrame']], columns=['Word A', 'Word B'])
+df = pd.DataFrame([['hi', 'there'], ['this', 'is'], ['a', 'DataFrame']], columns=['Word A', 'Word B'])
+df
+```
+
+You can even style Pandas DataFrames!
+See [the Pandas Styling docs](https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html) for more information.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import pandas as pd
+
+np.random.seed(24)
+df = pd.DataFrame({'A': np.linspace(1, 10, 10)})
+df = pd.concat([df, pd.DataFrame(np.random.randn(10, 4), columns=list('BCDE'))],
+               axis=1)
+df.iloc[3, 3] = np.nan
+df.iloc[0, 2] = np.nan
+
+def color_negative_red(val):
+    """
+    Takes a scalar and returns a string with
+    the css property `'color: red'` for negative
+    strings, black otherwise.
+    """
+    color = 'red' if val < 0 else 'black'
+    return 'color: %s' % color
+
+def highlight_max(s):
+    '''
+    highlight the maximum in a Series yellow.
+    '''
+    is_max = s == s.max()
+    return ['background-color: yellow' if v else '' for v in is_max]
+
+df.style.\
+    applymap(color_negative_red).\
+    apply(highlight_max).\
+    set_table_attributes('style="font-size: 10px"')
 ```
 
 +++ {"tags": ["popout"]}
