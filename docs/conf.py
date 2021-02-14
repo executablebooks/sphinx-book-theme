@@ -126,3 +126,4 @@ post_auto_image = 1
 post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
+bibtex_reference_style = "author_year"
