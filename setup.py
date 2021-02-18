@@ -34,7 +34,7 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4>=4.6.1,<5",
-        'importlib-resources~=3.0.0; python_version < "3.7"',
+        'importlib-resources>=3,<4; python_version < "3.7"',
     ],
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
