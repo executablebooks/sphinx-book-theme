@@ -79,6 +79,9 @@ main.bd-content {
 
         // Images
         img {
+            margin-left: auto;
+            margin-right: auto;
+            display:block;
 
             &.align-left {
                 clear: left;
