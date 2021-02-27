@@ -41,6 +41,8 @@ nitpick_ignore = [
     ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
 ]
 
+suppress_warnings = ["myst.domains"]
+
 numfig = True
 
 myst_enable_extensions = [
