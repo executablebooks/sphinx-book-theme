@@ -1,5 +1,27 @@
 # Changelog
 
+# v0.0.40 - 2021-02-27
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.39...4ab518e211163a52f01562912ce6e41548a734d1))
+
+## New features added
+
+- Added tag for cell-input [#259](https://github.com/executablebooks/sphinx-book-theme/pull/259) ([@AakashGfude](https://github.com/AakashGfude))
+- Add a shadow to topbar, on scroll [#255](https://github.com/executablebooks/sphinx-book-theme/pull/255) ([@pradyunsg](https://github.com/pradyunsg))
+- Add CSS to center align images with class [#292](https://github.com/executablebooks/sphinx-book-theme/pull/292) ([@DrDrij](https://github.com/DrDrij))
+
+## Enhancements made
+
+- Add footnote translations [#274](https://github.com/executablebooks/sphinx-book-theme/pull/274) ([@chrisjsewell](https://github.com/chrisjsewell))
+
+## Bugs fixed
+
+- translation of suggest edit [#284](https://github.com/executablebooks/sphinx-book-theme/pull/284) ([@chrisjsewell](https://github.com/chrisjsewell))
+- Pin bs4 and sphinx dependencies [#271](https://github.com/executablebooks/sphinx-book-theme/pull/271) ([@chrisjsewell](https://github.com/chrisjsewell))
+- fixing right toc whitespace overlap [#268](https://github.com/executablebooks/sphinx-book-theme/pull/268) ([@choldgraf](https://github.com/choldgraf))
+- Fixing linenos style [#263](https://github.com/executablebooks/sphinx-book-theme/pull/263) ([@AakashGfude](https://github.com/AakashGfude))
+
+
 ## v0.0.39 - 2020-11-08
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.38...v0.0.39))
 
