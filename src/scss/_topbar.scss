@@ -7,6 +7,7 @@
 
 .topbar {
     background-color: white;
+    //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: left .2s;
 
     .scrolled & {
@@ -46,9 +47,18 @@
 }
 
 .bd-topbar-whitespace {
-    padding-right: none;
+    width: $leftbar-width;
+    flex: auto;
+    transition: flex 0.2s ease 0s;
     @media (max-width: 768px) {
-        display: none;
+        border-bottom: 1px solid transparent;
+        &.show, &.collapsing, body.scrolled & {
+            border-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: block;
+        }
     }
 }
 
@@ -143,11 +153,12 @@ button.topbarbtn img {
 @media (max-width: $breakpoint-md) {
     #navbar-toggler {
         i.fa-arrow-up {
-            display: inherit;
+            display: none;
+            //display: inherit;
         }
 
         i.fa-arrow-left {
-            display: none;
+            //display: none;
         }
     }
 }
