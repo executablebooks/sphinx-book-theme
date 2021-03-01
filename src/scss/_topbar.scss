@@ -7,7 +7,6 @@
 
 .topbar {
     background-color: white;
-    //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: left .2s;
 
     .scrolled & {
@@ -154,11 +153,9 @@ button.topbarbtn img {
     #navbar-toggler {
         i.fa-arrow-up {
             display: none;
-            //display: inherit;
         }
 
         i.fa-arrow-left {
-            //display: none;
         }
     }
 }
