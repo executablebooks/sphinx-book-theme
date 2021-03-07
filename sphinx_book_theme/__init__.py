@@ -252,7 +252,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         if not context["theme_toc_title"]:
             raise ValueError(
-                "`toc_title` cannot be empty. Please set a non-empty value."
+                "'toc_title' key cannot be empty. Please set a non-empty value."
             )
 
         out = f"""
