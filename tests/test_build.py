@@ -300,3 +300,16 @@ def test_topbar_download_button_off(sphinx_build_factory, file_regression):
         "div", attrs={"class": "topbar-main"}
     )[0]
     file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
+
+
+def test_right_sidebar_title(sphinx_build_factory, file_regression):
+    confoverrides = {"html_theme_options.toc_title": "My Contents"}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    sidebar_title = sphinx_build.html_tree("page1.html").find_all(
+        "div", attrs={"class": "tocsection"}
+    )[0]
+
+    file_regression.check(sidebar_title.prettify(), extension=".html", encoding="utf8")
