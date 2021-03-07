@@ -152,6 +152,18 @@ html_sidebars = {
 
 See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars) for more information.
 
+## Rename the right sidebar title
+
+You can rename the title of the in-page table of contents, in the right sidebar:
+
+```python
+html_theme_options = {
+    "toc_title": "{your-title}"
+}
+```
+
+The deafult value of the title is `Contents`.
+
 ### Default sidebar elements
 
 By default, this theme comes with these three theme-specific sidebar elements enabled on all pages:
