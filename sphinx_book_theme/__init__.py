@@ -257,7 +257,8 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         out = f"""
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> { context["theme_toc_title"] }
+            <i class="fas fa-list"></i>
+            { context["translate"](context["theme_toc_title"]) }
         </div>
         <nav id="bd-toc-nav">
             {toc_out}
