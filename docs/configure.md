@@ -137,7 +137,7 @@ html_theme_options = {
 }
 ```
 
-The deafult value of the title is `Contents`.
+The default value of the title is `Contents`.
 
 ## Control the left sidebar items
 
