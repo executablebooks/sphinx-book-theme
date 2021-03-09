@@ -1,5 +1,14 @@
 # Changelog
 
+# v0.0.41 2021-03-09
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.40...3d9189d889a9be4096ca57859dadf8e11f246a4a))
+
+## Enhancements made
+
+- The Table of Contents titles is now configurable. See [#299](https://github.com/executablebooks/sphinx-book-theme/pull/299) ([@AakashGfude](https://github.com/AakashGfude))
+- The left sidebar has a drawer-style layout on mobile. See [#298](https://github.com/executablebooks/sphinx-book-theme/pull/298) ([@DrDrij](https://github.com/DrDrij))
+
 # v0.0.40 - 2021-02-27
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.39...4ab518e211163a52f01562912ce6e41548a734d1))
