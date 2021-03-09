@@ -250,9 +250,15 @@ def add_to_context(app, pagename, templatename, context, doctree):
         else:
             toc_out = soup.prettify()
 
+        if not context["theme_toc_title"]:
+            raise ValueError(
+                "'toc_title' key cannot be empty. Please set a non-empty value."
+            )
+
         out = f"""
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> { context["translate"]('Contents') }
+            <i class="fas fa-list"></i>
+            { context["translate"](context["theme_toc_title"]) }
         </div>
         <nav id="bd-toc-nav">
             {toc_out}
