@@ -127,6 +127,17 @@ html_theme_options = {
 }
 ```
 
+## Control the right sidebar items
+
+You can rename the title of the in-page table of contents, in the right sidebar:
+
+```python
+html_theme_options = {
+    "toc_title": "{your-title}"
+}
+```
+
+The default value of the title is `Contents`.
 
 ## Control the left sidebar items
 
