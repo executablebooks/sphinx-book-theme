@@ -80,11 +80,16 @@ main.bd-content {
         // Images
         img {
 
+            &.align-center {
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+            }
+
             &.align-left {
                 clear: left;
                 float: left;
                 margin-right: 1em;
-
             }
 
             &.align-right {
