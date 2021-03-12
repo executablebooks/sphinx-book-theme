@@ -7,7 +7,7 @@
     overflow-y: visible;
     right: -1em;
     z-index: 999;
-    transition: height .35s ease;
+    height: auto;
 
     // Colors
     div.onthispage, .toc-entry a {
@@ -29,6 +29,13 @@
 
         li.active > a.active {
             border-left: 2px solid #0071bc;
+        }
+
+        >.nav {
+            border-left: 1px solid #eee;
+            .nav {
+                border-left: none;
+            }
         }
     }
 
