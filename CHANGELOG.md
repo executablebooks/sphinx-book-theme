@@ -1,5 +1,14 @@
 # Changelog
 
+# v0.0.42 2021-03-13
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.41...458fe679ff482a623ec2dd6b13bdd19232069c50))
+
+## Bugs fixed
+
+- 🐛 FIX: hover target bug on right TOC [#300](https://github.com/executablebooks/sphinx-book-theme/pull/300) ([@DrDrij](https://github.com/DrDrij))
+
+
 # v0.0.41 2021-03-09
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.40...3d9189d889a9be4096ca57859dadf8e11f246a4a))
