@@ -49,7 +49,7 @@ setup(
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
-            "sphinxcontrib-bibtex~=2.1",
+            "sphinxcontrib-bibtex~=2.2",
             "sphinx-thebe",
             "ablog~=0.10.13",
         ],
