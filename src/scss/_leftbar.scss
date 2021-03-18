@@ -1,7 +1,7 @@
 /*********************************************
 * Left Nav Bar *
 *********************************************/
-.bd-sidebar  {
+#site-navigation  {
     height: 100vh !important;
     width: $leftbar-width;
     flex: auto;
@@ -110,10 +110,6 @@
         font-size: 0.9em;
     }
     font-size: 1em;
-}
-
-#site-navigation {
-
 }
 
 div.navbar-brand-box {
