@@ -14,6 +14,7 @@ from docutils import nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
+from contextlib import suppress
 
 from .launch import add_hub_urls
 from . import static as theme_static
@@ -125,12 +126,13 @@ def add_to_context(app, pagename, templatename, context, doctree):
             master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
-            try:
-                # check title in `_toc.yml` (jb projects) else get title from doctree
+
+            # check title in globaltoc (jb case) else get title from doctree
+            master_title = None
+            with suppress(Exception):
                 master_title = app.config["globaltoc"].get("title")
-                if not master_title:
-                    raise ValueError()
-            except ValueError:
+
+            if not master_title:
                 master_title = list(master_doctree.traverse(nodes.title))
                 if len(master_title) == 0:
                     raise ValueError(f"Landing page missing a title: {master_doc}")
