@@ -125,14 +125,17 @@ def add_to_context(app, pagename, templatename, context, doctree):
             master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
-            # check for title in `_toc.yml` else get title from doctree
-            master_title = app.config["globaltoc"].get("title") or list(
-                master_doctree.traverse(nodes.title)
-            )
-            if isinstance(master_title, list):
+            # check for title in `_toc.yml` (jb projects) else get title from doctree
+            try:
+                master_title = app.config["globaltoc"].get("title")
+                if not master_title:
+                    raise ValueError()
+            except ValueError:
+                master_title = list(master_doctree.traverse(nodes.title))
                 if len(master_title) == 0:
                     raise ValueError(f"Landing page missing a title: {master_doc}")
                 master_title = master_title[0].astext()
+
             li_class = "toctree-l1"
             if context["pagename"] == master_doc:
                 li_class += " current"
