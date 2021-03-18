@@ -125,6 +125,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
+            # check for title in `_toc.yml` else get title from doctree
             master_title = app.config["globaltoc"].get("title") or list(
                 master_doctree.traverse(nodes.title)
             )
