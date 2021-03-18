@@ -125,10 +125,13 @@ def add_to_context(app, pagename, templatename, context, doctree):
             master_doc = config["master_doc"]
             master_doctree = app.env.get_doctree(master_doc)
             master_url = context["pathto"](master_doc)
-            master_title = list(master_doctree.traverse(nodes.title))
-            if len(master_title) == 0:
-                raise ValueError(f"Landing page missing a title: {master_doc}")
-            master_title = master_title[0].astext()
+            master_title = app.config["globaltoc"].get("title") or list(
+                master_doctree.traverse(nodes.title)
+            )
+            if isinstance(master_title, list):
+                if len(master_title) == 0:
+                    raise ValueError(f"Landing page missing a title: {master_doc}")
+                master_title = master_title[0].astext()
             li_class = "toctree-l1"
             if context["pagename"] == master_doc:
                 li_class += " current"
