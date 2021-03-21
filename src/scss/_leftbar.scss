@@ -164,14 +164,18 @@ nav.bd-links {
         width: 100%;
     }
 
-    .fa-chevron-up, .fa-chevron-down {
+    .chevron-button {
         position: absolute;
         font-size: 0.75em;
         right: 0.5em;
         top: 0;
         padding: 0.5em;
+        border: none;
+        background: none;
         cursor: pointer;
-        &:hover {
+
+        &:hover,
+        &:focus {
             color: #007bff;
         }
     }
@@ -182,7 +186,7 @@ nav.bd-links {
         }
         font-size: 1em;
         position: relative;
-        .fa-chevron-up, .fa-chevron-down {
+        .chevron-button {
             right: 0.35em;
         }
     }

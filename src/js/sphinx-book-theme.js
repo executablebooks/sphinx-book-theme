@@ -104,7 +104,8 @@ var collapsibleListener = () => {
   let expandUl = ($ul) => {
     if ($ul.hasClass("collapse-ul")) {
       $ul.removeClass("collapse-ul")
-      $ul.next("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+      $ul.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+      $ul.find("button").attr("aria-expanded", "true")
     }
   }
   $elem = $("li.active")
@@ -115,14 +116,16 @@ var collapsibleListener = () => {
     expandUl($ulChild)
     $p = $ul.prev()
     if ($p.is(".caption, .collapsible-parent")) {
-      $p.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+      $ul.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+      $ul.find("button").attr("aria-expanded", "true")
     }
   }
   // click handler
-  $(".collapsible-parent>i, .caption.collapsible-parent").on("click", function(e) {
+  $(".collapsible-parent>button, .caption.collapsible-parent").on("click", function(e) {
     e.stopPropagation()
-    $i = $(this)
-    $collapsibleParent = $i.closest(".collapsible-parent")
+    $button = $(this)
+    $i = $button.find("i")
+    $collapsibleParent = $button.closest(".collapsible-parent")
     if ($collapsibleParent.prop("tagName") == "P") {
       $ul = $collapsibleParent.next("ul")
     } else {
@@ -131,13 +134,16 @@ var collapsibleListener = () => {
     $ul.toggle(0, function() {
       if (!$i.is(".fas")) {
         $i = $i.find("i")
+        $button = $i.closest("button")
       }
       if ($i.hasClass("fa-chevron-up")) {
         $i.removeClass("fa-chevron-up")
         $i.addClass("fa-chevron-down")
+        $button.attr("aria-expanded","true")
       } else {
         $i.removeClass("fa-chevron-down")
         $i.addClass("fa-chevron-up")
+        $button.attr("aria-expanded","false")
       }
     })
   })

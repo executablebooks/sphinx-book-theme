@@ -10,22 +10,28 @@ var initTocHide=()=>{var scrollTimeout;var throttle=200;var tocHeight=$("#bd-toc
 return false}else{$("div.bd-toc").addClass("show")};})};var manageScrolledClassOnBody=function(){if(window.scrollY>0){document.body.classList.add("scrolled");}else{document.body.classList.remove("scrolled");}}
 $(window).on('scroll',function(){if(!scrollTimeout){scrollTimeout=setTimeout(function(){checkTocScroll();manageScrolledClassOnBody();scrollTimeout=null;},throttle);}});}
 var collapsibleListener=()=>{let expandUl=($ul)=>{if($ul.hasClass("collapse-ul")){$ul.removeClass("collapse-ul")
-$ul.next("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")}}
+$ul.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+$ul.find("button").attr("aria-expanded","true")}}
 $elem=$("li.active")
 for(el of $elem){$ul=$(el).closest("ul")
 expandUl($ul)
 $ulChild=$(el).children("ul")
 expandUl($ulChild)
 $p=$ul.prev()
-if($p.is(".caption, .collapsible-parent")){$p.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")}}
-$(".collapsible-parent>i, .caption.collapsible-parent").on("click",function(e){e.stopPropagation()
-$i=$(this)
-$collapsibleParent=$i.closest(".collapsible-parent")
+if($p.is(".caption, .collapsible-parent")){$ul.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up")
+$ul.find("button").attr("aria-expanded","true")}}
+$(".collapsible-parent>button, .caption.collapsible-parent").on("click",function(e){e.stopPropagation()
+$button=$(this)
+$i=$button.find("i")
+$collapsibleParent=$button.closest(".collapsible-parent")
 if($collapsibleParent.prop("tagName")=="P"){$ul=$collapsibleParent.next("ul")}else{$ul=$collapsibleParent.find("ul:first")}
-$ul.toggle(0,function(){if(!$i.is(".fas")){$i=$i.find("i")}
+$ul.toggle(0,function(){if(!$i.is(".fas")){$i=$i.find("i")
+$button=$i.closest("button")}
 if($i.hasClass("fa-chevron-up")){$i.removeClass("fa-chevron-up")
-$i.addClass("fa-chevron-down")}else{$i.removeClass("fa-chevron-down")
-$i.addClass("fa-chevron-up")}})})}
+$i.addClass("fa-chevron-down")
+$button.attr("aria-expanded","true")}else{$i.removeClass("fa-chevron-down")
+$i.addClass("fa-chevron-up")
+$button.attr("aria-expanded","false")}})})}
 var initThebeSBT=()=>{var title=$("div.section h1")[0]
 if(!$(title).next().hasClass("thebe-launch-button")){$("<button class='thebe-launch-button'></button>").insertAfter($(title))}
 initThebe();}

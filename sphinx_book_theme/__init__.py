@@ -161,21 +161,44 @@ def add_to_context(app, pagename, templatename, context, doctree):
         def collapse_list(li, ul, level):
             if ul:
                 li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
+
                 if level <= 0:
                     ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
-                    li.append(
+                    label = li.find("a").text + " sub menu"
+                    button = toctree.new_tag(
+                        "button",
+                        attrs={
+                            "class": ["chevron-button"],
+                            "type": "button",
+                            "aria-expanded": "false",
+                            "aria-label": label,
+                        },
+                    )
+                    button.append(
                         toctree.new_tag(
                             "i", attrs={"class": ["fas", "fa-chevron-down"]}
                         )
                     )
+                    li.insert(1, button)
                 else:
                     # Icon won't show up unless captions are collapsed
                     if not li.name == "p" and "caption" not in li["class"]:
-                        li.append(
+                        label = li.find("a").text + " sub menu"
+                        button = toctree.new_tag(
+                            "button",
+                            attrs={
+                                "class": ["chevron-button"],
+                                "type": "button",
+                                "aria-expanded": "true",
+                                "aria-label": label,
+                            },
+                        )
+                        button.append(
                             toctree.new_tag(
                                 "i", attrs={"class": ["fas", "fa-chevron-up"]}
                             )
                         )
+                        li.insert(1, button)
 
         # for top-level caption's collapse functionality
         for para in toctree("p", attrs={"class": ["caption"]}):
