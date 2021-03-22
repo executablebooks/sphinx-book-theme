@@ -260,7 +260,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             <i class="fas fa-list"></i>
             { context["translate"](context["theme_toc_title"]) }
         </div>
-        <nav id="bd-toc-nav">
+        <nav id="bd-toc-nav", aria-label="Page">
             {toc_out}
         </nav>
         """
