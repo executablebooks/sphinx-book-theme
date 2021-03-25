@@ -75,34 +75,8 @@ def update_all(app, env):
         return list(env.all_docs.keys())
 
 
-def find_url_relative_to_root(pagename, relative_page, path_docs_source):
-    """Given the current page (pagename), a relative page to it (relative_page),
-    and a path to the docs source, return the path to `relative_page`, but now relative
-    to the docs source (since this is what keys in Sphinx tend to use).
-    """
-    # In this case, the relative_page is the same as the pagename
-    if relative_page == "":
-        relative_page = Path(Path(pagename).name)
-
-    # Convert everything to paths for use later
-    path_rel = Path(relative_page).with_suffix("")
-    if relative_page.endswith(".html"):
-        # HTML file Sphinx builder
-        path_parent = Path(pagename).parent  # pagename is .html relative to docs root
-    else:
-        # DirHTML Sphinx builder.
-        path_parent = Path(pagename)  # pagename is the parent folder if dirhtml builder
-
-    source_dir = Path(path_docs_source)
-    # This should be the path to `relative_page`, relative to `pagename`
-    path_rel_from_page_dir = source_dir.joinpath(path_parent.joinpath(path_rel.parent))
-    path_from_page_dir = Path(os.path.abspath(path_rel_from_page_dir))
-    page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
-    return page_rel_root
-
-
 def add_to_context(app, pagename, templatename, context, doctree):
-    def generate_nav_html(
+    def sbt_generate_nav_html(
         level=1,
         include_item_names=False,
         with_home_page=False,
@@ -206,7 +180,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         return toctree.prettify()
 
-    context["generate_nav_html"] = generate_nav_html
+    context["sbt_generate_nav_html"] = sbt_generate_nav_html
 
     def generate_toc_html():
         """Return the within-page TOC links in HTML."""
