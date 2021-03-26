@@ -174,10 +174,14 @@ By default, this theme comes with these three theme-specific sidebar elements en
 (custom-footer)=
 ## Customize the sidebar footer
 
-You may choose your own HTML to include in the footer of your sidebar (or set it to be empty). To do so, use the following configuration variable in `conf.py`:
+You may choose your own HTML to include in the footer of your sidebar (or set it to be empty). To do so, set the following option in `conf.py`:
 
 ```python
-extra_navbar = "<p>Your HTML</p>"
+html_theme_options = {
+    ...
+    "extra_navbar": "<p>Your HTML</p>",
+    ...
+}
 ```
 
 This text will be placed at the bottom of the sidebar by default.
