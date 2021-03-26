@@ -76,6 +76,7 @@ def update_all(app, env):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
+    # TODO: remove this whenever the nav collapsing functionality is in the PST
     def sbt_generate_nav_html(
         level=1,
         include_item_names=False,

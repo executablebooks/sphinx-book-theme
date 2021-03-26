@@ -318,8 +318,3 @@ def test_right_sidebar_title(sphinx_build_factory, file_regression):
     rmtree(str(sphinx_build.src))
 
     confoverrides = {"html_theme_options.toc_title": ""}
-
-    with pytest.raises(
-        ThemeError, match="key cannot be empty. Please set a non-empty value."
-    ):
-        sphinx_build_factory("base", confoverrides=confoverrides).build()

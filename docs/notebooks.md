@@ -54,7 +54,6 @@ For example, here's some sample Matplotlib code:
 from matplotlib import rcParams, cycler
 import matplotlib.pyplot as plt
 import numpy as np
-plt.ion()
 ```
 
 ```{code-cell} ipython3
