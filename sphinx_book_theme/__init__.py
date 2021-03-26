@@ -182,66 +182,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
     context["sbt_generate_nav_html"] = sbt_generate_nav_html
 
-    def generate_toc_html():
-        """Return the within-page TOC links in HTML."""
-
-        toc = context.get("toc")
-        if not toc:
-            return ""
-
-        soup = bs(toc, "html.parser")
-
-        # Add toc-hN classes
-        def add_header_level_recursive(ul, level):
-            for li in ul("li", recursive=False):
-                li["class"] = li.get("class", []) + [f"toc-h{level}"]
-                ul = li.find("ul", recursive=False)
-                if ul:
-                    add_header_level_recursive(ul, level + 1)
-
-        add_header_level_recursive(soup.find("ul"), 1)
-
-        # Add in CSS classes for bootstrap
-        for ul in soup("ul"):
-            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
-        for li in soup("li"):
-            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
-            if li.find("a"):
-                a = li.find("a")
-                a["class"] = a.get("class", []) + ["nav-link"]
-
-        # If we only have one h1 header, assume it's a title
-        h1_headers = soup.select(".toc-h1")
-        if len(h1_headers) == 1:
-            title = h1_headers[0]
-            # If we have no sub-headers of a title then we won't have a TOC
-            if not title.select(".toc-h2"):
-                return ""
-
-            toc_out = title.find("ul").prettify()
-
-        # Else treat the h1 headers as sections
-        else:
-            toc_out = soup.prettify()
-
-        if not context["theme_toc_title"]:
-            raise ValueError(
-                "'toc_title' key cannot be empty. Please set a non-empty value."
-            )
-
-        out = f"""
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            { context["translate"](context["theme_toc_title"]) }
-        </div>
-        <nav id="bd-toc-nav">
-            {toc_out}
-        </nav>
-        """
-        return out
-
-    context["generate_toc_html"] = generate_toc_html
-
     # Update the page title because HTML makes it into the page title occasionally
     if pagename in app.env.titles:
         title = app.env.titles[pagename]
