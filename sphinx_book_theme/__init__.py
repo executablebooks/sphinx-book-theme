@@ -200,13 +200,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
     if app.config.author != "unknown":
         context["author"] = app.config.author
 
-    # Absolute URLs for logo if `html_baseurl` is given
-    # pageurl will already be set by Sphinx if so
-    if app.config.html_baseurl and app.config.html_logo:
-        context["logourl"] = "/".join(
-            (app.config.html_baseurl.rstrip("/"), "_static/" + context["logo"])
-        )
-
     # Add HTML context variables that the pydata theme uses that we configure elsewhere
     # For some reason the source_suffix sometimes isn't there even when doctree is
     if doctree and context.get("page_source_suffix"):
