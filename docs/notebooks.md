@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Content with notebooks
+# Create content with Jupyter notebooks
 
 You can also create content with Jupyter Notebooks. The content for the current page is contained
 in a Jupyter Notebook in the `notebooks/` folder of the repository. This means that we can include
@@ -262,4 +262,76 @@ your Jupyter Book as well!
 ```{code-cell} ipython3
 # The ! causes this to run as a shell command
 !jupyter -h
+```
+
+
+
+## Formatting code cells
+
+### Scrolling cell outputs
+
+The traditional Jupyter Notebook interface allows you to toggle **output scrolling**
+for your cells. This allows you to visualize part of a long output without it taking up
+the entire page.
+
+You can trigger this behavior in Jupyter Book by adding the following
+tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-output",
+    ]
+}
+```
+
+For example, the following cell has a long output, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [output_scroll]
+for ii in range(40):
+    print(f"this is output line {ii}")
+```
+
+
+
+### Scrolling cell inputs
+
+If your input code is long and takes up a lot of your page, you can make it scrollable
+as well by adding the following tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-input",
+    ]
+}
+```
+
+For example, the following cell has a long input, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [scroll-input]
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+print(b)
 ```

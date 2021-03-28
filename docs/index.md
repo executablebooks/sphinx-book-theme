@@ -29,49 +29,42 @@ International
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
 :::
 
-## Get started
-
-To get started with `sphinx-book-theme`, first install it with `pip`:
-
-```
-pip install sphinx-book-theme
-```
-
-then, activate the theme in your Sphinx configuration (`conf.py`):
-
-```
-...
-html_theme = "sphinx_book_theme"
-...
-```
-
-This will activate the Sphinx Book Theme for your documentation. Note that you may
-need to change your `html_theme_options` configuration depending on your previous
-theme. See the pages to the left for information about what you can configure with
-`sphinx-book-theme`.
-
 ## Site contents
 
 ```{toctree}
 :maxdepth: 1
-:caption: Main docs
+:caption: Tutorials
+
+tutorials/get-started
+```
+
+
+```{toctree}
+:maxdepth: 1
+:caption: Topic Areas
 
 configure
 Controlling page elements <layout>
 notebooks
 launch
-contributing
-GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 ```
 
 ## Reference pages
 
 ```{toctree}
-:caption: Reference items
+:caption: Reference
 :maxdepth: 2
 
 reference/index
 api/index
+```
+
+
+```{toctree}
+:caption: About the theme
+:maxdepth: 2
+
+contributing
 ```
 
 ## Acknowledgements
