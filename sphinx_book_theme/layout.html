@@ -7,21 +7,6 @@
     {%- set sidebar_width_class = "col-md-3" %}
 {% endif %}
 
-{% block extrahead %}
-{{ super() }}
-
-{% if pageurl %}
-<!-- Opengraph tags -->
-<meta property="og:url"         content="{{ pageurl }}" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="{% if pagetitle %}{{ pagetitle | e }}{% else %}{{ docstitle | e }}{% endif %}" />
-<meta property="og:description" content="{{ page_description | e }}" />
-{% if logourl %}<meta property="og:image"       content="{{ logourl }}" />{% endif %}
-
-<meta name="twitter:card" content="summary" />
-{% endif %}
-{% endblock %}
-
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 
 {% block docs_sidebar %}

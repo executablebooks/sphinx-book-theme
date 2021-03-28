@@ -87,11 +87,6 @@ def test_build_book(sphinx_build_factory, file_regression):
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
     file_regression.check(sidebar.prettify(), extension=".html", encoding="utf8")
 
-    # Opengraph should not be in the HTML because we have no baseurl specified
-    assert (
-        '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
-        not in str(index_html)
-    )
     # Edit button should not be on page
     assert '<a class="edit-button"' not in str(index_html)
     # Title should be just text, no HTML
@@ -103,15 +98,6 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Pages and sub-pages should be numbered
     assert "1. Page 1" in str(sidebar_ntbk)
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
-    # Check opengraph metadata
-    html_escaped = sphinx_build.html_tree("page1.html")
-    escaped_description = html_escaped.find("meta", property="og:description")
-    file_regression.check(
-        escaped_description.prettify(),
-        basename="escaped_description",
-        extension=".html",
-        encoding="utf8",
-    )
 
     # Test that the TOCtree is rendered properly across different title arrangements
     for page in sphinx_build.outdir.joinpath("titles").rglob("**/page-*"):
@@ -173,29 +159,6 @@ def test_navbar_options(sphinx_build_factory, option, value):
         assert_pass=True
     )  # type: SphinxBuild
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
-
-
-def test_header_info(sphinx_build_factory):
-    confoverrides = {
-        "html_baseurl": "https://blah.com/foo/",
-        "html_logo": os.path.abspath(
-            path_tests.parent.joinpath("docs", "_static", "logo.png")
-        ),
-    }
-    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
-        assert_pass=True
-    )
-
-    # opengraph is generated when baseurl is given
-    header = sphinx_build.html_tree("section1", "ntbk.html").find("head")
-    assert (
-        '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url"/>'
-        in str(header)
-    )
-    assert (
-        '<meta content="https://blah.com/foo/_static/logo.png" property="og:image"/>'
-        in str(header)
-    )
 
 
 def test_topbar_edit_buttons_on(sphinx_build_factory, file_regression):

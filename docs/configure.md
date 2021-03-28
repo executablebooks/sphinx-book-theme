@@ -206,26 +206,6 @@ html_favicon = "path/to/favicon.ico"
 These will be placed in the top-left of your page.
 
 
-## Add metadata open graph tags to your site
-
-OpenGraph tags can be used to generate previews and descriptions of your
-website. These will be automatically generated based on your page's content
-and title. However, generating them requires knowing the full URL of your
-website ahead of time.
-
-To enable metadata tags for your documentation, use the following
-configuration in `conf.py`:
-
-```python
-html_baseurl = "https://<your-site-baseurl>"
-```
-
-For example, the value of this field for this documentation is:
-
-```python
-html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
-```
-
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,

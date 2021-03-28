@@ -52,6 +52,7 @@ setup(
             "sphinxcontrib-bibtex~=2.2",
             "sphinx-thebe",
             "ablog~=0.10.13",
+            "sphinxext-opengraph",
         ],
         "testing": [
             "myst_nb~=0.11.1",
