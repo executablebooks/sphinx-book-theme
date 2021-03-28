@@ -8,9 +8,19 @@
 .topbar {
     background-color: white;
     transition: left .2s;
+    border-bottom: 1px solid rgba(0,0,0,.1);
 
-    .scrolled & {
-        box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    .topbar-brand-box {
+        h1 {
+            color: #5a5a5a;
+            font-size: 1.2em;
+            padding-top: .2em;
+        }
+
+        img {
+            max-height: 85%;
+            padding-top: .2em;
+        }
     }
 
     .topbar-main {
@@ -51,7 +61,7 @@
     transition: flex 0.2s ease 0s;
     @media (max-width: 768px) {
         border-bottom: 1px solid transparent;
-        &.show, &.collapsing, body.scrolled & {
+        &.show, &.collapsing & {
             border-color: rgba(0, 0, 0, 0.1);
             position: absolute;
             bottom: 0;

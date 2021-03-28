@@ -80,19 +80,11 @@ var initTocHide = () => {
         };
       })
   };
-  var manageScrolledClassOnBody = function () {
-    if (window.scrollY > 0) {
-      document.body.classList.add("scrolled");
-    } else {
-      document.body.classList.remove("scrolled");
-    }
-  }
 
   $(window).on('scroll', function () {
       if (!scrollTimeout) {
           scrollTimeout = setTimeout(function () {
               checkTocScroll();
-              manageScrolledClassOnBody();
               scrollTimeout = null;
           }, throttle);
       }
