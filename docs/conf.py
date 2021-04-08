@@ -76,7 +76,8 @@ html_last_updated_fmt = ""
 
 html_sidebars = {
     "reference/blog/*": [
-        "sidebar-search-bs.html",
+        "sidebar-logo.html",
+        "search-field.html",
         "postcard.html",
         "recentposts.html",
         "tagcloud.html",

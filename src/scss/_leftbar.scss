@@ -12,17 +12,6 @@
     transition: margin-left .2s ease 0s, opacity .2s ease 0s, visibility .2s ease 0s;
     z-index: 2000 !important;
 
-    &.collapse {
-        visibility: hidden;
-        margin-left: -$leftbar-width;
-        opacity: 0;
-        display: block;
-        &.show {
-            visibility: visible;
-            margin-left: 0;
-            opacity: 1;
-        }
-    }
     @media (max-width: $breakpoint-md) {
         position: fixed;
         margin-top: $topbar-height;
@@ -91,13 +80,6 @@
         border-right: 0;
     }
 
-    // Captions
-    p.caption {
-        margin-top: 1.25em;
-        margin-bottom: 0;
-        font-size: 1.2em;
-    }
-
     // External links
     li > a > i {
         font-size: .8em;
@@ -140,6 +122,7 @@ nav.bd-links {
     max-height: none !important;
 
     p.caption {
+        padding: 0em;
         font-size: 0.9em;
         text-transform: uppercase;
         font-weight: bold;
@@ -160,47 +143,16 @@ nav.bd-links {
         width: 100%;
     }
 
-    .fa-chevron-up, .fa-chevron-down {
-        position: absolute;
-        font-size: 0.75em;
-        right: 0.5em;
-        top: 0;
-        padding: 0.5em;
-        cursor: pointer;
-        &:hover {
-            color: #007bff;
-        }
-    }
-
     li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5  {
         > a {
             font-size: 0.9em;
         }
         font-size: 1em;
         position: relative;
-        .fa-chevron-up, .fa-chevron-down {
-            right: 0.35em;
-        }
     }
 
-    .collapse-ul {
-        display: none;
-    }
-
-    > ul.nav {
-        // Make sure the first items don't have any padding
-        padding-left: 0;
-
-        // Subsequent items should have padding
-        ul {
-            // Only left padding
-            padding: 0 0 0 1rem;
-        }
-
-        // right horizontal padding to accomodate chevron icons
-        a {
-            padding: .25rem 2rem 0.25rem 0 !important;
-        }
+    ul.bd-sidenav .toctree-l1 a {
+        padding-left: 0em;
     }
 }
 
