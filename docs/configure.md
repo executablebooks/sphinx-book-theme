@@ -215,8 +215,7 @@ using the following configuration in `conf.py`:
 show_navbar_depth = <level>
 ```
 
-The default value is 1, which is used in this documentation.
-Value of 0 will collapse all the sections and sub-sections by default.
+The default value is `1`, which shows only top-level sections of the documentation (and is used in this documentation).
 
 ## Customize CSS
 

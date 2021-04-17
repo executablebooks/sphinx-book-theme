@@ -83,6 +83,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         include_item_names=False,
         with_home_page=False,
         prev_section_numbers=None,
+        show_depth=1,
     ):
         # Config stuff
         config = app.env.config
@@ -124,6 +125,13 @@ def add_to_context(app, pagename, templatename, context, doctree):
                 "html.parser",
             )
             toctree.insert(0, ul_home("ul")[0])
+
+        # Open the navbar to the proper depth
+        for ii in range(int(show_depth)):
+            for checkbox in toctree.select(
+                f"li.toctree-l{ii} > input.toctree-checkbox"
+            ):
+                checkbox.attrs["checked"] = None
 
         return toctree.prettify()
 

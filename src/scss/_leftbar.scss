@@ -105,6 +105,7 @@ div.navbar-brand-box {
 }
 
 nav.bd-links {
+    margin-left: 0px;  // Because the PST adds margin by default
     p.caption, .toctree-l1 a {
         padding-left: 0em;
     }
