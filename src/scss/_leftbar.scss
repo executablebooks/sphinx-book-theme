@@ -12,6 +12,7 @@
     transition: margin-left .2s ease 0s, opacity .2s ease 0s, visibility .2s ease 0s;
     z-index: 2000 !important;
 
+    @include scrollbar-style();
     @media (max-width: $breakpoint-md) {
         position: fixed;
         margin-top: $topbar-height;
@@ -30,34 +31,6 @@
         }
         a:hover, li.active > a, li.active > a:hover {
             color: #0071bc;
-        }
-    }
-
-    scrollbar-width: thin;
-    &::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    &::-webkit-scrollbar {
-        background: #f1f1f1;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-    }
-
-    // Hide the scrollbar until hover on wide screens
-    @media (min-width: $breakpoint-lg) {
-        &:not(:hover) {
-            -ms-overflow-style: none;
-
-            &::-webkit-scrollbar {
-              background: #FFFFFF;
-            }
-
-            &::-webkit-scrollbar-thumb {
-              background: #FFFFFF;
-            }
         }
     }
 

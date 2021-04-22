@@ -4,7 +4,6 @@
 
 .bd-toc {
     padding: 0px !important;
-    overflow-y: auto;
     right: -1em;
     z-index: 999;
     height: auto;
@@ -21,6 +20,7 @@
         transition: opacity 0.2s ease, max-height .7s ease;
         overflow-y: hidden;
         background: white;
+        @include scrollbar-style();
 
         // TOC link color
         a:hover, li.active > a.active {
@@ -44,6 +44,7 @@
         nav {
             max-height: 100vh;
             opacity: 1;
+            overflow-y: auto;
         }
 
         // Hide the arrow when we display the toc
