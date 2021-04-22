@@ -260,6 +260,20 @@ def test_topbar_download_button_off(sphinx_build_factory, file_regression):
     file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
 
 
+def test_topbar_fullscreen_button_off(sphinx_build_factory, file_regression):
+    confoverrides = {
+        "html_theme_options.use_fullscreen_button": False,
+    }
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    fullscreen_buttons = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".full-screen-button"
+    )
+    assert len(fullscreen_buttons) == 0
+
+
 def test_right_sidebar_title(sphinx_build_factory, file_regression):
     confoverrides = {"html_theme_options.toc_title": "My Contents"}
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(

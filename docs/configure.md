@@ -98,6 +98,18 @@ html_theme_options = {
     ...
 }
 ```
+## Fullscreen button
+
+You can add a button allowing users to toggle fullscreen mode for the webpage. To include this button, use the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "use_fullscreen_button": True,
+    ...
+}
+```
+
 
 ## Use a single-page version of this theme
 
