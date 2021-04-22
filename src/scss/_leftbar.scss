@@ -82,6 +82,9 @@ nav.bd-links {
     p.caption, .toctree-l1 a {
         padding-left: 0em;
     }
+    // Overriding PyData Theme Defaults so the navigation is always visible
+    overflow-y: visible;
+    max-height: none;
 }
 
 // Navbar and topbar sidebar padding should max at 300px
