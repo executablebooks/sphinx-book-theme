@@ -110,13 +110,6 @@ def test_build_book(sphinx_build_factory, file_regression):
             encoding="utf8",
         )
 
-    # navbar lists should be uncollapsed till two levels
-    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        attrs={"class": "bd-sidebar"}
-    )[0]
-    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 2
-
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
@@ -240,15 +233,17 @@ def test_show_navbar_depth(sphinx_build_factory):
     """Test with different levels of show_navbar_depth."""
     sphinx_build = sphinx_build_factory(
         "base",
-        confoverrides={"html_theme_options.show_navbar_depth": 0},
+        confoverrides={"html_theme_options.show_navbar_depth": 2},
     ).build(
         assert_pass=True
     )  # type: SphinxBuild
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         attrs={"class": "bd-sidebar"}
     )[0]
-    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 3
+    for checkbox in sidebar.select("li.toctree-l1 > input"):
+        assert "checked" in checkbox.attrs
+    for checkbox in sidebar.select("li.toctree-l2 > input"):
+        assert "checked" not in checkbox.attrs
 
 
 def test_topbar_download_button_off(sphinx_build_factory, file_regression):

@@ -23,6 +23,8 @@ main.bd-content {
     padding-bottom: 0px !important;
 
     #main-content {
+        padding-top: 1.5em;
+
         // Content links and link color
         a.headerlink {
             opacity: 0;
@@ -519,11 +521,6 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
         font-weight: bold;
         font-size: 1.2em;
     }
-}
-
-.collapse-ul {
-    display: none;
-    overflow: hidden;
 }
 
 

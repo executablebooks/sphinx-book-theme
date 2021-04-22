@@ -76,23 +76,30 @@ def update_all(app, env):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
+
     # TODO: remove this whenever the nav collapsing functionality is in the PST
     def sbt_generate_nav_html(
         level=1,
         include_item_names=False,
         with_home_page=False,
         prev_section_numbers=None,
+        show_depth=1,
     ):
         # Config stuff
         config = app.env.config
         if isinstance(with_home_page, str):
             with_home_page = with_home_page.lower() == "true"
 
-        # Grab the raw toctree object and structure it so we can manipulate it
-        toc_sphinx = context["toctree"](
-            maxdepth=-1, collapse=False, titles_only=True, includehidden=True
+        # Convert the pydata toctree html to beautifulsoup
+        toctree = context["generate_nav_html"](
+            startdepth=level - 1,
+            kind="sidebar",
+            maxdepth=4,
+            collapse=False,
+            includehidden=True,
+            titles_only=True,
         )
-        toctree = bs(toc_sphinx, "html.parser")
+        toctree = bs(toctree, "html.parser")
 
         # Add the master_doc page as the first item if specified
         if with_home_page:
@@ -110,7 +117,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             # Insert it into our toctree
             ul_home = bs(
                 f"""
-            <ul>
+            <ul class="nav bd-sidenav">
                 <li class="{li_class}">
                     <a href="{master_url}" class="reference internal">{master_title}</a>
                 </li>
@@ -119,65 +126,12 @@ def add_to_context(app, pagename, templatename, context, doctree):
             )
             toctree.insert(0, ul_home("ul")[0])
 
-        # pair "current" with "active" since that's what we use w/ bootstrap
-        for li in toctree("li", {"class": "current"}):
-            li["class"].append("active")
-
-        # Add an icon for external links
-        for a_ext in toctree("a", attrs={"class": ["external"]}):
-            a_ext.append(
-                toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
-            )
-
-        # get level specified in conf
-        navbar_level = int(context["theme_show_navbar_depth"])
-
-        # function to open/close list and add icon
-        def collapse_list(li, ul, level):
-            if ul:
-                li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
-                if level <= 0:
-                    ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
-                    li.append(
-                        toctree.new_tag(
-                            "i", attrs={"class": ["fas", "fa-chevron-down"]}
-                        )
-                    )
-                else:
-                    # Icon won't show up unless captions are collapsed
-                    if not li.name == "p" and "caption" not in li["class"]:
-                        li.append(
-                            toctree.new_tag(
-                                "i", attrs={"class": ["fas", "fa-chevron-up"]}
-                            )
-                        )
-
-        # for top-level caption's collapse functionality
-        for para in toctree("p", attrs={"class": ["caption"]}):
-            ul = para.find_next_sibling()
-            collapse_list(para, ul, navbar_level)
-
-        # iterate through all the lists in the sideabar and open/close
-        def iterate_toc_li(li, level):
-            if hasattr(li, "name") and li.name == "li":
-                ul = li.find("ul")
-                collapse_list(li, ul, level)
-            if isinstance(li, list) or hasattr(li, "name"):
-                for entry in li:
-                    if isinstance(entry, str):
-                        continue
-                    if hasattr(entry, "name"):
-                        if entry.name == "li":
-                            iterate_toc_li(entry, level - 1)
-                        else:
-                            iterate_toc_li(entry, level)
-            return
-
-        iterate_toc_li(toctree, navbar_level)
-
-        # Add bootstrap classes for first `ul` items
-        for ul in toctree("ul", recursive=False):
-            ul.attrs["class"] = ul.attrs.get("class", []) + ["nav", "sidenav_l1"]
+        # Open the navbar to the proper depth
+        for ii in range(int(show_depth)):
+            for checkbox in toctree.select(
+                f"li.toctree-l{ii} > input.toctree-checkbox"
+            ):
+                checkbox.attrs["checked"] = None
 
         return toctree.prettify()
 
