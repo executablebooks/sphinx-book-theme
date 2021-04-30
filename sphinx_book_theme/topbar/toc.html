@@ -1,0 +1,13 @@
+<!-- Table of contents -->
+<div class="d-none d-md-block col-md-2 bd-toc show">
+    {% set page_toc = generate_toc_html() %}
+
+    {%- if page_toc | length >= 1 %}
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
+    </div>
+    <nav id="bd-toc-nav">
+        {{ page_toc }}
+    </nav>
+    {%- endif %}
+</div>
