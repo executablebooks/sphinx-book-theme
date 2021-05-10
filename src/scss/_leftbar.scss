@@ -12,6 +12,19 @@
     transition: margin-left .2s ease 0s, opacity .2s ease 0s, visibility .2s ease 0s;
     z-index: 2000 !important;
 
+    // Over-ride bootstrap collapsing styles for a smooth transition
+    &.collapse {
+        visibility: hidden;
+        margin-left: -$leftbar-width;
+        opacity: 0;
+        display: block;
+        &.show {
+            visibility: visible;
+            margin-left: 0;
+            opacity: 1;
+        }
+    }
+
     @include scrollbar-style();
     @media (max-width: $breakpoint-md) {
         position: fixed;
