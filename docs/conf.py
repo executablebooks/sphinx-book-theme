@@ -67,11 +67,11 @@ panels_add_bootstrap_css = False
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "_static/logo.png"
+html_logo = "_static/logo-wide.png"
 html_title = "Sphinx Book Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
-html_favicon = "_static/favicon.ico"
+html_favicon = "_static/logo-square.png"
 html_last_updated_fmt = ""
 
 html_sidebars = {
