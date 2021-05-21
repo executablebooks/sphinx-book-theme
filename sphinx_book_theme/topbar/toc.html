@@ -1,0 +1,12 @@
+<!-- Table of contents -->
+<div class="col-md-2 bd-toc show topbar-item">
+    {% set page_toc = generate_toc_html() %}
+
+    {%- if page_toc | length >= 1 %}
+    <button class="btn btn-secondary topbarbtn"
+        aria-label="Show page contents"><i class="fas fa-list"></i> {{ translate(theme_toc_title) }}</button>
+    <nav id="bd-toc-nav">
+        {{ page_toc }}
+    </nav>
+    {%- endif %}
+</div>
