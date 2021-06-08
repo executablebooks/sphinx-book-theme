@@ -621,14 +621,6 @@ div.tableofcontents-wrapper p.caption {
 // Collapsing behavior with sidebar
 #main-content {
     transition: opacity .1s ease-in;
-    transition: padding .1s ease-in;
-}
-
-// On large screens, the main content should get more padding when no sidebar
-@media (min-width: $breakpoint-md) {
-    div#site-navigation:not(.show)+main.bd-content #main-content {
-        padding-left: 2em;
-    }
 }
 
 // On narrow screens, the main content should become transparent
