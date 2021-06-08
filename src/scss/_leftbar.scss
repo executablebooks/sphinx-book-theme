@@ -2,15 +2,15 @@
 * Left Nav Bar *
 *********************************************/
 #site-navigation  {
-    height: 100vh !important;
+    top: $topbar-height !important;
+    z-index: calc(#{$zindex-bootstrap-top} - 1);  // To make sure we are above the content div
+    height: calc(100vh - #{$topbar-height}) !important;
     width: $leftbar-width;
     flex: auto;
-    top: 0px !important;
     margin-left:0;
     overflow-y: auto;
     background: white;
     transition: margin-left .2s ease 0s, opacity .2s ease 0s, visibility .2s ease 0s;
-    z-index: 2000 !important;
 
     // Over-ride bootstrap collapsing styles for a smooth transition
     &.collapse {
@@ -28,7 +28,6 @@
     @include scrollbar-style();
     @media (max-width: $breakpoint-md) {
         position: fixed;
-        margin-top: $topbar-height;
         border-right: 1px solid rgba(0,0,0,.1);
 
         // If we're only a single page, sidebar should hide at narrow widths.
@@ -68,9 +67,6 @@
 }
 
 div.navbar-brand-box {
-    @media (min-width: $breakpoint-md) {
-        padding-top: 2em;
-    }
 
     a.navbar-brand {
         width: 100%;

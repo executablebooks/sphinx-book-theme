@@ -3,15 +3,13 @@
 *********************************************/
 .topbar, .topbar-contents, .topbar-main {
     height: $topbar-height;
+    z-index: $zindex-bootstrap-top;
 }
 
 .topbar {
     background-color: white;
     transition: left .2s;
-
-    .scrolled & {
-        box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
-    }
+    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
 
     .topbar-main {
         padding-top: 0.25rem;
@@ -41,22 +39,6 @@
         // buttons float right
         div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
             float: right;
-        }
-    }
-}
-
-.bd-topbar-whitespace {
-    width: $leftbar-width;
-    flex: auto;
-    transition: flex 0.2s ease 0s;
-    @media (max-width: 768px) {
-        border-bottom: 1px solid transparent;
-        &.show, &.collapsing, body.scrolled & {
-            border-color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: block;
         }
     }
 }
@@ -169,12 +151,5 @@ button.topbarbtn img {
         i.fa-arrow-left {
             display: inherit;
         }
-    }
-}
-
-// Navbar and topbar sidebar padding should max at 300px
-@media (min-width: $breakpoint-md) {
-    .bd-topbar-whitespace {
-        max-width: 275px;
     }
 }

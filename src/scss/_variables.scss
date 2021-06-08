@@ -10,6 +10,9 @@ $breakpoint-sm: 576px;
 // Colors
 $non-content-grey: #5a5a5a;
 
+// Z-index that bootstrap uses so we can re-use elsewhere
+$zindex-bootstrap-top: 1094;
+
 $topbar-height: 3em;
 $leftbar-width: 275px;
 
