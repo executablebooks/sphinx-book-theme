@@ -24,6 +24,9 @@ main.bd-content {
 
     #main-content {
         padding-top: 1.5em;
+        max-width: 62em;
+        margin-left: auto;
+        margin-right: auto;
 
         // Content links and link color
         a.headerlink {
