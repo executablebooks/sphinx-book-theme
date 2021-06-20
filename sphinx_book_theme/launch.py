@@ -45,9 +45,10 @@ def add_hub_urls(
         or context["sourcename"].endswith(".md.txt")
     ):
         # Figure out the folders we want
-        build_dir = Path(app.outdir).parent
+        out_dir = Path(app.outdir)
+        build_dir = out_dir.parent
         ntbk_dir = build_dir.joinpath("jupyter_execute")
-        sources_dir = build_dir.joinpath(context.get("builder", "html"), "_sources")
+        sources_dir = out_dir.joinpath("_sources")
         # Paths to old and new notebooks
         path_ntbk = ntbk_dir.joinpath(pagename).with_suffix(".ipynb")
         path_new_notebook = sources_dir.joinpath(pagename).with_suffix(".ipynb")
