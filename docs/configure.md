@@ -218,6 +218,12 @@ html_favicon = "path/to/favicon.ico"
 These will be placed in the top-left of your page.
 
 
+You can avoid the display of the project name at the top of the sidebar (below the logo) by adding this line in `conf.py`:
+
+```python
+logo_only = True
+```
+
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,
