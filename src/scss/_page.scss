@@ -24,8 +24,7 @@ main.bd-content {
 
     #main-content {
         padding-top: 1.5em;
-        max-width: 62em;
-        margin-left: auto;
+        max-width: 70em;
         margin-right: auto;
 
         // Content links and link color
@@ -515,6 +514,7 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
     border-left: 1px #a4a6a7 solid;
     margin-left: 0.5em;
     padding: .2em 0 .2em 1em;
+    font-size: .9em;
 
     p {
         margin-bottom: 0;
@@ -522,7 +522,7 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
 
     p.sidebar-title {
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 }
 
@@ -533,8 +533,8 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
     div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
         border: none;
         clear: right;
-        width: 31% !important;
-        margin: 0 -35% 0 0 !important;
+        width: 50% !important;
+        margin: 0 -55% 0 0 !important;
         padding: 0 !important;
         font-size: 0.9rem;
         line-height: 1.3;
@@ -568,7 +568,7 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
 
 @media (min-width: $breakpoint-md) {
     div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
-        width: 136% !important;
+        width: 150% !important;
     }
 }
 
