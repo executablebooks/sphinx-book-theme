@@ -290,3 +290,15 @@ def test_right_sidebar_title(sphinx_build_factory, file_regression):
     rmtree(str(sphinx_build.src))
 
     confoverrides = {"html_theme_options.toc_title": ""}
+
+
+def test_logo_only(sphinx_build_factory):
+    confoverrides = {"html_theme_options.logo_only": True}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    logo_text = sphinx_build.html_tree("page1.html").find_all(
+        "h1", attrs={"id": "site-title"}
+    )
+    assert not logo_text
