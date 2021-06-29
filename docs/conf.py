@@ -113,6 +113,7 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
+    "logo_only": True,
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
