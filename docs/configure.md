@@ -218,7 +218,7 @@ html_favicon = "path/to/favicon.ico"
 These will be placed in the top-left of your page.
 
 
-You can avoid the display of the project name at the top of the sidebar (below the logo) by adding this line in `conf.py`:
+To **remove the site title** below the logo, add this line in `conf.py`:
 
 ```python
 logo_only = True
