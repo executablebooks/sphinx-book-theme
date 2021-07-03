@@ -63,6 +63,36 @@ main.bd-content {
             padding-right: 1em;
         }
 
+        .prev-next-bottom {
+            font-weight: bold;
+            margin: 3em;
+
+            .right-next, .left-prev {
+                border: none;
+                font-size: 1.1em;
+
+                &::before {
+                    display: block;
+                    color: #998d8d;
+                }
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            .right-next {
+                text-align: right;
+                &::before {
+                    content: "NEXT";
+                }
+            }
+
+            .left-prev::before {
+                content: "PREVIOUS";
+            }
+        }
+
         div.section {
             overflow: visible !important;  // So that sidebars don't cause a scroll
 
@@ -489,8 +519,14 @@ div.cell {
     top: 0.5em !important;
 }
 
-// Admonition seealso styling
 .admonition {
+    // Soften admonition styling from the PyData Theme
+    border-left: none;
+    border-radius: $box-border-radius;
+    border: $box-border;
+    box-shadow: none;
+
+    // Admonition seealso styling
     &.seealso {
         border-color: #28a7464b;
 
@@ -601,6 +637,12 @@ blockquote {
 div.highlight {
     background: none;
     margin-bottom: 1em;
+
+    pre {
+        border-radius: $box-border-radius;
+        border: $box-border;
+        box-shadow: none;
+    }
 }
 
 div.cell div.highlight {
