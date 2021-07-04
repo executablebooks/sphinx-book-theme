@@ -15,7 +15,6 @@ $leftbar-width: 275px;
 
 // Consistent styling for page elements
 $box-border-radius: 0.4em;
-$box-border: 1px solid #ececec !important; // need important to override admonition subclasses
 
 // Overrides for pydata sphinx theme. Will take effect when the next version is released
 :root {

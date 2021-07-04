@@ -14,6 +14,10 @@ code {
     font-size: 87.5% !important;
 }
 
+pre {
+    border-radius: $box-border-radius;
+}
+
 // Highlight search phrases
 dt:target, span.highlighted {
     background-color: #fbe54e;
@@ -65,15 +69,16 @@ main.bd-content {
 
         .prev-next-bottom {
             font-weight: bold;
-            margin: 3em;
+            margin-top: 3em;
 
             .right-next, .left-prev {
+                padding: 0;
                 border: none;
-                font-size: 1.1em;
+                font-size: 1.2em;
 
                 &::before {
                     display: block;
-                    color: #998d8d;
+                    color: $non-content-grey;
                 }
 
                 &::after {
@@ -521,14 +526,12 @@ div.cell {
 
 .admonition {
     // Soften admonition styling from the PyData Theme
-    border-left: none;
     border-radius: $box-border-radius;
-    border: $box-border;
-    box-shadow: none;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
 
     // Admonition seealso styling
     &.seealso {
-        border-color: #28a7464b;
+        border-color: #28a745;
 
         .admonition-title {
             background-color:rgba(40, 167, 70, 0.1);
@@ -637,12 +640,6 @@ blockquote {
 div.highlight {
     background: none;
     margin-bottom: 1em;
-
-    pre {
-        border-radius: $box-border-radius;
-        border: $box-border;
-        box-shadow: none;
-    }
 }
 
 div.cell div.highlight {
