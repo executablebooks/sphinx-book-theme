@@ -218,13 +218,27 @@ html_favicon = "path/to/favicon.ico"
 These will be placed in the top-left of your page.
 
 
+To **remove the site title** below the logo, add this line in `conf.py`:
+
+```python
+html_theme_options = {
+  ...
+  "logo_only": True,
+  ...
+}
+```
+
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,
 using the following configuration in `conf.py`:
 
 ```python
-show_navbar_depth = <level>
+html_theme_options = {
+    ...
+    "show_navbar_depth": <level>,
+    ...
+}
 ```
 
 The default value is `1`, which shows only top-level sections of the documentation (and is used in this documentation).
