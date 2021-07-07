@@ -35,7 +35,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.8", None),
-    "sphinx": ("https://www.sphinx-doc.org/en/3.x", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 }
 nitpick_ignore = [
     ("py:class", "docutils.nodes.document"),
