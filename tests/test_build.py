@@ -308,5 +308,6 @@ def test_copy_rendered_notebooks():
     target = Path("build/outdir/_sources/section1/ntbkmd.ipynb")
     if target.exists():
         target.unlink()
+    # Switch to sphinx_build_factory if we figure out how to use outdir w/ it
     check_call("sphinx-build -W -b dirhtml tests/sites/base build/outdir", shell=True)
     assert target.exists()
