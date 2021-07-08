@@ -14,6 +14,10 @@ code {
     font-size: 87.5% !important;
 }
 
+pre {
+    border-radius: $box-border-radius;
+}
+
 // Highlight search phrases
 dt:target, span.highlighted {
     background-color: #fbe54e;
@@ -61,6 +65,37 @@ main.bd-content {
         // Also add it to the bottom-of-page next/prev container
         > div > div > div.section, .prev-next-bottom {
             padding-right: 1em;
+        }
+
+        .prev-next-bottom {
+            font-weight: bold;
+            margin-top: 3em;
+
+            .right-next, .left-prev {
+                padding: 0;
+                border: none;
+                font-size: 1.2em;
+
+                &::before {
+                    display: block;
+                    color: $non-content-grey;
+                }
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            .right-next {
+                text-align: right;
+                &::before {
+                    content: "NEXT";
+                }
+            }
+
+            .left-prev::before {
+                content: "PREVIOUS";
+            }
         }
 
         div.section {
@@ -489,10 +524,14 @@ div.cell {
     top: 0.5em !important;
 }
 
-// Admonition seealso styling
 .admonition {
+    // Soften admonition styling from the PyData Theme
+    border-radius: $box-border-radius;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
+
+    // Admonition seealso styling
     &.seealso {
-        border-color: #28a7464b;
+        border-color: #28a745;
 
         .admonition-title {
             background-color:rgba(40, 167, 70, 0.1);
