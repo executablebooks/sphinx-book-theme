@@ -53,6 +53,8 @@ setup(
             "sphinx-thebe",
             "ablog~=0.10.13",
             "sphinxext-opengraph",
+            "furo",
+            "sphinx-inline-tabs",
         ],
         "testing": [
             "myst_nb~=0.11.1",

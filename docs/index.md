@@ -70,6 +70,8 @@ GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 :caption: Reference items
 :maxdepth: 2
 
+reference/demo
+reference/furo/index
 reference/index
 api/index
 ```

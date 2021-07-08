@@ -134,3 +134,6 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# Furo docs we pull for our documentation
+docs/reference/furo/

@@ -23,6 +23,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "ablog",
     "sphinxext.opengraph",
+    "furo.sphinxext",  # For the furo-demo directive
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -133,3 +134,31 @@ post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
 bibtex_reference_style = "author_year"
+
+
+# --- Custom scripts ------------------------
+
+# Pull Pradyun's reference material from Furo
+from zipfile import ZipFile
+from requests import get
+from io import BytesIO
+from pathlib import Path
+
+# Download the Furo referenec pages as a zipfile
+zipbytes = BytesIO(get("https://github.com/pradyunsg/furo/archive/refs/heads/main.zip").content)
+zf = ZipFile(zipbytes)
+
+# Only run if the directory doesn't exist
+newpath = Path("reference/furo")
+if not newpath.is_dir():
+    print("Adding Furo's reference pages to our docs")
+    newpath.mkdir()
+    
+    # Unzip the reference pages into our local docs
+    for ifile in zf.namelist():
+        if ifile.startswith("furo-main/docs/reference/") and ifile.endswith('.md'):
+            # Place all files in a reference/furo folder
+            newfile = ifile.replace("furo-main/docs/reference/", "")
+                
+            with zf.open(ifile) as oldfile:
+                newpath.joinpath(newfile).write_bytes(oldfile.read())
