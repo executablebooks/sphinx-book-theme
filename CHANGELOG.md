@@ -1,5 +1,24 @@
 # Changelog
 
+# v0.1.0...v0.1.1
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.0...e05def5b9a4fc777f702553a0bcaf7939440dbd3))
+
+## New features added
+
+* Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
+
+## Enhancements made
+
+* Add css to highlight searched for phrases [#350](https://github.com/executablebooks/sphinx-book-theme/pull/350) ([@sanjayankur31](https://github.com/sanjayankur31))
+* Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
+* Soften edges in admonitions and remove some ink [#352](https://github.com/executablebooks/sphinx-book-theme/pull/352) ([@choldgraf](https://github.com/choldgraf))
+
+## Bugs fixed
+
+* 🐛 FIX: Path to custom output directory for _sources [#346](https://github.com/executablebooks/sphinx-book-theme/pull/346) ([@dfm](https://github.com/dfm))
+* 🐛 FIX: Fixing sidebar animation [#333](https://github.com/executablebooks/sphinx-book-theme/pull/333) ([@choldgraf](https://github.com/choldgraf))
+
 ## v0.0.42...v0.1.0
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.42...6320ef6347a77eb91ed67c472b2336fd66d75724))
