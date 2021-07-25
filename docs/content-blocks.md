@@ -1,3 +1,90 @@
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.2
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+# Special content blocks
+
+There are a few content blocks that are unique to this theme.
+They may behave 
+
+
+## Quotations and epigraphs
+
+Here is what quotations and epigraphs look like in `sphinx-book-theme`:
+
+A quote with no attribution:
+
+> Here's my quote, it's pretty neat.
+> I wonder how many lines I can create with
+> a single stream-of-consciousness quote.
+> I could try to add a list of ideas to talk about.
+> I suppose I could just keep going on forever,
+> but I'll stop here.
+
+Sometimes you'd like to draw more attention to a quote. To do so, use the `{epigraph}` directive.
+Below is an epigraph, click the button to the right of it to show the code that was used
+to generate it:
+
+```{epigraph}
+Here's my quote, it's pretty neat.
+I wonder how many lines I can create with
+a single stream-of-consciousness quote.
+I could try to add a list of ideas to talk about.
+I suppose I could just keep going on forever,
+but I'll stop here.
+```
+
+`````{toggle}
+````
+```{epigraph}
+Here's my quote, it's pretty neat.
+I wonder how many lines I can create with
+a single stream-of-consciousness quote.
+I could try to add a list of ideas to talk about.
+I suppose I could just keep going on forever,
+but I'll stop here.
+```
+````
+`````
+
+You can also add an attribution to epigraphs by adding a blank line,
+followed by a line that starts with `--`. This will be renderered like so:
+
+```{epigraph}
+Here's my quote, it's pretty neat.
+I wonder how many lines I can create with
+a single stream-of-consciousness quote.
+I could try to add a list of ideas to talk about.
+I suppose I could just keep going on forever,
+but I'll stop here.
+
+-- Jo the Jovyan, *[the jupyter book docs](https://beta.jupyterbook.org)*
+```
+
+`````{toggle}
+````
+```{epigraph}
+Here's my quote, it's pretty neat.
+I wonder how many lines I can create with
+a single stream-of-consciousness quote.
+I could try to add a list of ideas to talk about.
+I suppose I could just keep going on forever,
+but I'll stop here.
+
+-- Jo the Jovyan, *[the jupyter book docs](https://beta.jupyterbook.org)*
+```
+````
+`````
 
 ## Sidebars
 
@@ -12,7 +99,7 @@ table of contents lives. When the reader scrolls sidebar content into view, the
 right TOC should hide itself automatically.
 ```
 
-### Margins
+## Margin content
 
 You can specify content that should exist in the right margin. This will behave
 like a regular sidebar until the screen hits a certain width, at which point this
@@ -145,7 +232,7 @@ This code results in the following output:
 This content will be full-width
 ```
 
-```{margin} A note for ipynb users
+```{admonition} A note for ipynb users
 If you are using a Jupyter Notebook as inputs to your documentation using the
 [MyST-NB extension](https://myst-nb.readthedocs.io/en/latest/), you can trigger
 this behavior with a code cell by adding a `full-width` tag to the cell.

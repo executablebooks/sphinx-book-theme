@@ -16,7 +16,7 @@ interactive book. It has the following primary features:
 [Flexible content layout](layout)
 : Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
 
-[Visual classes designed for Jupyter Notebooks](notebooks)
+[Visual classes designed for Jupyter Notebooks](reference/notebooks)
 : Cell inputs, outputs, and interactive functionality are all supported.
 
 [Launch buttons for online interactivity](launch)
@@ -29,34 +29,32 @@ International
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
 :::
 
-## Site contents
+## Topic areas
 
-```{toctree}
-:maxdepth: 1
-:caption: Tutorials
-
-tutorials/get-started
-```
-
+The following topic areas will help you understand and use the theme.
 
 ```{toctree}
 :maxdepth: 1
 :caption: Topic Areas
 
-configure
-Controlling page elements <layout>
-notebooks
+tutorials/get-started
+customize/index
+content-blocks
 launch
 ```
 
 ## Reference pages
 
+Reference pages demonstrate the visual look of this theme.
+
 ```{toctree}
 :caption: Reference
 :maxdepth: 2
 
-reference/index
-api/index
+reference/special-theme-elements
+reference/notebooks
+reference/kitchen-sink/index
+reference/blog
 ```
 
 

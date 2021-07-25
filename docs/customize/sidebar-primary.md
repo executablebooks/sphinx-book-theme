@@ -1,6 +1,10 @@
-# Control the left sidebar
+# Customize the primary sidebar
 
+The primary sidebar generally contains the site navigation and logo.
+By default it is on the left side of the site.
+This page describes ways that you can control and customize the primary sidebar.
 
+(sidebar-primary:items)=
 ## Control the left sidebar items
 
 You can control what kind of content goes underneath the logo and name of your website in the top left.
@@ -54,7 +58,7 @@ This text will be placed at the bottom of the sidebar by default.
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`
 in your `toctree` directive for that section.
 
-
+(sidebar-primary:logo)=
 ## Customize the logo, title, and favicon
 
 You can customize the logo, title, and favicon of your site with the following Sphinx configuration in `conf.py`:

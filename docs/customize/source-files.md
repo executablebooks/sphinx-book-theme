@@ -14,6 +14,7 @@ html_theme_options = {
 }
 ```
 
+(source-files:repository)=
 ## Add a link to your repository
 
 To add a link to your repository, add the following configuration:

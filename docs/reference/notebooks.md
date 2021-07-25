@@ -12,11 +12,10 @@ kernelspec:
   name: python3
 ---
 
-# Create content with Jupyter notebooks
+# Jupyter notebooks
 
-You can also create content with Jupyter Notebooks. The content for the current page is contained
-in a Jupyter Notebook in the `notebooks/` folder of the repository. This means that we can include
-code blocks and their outputs, and export them to Jekyll markdown.
+You can also create content with Jupyter Notebooks.
+This means that we can include code blocks and their outputs, and export them to Jekyll markdown.
 
 **You can find the original notebook for this page [at this address](https://github.com/jupyter/jupyter-book/blob/master/jupyter_book/book_template/content/features/notebooks.ipynb)**
 
@@ -24,7 +23,7 @@ code blocks and their outputs, and export them to Jekyll markdown.
 
 As it is markdown, you can embed images, HTML, etc into your posts!
 
-![](images/cool.jpg)
+![](../images/cool.jpg)
 
 You an also $add_{math}$ and
 
@@ -105,7 +104,7 @@ ax.set(title="Smoother lines");
 
 ```{margin} You can also pop out content to the margin
 For more information on how to do this,
-check out {doc}`layout`.
+check out [](special-theme-elements.md).
 ```
 
 ```{code-cell} ipython3
