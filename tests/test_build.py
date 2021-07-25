@@ -285,7 +285,9 @@ def test_show_navbar_depth(sphinx_build_factory):
         attrs={"class": "bd-sidebar"}
     )[0]
     collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 3
+    assert len(collapsed_uls) == 2
+    all_uls = sidebar.findAll("ul")
+    assert len(all_uls) == 3
 
 
 def test_topbar_download_button_off(sphinx_build_factory, file_regression):
