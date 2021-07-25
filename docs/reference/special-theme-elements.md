@@ -23,7 +23,7 @@ through and see how things look!
 ## Blog post list
 
 Here's a sample post list:
-    
+
 ```{postlist}
 :date: "%Y-%m-%d"
 :format: "{date} - {title}"

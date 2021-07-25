@@ -86,9 +86,9 @@ To add a site logo, follow these steps:
    ```python
    html_logo = "path/to/myimage.png"
    ```
-   
+
    Where the path is relative to your `conf.py` file.
-   
+
 Next we'll **customize the title of the site**.
 To do so, add a line to your `conf.py` file that looks like this:
 

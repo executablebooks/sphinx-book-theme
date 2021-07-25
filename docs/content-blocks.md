@@ -15,7 +15,7 @@ kernelspec:
 # Special content blocks
 
 There are a few content blocks that are unique to this theme.
-They may behave 
+They may behave
 
 
 ## Quotations and epigraphs
