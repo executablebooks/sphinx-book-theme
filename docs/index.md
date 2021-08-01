@@ -16,7 +16,7 @@ interactive book. It has the following primary features:
 [Flexible content layout](layout)
 : Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
 
-[Visual classes designed for Jupyter Notebooks](notebooks)
+[Visual classes designed for Jupyter Notebooks](reference/notebooks)
 : Cell inputs, outputs, and interactive functionality are all supported.
 
 [Launch buttons for online interactivity](launch)
@@ -29,49 +29,40 @@ International
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
 :::
 
-## Get started
+## Topic areas
 
-To get started with `sphinx-book-theme`, first install it with `pip`:
-
-```
-pip install sphinx-book-theme
-```
-
-then, activate the theme in your Sphinx configuration (`conf.py`):
-
-```
-...
-html_theme = "sphinx_book_theme"
-...
-```
-
-This will activate the Sphinx Book Theme for your documentation. Note that you may
-need to change your `html_theme_options` configuration depending on your previous
-theme. See the pages to the left for information about what you can configure with
-`sphinx-book-theme`.
-
-## Site contents
+The following topic areas will help you understand and use the theme.
 
 ```{toctree}
 :maxdepth: 1
-:caption: Main docs
+:caption: Topic Areas
 
-configure
-Controlling page elements <layout>
-notebooks
+tutorials/get-started
+customize/index
+content-blocks
 launch
-contributing
-GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 ```
 
 ## Reference pages
 
+Reference pages demonstrate the visual look of this theme.
+
 ```{toctree}
-:caption: Reference items
+:caption: Reference
 :maxdepth: 2
 
-reference/index
-api/index
+reference/special-theme-elements
+reference/notebooks
+reference/kitchen-sink/index
+reference/blog
+```
+
+
+```{toctree}
+:caption: About the theme
+:maxdepth: 2
+
+contributing
 ```
 
 ## Acknowledgements

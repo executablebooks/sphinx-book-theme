@@ -42,7 +42,7 @@ nitpick_ignore = [
     ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
 ]
 
-suppress_warnings = ["myst.domains"]
+suppress_warnings = ["myst.domains", "ref.ref"]
 
 numfig = True
 
@@ -59,7 +59,6 @@ myst_enable_extensions = [
     # "substitution",
 ]
 myst_url_schemes = ("http", "https", "mailto")
-panels_add_bootstrap_css = False
 
 # -- Options for HTML output -------------------------------------------------
 
