@@ -30,7 +30,7 @@ setup(
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
-        "sphinx>=2,<4",
+        "sphinx>=3,<5",
         "click",
         "pydata-sphinx-theme~=0.6.0",
         "beautifulsoup4>=4.6.1,<5",
