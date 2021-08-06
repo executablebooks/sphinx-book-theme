@@ -78,6 +78,7 @@ div.dropdown-buttons-trigger {
         max-width: 130px;
         margin-top: .2em;
         z-index: 1000;
+        transform: translate(-60%);
 
         &.sourcebuttons .topbarbtn i {
             padding-right: 6px;
