@@ -1,4 +1,4 @@
-
+(customize:single-page)=
 # Use a single-page version of this theme
 
 If your documentation only has a single page, and you don't need the left

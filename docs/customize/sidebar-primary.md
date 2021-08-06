@@ -81,6 +81,7 @@ html_theme_options = {
 }
 ```
 
+(sidebar-primary:home-page)=
 ## Add the home page to your table of contents
 
 By default, your table of contents will begin with the first file that you add to a `toctree`. You can also configure the theme to show the **landing page** of the theme in your navigation bar as well.
@@ -95,6 +96,7 @@ html_theme_options = {
 }
 ```
 
+(sidebar:navbar-depth)=
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,
