@@ -1,5 +1,14 @@
 # Changelog
 
+# v0.1.1...v0.1.2 - 2021-08-06
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.1...v0.1.2))
+
+* 🔧 MAINT: Reduce `full-width` from 136% to 134% [#357](https://github.com/executablebooks/sphinx-book-theme/pull/357):
+  This avoid clipping full-width content on certain resolutions
+* 🐛 FIX: Dropdown menus on mobile [#367](https://github.com/executablebooks/sphinx-book-theme/pull/367):
+  Menus are translated left, so that they are not clipped on small screens
+
 # v0.1.0...v0.1.1
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.0...e05def5b9a4fc777f702553a0bcaf7939440dbd3))
