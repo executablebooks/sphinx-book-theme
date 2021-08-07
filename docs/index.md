@@ -1,17 +1,26 @@
 # The Sphinx Book Theme
 
-[![badge-url](https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social)](https://github.com/executablebooks/sphinx-book-theme)
-[![PyPI][pypi-badge]][pypi-link]
+::::{grid}
+:reverse:
+:gutter: 2 1 1 1
+:margin: 4 4 1 1
 
-<br />
+:::{grid-item}
+:columns: 12 4 4 4
 
-**An interactive book theme for Sphinx**.
+```{image} ./_static/logo-square.png
+:width: 120px
+```
+:::
 
-This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
-interactive book. It has the following primary features:
+:::{grid-item}
+:columns: 12 8 8 8
+:class: sd-fs-4
 
-[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-: To style visual elements and add functionality.
+A Sphinx theme with a clean design, support for interactive content, and a modern book-like look and feel.
+:::
+
+::::
 
 [Flexible content layout](layout)
 : Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
@@ -21,6 +30,9 @@ interactive book. It has the following primary features:
 
 [Launch buttons for online interactivity](launch)
 : For pages that are built with computational material, connect your site to an online BinderHub for interactive content.
+
+[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+: To style visual elements and add functionality.
 
 International
 : All text integrated in the theme is translated to the specified [Sphinx language](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
