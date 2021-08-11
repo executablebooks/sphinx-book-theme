@@ -1,4 +1,6 @@
-# The Sphinx Book Theme
+---
+title: The Sphinx Book Theme
+---
 
 ::::{grid}
 :reverse:
@@ -8,14 +10,14 @@
 :::{grid-item}
 :columns: 12 4 4 4
 
-```{image} ./_static/logo-square.png
-:width: 120px
+```{image} ./_static/logo-square.svg
+:width: 150px
 ```
 :::
 
 :::{grid-item}
 :columns: 12 8 8 8
-:class: sd-fs-4
+:class: sd-fs-3
 
 A Sphinx theme with a clean design, support for interactive content, and a modern book-like look and feel.
 :::
@@ -41,7 +43,7 @@ International
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
 :::
 
-## Topic areas
+# Topic areas
 
 The following topic areas will help you understand and use the theme.
 
@@ -55,7 +57,7 @@ content-blocks
 launch
 ```
 
-## Reference pages
+# Reference pages
 
 Reference pages demonstrate the visual look of this theme.
 
@@ -77,7 +79,7 @@ reference/blog
 contributing
 ```
 
-## Acknowledgements
+# Acknowledgements
 
 This theme is heavily inspired by (and dependent on)
 [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
