@@ -24,9 +24,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         {{ super() }}
         {% if theme_show_prev_next %}
-        <div class='prev-next-bottom'>
-            {{ prev_next(prev, next) }}
-        </div>
+            {% include "_templates/prev-next.html" %}
         {% endif %}
         </div>
     </div>

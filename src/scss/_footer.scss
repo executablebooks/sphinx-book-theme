@@ -1,6 +1,10 @@
 /*********************************************
 * Footer *
 *********************************************/
-.prev-next-bottom {
-    height: 3em;
+footer {
+    padding-left: 0;
+
+    > div.container {
+        padding-left: 0;
+    }
 }
