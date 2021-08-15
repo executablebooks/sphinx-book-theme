@@ -24,7 +24,7 @@ A Sphinx theme with a clean design, support for interactive content, and a moder
 
 ::::
 
-[Flexible content layout](layout)
+[Flexible content layout](reference/special-theme-elements.md)
 : Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
 
 [Visual classes designed for Jupyter Notebooks](reference/notebooks)
