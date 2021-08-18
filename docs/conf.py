@@ -6,7 +6,7 @@ copyright = "2020"
 author = "the Executable Book Project"
 
 master_doc = "index"
-language = "fr"
+language = "ar"
 
 # -- General configuration ---------------------------------------------------
 
