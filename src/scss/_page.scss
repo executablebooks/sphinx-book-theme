@@ -41,13 +41,13 @@ main.bd-content {
 
             &:hover {
                 background-color: transparent;
-                color: #0071bc;
+                color: rgba(var(--pst-color-link), 1);;
                 opacity: 1 !important;
             }
         }
 
         a, a:visited {
-            color: #0071bc;
+            color: rgba(var(--pst-color-link), 1);;
         }
 
         h1, h2, h3, h4, h5 {
@@ -68,20 +68,32 @@ main.bd-content {
         }
 
         .prev-next-bottom {
+            overflow: auto;
             font-weight: bold;
             margin-top: 3em;
+            margin-bottom: 1em;
 
             .right-next, .left-prev {
                 padding: 0;
                 border: none;
-                font-size: 1.1em;
-                line-height: 1.4em;
 
-                &::before {
+                p {
+                    margin: 0;
+                    line-height: 1.3em;
+                }
+
+                .prevnext-label, {
                     display: block;
                     color: $non-content-grey;
                 }
 
+                .prevnext-title {
+                    font-size: 1.1em;
+                    color: rgba(var(--pst-color-link), 1);
+                    font-weight: 500;
+                }
+
+                // Remove the PyData default
                 &::after {
                     content: none;
                 }
@@ -89,13 +101,11 @@ main.bd-content {
 
             .right-next {
                 text-align: right;
-                &::before {
-                    content: "NEXT";
-                }
             }
 
+            // Remove the PyData default
             .left-prev::before {
-                content: "PREVIOUS";
+                content: none;
             }
         }
 

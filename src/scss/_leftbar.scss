@@ -43,7 +43,7 @@
             color: $non-content-grey;
         }
         a:hover, li.active > a, li.active > a:hover {
-            color: #0071bc;
+            color: rgba(var(--pst-color-link), 1);;
         }
     }
 

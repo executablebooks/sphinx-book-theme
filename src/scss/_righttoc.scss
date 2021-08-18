@@ -24,11 +24,11 @@
 
         // TOC link color
         a:hover, li.active > a.active {
-            color: #0071bc;
+            color: rgba(var(--pst-color-link), 1);;
         }
 
         li.active > a.active {
-            border-left: 2px solid #0071bc;
+            border-left: 2px solid rgba(var(--pst-color-link), 1);;
         }
 
         >.nav {
