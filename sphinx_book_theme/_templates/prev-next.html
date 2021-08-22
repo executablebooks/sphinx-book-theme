@@ -2,16 +2,16 @@
 {% macro prev_next(prev, next, prev_title='', next_title='') %}
  {%- if prev %}
     <div id="prev">
-        <a class="left-prev" href="{{ prev.link|e }}" title="{{ _('previous page')}}">
-            <p class="prevnext-label">{{ _("Previous") }}</p>
+        <a class="left-prev" href="{{ prev.link|e }}" title="{{ _('previous') }} {{  _('page') }}">
+            <p class="prevnext-label">{{ _("previous") }}</p>
             <p class="prevnext-title">{{ prev_title or prev.title }}</p>
         </a>
     </div>
  {%- endif %}
  {%- if next %}
      <div id="next">
-        <a class="right-next" href="{{ next.link|e }}" title="{{ _('next page')}}">
-            <p class="prevnext-label">{{ _("Next") }}</p>
+        <a class="right-next" href="{{ next.link|e }}" title="{{ _('next') }} {{  _('page') }}">
+            <p class="prevnext-label">{{ _("next") }}</p>
             <p class="prevnext-title">{{ next_title or next.title }}</p>
         </a>
      </div>

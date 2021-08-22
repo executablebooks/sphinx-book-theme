@@ -4,6 +4,7 @@ import os
 project = "Sphinx Book Theme"
 copyright = "2020"
 author = "the Executable Book Project"
+# language = "fr"  # For testing language translations
 
 master_doc = "index"
 language = "ar"
@@ -14,17 +15,17 @@ language = "ar"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "ablog",
     "myst_nb",
-    "sphinx_copybutton",
-    "sphinx_togglebutton",
-    "sphinxcontrib.bibtex",
-    "sphinx_thebe",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "ablog",
-    "sphinxext.opengraph",
+    "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_thebe",
+    "sphinx_togglebutton",
+    "sphinxcontrib.bibtex",
+    "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
