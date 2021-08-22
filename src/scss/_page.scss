@@ -74,7 +74,6 @@ main.bd-content {
             margin-bottom: 1em;
 
             .right-next, .left-prev {
-                padding: 0;
                 border: none;
 
                 p {
@@ -88,7 +87,7 @@ main.bd-content {
                 }
 
                 .prevnext-title {
-                    font-size: 1.1em;
+                    font-size: 1.2em;
                     color: rgba(var(--pst-color-link), 1);
                     font-weight: 500;
                 }
