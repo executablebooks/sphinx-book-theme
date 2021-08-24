@@ -1,5 +1,5 @@
 <!-- Launch buttons -->
-{% if binder_url or jupyterhub_url or colab_url or use_thebe %}
+{% if binder_url or jupyterhub_url or colab_url or deepnote_url or use_thebe %}
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
@@ -23,6 +23,12 @@
                 title="{{ translate('Launch') }} Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="{{ pathto('_static/images/logo_colab.png', 1) }}"
                     alt="Interact on Colab">Colab</button></a>
+        {% endif %}
+        {% if deepnote_url and page_source_suffix==".ipynb" %}
+        <a class="colab-button" href="{{ deepnote_url }}"><button type="button" class="btn btn-secondary topbarbtn"
+                title="{{ translate('Launch') }} Deepnote" data-toggle="tooltip" data-placement="left"><img class="deepnote-button-logo"
+                    src="{{ pathto('_static/images/logo_deepnote.svg', 1) }}"
+                    alt="Interact in Deepnote">Deepnote</button></a>
         {% endif %}
         {% if use_thebe -%}
         <button type="button" class="btn btn-secondary topbarbtn"

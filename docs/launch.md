@@ -67,6 +67,19 @@ html_theme_options = {
     ...
 }
 ```
+## Deepnote
+
+To add [Deepnote](https://deepnote.com) links to your page, add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "deepnote_url": "https://deepnote.com"
+    },
+    ...
+}
+```
 
 ## Live code cells with Thebe
 

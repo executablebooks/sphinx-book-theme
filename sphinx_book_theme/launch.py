@@ -95,6 +95,7 @@ def add_hub_urls(
     jupyterhub_url = launch_buttons.get("jupyterhub_url")
     binderhub_url = launch_buttons.get("binderhub_url")
     colab_url = launch_buttons.get("colab_url")
+    deepnote_url = launch_buttons.get("deepnote_url")
     if binderhub_url:
         url = (
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
@@ -112,6 +113,11 @@ def add_hub_urls(
     if colab_url:
         url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
         context["colab_url"] = url
+
+    if deepnote_url:
+        github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
+        url = f"{deepnote_url}/launch?url=https%3A%2F%2Fgithub.com{github_path}"
+        context["deepnote_url"] = url
 
     # Add thebe flag in context
     if launch_buttons.get("thebe", False):
