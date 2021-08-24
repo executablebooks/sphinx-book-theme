@@ -67,14 +67,20 @@ main.bd-content {
             padding-right: 1em;
         }
 
+        $prevnext-padding: .75rem;
         .prev-next-bottom {
             overflow: auto;
-            font-weight: bold;
             margin-top: 3em;
             margin-bottom: 1em;
 
             .right-next, .left-prev {
                 border: none;
+                display: flex;
+                align-items: center;
+
+                .prevnext-info {
+                    flex-direction: column;
+                }
 
                 p {
                     margin: 0;
@@ -82,12 +88,11 @@ main.bd-content {
                 }
 
                 .prevnext-label, {
-                    display: block;
                     color: $non-content-grey;
                 }
 
                 .prevnext-title {
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                     color: rgba(var(--pst-color-link), 1);
                     font-weight: 500;
                 }
@@ -98,13 +103,27 @@ main.bd-content {
                 }
             }
 
-            .right-next {
-                text-align: right;
+            // Remove the PyData default
+            .left-prev {
+
+                i {
+                    padding-right: $prevnext-padding;
+                }
+
+                &::before {
+                    content: none;
+                }
             }
 
-            // Remove the PyData default
-            .left-prev::before {
-                content: none;
+            // Right styling
+            .right-next {
+                .prevnext-info {
+                    text-align: right;
+                }
+
+                i {
+                    padding-left: $prevnext-padding;
+                }
             }
         }
 

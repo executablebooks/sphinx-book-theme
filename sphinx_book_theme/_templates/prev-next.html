@@ -3,16 +3,22 @@
  {%- if prev %}
     <div id="prev">
         <a class="left-prev" href="{{ prev.link|e }}" title="{{ _('previous') }} {{  _('page') }}">
-            <p class="prevnext-label">{{ _("previous") }}</p>
-            <p class="prevnext-title">{{ prev_title or prev.title }}</p>
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">{{ _("previous") }}</p>
+                <p class="prevnext-title">{{ prev_title or prev.title }}</p>
+            </div>
         </a>
     </div>
  {%- endif %}
  {%- if next %}
      <div id="next">
         <a class="right-next" href="{{ next.link|e }}" title="{{ _('next') }} {{  _('page') }}">
-            <p class="prevnext-label">{{ _("next") }}</p>
-            <p class="prevnext-title">{{ next_title or next.title }}</p>
+            <div class="prevnext-info">
+                <p class="prevnext-label">{{ _("next") }}</p>
+                <p class="prevnext-title">{{ next_title or next.title }}</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
         </a>
      </div>
  {%- endif %}
