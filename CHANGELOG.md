@@ -1,6 +1,6 @@
 # Changelog
 
-# v0.1.2 - 2021-08-25
+# v0.1.3 - 2021-08-25
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.2...9a2da30342ace86978ddbd345eb69f5b4479b31c))
 
