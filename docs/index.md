@@ -8,7 +8,7 @@ title: The Sphinx Book Theme
 :margin: 4 4 1 1
 
 :::{grid-item}
-:columns: 12 4 4 4
+:columns: 4
 
 ```{image} ./_static/logo-square.svg
 :width: 150px
@@ -16,7 +16,7 @@ title: The Sphinx Book Theme
 :::
 
 :::{grid-item}
-:columns: 12 8 8 8
+:columns: 8
 :class: sd-fs-3
 
 A Sphinx theme with a clean design, support for interactive content, and a modern book-like look and feel.
