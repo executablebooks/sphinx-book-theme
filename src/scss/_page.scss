@@ -72,6 +72,7 @@ main.bd-content {
             overflow: auto;
             margin-top: 3em;
             margin-bottom: 1em;
+            padding: 0;
 
             .right-next, .left-prev {
                 border: none;
@@ -627,8 +628,6 @@ div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.t
                 font-size: 1em;
             }
         }
-
-
     }
 
     // Make cell outputs take up more space if they're in the margin
