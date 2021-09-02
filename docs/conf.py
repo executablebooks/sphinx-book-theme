@@ -60,7 +60,7 @@ myst_enable_extensions = [
     # "linkify",
     # "substitution",
 ]
-myst_url_schemes = ("http", "https", "mailto")
+myst_url_schemes = ["http", "https", "mailto"]
 
 # -- Options for HTML output -------------------------------------------------
 
