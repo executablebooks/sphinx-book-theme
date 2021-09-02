@@ -29,7 +29,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "beautifulsoup4>=4.6.1,<5",
-        "click",
+        "click~=7.1",
         "docutils>=0.15",
         'importlib-resources>=3.0,<3.5; python_version < "3.7"',
         "pydata-sphinx-theme~=0.6.0",
@@ -44,7 +44,7 @@ setup(
             "folium",
             "numpy",
             "matplotlib",
-            "myst-nb~=0.11.1",
+            "myst-nb~=0.13",
             "nbclient",
             "pandas",
             "plotly",
@@ -58,7 +58,7 @@ setup(
         ],
         "testing": [
             "coverage",
-            "myst_nb~=0.11.1",
+            "myst_nb~=0.13",
             "pytest~=6.0.1",
             "pytest-cov",
             "pytest-regressions~=2.0.1",
