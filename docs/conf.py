@@ -4,6 +4,7 @@ import os
 project = "Sphinx Book Theme"
 copyright = "2020"
 author = "the Executable Book Project"
+# language = "fr"  # For testing language translations
 
 master_doc = "index"
 
@@ -13,15 +14,16 @@ master_doc = "index"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "ablog",
     "myst_nb",
-    "sphinx_copybutton",
-    "sphinx_togglebutton",
-    "sphinxcontrib.bibtex",
-    "sphinx_thebe",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "ablog",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_thebe",
+    "sphinx_togglebutton",
+    "sphinxcontrib.bibtex",
     "sphinxext.opengraph",
 ]
 
@@ -66,11 +68,11 @@ myst_url_schemes = ("http", "https", "mailto")
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "_static/logo-wide.png"
+html_logo = "_static/logo-wide.svg"
 html_title = "Sphinx Book Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
-html_favicon = "_static/logo-square.png"
+html_favicon = "_static/logo-square.svg"
 html_last_updated_fmt = ""
 
 html_sidebars = {

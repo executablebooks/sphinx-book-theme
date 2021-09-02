@@ -18,7 +18,7 @@ from sphinx.util import logging
 from .launch import add_hub_urls
 from . import static as theme_static
 
-__version__ = "0.1.1"
+__version__ = "0.1.3"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
