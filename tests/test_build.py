@@ -92,7 +92,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     file_regression.check(
         sidebar.prettify(),
         extension=f"{sphinx_build.software_versions}.html",
-        encoding="utf8"
+        encoding="utf8",
     )
 
     # Edit button should not be on page
