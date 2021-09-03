@@ -10,7 +10,11 @@ kernelspec:
   name: python3
 ---
 
-# Test thebe
+# Thebe
+
+Thebe uses CodeMirror in the background, which uses different styles than pygments, which is used for static code syntax highlighting.
+
+Static code:
 
 ```
 import tempfile
@@ -31,6 +35,8 @@ def test_upper():
     os.unlink(in_file.name)
     os.unlink(out_file.name)
 ```
+
+Runnable thebe code:
 
 ```{code-cell}
 import tempfile
@@ -51,24 +57,6 @@ def test_upper():
     os.unlink(in_file.name)
     os.unlink(out_file.name)
 ```
-
-## From pygments.css
-
-```
-# From http://toolness.github.io/brocco/
-  var codeMirrorStyleMap = {
-    "cm-keyword": "k",
-    "cm-atom": "kc",
-    "cm-number": "m",
-    "cm-comment": "c",
-    "cm-string": "s2",
-    "cm-string-2": "s2",
-    "cm-tag": "nt",
-    "cm-attribute": "na"
-  };
-
-```
-
 
 <script language="javascript">
     window.addEventListener('load', () => {
