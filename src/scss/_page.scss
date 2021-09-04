@@ -686,15 +686,15 @@ div.cell div.highlight {
 // Thebelab over-rides
 .thebelab-cell {
     border: none !important;
-    margin-right: .5em;
+    margin-right: .5em !important;
 }
 
 .thebelab-cell .thebelab-input {
-    padding-left: 10px;
+    padding-left: 10px !important;
 }
 
-.cell_input .docutils .container {
-    padding-right: 0px;
+.cell.docutils.container {
+    padding-right: 0px !important;
 }
 
 button.thebe-launch-button {
@@ -716,7 +716,7 @@ div.tableofcontents-wrapper p.caption {
 }
 
 .CodeMirror-focused {
-    background-color: var(--jp-cell-editor-active-background);
+    background-color: var(--jp-cell-editor-active-background) !important;
     border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
     margin: -1px;
 }
