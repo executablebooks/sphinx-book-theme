@@ -1,64 +1,24 @@
 /* comment indicates equivalent pygments category */
-/* k */
-.cm-s-default .cm-keyword {
-    color: #204a87;
-    font-weight: bold;
-}
-
-/* kc */
-.cm-s-default .cm-atom {
-    color: #204a87;
-}
-
-/* m */
-.cm-s-default .cm-number {
-    color: #0000cf;
-    font-weight: bold;
-}
-
-/* c */
-.cm-s-default .cm-comment {
-    color: #8f5902;
-    font-style: italic;
-}
-
-/* s2 */
-.cm-s-default .cm-string {
-    color: #4e9a06;
-}
-
-/* s2 */
-.cm-s-default .cm-string-2 {
-    color: #4e9a06;
-}
-
-/* nt*/
-.cm-s-default .cm-tag {
-    color: #204a87;
-    font-weight: bold;
-}
-
-/* na */
-.cm-s-default .cm-attribute {
-    color: #c4a000;
-}
-
-/* nf */
-.cm-s-default .cm-def {
-    color: #000000;
-}
-
-/* nb */
-.cm-s-default .cm-builtin {
-    color: #204a87;
-}
-
 .cm-s-default {
     font-family: var(--jp-code-font-family);
     font-size: var(--jp-code-font-size);
     line-height: var(--jp-code-line-height);
 }
 
+.CodeMirror-focused {
+    background-color: var(--jp-cell-editor-active-background);
+    border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+    margin: -1px;
+}
+
 .thebelab-cell .thebelab-input {
     padding-left: 10px;
+}
+
+.thebelab-cell {
+    margin-right: .5em;
+}
+
+.cell_input .docutils .container {
+    padding-right: 0px;
 }
