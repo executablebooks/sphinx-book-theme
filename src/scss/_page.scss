@@ -686,6 +686,15 @@ div.cell div.highlight {
 // Thebelab over-rides
 .thebelab-cell {
     border: none !important;
+    margin-right: .5em !important;
+}
+
+.thebelab-cell .thebelab-input {
+    padding-left: 10px !important;
+}
+
+.cell.docutils.container {
+    padding-right: 0px !important;
 }
 
 button.thebe-launch-button {
@@ -697,4 +706,17 @@ button.thebe-launch-button {
 div.tableofcontents-wrapper p.caption {
     font-weight: 600 !important;
     margin-bottom: 0em !important;
+}
+
+// CodeMirror styles for live thebe cells.
+.cm-s-default {
+    font-family: var(--jp-code-font-family);
+    font-size: var(--jp-code-font-size);
+    line-height: var(--jp-code-line-height);
+}
+
+.CodeMirror-focused {
+    background-color: var(--jp-cell-editor-active-background) !important;
+    border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+    margin: -1px;
 }
