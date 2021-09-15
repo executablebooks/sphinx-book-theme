@@ -5,6 +5,7 @@ from subprocess import check_call
 
 from bs4 import BeautifulSoup
 import pytest
+import sphinx
 from sphinx.errors import ThemeError
 from sphinx.testing.util import SphinxTestApp
 from sphinx.testing.path import path as sphinx_path
@@ -17,6 +18,9 @@ class SphinxBuild:
     def __init__(self, app: SphinxTestApp, src: Path):
         self.app = app
         self.src = src
+        self.software_versions = (
+            f".sphinx{sphinx.version_info[0]}"  # software version tracking for fixtures
+        )
 
     def build(self, assert_pass=True):
         self.app.build()
@@ -85,7 +89,11 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Check a few components that should be true on each page
     index_html = sphinx_build.html_tree("index.html")
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
-    file_regression.check(sidebar.prettify(), extension=".html", encoding="utf8")
+    file_regression.check(
+        sidebar.prettify(),
+        extension=f"{sphinx_build.software_versions}.html",
+        encoding="utf8",
+    )
 
     # Edit button should not be on page
     assert '<a class="edit-button"' not in str(index_html)
@@ -106,7 +114,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         file_regression.check(
             page_toc.prettify(),
             basename=page.with_suffix("").name,
-            extension=".html",
+            extension=f"{sphinx_build.software_versions}.html",
             encoding="utf8",
         )
 

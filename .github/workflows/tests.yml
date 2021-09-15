@@ -22,9 +22,14 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.6, 3.7, 3.8]
+        sphinx: [">=3,<4", ">=4,<5"]
         include:
         - os: windows-latest
           python-version: 3.7
+          sphinx: ">=3,<4"
+        - os: macos-latest
+          python-version: 3.9
+          sphinx: ">=4,<5"
     runs-on: ${{ matrix.os }}
 
     steps:
