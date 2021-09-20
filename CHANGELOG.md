@@ -1,21 +1,31 @@
 # Changelog
 
-# v0.1.3 - 2021-08-25
+## v0.1.4 - 2021-09-16
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.3...28358bbc0dc2f1e6e9fff0ac64321685c9edfc00))
+
+### Enhancements made
+
+- ⬆️ UPGRADE: Sphinx v4.0.0 [#364](https://github.com/executablebooks/sphinx-book-theme/pull/364) ([@choldgraf](https://github.com/choldgraf))
+- ✨ IMPROVE: Harmonize themes between static and live code [#393](https://github.com/executablebooks/sphinx-book-theme/pull/393) ([@patrickmineault](https://github.com/patrickmineault))
+- ✨ IMPROVE: Minor tweaks to footer css [#389](https://github.com/executablebooks/sphinx-book-theme/pull/389) ([@choldgraf](https://github.com/choldgraf))
+
+## v0.1.3 - 2021-08-25
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.2...9a2da30342ace86978ddbd345eb69f5b4479b31c))
 
-## Enhancements made
+### Enhancements made
 
 - ✨ IMPROVE: Add chevrons to prev/next [#386](https://github.com/executablebooks/sphinx-book-theme/pull/386) ([@choldgraf](https://github.com/choldgraf))
 - ✨ IMPROVE: Improving accessibility labeling [#375](https://github.com/executablebooks/sphinx-book-theme/pull/375) ([@choldgraf](https://github.com/choldgraf))
 - ✨ IMPROVE: improve math styling [#369](https://github.com/executablebooks/sphinx-book-theme/pull/369) ([@akhmerov](https://github.com/akhmerov))
 
-## Bugs fixed
+### Bugs fixed
 
 - 🐛 FIX: Fix translation for prev/next [#384](https://github.com/executablebooks/sphinx-book-theme/pull/384) ([@choldgraf](https://github.com/choldgraf))
 
 
-# v0.1.1...v0.1.2 - 2021-08-06
+## v0.1.1...v0.1.2 - 2021-08-06
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.1...v0.1.2))
 
@@ -24,21 +34,21 @@
 * 🐛 FIX: Dropdown menus on mobile [#367](https://github.com/executablebooks/sphinx-book-theme/pull/367):
   Menus are translated left, so that they are not clipped on small screens
 
-# v0.1.0...v0.1.1
+## v0.1.0...v0.1.1
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.0...e05def5b9a4fc777f702553a0bcaf7939440dbd3))
 
-## New features added
+### New features added
 
 * Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
 
-## Enhancements made
+### Enhancements made
 
 * Add css to highlight searched for phrases [#350](https://github.com/executablebooks/sphinx-book-theme/pull/350) ([@sanjayankur31](https://github.com/sanjayankur31))
 * Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
 * Soften edges in admonitions and remove some ink [#352](https://github.com/executablebooks/sphinx-book-theme/pull/352) ([@choldgraf](https://github.com/choldgraf))
 
-## Bugs fixed
+### Bugs fixed
 
 * 🐛 FIX: Path to custom output directory for _sources [#346](https://github.com/executablebooks/sphinx-book-theme/pull/346) ([@dfm](https://github.com/dfm))
 * 🐛 FIX: Fixing sidebar animation [#333](https://github.com/executablebooks/sphinx-book-theme/pull/333) ([@choldgraf](https://github.com/choldgraf))
