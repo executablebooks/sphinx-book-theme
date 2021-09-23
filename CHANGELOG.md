@@ -4,7 +4,7 @@
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.4...c85925c0109a1038994947acb951d1d918a819f8))
 
-## Enhancements made
+### Enhancements made
 
 - Move CSS hash to GET parameter so downstream themes can bust CSS properly [#397](https://github.com/executablebooks/sphinx-book-theme/pull/397) ([@jacobtomlinson](https://github.com/jacobtomlinson))
 
