@@ -3,7 +3,7 @@
 inherit = pydata_sphinx_theme
 pygments_style = tango
 sidebars = sidebar-logo.html, search-field.html, sbt-sidebar-nav.html, sbt-sidebar-footer.html
-stylesheet = {{ "src/scss/sphinx-book-theme.scss" | compiled_name }}
+stylesheet = {{ "src/scss/sphinx-book-theme.scss" | compiled_name }}?digest={{ "src/scss/sphinx-book-theme.scss" | hash }}
 
 [options]
 single_page = False
