@@ -14,7 +14,7 @@ execution:
   timeout: -1
 ---
 
-# Special theme elements
+# Theme-specific elements
 
 This page contains a number of reference elements to see how they look in this
 theme. The information is not meant to be easy to read or understand, just browse
@@ -30,39 +30,10 @@ Here's a sample post list:
 :excerpts:
 ```
 
-## Glossary
-
-```{glossary}
-term one
-  An indented explanation of term 1
-
-A second term
-  An indented explanation of term2
-```
-
-To reference terms in your glossary, use the `{term}` role. For example,
-`` {term}`term one` `` becomes {term}`term one`. And `` {term}`A second term` ``
-becomes {term}`A second term`.
-
-## Interactive code
-
-```{code-cell} ipython3
-import plotly.io as pio
-import plotly.express as px
-import plotly.offline as py
-
-pio.renderers.default = "notebook"
-
-df = px.data.iris()
-fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", size="sepal_length")
-fig
-```
-
 +++
 
-## Hiding elements
-
-### Hiding inputs
+## Full-width elements
+### Code cells
 
 ```{code-cell} ipython3
 :tags: [remove_cell]
@@ -74,86 +45,6 @@ import matplotlib.pyplot as plt
 square = np.random.randn(100, 100)
 wide = np.random.randn(100, 1000)
 ```
-
-```{code-cell} ipython3
-:tags: [hide_input]
-
-# Hide input
-square = np.random.randn(100, 100)
-wide = np.random.randn(100, 1000)
-
-fig, ax = plt.subplots()
-ax.imshow(square)
-
-fig, ax = plt.subplots()
-ax.imshow(wide)
-```
-
-### Hiding outputs
-
-```{code-cell} ipython3
-:tags: [hide_output]
-
-# Hide input
-square = np.random.randn(100, 100)
-wide = np.random.randn(100, 1000)
-
-fig, ax = plt.subplots()
-ax.imshow(square)
-
-fig, ax = plt.subplots()
-ax.imshow(wide)
-```
-
-### Hiding markdown
-
-````{toggle}
-```{note}
-This is a hidden markdown cell
-
-It should be hidden!
-```
-````
-
-```{admonition} And here's a toggleable note
-:class: dropdown
-With a body!
-```
-
-+++
-
-### Hiding both inputs and outputs
-
-```{code-cell} ipython3
-:tags: [hide_output, hide_input]
-
-square = np.random.randn(100, 100)
-wide = np.random.randn(100, 1000)
-
-fig, ax = plt.subplots()
-ax.imshow(square)
-
-fig, ax = plt.subplots()
-ax.imshow(wide)
-```
-
-### Hiding the whole cell
-
-```{code-cell} ipython3
-:tags: [hide_cell]
-
-square = np.random.randn(100, 100)
-wide = np.random.randn(100, 1000)
-
-fig, ax = plt.subplots()
-ax.imshow(square)
-
-fig, ax = plt.subplots()
-ax.imshow(wide)
-```
-
-## Full-width elements
-### Full width code cells
 
 ```{code-cell} ipython3
 :tags: [full_width]
@@ -177,9 +68,9 @@ fig, ax = plt.subplots()
 ax.imshow(wide)
 ```
 
-+++ {"tags": ["full_width"]}
+### Markdown
 
-### Full-width markdown
++++ {"tags": ["full_width"]}
 
 This is some markdown that should be shown at full width.
 
@@ -187,7 +78,7 @@ Here's the Jupyter logo:
 
 ![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png)
 
-+++
++++ {"tags": ["full_width"]}
 
 ### Mathematics
 
@@ -250,7 +141,7 @@ Full width equations work
 
 +++
 
-### Margins
+## Margins
 
 +++
 
@@ -271,7 +162,7 @@ Wow, a note with an image in a margin!
 ```
 ````
 
-#### Margin under lower level shouldn't have different left-alignment
+### Margin under lower level shouldn't have different left-alignment
 
 ````{margin} **Notes in margins**
 ```{note}
@@ -280,7 +171,7 @@ Wow, a note with an image in a margin!
 ```
 ````
 
-### Toggle buttons
+### Margins with toggle buttons
 
 Here's some margin content, let's see how it interacts w/ the toggle button
 
@@ -295,7 +186,7 @@ Here's a toggleable note:
 My note
 ```
 
-### Full-width content
+### Margins with full-width content
 
 ```{note}
 :class: tag_fullwidth

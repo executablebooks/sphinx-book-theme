@@ -54,6 +54,7 @@ The following topic areas will help you understand and use the theme.
 tutorials/get-started
 customize/index
 content-blocks
+notebooks
 launch
 ```
 
@@ -66,8 +67,9 @@ Reference pages demonstrate the visual look of this theme.
 :maxdepth: 2
 
 reference/special-theme-elements
-reference/notebooks
 reference/kitchen-sink/index
+reference/notebooks
+reference/thebe
 reference/blog
 ```
 

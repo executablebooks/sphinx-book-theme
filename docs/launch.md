@@ -1,5 +1,5 @@
 (customize:launch)=
-# Add launch buttons for interactivity
+# Launch buttons for interactivity
 
 You can automatically add buttons that allow users to interact with your
 book's content. This is either by directing them to a BinderHub or JupyterHub
