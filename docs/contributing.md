@@ -9,6 +9,37 @@ It contains information about our conventions around coding style, pull request 
 This page contains information to help you get started with development on this
 project.
 
+## Repository structure
+
+This repository is a split into a few critical folders:
+
+`sphinx-book-theme/`
+: The Sphinx extension package, containing the Python code, Jinja templates and (compiled) assets (HTML/CSS/JS etc).
+: These are used to generate the HTML page for every file in your site whenever the site is built using Sphinx.
+: **NOTE**: Do not alter the compiled CSS/JS directly (alter in `src/`).
+
+`src/`
+: Contains the source SCSS and JS, which will be compiled and written to `sphinx-book-theme/static`, as configured by `web-compile-config.yml` (see [executablebooks/web-compile](https://github.com/executablebooks/web-compile) for details).
+: This compilation is called by default, during development commands (see below).
+
+`docs/`
+: The documentation for the theme, which aims to include all of the core Sphinx "components" (lists, admonitions, etc), to check/show how they are represented in this theme.
+: The build configuration is contained in `conf.py`.
+
+`docs/reference`
+: The reference section of the documentation contains reference material for the look and feel of the theme.
+  The "kitchen sink" is pulled directly [from the `sphinx-themes` website](https://github.com/sphinx-themes/sphinx-themes.org/tree/master/sample-docs/kitchen-sink).
+  There are also other sections for theme-specific elements.
+
+`tests/`
+: Testing infrastructure that uses `pytest` along with `beautifulsoup` to validate
+  that the generated HTML is what we expect it to be.
+: Much of these tests also use `pytest-regressions`, to check whether newly-generated HTML differs from previously-generated HTML.
+
+`.github/workflows/`
+: Contains Continuous-integration (CI) workflows, run on commits/PRs to the GitHub repository.
+
+
 ## Set up your development environment
 
 1. Get the source code of this project using git:
@@ -58,22 +89,32 @@ project.
    :::
 
 
-### Preview changes you make to the theme
+## Preview changes you make to the theme
 
-If you're making changes to your local copy of this theme, you can get feedback on the rendered documentation output using `tox` jobs.
-These will preview this theme's documentation using the latest changes you've made.
+The easiest way to preview the changes you make to this theme is by building the documentation of this theme locally using `tox`.
 
-To build the documentation, run these commands:
+To do so, follow these steps:
 
-```console
-$ tox -e docs-clean
-$ tox -e docs-update
-```
+1. **Make your changes in `src/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
+2. **Install `tox`**.
 
-This will generate the HTML documentation and compile the relevant stylesheets.
-The generated documentation which can be viewed in `docs/_build/`.
+   ```console
+   $ pip install tox
+   ```
+3. **Build the documentation**. You can use the following `tox` command:
 
-Alternatively, you can have the documentation built "live", as you modify files:
+   ```console
+   $ tox -e docs-update
+   ```
+
+This will build the documentation using the latest version of the theme (including any changes you've made to the `src/` folder) and put the outputs in `docs/_build/html`.
+You may then preview them by opening one of the HTML files.
+
+### Auto-build the docs when you make changes
+
+You can also use a live server to watch the theme's folders, and automatically build/update the local documentation so that you can quickly preview changes.
+This uses the `sphinx-autobuild` package.
+To do so, use this `tox` command:
 
 ```console
 $ tox -e docs-live
@@ -86,20 +127,19 @@ This will do the following:
 - Open it in your default browser
 - Watch for changes and automagically regenerate the documentation and auto-reload your browser when a change is made.
 
-With this, you can modify the theme in an editor, and (after a small delay) see
-how those modifications render on the browser.
+With this, you can modify the theme in an editor, and see how those modifications render on the browser.
 
-:::{admonition} To use different Sphinx builders
+### Use different Sphinx builders
 
-You can tell Sphinx to build the documentation with different builders like so:
+When building documentation locally, you may use different Sphinx builders by providing them as arguments to `tox`.
+For example:
 
 ```console
 $ tox -e docs-update -- singlehtml
 $ tox -e docs-live -- singlehtml
 ```
-:::
 
-### Running Tests
+## Run Tests
 
 This theme has a test suite to ensure that all the relevant user content is
 correctly handled. The tests can be run using:
@@ -122,28 +162,3 @@ $ tox -r -e py38-sphinx2
 ```
 
 :::
-
-## Repository structure
-
-This repository is a split into a few critical folders:
-
-sphinx-book-theme/
-: The Sphinx extension package, containing the Python code, Jinja templates and (compiled) assets (HTML/CSS/JS etc).
-: These are used to generate the HTML page for every file in your site whenever the site is built using Sphinx.
-: **NOTE**: Do not alter the compiled CSS/JS directly (alter in `src/`).
-
-src/
-: Contains the source SCSS and JS, which will be compiled and written to `sphinx-book-theme/static`, as configured by `web-compile-config.yml` (see [executablebooks/web-compile](https://github.com/executablebooks/web-compile) for details).
-: This compilation is called by default, during development commands (see above).
-
-docs/
-: The documentation for the theme, which aims to include all of the core Sphinx "components" (lists, admonitions, etc), to check/show how they are represented in this theme.
-: The build configuration is contained in `conf.py`.
-
-tests/
-: Testing infrastructure that uses `pytest` along with `beautifulsoup` to validate
-  that the generated HTML is what we expect it to be.
-: Much of these tests also use `pytest-regressions`, to check whether newly-generated HTML differs from previously-generated HTML.
-
-.github/workflows/
-: Contains Continuous-integration (CI) workflows, run on commits/PRs to the GitHub repository.

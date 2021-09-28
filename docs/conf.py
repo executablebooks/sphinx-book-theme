@@ -1,5 +1,7 @@
 # -- Project information -----------------------------------------------------
 import os
+from pathlib import Path
+from urllib import request
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -133,3 +135,24 @@ post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
 bibtex_reference_style = "author_year"
+
+# -- Download kitchen sink reference docs -------------------------------------
+# These are the kitchen sink files used by the Sphinx Themes gallery at
+# https://github.com/sphinx-themes/sphinx-themes.org
+# To re-download, delete the `references/kitchen-sink` folder and build the docs
+kitchen_sink_files = [
+    "api.rst",
+    "index.rst",
+    "lists-and-tables.rst",
+    "paragraph-markup.rst",
+]
+for ifile in kitchen_sink_files:
+    path_file = Path(f"reference/kitchen-sink/{ifile}")
+    path_file.parent.mkdir(exist_ok=True)
+    if not path_file.exists():
+        print(f"Downloading kitchen sink file {ifile}")
+        resp = request.urlopen(
+            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa
+        )
+        header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
+        path_file.write_text(header + resp.read().decode())
