@@ -33,6 +33,7 @@ See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/maste
 
 By default, this theme comes with these three theme-specific sidebar elements enabled on all pages:
 
+- `sidebar-logo.html`: Displays the logo and site title.
 - `search-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
 - `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
 - `sbt-sidebar-footer`: A [configurable](custom-footer) snippet of HTML to add to the sidebar (by default it is placed at the bottom).
