@@ -123,6 +123,7 @@ html_theme_options = {
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
+    # "navigation_depth": 1,  # This is a pydata config value
 }
 
 # -- ABlog config -------------------------------------------------

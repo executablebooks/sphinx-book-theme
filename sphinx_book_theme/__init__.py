@@ -76,30 +76,28 @@ def update_all(app, env):
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
-
-    # TODO: remove this whenever the nav collapsing functionality is in the PST
     def sbt_generate_nav_html(
-        level=1,
-        include_item_names=False,
         with_home_page=False,
-        prev_section_numbers=None,
         show_depth=1,
+        maxdepth=None,
     ):
+        """
+        with_home_page: include the home page as the top link in the toc
+        show_depth: how many layers of the TOC should be shown by default
+        maxdepth: how mnay layers of the TOC should be included in the toctree at all
+        """
         # Config stuff
         config = app.env.config
-        if isinstance(with_home_page, str):
-            with_home_page = with_home_page.lower() == "true"
 
         # Convert the pydata toctree html to beautifulsoup
         toctree = context["generate_nav_html"](
-            startdepth=level - 1,
+            startdepth=0,
             kind="sidebar",
-            maxdepth=4,
+            maxdepth=maxdepth,
             collapse=False,
             includehidden=True,
             titles_only=True,
         )
-        toctree = bs(toctree, "html.parser")
 
         # Add the master_doc page as the first item if specified
         if with_home_page:
@@ -115,18 +113,17 @@ def add_to_context(app, pagename, templatename, context, doctree):
             if context["pagename"] == master_doc:
                 li_class += " current"
             # Insert it into our toctree
-            ul_home = bs(
-                f"""
+            title_element = f"""
             <ul class="nav bd-sidenav">
                 <li class="{li_class}">
                     <a href="{master_url}" class="reference internal">{master_title}</a>
                 </li>
-            </ul>""",
-                "html.parser",
-            )
-            toctree.insert(0, ul_home("ul")[0])
+            </ul>
+            """
+            toctree = f"{title_element}\n{toctree}"
 
         # Open the navbar to the proper depth
+        toctree = bs(toctree, "html.parser")
         for ii in range(int(show_depth)):
             for checkbox in toctree.select(
                 f"li.toctree-l{ii} > input.toctree-checkbox"

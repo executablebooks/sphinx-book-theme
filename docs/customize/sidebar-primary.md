@@ -98,10 +98,19 @@ html_theme_options = {
 ```
 
 (sidebar:navbar-depth)=
-## Control the depth of the left sidebar lists to expand
+## Depth of the navigation sidebar links
 
-You can control the level of toc items in the left sidebar to remain expanded,
-using the following configuration in `conf.py`:
+By default, the theme's sidebar will:
+
+- Contain links to *all* pages in your navigation
+- Collapse all nested links under their parent, except for the active page.
+
+You can modify the behavior of both of these options.
+
+### Change how many navigation levels are shown
+
+By default only the top-most navigation links are shown, except for those underneath the currently-active page.
+If you'd like nested links to be shown, you can control the level of toc items in the left sidebar to remain expanded using the following configuration in `conf.py`:
 
 ```python
 html_theme_options = {
@@ -112,3 +121,21 @@ html_theme_options = {
 ```
 
 The default value is `1`, which shows only top-level sections of the documentation (and is used in this documentation).
+
+### Change how many navigation levels are included in the sidebar
+
+Sometimes you don't want levels of your navigation included *at all*.
+This is most-useful if you have lots of nested levels (e.g., for generated API documentation) that can slow down build times considerably.
+
+To **remove** some levels from your navigation, use the following configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "navigation_depth": <level>,
+    ...
+}
+```
+
+This will not include those levels in the navigation at all, unless users click on the
+If your documentation site is really large, or really slow to build, try experimenting with this to see if it speeds things up.
