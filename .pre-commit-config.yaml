@@ -17,7 +17,7 @@ repos:
     - id: trailing-whitespace
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 3.9.2
+    rev: 4.0.1
     hooks:
     - id: flake8
 
@@ -27,7 +27,7 @@ repos:
     - id: black
 
   - repo: https://github.com/mgedmin/check-manifest
-    rev: "0.46"
+    rev: "0.47"
     hooks:
     - id: check-manifest
 
