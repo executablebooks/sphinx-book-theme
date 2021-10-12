@@ -16,12 +16,27 @@ $leftbar-width: 275px;
 // Consistent styling for page elements
 $box-border-radius: 0.4em;
 
-// Overrides for pydata sphinx theme. Will take effect when the next version is released
+// Overrides for pydata sphinx theme.
+// See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
 :root {
-    --pst-color-primary: 0, 123, 255;
+    // Over-ride the pydata theme so that readers can use their system base
+    --pst-font-size-base: none;
+
+    // Pulling colors from the Binder logo since they are complementary and on-brand
+    --pst-color-primary: 87, 154, 202;
+    --pst-color-admonition-note: var(--pst-color-primary);
+    --pst-color-admonition-default: var(--pst-color-primary);
+
     --pst-color-info: 255, 193, 7;
-    --pst-color-warning: 253, 126, 20;
-    --pst-color-danger: 220, 53, 69;
+    --pst-color-admonition-tip: var(--pst-color-info);
+    --pst-color-admonition-hint: var(--pst-color-info);
+    --pst-color-admonition-important: var(--pst-color-info);
+
+    --pst-color-warning: 245, 162, 82;
+
+    --pst-color-danger: 230, 101, 129;
+    --pst-color-admonition-warning: var(--pst-color-danger);
+
     --pst-color-link: 0, 113, 188;
 }
 
