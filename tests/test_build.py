@@ -1,10 +1,11 @@
 import os
 from pathlib import Path
-from shutil import copytree
+from shutil import copytree, rmtree
 from subprocess import check_call
 
 from bs4 import BeautifulSoup
 import pytest
+import sphinx
 from sphinx.errors import ThemeError
 from sphinx.testing.util import SphinxTestApp
 from sphinx.testing.path import path as sphinx_path
@@ -17,6 +18,9 @@ class SphinxBuild:
     def __init__(self, app: SphinxTestApp, src: Path):
         self.app = app
         self.src = src
+        self.software_versions = (
+            f".sphinx{sphinx.version_info[0]}"  # software version tracking for fixtures
+        )
 
     def build(self, assert_pass=True):
         self.app.build()
@@ -85,13 +89,12 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Check a few components that should be true on each page
     index_html = sphinx_build.html_tree("index.html")
     sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
-    file_regression.check(sidebar.prettify(), extension=".html", encoding="utf8")
-
-    # Opengraph should not be in the HTML because we have no baseurl specified
-    assert (
-        '<meta property="og:url"         content="https://blah.com/foo/section1/ntbk.html" />'  # noqa E501
-        not in str(index_html)
+    file_regression.check(
+        sidebar.prettify(),
+        extension=f"{sphinx_build.software_versions}.html",
+        encoding="utf8",
     )
+
     # Edit button should not be on page
     assert '<a class="edit-button"' not in str(index_html)
     # Title should be just text, no HTML
@@ -103,15 +106,6 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Pages and sub-pages should be numbered
     assert "1. Page 1" in str(sidebar_ntbk)
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
-    # Check opengraph metadata
-    html_escaped = sphinx_build.html_tree("page1.html")
-    escaped_description = html_escaped.find("meta", property="og:description")
-    file_regression.check(
-        escaped_description.prettify(),
-        basename="escaped_description",
-        extension=".html",
-        encoding="utf8",
-    )
 
     # Test that the TOCtree is rendered properly across different title arrangements
     for page in sphinx_build.outdir.joinpath("titles").rglob("**/page-*"):
@@ -120,16 +114,9 @@ def test_build_book(sphinx_build_factory, file_regression):
         file_regression.check(
             page_toc.prettify(),
             basename=page.with_suffix("").name,
-            extension=".html",
+            extension=f"{sphinx_build.software_versions}.html",
             encoding="utf8",
         )
-
-    # navbar lists should be uncollapsed till two levels
-    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        attrs={"class": "bd-sidebar"}
-    )[0]
-    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 2
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
@@ -173,29 +160,6 @@ def test_navbar_options(sphinx_build_factory, option, value):
         assert_pass=True
     )  # type: SphinxBuild
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
-
-
-def test_header_info(sphinx_build_factory):
-    confoverrides = {
-        "html_baseurl": "https://blah.com/foo/",
-        "html_logo": os.path.abspath(
-            path_tests.parent.joinpath("docs", "_static", "logo.png")
-        ),
-    }
-    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
-        assert_pass=True
-    )
-
-    # opengraph is generated when baseurl is given
-    header = sphinx_build.html_tree("section1", "ntbk.html").find("head")
-    assert (
-        '<meta content="https://blah.com/foo/section1/ntbk.html" property="og:url"/>'
-        in str(header)
-    )
-    assert (
-        '<meta content="https://blah.com/foo/_static/logo.png" property="og:image"/>'
-        in str(header)
-    )
 
 
 def test_topbar_edit_buttons_on(sphinx_build_factory, file_regression):
@@ -277,15 +241,17 @@ def test_show_navbar_depth(sphinx_build_factory):
     """Test with different levels of show_navbar_depth."""
     sphinx_build = sphinx_build_factory(
         "base",
-        confoverrides={"html_theme_options.show_navbar_depth": 0},
+        confoverrides={"html_theme_options.show_navbar_depth": 2},
     ).build(
         assert_pass=True
     )  # type: SphinxBuild
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         attrs={"class": "bd-sidebar"}
     )[0]
-    collapsed_uls = sidebar.findAll("ul", {"class": "collapse-ul"})
-    assert len(collapsed_uls) == 3
+    for checkbox in sidebar.select("li.toctree-l1 > input"):
+        assert "checked" in checkbox.attrs
+    for checkbox in sidebar.select("li.toctree-l2 > input"):
+        assert "checked" not in checkbox.attrs
 
 
 def test_topbar_download_button_off(sphinx_build_factory, file_regression):
@@ -300,3 +266,56 @@ def test_topbar_download_button_off(sphinx_build_factory, file_regression):
         "div", attrs={"class": "topbar-main"}
     )[0]
     file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
+
+
+def test_topbar_fullscreen_button_off(sphinx_build_factory, file_regression):
+    confoverrides = {
+        "html_theme_options.use_fullscreen_button": False,
+    }
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    fullscreen_buttons = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".full-screen-button"
+    )
+    assert len(fullscreen_buttons) == 0
+
+
+def test_right_sidebar_title(sphinx_build_factory, file_regression):
+    confoverrides = {"html_theme_options.toc_title": "My Contents"}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    sidebar_title = sphinx_build.html_tree("page1.html").find_all(
+        "div", attrs={"class": "tocsection"}
+    )[0]
+
+    file_regression.check(sidebar_title.prettify(), extension=".html", encoding="utf8")
+
+    # Testing the exception for empty title
+    rmtree(str(sphinx_build.src))
+
+    confoverrides = {"html_theme_options.toc_title": ""}
+
+
+def test_logo_only(sphinx_build_factory):
+    confoverrides = {"html_theme_options.logo_only": True}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    logo_text = sphinx_build.html_tree("page1.html").find_all(
+        "h1", attrs={"id": "site-title"}
+    )
+    assert not logo_text
+
+
+def test_copy_rendered_notebooks():
+    target = Path("build/outdir/_sources/section1/ntbkmd.ipynb")
+    if target.exists():
+        target.unlink()
+    # Switch to sphinx_build_factory if we figure out how to use outdir w/ it
+    check_call("sphinx-build -W -b dirhtml tests/sites/base build/outdir", shell=True)
+    assert target.exists()

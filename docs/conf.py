@@ -1,9 +1,12 @@
 # -- Project information -----------------------------------------------------
 import os
+from pathlib import Path
+from urllib import request
 
 project = "Sphinx Book Theme"
 copyright = "2020"
 author = "the Executable Book Project"
+# language = "fr"  # For testing language translations
 
 master_doc = "index"
 
@@ -13,15 +16,17 @@ master_doc = "index"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "ablog",
     "myst_nb",
-    "sphinx_copybutton",
-    "sphinx_togglebutton",
-    "sphinxcontrib.bibtex",
-    "sphinx_thebe",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "ablog",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_thebe",
+    "sphinx_togglebutton",
+    "sphinxcontrib.bibtex",
+    "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -34,12 +39,14 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.8", None),
-    "sphinx": ("https://www.sphinx-doc.org/en/3.x", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 }
 nitpick_ignore = [
     ("py:class", "docutils.nodes.document"),
     ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
 ]
+
+suppress_warnings = ["myst.domains", "ref.ref"]
 
 numfig = True
 
@@ -55,8 +62,6 @@ myst_enable_extensions = [
     # "linkify",
     # "substitution",
 ]
-myst_url_schemes = ("http", "https", "mailto")
-panels_add_bootstrap_css = False
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -64,16 +69,17 @@ panels_add_bootstrap_css = False
 # a list of builtin themes.
 #
 html_theme = "sphinx_book_theme"
-html_logo = "_static/logo.png"
+html_logo = "_static/logo-wide.svg"
 html_title = "Sphinx Book Theme"
 html_copy_source = True
 html_sourcelink_suffix = ""
-html_favicon = "_static/logo.png"
+html_favicon = "_static/logo-square.svg"
 html_last_updated_fmt = ""
 
 html_sidebars = {
     "reference/blog/*": [
-        "sidebar-search-bs.html",
+        "sidebar-logo.html",
+        "search-field.html",
         "postcard.html",
         "recentposts.html",
         "tagcloud.html",
@@ -109,13 +115,17 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
+    "logo_only": True,
+    "show_toc_level": 2,
     # For testing
+    # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
     # "single_page": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
+    # "show_navbar_depth": 2,
+    "show_toc_level": 2,
 }
-html_baseurl = "https://sphinx-book-theme.readthedocs.io/en/latest/"
 
 # -- ABlog config -------------------------------------------------
 blog_path = "reference/blog"
@@ -126,3 +136,25 @@ post_auto_image = 1
 post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
+bibtex_reference_style = "author_year"
+
+# -- Download kitchen sink reference docs -------------------------------------
+# These are the kitchen sink files used by the Sphinx Themes gallery at
+# https://github.com/sphinx-themes/sphinx-themes.org
+# To re-download, delete the `references/kitchen-sink` folder and build the docs
+kitchen_sink_files = [
+    "api.rst",
+    "index.rst",
+    "lists-and-tables.rst",
+    "paragraph-markup.rst",
+]
+for ifile in kitchen_sink_files:
+    path_file = Path(f"reference/kitchen-sink/{ifile}")
+    path_file.parent.mkdir(exist_ok=True)
+    if not path_file.exists():
+        print(f"Downloading kitchen sink file {ifile}")
+        resp = request.urlopen(
+            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa
+        )
+        header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
+        path_file.write_text(header + resp.read().decode())

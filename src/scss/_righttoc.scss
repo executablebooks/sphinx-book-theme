@@ -4,10 +4,9 @@
 
 .bd-toc {
     padding: 0px !important;
-    overflow-y: visible;
     right: -1em;
     z-index: 999;
-    transition: height .35s ease;
+    height: auto;
 
     // Colors
     div.onthispage, .toc-entry a {
@@ -21,22 +20,31 @@
         transition: opacity 0.2s ease, max-height .7s ease;
         overflow-y: hidden;
         background: white;
+        @include scrollbar-style();
 
         // TOC link color
         a:hover, li.active > a.active {
-            color: #0071bc;
+            color: rgba(var(--pst-color-link), 1);;
         }
 
         li.active > a.active {
-            border-left: 2px solid #0071bc;
+            border-left: 2px solid rgba(var(--pst-color-link), 1);;
+        }
+
+        >.nav {
+            border-left: 1px solid #eee;
+            .nav {
+                border-left: none;
+            }
         }
     }
 
     // On hover or w/ a show class, we show the TOC
     &:hover, &.show {
         nav {
-            max-height: 100vh;
+            max-height: 90vh;
             opacity: 1;
+            overflow-y: auto;
         }
 
         // Hide the arrow when we display the toc

@@ -12,19 +12,17 @@ kernelspec:
   name: python3
 ---
 
-# Content with notebooks
+# Jupyter notebooks
 
-You can also create content with Jupyter Notebooks. The content for the current page is contained
-in a Jupyter Notebook in the `notebooks/` folder of the repository. This means that we can include
-code blocks and their outputs, and export them to Jekyll markdown.
+You can also create content with Jupyter Notebooks, using the [MyST-NB Sphinx extension](https://myst-nb.readthedocs.io/en/latest/).
 
-**You can find the original notebook for this page [at this address](https://github.com/jupyter/jupyter-book/blob/master/jupyter_book/book_template/content/features/notebooks.ipynb)**
+This page demonstrates some extra functionality that works with this theme.
 
 ## Markdown + notebooks
 
 As it is markdown, you can embed images, HTML, etc into your posts!
 
-![](images/cool.jpg)
+![](./images/cool.jpg)
 
 You an also $add_{math}$ and
 
@@ -54,7 +52,6 @@ For example, here's some sample Matplotlib code:
 from matplotlib import rcParams, cycler
 import matplotlib.pyplot as plt
 import numpy as np
-plt.ion()
 ```
 
 ```{code-cell} ipython3
@@ -78,7 +75,7 @@ lines = ax.plot(data)
 ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
 ```
 
-Note that the image above is captured and displayed by Jekyll.
+Note that the image above is captured and displayed.
 
 ```{code-cell} ipython3
 :tags: [remove_input]
@@ -106,7 +103,7 @@ ax.set(title="Smoother lines");
 
 ```{margin} You can also pop out content to the margin
 For more information on how to do this,
-check out {doc}`layout`.
+check out [](content-blocks.md).
 ```
 
 ```{code-cell} ipython3
@@ -124,8 +121,7 @@ Math("\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
 ## Removing content before publishing
 
 You can also remove some content before publishing your book to the web. For example,
-in [the original notebook](https://github.com/jupyter/jupyter-book/blob/master/jupyter_book/book_template/content/features/notebooks.ipynb) there
-used to be a cell below...
+in {download}`./notebooks.md`, there used to be a cell below...
 
 ```{code-cell} ipython3
 :tags: [remove_cell]
@@ -263,4 +259,76 @@ your Jupyter Book as well!
 ```{code-cell} ipython3
 # The ! causes this to run as a shell command
 !jupyter -h
+```
+
+
+
+## Formatting code cells
+
+### Scrolling cell outputs
+
+The traditional Jupyter Notebook interface allows you to toggle **output scrolling**
+for your cells. This allows you to visualize part of a long output without it taking up
+the entire page.
+
+You can trigger this behavior in Jupyter Book by adding the following
+tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-output",
+    ]
+}
+```
+
+For example, the following cell has a long output, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [output_scroll]
+for ii in range(40):
+    print(f"this is output line {ii}")
+```
+
+
+
+### Scrolling cell inputs
+
+If your input code is long and takes up a lot of your page, you can make it scrollable
+as well by adding the following tag to a cell's metadata:
+
+```json
+{
+    "tags": [
+        "scroll-input",
+    ]
+}
+```
+
+For example, the following cell has a long input, but will be scrollable in the book:
+
+```{code-cell} ipython3
+:tags: [scroll-input]
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+b = "This line has no meaning"
+print(b)
 ```

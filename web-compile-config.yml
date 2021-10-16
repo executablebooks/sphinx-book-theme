@@ -1,7 +1,7 @@
 web-compile:
   sass:
     files:
-      src/scss/sphinx-book-theme.scss: sphinx_book_theme/static/sphinx-book-theme.[hash].css
+      src/scss/sphinx-book-theme.scss: sphinx_book_theme/static/sphinx-book-theme.css
     precision: 5
     sourcemap: false
     format: compressed

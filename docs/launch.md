@@ -1,3 +1,4 @@
+(customize:launch)=
 # Launch buttons for interactivity
 
 You can automatically add buttons that allow users to interact with your
@@ -121,9 +122,9 @@ configuration. See the [`sphinx-thebe`](https://sphinx-thebe.readthedocs.io/en/l
 documentation for what you can configure.
 ```
 
-## Configuration
+## Configure a relative path to your source file
 
-**To configure a relative path to your documentation**, add the following configuration:
+To configure a relative path to your documentation, add the following configuration:
 
 ```python
 html_theme_options = {
@@ -133,7 +134,10 @@ html_theme_options = {
 }
 ```
 
-**To control the user interface that is opened with links**, add the following configuration:
+## Control the user interface that is opened
+
+You can control the interface that is opened when somebody clicks on a launch button.
+To do so, add the following configuration:
 
 ```python
 html_theme_options = {

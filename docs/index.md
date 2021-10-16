@@ -1,26 +1,40 @@
-# The Sphinx Book Theme
+---
+title: The Sphinx Book Theme
+---
 
-[![badge-url](https://img.shields.io/github/stars/executablebooks/sphinx-book-theme?label=github&style=social)](https://github.com/executablebooks/sphinx-book-theme)
-[![PyPI][pypi-badge]][pypi-link]
+::::{grid}
+:reverse:
+:gutter: 2 1 1 1
+:margin: 4 4 1 1
 
-<br />
+:::{grid-item}
+:columns: 4
 
-**An interactive book theme for Sphinx**.
+```{image} ./_static/logo-square.svg
+:width: 150px
+```
+:::
 
-This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
-interactive book. It has the following primary features:
+:::{grid-item}
+:columns: 8
+:class: sd-fs-3
 
-[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-: To style visual elements and add functionality.
+A Sphinx theme with a clean design, support for interactive content, and a modern book-like look and feel.
+:::
 
-[Flexible content layout](layout)
+::::
+
+[Flexible content layout](reference/special-theme-elements.md)
 : Inspired by beautiful online books, such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
 
-[Visual classes designed for Jupyter Notebooks](notebooks)
+[Visual classes designed for Jupyter Notebooks](reference/notebooks)
 : Cell inputs, outputs, and interactive functionality are all supported.
 
 [Launch buttons for online interactivity](launch)
 : For pages that are built with computational material, connect your site to an online BinderHub for interactive content.
+
+[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+: To style visual elements and add functionality.
 
 International
 : All text integrated in the theme is translated to the specified [Sphinx language](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language).
@@ -29,52 +43,45 @@ International
 This is the default theme in [Jupyter Book](https://jupyterbook.org).
 :::
 
-## Get started
+# Topic areas
 
-To get started with `sphinx-book-theme`, first install it with `pip`:
-
-```
-pip install sphinx-book-theme
-```
-
-then, activate the theme in your Sphinx configuration (`conf.py`):
-
-```
-...
-html_theme = "sphinx_book_theme"
-...
-```
-
-This will activate the Sphinx Book Theme for your documentation. Note that you may
-need to change your `html_theme_options` configuration depending on your previous
-theme. See the pages to the left for information about what you can configure with
-`sphinx-book-theme`.
-
-## Site contents
+The following topic areas will help you understand and use the theme.
 
 ```{toctree}
 :maxdepth: 1
-:caption: Main docs
+:caption: Topic Areas
 
-configure
-Controlling page elements <layout>
+tutorials/get-started
+customize/index
+content-blocks
 notebooks
 launch
-contributing
-GitHub repository <https://github.com/executablebooks/sphinx-book-theme>
 ```
 
-## Reference pages
+# Reference pages
+
+Reference pages demonstrate the visual look of this theme.
 
 ```{toctree}
-:caption: Reference items
+:caption: Reference
 :maxdepth: 2
 
-reference/index
-api/index
+reference/special-theme-elements
+reference/kitchen-sink/index
+reference/notebooks
+reference/thebe
+reference/blog
 ```
 
-## Acknowledgements
+
+```{toctree}
+:caption: About the theme
+:maxdepth: 2
+
+contributing
+```
+
+# Acknowledgements
 
 This theme is heavily inspired by (and dependent on)
 [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base

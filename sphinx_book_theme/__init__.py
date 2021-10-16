@@ -9,7 +9,7 @@ except ImportError:
     import importlib_resources as resources
 
 from bs4 import BeautifulSoup as bs
-from docutils.parsers.rst import directives
+from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
@@ -18,7 +18,7 @@ from sphinx.util import logging
 from .launch import add_hub_urls
 from . import static as theme_static
 
-__version__ = "0.0.39"
+__version__ = "0.1.6"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -75,49 +75,31 @@ def update_all(app, env):
         return list(env.all_docs.keys())
 
 
-def find_url_relative_to_root(pagename, relative_page, path_docs_source):
-    """Given the current page (pagename), a relative page to it (relative_page),
-    and a path to the docs source, return the path to `relative_page`, but now relative
-    to the docs source (since this is what keys in Sphinx tend to use).
-    """
-    # In this case, the relative_page is the same as the pagename
-    if relative_page == "":
-        relative_page = Path(Path(pagename).name)
-
-    # Convert everything to paths for use later
-    path_rel = Path(relative_page).with_suffix("")
-    if relative_page.endswith(".html"):
-        # HTML file Sphinx builder
-        path_parent = Path(pagename).parent  # pagename is .html relative to docs root
-    else:
-        # DirHTML Sphinx builder.
-        path_parent = Path(pagename)  # pagename is the parent folder if dirhtml builder
-
-    source_dir = Path(path_docs_source)
-    # This should be the path to `relative_page`, relative to `pagename`
-    path_rel_from_page_dir = source_dir.joinpath(path_parent.joinpath(path_rel.parent))
-    path_from_page_dir = Path(os.path.abspath(path_rel_from_page_dir))
-    page_rel_root = path_from_page_dir.relative_to(source_dir).joinpath(path_rel.name)
-    return page_rel_root
-
-
 def add_to_context(app, pagename, templatename, context, doctree):
-    def generate_nav_html(
+
+    # TODO: remove this whenever the nav collapsing functionality is in the PST
+    def sbt_generate_nav_html(
         level=1,
         include_item_names=False,
         with_home_page=False,
         prev_section_numbers=None,
+        show_depth=1,
     ):
         # Config stuff
         config = app.env.config
         if isinstance(with_home_page, str):
             with_home_page = with_home_page.lower() == "true"
 
-        # Grab the raw toctree object and structure it so we can manipulate it
-        toc_sphinx = context["toctree"](
-            maxdepth=-1, collapse=False, titles_only=True, includehidden=True
+        # Convert the pydata toctree html to beautifulsoup
+        toctree = context["generate_nav_html"](
+            startdepth=level - 1,
+            kind="sidebar",
+            maxdepth=4,
+            collapse=False,
+            includehidden=True,
+            titles_only=True,
         )
-        toctree = bs(toc_sphinx, "html.parser")
+        toctree = bs(toctree, "html.parser")
 
         # Add the master_doc page as the first item if specified
         if with_home_page:
@@ -135,7 +117,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
             # Insert it into our toctree
             ul_home = bs(
                 f"""
-            <ul>
+            <ul class="nav bd-sidenav">
                 <li class="{li_class}">
                     <a href="{master_url}" class="reference internal">{master_title}</a>
                 </li>
@@ -144,123 +126,16 @@ def add_to_context(app, pagename, templatename, context, doctree):
             )
             toctree.insert(0, ul_home("ul")[0])
 
-        # pair "current" with "active" since that's what we use w/ bootstrap
-        for li in toctree("li", {"class": "current"}):
-            li["class"].append("active")
-
-        # Add an icon for external links
-        for a_ext in toctree("a", attrs={"class": ["external"]}):
-            a_ext.append(
-                toctree.new_tag("i", attrs={"class": ["fas", "fa-external-link-alt"]})
-            )
-
-        # get level specified in conf
-        navbar_level = int(context["theme_show_navbar_depth"])
-
-        # function to open/close list and add icon
-        def collapse_list(li, ul, level):
-            if ul:
-                li.attrs["class"] = li.attrs.get("class", []) + ["collapsible-parent"]
-                if level <= 0:
-                    ul.attrs["class"] = ul.attrs.get("class", []) + ["collapse-ul"]
-                    li.append(
-                        toctree.new_tag(
-                            "i", attrs={"class": ["fas", "fa-chevron-down"]}
-                        )
-                    )
-                else:
-                    # Icon won't show up unless captions are collapsed
-                    if not li.name == "p" and "caption" not in li["class"]:
-                        li.append(
-                            toctree.new_tag(
-                                "i", attrs={"class": ["fas", "fa-chevron-up"]}
-                            )
-                        )
-
-        # for top-level caption's collapse functionality
-        for para in toctree("p", attrs={"class": ["caption"]}):
-            ul = para.find_next_sibling()
-            collapse_list(para, ul, navbar_level)
-
-        # iterate through all the lists in the sideabar and open/close
-        def iterate_toc_li(li, level):
-            if hasattr(li, "name") and li.name == "li":
-                ul = li.find("ul")
-                collapse_list(li, ul, level)
-            if isinstance(li, list) or hasattr(li, "name"):
-                for entry in li:
-                    if isinstance(entry, str):
-                        continue
-                    if hasattr(entry, "name"):
-                        if entry.name == "li":
-                            iterate_toc_li(entry, level - 1)
-                        else:
-                            iterate_toc_li(entry, level)
-            return
-
-        iterate_toc_li(toctree, navbar_level)
-
-        # Add bootstrap classes for first `ul` items
-        for ul in toctree("ul", recursive=False):
-            ul.attrs["class"] = ul.attrs.get("class", []) + ["nav", "sidenav_l1"]
+        # Open the navbar to the proper depth
+        for ii in range(int(show_depth)):
+            for checkbox in toctree.select(
+                f"li.toctree-l{ii} > input.toctree-checkbox"
+            ):
+                checkbox.attrs["checked"] = None
 
         return toctree.prettify()
 
-    context["generate_nav_html"] = generate_nav_html
-
-    def generate_toc_html():
-        """Return the within-page TOC links in HTML."""
-
-        toc = context.get("toc")
-        if not toc:
-            return ""
-
-        soup = bs(toc, "html.parser")
-
-        # Add toc-hN classes
-        def add_header_level_recursive(ul, level):
-            for li in ul("li", recursive=False):
-                li["class"] = li.get("class", []) + [f"toc-h{level}"]
-                ul = li.find("ul", recursive=False)
-                if ul:
-                    add_header_level_recursive(ul, level + 1)
-
-        add_header_level_recursive(soup.find("ul"), 1)
-
-        # Add in CSS classes for bootstrap
-        for ul in soup("ul"):
-            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
-        for li in soup("li"):
-            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
-            if li.find("a"):
-                a = li.find("a")
-                a["class"] = a.get("class", []) + ["nav-link"]
-
-        # If we only have one h1 header, assume it's a title
-        h1_headers = soup.select(".toc-h1")
-        if len(h1_headers) == 1:
-            title = h1_headers[0]
-            # If we have no sub-headers of a title then we won't have a TOC
-            if not title.select(".toc-h2"):
-                return ""
-
-            toc_out = title.find("ul").prettify()
-
-        # Else treat the h1 headers as sections
-        else:
-            toc_out = soup.prettify()
-
-        out = f"""
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> { context["translate"]('Contents') }
-        </div>
-        <nav id="bd-toc-nav">
-            {toc_out}
-        </nav>
-        """
-        return out
-
-    context["generate_toc_html"] = generate_toc_html
+    context["sbt_generate_nav_html"] = sbt_generate_nav_html
 
     # Update the page title because HTML makes it into the page title occasionally
     if pagename in app.env.titles:
@@ -278,13 +153,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
     # Add the author if it exists
     if app.config.author != "unknown":
         context["author"] = app.config.author
-
-    # Absolute URLs for logo if `html_baseurl` is given
-    # pageurl will already be set by Sphinx if so
-    if app.config.html_baseurl and app.config.html_logo:
-        context["logourl"] = "/".join(
-            (app.config.html_baseurl.rstrip("/"), "_static/" + context["logo"])
-        )
 
     # Add HTML context variables that the pydata theme uses that we configure elsewhere
     # For some reason the source_suffix sometimes isn't there even when doctree is
@@ -317,6 +185,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
         "theme_use_repository_button",
         "theme_use_issues_button",
         "theme_use_download_button",
+        "theme_use_fullscreen_button",
     ]
     for key in btns:
         if key in context:
@@ -385,7 +254,7 @@ def _string_or_bool(var):
         return var is None
 
 
-class Margin(directives.body.Sidebar):
+class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
 
     optional_arguments = 1

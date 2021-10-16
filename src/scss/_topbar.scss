@@ -46,9 +46,18 @@
 }
 
 .bd-topbar-whitespace {
-    padding-right: none;
+    width: $leftbar-width;
+    flex: auto;
+    transition: flex 0.2s ease 0s;
     @media (max-width: 768px) {
-        display: none;
+        border-bottom: 1px solid transparent;
+        &.show, &.collapsing, body.scrolled & {
+            border-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: block;
+        }
     }
 }
 
@@ -69,6 +78,7 @@ div.dropdown-buttons-trigger {
         max-width: 130px;
         margin-top: .2em;
         z-index: 1000;
+        transform: translate(-60%);
 
         &.sourcebuttons .topbarbtn i {
             padding-right: 6px;
@@ -143,11 +153,10 @@ button.topbarbtn img {
 @media (max-width: $breakpoint-md) {
     #navbar-toggler {
         i.fa-arrow-up {
-            display: inherit;
+            display: none;
         }
 
         i.fa-arrow-left {
-            display: none;
         }
     }
 }
