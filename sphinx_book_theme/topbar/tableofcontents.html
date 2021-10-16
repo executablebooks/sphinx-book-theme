@@ -1,0 +1,13 @@
+<!-- Table of contents -->
+<div id="toc-inpage" class="col-md-2 show d-flex flex-column">
+  {% set page_toc = generate_toc_html() %}
+
+  {%- if page_toc | length >= 1 %}
+  <div class="tocsection onthispage d-flex">
+      <i class="fas fa-list"></i><span class="d-none d-md-inline-block">{{ translate(theme_toc_title) }}</span>
+  </div>
+  <nav id="bd-toc-nav" aria-label="Page">
+      {{ page_toc }}
+  </nav>
+  {%- endif %}
+</div>

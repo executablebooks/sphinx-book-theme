@@ -28,12 +28,9 @@ dt:target, span.highlighted {
 *********************************************/
 
 main.bd-content {
-    padding-top: $topbar-height !important;
     padding-bottom: 0px !important;
 
     #main-content {
-        padding-top: 1.5em;
-
         // Content links and link color
         a.headerlink {
             opacity: 0;

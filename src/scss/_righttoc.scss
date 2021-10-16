@@ -2,9 +2,7 @@
 * Table of Contents (right nav bar)          *
 *********************************************/
 
-.bd-toc {
-    padding: 0px !important;
-    right: -1em;
+#toc-inpage {
     z-index: 999;
     height: auto;
 
@@ -17,6 +15,7 @@
     nav {
         opacity: 0;
         max-height: 0;
+        width: fit-content;
         transition: opacity 0.2s ease, max-height .7s ease;
         overflow-y: hidden;
         background: white;
@@ -53,8 +52,10 @@
         }
     }
 
-    .tocsection {
-        padding: .5rem 0 .5rem 1rem !important;
+    .onthispage {
+        display: flex;
+        align-items: center;
+        padding: .5rem 0 .5rem 1rem;
 
         &:after {
             content: "\f107";
@@ -66,7 +67,7 @@
     }
 
     .toc-entry a {
-        padding: .125rem 1rem !important;
+        padding: .125rem 1rem;
     }
 
     // Make sure the pydata sphinx theme edit button doesn't show up

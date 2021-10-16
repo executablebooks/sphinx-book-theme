@@ -1,46 +1,51 @@
 /*********************************************
 * Top Bar *
 *********************************************/
-.topbar, .topbar-contents, .topbar-main {
-    height: $topbar-height;
-}
-
 .topbar {
     background-color: white;
     transition: left .2s;
+    position: sticky;
+    top: 0;
+    height: 3em;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0;
+    z-index: 999;  // Topbar should always be on top
 
     .scrolled & {
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
     }
 
-    .topbar-main {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-right: 0;
+    > button, > div, > a {
+        float: left;
+        height: 100%;
+    }
 
-        > button, > div, > a {
-            float: left;
-            height: 100%;
+    button.topbarbtn {
+        margin: 0 .1em;
+        background-color: white;
+        color: $non-content-grey;
+        border: none;
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+        font-size: 1.4em;
+
+        i.fab {
+            vertical-align: baseline;
+            line-height: 1;
         }
+    }
 
-        button.topbarbtn {
-            margin: 0 .1em;
-            background-color: white;
-            color: $non-content-grey;
-            border: none;
-            padding-top: .1rem;
-            padding-bottom: .1rem;
-            font-size: 1.4em;
+    // buttons float right
+    div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
+        float: right;
+    }
 
-            i.fab {
-                vertical-align: baseline;
-                line-height: 1;
-            }
-        }
-
-        // buttons float right
-        div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
-            float: right;
+    button#navbar-toggler {
+        border-radius: .2em;
+        transition: background 0.2s ease-out 0s;
+        &:active {
+            background: #8080803d;
         }
     }
 }
@@ -110,67 +115,6 @@ button.topbarbtn img {
     height: 1.15em;
     padding-right: 6px;
     margin-left: -5px;
-}
-
-#navbar-toggler {
-    position: relative;
-    margin-right: 1em;
-    margin-left: .5em;
-    color: $non-content-grey;
-
-    i {
-        transition: opacity .3s, transform .3s;
-        position: absolute;
-        top: 16%;
-        left: 0;
-        display: block;
-        font-size: 1.2em;
-    }
-
-    i.fa-bars {
-        opacity: 0;
-        transform: rotate(180deg) scale(.5);
-    }
-
-    i.fa-arrow-left, i.fa-arrow-up {
-        opacity: 1;
-    }
-
-    &.collapsed {
-        i.fa-bars {
-            opacity: 1;
-            transform: rotate(0) scale(1);
-        }
-
-        i.fa-arrow-left, i.fa-arrow-up {
-            opacity: 0;
-            transform: rotate(-180deg) scale(.5);
-        }
-    }
-}
-
-
-@media (max-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-        }
-    }
-}
-
-@media (min-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-            display: inherit;
-        }
-    }
 }
 
 // Navbar and topbar sidebar padding should max at 300px

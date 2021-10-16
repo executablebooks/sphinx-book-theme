@@ -77,7 +77,7 @@
         padding: 0;
         position: inherit;  // So that TOC isn't printed on each page
 
-        div.topbar-main {
+        div.topbar-left, div.topbar-right {
             opacity: 0;
         }
 

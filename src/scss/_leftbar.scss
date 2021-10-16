@@ -28,7 +28,6 @@
     @include scrollbar-style();
     @media (max-width: $breakpoint-md) {
         position: fixed;
-        margin-top: $topbar-height;
         border-right: 1px solid rgba(0,0,0,.1);
 
         // If we're only a single page, sidebar should hide at narrow widths.

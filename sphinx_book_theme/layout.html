@@ -17,20 +17,22 @@
 {% endblock %}
 
 {% block docs_main %}
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    {% block docs_body %}
+
+<div class="col px-0 d-flex flex-column">
     {% include "topbar.html" %}
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        {{ super() }}
+
+    {% block docs_body %}
+    <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        <main id="main-content" class="row bd-content" role="main">
+            {{ super() }}
+        </main>
         {% if theme_show_prev_next %}
             {% include "_templates/prev-next.html" %}
         {% endif %}
-        </div>
     </div>
-    {% endblock %}
     {%- include "footer.html" %}
-</main>
+    {% endblock %}
+</div>
 {% endblock %}
 
 {% block docs_toc %}
