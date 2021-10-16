@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.1.5...v0.1.6
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.5...1515334eec40575b0a80c51ce78453ced2ff2484))
+
+### Enhancements made
+
+- Add pst prefix to variables [#413](https://github.com/executablebooks/sphinx-book-theme/pull/413) ([@choldgraf](https://github.com/choldgraf))
+- Note TOC level auto-show [#410](https://github.com/executablebooks/sphinx-book-theme/pull/410) ([@choldgraf](https://github.com/choldgraf))
+- Add note of margin CSS classes [#405](https://github.com/executablebooks/sphinx-book-theme/pull/405) ([@choldgraf](https://github.com/choldgraf))
+
 ## v0.1.5 - 2021-09-23
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.4...c85925c0109a1038994947acb951d1d918a819f8))
