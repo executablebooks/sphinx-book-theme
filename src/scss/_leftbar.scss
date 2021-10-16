@@ -4,10 +4,10 @@
 #site-navigation  {
     height: 100vh !important;
     width: $leftbar-width;
-    flex: auto;
-    top: 0px !important;
+    top: 0px;
     margin-left:0;
     overflow-y: auto;
+    overflow-x: hidden;  // To prevent a horizontal scrollbar
     background: white;
     transition: margin-left .2s ease 0s, opacity .2s ease 0s, visibility .2s ease 0s;
     z-index: 2000 !important;
@@ -28,6 +28,7 @@
     @include scrollbar-style();
     @media (max-width: $breakpoint-md) {
         position: fixed;
+        top: $topbar-height;
         border-right: 1px solid rgba(0,0,0,.1);
 
         // If we're only a single page, sidebar should hide at narrow widths.
@@ -39,7 +40,7 @@
     // Sidebar link color
     nav ul.nav {
         li a, ul li a {
-            color: $non-content-grey;
+            color: var(--sbt-non-content-grey);
         }
         a:hover, li.active > a, li.active > a:hover {
             color: rgba(var(--pst-color-link), 1);;
@@ -56,7 +57,7 @@
     div.navbar_extra_footer {
         text-align: center;
         font-size: .9em;
-        color: $non-content-grey;
+        color: var(--sbt-non-content-grey);
         margin-bottom: 3em;
     }
 

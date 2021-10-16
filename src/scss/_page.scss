@@ -8,6 +8,18 @@ body {
         max-width: 100%;
     }
 
+    // Main window items should fill the vertical space
+    > div.container-xl {
+        padding: 0;
+
+        > div.row {
+            align-items: stretch;
+        }
+    }
+    .row {
+        margin-left: unset;
+        margin-right: unset;
+    }
 }
 
 code {
@@ -48,91 +60,12 @@ main.bd-content {
         }
 
         h1, h2, h3, h4, h5 {
-            color: black;
             &:hover a.headerlink {
                 opacity: .5;
             }
             // Make sure titles don't become hyperlink color when there are labels
             a.toc-backref {
                 color: inherit;
-            }
-        }
-
-        // Top-level sections have some padding to avoid overlap w/ sidebar
-        // Also add it to the bottom-of-page next/prev container
-        > div > div > div.section, .prev-next-bottom {
-            padding-right: 1em;
-        }
-
-        $prevnext-padding: .75rem;
-        .prev-next-bottom {
-            overflow: auto;
-            margin-top: 3em;
-            margin-bottom: 1em;
-            padding: 0;
-
-            .right-next, .left-prev {
-                border: none;
-                display: flex;
-                align-items: center;
-
-                .prevnext-info {
-                    flex-direction: column;
-                }
-
-                p {
-                    margin: 0;
-                    line-height: 1.3em;
-                }
-
-                .prevnext-label, {
-                    color: $non-content-grey;
-                }
-
-                .prevnext-title {
-                    font-size: 1.1em;
-                    color: rgba(var(--pst-color-link), 1);
-                    font-weight: 500;
-                }
-
-                // Remove the PyData default
-                &::after {
-                    content: none;
-                }
-            }
-
-            // Remove the PyData default
-            .left-prev {
-
-                i {
-                    padding-right: $prevnext-padding;
-                }
-
-                &::before {
-                    content: none;
-                }
-            }
-
-            // Right styling
-            .right-next {
-                .prevnext-info {
-                    text-align: right;
-                }
-
-                i {
-                    padding-left: $prevnext-padding;
-                }
-            }
-        }
-
-        div.section {
-            overflow: visible !important;  // So that sidebars don't cause a scroll
-
-            // List styles to avoid too much whitespace
-            ul, ol {
-                p {
-                    margin-bottom: 0;
-                }
             }
         }
 

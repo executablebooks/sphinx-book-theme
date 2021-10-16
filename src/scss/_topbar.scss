@@ -16,15 +16,10 @@
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
     }
 
-    > button, > div, > a {
-        float: left;
-        height: 100%;
-    }
-
     button.topbarbtn {
         margin: 0 .1em;
         background-color: white;
-        color: $non-content-grey;
+        color: var(--sbt-non-content-grey);
         border: none;
         padding-top: .1rem;
         padding-bottom: .1rem;
@@ -44,25 +39,19 @@
     button#navbar-toggler {
         border-radius: .2em;
         transition: background 0.2s ease-out 0s;
+        &:hover {
+            background: #a3a3a33d;
+        }
         &:active {
-            background: #8080803d;
+            background: #6161613d;
+        }
+        &:focus {
+            outline: unset;
         }
     }
-}
 
-.bd-topbar-whitespace {
-    width: $leftbar-width;
-    flex: auto;
-    transition: flex 0.2s ease 0s;
-    @media (max-width: 768px) {
-        border-bottom: 1px solid transparent;
-        &.show, &.collapsing, body.scrolled & {
-            border-color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: block;
-        }
+    @media (max-width: $breakpoint-md) {
+        border-bottom: 1px solid rgba(0,0,0,.1);
     }
 }
 
@@ -96,7 +85,7 @@ div.dropdown-buttons-trigger {
             padding-bottom: .35rem;
             min-width: 120px !important;
             border: 1px white solid !important;
-            background-color: $non-content-grey;
+            background-color: var(--sbt-non-content-grey);
             color: white;
             font-size: 1em;
         }
@@ -115,11 +104,4 @@ button.topbarbtn img {
     height: 1.15em;
     padding-right: 6px;
     margin-left: -5px;
-}
-
-// Navbar and topbar sidebar padding should max at 300px
-@media (min-width: $breakpoint-md) {
-    .bd-topbar-whitespace {
-        max-width: 275px;
-    }
 }

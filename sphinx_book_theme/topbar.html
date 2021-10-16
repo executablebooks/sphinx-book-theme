@@ -4,21 +4,12 @@
             {% include "topbar/closesidebarbutton.html" %}
         </div>
     </div>
-    <div class="topbar-right d-flex ml-auto">
+    <div class="topbar-middle d-flex ml-auto">
+        {% for item in ["download.html", "repobuttons.html", "fullscreen.html", "launchbuttons.html"] %}
         <div class="topbar-item">
-            {% include "topbar/download.html" %}
+            {% include "topbar/" + item %}
         </div>
-        <div class="topbar-item">
-            {% include "topbar/repobuttons.html" %}
-        </div>
-        <div class="topbar-item">
-            {% include "topbar/fullscreen.html" %}
-        </div>
-        <div class="topbar-item">
-            {% include "topbar/launchbuttons.html" %}
-        </div>
-        <div class="topbar-item">
-            {% include "topbar/tableofcontents.html" %}
-        </div>
+        {% endfor %}
     </div>
+    {% include "topbar/tableofcontents.html" %}
 </div>

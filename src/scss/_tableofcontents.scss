@@ -2,38 +2,35 @@
 * Table of Contents (right nav bar)          *
 *********************************************/
 
+$hpadding-toc: 1rem;
 #toc-inpage {
     z-index: 999;
-    height: auto;
+    width: 100%;
+    height: fit-content;
 
     // Colors
     div.onthispage, .toc-entry a {
-        color: $non-content-grey;
+        color: var(--sbt-non-content-grey);
     }
 
     // By default the nav is hidden unless a few conditions are met
     nav {
         opacity: 0;
         max-height: 0;
-        width: fit-content;
         transition: opacity 0.2s ease, max-height .7s ease;
         overflow-y: hidden;
         background: white;
         @include scrollbar-style();
 
-        // TOC link color
-        a:hover, li.active > a.active {
-            color: rgba(var(--pst-color-link), 1);;
-        }
+        ul.nav {
+            border-left: none;
 
-        li.active > a.active {
-            border-left: 2px solid rgba(var(--pst-color-link), 1);;
-        }
-
-        >.nav {
-            border-left: 1px solid #eee;
-            .nav {
-                border-left: none;
+            a {
+                border-left: 1px solid #eee;
+                &:hover, &.active {
+                    color: rgba(var(--pst-color-link), 1);;
+                    border-left: 2px solid rgba(var(--pst-color-link), 1);;
+                }
             }
         }
     }
@@ -53,10 +50,7 @@
     }
 
     .onthispage {
-        display: flex;
-        align-items: center;
-        padding: .5rem 0 .5rem 1rem;
-
+        padding: .3rem $hpadding-toc;
         &:after {
             content: "\f107";
             font-family: "Font Awesome 5 Free";
@@ -67,7 +61,7 @@
     }
 
     .toc-entry a {
-        padding: .125rem 1rem;
+        padding: .125rem $hpadding-toc;
     }
 
     // Make sure the pydata sphinx theme edit button doesn't show up
