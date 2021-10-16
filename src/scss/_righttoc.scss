@@ -42,7 +42,7 @@
     // On hover or w/ a show class, we show the TOC
     &:hover, &.show {
         nav {
-            max-height: 100vh;
+            max-height: 90vh;
             opacity: 1;
             overflow-y: auto;
         }

@@ -116,6 +116,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "logo_only": True,
+    "show_toc_level": 2,
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
@@ -123,6 +124,7 @@ html_theme_options = {
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
+    "show_toc_level": 2,
 }
 
 # -- ABlog config -------------------------------------------------
