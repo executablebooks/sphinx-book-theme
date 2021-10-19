@@ -22,14 +22,16 @@
     {% include "topbar.html" %}
 
     {% block docs_body %}
-    <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        <main id="main-content" class="row bd-content ml-0" role="main">
-            {{ super() }}
-        </main>
-        {% if theme_show_prev_next %}
-            {% include "_templates/prev-next.html" %}
-        {% endif %}
-    </div>
+        <div class="bd-wrapper col-12 col-md-9 ml-0 pl-md-3 pr-md-0 mb-2 d-flex flex-column">
+            <main id="main-content" class="bd-content" role="main">
+                {{ super() }}
+            </main>
+            {% if theme_show_prev_next %}
+            <div class="footer-container">
+                {% include "_templates/prev-next.html" %}
+            </div>
+            {% endif %}
+        </div>
     {%- include "footer.html" %}
     {% endblock %}
 </div>
