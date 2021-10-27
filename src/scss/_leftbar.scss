@@ -3,8 +3,11 @@
 *********************************************/
 #site-navigation  {
     height: 100vh !important;
-    width: $leftbar-width;
-    flex: auto;
+    $clamp-width: #{'max(#{$leftbar-width}, 50vw - calc(#{$leftbar-width}*4/3))'};
+    width: $clamp-width;
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: flex-end;
     top: 0px !important;
     margin-left:0;
     overflow-y: auto;
@@ -102,7 +105,7 @@ nav.bd-links {
 
 // Navbar and topbar sidebar padding should max at 300px
 @media (min-width: $breakpoint-md) {
-    .bd-sidebar {
+    .bd-sidebar > div {
         max-width: 275px;
     }
 }

@@ -8,6 +8,14 @@ body {
         max-width: 100%;
     }
 
+    div.container-xl {
+        // Make the page expand to fill the screen
+        // This is a hack; instead, we should change layout.html's
+        // <div class="container-xl"> to <div class="container-fluid">
+        // but that's unfortunately over in a different package:
+        // https://github.com/pydata/pydata-sphinx-theme/blob/71bd290f468b8d354e5e1b0f20d82fce3c24161b/pydata_sphinx_theme/layout.html#L48
+        max-width: none;
+    }
 }
 
 code {
