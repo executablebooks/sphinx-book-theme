@@ -32,7 +32,7 @@ setup(
         "click~=7.1",
         "docutils>=0.15,<0.17",
         'importlib-resources>=3.0,<3.5; python_version < "3.7"',
-        "pydata-sphinx-theme~=0.7.1",
+        "pydata-sphinx-theme~=0.7.2",
         "pyyaml",
         "sphinx>=3,<5",
     ],
