@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.1.6 .. v0.1.7
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.6...v0.1.7
+
+### Summary
+
+This release primarily updates the pydata theme to bring in a few new theme features and bug-fixes.
+
+### What's Changed
+* UPDATE: pydata sphinx theme v0.7.2 by @ocefpaf in https://github.com/executablebooks/sphinx-book-theme/pull/406
+* UPDATE: pydata-sphinx-theme 0.7.2 by @kousu in https://github.com/executablebooks/sphinx-book-theme/pull/429
+* IMPROVE: translation in the footer for Japanese language by @KengoTODA in https://github.com/executablebooks/sphinx-book-theme/pull/426
+
 ## v0.1.5...v0.1.6
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.5...1515334eec40575b0a80c51ce78453ced2ff2484))
