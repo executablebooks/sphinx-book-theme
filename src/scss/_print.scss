@@ -3,6 +3,12 @@
 * Print-specific CSS *
 *********************************************/
 @media print {
+    .noprint {
+        display: none !important;
+    }
+    .onlyprint {
+        display: block !important;
+    }
     .tag_popout, div.margin {
         float: right;
         clear: right;
@@ -19,17 +25,23 @@
         border-left: none;
         padding-left: 0;
     }
-
     .bd-content {
         // Widen the main div since we won't have a TOC
         div#main-content > div {
             flex: 0 0 75%;
             max-width: 75%;
+            h1 {
+                display: none;
+            }
         }
     }
-
+    h1 {
+        text-align: center;
+        margin-top: 3em;
+    }
     h1, h2, h3, h4 {
         break-after: avoid;
+        color: black;
     }
 
     table {
@@ -80,26 +92,20 @@
         div.topbar-main {
             opacity: 0;
         }
-
-        // Grow and show the TOC on print
-        div.bd-toc {
-            flex: 0 0 25%;
-            max-width: 25%;
-            height: auto !important;
-
-            // All 1st and 2nd items should be displayed
-            nav, nav > ul.nav, nav > ul.nav > li > ul.nav {
-                opacity: 1;
-                display: block;
-            }
-
-            // No fancy styling for nav links
-            .nav-link.active {
-                font-weight: inherit;
-                color: inherit;
-                background-color: inherit;
-                border-left: inherit;
-            }
+    }
+    .section-nav {
+        border-left: 0px;
+        list-style-type: disc;
+        margin-left: 3em;
+        a {
+            text-decoration: none;
+            padding-left: 0px;
+        }
+        li {
+            display: list-item !important;
+        }
+        .nav {
+            display: none;
         }
     }
 }

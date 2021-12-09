@@ -20,7 +20,25 @@
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
-    <div id="main-content" class="row">
+    <h1 class="onlyprint">{{ pagetitle }}</h1>
+    <!-- Table of contents -->
+    <div id="main-content" class="row onlyprint">
+        <div class="col-12 col-md-12 pl-md-5 pr-md-0">
+        <div>
+            {% set page_toc = generate_toc_html() %}
+            {%- if page_toc | length >= 1 %}
+            <div>
+                <h2> {{ translate(theme_toc_title) }} </h2>
+            </div>
+            <nav aria-label="Page">
+                {{ page_toc }}
+            </nav>
+            {%- endif %}
+        </div>
+        {{ super() }}
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         {{ super() }}
         {% if theme_show_prev_next %}
