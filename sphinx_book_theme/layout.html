@@ -20,22 +20,24 @@
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
-    <h1 class="onlyprint">{{ pagetitle }}</h1>
-    <!-- Table of contents -->
-    <div id="main-content" class="row onlyprint">
-        <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-        <div>
-            {% set page_toc = generate_toc_html() %}
-            {%- if page_toc | length >= 1 %}
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>{{ pagetitle }}</h1>
+        <!-- Table of contents -->
+        <div id="main-content" class="row onlyprint">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
             <div>
-                <h2> {{ translate(theme_toc_title) }} </h2>
+                {% set page_toc = generate_toc_html() %}
+                {%- if page_toc | length >= 1 %}
+                <div>
+                    <h2> {{ translate(theme_toc_title) }} </h2>
+                </div>
+                <nav aria-label="Page">
+                    {{ page_toc }}
+                </nav>
+                {%- endif %}
             </div>
-            <nav aria-label="Page">
-                {{ page_toc }}
-            </nav>
-            {%- endif %}
-        </div>
-        {{ super() }}
+            {{ super() }}
+            </div>
         </div>
     </div>
     <div id="main-content" class="row noprint">

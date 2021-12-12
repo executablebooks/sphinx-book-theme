@@ -14,8 +14,8 @@
                 class="btn btn-secondary topbarbtn" title="{{ translate('Download source file') }}" data-toggle="tooltip"
                 data-placement="left">{{ page_source_suffix }}</button></a>
         <!-- Download PDF via print -->
-        <a href="javascript:printPage()"><button type="button" id="download-print" class="btn btn-secondary topbarbtn noprint" title="{{ translate('Print to PDF') }}"
-                data-toggle="tooltip" data-placement="left">.pdf</button></a>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn noprint" title="{{ translate('Print to PDF') }}"
+                onclick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 {% endif %}
