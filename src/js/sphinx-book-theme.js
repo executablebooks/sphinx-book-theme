@@ -99,6 +99,14 @@ var initTocHide = () => {
   });
 }
 
+var printPdf = (this) => {
+  // Detach the tooltip text from DOM to hide in PDF
+  // and then reattach it for HTML
+  let tooltipID = $(this).attr("aria-describedby")
+  let tooltipTextDiv = $("#"+tooltipID).detach()
+  window.print()
+  $("body").append(tooltipTextDiv)
+}
 
 var initThebeSBT = () => {
   var title  = $("div.section h1")[0]
