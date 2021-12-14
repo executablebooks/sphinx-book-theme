@@ -99,10 +99,10 @@ var initTocHide = () => {
   });
 }
 
-var printPdf = (this) => {
+var printPdf = (el) => {
   // Detach the tooltip text from DOM to hide in PDF
   // and then reattach it for HTML
-  let tooltipID = $(this).attr("aria-describedby")
+  let tooltipID = $(el).attr("aria-describedby")
   let tooltipTextDiv = $("#"+tooltipID).detach()
   window.print()
   $("body").append(tooltipTextDiv)
