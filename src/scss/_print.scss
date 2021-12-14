@@ -31,7 +31,7 @@
     }
     .bd-content {
         // Widen the main div since we won't have a TOC
-        div#main-content > div {
+        div.main-content > div {
             flex: 0 0 100%;
             max-width: 100%;
             h1 {
@@ -111,5 +111,8 @@
         .nav {
             display: none;
         }
+    }
+    .jb-print-toc {
+        margin-bottom: 2rem;
     }
 }
