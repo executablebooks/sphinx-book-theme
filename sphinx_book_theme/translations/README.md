@@ -14,7 +14,7 @@ See [the Sphinx internationalization documentation](https://www.sphinx-doc.org/e
 Here's a short workflow of how to add a new translation, assuming that you are translating using the [smodin.io service](https://smodin.io/translate-one-text-into-multiple-languages).
 
 1. Go to [the smodin.io service](https://smodin.io/translate-one-text-into-multiple-languages)
-2. Selecte as many languages as you like.
+2. Select as many languages as you like.
 3. Type in the phrase you'd like to translate.
 4. Click `TRANSLATE` and then `Download JSON`.
 5. This will download a JSON file with a bunch of `language-code: translated-phrase` mappings.
