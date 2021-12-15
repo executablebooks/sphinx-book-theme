@@ -162,3 +162,9 @@ $ tox -r -e py38-sphinx2
 ```
 
 :::
+
+
+## Update or add translations for new languages
+
+This theme has support for translating several theme phrases into multiple languages.
+For more information about this workflow, see [the translations README](https://github.com/executablebooks/sphinx-book-theme/tree/HEAD/sphinx_book_theme/translations).
