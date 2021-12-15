@@ -22,7 +22,7 @@ setup(
     },
     # this should be a whitespace separated string of keywords, not a list
     keywords="reproducible science jupyter books sphinx scholarship notebook",
-    description="A clean book theme for scientific explanations and documentation with Sphinx",
+    description="A clean book theme for scientific explanations and documentation with Sphinx", # noqa: E501
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
     license="BSD",
