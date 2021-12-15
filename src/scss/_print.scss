@@ -31,7 +31,7 @@
     }
     .bd-content {
         // Widen the main div since we won't have a TOC
-        div.main-content > div {
+        div#print-main-content > div {
             flex: 0 0 100%;
             max-width: 100%;
             h1 {
@@ -41,7 +41,8 @@
     }
     h1 {
         text-align: center;
-        margin-top: 3em;
+        margin-top: 2em;
+        margin-bottom: 0;
     }
     h1, h2, h3, h4 {
         break-after: avoid;
@@ -112,7 +113,7 @@
             display: none;
         }
     }
-    .jb-print-toc {
-        margin-bottom: 2rem;
+    #jb-print-toc {
+        margin-bottom: 1.5rem ;
     }
 }

@@ -24,7 +24,7 @@
     <div id="jb-print-docs-body" class="onlyprint">
         <h1>{{ pagetitle }}</h1>
         <!-- Table of contents -->
-        <div class="row main-content">
+        <div id="print-main-content" class="row">
             <div class="col-12 col-md-12 pl-md-5 pr-md-5">
             <div id="jb-print-toc">
                 {% set page_toc = generate_toc_html() %}
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="row main-content noprint">
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         {{ super() }}
         {% if theme_show_prev_next %}
