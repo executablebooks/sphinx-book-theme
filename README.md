@@ -1,5 +1,7 @@
 # sphinx-book-theme
 
+This is a fork of the sphinx-book-theme that is designed to be used with tufte.css. This is the version of the theme that is used for the [Good Research Code Handbook](https://goodresearch.dev).
+
 [![codecov][codecov-badge]][codecov-link] [![Documentation Status][rtd-badge]][rtd-link] [![PyPI][pypi-badge]][pypi-link]
 
 **An interactive book theme for Sphinx**.
@@ -7,13 +9,13 @@
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
 interactive book. It has the following primary features:
 
-* **Bootstrap 4**
+- **Bootstrap 4**
   for visual elements and functionality.
-* **Flexible content layout** that is inspired by beautiful online books,
+- **Flexible content layout** that is inspired by beautiful online books,
   such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)
-* **Visual classes designed for Jupyter Notebooks**. Cell inputs, outputs,
+- **Visual classes designed for Jupyter Notebooks**. Cell inputs, outputs,
   and interactive functionality are all supported.
-* **Launch buttons for online interactivity**. For pages that are built with
+- **Launch buttons for online interactivity**. For pages that are built with
   computational material, connect your site to an online BinderHub for interactive content.
 
 ## Get started
@@ -44,9 +46,7 @@ for more information.
 
 [codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/master/graph/badge.svg
 [codecov-link]: https://codecov.io/gh/executablebooks/sphinx-book-theme
-
 [rtd-badge]: https://readthedocs.org/projects/sphinx-book-theme/badge/?version=latest
 [rtd-link]: https://sphinx-book-theme.readthedocs.io/en/latest/?badge=latest
-
 [pypi-badge]: https://img.shields.io/pypi/v/sphinx-book-theme.svg
 [pypi-link]: https://pypi.org/project/sphinx-book-theme
