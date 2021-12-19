@@ -1,181 +1,192 @@
 /*********************************************
 * Top Bar *
 *********************************************/
-.topbar, .topbar-contents, .topbar-main {
-    height: $topbar-height;
+.topbar,
+.topbar-contents,
+.topbar-main {
+  height: $topbar-height;
 }
 
 .topbar {
-    background-color: white;
-    transition: left .2s;
+  background-color: white;
+  transition: left 0.2s;
 
-    .scrolled & {
-        box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+  .scrolled & {
+    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+  }
+
+  .topbar-main {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0;
+
+    > button,
+    > div,
+    > a {
+      float: left;
+      height: 100%;
     }
 
-    .topbar-main {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-right: 0;
+    button.topbarbtn {
+      margin: 0 0.1em;
+      background-color: white;
+      color: $non-content-grey;
+      border: none;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      font-size: 1.4em;
 
-        > button, > div, > a {
-            float: left;
-            height: 100%;
-        }
-
-        button.topbarbtn {
-            margin: 0 .1em;
-            background-color: white;
-            color: $non-content-grey;
-            border: none;
-            padding-top: .1rem;
-            padding-bottom: .1rem;
-            font-size: 1.4em;
-
-            i.fab {
-                vertical-align: baseline;
-                line-height: 1;
-            }
-        }
-
-        // buttons float right
-        div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
-            float: right;
-        }
+      i.fab {
+        vertical-align: baseline;
+        line-height: 1;
+      }
     }
+
+    // buttons float right
+    div.dropdown-buttons-trigger,
+    a.edit-button,
+    a.full-screen-button {
+      float: right;
+    }
+  }
 }
 
 .bd-topbar-whitespace {
-    width: $leftbar-width;
-    flex: auto;
-    transition: flex 0.2s ease 0s;
-    @media (max-width: 768px) {
-        border-bottom: 1px solid transparent;
-        &.show, &.collapsing, body.scrolled & {
-            border-color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: block;
-        }
+  width: $leftbar-width;
+  flex: auto;
+  transition: flex 0.2s ease 0s;
+  @media (max-width: 768px) {
+    border-bottom: 1px solid transparent;
+    &.show,
+    &.collapsing,
+    body.scrolled & {
+      border-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: block;
     }
+  }
 }
 
 // Download buttons
 span.topbar-button-text {
-    margin-left: 0.4em;
+  margin-left: 0.4em;
 
-    @media (max-width: $breakpoint-md) {
-        display: none;
-    }
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 div.dropdown-buttons-trigger {
+  div.dropdown-buttons {
+    display: none;
+    position: absolute;
+    max-width: 130px;
+    margin-top: 0.2em;
+    z-index: 1000;
+    transform: translate(-60%);
 
-    div.dropdown-buttons {
-        display: none;
-        position: absolute;
-        max-width: 130px;
-        margin-top: .2em;
-        z-index: 1000;
-        transform: translate(-60%);
-
-        &.sourcebuttons .topbarbtn i {
-            padding-right: 6px;
-            margin-left: -5px;
-            font-size: .9em !important;
-        }
-
-        button.topbarbtn {
-            padding-top: .35rem;
-            padding-bottom: .35rem;
-            min-width: 120px !important;
-            border: 1px white solid !important;
-            background-color: $non-content-grey;
-            color: white;
-            font-size: 1em;
-        }
+    &.sourcebuttons .topbarbtn i {
+      padding-right: 6px;
+      margin-left: -5px;
+      font-size: 0.9em !important;
     }
 
-    &:hover div.dropdown-buttons {
-        display: block;
+    button.topbarbtn {
+      padding-top: 0.35rem;
+      padding-bottom: 0.35rem;
+      min-width: 120px !important;
+      border: 1px white solid !important;
+      background-color: $non-content-grey;
+      color: white;
+      font-size: 1em;
     }
+  }
+
+  &:hover div.dropdown-buttons {
+    display: block;
+  }
 }
 
 a.dropdown-buttons i {
-    margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 button.topbarbtn img {
-    height: 1.15em;
-    padding-right: 6px;
-    margin-left: -5px;
+  height: 1.15em;
+  padding-right: 6px;
+  margin-left: -5px;
 }
 
 #navbar-toggler {
-    position: relative;
-    margin-right: 1em;
-    margin-left: .5em;
-    color: $non-content-grey;
+  position: relative;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  color: $non-content-grey;
+  visibility: hidden;
 
-    i {
-        transition: opacity .3s, transform .3s;
-        position: absolute;
-        top: 16%;
-        left: 0;
-        display: block;
-        font-size: 1.2em;
-    }
+  i {
+    transition: opacity 0.3s, transform 0.3s;
+    position: absolute;
+    top: 16%;
+    left: 0;
+    display: block;
+    font-size: 1.2em;
+  }
 
+  i.fa-bars {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.5);
+  }
+
+  i.fa-arrow-left,
+  i.fa-arrow-up {
+    opacity: 1;
+  }
+
+  &.collapsed {
     i.fa-bars {
-        opacity: 0;
-        transform: rotate(180deg) scale(.5);
+      opacity: 1;
+      transform: rotate(0) scale(1);
     }
 
-    i.fa-arrow-left, i.fa-arrow-up {
-        opacity: 1;
+    i.fa-arrow-left,
+    i.fa-arrow-up {
+      opacity: 0;
+      transform: rotate(-180deg) scale(0.5);
     }
-
-    &.collapsed {
-        i.fa-bars {
-            opacity: 1;
-            transform: rotate(0) scale(1);
-        }
-
-        i.fa-arrow-left, i.fa-arrow-up {
-            opacity: 0;
-            transform: rotate(-180deg) scale(.5);
-        }
-    }
+  }
 }
 
-
 @media (max-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-        }
+  #navbar-toggler {
+    i.fa-arrow-up {
+      display: none;
     }
+
+    i.fa-arrow-left {
+    }
+  }
 }
 
 @media (min-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-            display: inherit;
-        }
+  #navbar-toggler {
+    i.fa-arrow-up {
+      display: none;
     }
+
+    i.fa-arrow-left {
+      display: inherit;
+    }
+
+    visibility: hidden;
+  }
 }
 
 // Navbar and topbar sidebar padding should max at 300px
 @media (min-width: $breakpoint-md) {
-    .bd-topbar-whitespace {
-        max-width: 275px;
-    }
+  .bd-topbar-whitespace {
+    max-width: 275px;
+  }
 }

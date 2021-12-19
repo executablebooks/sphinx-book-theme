@@ -1,5 +1,44 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 
+{% block fonts %}
+  <!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
+  <!-- ... and optionally preload the `woff2` for snappier page loads -->
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-semi-bold-old-style-figures/et-book-semi-bold-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+{% endblock %}
+
+
+{%- block extrahead %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="{{ language }}">
+    {% for favicon in theme_favicons %}
+      {% if favicon.href[:4] == 'http'%}
+      <link rel="{{ favicon.rel }}" sizes="{{ favicon.sizes }}" href="{{ favicon.href }}">
+      {% else %}
+      <link rel="{{ favicon.rel }}" sizes="{{ favicon.sizes }}" href="{{ pathto('_static/' + favicon.href, 1) }}">
+      {% endif %}
+    {% endfor %}
+
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id={{theme_google_analytics_id}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{theme_google_analytics_id}}');
+    </script>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@patrickmineault" />
+    <meta name="twitter:title" content="The Good Research Code Handbook" />
+    <meta name="twitter:description" content="This handbook is for grad students, postdocs and PIs who do a lot of programming as part of their research. It will teach you, in a practical manner, how to organize your code so that it is easy to understand and works reliably." />
+    <meta name="twitter:image" content="https://goodresearch.dev/_images/unicorn.png" />
+
+{%- endblock %}
+
 {% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
 {% if is_single_page %}
     {%- set sidebar_width_class = "col-md-2" %}
