@@ -25,7 +25,7 @@
   { "language": "Hebrew", "symbol": "iw", "text": "פתח גיליון" },
   { "language": "Indonesian", "symbol": "id", "text": "Buka masalah" },
   { "language": "Italian", "symbol": "it", "text": "Apri un problema" },
-  { "language": "Japanese", "symbol": "ja", "text": "問題を開く" },
+  { "language": "Japanese", "symbol": "ja", "text": "問題を報告" },
   { "language": "Korean", "symbol": "ko", "text": "이슈 열기" },
   { "language": "Latvian", "symbol": "lv", "text": "Atveriet problēmu" },
   { "language": "Lithuanian", "symbol": "lt", "text": "Atidarykite problemą" },
