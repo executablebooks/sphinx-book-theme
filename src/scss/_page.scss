@@ -23,6 +23,10 @@ dt:target, span.highlighted {
     background-color: #fbe54e;
 }
 
+.onlyprint {
+    display: none
+}
+
 /*********************************************
 * Main body *
 *********************************************/
@@ -31,7 +35,7 @@ main.bd-content {
     padding-top: $topbar-height !important;
     padding-bottom: 0px !important;
 
-    #main-content {
+    #main-content, #print-main-content {
         padding-top: 1.5em;
 
         // Content links and link color
