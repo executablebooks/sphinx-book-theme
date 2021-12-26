@@ -3,33 +3,50 @@
 * Print-specific CSS *
 *********************************************/
 @media print {
+    .noprint {
+        display: none !important;
+    }
+    .onlyprint {
+        display: block !important;
+    }
     .tag_popout, div.margin {
-        float: right;
-        clear: right;
+        float: none;
+        margin: 2em 0 2em auto !important;
+        border: 1px solid #a4a6a7;
+        padding: 1em !important;
+        border-radius: 5px;
         width: 50%;
-        margin-right: -56%;
         margin-top: 0;
         margin-bottom: 0;
         padding-right: 1em;
         font-size: 0.9rem;
         line-height: 1.3;
+        background-color: #ffe !important;
         vertical-align: baseline;
         position: relative;
-
-        border-left: none;
         padding-left: 0;
-    }
-
-    .bd-content {
-        // Widen the main div since we won't have a TOC
-        div#main-content > div {
-            flex: 0 0 75%;
-            max-width: 75%;
+        p {
+            margin: 0px;
         }
     }
-
+    .bd-content {
+        // Widen the main div since we won't have a TOC
+        div#print-main-content > div {
+            flex: 0 0 100%;
+            max-width: 100%;
+            h1 {
+                display: none;
+            }
+        }
+    }
+    h1 {
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 0;
+    }
     h1, h2, h3, h4 {
         break-after: avoid;
+        color: black;
     }
 
     table {
@@ -80,26 +97,23 @@
         div.topbar-main {
             opacity: 0;
         }
-
-        // Grow and show the TOC on print
-        div.bd-toc {
-            flex: 0 0 25%;
-            max-width: 25%;
-            height: auto !important;
-
-            // All 1st and 2nd items should be displayed
-            nav, nav > ul.nav, nav > ul.nav > li > ul.nav {
-                opacity: 1;
-                display: block;
-            }
-
-            // No fancy styling for nav links
-            .nav-link.active {
-                font-weight: inherit;
-                color: inherit;
-                background-color: inherit;
-                border-left: inherit;
-            }
+    }
+    .section-nav {
+        border-left: 0px;
+        list-style-type: disc;
+        margin-left: 3em;
+        a {
+            text-decoration: none;
+            padding-left: 0px;
         }
+        li {
+            display: list-item !important;
+        }
+        .nav {
+            display: none;
+        }
+    }
+    #jb-print-toc {
+        margin-bottom: 1.5rem ;
     }
 }
