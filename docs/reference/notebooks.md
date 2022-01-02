@@ -51,7 +51,7 @@ ax.imshow(wide)
 ```{code-cell} ipython3
 :tags: [hide_output]
 
-# Hide input
+# Hide output
 square = np.random.randn(100, 100)
 wide = np.random.randn(100, 1000)
 
