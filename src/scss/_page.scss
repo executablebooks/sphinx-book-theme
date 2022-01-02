@@ -252,16 +252,6 @@ main.bd-content {
         }
 
         // Footnotes and Citations
-        span.brackets, a.brackets {
-            &:before {
-                content: "[";
-            }
-
-            &:after {
-                content: "]";
-            }
-        }
-
         .footnote-reference, a.bibtex.internal {
             font-size: 1em;
         }
@@ -294,23 +284,10 @@ main.bd-content {
                 padding-left:.1em;
             }
 
+            // To ensure that the footnote text is aligned across lines
             dd {
                 font-size:.9em;
                 margin-left: 3em;
-            }
-        }
-
-        dl.citation {
-            margin-left: 3em;
-        }
-
-        dl.footnote {
-            dt.label {
-                float: left;
-            }
-
-            dd p {
-                padding-left: 1.5em;
             }
         }
 
