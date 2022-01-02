@@ -55,45 +55,48 @@ var initTooltips = () => {
   });
 }
 
+/**
+ * Hide the Table of Contents any time sidebar content is on the screen.
+ *
+ * This will be triggered any time a sidebar item enters or exits the screen.
+ * It adds/removes items from an array if they have entered the screen, and
+ * removes them when they exit the screen. It hides the TOC if anything is
+ * on-screen.
+ *
+ * ref: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ */
 var initTocHide = () => {
-  // Hide the TOC when we scroll down
-  var scrollTimeout;
-  var throttle = 200;  // in milliseconds
-  var tocHeight = $("#bd-toc-nav").outerHeight(true) + $(".bd-toc").outerHeight(true);
-  var hideTocAfter = tocHeight + 200;  // Height of TOC + some extra padding
-  var checkTocScroll = function () {
-      var margin_content = $(".margin, .tag_margin, .full-width, .full_width, .tag_full-width, .tag_full_width, .sidebar, .tag_sidebar, .popout, .tag_popout");
-      margin_content.each((index, item) => {
-        // Defining the boundaries that we care about for checking TOC hiding
-        var topOffset = $(item).offset().top - $(window).scrollTop();
-        var bottomOffset = topOffset + $(item).outerHeight(true);
+  var onScreenItems = [];
+  let hideTocCallback = (entries, observer) => {
+    // Check whether any sidebar item is displayed
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // If an element just came on screen, add it our list
+        onScreenItems.push(entry.target);
+      } else {
+        // Otherwise, if it's in our list then remove it
+        for (let ii = 0; ii < onScreenItems.length; ii++) {
+          if (onScreenItems[ii] === entry.target) {
+              onScreenItems.splice(ii, 1);
+              break
+          }
+        }
+      };
+    });
 
-        // Check whether we should hide the TOC (if it overlaps with a margin content)
-        var removeToc = (topOffset < hideTocAfter && bottomOffset >= 0);
-        if (removeToc && window.pageYOffset > 20) {
-          $("div.bd-toc").removeClass("show")
-          return false
-        } else {
-          $("div.bd-toc").addClass("show")
-        };
-      })
-  };
-  var manageScrolledClassOnBody = function () {
-    if (window.scrollY > 0) {
-      document.body.classList.add("scrolled");
+    // Hide the TOC if any margin content is displayed on the screen
+    if (onScreenItems.length > 0) {
+      $("div.bd-toc").removeClass("show")
     } else {
-      document.body.classList.remove("scrolled");
+      $("div.bd-toc").addClass("show")
     }
-  }
+  };
 
-  $(window).on('scroll', function () {
-      if (!scrollTimeout) {
-          scrollTimeout = setTimeout(function () {
-              checkTocScroll();
-              manageScrolledClassOnBody();
-              scrollTimeout = null;
-          }, throttle);
-      }
+  // Set up the intersection observer to watch all margin content
+  let observer = new IntersectionObserver(hideTocCallback);
+  const marginSelector = ".margin, .tag_margin, .full-width, .full_width, .tag_full-width, .tag_full_width, .sidebar, .tag_sidebar, .popout, .tag_popout";
+  document.querySelectorAll(marginSelector).forEach((ii) => {
+    observer.observe(ii);
   });
 }
 
