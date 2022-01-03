@@ -18,6 +18,11 @@ pre {
     border-radius: $box-border-radius;
 }
 
+// Over-ride Sphinx default so that content fills whitespace w/ margin content
+pre, div[class*="highlight-"] {
+    clear: none;
+}
+
 // Highlight search phrases
 dt:target, span.highlighted {
     background-color: #fbe54e;
