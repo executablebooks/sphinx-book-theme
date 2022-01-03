@@ -69,9 +69,7 @@ var initTocHide = () => {
         var bottomOffset = topOffset + $(item).outerHeight(true);
 
         // Check whether we should hide the TOC (if it overlaps with a margin content)
-        var topOverlaps = ((topOffset >= 0) && (topOffset < hideTocAfter));
-        var bottomOverlaps = ((bottomOffset >= 0) && (bottomOffset < hideTocAfter));
-        var removeToc = (topOverlaps || bottomOverlaps);
+        var removeToc = (topOffset < hideTocAfter && bottomOffset >= 0);
         if (removeToc && window.pageYOffset > 20) {
           $("div.bd-toc").removeClass("show")
           return false
