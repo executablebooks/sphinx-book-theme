@@ -136,7 +136,9 @@ post_auto_image = 1
 post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
+# To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
+bibtex_default_style = "plain"
 
 # -- Download kitchen sink reference docs -------------------------------------
 # These are the kitchen sink files used by the Sphinx Themes gallery at
