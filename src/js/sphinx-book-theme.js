@@ -91,9 +91,17 @@ var initTocHide = () => {
       $("div.bd-toc").addClass("show")
     }
   };
+  let manageScrolledClassOnBody = (entries, observer) => {
+    // The pixel starts at -1, so if we're < that it means we've scrolled
+    if ( entries[0].boundingClientRect.y < -1) {
+      document.body.classList.add("scrolled");
+    } else {
+      document.body.classList.remove("scrolled");
+    }
+  }
 
   // Set up the intersection observer to watch all margin content
-  let observer = new IntersectionObserver(hideTocCallback);
+  let tocObserver = new IntersectionObserver(hideTocCallback);
   const selectorClasses = ["margin", "margin-caption", "full-width", "sidebar", "popout"];
   marginSelector = []
   selectorClasses.forEach((ii) => {
@@ -101,8 +109,12 @@ var initTocHide = () => {
     marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
   });
   document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {
-    observer.observe(ii);
+    tocObserver.observe(ii);
   });
+
+  // Set up the observer to check if we've scrolled from top of page
+  let scrollObserver = new IntersectionObserver(manageScrolledClassOnBody);
+  scrollObserver.observe(document.querySelector(".sbt-scroll-pixel-helper"));
 }
 
 var printPdf = (el) => {

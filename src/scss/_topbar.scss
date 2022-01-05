@@ -8,7 +8,9 @@
 .topbar {
     background-color: white;
     transition: left .2s;
-    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    .scrolled & {
+        box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    }
 
     .topbar-main {
         padding-top: 0.25rem;
@@ -48,7 +50,7 @@
     transition: flex 0.2s ease 0s;
     @media (max-width: 768px) {
         border-bottom: 1px solid transparent;
-        &.show, &.collapsing {
+        &.show, &.collapsing, body.scrolled & {
             border-color: rgba(0, 0, 0, 0.1);
             position: absolute;
             bottom: 0;
@@ -144,6 +146,15 @@ button.topbarbtn img {
             transform: rotate(-180deg) scale(.5);
         }
     }
+}
+
+// Helper pixel that we can watch to decide whether we've scrolled down
+.sbt-scroll-pixel-helper {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 0;
+    left: 0;
 }
 
 
