@@ -31,22 +31,26 @@
     }
     .bd-content {
         // Widen the main div since we won't have a TOC
-        div#print-main-content > div {
+        div#main-content > div {
             flex: 0 0 100%;
             max-width: 100%;
-            h1 {
-                display: none;
-            }
+            overflow-x: hidden;
         }
     }
     h1 {
         text-align: center;
-        margin-top: 2em;
+        margin-top: 1em;
         margin-bottom: 0;
     }
     h1, h2, h3, h4 {
         break-after: avoid;
         color: black;
+    }
+    // Hide the first h1 within the content, this is the title
+    #jb-print-docs-body + div h1:first-of-type,
+    // Previous / next buttons
+    div.prev-next-area {
+        display: none;
     }
 
     table {
@@ -115,5 +119,8 @@
     }
     #jb-print-toc {
         margin-bottom: 1.5rem ;
+    }
+    .footer {
+        margin-top: 1em;
     }
 }
