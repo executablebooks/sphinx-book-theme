@@ -92,8 +92,9 @@ var initTocHide = () => {
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
-    // The pixel starts at -1, so if we're < -20 that it means we've scrolled more than 20 px
-    if ( entries[0].boundingClientRect.y < -20) {
+    // The pixel starts at -1, so if we're < -1 that it means we've scrolled
+    console.log(entries[0].boundingClientRect.y)
+    if ( entries[0].boundingClientRect.y < -1) {
       document.body.classList.add("scrolled");
     } else {
       document.body.classList.remove("scrolled");
