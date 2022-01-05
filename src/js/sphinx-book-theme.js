@@ -94,7 +94,12 @@ var initTocHide = () => {
 
   // Set up the intersection observer to watch all margin content
   let observer = new IntersectionObserver(hideTocCallback);
-  const marginSelector = ".margin, .tag_margin, .full-width, .full_width, .tag_full-width, .tag_full_width, .sidebar, .tag_sidebar, .popout, .tag_popout";
+  const selectorClasses = ["margin", "margin-caption", "full-width", "sidebar", "popout"];
+  marginSelector = []
+  selectorClasses.forEach((ii) => {
+    // Use three permutations of each class name because `tag_` and `_` used to be supported
+    marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
+  });
   document.querySelectorAll(marginSelector).forEach((ii) => {
     observer.observe(ii);
   });
