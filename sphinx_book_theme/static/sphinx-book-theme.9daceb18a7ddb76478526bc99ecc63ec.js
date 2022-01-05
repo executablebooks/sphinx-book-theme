@@ -7,7 +7,7 @@ var sbRunWhenDOMLoaded=cb=>{if(document.readyState!='loading'){cb()}else if(docu
 function toggleFullScreen(){var navToggler=$("#navbar-toggler");if(!document.fullscreenElement){document.documentElement.requestFullscreen();if(!navToggler.hasClass("collapsed")){navToggler.click();}}else{if(document.exitFullscreen){document.exitFullscreen();if(navToggler.hasClass("collapsed")){navToggler.click();}}}}
 var initTooltips=()=>{$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});}
 var initTocHide=()=>{var onScreenItems=[];let hideTocCallback=(entries,observer)=>{entries.forEach((entry)=>{if(entry.isIntersecting){onScreenItems.push(entry.target);}else{for(let ii=0;ii<onScreenItems.length;ii++){if(onScreenItems[ii]===entry.target){onScreenItems.splice(ii,1);break}}};});if(onScreenItems.length>0){$("div.bd-toc").removeClass("show")}else{$("div.bd-toc").addClass("show")}};let observer=new IntersectionObserver(hideTocCallback);const selectorClasses=["margin","margin-caption","full-width","sidebar","popout"];marginSelector=[]
-selectorClasses.forEach((ii)=>{marginSelector.push(...[`.${ii}`,`.tag_${ii}`,`.${ii.replace("-", "_")}`])});document.querySelectorAll(marginSelector).forEach((ii)=>{observer.observe(ii);});}
+selectorClasses.forEach((ii)=>{marginSelector.push(...[`.${ii}`,`.tag_${ii}`,`.${ii.replace("-", "_")}`])});document.querySelectorAll(marginSelector.join(", ")).forEach((ii)=>{observer.observe(ii);});}
 var printPdf=(el)=>{let tooltipID=$(el).attr("aria-describedby")
 let tooltipTextDiv=$("#"+tooltipID).detach()
 window.print()
