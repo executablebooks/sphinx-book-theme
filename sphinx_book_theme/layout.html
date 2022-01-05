@@ -26,7 +26,7 @@
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>{{ pagetitle }}</h1>
                 <!-- Table of contents -->
-                <div id="print-main-content" class="row">
+                <div id="print-main-content">
                     <div id="jb-print-toc">
                         {% set page_toc = generate_toc_html() %}
                         {%- if page_toc | length >= 1 %}
