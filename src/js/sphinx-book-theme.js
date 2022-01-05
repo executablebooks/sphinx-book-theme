@@ -93,7 +93,6 @@ var initTocHide = () => {
   };
   let manageScrolledClassOnBody = (entries, observer) => {
     // The pixel is at the top, so if we're < 0 that it means we've scrolled
-    console.log(entries[0].boundingClientRect.y)
     if ( entries[0].boundingClientRect.y < 0) {
       document.body.classList.add("scrolled");
     } else {
