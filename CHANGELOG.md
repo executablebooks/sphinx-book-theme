@@ -1,5 +1,10 @@
 # Changelog
 
+
+## v0.1.8 .. v0.1.9
+
+This is a minor release to fix a bug that was introduced which broke the right sidebar anchor links.
+
 ## v0.1.7 .. v0.1.8
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.7...862632b892f6acd640aa080eb1f50ac6d3de7bc3))
