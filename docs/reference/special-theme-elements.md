@@ -279,7 +279,7 @@ The `margin-caption` class should cause a figure's caption to pop out to the rig
 width: 60%
 figclass: margin-caption
 alt: My figure text
-name: myfig5
+name: reference-margin-fig
 ---
 And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
 ```
