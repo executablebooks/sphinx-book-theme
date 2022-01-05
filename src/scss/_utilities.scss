@@ -1,0 +1,11 @@
+/*********************************************
+* Utility classes that aren't section-specific
+*********************************************/
+// Helper pixel that we can watch to decide whether we'vez
+.sbt-scroll-pixel-helper {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+}

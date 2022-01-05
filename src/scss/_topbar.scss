@@ -8,6 +8,7 @@
 .topbar {
     background-color: white;
     transition: left .2s;
+
     .scrolled & {
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
     }
@@ -148,23 +149,10 @@ button.topbarbtn img {
     }
 }
 
-// Helper pixel that we can watch to decide whether we'vez
-.sbt-scroll-pixel-helper {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    top: 0;
-    left: 0;
-}
-
-
 @media (max-width: $breakpoint-md) {
     #navbar-toggler {
         i.fa-arrow-up {
             display: none;
-        }
-
-        i.fa-arrow-left {
         }
     }
 }
