@@ -42,21 +42,24 @@
         div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
             float: right;
         }
-    }
-}
 
-.bd-topbar-whitespace {
-    width: $leftbar-width;
-    flex: auto;
-    transition: flex 0.2s ease 0s;
-    @media (max-width: 768px) {
-        border-bottom: 1px solid transparent;
-        &.show, &.collapsing, body.scrolled & {
-            border-color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: block;
+        // Left section of topbar
+        .topbar-left {
+            display: flex;
+            align-items: center;
+
+            label {
+                cursor: pointer;
+                color: $non-content-grey;
+                margin-bottom: 0;
+                font-size: 1.4em;
+            }
+        }
+
+        label, button {
+            &:hover i {
+                color: black;
+            }
         }
     }
 }
@@ -110,72 +113,4 @@ button.topbarbtn img {
     height: 1.15em;
     padding-right: 6px;
     margin-left: -5px;
-}
-
-#navbar-toggler {
-    position: relative;
-    margin-right: 1em;
-    margin-left: .5em;
-    color: $non-content-grey;
-
-    i {
-        transition: opacity .3s, transform .3s;
-        position: absolute;
-        top: 16%;
-        left: 0;
-        display: block;
-        font-size: 1.2em;
-    }
-
-    i.fa-bars {
-        opacity: 0;
-        transform: rotate(180deg) scale(.5);
-    }
-
-    i.fa-arrow-left, i.fa-arrow-up {
-        opacity: 1;
-    }
-
-    &.collapsed {
-        i.fa-bars {
-            opacity: 1;
-            transform: rotate(0) scale(1);
-        }
-
-        i.fa-arrow-left, i.fa-arrow-up {
-            opacity: 0;
-            transform: rotate(-180deg) scale(.5);
-        }
-    }
-}
-
-
-@media (max-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-        }
-    }
-}
-
-@media (min-width: $breakpoint-md) {
-    #navbar-toggler {
-        i.fa-arrow-up {
-            display: none;
-        }
-
-        i.fa-arrow-left {
-            display: inherit;
-        }
-    }
-}
-
-// Navbar and topbar sidebar padding should max at 300px
-@media (min-width: $breakpoint-md) {
-    .bd-topbar-whitespace {
-        max-width: 275px;
-    }
 }
