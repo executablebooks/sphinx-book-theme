@@ -131,6 +131,9 @@ input#__navigation {
 // behaves the same way as the sidebar
 // TODO: This should be refactored to have a more sensible structure
 .bd-topbar-whitespace {
+    width: $leftbar-width;
+    flex: auto;
+    transition: flex 0.2s ease 0s;
     @media (max-width: $breakpoint-md) {
         // Whitespace isn't needed on narrow screens since sidebar is separate
         display: none;
@@ -140,10 +143,6 @@ input#__navigation {
     @media (min-width: $breakpoint-md) {
         max-width: 275px;
     }
-
-    width: $leftbar-width;
-    flex: auto;
-    transition: flex 0.2s ease 0s;
 }
 
 // Label at the top of the page
