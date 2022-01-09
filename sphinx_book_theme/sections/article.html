@@ -17,7 +17,9 @@
                 </div>
             </div>
         </div>
-        {{ body }}
+        {% block body %}
+           {{ body }}
+        {% endblock %}
         {% if theme_show_prev_next %}
             {% include "_templates/prev-next.html" %}
         {% endif %}
