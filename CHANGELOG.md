@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.1.9 .. v0.1.10
+
+Maintenance release, to remove the unused `click` dependency.
 
 ## v0.1.8 .. v0.1.9
 
