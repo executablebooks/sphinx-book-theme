@@ -135,6 +135,58 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         return toctree.prettify()
 
+    def generate_toc_html(kind="html"):
+        """Return the within-page TOC links in HTML."""
+
+        if "toc" not in context:
+            return ""
+
+        soup = bs(context["toc"], "html.parser")
+
+        # Add toc-hN + visible classes
+        def add_header_level_recursive(ul, level):
+            if ul is None:
+                return
+            if level <= (context["theme_show_toc_level"] + 1):
+                ul["class"] = ul.get("class", []) + ["visible"]
+            for li in ul("li", recursive=False):
+                li["class"] = li.get("class", []) + [f"toc-h{level}"]
+                add_header_level_recursive(li.find("ul", recursive=False), level + 1)
+
+        add_header_level_recursive(soup.find("ul"), 1)
+
+        # Add in CSS classes for bootstrap
+        for ul in soup("ul"):
+            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
+
+        for li in soup("li"):
+            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
+            if li.find("a"):
+                a = li.find("a")
+                a["class"] = a.get("class", []) + ["nav-link"]
+
+        # If we only have one h1 header, assume it's a title
+        h1_headers = soup.select(".toc-h1")
+        if len(h1_headers) == 1:
+            title = h1_headers[0]
+            # If we have no sub-headers of a title then we won't have a TOC
+            if not title.select(".toc-h2"):
+                out = ""
+            else:
+                out = title.find("ul").prettify()
+        # Else treat the h1 headers as sections
+        else:
+            out = soup.prettify()
+
+        # Return the toctree object
+        if kind == "html":
+            return out
+        else:
+            return soup
+
+    # Ensure that the max TOC level is an integer
+    context["theme_show_toc_level"] = int(context.get("theme_show_toc_level", 1))
+
     context["sbt_generate_nav_html"] = sbt_generate_nav_html
 
     # Update the page title because HTML makes it into the page title occasionally
@@ -197,6 +249,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["theme_search_bar_text"] = translation(
         context.get("theme_search_bar_text", "Search the docs ...")
     )
+    context["generate_toc_html"] = generate_toc_html
 
 
 def update_thebe_config(app, env, docnames):
