@@ -135,6 +135,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         return toctree.prettify()
 
+    # TODO: find appropriate location for this function and edit.
     def generate_toc_html(kind="html"):
         """Return the within-page TOC links in HTML."""
 
