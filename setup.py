@@ -32,7 +32,7 @@ setup(
         "click~=7.1",
         "docutils>=0.15,<0.17",
         'importlib-resources>=3.0,<3.5; python_version < "3.7"',
-        "sphinx-basic-ng==0.0.1.a9",
+        "sphinx-basic-ng",
         "pyyaml",
         "sphinx>=3,<5",
     ],
