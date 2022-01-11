@@ -35,6 +35,7 @@ setup(
         "sphinx-basic-ng",
         "pyyaml",
         "sphinx>=3,<5",
+        "sphinx-design",
     ],
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
@@ -49,7 +50,6 @@ setup(
             "pandas",
             "plotly",
             "sphinx~=4.0",  # Force Sphinx to be the latest version
-            "sphinx-design",
             "sphinx-copybutton",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-thebe",

@@ -1,0 +1,5 @@
+<div class=" bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+    {% if not is_single_page %}
+        {% include "sidebar.html" %}
+    {%- endif %}
+</div>

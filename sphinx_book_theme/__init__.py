@@ -135,56 +135,6 @@ def add_to_context(app, pagename, templatename, context, doctree):
 
         return toctree.prettify()
 
-    # TODO: find appropriate location for this function and edit.
-    def generate_toc_html(kind="html"):
-        """Return the within-page TOC links in HTML."""
-
-        if "toc" not in context:
-            return ""
-
-        soup = bs(context["toc"], "html.parser")
-
-        # Add toc-hN + visible classes
-        def add_header_level_recursive(ul, level):
-            if ul is None:
-                return
-            if level <= (context["theme_show_toc_level"] + 1):
-                ul["class"] = ul.get("class", []) + ["visible"]
-            for li in ul("li", recursive=False):
-                li["class"] = li.get("class", []) + [f"toc-h{level}"]
-                add_header_level_recursive(li.find("ul", recursive=False), level + 1)
-
-        add_header_level_recursive(soup.find("ul"), 1)
-
-        # Add in CSS classes for bootstrap
-        for ul in soup("ul"):
-            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
-
-        for li in soup("li"):
-            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
-            if li.find("a"):
-                a = li.find("a")
-                a["class"] = a.get("class", []) + ["nav-link"]
-
-        # If we only have one h1 header, assume it's a title
-        h1_headers = soup.select(".toc-h1")
-        if len(h1_headers) == 1:
-            title = h1_headers[0]
-            # If we have no sub-headers of a title then we won't have a TOC
-            if not title.select(".toc-h2"):
-                out = ""
-            else:
-                out = title.find("ul").prettify()
-        # Else treat the h1 headers as sections
-        else:
-            out = soup.prettify()
-
-        # Return the toctree object
-        if kind == "html":
-            return out
-        else:
-            return soup
-
     # Ensure that the max TOC level is an integer
     context["theme_show_toc_level"] = int(context.get("theme_show_toc_level", 1))
 
@@ -250,7 +200,161 @@ def add_to_context(app, pagename, templatename, context, doctree):
     context["theme_search_bar_text"] = translation(
         context.get("theme_search_bar_text", "Search the docs ...")
     )
+
+
+def add_toctree_functions(app, pagename, templatename, context, doctree):
+    """Add functions so Jinja templates can add toctree objects."""
+
+    def generate_toc_html(kind="html"):
+        """Return the within-page TOC links in HTML."""
+
+        if "toc" not in context:
+            return ""
+
+        soup = bs(context["toc"], "html.parser")
+
+        # Add toc-hN + visible classes
+        def add_header_level_recursive(ul, level):
+            if ul is None:
+                return
+            if level <= (context["theme_show_toc_level"] + 1):
+                ul["class"] = ul.get("class", []) + ["visible"]
+            for li in ul("li", recursive=False):
+                li["class"] = li.get("class", []) + [f"toc-h{level}"]
+                add_header_level_recursive(li.find("ul", recursive=False), level + 1)
+
+        add_header_level_recursive(soup.find("ul"), 1)
+
+        # Add in CSS classes for bootstrap
+        for ul in soup("ul"):
+            ul["class"] = ul.get("class", []) + ["nav", "section-nav", "flex-column"]
+
+        for li in soup("li"):
+            li["class"] = li.get("class", []) + ["nav-item", "toc-entry"]
+            if li.find("a"):
+                a = li.find("a")
+                a["class"] = a.get("class", []) + ["nav-link"]
+
+        # If we only have one h1 header, assume it's a title
+        h1_headers = soup.select(".toc-h1")
+        if len(h1_headers) == 1:
+            title = h1_headers[0]
+            # If we have no sub-headers of a title then we won't have a TOC
+            if not title.select(".toc-h2"):
+                out = ""
+            else:
+                out = title.find("ul").prettify()
+        # Else treat the h1 headers as sections
+        else:
+            out = soup.prettify()
+
+        # Return the toctree object
+        if kind == "html":
+            return out
+        else:
+            return soup
+
+    def navbar_align_class():
+        """Return the class that aligns the navbar based on config."""
+        align = context.get("theme_navbar_align", "content")
+        align_options = {
+            "content": ("col-lg-9", "mr-auto"),
+            "left": ("", "mr-auto"),
+            "right": ("", "ml-auto"),
+        }
+        if align not in align_options:
+            raise ValueError(
+                (
+                    "Theme optione navbar_align must be one of"
+                    f"{align_options.keys()}, got: {align}"
+                )
+            )
+        return align_options[align]
+
+    def generate_google_analytics_script(id):
+        """Handle the two types of google analytics id."""
+        if id:
+            if "G-" in id:
+                script = f"""
+                <script
+                    async
+                    src='https://www.googletagmanager.com/gtag/js?id={id}'
+                ></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){{ dataLayer.push(arguments); }}
+                    gtag('js', new Date());
+                    gtag('config', '{id}');
+                </script>
+                """
+            else:
+                script = f"""
+                    <script
+                        async
+                        src='https://www.google-analytics.com/analytics.js'
+                    ></script>
+                    <script>
+                        window.ga = window.ga || function () {{
+                            (ga.q = ga.q || []).push(arguments) }};
+                        ga.l = +new Date;
+                        ga('create', '{id}', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+                """
+            soup = bs(script, "html.parser")
+            return soup
+        else:
+            return ""
+
     context["generate_toc_html"] = generate_toc_html
+    context["navbar_align_class"] = navbar_align_class
+    context["generate_google_analytics_script"] = generate_google_analytics_script
+
+
+def _add_collapse_checkboxes(soup):
+    # based on https://github.com/pradyunsg/furo
+
+    toctree_checkbox_count = 0
+
+    for element in soup.find_all("li", recursive=True):
+        # We check all "li" elements, to add a "current-page" to the correct li.
+        classes = element.get("class", [])
+
+        # Nothing more to do, unless this has "children"
+        if not element.find("ul"):
+            continue
+
+        # Add a class to indicate that this has children.
+        element["class"] = classes + ["has-children"]
+
+        # We're gonna add a checkbox.
+        toctree_checkbox_count += 1
+        checkbox_name = f"toctree-checkbox-{toctree_checkbox_count}"
+
+        # Add the "label" for the checkbox which will get filled.
+        if soup.new_tag is None:
+            continue
+        label = soup.new_tag("label", attrs={"for": checkbox_name})
+        label.append(soup.new_tag("i", attrs={"class": "fas fa-chevron-down"}))
+        element.insert(1, label)
+
+        # Add the checkbox that's used to store expanded/collapsed state.
+        checkbox = soup.new_tag(
+            "input",
+            attrs={
+                "type": "checkbox",
+                "class": ["toctree-checkbox"],
+                "id": checkbox_name,
+                "name": checkbox_name,
+            },
+        )
+        # if this has a "current" class, be expanded by default
+        # (by checking the checkbox)
+        if "current" in classes:
+            checkbox.attrs["checked"] = ""
+
+        element.insert(1, checkbox)
 
 
 def update_thebe_config(app, env, docnames):
@@ -328,11 +432,12 @@ class Margin(Sidebar):
 
 
 def setup(app: Sphinx):
+    # app.setup_extension("sphinx_design")
     app.connect("env-before-read-docs", update_thebe_config)
 
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
-
+    app.connect("html-page-context", add_toctree_functions)
     app.connect("builder-inited", add_static_paths)
     app.connect("env-updated", update_all)
 
