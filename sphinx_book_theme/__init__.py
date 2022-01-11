@@ -14,6 +14,8 @@ from docutils import nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
+from sphinx.environment.adapters.toctree import TocTree
+from sphinx import addnodes
 
 from .launch import add_hub_urls
 from . import static as theme_static
@@ -202,8 +204,149 @@ def add_to_context(app, pagename, templatename, context, doctree):
     )
 
 
+def _get_local_toctree_for(
+    self: TocTree, indexname: str, docname: str, builder, collapse: bool, **kwargs
+):
+    """Return the "local" TOC nodetree (relative to `indexname`)."""
+    # this is a copy of `TocTree.get_toctree_for`, but where the sphinx version
+    # always uses the "master" doctree:
+    #     doctree = self.env.get_doctree(self.env.config.master_doc)
+    # we here use the `indexname` additional argument to be able to use a subset
+    # of the doctree (e.g. starting at a second level for the sidebar):
+    #     doctree = app.env.tocs[indexname].deepcopy()
+
+    doctree = self.env.tocs[indexname].deepcopy()
+
+    toctrees = []
+    if "includehidden" not in kwargs:
+        kwargs["includehidden"] = True
+    if "maxdepth" not in kwargs or not kwargs["maxdepth"]:
+        kwargs["maxdepth"] = 0
+    else:
+        kwargs["maxdepth"] = int(kwargs["maxdepth"])
+    kwargs["collapse"] = collapse
+
+    for toctreenode in doctree.traverse(addnodes.toctree):
+        toctree = self.resolve(docname, builder, toctreenode, prune=True, **kwargs)
+        if toctree:
+            toctrees.append(toctree)
+    if not toctrees:
+        return None
+    result = toctrees[0]
+    for toctree in toctrees[1:]:
+        result.extend(toctree.children)
+    return result
+
+
+def index_toctree(app, pagename: str, startdepth: int, collapse: bool = True, **kwargs):
+    """
+    Returns the "local" (starting at `startdepth`) TOC tree containing the
+    current page, rendered as HTML bullet lists.
+
+    This is the equivalent of `context["toctree"](**kwargs)` in sphinx
+    templating, but using the startdepth-local instead of global TOC tree.
+    """
+    # this is a variant of the function stored in `context["toctree"]`, which is
+    # defined as `lambda **kwargs: self._get_local_toctree(pagename, **kwargs)`
+    # with `self` being the HMTLBuilder and the `_get_local_toctree` basically
+    # returning:
+    #     return self.render_partial(TocTree(self.env).get_toctree_for(
+    #         pagename, self, collapse, **kwargs))['fragment']
+
+    if "includehidden" not in kwargs:
+        kwargs["includehidden"] = False
+    if kwargs.get("maxdepth") == "":
+        kwargs.pop("maxdepth")
+
+    toctree = TocTree(app.env)
+    ancestors = toctree.get_toctree_ancestors(pagename)
+    try:
+        indexname = ancestors[-startdepth]
+    except IndexError:
+        # eg for index.rst, but also special pages such as genindex, py-modindex, search
+        # those pages don't have a "current" element in the toctree, so we can
+        # directly return an emtpy string instead of using the default sphinx
+        # toctree.get_toctree_for(pagename, app.builder, collapse, **kwargs)
+        return ""
+
+    toctree_element = _get_local_toctree_for(
+        toctree, indexname, pagename, app.builder, collapse, **kwargs
+    )
+    return app.builder.render_partial(toctree_element)["fragment"]
+
+
 def add_toctree_functions(app, pagename, templatename, context, doctree):
     """Add functions so Jinja templates can add toctree objects."""
+
+    def generate_nav_html(kind, startdepth=None, **kwargs):
+        """
+        Return the navigation link structure in HTML. Arguments are passed
+        to Sphinx "toctree" function (context["toctree"] below).
+
+        We use beautifulsoup to add the right CSS classes / structure for bootstrap.
+
+        See https://www.sphinx-doc.org/en/master/templating.html#toctree.
+
+        Parameters
+        ----------
+        kind : ["navbar", "sidebar", "raw"]
+            The kind of UI element this toctree is generated for.
+        startdepth : int
+            The level of the toctree at which to start. By default, for
+            the navbar uses the normal toctree (`startdepth=0`), and for
+            the sidebar starts from the second level (`startdepth=1`).
+        kwargs: passed to the Sphinx `toctree` template function.
+
+        Returns
+        -------
+        HTML string (if kind in ["navbar", "sidebar"])
+        or BeautifulSoup object (if kind == "raw")
+        """
+        if startdepth is None:
+            startdepth = 1 if kind == "sidebar" else 0
+
+        if startdepth == 0:
+            toc_sphinx = context["toctree"](**kwargs)
+        else:
+            # select the "active" subset of the navigation tree for the sidebar
+            toc_sphinx = index_toctree(app, pagename, startdepth, **kwargs)
+
+        soup = bs(toc_sphinx, "html.parser")
+
+        # pair "current" with "active" since that's what we use w/ bootstrap
+        for li in soup("li", {"class": "current"}):
+            li["class"].append("active")
+
+        # Remove navbar/sidebar links to sub-headers on the page
+        for li in soup.select("li"):
+            # Remove
+            if li.find("a"):
+                href = li.find("a")["href"]
+                if "#" in href and href != "#":
+                    li.decompose()
+
+        if kind == "navbar":
+            # Add CSS for bootstrap
+            for li in soup("li"):
+                li["class"].append("nav-item")
+                li.find("a")["class"].append("nav-link")
+            # only select li items (not eg captions)
+            out = "\n".join([ii.prettify() for ii in soup.find_all("li")])
+
+        elif kind == "sidebar":
+            # Add bootstrap classes for first `ul` items
+            for ul in soup("ul", recursive=False):
+                ul.attrs["class"] = ul.attrs.get("class", []) + ["nav", "bd-sidenav"]
+
+            # Add icons and labels for collapsible nested sections
+            _add_collapse_checkboxes(soup)
+
+            out = soup.prettify()
+
+        elif kind == "raw":
+            out = soup
+
+        return out
 
     def generate_toc_html(kind="html"):
         """Return the within-page TOC links in HTML."""
@@ -254,6 +397,23 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
         else:
             return soup
 
+    def navbar_align_class():
+        """Return the class that aligns the navbar based on config."""
+        align = context.get("theme_navbar_align", "content")
+        align_options = {
+            "content": ("col-lg-9", "mr-auto"),
+            "left": ("", "mr-auto"),
+            "right": ("", "ml-auto"),
+        }
+        if align not in align_options:
+            raise ValueError(
+                (
+                    "Theme optione navbar_align must be one of"
+                    f"{align_options.keys()}, got: {align}"
+                )
+            )
+        return align_options[align]
+
     def generate_google_analytics_script(id):
         """Handle the two types of google analytics id."""
         if id:
@@ -291,6 +451,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
             return ""
 
     context["generate_toc_html"] = generate_toc_html
+    context["generate_nav_html"] = generate_nav_html
     context["generate_google_analytics_script"] = generate_google_analytics_script
 
 
