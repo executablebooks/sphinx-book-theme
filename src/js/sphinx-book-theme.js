@@ -1,11 +1,3 @@
-// Navbar toggle button
-var initTriggerNavBar = () => {
-    if ($(window).width() < 768) {
-        $("#navbar-toggler").trigger("click")
-    }
-}
-
-
 // NavBar scrolling
 var scrollToActive = () => {
   var navbar = document.getElementById('site-navigation')
@@ -55,48 +47,66 @@ var initTooltips = () => {
   });
 }
 
+/**
+ * Hide the Table of Contents any time sidebar content is on the screen.
+ *
+ * This will be triggered any time a sidebar item enters or exits the screen.
+ * It adds/removes items from an array if they have entered the screen, and
+ * removes them when they exit the screen. It hides the TOC if anything is
+ * on-screen.
+ *
+ * ref: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ */
 var initTocHide = () => {
-  // Hide the TOC when we scroll down
-  var scrollTimeout;
-  var throttle = 200;  // in milliseconds
-  var tocHeight = $("#bd-toc-nav").outerHeight(true) + $(".bd-toc").outerHeight(true);
-  var hideTocAfter = tocHeight + 200;  // Height of TOC + some extra padding
-  var checkTocScroll = function () {
-      var margin_content = $(".margin, .tag_margin, .full-width, .full_width, .tag_full-width, .tag_full_width, .sidebar, .tag_sidebar, .popout, .tag_popout");
-      margin_content.each((index, item) => {
-        // Defining the boundaries that we care about for checking TOC hiding
-        var topOffset = $(item).offset().top - $(window).scrollTop();
-        var bottomOffset = topOffset + $(item).outerHeight(true);
+  var onScreenItems = [];
+  let hideTocCallback = (entries, observer) => {
+    // Check whether any sidebar item is displayed
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // If an element just came on screen, add it our list
+        onScreenItems.push(entry.target);
+      } else {
+        // Otherwise, if it's in our list then remove it
+        for (let ii = 0; ii < onScreenItems.length; ii++) {
+          if (onScreenItems[ii] === entry.target) {
+              onScreenItems.splice(ii, 1);
+              break
+          }
+        }
+      };
+    });
 
-        // Check whether we should hide the TOC (if it overlaps with a margin content)
-        var topOverlaps = ((topOffset >= 0) && (topOffset < hideTocAfter));
-        var bottomOverlaps = ((bottomOffset >= 0) && (bottomOffset < hideTocAfter));
-        var removeToc = (topOverlaps || bottomOverlaps);
-        if (removeToc && window.pageYOffset > 20) {
-          $("div.bd-toc").removeClass("show")
-          return false
-        } else {
-          $("div.bd-toc").addClass("show")
-        };
-      })
+    // Hide the TOC if any margin content is displayed on the screen
+    if (onScreenItems.length > 0) {
+      $("div.bd-toc").removeClass("show")
+    } else {
+      $("div.bd-toc").addClass("show")
+    }
   };
-  var manageScrolledClassOnBody = function () {
-    if (window.scrollY > 0) {
+  let manageScrolledClassOnBody = (entries, observer) => {
+    // The pixel is at the top, so if we're < 0 that it means we've scrolled
+    if ( entries[0].boundingClientRect.y < 0) {
       document.body.classList.add("scrolled");
     } else {
       document.body.classList.remove("scrolled");
     }
   }
 
-  $(window).on('scroll', function () {
-      if (!scrollTimeout) {
-          scrollTimeout = setTimeout(function () {
-              checkTocScroll();
-              manageScrolledClassOnBody();
-              scrollTimeout = null;
-          }, throttle);
-      }
+  // Set up the intersection observer to watch all margin content
+  let tocObserver = new IntersectionObserver(hideTocCallback);
+  const selectorClasses = ["margin", "margin-caption", "full-width", "sidebar", "popout"];
+  marginSelector = []
+  selectorClasses.forEach((ii) => {
+    // Use three permutations of each class name because `tag_` and `_` used to be supported
+    marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
   });
+  document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {
+    tocObserver.observe(ii);
+  });
+
+  // Set up the observer to check if we've scrolled from top of page
+  let scrollObserver = new IntersectionObserver(manageScrolledClassOnBody);
+  scrollObserver.observe(document.querySelector(".sbt-scroll-pixel-helper"));
 }
 
 var printPdf = (el) => {
@@ -117,6 +127,5 @@ var initThebeSBT = () => {
 }
 
 sbRunWhenDOMLoaded(initTooltips)
-sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)

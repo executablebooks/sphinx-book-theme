@@ -45,6 +45,7 @@ $box-border-radius: 0.4em;
     scrollbar-width: thin;
     &::-webkit-scrollbar {
         width: 5px;
+        height: 5px;
     }
 
     &::-webkit-scrollbar {

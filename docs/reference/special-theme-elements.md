@@ -20,7 +20,30 @@ This page contains a number of reference elements to see how they look in this
 theme. The information is not meant to be easy to read or understand, just browse
 through and see how things look!
 
+## References with `sphinxcontrib-bibtex`
+
+[`sphinxcontrib-bibtex`](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/) provides support for citations and bibliographies.
+
+Because this theme deals with scholarly and scientific communication, `sphinxcontrib-bibtex` should work particularly well.
+
+Here's are a few citations:
+
+- Default citation {cite}`project_jupyter-proc-scipy-2018`, {cite}`holdgraf_rapid_2016,project_jupyter-proc-scipy-2018`. (should be same as parenthetical)
+- Parenthetical citation {cite:p}`project_jupyter-proc-scipy-2018`, {cite:p}`holdgraf_rapid_2016,project_jupyter-proc-scipy-2018`.
+- Textual citation {cite:t}`project_jupyter-proc-scipy-2018`, {cite:t}`holdgraf_rapid_2016,project_jupyter-proc-scipy-2018`.
+
+And here's a bibliography:
+
+```{bibliography}
+```
+
+:::{seealso}
+See the [paragraph markup page](kitchen-sink/paragraph-markup.rst) for more references styling.
+:::
+
 ## Blog post list
+
+[ABlog](https://ablog.readthedocs.io/en/latest/) is a Sphinx extension for blogging with Sphinx.
 
 Here's a sample post list:
 
@@ -246,3 +269,17 @@ This is extra content after the popouts to see if cells overlap and such.
 Also to make sure you can still interact with the popout content.
 This is extra content after the popouts to see if cells overlap and such.
 Also to make sure you can still interact with the popout content.
+
+### Figures with margin captions
+
+The `margin-caption` class should cause a figure's caption to pop out to the right.
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+figclass: margin-caption
+alt: My figure text
+name: reference-margin-fig
+---
+And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
+```

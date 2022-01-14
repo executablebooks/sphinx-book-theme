@@ -9,7 +9,12 @@
 
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
-<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation {% if is_single_page %} single-page{% endif %}" id="site-navigation">
     {% if not is_single_page %}
         {% include "sidebar.html" %}
     {%- endif %}
@@ -17,36 +22,35 @@
 {% endblock %}
 
 {% block docs_main %}
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>{{ pagetitle }}</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                {% set page_toc = generate_toc_html() %}
-                {%- if page_toc | length >= 1 %}
-                <div>
-                    <h2> {{ translate(theme_toc_title) }} </h2>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>{{ pagetitle }}</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        {% set page_toc = generate_toc_html() %}
+                        {%- if page_toc | length >= 1 %}
+                        <div>
+                            <h2> {{ translate(theme_toc_title) }} </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            {{ page_toc }}
+                        </nav>
+                        {%- endif %}
+                    </div>
                 </div>
-                <nav aria-label="Page">
-                    {{ page_toc }}
-                </nav>
-                {%- endif %}
             </div>
             {{ super() }}
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        {{ super() }}
-        {% if theme_show_prev_next %}
-            {% include "_templates/prev-next.html" %}
-        {% endif %}
+            {% if theme_show_prev_next %}
+                {% include "_templates/prev-next.html" %}
+            {% endif %}
         </div>
     </div>
     {% endblock %}

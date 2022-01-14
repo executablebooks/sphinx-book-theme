@@ -18,6 +18,11 @@ pre {
     border-radius: $box-border-radius;
 }
 
+// Over-ride Sphinx default so that content fills whitespace w/ margin content
+pre, div[class*="highlight-"] {
+    clear: none;
+}
+
 // Highlight search phrases
 dt:target, span.highlighted {
     background-color: #fbe54e;
@@ -146,7 +151,7 @@ main.bd-content {
         // Math equations
         span.eqno {
             position: absolute;
-            right: .5em;
+            right: 1em;
             top: 50%;
             transform: translate(0,-50%);
             font-size: 1.2em;
@@ -252,16 +257,6 @@ main.bd-content {
         }
 
         // Footnotes and Citations
-        span.brackets, a.brackets {
-            &:before {
-                content: "[";
-            }
-
-            &:after {
-                content: "]";
-            }
-        }
-
         .footnote-reference, a.bibtex.internal {
             font-size: 1em;
         }
@@ -294,23 +289,10 @@ main.bd-content {
                 padding-left:.1em;
             }
 
+            // To ensure that the footnote text is aligned across lines
             dd {
                 font-size:.9em;
                 margin-left: 3em;
-            }
-        }
-
-        dl.citation {
-            margin-left: 3em;
-        }
-
-        dl.footnote {
-            dt.label {
-                float: left;
-            }
-
-            dd p {
-                padding-left: 1.5em;
             }
         }
 
