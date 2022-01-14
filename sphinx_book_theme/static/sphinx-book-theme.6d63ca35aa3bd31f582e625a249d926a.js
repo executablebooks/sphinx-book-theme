@@ -1,4 +1,3 @@
-var initTriggerNavBar=()=>{if($(window).width()<768){$("#navbar-toggler").trigger("click")}}
 var scrollToActive=()=>{var navbar=document.getElementById('site-navigation')
 var active_pages=navbar.querySelectorAll(".active")
 var active_page=active_pages[active_pages.length-1]
@@ -17,6 +16,5 @@ var initThebeSBT=()=>{var title=$("div.section h1")[0]
 if(!$(title).next().hasClass("thebe-launch-button")){$("<button class='thebe-launch-button'></button>").insertAfter($(title))}
 initThebe();}
 sbRunWhenDOMLoaded(initTooltips)
-sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)

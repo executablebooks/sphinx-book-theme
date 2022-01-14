@@ -2,16 +2,14 @@
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            {% if theme_single_page != True %}
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="{{ translate('Toggle navigation') }}" aria-controls="site-navigation"
-                title="{{ translate('Toggle navigation') }}" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            {% endif %}
+            <div class="topbar-left">
+                {% if theme_single_page != True %}
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">{{ translate('Toggle navigation') }}</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                {% endif %}
+            </div>
             {% include "topbar/download.html" %}
             {% include "topbar/repobuttons.html" %}
             {% include "topbar/fullscreen.html" %}
