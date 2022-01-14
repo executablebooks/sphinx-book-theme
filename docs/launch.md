@@ -81,6 +81,11 @@ html_theme_options = {
 }
 ```
 
+```{warning}
+This will create a new Deepnote project every time you click the launch button.
+```
+
+
 ## Live code cells with Thebe
 
 [Thebe](http://thebe.readthedocs.org/) converts your static code blocks into
