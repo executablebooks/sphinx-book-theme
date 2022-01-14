@@ -269,3 +269,17 @@ This is extra content after the popouts to see if cells overlap and such.
 Also to make sure you can still interact with the popout content.
 This is extra content after the popouts to see if cells overlap and such.
 Also to make sure you can still interact with the popout content.
+
+### Figures with margin captions
+
+The `margin-caption` class should cause a figure's caption to pop out to the right.
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+figclass: margin-caption
+alt: My figure text
+name: reference-margin-fig
+---
+And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
+```

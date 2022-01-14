@@ -22,6 +22,8 @@
 {% endblock %}
 
 {% block docs_main %}
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     {% block docs_body %}
     {% include "topbar.html" %}
