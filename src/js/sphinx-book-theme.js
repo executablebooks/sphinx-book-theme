@@ -1,11 +1,3 @@
-// Navbar toggle button
-var initTriggerNavBar = () => {
-    if ($(window).width() < 768) {
-        $("#navbar-toggler").trigger("click")
-    }
-}
-
-
 // NavBar scrolling
 var scrollToActive = () => {
   var navbar = document.getElementById('site-navigation')
@@ -135,6 +127,5 @@ var initThebeSBT = () => {
 }
 
 sbRunWhenDOMLoaded(initTooltips)
-sbRunWhenDOMLoaded(initTriggerNavBar)
 sbRunWhenDOMLoaded(scrollToActive)
 sbRunWhenDOMLoaded(initTocHide)

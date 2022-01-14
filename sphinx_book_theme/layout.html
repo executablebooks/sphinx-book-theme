@@ -9,7 +9,12 @@
 
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
-<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation {% if is_single_page %} single-page{% endif %}" id="site-navigation">
     {% if not is_single_page %}
         {% include "sidebar.html" %}
     {%- endif %}
