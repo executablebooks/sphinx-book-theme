@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.10...v0.2.0
+
+This release includes a few under-the-hood and performance improvements to the CSS and HTML of the theme. While there are no major new features, some of these changes have restructured the HTML so double-check your documentation, especially if you had custom CSS rules the sidebar.
+
+Here are a few improvements:
+
+- The right Table of Contents is now hidden using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) which will reduce the number of JavaScript calls and improve reliability of this feature. [#448](https://github.com/executablebooks/sphinx-book-theme/pull/448) ([@choldgraf](https://github.com/choldgraf))
+
+- The left sidebar is now toggle-able **only with CSS**, which should make it less prone to failure due to other conflicting javascript on the page. It now includes a "sidebar drawer" on mobile that gives more vertical space for the sidebar. [#454](https://github.com/executablebooks/sphinx-book-theme/pull/454) ([@choldgraf](https://github.com/choldgraf))
+
+- You can anow add Deepnote buttons for notebook launch buttons [#385](https://github.com/executablebooks/sphinx-book-theme/pull/385) ([@jakubzitny](https://github.com/jakubzitny))
+
 ## v0.1.9 .. v0.1.10
 
 Maintenance release, to remove the unused `click` dependency.
