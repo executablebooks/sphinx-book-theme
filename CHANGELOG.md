@@ -10,7 +10,7 @@ Here are a few improvements:
 
 - The left sidebar is now toggle-able **only with CSS**, which should make it less prone to failure due to other conflicting javascript on the page. It now includes a "sidebar drawer" on mobile that gives more vertical space for the sidebar. [#454](https://github.com/executablebooks/sphinx-book-theme/pull/454) ([@choldgraf](https://github.com/choldgraf))
 
-- You can anow add Deepnote buttons for notebook launch buttons [#385](https://github.com/executablebooks/sphinx-book-theme/pull/385) ([@jakubzitny](https://github.com/jakubzitny))
+- You can now add Deepnote buttons for notebook launch buttons [#385](https://github.com/executablebooks/sphinx-book-theme/pull/385) ([@jakubzitny](https://github.com/jakubzitny))
 
 ## v0.1.9 .. v0.1.10
 
