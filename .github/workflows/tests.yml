@@ -80,6 +80,13 @@ jobs:
         unexpected = [ii for ii in text.split("\n") if "kitchen-sink" not in ii]
         assert len(unexpected) == 0
 
+    - name: Audit with Lighthouse
+      uses: treosh/lighthouse-ci-action@v8
+      with:
+        configPath: ".github/workflows/lighthouserc.json"
+        temporaryPublicStorage: true
+        uploadArtifacts: true
+
   publish:
     name: Publish to PyPI
     needs: [pre-commit, tests]
