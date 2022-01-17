@@ -168,3 +168,40 @@ $ tox -r -e py38-sphinx2
 
 This theme has support for translating several theme phrases into multiple languages.
 For more information about this workflow, see [the translations README](https://github.com/executablebooks/sphinx-book-theme/tree/HEAD/sphinx_book_theme/translations).
+
+
+## Test multiple Sphinx versions
+
+This theme is tested against the latest two major versions of Sphinx.
+We try to set up our regression tests such that there are no differences between these two Sphinx versions.
+
+**If it is important that we include a test that differs between Sphinx versions**, use the variable `sphinx_build.software_versions` to conditionally run tests based on the version of Sphinx.
+
+For example:
+
+```python
+if sphinx_build.software_versions == "sphinx3":
+   foo
+elif sphinx_build.software_versions == "sphinx4":
+   bar
+```
+
+If you are building a regression test, use the `extension` key to create a different regression file for that version of Sphinx.
+For example:
+
+```python
+file_regression.check(
+   html.prettify(),
+   basename="foo",
+   extension=f"{sphinx_build.software_versions}.html",
+   encoding="utf8",
+)
+```
+
+On Sphinx 3, this will create a file called `foo.sphinx3.html`.
+
+:::{admonition} Do this sparingly!
+:class: warning
+
+Conditional testing logic across multiple major Sphinx versions has a negative impact on the maintainability and technical debt of this theme, so use this only when absolutely necessary.
+:::
