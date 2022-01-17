@@ -4,10 +4,10 @@
       "staticDistDir": "./docs/_build/html",
       "autodiscoverUrlBlocklist": [
         "index.html",
-        "demo/api.html",
-        "demo/demo.html",
-        "demo/example_pandas.html",
-        "user_guide/accessibility.html"
+        "reference/kitchen-sink/api.html",
+        "reference/kitchen-sink/paragraph-markup.html",
+        "reference/kitchen-sink/lists-and-tables.html",
+        "reference/special-theme-elements.html"
       ],
       "settings": {
         "skipAudits": ["canonical"]
