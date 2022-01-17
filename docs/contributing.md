@@ -168,3 +168,12 @@ $ tox -r -e py38-sphinx2
 
 This theme has support for translating several theme phrases into multiple languages.
 For more information about this workflow, see [the translations README](https://github.com/executablebooks/sphinx-book-theme/tree/HEAD/sphinx_book_theme/translations).
+
+
+## Test audits with lighthouse
+
+This theme uses the [`treosh/lighthouse-ci-action`](https://github.com/treosh/lighthouse-ci-action) to run some basic audits on our performance, accessibility, etc.
+
+To preview the output of these tests, click on the `docs-audit` GitHub Action job from a Pull Request.
+Then, scroll to the "Audit with Lighthouse" section, and look for the URL links to view the reports for each page that we audit.
+They look like `report: <URL TO PAGE>`.

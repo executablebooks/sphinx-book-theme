@@ -56,7 +56,7 @@ jobs:
         fail_ci_if_error: true
 
   # Build the docs and fail if an *unexpected* warning occurs.
-  docs:
+  docs-audit:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
