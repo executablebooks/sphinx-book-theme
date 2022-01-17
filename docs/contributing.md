@@ -180,4 +180,3 @@ To preview the output of these tests:
 - Scroll to the "Audit with Lighthouse" section
 - If there are errors, you should see them along with the link to preview the report at `report: <URL TO PAGE>`.
 - If there are not errors, you can list them by clicking the `uploading` section, which will reveal links to the report for each page
-
