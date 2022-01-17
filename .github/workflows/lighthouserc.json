@@ -2,13 +2,6 @@
   "ci": {
     "collect": {
       "staticDistDir": "./docs/_build/html",
-      "autodiscoverUrlBlocklist": [
-        "index.html",
-        "reference/kitchen-sink/api.html",
-        "reference/kitchen-sink/paragraph-markup.html",
-        "reference/kitchen-sink/lists-and-tables.html",
-        "reference/special-theme-elements.html"
-      ],
       "settings": {
         "skipAudits": ["canonical"]
       }

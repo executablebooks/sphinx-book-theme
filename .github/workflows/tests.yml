@@ -86,6 +86,11 @@ jobs:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true
         uploadArtifacts: true
+        urls: |
+          reference/kitchen-sink/api.html
+          reference/kitchen-sink/paragraph-markup.html
+          reference/kitchen-sink/lists-and-tables.html
+          reference/special-theme-elements.html
 
   publish:
     name: Publish to PyPI
