@@ -174,6 +174,10 @@ For more information about this workflow, see [the translations README](https://
 
 This theme uses the [`treosh/lighthouse-ci-action`](https://github.com/treosh/lighthouse-ci-action) to run some basic audits on our performance, accessibility, etc.
 
-To preview the output of these tests, click on the `docs-audit` GitHub Action job from a Pull Request.
-Then, scroll to the "Audit with Lighthouse" section, and look for the URL links to view the reports for each page that we audit.
-They look like `report: <URL TO PAGE>`.
+To preview the output of these tests:
+
+- Click on the `docs-audit` GitHub Action job from a Pull Request.
+- Scroll to the "Audit with Lighthouse" section
+- If there are errors, you should see them along with the link to preview the report at `report: <URL TO PAGE>`.
+- If there are not errors, you can list them by clicking the `uploading` section, which will reveal links to the report for each page
+
