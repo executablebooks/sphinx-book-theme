@@ -31,7 +31,7 @@ jobs:
           python-version: 3.9
           sphinx: ">=4,<5"
     runs-on: ${{ matrix.os }}
-    name: Python ${{ matrix.python-version }} / Sphinx ${{ matrix.sphinx }} 
+    name: "Python ${{ matrix.python-version }}, Sphinx ${{ matrix.sphinx }}"
 
     steps:
     - uses: actions/checkout@v2
