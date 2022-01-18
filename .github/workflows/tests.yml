@@ -56,8 +56,9 @@ jobs:
         fail_ci_if_error: true
 
   # Build the docs and fail if an *unexpected* warning occurs.
-  docs:
+  docs-audit:
     runs-on: ubuntu-latest
+    name: Build and Audit Documentation
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -79,6 +80,18 @@ jobs:
         print("\n=== Sphinx Warnings ===\n\n" + text)  # Print just for reference so we can look at the logs
         unexpected = [ii for ii in text.split("\n") if "kitchen-sink" not in ii]
         assert len(unexpected) == 0
+
+    - name: Audit with Lighthouse
+      uses: treosh/lighthouse-ci-action@v8
+      with:
+        configPath: ".github/workflows/lighthouserc.json"
+        temporaryPublicStorage: true
+        uploadArtifacts: true
+        runs: 5
+        urls: |
+          reference/kitchen-sink/api.html
+          reference/kitchen-sink/paragraph-markup.html
+          reference/special-theme-elements.html
 
   publish:
     name: Publish to PyPI
