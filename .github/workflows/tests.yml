@@ -58,6 +58,7 @@ jobs:
   # Build the docs and fail if an *unexpected* warning occurs.
   docs-audit:
     runs-on: ubuntu-latest
+    name: Build and Audit Documentation
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
