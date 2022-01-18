@@ -27,7 +27,8 @@ MESSAGE_CATALOG_NAME = "booktheme"
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    theme_path = os.path.abspath(Path(__file__).parent)
+    parent = os.path.abspath(Path(__file__).parent)
+    theme_path = parent / "theme" / "sphinx_book_theme"
     return theme_path
 
 
@@ -279,11 +280,10 @@ def setup(app: Sphinx):
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
 
-    app.connect("builder-inited", add_static_paths)
     app.connect("env-updated", update_all)
 
     # add translations
-    package_dir = os.path.abspath(os.path.dirname(__file__))
+    package_dir = get_html_theme_path()
     locale_dir = os.path.join(package_dir, "translations", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 

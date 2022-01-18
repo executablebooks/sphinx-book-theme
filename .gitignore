@@ -132,5 +132,10 @@ dmypy.json
 # mac OS
 .DS_Store
 
+# nodejs
+.nodeenv/
+.yarn-packages
+node_modules/
+
 # VS Code
 .vscode/
