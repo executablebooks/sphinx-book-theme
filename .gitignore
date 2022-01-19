@@ -134,7 +134,6 @@ dmypy.json
 
 # nodejs
 .nodeenv/
-.yarn-packages
 node_modules/
 
 # VS Code

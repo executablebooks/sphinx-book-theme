@@ -69,7 +69,6 @@ test = [
 ]
 dev = [
   "sphinx-autobuild",
-  "web-compile~=0.2.1"
 ]
 
 [project.entry-points]
