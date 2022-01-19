@@ -12,11 +12,10 @@ description = "A clean book theme for scientific explanations and documentation 
 dynamic = ["version"]
 readme = "README.md"
 
-requires-python = ">=3.8"
+requires-python = ">=3.7"
 dependencies = [
   "sphinx>=3,<5",
   "beautifulsoup4>=4.6.1,<5",
-  "sphinx-theme-builder",
   "pydata-sphinx-theme~=0.8.0",
   "pyyaml",
 ]
@@ -65,10 +64,7 @@ test = [
     "pytest~=6.0.1",
     "pytest-cov",
     "pytest-regressions~=2.0.1",
-    "sphinx_thebe",
-]
-dev = [
-  "sphinx-autobuild",
+    "sphinx_thebe"
 ]
 
 [project.entry-points]
