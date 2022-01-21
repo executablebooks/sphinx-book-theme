@@ -1,6 +1,5 @@
 # from sphinx_book_theme.translations._convert import convert_json
 
-
 # def test_convert(tmp_path, monkeypatch):
 #     (tmp_path / "jsons").mkdir()
 #     (tmp_path / "jsons" / "test.json").write_text(
