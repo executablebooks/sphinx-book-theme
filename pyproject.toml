@@ -6,6 +6,11 @@ build-backend = "sphinx_theme_builder"
 node-version = "16.13.2"
 theme-name = "sphinx_book_theme"
 
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
 [project]
 name = "sphinx-book-theme"
 description = "A clean book theme for scientific explanations and documentation with Sphinx"
