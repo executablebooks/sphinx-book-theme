@@ -27,50 +27,6 @@ def get_html_theme_path():
     return theme_path
 
 
-# def add_static_paths(app):
-#     """Ensure CSS/JS is loaded."""
-#     app.env.book_theme_resources_changed = False
-
-#     output_static_folder = Path(app.outdir) / "_static"
-#     theme_static_files = resources.contents(theme_static)
-
-#     if (
-#         app.config.html_theme_options.get("theme_dev_mode", False)
-#         and output_static_folder.exists()
-#     ):
-#         # during development, the JS/CSS may change, if this is the case,
-#         # we want to remove the old files and ensure that the new files are loaded
-#         for path in output_static_folder.glob("sphinx-book-theme*"):
-#             if path.name not in theme_static_files:
-#                 app.env.book_theme_resources_changed = True
-#                 path.unlink()
-#         # note sphinx treats theme css different to regular css
-#         # (it is specified in theme.conf), so we don't directly use app.add_css_file
-#         for fname in resources.contents(theme_static):
-#             if fname.endswith(".css"):
-#                 if not (output_static_folder / fname).exists():
-#                     (output_static_folder / fname).write_bytes(
-#                         resources.read_binary(theme_static, fname)
-#                     )
-#                     app.env.book_theme_resources_changed = True
-
-#     # add javascript
-#     for fname in resources.contents(theme_static):
-#         if fname.endswith(".js"):
-#             app.add_js_file(fname)
-
-
-# def update_all(app, env):
-#     """During development, if CSS/JS has changed, all files should be re-written,
-#     to load the correct resources.
-#     """
-#     if (
-#         app.config.html_theme_options.get("theme_dev_mode", False)
-#         and env.book_theme_resources_changed
-#     ):
-#         return list(env.all_docs.keys())
-
-
 def add_to_context(app, pagename, templatename, context, doctree):
 
     # TODO: remove this whenever the nav collapsing functionality is in the PST

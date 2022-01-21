@@ -22,11 +22,6 @@ module.exports = {
   optimization: {
     minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin({})],
   },
-  externals: {
-    // Define jQuery as external, this way Sphinx related javascript
-    // and custom javascript like popper.js can hook into jQuery.
-    jquery: "jQuery",
-  },
   module: {
     rules: [
       {
