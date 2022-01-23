@@ -25,8 +25,3 @@ repos:
     rev: 21.12b0
     hooks:
     - id: black
-
-  - repo: https://github.com/mgedmin/check-manifest
-    rev: "0.47"
-    hooks:
-    - id: check-manifest
