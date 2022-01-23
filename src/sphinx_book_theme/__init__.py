@@ -24,7 +24,7 @@ def get_html_theme_path():
     """Return list of HTML theme paths."""
     parent = Path(__file__).parent.resolve()
     theme_path = parent / "theme" / "sphinx_book_theme"
-    return theme_path
+    return theme_path, parent
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
@@ -234,8 +234,8 @@ def setup(app: Sphinx):
     # app.connect("env-updated", update_all)
 
     # add translations
-    theme_dir = get_html_theme_path()
-    locale_dir = os.path.join(theme_dir, "translations", "locales")
+    theme_dir, parent_dir = get_html_theme_path()
+    locale_dir = os.path.join(parent_dir, "translations", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.add_html_theme("sphinx_book_theme", theme_dir)
