@@ -197,6 +197,10 @@ main.bd-content {
       }
     }
 
+    .margin-caption figcaption {
+      text-align: left;
+    }
+
     // Figures
     div.figure {
       width: 100%;
@@ -595,7 +599,9 @@ button.toggle-button-hidden:before {
 // Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
 div.sidebar,
 div.margin,
+aside.margin,
 div.margin-caption p.caption,
+.margin-caption figcaption,
 .cell.tag_popout,
 .cell.tag_margin {
   width: 40%;
@@ -627,6 +633,8 @@ div.sidebar:not(.margin) {
   div.cell.tag_popout,
   div.cell.tag_margin,
   div.margin,
+  aside.margin,
+  .margin-caption figcaption,
   div.margin-caption p.caption {
     border: none;
     clear: right;
