@@ -128,11 +128,9 @@ var initThebeSBT = () => {
   initThebe();
 }
 
-// have to use global variable here as no selector used
 window.initThebeSBT = initThebeSBT
-
-document.querySelector('#download-print').addEventListener('click', printPdf);
-document.querySelector('#full-screen-button').addEventListener('click', toggleFullScreen);
+window.printPdf = printPdf
+window.toggleFullScreen = toggleFullScreen
 
 sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(scrollToActive)
