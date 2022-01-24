@@ -1,4 +1,10 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
+{% import "static/sbt-webpack-macros.html" as _sbtwebpack with context %}
+
+{%- block css %}
+    {{ super() }}
+    {{ _sbtwebpack.head_pre_bootstrap() }}
+{%- endblock %}
 
 {% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
 {% if is_single_page %}
@@ -56,7 +62,13 @@
     {% endblock %}
     {%- include "footer.html" %}
 </main>
+
 {% endblock %}
+
+{%- block scripts_end %}
+  {{ super() }}
+  {{ _sbtwebpack.body_post() }}
+{%- endblock %}
 
 {% block docs_toc %}
 {% endblock %}

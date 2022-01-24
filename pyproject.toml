@@ -5,6 +5,9 @@ build-backend = "sphinx_theme_builder"
 [tool.sphinx-theme-builder]
 node-version = "16.13.2"
 theme-name = "sphinx_book_theme"
+additional-compiled-static-assets = [
+  "sbt-webpack-macros.html"
+]
 
 [tool.pytest.ini_options]
 testpaths = [
