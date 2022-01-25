@@ -5,12 +5,12 @@ exclude: >
     (?x)^(
       \.vscode/settings\.json|
     )$
-
 repos:
 
   - repo: git://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
+    - id: check-toml
     - id: check-json
     - id: check-yaml
     - id: end-of-file-fixer
@@ -25,20 +25,3 @@ repos:
     rev: 21.12b0
     hooks:
     - id: black
-
-  - repo: https://github.com/mgedmin/check-manifest
-    rev: "0.47"
-    hooks:
-    - id: check-manifest
-
-  - repo: https://github.com/executablebooks/web-compile
-    rev: v0.2.2
-    hooks:
-      - id: web-compile
-        files: >-
-            (?x)^(
-                web-compile-config.yml|
-                src/.*|
-                sphinx_book_theme/static/.*|
-                sphinx_book_theme/theme.conf
-            )$

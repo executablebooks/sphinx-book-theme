@@ -2,12 +2,6 @@
 import os
 from pathlib import Path
 
-try:
-    import importlib.resources as resources
-except ImportError:
-    # python < 3.7
-    import importlib_resources as resources
-
 from bs4 import BeautifulSoup as bs
 from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes
@@ -16,7 +10,6 @@ from sphinx.locale import get_translation
 from sphinx.util import logging
 
 from .launch import add_hub_urls
-from . import static as theme_static
 
 __version__ = "0.2.0"
 """sphinx-book-theme version"""
@@ -27,52 +20,9 @@ MESSAGE_CATALOG_NAME = "booktheme"
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    theme_path = os.path.abspath(Path(__file__).parent)
-    return theme_path
-
-
-def add_static_paths(app):
-    """Ensure CSS/JS is loaded."""
-    app.env.book_theme_resources_changed = False
-
-    output_static_folder = Path(app.outdir) / "_static"
-    theme_static_files = resources.contents(theme_static)
-
-    if (
-        app.config.html_theme_options.get("theme_dev_mode", False)
-        and output_static_folder.exists()
-    ):
-        # during development, the JS/CSS may change, if this is the case,
-        # we want to remove the old files and ensure that the new files are loaded
-        for path in output_static_folder.glob("sphinx-book-theme*"):
-            if path.name not in theme_static_files:
-                app.env.book_theme_resources_changed = True
-                path.unlink()
-        # note sphinx treats theme css different to regular css
-        # (it is specified in theme.conf), so we don't directly use app.add_css_file
-        for fname in resources.contents(theme_static):
-            if fname.endswith(".css"):
-                if not (output_static_folder / fname).exists():
-                    (output_static_folder / fname).write_bytes(
-                        resources.read_binary(theme_static, fname)
-                    )
-                    app.env.book_theme_resources_changed = True
-
-    # add javascript
-    for fname in resources.contents(theme_static):
-        if fname.endswith(".js"):
-            app.add_js_file(fname)
-
-
-def update_all(app, env):
-    """During development, if CSS/JS has changed, all files should be re-written,
-    to load the correct resources.
-    """
-    if (
-        app.config.html_theme_options.get("theme_dev_mode", False)
-        and env.book_theme_resources_changed
-    ):
-        return list(env.all_docs.keys())
+    parent = Path(__file__).parent.resolve()
+    theme_path = parent / "theme" / "sphinx_book_theme"
+    return theme_path, parent
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
@@ -279,21 +229,18 @@ def setup(app: Sphinx):
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
 
-    app.connect("builder-inited", add_static_paths)
-    app.connect("env-updated", update_all)
-
     # add translations
-    package_dir = os.path.abspath(os.path.dirname(__file__))
-    locale_dir = os.path.join(package_dir, "translations", "locales")
+    theme_dir, parent_dir = get_html_theme_path()
+    locale_dir = os.path.join(parent_dir, "translations", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
-    app.add_html_theme("sphinx_book_theme", get_html_theme_path())
+    app.add_html_theme("sphinx_book_theme", theme_dir)
     app.connect("html-page-context", add_to_context)
 
     app.add_directive("margin", Margin)
 
     # Update templates for sidebar
-    app.config.templates_path.append(os.path.join(package_dir, "_templates"))
+    app.config.templates_path.append(os.path.join(theme_dir, "_templates"))
 
     return {
         "parallel_read_safe": True,

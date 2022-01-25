@@ -1,0 +1,79 @@
+[build-system]
+requires = ["sphinx-theme-builder >= 0.2.0a7"]
+build-backend = "sphinx_theme_builder"
+
+[tool.sphinx-theme-builder]
+node-version = "16.13.2"
+theme-name = "sphinx_book_theme"
+additional-compiled-static-assets = [
+  "sbt-webpack-macros.html"
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
+[project]
+name = "sphinx-book-theme"
+description = "A clean book theme for scientific explanations and documentation with Sphinx"
+dynamic = ["version"]
+readme = "README.md"
+
+requires-python = ">=3.7"
+dependencies = [
+  "sphinx>=3,<5",
+  "beautifulsoup4>=4.6.1,<5",
+  "pydata-sphinx-theme~=0.8.0",
+  "pyyaml",
+]
+
+
+license = { file = "LICENSE" }
+# TODO: Add email of the maintainer
+maintainers = [
+  { name = "Chris Holdgraf", email = "choldgraf@gmail.com" },
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+code_style = [
+    "pre-commit~=2.7.0"
+]
+doc = [
+    "ablog~=0.10.13",
+    "ipywidgets",
+    "folium",
+    "numpy",
+    "matplotlib",
+    "myst-nb~=0.13",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx~=4.0",  # Force Sphinx to be the latest version
+    "sphinx-design",
+    "sphinx-copybutton",
+    "sphinx-togglebutton>=0.2.1",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex~=2.2",
+    "sphinxext-opengraph",
+]
+test = [
+    "coverage",
+    "myst_nb~=0.13",
+    "pytest~=6.0.1",
+    "pytest-cov",
+    "pytest-regressions~=2.0.1",
+    "sphinx_thebe"
+]
+
+[project.entry-points]
+"sphinx.html_themes" = { sphinx_book_theme = "sphinx_book_theme" }

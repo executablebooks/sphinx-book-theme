@@ -1,3 +1,7 @@
+// Import CSS variables
+// ref: https://css-tricks.com/getting-javascript-to-talk-to-css-and-sass/
+import "../styles/index.scss";
+
 // NavBar scrolling
 var scrollToActive = () => {
   var navbar = document.getElementById('site-navigation')
@@ -23,7 +27,7 @@ var sbRunWhenDOMLoaded = cb => {
 }
 
 // Toggle full-screen with button
-function toggleFullScreen() {
+var toggleFullScreen = () => {
   var navToggler = $("#navbar-toggler");
   if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -95,7 +99,7 @@ var initTocHide = () => {
   // Set up the intersection observer to watch all margin content
   let tocObserver = new IntersectionObserver(hideTocCallback);
   const selectorClasses = ["margin", "margin-caption", "full-width", "sidebar", "popout"];
-  marginSelector = []
+  let marginSelector = []
   selectorClasses.forEach((ii) => {
     // Use three permutations of each class name because `tag_` and `_` used to be supported
     marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
@@ -125,6 +129,10 @@ var initThebeSBT = () => {
   }
   initThebe();
 }
+
+window.initThebeSBT = initThebeSBT
+window.printPdf = printPdf
+window.toggleFullScreen = toggleFullScreen
 
 sbRunWhenDOMLoaded(initTooltips)
 sbRunWhenDOMLoaded(scrollToActive)

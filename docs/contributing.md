@@ -11,15 +11,11 @@ project.
 
 ## Repository structure
 
-This repository is a split into a few critical folders:
+This theme uses [sphinx-theme-builder](https://sphinx-theme-builder.readthedocs.io/en/latest/) as its build backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/) recommended by it.
+On top of that, it has the following additional critical files/folders:
 
-`sphinx-book-theme/`
-: The Sphinx extension package, containing the Python code, Jinja templates and (compiled) assets (HTML/CSS/JS etc).
-: These are used to generate the HTML page for every file in your site whenever the site is built using Sphinx.
-: **NOTE**: Do not alter the compiled CSS/JS directly (alter in `src/`).
-
-`src/`
-: Contains the source SCSS and JS, which will be compiled and written to `sphinx-book-theme/static`, as configured by `web-compile-config.yml` (see [executablebooks/web-compile](https://github.com/executablebooks/web-compile) for details).
+`webpack.config.js`
+: Contains the compilation code to convert source files like SCSS and JS in `src/sphinx_book_theme/assets/*` into the production assets in `src/sphinx_book_theme/theme/sphinx_book_theme/static/` .
 : This compilation is called by default, during development commands (see below).
 
 `docs/`
@@ -49,7 +45,7 @@ This repository is a split into a few critical folders:
    cd sphinx-book-theme
    ```
 
-2. Ensure you have Python 3.6 or newer!
+2. Ensure you have Python 3.7 or newer!
 3. Install `tox`.
    `tox` is a tool for managing virtual environments for test suites or common jobs that are run with a repository.
    It ensures that your environment is consistent each time you build the docs.
@@ -88,6 +84,23 @@ This repository is a split into a few critical folders:
    ```
    :::
 
+## Compile the CSS/JS assets
+
+The source files for CSS and JS assets are in `src/sphinx_book_theme/assets`. The `sphinx-theme-builder` package automates the compilation of web assets.
+These are then built and bundled with the theme (e.g., `scss` is turned into `css`).
+
+To compile the CSS/JS assets with `tox`, run the following command:
+
+```console
+$ tox -s compile
+```
+
+This will compile all assets and place them in the appropriate folder to be used with documentation builds.
+
+```{note}
+Compiled assets are **not committed to git**.
+The `sphinx-theme-builder` will bundle these assets automatically when we make a new release, but we do not manually commit these compiled assets to git history.
+```
 
 ## Preview changes you make to the theme
 
@@ -95,19 +108,14 @@ The easiest way to preview the changes you make to this theme is by building the
 
 To do so, follow these steps:
 
-1. **Make your changes in `src/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
-2. **Install `tox`**.
-
-   ```console
-   $ pip install tox
-   ```
-3. **Build the documentation**. You can use the following `tox` command:
+1. **Make your changes in `src/sphinx_book_theme/assets/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
+2. **Build the documentation**. You can use the following `tox` command:
 
    ```console
    $ tox -e docs-update
    ```
 
-This will build the documentation using the latest version of the theme (including any changes you've made to the `src/` folder) and put the outputs in `docs/_build/html`.
+This will build the documentation using the latest version of the theme (including any changes you've made to the `src/sphinx_book_theme/assets/*` folder) and put the outputs in `docs/_build/html`.
 You may then preview them by opening one of the HTML files.
 
 ### Auto-build the docs when you make changes
@@ -123,21 +131,11 @@ $ tox -e docs-live
 This will do the following:
 
 - Generate the theme's documentation (similar to running `tox -e docs-update`)
-- Start a development server on an available port `localhost:xxxx`
+- Start a development server on an available port `127.0.0.1:xxxx`
 - Open it in your default browser
 - Watch for changes and automagically regenerate the documentation and auto-reload your browser when a change is made.
 
 With this, you can modify the theme in an editor, and see how those modifications render on the browser.
-
-### Use different Sphinx builders
-
-When building documentation locally, you may use different Sphinx builders by providing them as arguments to `tox`.
-For example:
-
-```console
-$ tox -e docs-update -- singlehtml
-$ tox -e docs-live -- singlehtml
-```
 
 ## Run Tests
 
@@ -151,14 +149,14 @@ $ tox
 You can also run against different Python and sphinx versions, and supply arguments to pytest:
 
 ```console
-$ tox -e py38-sphinx2 -- -x
+$ tox -e py38-sphinx3 -- -x
 ```
 
 :::{tip}
 To "re-build" an environment, wih updated dependancy versions, use:
 
 ```console
-$ tox -r -e py38-sphinx2
+$ tox -r -e py38-sphinx3
 ```
 
 :::
