@@ -26,7 +26,7 @@ Here's a short workflow of how to add a new translation, assuming that you are t
    prettier sphinx_book_theme/translations/jsons/<message name>.json
    ```
 
-8. Run `python sphinx_book_theme/translations/_convert.py`
+8. Run `python src/sphinx_book_theme/translations/_convert.py`
 9. This will generate the locale files (`.mo`) that Sphinx uses in its translation machinery, and put them in `locales/<language-code>/LC_MESSAGES/<msg>.mo`.
 
 Sphinx should now know how to translate this message!
@@ -34,4 +34,4 @@ Sphinx should now know how to translate this message!
 ## To update a translation
 
 To update a translation, you may go to the phase you'd like to modify in `jsons/`, then find the entry for the language you'd like to update, and change its value.
-Finally, run `python sphinx_book_theme/translations/_convert.py` and this will update the `.mo` files.
+Finally, run `python src/sphinx_book_theme/translations/_convert.py` and this will update the `.mo` files.
