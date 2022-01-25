@@ -1,3 +1,5 @@
+// Import CSS variables
+// ref: https://css-tricks.com/getting-javascript-to-talk-to-css-and-sass/
 import "../styles/index.scss";
 
 // NavBar scrolling
