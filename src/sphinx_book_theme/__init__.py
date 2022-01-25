@@ -11,8 +11,6 @@ from sphinx.util import logging
 
 from .launch import add_hub_urls
 
-# from . import static as theme_static
-
 __version__ = "0.2.0"
 """sphinx-book-theme version"""
 
@@ -230,8 +228,6 @@ def setup(app: Sphinx):
 
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
-
-    # app.connect("env-updated", update_all)
 
     # add translations
     theme_dir, parent_dir = get_html_theme_path()
