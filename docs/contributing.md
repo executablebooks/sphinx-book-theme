@@ -11,7 +11,7 @@ project.
 
 ## Repository structure
 
-This theme uses `sphinx-theme-builder` as its backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/) recommended by it.
+This theme uses [sphinx-theme-builder](https://sphinx-theme-builder.readthedocs.io/en/latest/) as its build backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/) recommended by it.
 On top of that, it has the following additional critical files/folders:
 
 `webpack.config.js`
@@ -84,6 +84,23 @@ On top of that, it has the following additional critical files/folders:
    ```
    :::
 
+## Compile the CSS/JS assets
+
+The source files for CSS and JS assets are in `src/sphinx_book_theme/assets`. The `sphinx-theme-builder` package automates the compilation of web assets.
+These are then built and bundled with the theme (e.g., `scss` is turned into `css`).
+
+To compile the CSS/JS assets with `tox`, run the following command:
+
+```console
+$ tox -s compile
+```
+
+This will compile all assets and place them in the appropriate folder to be used with documentation builds.
+
+```{note}
+Compiled assets are **not committed to git**.
+The `sphinx-theme-builder` will bundle these assets automatically when we make a new release, but we do not manually commit these compiled assets to git history.
+```
 
 ## Preview changes you make to the theme
 
@@ -91,18 +108,8 @@ The easiest way to preview the changes you make to this theme is by building the
 
 To do so, follow these steps:
 
-1. **Make your changes in `src/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
-2. **Install `tox`**.
-
-   ```console
-   $ pip install tox
-   ```
-3. **Compile the assets**. For compiling static assets, use the following `tox` command:
-
-   ```console
-   $ tox -e compile
-   ```
-4. **Build the documentation**. You can use the following `tox` command:
+1. **Make your changes in `src/sphinx_book_theme/assets/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
+2. **Build the documentation**. You can use the following `tox` command:
 
    ```console
    $ tox -e docs-update
