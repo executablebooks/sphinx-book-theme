@@ -57,9 +57,6 @@ The following options are available via `html_theme_options`
 * - `toc_title`
   - str
   - The text to be displayed with the in-page TOC (`Contents` is default)
-* - `theme_dev_mode`
-  - bool
-  - (developers only) Trigger some features that make it easier to develop the theme.
 ```
 
 ## Customization Topics
