@@ -32,7 +32,7 @@ dependencies = [
 license = { file = "LICENSE" }
 # TODO: Add email of the maintainer
 maintainers = [
-  { name = "Chris Holdgraf" },
+  { name = "Chris Holdgraf", email = "choldgraf@gmail.com" },
 ]
 
 classifiers = [
