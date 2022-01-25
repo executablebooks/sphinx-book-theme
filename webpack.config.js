@@ -61,9 +61,9 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: "file-loader",
+            loader: "file-loader", // resolves import scss on index.js into a url and emits the file into the output directory.
             options: {
-              name: "styles/sphinx-book-theme.css",
+              name: "styles/sphinx-book-theme.css", // the output file name
             },
           },
           {
@@ -74,7 +74,7 @@ module.exports = {
             loader: "css-loader?-url",
           },
           {
-            loader: "sass-loader",
+            loader: "sass-loader", // turns scss into css
           },
         ],
       },
