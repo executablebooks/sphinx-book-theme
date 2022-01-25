@@ -1,0 +1,88 @@
+/*********************************************
+* Margin and sidebar *
+*********************************************/
+
+// The % is relative to our parent container, which has width == max-width
+// The width we want is (max-width * x = 1 - max-width), so we solve for x.
+// Will be a decimal
+$content-margin-gutter: 3%;
+$content-margin-width: percentage((100% - $content-max-width) / $content-max-width) - $content-margin-gutter;
+$content-margin-offset: (-$content-margin-width - $content-margin-gutter);
+// Express 100% in parent container in % units of the child container.
+$content-fullwidth-width: percentage(100% / $content-max-width);
+
+#main-content {
+
+  // Default sidebar behavior is to behave like traditional Sphinx sidebar
+  // Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
+  .sidebar, .margin, .margin-caption p.caption, .cell.tag_popout, .cell.tag_margin {
+    width: 40%;
+    float: right;
+    background-color: unset;
+    border-left: 1px #a4a6a7 solid;
+    margin-left: 0.5em;
+    padding: .2em 0 .2em 1em;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    p.sidebar-title {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+  }
+
+  // Sidebar-specific CSS
+  .sidebar:not(.margin) {
+    background-color: #eeebee;
+    padding: 1em !important;
+  }
+
+  // Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
+  // 992px is the L breakpoint in bootstrap
+  @media (min-width: $breakpoint-md) {
+    .cell.tag_popout, .cell.tag_margin, .margin, .margin-caption p.caption {
+        border: none;
+        width: $content-margin-width;
+        margin: 0 $content-margin-offset 0 0;
+        padding: .5em .5em .5em 1em;
+        font-size: 0.9rem;
+        line-height: 1.3;
+
+        // Without this we get some extra whitespace for admonitions
+        &.admonition {
+          padding: 0 0.5em 0.5em 0.5em;
+        }
+
+        // Base margin styles
+        p {
+            margin-bottom: .5em;
+
+            &.sidebar-title {
+                font-size: 1em;
+            }
+        }
+    }
+
+    // Make cell outputs take up more space if they're in the margin
+    div.cell.tag_margin .cell_output {
+        padding-left: 0;
+    }
+
+    div.sidebar:not(.margin) {
+        width: 60%;
+        margin-left: 1.5em;
+        margin-right: -28%;
+    }
+
+  }
+
+  // Full-width content
+  @media (min-width: $breakpoint-md) {
+    div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
+        max-width: $content-fullwidth-width;
+        width: $content-fullwidth-width;
+    }
+  }
+}

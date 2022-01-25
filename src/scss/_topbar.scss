@@ -1,30 +1,26 @@
 /*********************************************
 * Top Bar *
 *********************************************/
-.topbar, .topbar-contents, .topbar-main {
+.topbar, .topbar-main {
     height: $topbar-height;
 }
 
 .topbar {
     background-color: white;
     transition: left .2s;
+    font-size: var(--sbt-topbar-font-size);
 
     .scrolled & {
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
     }
 
     .topbar-main {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-right: 0;
-
         > button, > div, > a {
             float: left;
             height: 100%;
         }
 
         button.topbarbtn {
-            margin: 0 .1em;
             background-color: white;
             color: $non-content-grey;
             border: none;
@@ -38,13 +34,8 @@
             }
         }
 
-        // buttons float right
-        div.dropdown-buttons-trigger, a.edit-button, a.full-screen-button {
-            float: right;
-        }
-
         // Left section of topbar
-        .topbar-left {
+        .topbar-left, .topbar-right {
             display: flex;
             align-items: center;
 
@@ -53,13 +44,18 @@
                 color: $non-content-grey;
                 margin-bottom: 0;
                 font-size: 1.4em;
+                padding: 0 0.5rem;  // Horizontal padding since labels have none
+                &, button {
+                    &:hover i {
+                        color: black;
+                    }
+                }
             }
         }
 
-        label, button {
-            &:hover i {
-                color: black;
-            }
+        // Right section of topbar
+        .topbar-right {
+            margin-left: auto;
         }
     }
 }

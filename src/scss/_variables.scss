@@ -11,10 +11,18 @@ $breakpoint-sm: 576px;
 $non-content-grey: #5a5a5a;
 
 $topbar-height: 3em;
-$leftbar-width: 275px;
+$leftbar-width-mobile: 75%;
+$leftbar-width-wide: 275px;
+$toc-width-mobile: 75%;
+// Main content, to leave room for the margin
+$content-max-width: 70%;
 
 // Consistent styling for page elements
 $box-border-radius: 0.4em;
+
+$animation-time: .25s;
+
+$border-thin: 1px solid rgba(0,0,0,.1);
 
 // Overrides for pydata sphinx theme.
 // See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
@@ -38,6 +46,16 @@ $box-border-radius: 0.4em;
     --pst-color-admonition-warning: var(--pst-color-danger);
 
     --pst-color-link: 0, 113, 188;
+
+    // Font sizes
+    --sbt-font-size-small-1: 87.5%;
+    --sbt-font-size-small-2: 70%;
+
+    // Variables for this theme
+    --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
+    --sbt-topbar-font-size: var(--sbt-font-size-small-1);
+    --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
+    --sbt-footer-font-size: var(--sbt-font-size-small-1);
 }
 
 // Scrollbar styles to be re-used in a few spots

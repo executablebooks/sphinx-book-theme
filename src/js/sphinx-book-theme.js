@@ -98,7 +98,7 @@ var initTocHide = () => {
   marginSelector = []
   selectorClasses.forEach((ii) => {
     // Use three permutations of each class name because `tag_` and `_` used to be supported
-    marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
+    marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`, `.tag_${ii.replace("-", "_")}`])
   });
   document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {
     tocObserver.observe(ii);

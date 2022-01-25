@@ -179,16 +179,6 @@ We can reference the figure with {ref}`myfig4`. Or a numbered reference like
 You can configure figures to use the margin for captions.
 Here is a figure with a caption to the right.
 
-```{figure} images/cool.jpg
----
-width: 60%
-figclass: margin-caption
-alt: My figure text
-name: myfig5
----
-And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
-```
-
 And the text that produced it:
 
 ````

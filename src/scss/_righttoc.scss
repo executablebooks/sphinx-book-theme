@@ -7,6 +7,7 @@
     right: -1em;
     z-index: 999;
     height: auto;
+    transition: margin-right $animation-time ease 0s, opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
     // Colors
     div.onthispage, .toc-entry a {
@@ -39,8 +40,8 @@
         }
     }
 
-    // On hover or w/ a show class, we show the TOC
-    &:hover, &.show {
+    // Show / hide the in-page TOC items
+    @mixin show-inpage-toc {
         nav {
             max-height: 90vh;
             opacity: 1;
@@ -51,6 +52,15 @@
         .tocsection:after {
             opacity: 0;
         }
+    }
+    // On wide screens, show the TOC with hover or w/ a show class
+    &:hover, &.show {
+        @include show-inpage-toc;
+    }
+
+    // On narrow screens, it should always be shown because it's off to the right
+    @media (max-width: $breakpoint-md) {
+        @include show-inpage-toc;
     }
 
     .tocsection {
@@ -72,5 +82,17 @@
     // Make sure the pydata sphinx theme edit button doesn't show up
     div.editthispage {
         display: none;
+    }
+
+    // On narrow screens, this should be offset to the right side until button is clicked
+    @media (max-width: $breakpoint-md) {
+        top: 0;
+        right: 0;
+        position: fixed;
+        height: 100vh;
+        width: $toc-width-mobile;
+        max-width: 300px;
+        background-color: white;
+        border-left: $border-thin;
     }
 }

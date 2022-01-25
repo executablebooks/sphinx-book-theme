@@ -36,11 +36,16 @@ dt:target, span.highlighted {
 * Main body *
 *********************************************/
 
-main.bd-content {
-    padding-top: $topbar-height !important;
-    padding-bottom: 0px !important;
+// On wide screens, make space for the right margin
+@media (min-width: $breakpoint-md) {
+    .prev-next-area, #main-content {
+        max-width: $content-max-width;
+    }
+}
 
+.content-container {
     #main-content, #print-main-content {
+        transition: padding $animation-time ease-out;
         padding-top: 1.5em;
 
         // Content links and link color
@@ -74,67 +79,6 @@ main.bd-content {
         // Also add it to the bottom-of-page next/prev container
         > div > div > div.section, .prev-next-bottom {
             padding-right: 1em;
-        }
-
-        $prevnext-padding: .75rem;
-        .prev-next-bottom {
-            overflow: auto;
-            margin-top: 3em;
-            margin-bottom: 1em;
-            padding: 0;
-
-            .right-next, .left-prev {
-                border: none;
-                display: flex;
-                align-items: center;
-
-                .prevnext-info {
-                    flex-direction: column;
-                }
-
-                p {
-                    margin: 0;
-                    line-height: 1.3em;
-                }
-
-                .prevnext-label, {
-                    color: $non-content-grey;
-                }
-
-                .prevnext-title {
-                    font-size: 1.1em;
-                    color: rgba(var(--pst-color-link), 1);
-                    font-weight: 500;
-                }
-
-                // Remove the PyData default
-                &::after {
-                    content: none;
-                }
-            }
-
-            // Remove the PyData default
-            .left-prev {
-
-                i {
-                    padding-right: $prevnext-padding;
-                }
-
-                &::before {
-                    content: none;
-                }
-            }
-
-            // Right styling
-            .right-next {
-                .prevnext-info {
-                    text-align: right;
-                }
-
-                i {
-                    padding-left: $prevnext-padding;
-                }
-            }
         }
 
         div.section {
@@ -573,74 +517,6 @@ button.toggle-button-hidden:before {
     bottom: 0.2em !important;
 }
 
-// Margin and content-sidebar rules
-// Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
-div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.tag_margin {
-    width: 40%;
-    float: right;
-    background-color: unset;
-    border-left: 1px #a4a6a7 solid;
-    margin-left: 0.5em;
-    padding: .2em 0 .2em 1em;
-
-    p {
-        margin-bottom: 0;
-    }
-
-    p.sidebar-title {
-        font-weight: bold;
-        font-size: 1.2em;
-    }
-}
-
-// Sidebar-specific CSS
-div.sidebar:not(.margin) {
-    background-color: #eeebee;
-    padding: 1em !important;
-}
-
-// Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
-// 992px is the L breakpoint in bootstrap
-@media (min-width: $breakpoint-md) {
-    div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
-        border: none;
-        clear: right;
-        width: 31% !important;
-        margin: 0 -35% 0 0 !important;
-        padding: 0 !important;
-        font-size: 0.9rem;
-        line-height: 1.3;
-        vertical-align: baseline;
-        position: relative;
-
-        p {
-            margin-bottom: .5em;
-
-            &.sidebar-title {
-                font-size: 1em;
-            }
-        }
-    }
-
-    // Make cell outputs take up more space if they're in the margin
-    div.cell.tag_margin .cell_output {
-        padding-left: 0;
-    }
-
-    div.sidebar:not(.margin) {
-        width: 60%;
-        margin-left: 1.5em;
-        margin-right: -28%;
-    }
-
-}
-
-
-@media (min-width: $breakpoint-md) {
-    div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
-        width: 134% !important;
-    }
-}
 
 blockquote {
     margin: 1em;
@@ -711,4 +587,9 @@ div.tableofcontents-wrapper p.caption {
     background-color: var(--jp-cell-editor-active-background) !important;
     border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
     margin: -1px;
+}
+
+// Previous and next area at the bottom
+.prev-next-area {
+    font-size: var(--sbt-prevnext-font-size);
 }
