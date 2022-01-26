@@ -1,0 +1,22 @@
+/*********************************************
+* MyST NB and Jupyter Notebooks *
+*********************************************/
+div.cell {
+
+  div.cell_output {
+      padding-right: 0;
+  }
+
+  &.tag_output_scroll, &.tag_scroll-output {
+      div.cell_output {
+          max-height: 24em;
+          overflow-y: auto;
+      }
+  }
+  &.tag_scroll-input {
+      div.cell_input {
+          max-height: 24em;
+          overflow-y: auto;
+      }
+  }
+}

@@ -1,5 +1,5 @@
 /*********************************************
-* Whole page *
+* Basic text formatting and content structure *
 *********************************************/
 
 body {
@@ -10,38 +10,14 @@ body {
 
 }
 
-code {
-  font-size: 87.5% !important;
-}
-
-pre {
-  border-radius: $box-border-radius;
-}
-
-// Over-ride Sphinx default so that content fills whitespace w/ margin content
-pre, div[class*="highlight-"] {
-  clear: none;
-}
-
 // Highlight search phrases
 dt:target, span.highlighted {
   background-color: #fbe54e;
 }
 
-.onlyprint {
-  display: none
-}
-
 /*********************************************
 * Main body *
 *********************************************/
-
-// On wide screens, make space for the right margin
-@media (min-width: $breakpoint-md) {
-  .prev-next-area, #main-content {
-      max-width: $content-max-width;
-  }
-}
 
 .content-container {
   #main-content, #print-main-content {
@@ -189,17 +165,6 @@ dt:target, span.highlighted {
           text-align: center;
       }
 
-      // Tables from sphinx-tabs
-
-      div.sphinx-tabs > div.sphinx-menu {
-          padding: 0;
-      }
-
-      div.sphinx-tabs > div.sphinx-menu > a.item {
-          width: auto;
-          margin: 0px 0px -1px 0px;
-      }
-
       // Footnotes and Citations
       .footnote-reference, a.bibtex.internal {
           font-size: 1em;
@@ -227,7 +192,6 @@ dt:target, span.highlighted {
       }
 
       dl.footnote {
-
           span.fn-backref {
               font-size: 1em;
               padding-left:.1em;
@@ -460,61 +424,10 @@ dt:target, span.highlighted {
   }
 }
 
-// Cell-specific controls
-div.cell {
-
-  div.cell_output {
-      padding-right: 0;
-  }
-
-  &.tag_output_scroll, &.tag_scroll-output {
-      div.cell_output {
-          max-height: 24em;
-          overflow-y: auto;
-      }
-  }
-  &.tag_scroll-input {
-      div.cell_input {
-          max-height: 24em;
-          overflow-y: auto;
-      }
-  }
-}
-
 .highlighttable {
   .linenos {
       vertical-align: baseline;
   }
-}
-
-// Extension over-rides
-// Toggle-button overrides
-.toggle.admonition button.toggle-button {
-  top: 0.5em !important;
-}
-
-.admonition {
-  // Soften admonition styling from the PyData Theme
-  border-radius: $box-border-radius;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
-
-  // Admonition seealso styling
-  &.seealso {
-      border-color: #28a745;
-
-      .admonition-title {
-          background-color:rgba(40, 167, 70, 0.1);
-
-          &:before {
-              color: #28a745;
-              content: "\f064"
-          }
-      }
-  }
-}
-
-button.toggle-button-hidden:before {
-  bottom: 0.2em !important;
 }
 
 
@@ -541,57 +454,8 @@ blockquote {
   }
 }
 
-// Code blocks should have a margin, but code *cells* get margin from a parent
-div.highlight {
-  background: none;
-  margin-bottom: 1em;
-}
-
-div.cell div.highlight {
-  margin-bottom: 0em;
-}
-
-// Thebelab over-rides
-.thebelab-cell {
-  border: none !important;
-  margin-right: .5em !important;
-}
-
-.thebelab-cell .thebelab-input {
-  padding-left: 10px !important;
-}
-
-.cell.docutils.container {
-  padding-right: 0px !important;
-}
-
-button.thebe-launch-button {
-  height: 2.5em;
-  font-size: 1em;
-}
-
 // toc directive styles
 div.tableofcontents-wrapper p.caption {
   font-weight: 600 !important;
   margin-bottom: 0em !important;
 }
-
-// CodeMirror styles for live thebe cells.
-.cm-s-default {
-  font-family: var(--jp-code-font-family);
-  font-size: var(--jp-code-font-size);
-  line-height: var(--jp-code-line-height);
-}
-
-.CodeMirror-focused {
-  background-color: var(--jp-cell-editor-active-background) !important;
-  border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
-  margin: -1px;
-}
-
-// Previous and next area at the bottom
-.prev-next-area {
-  font-size: var(--sbt-prevnext-font-size);
-}
-
-@import 'margin';

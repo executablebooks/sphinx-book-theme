@@ -3,14 +3,17 @@
  * Copyright (c) 2020, EBP
  * All rights reserved.
  */
-@import 'utilities/variables';  // Import variables and utilities first, since we'll re-use elsewhere
-@import 'utilities/classes';
-@import 'content/copy';
-@import 'content/margin';
-@import 'footer';
-@import 'sidebars/leftbar';
-@import 'sidebars/righttoc';
-@import 'sidebars/toggle-sidebars';
-@import 'topbar';
-@import 'specials/ablog';
-@import 'specials/print';
+@import 'core/base';
+@import 'core/code';
+@import 'core/copy';
+@import 'core/notebook';
+@import 'layout/footer-article';
+@import 'layout/footer-content';
+@import 'layout/header-article';
+@import 'layout/sidebar-primary';
+@import 'layout/sidebar-secondary';
+@import 'layout/sidebars-toggle';
+@import 'layout/header-article';
+@import 'sections/extras';
+@import 'sections/margin';
+@import 'sections/print';

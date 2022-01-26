@@ -1,0 +1,111 @@
+/*********************************************
+* Custom CSS for extra extensions and tools *
+*********************************************/
+
+/*********************************************
+* ABlog *
+*********************************************/
+ul.ablog-archive {
+  padding-left: 0px;
+}
+
+/* In-page post lists */
+ul.postlist {
+  padding-left: 0;
+
+  > li > p:first-child {
+    font-size: 1.5em;
+  }
+
+  li {
+    + li {
+      margin-top: 2em;
+    }
+
+    > p > a {
+      font-style: normal;
+      font-size: 1.3em;
+    }
+  }
+}
+
+// Sidebar rules specifically for ABlog
+div.bd-sidebar {
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+
+  > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+/*********************************************
+* sphinx-togglebutton *
+*********************************************/
+// Toggle-button overrides
+.toggle.admonition button.toggle-button {
+  top: 0.5em !important;
+}
+
+.admonition {
+  // Soften admonition styling from the PyData Theme
+  border-radius: $box-border-radius;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
+
+  // Admonition seealso styling
+  &.seealso {
+      border-color: #28a745;
+
+      .admonition-title {
+          background-color:rgba(40, 167, 70, 0.1);
+
+          &:before {
+              color: #28a745;
+              content: "\f064"
+          }
+      }
+  }
+}
+
+button.toggle-button-hidden:before {
+    bottom: 0.2em !important;
+}
+
+
+/*********************************************
+* Thebe *
+*********************************************/
+.thebelab-cell {
+  border: none !important;
+  margin-right: .5em !important;
+}
+
+.thebelab-cell .thebelab-input {
+  padding-left: 10px !important;
+}
+
+.cell.docutils.container {
+  padding-right: 0px !important;
+}
+
+button.thebe-launch-button {
+  height: 2.5em;
+  font-size: 1em;
+}
+
+/*********************************************
+* Sphinx Tabs *
+*********************************************/
+div.sphinx-tabs > div.sphinx-menu {
+    padding: 0;
+}
+
+div.sphinx-tabs > div.sphinx-menu > a.item {
+    width: auto;
+    margin: 0px 0px -1px 0px;
+}
