@@ -24,13 +24,11 @@
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="header-container">
-    <div class="announcement header-item">
-        {%- include "sections/announcement.html" -%}
-    </div>
-    <div class="header header-item sticky-top">
-        {%- include "sections/header.html" -%}
-    </div>
+<div class="announcement header-item">
+    {%- include "sections/announcement.html" -%}
+</div>
+<div class="header header-item">
+    {%- include "sections/header.html" -%}
 </div>
 {{ super() }}
 {% endblock %}

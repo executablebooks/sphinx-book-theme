@@ -30,7 +30,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = []
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -124,7 +124,10 @@ html_theme_options = {
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
-    # "announcement": "Hi there!",
+    "announcement": (
+        "⚠️The latest release refactored our HTML, "
+        "so double-check your custom CSS rules!⚠️"
+    ),
     "show_toc_level": 2,
 }
 
