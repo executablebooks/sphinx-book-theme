@@ -1,73 +1,62 @@
 /*********************************************
 * Top Bar *
 *********************************************/
-.topbar,
-.topbar-contents,
-.topbar-main {
+.topbar, .topbar-main {
   height: $topbar-height;
 }
 
 .topbar {
   background-color: white;
-  transition: left 0.2s;
+  transition: left .2s;
+  font-size: var(--sbt-topbar-font-size);
 
   .scrolled & {
-    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
   }
 
   .topbar-main {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-right: 0;
-
-    > button,
-    > div,
-    > a {
-      float: left;
-      height: 100%;
-    }
-
-    button.topbarbtn {
-      margin: 0 0.1em;
-      background-color: white;
-      color: $non-content-grey;
-      border: none;
-      padding-top: 0.1rem;
-      padding-bottom: 0.1rem;
-      font-size: 1.4em;
-
-      i.fab {
-        vertical-align: baseline;
-        line-height: 1;
+      > button, > div, > a {
+          float: left;
+          height: 100%;
       }
-    }
 
-    // buttons float right
-    div.dropdown-buttons-trigger,
-    a.edit-button,
-    a.full-screen-button {
-      float: right;
-    }
+      button.topbarbtn {
+          background-color: white;
+          color: $non-content-grey;
+          border: none;
+          padding-top: .1rem;
+          padding-bottom: .1rem;
+          font-size: 1.4em;
 
-    // Left section of topbar
-    .topbar-left {
-      display: flex;
-      align-items: center;
-
-      label {
-        cursor: pointer;
-        color: $non-content-grey;
-        margin-bottom: 0;
-        font-size: 1.4em;
+          i.fab {
+              vertical-align: baseline;
+              line-height: 1;
+          }
       }
-    }
 
-    label,
-    button {
-      &:hover i {
-        color: black;
+      // Left section of topbar
+      .topbar-left, .topbar-right {
+          display: flex;
+          align-items: center;
+
+          label {
+              cursor: pointer;
+              color: $non-content-grey;
+              margin-bottom: 0;
+              font-size: 1.4em;
+              padding: 0 0.5rem;  // Horizontal padding since labels have none
+              &, button {
+                  &:hover i {
+                      color: black;
+                  }
+              }
+          }
       }
-    }
+
+      // Right section of topbar
+      .topbar-right {
+          margin-left: auto;
+      }
   }
 }
 
@@ -76,43 +65,44 @@ span.topbar-button-text {
   margin-left: 0.4em;
 
   @media (max-width: $breakpoint-md) {
-    display: none;
+      display: none;
   }
 }
 
 div.dropdown-buttons-trigger {
+
   div.dropdown-buttons {
-    display: none;
-    position: absolute;
-    max-width: 130px;
-    margin-top: 0.2em;
-    z-index: 1000;
-    transform: translate(-60%);
+      display: none;
+      position: absolute;
+      max-width: 130px;
+      margin-top: .2em;
+      z-index: 1000;
+      transform: translate(-60%);
 
-    &.sourcebuttons .topbarbtn i {
-      padding-right: 6px;
-      margin-left: -5px;
-      font-size: 0.9em !important;
-    }
+      &.sourcebuttons .topbarbtn i {
+          padding-right: 6px;
+          margin-left: -5px;
+          font-size: .9em !important;
+      }
 
-    button.topbarbtn {
-      padding-top: 0.35rem;
-      padding-bottom: 0.35rem;
-      min-width: 120px !important;
-      border: 1px white solid !important;
-      background-color: $non-content-grey;
-      color: white;
-      font-size: 1em;
-    }
+      button.topbarbtn {
+          padding-top: .35rem;
+          padding-bottom: .35rem;
+          min-width: 120px !important;
+          border: 1px white solid !important;
+          background-color: $non-content-grey;
+          color: white;
+          font-size: 1em;
+      }
   }
 
   &:hover div.dropdown-buttons {
-    display: block;
+      display: block;
   }
 }
 
 a.dropdown-buttons i {
-  margin-right: 0.5em;
+  margin-right: .5em;
 }
 
 button.topbarbtn img {

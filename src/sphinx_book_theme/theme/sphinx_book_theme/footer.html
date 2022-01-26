@@ -1,22 +1,24 @@
-<footer class="footer">
-  <p>
-    {% if author %}
-      {{ translate('By') }} {{ author }}<br/>
-    {% endif %}
-    {%- if show_copyright %}
-      {%- if hasdoc('copyright') %}
-        {% trans prefix=translate('Copyright'), path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">{{ prefix }}</a> {{ copyright }}.{% endtrans %}<br/>
-      {%- else %}
-        {% trans prefix=translate('Copyright'), copyright=copyright|e %}&copy; {{ prefix }} {{ copyright }}.{% endtrans %}<br/>
+<div class="row footer-row">
+  <footer class="col footer">
+    <p>
+      {% if author %}
+        {{ translate('By') }} {{ author }}<br/>
+      {% endif %}
+      {%- if show_copyright %}
+        {%- if hasdoc('copyright') %}
+          {% trans prefix=translate('Copyright'), path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">{{ prefix }}</a> {{ copyright }}.{% endtrans %}<br/>
+        {%- else %}
+          {% trans prefix=translate('Copyright'), copyright=copyright|e %}&copy; {{ prefix }} {{ copyright }}.{% endtrans %}<br/>
+        {%- endif %}
       {%- endif %}
-    {%- endif %}
-    {%- if last_updated %}
-      {% trans prefix=translate('Last updated on'), last_updated=last_updated|e %}{{ prefix }} {{ last_updated }}.{% endtrans %}<br/>
-    {%- endif %}
-    {%- if theme_extra_footer %}
-      <div class="extra_footer">
-        {{ theme_extra_footer }}
-      </div>
-    {%- endif %}
-  </p>
-</footer>
+      {%- if last_updated %}
+        {% trans prefix=translate('Last updated on'), last_updated=last_updated|e %}{{ prefix }} {{ last_updated }}.{% endtrans %}<br/>
+      {%- endif %}
+      {%- if theme_extra_footer %}
+        <div class="extra_footer">
+          {{ theme_extra_footer }}
+        </div>
+      {%- endif %}
+    </p>
+  </footer>
+</div>

@@ -1,0 +1,95 @@
+/*********************************************
+* Variables *
+*********************************************/
+// Breakpoints from Bootstrap: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+// Colors
+$non-content-grey: #5a5a5a;
+
+$topbar-height: 3em;
+$leftbar-width-mobile: 75%;
+$leftbar-width-wide: 275px;
+$toc-width-mobile: 75%;
+// Main content, to leave room for the margin
+$content-max-width: 70%;
+
+// Consistent styling for page elements
+$box-border-radius: 0.4em;
+
+$animation-time: .25s;
+
+$border-thin: 1px solid rgba(0,0,0,.1);
+
+// Overrides for pydata sphinx theme.
+// See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
+:root {
+    // Over-ride the pydata theme so that readers can use their system base
+    --pst-font-size-base: none;
+
+    // Pulling colors from the Binder logo since they are complementary and on-brand
+    --pst-color-primary: 87, 154, 202;
+    --pst-color-admonition-note: var(--pst-color-primary);
+    --pst-color-admonition-default: var(--pst-color-primary);
+
+    --pst-color-info: 255, 193, 7;
+    --pst-color-admonition-tip: var(--pst-color-info);
+    --pst-color-admonition-hint: var(--pst-color-info);
+    --pst-color-admonition-important: var(--pst-color-info);
+
+    --pst-color-warning: 245, 162, 82;
+
+    --pst-color-danger: 230, 101, 129;
+    --pst-color-admonition-warning: var(--pst-color-danger);
+
+    --pst-color-link: 0, 113, 188;
+
+    // Font sizes
+    --sbt-font-size-small-1: 87.5%;
+    --sbt-font-size-small-2: 70%;
+
+    // Variables for this theme
+    --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
+    --sbt-topbar-font-size: var(--sbt-font-size-small-1);
+    --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
+    --sbt-footer-font-size: var(--sbt-font-size-small-1);
+}
+
+// Scrollbar styles to be re-used in a few spots
+@mixin scrollbar-style() {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar {
+        background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+
+        &:hover {
+            background: #a0a0a0
+        }
+    }
+
+    // Hide the scrollbar until hover on wide screens
+    @media (min-width: $breakpoint-lg) {
+        &:not(:hover) {
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+              background: #FFFFFF;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: #FFFFFF;
+            }
+        }
+    }
+}

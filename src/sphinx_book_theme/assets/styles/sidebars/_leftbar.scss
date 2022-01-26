@@ -1,0 +1,89 @@
+/*********************************************
+* Left Nav Bar *
+*********************************************/
+#site-navigation  {
+  height: 100vh !important;
+  width: $leftbar-width-wide;
+  font-size: var(--sbt-sidebar-font-size);
+  top: 0px !important;
+  overflow-y: auto;
+  background: white;
+  border-right: $border-thin;
+  transition: margin-left $animation-time ease 0s, opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+  z-index: 2000 !important;
+
+  @include scrollbar-style();
+
+  @media (max-width: $breakpoint-md) {
+      position: fixed;
+      width: $leftbar-width-mobile;
+      max-width: 300px;
+  }
+
+  nav ul.nav {
+      // Sidebar link color
+      li a, ul li a {
+          color: $non-content-grey;
+      }
+      a:hover, li.active > a, li.active > a:hover {
+          color: rgba(var(--pst-color-link), 1);;
+      }
+
+      // Adjust padding to be a bit tighter
+      ul {
+          padding-left: 1rem;
+      }
+  }
+
+  h1.site-logo {
+      margin: .5em 0 0 0;
+      font-size: 1.1em;
+      color: black;
+      text-align: center;
+  }
+
+  div.navbar_extra_footer {
+      text-align: center;
+      font-size: .9em;
+      color: $non-content-grey;
+      margin-bottom: 3em;
+  }
+
+  // Single page
+  &.single-page {
+      border-right: 0;
+  }
+}
+
+div.navbar-brand-box {
+  @media (min-width: $breakpoint-md) {
+      padding-top: 2em;
+  }
+
+  a.navbar-brand {
+      width: 100%;
+      height: auto;
+
+      img {
+          display: block;
+          height: auto;
+          width: auto;
+          max-height:10vh;
+          max-width: 100%;
+          margin: 0 auto;
+          @media (min-width: $breakpoint-md) {
+              max-height: 15vh !important;
+          }
+      }
+  }
+}
+
+nav.bd-links {
+  margin-left: 0px;  // Because the PST adds margin by default
+  p.caption, .toctree-l1 a {
+      padding-left: 0em;
+  }
+  // Overriding PyData Theme Defaults so the navigation is always visible
+  overflow-y: visible;
+  max-height: none;
+}
