@@ -7,6 +7,9 @@
 @import 'core/code';
 @import 'core/copy';
 @import 'core/notebook';
+@import 'extras/extensions';
+@import 'extras/print';
+@import 'layout/article-margin';
 @import 'layout/footer-article';
 @import 'layout/footer-content';
 @import 'layout/header-article';
@@ -14,6 +17,3 @@
 @import 'layout/sidebar-secondary';
 @import 'layout/sidebars-toggle';
 @import 'layout/header-article';
-@import 'sections/extras';
-@import 'sections/margin';
-@import 'sections/print';
