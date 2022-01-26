@@ -3,6 +3,11 @@
 *********************************************/
 
 // Previous and next area at the bottom
-.prev-next-area {
-  font-size: var(--sbt-prevnext-font-size);
+footer.footer-article {
+  border-top: none;
+  padding: none;
+
+  .prev-next-area {
+    font-size: var(--sbt-prevnext-font-size);
+  }
 }

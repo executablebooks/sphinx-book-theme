@@ -10,14 +10,14 @@ input#__navigation {
   // On wide screens, checking will hide everything
   @media (min-width: $breakpoint-md) {
       &:checked {
-          & ~ #site-navigation {
+          & ~ .container-xl #site-navigation {
               visibility: hidden;
               opacity: 0;
               margin-left: -$leftbar-width-wide;
           }
 
           // When we hide the sidebar on widescreen, add some padding to content
-          & ~ .content-container #main-content {
+          & ~ .container-xl #main-content {
               padding-left: 4rem;
               padding-right: 4rem;
           }
@@ -26,7 +26,7 @@ input#__navigation {
 
   // On narrow screens, *unchecking* will hide everything, so it's hidden by default
   @media (max-width: $breakpoint-md) {
-      &:not(:checked) ~ #site-navigation {
+      &:not(:checked) ~ .container-xl #site-navigation {
           visibility: hidden;
           opacity: 0;
           margin-left: -$leftbar-width-mobile;
@@ -37,7 +37,7 @@ input#__navigation {
 input#__page-toc {
     // On narrow screens, it's hidden by default
     @media (max-width: $breakpoint-md) {
-        &:not(:checked) ~ .content-container .bd-toc {
+        &:not(:checked) ~ .container-xl .bd-toc {
             visibility: hidden;
             opacity: 0;
             margin-right: -$leftbar-width-mobile;

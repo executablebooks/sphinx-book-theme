@@ -1,34 +1,32 @@
 {# To trigger whether the TOC and its button show up #}
 {% set page_toc = generate_toc_html() %}
 
-<div class="topbar row sticky-top">
-    <div class="col py-1 d-flex topbar-main">
-        <div class="topbar-left">
-            {% if theme_single_page != True %}
-            <label class="nav-toggle-button" for="__navigation">
-                <div class="visually-hidden">{{ translate('Toggle navigation') }}</div>
-                <i class="fas fa-bars"></i>
-            </label>
-            {% endif %}
-        </div>
-        <div class="topbar-right">
-            {% include "components/launchbuttons.html" %}
-            {% include "components/fullscreen.html" %}
-            {% include "components/repobuttons.html" %}
-            {% include "components/download.html" %}
-            {% if page_toc %}{% include "components/toc-button.html" %}{% endif %}
-        </div>
+<div class="col py-1 d-flex topbar-main">
+    <div class="topbar-left">
+        {% if theme_single_page != True %}
+        <label class="nav-toggle-button" for="__navigation">
+            <div class="visually-hidden">{{ translate('Toggle navigation') }}</div>
+            <i class="fas fa-bars"></i>
+        </label>
+        {% endif %}
     </div>
+    <div class="topbar-right">
+        {% include "components/launchbuttons.html" %}
+        {% include "components/fullscreen.html" %}
+        {% include "components/repobuttons.html" %}
+        {% include "components/download.html" %}
+        {% if page_toc %}{% include "components/toc-button.html" %}{% endif %}
+    </div>
+</div>
 
-    <!-- Table of contents -->
-    <div class="d-block col-md-3 bd-toc show noprint">
-        {%- if page_toc | length >= 1 %}
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
-        </div>
-        <nav id="bd-toc-nav" aria-label="Page">
-            {{ page_toc }}
-        </nav>
-        {%- endif %}
+<!-- Table of contents -->
+<div class="d-block col-md-3 bd-toc show noprint">
+    {%- if page_toc | length >= 1 %}
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
     </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        {{ page_toc }}
+    </nav>
+    {%- endif %}
 </div>

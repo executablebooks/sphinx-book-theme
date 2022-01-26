@@ -1,5 +1,6 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 {% import "static/sbt-webpack-macros.html" as _sbtwebpack with context %}
+{# ref: https://github.com/pydata/pydata-sphinx-theme/blob/master/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/layout.html #}
 
 {%- block css %}
     {{ super() }}
@@ -8,8 +9,8 @@
 
 {% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
 
-<!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
-{% block docs_sidebar %}
+
+{% block content %}
 <!-- An invisible pixel that we watch to see if we've scrolled. -->
 <div class="sbt-scroll-pixel-helper"></div>
 <!-- Checkboxes to toggle the left sidebar -->
@@ -22,17 +23,35 @@
 <label class="overlay overlay-pagetoc" for="__page-toc">
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
+<!-- Headers at the top -->
+<div class="header-container">
+    <div class="announcement header-item">
+        {%- include "sections/announcement.html" -%}
+    </div>
+    <div class="header header-item sticky-top">
+        {%- include "sections/header.html" -%}
+    </div>
+</div>
+{{ super() }}
+{% endblock %}
+
+<!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
+{% block docs_sidebar %}
+<!-- Sidebar -->
 <div class="pl-4 pr-3 bd-sidebar site-navigation {% if is_single_page %} single-page{% endif %}" id="site-navigation">
     {% if not is_single_page %}
-        {% include "sections/sidebar.html" %}
+        {%- include "sections/sidebar.html" -%}
     {%- endif %}
 </div>
 {% endblock %}
 
 {% block docs_main %}
+<!-- Main content -->
 <div class="col py-0 content-container">
     {% block docs_body %}
-    {% include "sections/header-article.html" %}
+    <div class="topbar row sticky-top">
+        {% include "sections/header-article.html" %}
+    </div>
     <div class="row content-row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
@@ -56,10 +75,16 @@
             <main id="main-content" role="main">
                 {{ super() }}
             </main>
-            {% include "sections/footer-article.html" %}
+            <footer class="footer-article">
+                {% include "sections/footer-article.html" %}
+            </footer>
         </div>
     </div>
-    {%- include "sections/footer-content.html" %}
+    <div class="row footer-row">
+        <footer class="col footer">
+            {%- include "sections/footer-content.html" %}
+        </footer>
+    </div>
     {% endblock %}
 </div>
 {% endblock %}

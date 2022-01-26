@@ -11,30 +11,10 @@ project.
 
 ## Repository structure
 
-This theme uses [sphinx-theme-builder](https://sphinx-theme-builder.readthedocs.io/en/latest/) as its build backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/) recommended by it.
-On top of that, it has the following additional critical files/folders:
-
-`webpack.config.js`
-: Contains the compilation code to convert source files like SCSS and JS in `src/sphinx_book_theme/assets/*` into the production assets in `src/sphinx_book_theme/theme/sphinx_book_theme/static/` .
-: This compilation is called by default, during development commands (see below).
-
-`docs/`
-: The documentation for the theme, which aims to include all of the core Sphinx "components" (lists, admonitions, etc), to check/show how they are represented in this theme.
-: The build configuration is contained in `conf.py`.
-
-`docs/reference`
-: The reference section of the documentation contains reference material for the look and feel of the theme.
-  The "kitchen sink" is pulled directly [from the `sphinx-themes` website](https://github.com/sphinx-themes/sphinx-themes.org/tree/master/sample-docs/kitchen-sink).
-  There are also other sections for theme-specific elements.
-
-`tests/`
-: Testing infrastructure that uses `pytest` along with `beautifulsoup` to validate
-  that the generated HTML is what we expect it to be.
-: Much of these tests also use `pytest-regressions`, to check whether newly-generated HTML differs from previously-generated HTML.
-
-`.github/workflows/`
-: Contains Continuous-integration (CI) workflows, run on commits/PRs to the GitHub repository.
-
+% ARCHITECTURE.md sections should be ### to properly nest here.
+```{include} ../ARCHITECTURE.md
+:start-line: 1
+```
 
 ## Set up your development environment
 
@@ -108,7 +88,7 @@ The easiest way to preview the changes you make to this theme is by building the
 
 To do so, follow these steps:
 
-1. **Make your changes in `src/sphinx_book_theme/assets/`**. This folder contains all of the SCSS and Javascript that are used in this site. You should edit the files here, and they will be built and included with the site in the `sphinx_book_theme/` folder at build time.
+1. **Make your changes in `src/sphinx_book_theme/assets/`**. This folder contains all of the SCSS and Javascript that are used in this site. These files are compiled by the Sphinx Theme Builder, and placed in `src/sphinx_book_theme/theme/sphinx_book_theme/static` at build time.
 2. **Build the documentation**. You can use the following `tox` command:
 
    ```console

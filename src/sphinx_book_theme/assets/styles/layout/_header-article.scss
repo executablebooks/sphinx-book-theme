@@ -27,20 +27,24 @@
           border: none;
           padding-top: .1rem;
           padding-bottom: .1rem;
-          font-size: 1.4em;
 
           i.fab {
               vertical-align: baseline;
               line-height: 1;
           }
+
+          img {
+            height: 1.15em;
+            padding-right: 6px;
+            margin-left: -5px;
+          }
       }
 
-      // Left section of topbar
       .topbar-left, .topbar-right {
           display: flex;
           align-items: center;
 
-          label {
+          label, button {
               cursor: pointer;
               color: $non-content-grey;
               margin-bottom: 0;
@@ -76,24 +80,23 @@ div.dropdown-buttons-trigger {
       display: none;
       position: absolute;
       max-width: 130px;
-      margin-top: .2em;
+      margin-top: 0;
       z-index: 1000;
-      transform: translate(-60%);
+      transform: translate(-70%);
 
       &.sourcebuttons .topbarbtn i {
           padding-right: 6px;
           margin-left: -5px;
-          font-size: .9em !important;
       }
 
-      button.topbarbtn {
+      .topbarbtn {
+          font-size: 1em;
           padding-top: .35rem;
           padding-bottom: .35rem;
           min-width: 120px !important;
           border: 1px white solid !important;
           background-color: $non-content-grey;
           color: white;
-          font-size: 1em;
       }
   }
 
@@ -104,10 +107,4 @@ div.dropdown-buttons-trigger {
 
 a.dropdown-buttons i {
   margin-right: .5em;
-}
-
-button.topbarbtn img {
-  height: 1.15em;
-  padding-right: 6px;
-  margin-left: -5px;
 }

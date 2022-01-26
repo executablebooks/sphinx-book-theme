@@ -81,11 +81,15 @@ reference/blog
 contributing
 ```
 
-# Acknowledgements
+# Inspiration
 
-This theme is heavily inspired by (and dependent on)
-[PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
-structure and configuration.
+This theme draws inspiration and borrows design elements from the following themes:
+
+- The [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/)
+- The [Furo theme](https://pradyunsg.me/furo/)
+- The [Edward Tufte CSS theme](https://edwardtufte.github.io/tufte-css/)
+- [GitBook](https://docs.gitbook.com/)
+- The [Tailwind CSS docs](https://tailwindcss.com/docs/installation)
 
 [pypi-badge]: https://img.shields.io/pypi/v/sphinx-book-theme.svg
 [pypi-link]: https://pypi.org/project/sphinx-book-theme
