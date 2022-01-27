@@ -2,6 +2,15 @@
 /*********************************************
 * Utility classes used in a few places
 *********************************************/
+// For the helper pixel that we can watch to decide whether we'vez
+.sbt-scroll-pixel-helper {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 0;
+  left: 0;
+}
+
 // Hide an element without display: none but so that it takes no space
 .visually-hidden {
   clip: rect(0,0,0,0)!important;
@@ -17,4 +26,14 @@
 
 .onlyprint {
   display: none
+}
+
+// Print-specific utility classes
+@media print {
+  .noprint {
+    display: none !important;
+  }
+  .onlyprint {
+    display: block !important;
+  }
 }

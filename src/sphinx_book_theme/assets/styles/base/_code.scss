@@ -22,10 +22,6 @@ div.highlight {
   margin-bottom: 1em;
 }
 
-div.cell div.highlight {
-  margin-bottom: 0em;
-}
-
 // CodeMirror styles for live thebe cells.
 .cm-s-default {
   font-family: var(--jp-code-font-family);

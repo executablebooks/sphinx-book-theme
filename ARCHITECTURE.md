@@ -10,6 +10,11 @@ See below for some more specific sections
 This folder contains all of the source files for this theme, and most changes to the theme are made somewhere inside this folder.
 The following sections describe where various functionality lives.
 
+- `src/sphinx_book_theme/theme/sphinx_book_theme/` contains HTML templates and Sphinx theme configuration
+- `src/sphinx_book_theme/assets/` static assets that will be compiled and inserted into the `theme/sphinx_book_theme/` folder at build time.
+
+More information on each of these sections below.
+
 #### `/theme/sphinx_book_theme/` - HTML templates
 
 This is the actual theme source that is packaged and distributed via PyPI.
@@ -29,6 +34,8 @@ Contains JavaScript files for this theme. They are automatically compiled and in
 Contains SCSS files for this theme. They are automatically compiled and inserted into the theme when new releases are made (or, via the command `stb compile`). They are **not checked in to `git` history**.
 
 Our SCSS files follow the structured described in [the sass-guidelines guide](https://sass-guidelin.es/#architecture).
+
+We also inherit a lot of SCSS rules from [the PyData Sphinx Theme styles](https://github.com/pydata/pydata-sphinx-theme/tree/master/src/pydata_sphinx_theme/assets/styles).
 
 ### `docs/` - Site documentation
 

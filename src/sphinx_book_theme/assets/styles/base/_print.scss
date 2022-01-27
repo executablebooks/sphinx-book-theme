@@ -2,12 +2,6 @@
 * Print-specific CSS *
 *********************************************/
 @media print {
-  .noprint {
-    display: none !important;
-  }
-  .onlyprint {
-    display: block !important;
-  }
   .tag_popout,
   div.margin, aside.margin {
     float: none;

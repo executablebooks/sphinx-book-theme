@@ -2,6 +2,9 @@
 * MyST NB and Jupyter Notebooks *
 *********************************************/
 div.cell {
+  div.highlight {
+    margin-bottom: 0em;
+  }
 
   div.cell_output {
       padding-right: 0;
