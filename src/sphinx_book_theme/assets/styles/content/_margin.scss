@@ -31,6 +31,10 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
     width: $content-margin-width;
     margin: 0 $content-margin-offset 0 0;
     clear: right; // Prevent sequential margin content from overlapping
+
+    p.sidebar-title {
+      margin-bottom: 0.1em;
+    }
   }
 }
 
