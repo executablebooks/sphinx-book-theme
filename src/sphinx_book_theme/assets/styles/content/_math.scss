@@ -1,18 +1,18 @@
 // Math and equations
 span.eqno {
-    position: absolute;
-    right: 1em;
-    top: 50%;
-    transform: translate(0,-50%);
-    font-size: 1.2em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 1.2em;
 }
 
 div.math {
-    overflow-x: auto;
-    position: relative;
+  overflow-x: auto;
+  position: relative;
 }
 
 // Compensate for the extra bottom margin of a preceding paragraph
 p ~ div.math {
-    margin-top: -1.15rem
+  margin-top: -1.15rem;
 }

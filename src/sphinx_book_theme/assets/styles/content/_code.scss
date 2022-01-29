@@ -11,14 +11,14 @@ pre {
 }
 
 // Over-ride Sphinx default so that content fills whitespace w/ margin content
-pre, div[class*="highlight-"] {
+pre,
+div[class*="highlight-"] {
   clear: none;
 }
 
-
 .highlighttable {
   .linenos {
-      vertical-align: baseline;
+    vertical-align: baseline;
   }
 }
 

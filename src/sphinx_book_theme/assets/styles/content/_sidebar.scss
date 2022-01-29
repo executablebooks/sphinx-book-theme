@@ -1,13 +1,14 @@
 // Sidebar-specific CSS
-div.sidebar, aside.sidebar {
+div.sidebar,
+aside.sidebar {
   &:not(.margin) {
     background-color: unset;
     padding: 1em;
 
-  // On wide screens, the sidebar is half-and-half between margin and content
-  @media (min-width: $breakpoint-lg) {
-    width: 60%;
-    margin: 0 -30% 0 $content-margin-gutter;
+    // On wide screens, the sidebar is half-and-half between margin and content
+    @media (min-width: $breakpoint-lg) {
+      width: 60%;
+      margin: 0 -30% 0 $content-margin-gutter;
+    }
   }
-}
 }

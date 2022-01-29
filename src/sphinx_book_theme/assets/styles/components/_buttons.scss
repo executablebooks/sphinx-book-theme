@@ -1,7 +1,8 @@
 /*********************************************
 * Buttons, mostly for the topbar             *
 *********************************************/
-.topbarbtn, .topbarbtn-wide {
+.topbarbtn,
+.topbarbtn-wide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,11 +26,12 @@
   cursor: pointer;
   border: none;
   font-size: 1.4em;
-  padding: .1rem 0.5rem;  // Horizontal padding since labels have none
-  margin: 0 .1rem;
+  padding: 0.1rem 0.5rem; // Horizontal padding since labels have none
+  margin: 0 0.1rem;
 
   // Over-ride bootstrap defaults for clicking
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: black;
     background-color: white;
     box-shadow: none;
@@ -39,41 +41,41 @@
 // Buttons with a dropdown list underneath
 div.dropdown-buttons-trigger {
   div.dropdown-buttons {
-      display: none;
-      position: absolute;
-      max-width: 130px;
-      margin-top: 0;
-      z-index: 1000;
-      transform: translate(-70%);
+    display: none;
+    position: absolute;
+    max-width: 130px;
+    margin-top: 0;
+    z-index: 1000;
+    transform: translate(-70%);
 
-      // Create extra spacing for these icons since they have
-      i {
-          margin-right: .5em;
-      }
+    // Create extra spacing for these icons since they have
+    i {
+      margin-right: 0.5em;
+    }
 
-      // Links shouldn't have any effect when hovered
-      a:hover {
-        text-decoration: none;
-      }
+    // Links shouldn't have any effect when hovered
+    a:hover {
+      text-decoration: none;
+    }
 
-      // Wide topbar buttons have dark backgrounds since they hover over text
-      .topbarbtn-wide {
-          font-size: 1em;
-          padding-top: .35rem;
-          padding-bottom: .35rem;
-          min-width: 125px !important;
-          border: 1px white solid !important;
-          background-color: $non-content-grey;
-          color: white;
-          border-radius: .5em;
-      }
+    // Wide topbar buttons have dark backgrounds since they hover over text
+    .topbarbtn-wide {
+      font-size: 1em;
+      padding-top: 0.35rem;
+      padding-bottom: 0.35rem;
+      min-width: 125px !important;
+      border: 1px white solid !important;
+      background-color: $non-content-grey;
+      color: white;
+      border-radius: 0.5em;
+    }
   }
 
   &:hover div.dropdown-buttons {
-      display: block;
+    display: block;
   }
 }
 
 a.dropdown-buttons i {
-  margin-right: .5em;
+  margin-right: 0.5em;
 }

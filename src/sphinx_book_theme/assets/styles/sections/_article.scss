@@ -6,7 +6,8 @@ body {
   padding-top: 0px !important;
 }
 
-#main-content, #print-main-content {
+#main-content,
+#print-main-content {
   transition: padding $animation-time ease-out;
   padding-top: 1.5em;
 }
@@ -14,6 +15,6 @@ body {
 // On wide screens, make space for the right margin
 @media (min-width: $breakpoint-md) {
   #main-content {
-      max-width: $content-max-width;
+    max-width: $content-max-width;
   }
 }

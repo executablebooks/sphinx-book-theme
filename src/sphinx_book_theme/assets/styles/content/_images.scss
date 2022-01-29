@@ -1,24 +1,23 @@
-
 // Images
 img {
   max-width: 100%;
 
   &.align-center {
-      margin-left: auto;
-      margin-right: auto;
-      display:block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   &.align-left {
-      clear: left;
-      float: left;
-      margin-right: 1em;
+    clear: left;
+    float: left;
+    margin-right: 1em;
   }
 
   &.align-right {
-      clear: right;
-      float: right;
-      margin-left: 1em;
+    clear: right;
+    float: right;
+    margin-left: 1em;
   }
 }
 
@@ -29,37 +28,38 @@ div.figure {
   text-align: center;
 
   &.align-left {
-      text-align: left;
-      p.caption {
-          margin-left: 0;
-      }
+    text-align: left;
+    p.caption {
+      margin-left: 0;
+    }
   }
   &.align-right {
-      text-align: right;
-      p.caption {
-          margin-right: 0;
-      }
+    text-align: right;
+    p.caption {
+      margin-right: 0;
+    }
   }
 
   p.caption {
-      margin: .5em 10%;
+    margin: 0.5em 10%;
   }
 
-  &.margin, &.margin-caption {
-      p.caption {
-          margin: .5em 0;
-      }
+  &.margin,
+  &.margin-caption {
+    p.caption {
+      margin: 0.5em 0;
+    }
   }
 
   &.margin-caption p.caption {
-      text-align: left;
+    text-align: left;
   }
 
   span.caption-number {
-      font-weight: bold;
+    font-weight: bold;
   }
 
   span {
-      font-size: .9rem;
+    font-size: 0.9rem;
   }
 }

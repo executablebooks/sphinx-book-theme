@@ -7,44 +7,44 @@
  * https://sass-guidelin.es/#architecture
  */
 // Variables and re-usable SCSS functions
-@import 'abstracts/mixins';
-@import 'abstracts/variables';
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
 // Basic styling applied throughout site
-@import 'base/base';
-@import 'base/typography';
-@import 'base/print';
+@import "base/base";
+@import "base/typography";
+@import "base/print";
 
 // Major theme layout, skeleton, and whitespace
-@import 'sections/article';
-@import 'sections/footer-article';
-@import 'sections/footer-content';
-@import 'sections/header-article';
-@import 'sections/headers';
-@import 'sections/sidebar-primary';
-@import 'sections/sidebar-secondary';
-@import 'sections/sidebars-toggle';
-@import 'sections/header-article';
+@import "sections/article";
+@import "sections/footer-article";
+@import "sections/footer-content";
+@import "sections/header-article";
+@import "sections/headers";
+@import "sections/sidebar-primary";
+@import "sections/sidebar-secondary";
+@import "sections/sidebars-toggle";
+@import "sections/header-article";
 
 // Re-usable components across the theme
-@import 'components/buttons';
+@import "components/buttons";
 
 // Content blocks in standard Sphinx
-@import 'content/admonitions';
-@import 'content/autodoc';
-@import 'content/code';
-@import 'content/field-lists';
-@import 'content/footnotes';
-@import 'content/glossary';
-@import 'content/images';
-@import 'content/margin';
-@import 'content/quotes';
-@import 'content/sidebar';
-@import 'content/tableofcontents';
+@import "content/admonitions";
+@import "content/autodoc";
+@import "content/code";
+@import "content/field-lists";
+@import "content/footnotes";
+@import "content/glossary";
+@import "content/images";
+@import "content/margin";
+@import "content/quotes";
+@import "content/sidebar";
+@import "content/tableofcontents";
 
 // Content blocks from Sphinx extensions
-@import 'extensions/ablog';
-@import 'extensions/myst-nb';
-@import 'extensions/sphinx-tabs';
-@import 'extensions/sphinx-togglebutton';
-@import 'extensions/thebe';
+@import "extensions/ablog";
+@import "extensions/myst-nb";
+@import "extensions/sphinx-tabs";
+@import "extensions/sphinx-togglebutton";
+@import "extensions/thebe";

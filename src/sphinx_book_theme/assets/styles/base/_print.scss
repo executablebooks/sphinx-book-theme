@@ -3,7 +3,8 @@
 *********************************************/
 @media print {
   .tag_popout,
-  div.margin, aside.margin {
+  div.margin,
+  aside.margin {
     float: none;
     margin: 2em 0 2em auto !important;
     border: 1px solid #a4a6a7;
