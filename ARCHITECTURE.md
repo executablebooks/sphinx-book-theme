@@ -38,9 +38,11 @@ Contains JavaScript files for this theme. They are automatically compiled and in
 Contains SCSS files for this theme. They are automatically compiled and inserted into the theme when new releases are made (or, via the command `stb compile`). They are **not checked in to `git` history**.
 
 Our SCSS files follow the structured described in [the sass-guidelines guide](https://sass-guidelin.es/#architecture).
+For a high-level overview, see the file `/assets/styles/index.scss`.
 
+```{note}
 We also inherit a lot of SCSS rules from [the PyData Sphinx Theme styles](https://github.com/pydata/pydata-sphinx-theme/tree/master/src/pydata_sphinx_theme/assets/styles).
-
+```
 
 #### `/translations/` - Translations and internationalization
 
