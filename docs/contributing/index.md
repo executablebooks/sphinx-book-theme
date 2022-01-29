@@ -12,7 +12,7 @@ project.
 ## Repository structure
 
 % ARCHITECTURE.md sections should be ### to properly nest here.
-```{include} ../ARCHITECTURE.md
+```{include} ../../ARCHITECTURE.md
 :start-line: 1
 ```
 
