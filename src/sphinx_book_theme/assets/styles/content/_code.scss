@@ -16,6 +16,12 @@ pre, div[class*="highlight-"] {
 }
 
 
+.highlighttable {
+  .linenos {
+      vertical-align: baseline;
+  }
+}
+
 // Code blocks should have a margin, but code *cells* get margin from a parent
 div.highlight {
   background: none;

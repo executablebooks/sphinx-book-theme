@@ -56,6 +56,7 @@ customize/index
 content-blocks
 notebooks
 launch
+contributing/index
 ```
 
 # Reference pages
@@ -71,14 +72,6 @@ reference/kitchen-sink/index
 reference/notebooks
 reference/thebe
 reference/blog
-```
-
-
-```{toctree}
-:caption: About the theme
-:maxdepth: 2
-
-contributing
 ```
 
 # Inspiration

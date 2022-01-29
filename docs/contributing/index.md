@@ -1,4 +1,4 @@
-# Contributing Guide
+# Contribute to this theme
 
 Thank you for being interested in contributing to the `sphinx-book-theme`! You
 are awesome ✨.

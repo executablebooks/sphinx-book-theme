@@ -6,25 +6,45 @@
  * This follows the 7-1 pattern described here:
  * https://sass-guidelin.es/#architecture
  */
+// Variables and re-usable SCSS functions
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
+// Basic styling applied throughout site
 @import 'base/base';
-@import 'base/code';
 @import 'base/typography';
-@import 'base/notebook';
 @import 'base/print';
 
-@import 'layout/article-margin';
-@import 'layout/footer-article';
-@import 'layout/footer-content';
-@import 'layout/header-article';
-@import 'layout/headers';
-@import 'layout/sidebar-primary';
-@import 'layout/sidebar-secondary';
-@import 'layout/sidebars-toggle';
-@import 'layout/header-article';
+// Major theme layout, skeleton, and whitespace
+@import 'sections/article';
+@import 'sections/footer-article';
+@import 'sections/footer-content';
+@import 'sections/header-article';
+@import 'sections/headers';
+@import 'sections/sidebar-primary';
+@import 'sections/sidebar-secondary';
+@import 'sections/sidebars-toggle';
+@import 'sections/header-article';
 
-@import 'components/admonitions';
+// Re-usable components across the theme
 @import 'components/buttons';
-@import 'components/extensions';
+
+// Content blocks in standard Sphinx
+@import 'content/admonitions';
+@import 'content/autodoc';
+@import 'content/code';
+@import 'content/field-lists';
+@import 'content/footnotes';
+@import 'content/glossary';
+@import 'content/images';
+@import 'content/margin';
+@import 'content/quotes';
+@import 'content/sidebar';
+@import 'content/tableofcontents';
+
+// Content blocks from Sphinx extensions
+@import 'extensions/ablog';
+@import 'extensions/myst-nb';
+@import 'extensions/sphinx-tabs';
+@import 'extensions/sphinx-togglebutton';
+@import 'extensions/thebe';

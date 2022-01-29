@@ -1,4 +1,3 @@
-
 /*********************************************
 * Utility classes used in a few places
 *********************************************/
@@ -24,16 +23,17 @@
   width: 1px!important;
 }
 
+// Print-specific utility classes
 .onlyprint {
-  display: none
+  display: none;
+
+  @media print {
+    display: block !important;
+  }
 }
 
-// Print-specific utility classes
-@media print {
-  .noprint {
+.noprint {
+  @media print {
     display: none !important;
-  }
-  .onlyprint {
-    display: block !important;
   }
 }

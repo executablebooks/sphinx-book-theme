@@ -1,0 +1,13 @@
+/*********************************************
+* sphinx-togglebutton *
+* ref: https://github.com/executablebooks/sphinx-togglebutton
+*********************************************/
+// Toggle-button overrides
+.toggle.admonition button.toggle-button {
+  top: 0.5em !important;
+}
+
+
+button.toggle-button-hidden:before {
+    bottom: 0.2em !important;
+}

@@ -9,5 +9,9 @@ footer.footer-article {
 
   .prev-next-area {
     font-size: var(--sbt-prevnext-font-size);
+    // On wide screens, make space for the right margin
+    @media (min-width: $breakpoint-md) {
+      max-width: $content-max-width;
+    }
   }
 }
