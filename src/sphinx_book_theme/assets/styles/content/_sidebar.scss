@@ -5,10 +5,10 @@ aside.sidebar {
     background-color: unset;
     padding: 1em;
 
-    // On wide screens, the sidebar is half-and-half between margin and content
+    // On wide screens, the sidebar straddles margin and content
     @media (min-width: $breakpoint-lg) {
-      width: 60%;
-      margin: 0 -30% 0 $content-margin-gutter;
+      width: 65%;
+      margin: 0 -35% 0 $content-margin-gutter;
     }
   }
 }
