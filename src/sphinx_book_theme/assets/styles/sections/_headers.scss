@@ -9,7 +9,7 @@
   &.announcement {
     background-color: #616161;
     color: white;
-    padding: 0.4em;
+    padding: 0.4em 12.5%; // Horizontal padding so the width is 75%
   }
 
   &.header {

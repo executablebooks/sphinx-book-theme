@@ -36,7 +36,7 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
 <!-- Sidebar -->
-<div class="pl-4 pr-3 bd-sidebar site-navigation {% if is_single_page %} single-page{% endif %}" id="site-navigation">
+<div class="pl-4 pr-3 bd-sidebar site-navigation noprint {% if is_single_page %} single-page{% endif %}" id="site-navigation">
     {% if not is_single_page %}
         {%- include "sections/sidebar.html" -%}
     {%- endif %}
@@ -47,10 +47,10 @@
 <!-- Main content -->
 <div class="col py-0 content-container">
     {% block docs_body %}
-    <div class="topbar row sticky-top">
+    <div class="header-article row sticky-top noprint">
         {% include "sections/header-article.html" %}
     </div>
-    <div class="row content-row">
+    <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
@@ -73,12 +73,12 @@
             <main id="main-content" role="main">
                 {{ super() }}
             </main>
-            <footer class="footer-article">
+            <footer class="footer-article noprint">
                 {% include "sections/footer-article.html" %}
             </footer>
         </div>
     </div>
-    <div class="row footer-row">
+    <div class="footer-content row">
         <footer class="col footer">
             {%- include "sections/footer-content.html" %}
         </footer>

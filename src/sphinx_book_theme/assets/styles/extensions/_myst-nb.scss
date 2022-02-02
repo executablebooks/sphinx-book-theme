@@ -11,17 +11,24 @@ div.cell {
     padding-right: 0;
   }
 
+  // On screens, we want to scoll, but on print show all
+  @mixin cell-scroll {
+    max-height: 24em;
+    overflow-y: auto;
+    @media print {
+      max-height: unset;
+      overflow-y: visible;
+    }
+  }
   &.tag_output_scroll,
   &.tag_scroll-output {
     div.cell_output {
-      max-height: 24em;
-      overflow-y: auto;
+      @include cell-scroll;
     }
   }
   &.tag_scroll-input {
     div.cell_input {
-      max-height: 24em;
-      overflow-y: auto;
+      @include cell-scroll;
     }
   }
 }
