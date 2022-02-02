@@ -92,10 +92,6 @@ jobs:
         temporaryPublicStorage: true
         uploadArtifacts: true
         runs: 5
-        urls: |
-          reference/kitchen-sink/api.html
-          reference/kitchen-sink/paragraph-markup.html
-          reference/special-theme-elements.html
 
   publish:
     name: Publish to PyPI
