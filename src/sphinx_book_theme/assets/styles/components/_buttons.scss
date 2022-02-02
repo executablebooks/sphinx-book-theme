@@ -2,7 +2,7 @@
 * Buttons, mostly for the topbar             *
 *********************************************/
 .topbarbtn,
-.topbarbtn-wide {
+.topbarbtn--wide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@ div.dropdown-buttons-trigger {
     }
 
     // Wide topbar buttons have dark backgrounds since they hover over text
-    .topbarbtn-wide {
+    .topbarbtn--wide {
       font-size: 1em;
       padding-top: 0.35rem;
       padding-bottom: 0.35rem;
