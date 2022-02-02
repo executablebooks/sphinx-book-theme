@@ -133,6 +133,7 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
 
 def test_navbar_options_single_page(sphinx_build_factory):
+    """Test that"""
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.single_page": True}
     ).build(
@@ -141,8 +142,8 @@ def test_navbar_options_single_page(sphinx_build_factory):
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
         "div", id="site-navigation"
     )
-    assert len(sidebar.find_all("div")) == 0
-    assert "col-md-2" in sidebar.attrs["class"]
+    assert len(sidebar.find_all("div")) == 0  # Sidebar should be empty
+    assert "single-page" in sidebar.attrs["class"]  # Class added on single page
 
 
 @pytest.mark.parametrize(
