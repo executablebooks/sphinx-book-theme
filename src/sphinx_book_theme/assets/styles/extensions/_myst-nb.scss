@@ -7,6 +7,11 @@ div.cell {
     margin-bottom: 0em;
   }
 
+  div.cell_input,
+  div.cell_output div.output {
+    border-radius: $box-border-radius;
+  }
+
   div.cell_output {
     padding-right: 0;
   }

@@ -8,7 +8,10 @@ $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
 // Colors
-$non-content-grey: #5a5a5a;
+$grey--dark: #5a5a5a;
+$grey--medium: #aaa;
+$grey--light: #ccc;
+$non-content-grey: $grey--dark;
 
 $topbar-height: 3em;
 $leftbar-width-mobile: 75%;

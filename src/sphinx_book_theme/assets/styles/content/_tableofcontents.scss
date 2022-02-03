@@ -22,6 +22,7 @@ div.toctree-wrapper {
 
 // In-page contents
 div.contents {
+  border-radius: $box-border-radius;
   padding: 1em 1em 2em 1em; // More padding on bottom to match whitespace from title
   p.topic-title {
     font-size: 1.5em;

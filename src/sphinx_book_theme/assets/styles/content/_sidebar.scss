@@ -4,6 +4,8 @@ aside.sidebar {
   &:not(.margin) {
     background-color: unset;
     padding: 1em;
+    border-radius: $box-border-radius;
+    border-color: $grey--medium;
 
     // On wide screens, the sidebar straddles margin and content
     @media (min-width: $breakpoint-lg) {
