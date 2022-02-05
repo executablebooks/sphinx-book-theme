@@ -95,6 +95,12 @@ def test_build_book(sphinx_build_factory, file_regression):
         encoding="utf8",
     )
 
+    # By default we should have download buttons
+    download_btns = sphinx_build.html_tree("index.html").find_all(
+        "div", attrs={"class": "sb-download-buttons"}
+    )
+    assert len(download_btns) == 1
+
     # Edit button should not be on page
     assert '<a class="edit-button"' not in str(index_html)
     # Title should be just text, no HTML
@@ -255,18 +261,18 @@ def test_show_navbar_depth(sphinx_build_factory):
         assert "checked" not in checkbox.attrs
 
 
-def test_topbar_download_button_off(sphinx_build_factory, file_regression):
+def test_topbar_download_button_off(sphinx_build_factory):
+    """Download button should not show up in the topbar when configured as False."""
     confoverrides = {
         "html_theme_options.use_download_button": False,
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
     )
-
-    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "topbar-main"}
-    )[0]
-    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
+    download_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
+        "div", attrs={"class": "sb-download-buttons"}
+    )
+    assert len(download_btns) == 0
 
 
 def test_topbar_fullscreen_button_off(sphinx_build_factory, file_regression):
