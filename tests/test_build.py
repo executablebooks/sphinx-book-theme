@@ -200,7 +200,7 @@ def test_topbar_launchbtns(sphinx_build_factory, file_regression):
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
-    )[1]
+    )[0]
     file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
@@ -211,7 +211,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
     ).build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
-    )[1]
+    )[0]
     file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
