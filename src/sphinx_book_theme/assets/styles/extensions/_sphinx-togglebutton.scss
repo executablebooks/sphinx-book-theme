@@ -10,17 +10,3 @@
 button.toggle-button-hidden:before {
   bottom: 0.2em !important;
 }
-
-@media print {
-  // Content that was hidden should be shown at print time
-  div.toggle-hidden {
-    visibility: inherit;
-    opacity: 1;
-    height: auto;
-  }
-
-  // Toggle buttons shouldn't be shown at all
-  button.toggle-button {
-    display: none;
-  }
-}

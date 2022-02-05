@@ -12,6 +12,13 @@ kernelspec:
 
 # Thebe
 
+Thebe (via `sphinx-thebe`) is a special-case for this theme because it is particularly useful for interactive notebook use-cases.
+This page shows off major Thebe functionality and discusses some gotchas.
+
+When this page loads, activate Thebe by clicking the {guilabel}`Live Code` button at the top.
+
+## Code style
+
 Thebe uses CodeMirror in the background, which uses different styles than pygments, which is used for static code syntax highlighting.
 
 Static code:
@@ -57,10 +64,3 @@ def test_upper():
     os.unlink(in_file.name)
     os.unlink(out_file.name)
 ```
-
-<script language="javascript">
-    window.addEventListener('load', () => {
-        initThebeSBT()
-    }
-    );
-</script>

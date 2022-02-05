@@ -69,6 +69,7 @@ Reference pages demonstrate the visual look of this theme.
 
 reference/special-theme-elements
 reference/kitchen-sink/index
+reference/extensions
 reference/notebooks
 reference/thebe
 reference/blog
