@@ -50,8 +50,8 @@ aside.margin,
   }
 }
 
-.margin-caption p.caption,
-.margin-caption figcaption {
+div.figure.margin-caption p.caption,
+div.figure.margin-caption figcaption {
   @include margin-content();
 }
 

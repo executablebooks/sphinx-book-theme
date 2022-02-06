@@ -149,11 +149,11 @@ def add_to_context(app, pagename, templatename, context, doctree):
     )
 
 
-def update_thebe_config(app, env, docnames):
+def update_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
-    theme_options = env.config.html_theme_options
+    theme_options = app.env.config.html_theme_options
     if theme_options.get("launch_buttons", {}).get("thebe") is True:
-        if not hasattr(env.config, "thebe_config"):
+        if not hasattr(app.env.config, "thebe_config"):
             SPHINX_LOGGER.warning(
                 (
                     "Thebe is activated but not added to extensions list. "
@@ -162,7 +162,7 @@ def update_thebe_config(app, env, docnames):
             )
             return
         # Will be empty if it doesn't exist
-        thebe_config = env.config.thebe_config
+        thebe_config = app.env.config.thebe_config
     else:
         return
 
@@ -180,19 +180,7 @@ def update_thebe_config(app, env, docnames):
             branch = "master"
         thebe_config["repository_branch"] = branch
 
-    # Update the selectors to find thebe-enabled cells
-    selector = thebe_config.get("selector", "") + ",.cell"
-    thebe_config["selector"] = selector.lstrip(",")
-
-    selector_input = (
-        thebe_config.get("selector_input", "") + ",.cell_input div.highlight"
-    )
-    thebe_config["selector_input"] = selector_input.lstrip(",")
-
-    selector_output = thebe_config.get("selector_output", "") + ",.cell_output"
-    thebe_config["selector_output"] = selector_output.lstrip(",")
-
-    env.config.thebe_config = thebe_config
+    app.env.config.thebe_config = thebe_config
 
 
 def _string_or_bool(var):
@@ -224,7 +212,7 @@ class Margin(Sidebar):
 
 
 def setup(app: Sphinx):
-    app.connect("env-before-read-docs", update_thebe_config)
+    app.connect("builder-inited", update_thebe_config)
 
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)

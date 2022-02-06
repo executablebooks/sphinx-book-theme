@@ -93,7 +93,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     sidebar = index_html.find_all(attrs={"class": "bd-sidenav"})[0]
     file_regression.check(
         sidebar.prettify(),
-        basename="build__side-nav",
+        basename="build__sidebar-primary",
         extension=".html",
         encoding="utf8",
     )
@@ -113,6 +113,15 @@ def test_build_book(sphinx_build_factory, file_regression):
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
 
     # -- Topbar ---------------------------------------------------------------
+    header_article = sphinx_build.html_tree("section1", "ntbk.html").find(
+        "div", class_="header-article"
+    )
+    file_regression.check(
+        header_article.prettify(),
+        basename="build__header-article",
+        extension=".html",
+        encoding="utf8",
+    )
     # Edit button should not be on page
     assert '<a class="edit-button"' not in str(index_html)
     # Title should be just text, no HTML
