@@ -1,5 +1,6 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 {% import "static/sbt-webpack-macros.html" as _sbtwebpack with context %}
+{# ref: https://github.com/pydata/pydata-sphinx-theme/blob/master/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/layout.html #}
 
 {%- block css %}
     {{ super() }}
@@ -7,34 +8,50 @@
 {%- endblock %}
 
 {% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
-{% if is_single_page %}
-    {%- set sidebar_width_class = "col-md-2" %}
-{% else %}
-    {%- set sidebar_width_class = "col-md-3" %}
-{% endif %}
+
+
+{% block content %}
+<!-- An invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    {%- include "sections/announcement.html" -%}
+</div>
+<div class="header header-item noprint">
+    {%- include "sections/header.html" -%}
+</div>
+{{ super() }}
+{% endblock %}
 
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation {% if is_single_page %} single-page{% endif %}" id="site-navigation">
+<!-- Sidebar -->
+<div class="pl-4 pr-3 bd-sidebar site-navigation noprint {% if is_single_page %} single-page{% endif %}" id="site-navigation">
     {% if not is_single_page %}
-        {% include "sidebar.html" %}
+        {%- include "sections/sidebar.html" -%}
     {%- endif %}
 </div>
 {% endblock %}
 
 {% block docs_main %}
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- Main content -->
+<div class="col py-0 content-container">
     {% block docs_body %}
-    {% include "topbar.html" %}
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    <div class="header-article row sticky-top noprint">
+        {% include "sections/header-article.html" %}
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>{{ pagetitle }}</h1>
@@ -53,16 +70,21 @@
                     </div>
                 </div>
             </div>
-            {{ super() }}
-            {% if theme_show_prev_next %}
-                {% include "_templates/prev-next.html" %}
-            {% endif %}
+            <main id="main-content" role="main">
+                {{ super() }}
+            </main>
+            <footer class="footer-article noprint">
+                {% include "sections/footer-article.html" %}
+            </footer>
         </div>
     </div>
+    <div class="footer-content row">
+        <footer class="col footer">
+            {%- include "sections/footer-content.html" %}
+        </footer>
+    </div>
     {% endblock %}
-    {%- include "footer.html" %}
-</main>
-
+</div>
 {% endblock %}
 
 {%- block scripts_end %}

@@ -4,36 +4,39 @@ import "../styles/index.scss";
 
 // NavBar scrolling
 var scrollToActive = () => {
-  var navbar = document.getElementById('site-navigation')
-  var active_pages = navbar.querySelectorAll(".active")
-  var active_page = active_pages[active_pages.length-1]
+  var navbar = document.getElementById("site-navigation");
+  var active_pages = navbar.querySelectorAll(".active");
+  var active_page = active_pages[active_pages.length - 1];
   // Only scroll the navbar if the active link is lower than 50% of the page
-  if (active_page !== undefined && active_page.offsetTop > ($(window).height() * .5)) {
-    navbar.scrollTop = active_page.offsetTop - ($(window).height() * .2)
+  if (
+    active_page !== undefined &&
+    active_page.offsetTop > $(window).height() * 0.5
+  ) {
+    navbar.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
   }
-}
+};
 
 // Helper function to run when the DOM is finished
-var sbRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-      cb()
-    } else if (document.addEventListener) {
-      document.addEventListener('DOMContentLoaded', cb)
-    } else {
-      document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-      })
-    }
-}
+var sbRunWhenDOMLoaded = (cb) => {
+  if (document.readyState != "loading") {
+    cb();
+  } else if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", cb);
+  } else {
+    document.attachEvent("onreadystatechange", function () {
+      if (document.readyState == "complete") cb();
+    });
+  }
+};
 
 // Toggle full-screen with button
 var toggleFullScreen = () => {
   var navToggler = $("#navbar-toggler");
   if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      if (!navToggler.hasClass("collapsed")) {
-        navToggler.click();
-      }
+    document.documentElement.requestFullscreen();
+    if (!navToggler.hasClass("collapsed")) {
+      navToggler.click();
+    }
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -42,14 +45,14 @@ var toggleFullScreen = () => {
       }
     }
   }
-}
+};
 
 // Enable tooltips
 var initTooltips = () => {
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
-}
+};
 
 /**
  * Hide the Table of Contents any time sidebar content is on the screen.
@@ -73,36 +76,49 @@ var initTocHide = () => {
         // Otherwise, if it's in our list then remove it
         for (let ii = 0; ii < onScreenItems.length; ii++) {
           if (onScreenItems[ii] === entry.target) {
-              onScreenItems.splice(ii, 1);
-              break
+            onScreenItems.splice(ii, 1);
+            break;
           }
         }
-      };
+      }
     });
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-toc").removeClass("show")
+      $("div.bd-toc").removeClass("show");
     } else {
-      $("div.bd-toc").addClass("show")
+      $("div.bd-toc").addClass("show");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
     // The pixel is at the top, so if we're < 0 that it means we've scrolled
-    if ( entries[0].boundingClientRect.y < 0) {
+    if (entries[0].boundingClientRect.y < 0) {
       document.body.classList.add("scrolled");
     } else {
       document.body.classList.remove("scrolled");
     }
-  }
+  };
 
   // Set up the intersection observer to watch all margin content
   let tocObserver = new IntersectionObserver(hideTocCallback);
-  const selectorClasses = ["margin", "margin-caption", "full-width", "sidebar", "popout"];
-  let marginSelector = []
+  const selectorClasses = [
+    "margin",
+    "margin-caption",
+    "full-width",
+    "sidebar",
+    "popout",
+  ];
+  let marginSelector = [];
   selectorClasses.forEach((ii) => {
     // Use three permutations of each class name because `tag_` and `_` used to be supported
-    marginSelector.push(...[`.${ii}`, `.tag_${ii}`, `.${ii.replace("-", "_")}`])
+    marginSelector.push(
+      ...[
+        `.${ii}`,
+        `.tag_${ii}`,
+        `.${ii.replace("-", "_")}`,
+        `.tag_${ii.replace("-", "_")}`,
+      ]
+    );
   });
   document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {
     tocObserver.observe(ii);
@@ -111,29 +127,29 @@ var initTocHide = () => {
   // Set up the observer to check if we've scrolled from top of page
   let scrollObserver = new IntersectionObserver(manageScrolledClassOnBody);
   scrollObserver.observe(document.querySelector(".sbt-scroll-pixel-helper"));
-}
+};
 
 var printPdf = (el) => {
   // Detach the tooltip text from DOM to hide in PDF
   // and then reattach it for HTML
-  let tooltipID = $(el).attr("aria-describedby")
-  let tooltipTextDiv = $("#"+tooltipID).detach()
-  window.print()
-  $("body").append(tooltipTextDiv)
-}
+  let tooltipID = $(el).attr("aria-describedby");
+  let tooltipTextDiv = $("#" + tooltipID).detach();
+  window.print();
+  $("body").append(tooltipTextDiv);
+};
 
 var initThebeSBT = () => {
-  var title  = $("div.section h1")[0]
+  var title = $("div.section h1")[0];
   if (!$(title).next().hasClass("thebe-launch-button")) {
-    $("<button class='thebe-launch-button'></button>").insertAfter($(title))
+    $("<button class='thebe-launch-button'></button>").insertAfter($(title));
   }
   initThebe();
-}
+};
 
-window.initThebeSBT = initThebeSBT
-window.printPdf = printPdf
-window.toggleFullScreen = toggleFullScreen
+window.initThebeSBT = initThebeSBT;
+window.printPdf = printPdf;
+window.toggleFullScreen = toggleFullScreen;
 
-sbRunWhenDOMLoaded(initTooltips)
-sbRunWhenDOMLoaded(scrollToActive)
-sbRunWhenDOMLoaded(initTocHide)
+sbRunWhenDOMLoaded(initTooltips);
+sbRunWhenDOMLoaded(scrollToActive);
+sbRunWhenDOMLoaded(initTocHide);

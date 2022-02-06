@@ -1,0 +1,41 @@
+/*********************************************
+* ABlog *
+*********************************************/
+ul.ablog-archive {
+  padding-left: 0px;
+}
+
+/* In-page post lists */
+ul.postlist {
+  padding-left: 0;
+
+  > li > p:first-child {
+    font-size: 1.5em;
+  }
+
+  li {
+    + li {
+      margin-top: 2em;
+    }
+
+    > p > a {
+      font-style: normal;
+      font-size: 1.3em;
+    }
+  }
+}
+
+// Sidebar rules specifically for ABlog
+div.bd-sidebar {
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+
+  > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}

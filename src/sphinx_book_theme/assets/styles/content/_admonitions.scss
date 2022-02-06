@@ -1,0 +1,20 @@
+.admonition {
+  // Soften admonition styling from the PyData Theme
+  border-radius: $box-border-radius;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+    0 0 0.0625rem rgba(0, 0, 0, 0.1);
+
+  // Admonition seealso styling
+  &.seealso {
+    border-color: #28a745;
+
+    .admonition-title {
+      background-color: rgba(40, 167, 70, 0.1);
+
+      &:before {
+        color: #28a745;
+        content: "\f064";
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/*********************************************
+* SASS Mixins
+*********************************************/
+// Scrollbar styles to be re-used in a few spots
+@mixin scrollbar-style() {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+
+    &:hover {
+      background: #a0a0a0;
+    }
+  }
+
+  // Hide the scrollbar until hover on wide screens
+  @media (min-width: $breakpoint-lg) {
+    &:not(:hover) {
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        background: #ffffff;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #ffffff;
+      }
+    }
+  }
+}

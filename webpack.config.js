@@ -38,7 +38,7 @@ function macroTemplate({ compilation }) {
     {% macro body_post() %}
       ${js_files.map(script).join("\n  ")}
     {% endmacro %}
-  `)
+  `);
 }
 
 module.exports = {
@@ -53,7 +53,10 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({sourceMap: true}), new OptimizeCssAssetsPlugin({})],
+    minimizer: [
+      new TerserPlugin({ sourceMap: true }),
+      new OptimizeCssAssetsPlugin({}),
+    ],
   },
   module: {
     rules: [
@@ -87,6 +90,6 @@ module.exports = {
       minify: false,
       css: true,
       templateContent: macroTemplate,
-    })
-  ]
+    }),
+  ],
 };

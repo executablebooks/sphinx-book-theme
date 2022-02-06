@@ -23,6 +23,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_tabs.tabs",
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
@@ -124,6 +125,10 @@ html_theme_options = {
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
+    "announcement": (
+        "⚠️The latest release refactored our HTML, "
+        "so double-check your custom CSS rules!⚠️"
+    ),
     "show_toc_level": 2,
 }
 

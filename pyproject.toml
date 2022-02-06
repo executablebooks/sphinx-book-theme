@@ -24,7 +24,7 @@ requires-python = ">=3.7"
 dependencies = [
   "sphinx>=3,<5",
   "beautifulsoup4>=4.6.1,<5",
-  "pydata-sphinx-theme~=0.8.0",
+  "pydata-sphinx-theme~=0.7.2",
   "pyyaml",
 ]
 
@@ -61,6 +61,7 @@ doc = [
     "sphinx~=4.0",  # Force Sphinx to be the latest version
     "sphinx-design",
     "sphinx-copybutton",
+    "sphinx_tabs",
     "sphinx-togglebutton>=0.2.1",
     "sphinx-thebe",
     "sphinxcontrib-bibtex~=2.2",

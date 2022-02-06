@@ -1,0 +1,24 @@
+blockquote {
+  margin: 1em;
+  padding: 0.2em 1.5em;
+  border-left: 4px solid #ccc;
+
+  &.pull-quote,
+  &.epigraph,
+  &.highlights {
+    font-size: 1.25em;
+    border-left: none;
+  }
+
+  div > p {
+    margin-bottom: 0.5em;
+  }
+
+  div > p + p.attribution {
+    font-style: normal;
+    font-size: 0.9em;
+    text-align: right;
+    color: #6c757d;
+    padding-right: 2em;
+  }
+}

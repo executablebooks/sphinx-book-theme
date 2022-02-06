@@ -1,0 +1,103 @@
+/*********************************************
+* Table of Contents (right nav bar)          *
+*********************************************/
+
+.bd-toc {
+  padding: 0px !important;
+  right: -1em;
+  z-index: 999;
+  height: auto;
+  transition: margin-right $animation-time ease 0s,
+    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+
+  // Colors
+  div.onthispage,
+  .toc-entry a {
+    color: $non-content-grey;
+  }
+
+  // On narrow screens, this should be offset to the right side until button is clicked
+  @media (max-width: $breakpoint-md) {
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: $toc-width-mobile;
+    max-width: 300px;
+    background-color: white;
+    border-left: $border-thin;
+    font-size: 1.5em;
+  }
+
+  // By default the nav is hidden unless a few conditions are met
+  nav {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.2s ease, max-height 0.7s ease;
+    overflow-y: hidden;
+    background: white;
+    @include scrollbar-style();
+
+    // TOC link color
+    a:hover,
+    li.active > a.active {
+      color: rgba(var(--pst-color-link), 1);
+    }
+
+    li.active > a.active {
+      border-left: 2px solid rgba(var(--pst-color-link), 1);
+    }
+
+    > .nav {
+      border-left: 1px solid #eee;
+      .nav {
+        border-left: none;
+      }
+    }
+  }
+
+  // Show / hide the in-page TOC items
+  @mixin show-inpage-toc {
+    nav {
+      max-height: 90vh;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    // Hide the arrow when we display the toc
+    .tocsection:after {
+      opacity: 0;
+    }
+  }
+  // On wide screens, show the TOC with hover or w/ a show class
+  &:hover,
+  &.show {
+    @include show-inpage-toc;
+  }
+
+  // On narrow screens, it should always be shown because it's off to the right
+  @media (max-width: $breakpoint-md) {
+    @include show-inpage-toc;
+  }
+
+  .tocsection {
+    padding: 0.5rem 0 0.5rem 1rem !important;
+
+    &:after {
+      content: "\f107";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      padding-left: 0.5em;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .toc-entry a {
+    padding: 0.125rem 1rem !important;
+  }
+
+  // Make sure the pydata sphinx theme edit button doesn't show up
+  div.editthispage {
+    display: none;
+  }
+}

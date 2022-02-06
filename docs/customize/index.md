@@ -66,6 +66,8 @@ The following sections describe a few ways to customize the theme in more depth.
 ```{toctree}
 sidebar-primary.md
 sidebar-secondary.md
+announcements.md
+header.md
 download.md
 source-files.md
 custom-css.md

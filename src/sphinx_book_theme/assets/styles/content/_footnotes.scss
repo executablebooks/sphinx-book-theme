@@ -1,0 +1,18 @@
+dl.footnote {
+  span.fn-backref {
+    font-size: 1em;
+    padding-left: 0.1em;
+  }
+
+  // To ensure that the footnote text is aligned across lines
+  dd {
+    font-size: 0.9em;
+    margin-left: 3em;
+  }
+}
+
+// Footnotes and Citations
+.footnote-reference,
+a.bibtex.internal {
+  font-size: 1em;
+}
