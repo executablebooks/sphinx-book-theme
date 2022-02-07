@@ -33,13 +33,20 @@ var sbRunWhenDOMLoaded = (cb) => {
 // Safari requires a `webkit` prefix, so this uses conditionals to check for that
 // ref: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
 var toggleFullScreen = () => {
-  if (!document.fullscreenElement) {
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen();
+  var isInFullScreen =
+    (document.fullscreenElement && document.fullscreenElement !== null) ||
+    (document.webkitFullscreenElement &&
+      document.webkitFullscreenElement !== null);
+  let docElm = document.documentElement;
+  if (!isInFullScreen) {
+    console.log("[SBT]: Entering full screen");
+    if (docElm.requestFullscreen) {
+      docElm.requestFullscreen();
+    } else if (docElm.webkitRequestFullscreen) {
+      docElm.webkitRequestFullscreen();
     }
   } else {
+    console.log("[SBT]: Exiting full screen");
     if (document.exitFullscreen) {
       document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
