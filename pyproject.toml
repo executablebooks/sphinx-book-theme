@@ -24,7 +24,7 @@ requires-python = ">=3.7"
 dependencies = [
   "sphinx>=3,<5",
   "beautifulsoup4>=4.6.1,<5",
-  "pydata-sphinx-theme~=0.7.2",
+  "pydata-sphinx-theme~=0.8.0",
   "pyyaml",
 ]
 

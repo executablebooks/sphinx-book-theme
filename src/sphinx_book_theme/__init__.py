@@ -2,7 +2,6 @@
 import os
 from pathlib import Path
 
-from bs4 import BeautifulSoup as bs
 from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes
 from sphinx.application import Sphinx
@@ -27,65 +26,11 @@ def get_html_theme_path():
 
 def add_to_context(app, pagename, templatename, context, doctree):
 
-    # TODO: remove this whenever the nav collapsing functionality is in the PST
-    def sbt_generate_nav_html(
-        level=1,
-        include_item_names=False,
-        with_home_page=False,
-        prev_section_numbers=None,
-        show_depth=1,
-    ):
-        # Config stuff
-        config = app.env.config
-        if isinstance(with_home_page, str):
-            with_home_page = with_home_page.lower() == "true"
-
-        # Convert the pydata toctree html to beautifulsoup
-        toctree = context["generate_nav_html"](
-            startdepth=level - 1,
-            kind="sidebar",
-            maxdepth=4,
-            collapse=False,
-            includehidden=True,
-            titles_only=True,
-        )
-        toctree = bs(toctree, "html.parser")
-
-        # Add the master_doc page as the first item if specified
-        if with_home_page:
-            # Pull metadata about the master doc
-            master_doc = config["master_doc"]
-            master_doctree = app.env.get_doctree(master_doc)
-            master_url = context["pathto"](master_doc)
-            master_title = list(master_doctree.traverse(nodes.title))
-            if len(master_title) == 0:
-                raise ValueError(f"Landing page missing a title: {master_doc}")
-            master_title = master_title[0].astext()
-            li_class = "toctree-l1"
-            if context["pagename"] == master_doc:
-                li_class += " current"
-            # Insert it into our toctree
-            ul_home = bs(
-                f"""
-            <ul class="nav bd-sidenav">
-                <li class="{li_class}">
-                    <a href="{master_url}" class="reference internal">{master_title}</a>
-                </li>
-            </ul>""",
-                "html.parser",
-            )
-            toctree.insert(0, ul_home("ul")[0])
-
-        # Open the navbar to the proper depth
-        for ii in range(int(show_depth)):
-            for checkbox in toctree.select(
-                f"li.toctree-l{ii} > input.toctree-checkbox"
-            ):
-                checkbox.attrs["checked"] = None
-
-        return toctree.prettify()
-
-    context["sbt_generate_nav_html"] = sbt_generate_nav_html
+    # Add the site title to our context so it can be inserted into the navbar
+    if not context.get("root_doc"):
+        # TODO: Sphinx renamed master to root in 4.x, deprecate when we drop 3.x
+        context["root_doc"] = context.get("master_doc")
+    context["root_title"] = app.env.titles[context["root_doc"]].astext()
 
     # Update the page title because HTML makes it into the page title occasionally
     if pagename in app.env.titles:

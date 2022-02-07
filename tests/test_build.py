@@ -6,7 +6,6 @@ from subprocess import check_call
 from bs4 import BeautifulSoup
 import pytest
 import sphinx
-from sphinx.errors import ThemeError
 from sphinx.testing.util import SphinxTestApp
 from sphinx.testing.path import path as sphinx_path
 
@@ -88,12 +87,12 @@ def test_build_book(sphinx_build_factory, file_regression):
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
     # -- Sidebar --------------------------------------------------------------
-    # navigation entries
+    # Navigation entries
     index_html = sphinx_build.html_tree("index.html")
-    sidebar = index_html.find_all(attrs={"class": "bd-sidenav"})[0]
+    sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
     file_regression.check(
         sidebar.prettify(),
-        basename="build__sidebar-primary",
+        basename="build__sidebar-primary__nav",
         extension=".html",
         encoding="utf8",
     )
@@ -243,12 +242,6 @@ def test_singlehtml(sphinx_build_factory):
         assert_pass=True
     )
     assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
-
-
-def test_missing_title(sphinx_build_factory):
-    """Test building with a book w/ no title on the master page."""
-    with pytest.raises(ThemeError, match="Landing page missing a title: index"):
-        sphinx_build_factory("notitle").build()
 
 
 def test_docs_dirhtml(sphinx_build_factory):
