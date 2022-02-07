@@ -87,15 +87,17 @@ def test_build_book(sphinx_build_factory, file_regression):
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
     # -- Sidebar --------------------------------------------------------------
-    # Navigation entries
     index_html = sphinx_build.html_tree("index.html")
-    sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
-    file_regression.check(
-        sidebar.prettify(),
-        basename="build__sidebar-primary__nav",
-        extension=".html",
-        encoding="utf8",
-    )
+    # Navigation entries
+    if sphinx_build.software_versions == ".sphinx4":
+        # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
+        sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
+        file_regression.check(
+            sidebar.prettify(),
+            basename="build__sidebar-primary__nav",
+            extension=".html",
+            encoding="utf8",
+        )
 
     # By default we should have download buttons
     download_btns = sphinx_build.html_tree("index.html").find_all(

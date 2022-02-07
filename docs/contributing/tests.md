@@ -66,33 +66,48 @@ To preview the output of these tests:
 This theme is tested against the latest two major versions of Sphinx.
 We try to set up our regression tests such that there are no differences between these two Sphinx versions.
 
-**If it is important that we include a test that differs between Sphinx versions**, use the variable `sphinx_build.software_versions` to conditionally run tests based on the version of Sphinx.
+### Unit tests
+
+Use the variable `sphinx_build.software_versions` to conditionally run tests based on the version of Sphinx.
 
 For example:
 
 ```python
-if sphinx_build.software_versions == "sphinx3":
+if sphinx_build.software_versions == ".sphinx3":
    foo
-elif sphinx_build.software_versions == "sphinx4":
+elif sphinx_build.software_versions == ".sphinx4":
    bar
 ```
 
-If you are building a regression test, use the `extension` key to create a different regression file for that version of Sphinx.
-For example:
+### Regression tests
 
-```python
-file_regression.check(
-   html.prettify(),
-   basename="foo",
-   extension=f"{sphinx_build.software_versions}.html",
-   encoding="utf8",
-)
-```
+Regression tests are trickier, because updating them generally requires re-running the tests, not hand-editing code.
+This is cumbersome for maintenance because we have to run the test suite two times for each regression that is updated.
+For this reason, we have a more lightweight approach:
 
-On Sphinx 3, this will create a file called `foo.sphinx3.html`.
+**If a regression test differs between Sphinx versions**, decide if the difference is substantial.
+Do we gain something meaningful by testing both major versions of Sphinx, or is the difference unrelated to our theme's functionality?
 
-:::{admonition} Do this sparingly!
-:class: warning
+1. **If not substantial**, then add a conditional and only run the regression test on the latest Sphinx version we support.
+   Add a note to explain why you're only testing against one version of Sphinx.
 
-Conditional testing logic across multiple major Sphinx versions has a negative impact on the maintainability and technical debt of this theme, so use this only when absolutely necessary.
-:::
+   For example:
+
+   ```python
+   if sphinx_build.software_versions == ".sphinx4":
+       # Only Sphinx4 because Sphinx3 adds an extra whitespace and isn't important
+       file_regression.check(...)
+   ```
+2. **If it is substantial**, follow these steps:
+
+   To support multiple Sphinx versions with regression tests, use the `extension` key to create a different regression file for that version of Sphinx.
+   For example:
+
+   ```python
+   file_regression.check(
+     html.prettify(),
+     basename="foo",
+     extension=f"{sphinx_build.software_versions}.html",
+     encoding="utf8",
+   )
+   ```
