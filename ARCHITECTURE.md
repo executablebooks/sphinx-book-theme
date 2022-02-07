@@ -75,3 +75,11 @@ Much of these tests also use `pytest-regressions`, to check whether newly-genera
 ## `.github/workflows/` - Continuous Integration and Deployment
 
 Contains Continuous-integration (CI) workflows, run on commits/PRs to the GitHub repository.
+
+## Parent theme - `pydata-sphinx-theme`
+
+This theme inherits a lot of functionality and design rules from its parent theme, the [PyData Sphinx Theme](https://github.com/pydata/pydata-sphinx-theme).
+This is a theme designed for the PyData community, with a similar look and feel to the book theme.
+Over time, we try to upstream any improvements made here into the parent theme, as long as the look and feel is the same between the two.
+
+If you come across something in the codebase and you're not sure where it comes from (an example is the `generate_nav_html` function), you should [check the PyData Theme source files](https://github.com/pydata/pydata-sphinx-theme/tree/master/src/pydata_sphinx_theme) to see if it is defined there.

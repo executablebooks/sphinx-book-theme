@@ -31,18 +31,16 @@ var sbRunWhenDOMLoaded = (cb) => {
 
 // Toggle full-screen with button
 var toggleFullScreen = () => {
-  var navToggler = $("#navbar-toggler");
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-    if (!navToggler.hasClass("collapsed")) {
-      navToggler.click();
-    }
+    // Safari requires a webkit prefix, so this accounts for that
+    var requestMethod =
+      document.documentElement.requestFullscreen ||
+      document.documentElement.webkitRequestFullscreen;
+    requestMethod();
   } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-      if (navToggler.hasClass("collapsed")) {
-        navToggler.click();
-      }
+    var exitMethod = document.exitFullscreen || document.webkitExitFullscreen;
+    if (exitMethod) {
+      exitMethod();
     }
   }
 };
