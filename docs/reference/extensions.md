@@ -38,7 +38,49 @@ Here's a sample post list:
 
 ## `sphinx-togglebutton` - Toggle content with buttons
 
+A block toggle:
+
+```{toggle}
+
+:::{note} This note is toggled!
+:::
+
+```
+
+A block toggle in the margin:
+
+::::{container} margin
+
+```{toggle}
+
+:::{note} This note is toggled!
+:::
+
+```
+
+::::
+
 An admonition toggle:
+
+:::{note}
+:class: dropdown
+
+This note will be toggled!
+
+:::
+
+An admonition toggle in the margin
+
+::::{note}
+:class: margin
+
+:::{toggle}
+
+This toggle is in the margin!
+
+:::
+
+::::
 
 ## `sphinx-tabs` - Tabbed content
 
