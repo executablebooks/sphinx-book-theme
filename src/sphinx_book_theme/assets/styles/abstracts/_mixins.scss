@@ -3,10 +3,9 @@
 *********************************************/
 // Scrollbar styles to be re-used in a few spots
 @mixin scrollbar-style() {
-  scrollbar-width: thin;
   &::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 0.5em;
+    height: 0.5em;
   }
 
   &::-webkit-scrollbar {
@@ -15,6 +14,7 @@
 
   &::-webkit-scrollbar-thumb {
     background: #c1c1c1;
+    border-radius: 1em;
 
     &:hover {
       background: #a0a0a0;

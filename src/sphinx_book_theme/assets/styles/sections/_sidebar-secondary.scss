@@ -26,7 +26,13 @@
     max-width: 300px;
     background-color: white;
     border-left: $border-thin;
-    font-size: 1.5em;
+
+    // Fonts are a bit bigger on mobile, and nested headers get smaller
+    font-size: 1.4em;
+
+    li {
+      font-size: 0.8em;
+    }
   }
 
   // By default the nav is hidden unless a few conditions are met

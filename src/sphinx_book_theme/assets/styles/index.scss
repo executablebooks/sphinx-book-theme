@@ -12,6 +12,7 @@
 
 // Basic styling applied throughout site
 @import "base/base";
+@import "base/bootstrap";
 @import "base/typography";
 @import "base/print";
 
@@ -46,5 +47,4 @@
 @import "extensions/ablog";
 @import "extensions/myst-nb";
 @import "extensions/sphinx-tabs";
-@import "extensions/sphinx-togglebutton";
 @import "extensions/thebe";
