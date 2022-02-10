@@ -67,4 +67,5 @@ msgstr ""
 
 
 if __name__ == "__main__":
+    print("[SBT]: Compiling translations")
     convert_json()
