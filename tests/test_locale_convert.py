@@ -1,4 +1,4 @@
-from sphinx_book_theme._convert import convert_json
+from sphinx_book_theme._compile_translations import convert_json
 
 
 def test_convert(tmp_path, monkeypatch):
