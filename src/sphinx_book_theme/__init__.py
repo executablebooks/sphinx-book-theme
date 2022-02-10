@@ -22,7 +22,7 @@ def get_html_theme_path():
     """Return list of HTML theme paths."""
     parent = Path(__file__).parent.resolve()
     theme_path = parent / "theme" / "sphinx_book_theme"
-    return theme_path, parent
+    return theme_path
 
 
 def add_to_context(app, pagename, templatename, context, doctree):
@@ -225,13 +225,12 @@ class Margin(Sidebar):
 
 def setup(app: Sphinx):
     app.connect("env-before-read-docs", update_thebe_config)
-
     # Configuration for Juypter Book
     app.connect("html-page-context", add_hub_urls)
 
     # add translations
-    theme_dir, parent_dir = get_html_theme_path()
-    locale_dir = os.path.join(parent_dir, "translations", "locales")
+    theme_dir = get_html_theme_path()
+    locale_dir = os.path.join(theme_dir, "static", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.add_html_theme("sphinx_book_theme", theme_dir)

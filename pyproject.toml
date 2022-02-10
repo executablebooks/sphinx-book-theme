@@ -61,7 +61,7 @@ doc = [
     "sphinx~=4.0",  # Force Sphinx to be the latest version
     "sphinx-design",
     "sphinx-copybutton",
-    "sphinx_tabs",
+    "sphinx-tabs",
     "sphinx-togglebutton>=0.2.1",
     "sphinx-thebe",
     "sphinxcontrib-bibtex~=2.2",
