@@ -13,9 +13,6 @@ RENAME_LANGUAGE_CODES = {
 def convert_json(folder=None):
     folder = folder or Path(__file__).parent / "assets" / "translations"
     out_folder = Path(__file__).parent / "theme" / "sphinx_book_theme" / "static"
-    # remove exising
-    for path in (out_folder / "locales").glob("**/booktheme.po"):
-        path.unlink()
 
     # compile po
     for path in (folder / "jsons").glob("*.json"):
