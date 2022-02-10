@@ -26,11 +26,6 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   border-left: 1px #a4a6a7 solid;
   font-size: 0.9em;
 
-  pre {
-    // Scrollbars in code blocks should be thinner to not overpower content on margin
-    @include scrollbar-style();
-  }
-
   @media (min-width: $breakpoint-md) {
     border: none;
     width: $content-margin-width;

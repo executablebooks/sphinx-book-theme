@@ -10,6 +10,7 @@ span.eqno {
 div.math {
   overflow-x: auto;
   position: relative;
+  @include scrollbar-style();
 }
 
 // Compensate for the extra bottom margin of a preceding paragraph

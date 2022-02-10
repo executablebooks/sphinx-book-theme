@@ -53,7 +53,7 @@ numfig = True
 
 myst_enable_extensions = [
     "dollarmath",
-    # "amsmath",
+    "amsmath",
     "deflist",
     # "html_admonition",
     # "html_image",
