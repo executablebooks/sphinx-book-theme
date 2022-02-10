@@ -23,8 +23,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=3,<5",
-  "beautifulsoup4>=4.6.1,<5",
-  "pydata-sphinx-theme~=0.7.2",
+  "pydata-sphinx-theme~=0.8.0",
   "pyyaml",
 ]
 
@@ -63,11 +62,12 @@ doc = [
     "sphinx-copybutton",
     "sphinx-tabs",
     "sphinx-togglebutton>=0.2.1",
-    "sphinx-thebe",
+    "sphinx-thebe>=0.1.1",
     "sphinxcontrib-bibtex~=2.2",
     "sphinxext-opengraph",
 ]
 test = [
+    "beautifulsoup4>=4.6.1,<5",
     "coverage",
     "myst_nb~=0.13",
     "pytest~=6.0.1",

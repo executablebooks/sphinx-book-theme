@@ -118,6 +118,10 @@ html_theme_options = {
     "use_download_button": True,
     "logo_only": True,
     "show_toc_level": 2,
+    "announcement": (
+        "⚠️The latest release refactored our HTML, "
+        "so double-check your custom CSS rules!⚠️"
+    ),
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
@@ -125,11 +129,6 @@ html_theme_options = {
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
-    "announcement": (
-        "⚠️The latest release refactored our HTML, "
-        "so double-check your custom CSS rules!⚠️"
-    ),
-    "show_toc_level": 2,
 }
 
 # -- ABlog config -------------------------------------------------
