@@ -43,6 +43,7 @@
     overflow-y: hidden;
     background: white;
     @include scrollbar-style();
+    @include scrollbar-on-hover();
 
     // TOC link color
     a:hover,

@@ -25,7 +25,6 @@
 @import "sections/sidebar-primary";
 @import "sections/sidebar-secondary";
 @import "sections/sidebars-toggle";
-@import "sections/header-article";
 
 // Re-usable components across the theme
 @import "components/buttons";
@@ -39,6 +38,7 @@
 @import "content/glossary";
 @import "content/images";
 @import "content/margin";
+@import "content/math";
 @import "content/quotes";
 @import "content/sidebar";
 @import "content/tableofcontents";

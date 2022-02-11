@@ -8,8 +8,9 @@ div.cell {
   }
 
   div.cell_input,
-  div.cell_output div.output {
+  div.cell_output pre {
     border-radius: $box-border-radius;
+    border: 1px #ccc solid;
   }
 
   div.cell_output {
@@ -18,6 +19,7 @@ div.cell {
 
   // On screens, we want to scoll, but on print show all
   @mixin cell-scroll {
+    @include scrollbar-style();
     max-height: 24em;
     overflow-y: auto;
     @media print {
