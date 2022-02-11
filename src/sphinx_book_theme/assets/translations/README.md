@@ -5,7 +5,23 @@ See [the Sphinx internationalization documentation](https://www.sphinx-doc.org/e
 
 ## Structure of translation files
 
-- `src/sphinx_book_theme/assets/translations/jsons` contains a collection of JSON files that were originally created with [the smodin.io language translator](https://smodin.me/translate-one-text-into-multiple-languages)
+### Translation source files
+
+The source files for our translations are hand-edited, and contain the raw mapping of words onto various languages.
+They are checked in to `git` history with this repository.
+
+`src/sphinx_book_theme/assets/translations/jsons` contains a collection of JSON files that define the translation for various phrases in this repository.
+Each file is a different phrase, and its contents define language codes and translated phrases for each language we support.
+They were originally created with [the smodin.io language translator](https://smodin.me/translate-one-text-into-multiple-languages) (see below for how to update them).
+
+### Compiled translation files
+
+The translation source files are compiled at build time (when we run `stb compile`) automatically.
+This is executed by the Python script at `python src/sphinx_book_theme/_compile_translations.py` (more information on that below).
+
+These compiled files are **not checked into `.git` history**, but they **are** bundled with the theme when it is distributed in a package.
+Here's a brief explanation of each:
+
 - `src/sphinx_book_theme/theme/sphinx_book_theme/static/locales` contains Sphinx locale files that were auto-converted from the files in `jsons/` by the helper script below.
 - `src/sphinx_book_theme/_compile_translations.py` is a helper script to auto-generate Sphinx locale files from the JSONs in `jsons/`.
 
