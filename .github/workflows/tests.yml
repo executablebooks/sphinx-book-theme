@@ -99,7 +99,9 @@ jobs:
           --verbose \
           --no-progress \
           --exclude doi.org \
-          './docs/_build/html/**/*.html'
+          --exclude yahoo.com \
+          --exclude someurl \
+          ./docs/_build/html/**/*.html
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
