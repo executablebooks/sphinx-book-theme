@@ -5,6 +5,10 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const dedent = require("dedent");
 
+// Compile our translation files
+const { exec } = require("child_process");
+exec("python src/sphinx_book_theme/_compile_translations.py");
+
 // Paths for various assets (sources and destinations)
 const staticPath = resolve(
   __dirname,
