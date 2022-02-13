@@ -8,6 +8,7 @@ code {
 
 pre {
   border-radius: $box-border-radius;
+  @include scrollbar-style();
 }
 
 // Over-ride Sphinx default so that content fills whitespace w/ margin content
