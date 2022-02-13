@@ -139,7 +139,7 @@ ax.set_axis_off()
 You can also **remove only the code** so that images and other output still show up.
 
 Below we'll *only* display an image. It was generated with Python code in a cell,
-which you can [see in the original notebook](https://github.com/jupyter/jupyter-book/blob/master/jupyter_book/book_template/content/features/notebooks.ipynb)
+which you can {download}`see in the original notebook <./notebooks.md>`.
 
 ```{code-cell} ipython3
 :tags: [hide_input]
