@@ -96,12 +96,10 @@ jobs:
       with:
         fail: true
         args: >
-          --verbose
-          --no-progress
-          --exclude doi.org
-          --exclude yahoo.com
-          --exclude someurl
-          ./docs/_build/html/**/*.html
+          --exclude 'doi.org'
+          --exclude 'yahoo.com'
+          --exclude 'someurl'
+          './docs/_build/html/**/*.html'
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
