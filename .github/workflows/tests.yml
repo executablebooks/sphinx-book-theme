@@ -95,7 +95,7 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
         fail: true
-        args: |
+        args: >
           --verbose
           --no-progress
           --exclude doi.org
