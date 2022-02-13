@@ -97,9 +97,11 @@ jobs:
         fail: true
         args: >
           './docs/_build/html/**/*.html'
+          --exclude 'nature.com'
           --exclude 'doi.org'
           --exclude 'yahoo.com'
           --exclude 'someurl'
+          --exclude-file '_static'
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
