@@ -101,7 +101,7 @@ jobs:
           --exclude 'doi.org'
           --exclude 'yahoo.com'
           --exclude 'someurl'
-          --exclude-file '_static'
+          --exclude-file './docs/_build/html/_static'
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
