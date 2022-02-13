@@ -1,0 +1,402 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Download notebook file"
+msgstr "Λήψη αρχείου σημειωματάριου"
+
+msgid "suggest edit"
+msgstr "προτείνω επεξεργασία"
+
+msgid "Search this book..."
+msgstr "Αναζήτηση σε αυτό το βιβλίο ..."
+
+msgid "Source repository"
+msgstr "Αποθήκη πηγής"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Launch"
+msgstr "Εκτόξευση"
+
+msgid "Download source file"
+msgstr "Λήψη αρχείου προέλευσης"
+
+msgid "By"
+msgstr "Με"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Copyright"
+msgstr "Πνευματική ιδιοκτησία"
+
+msgid "next page"
+msgstr "επόμενη σελίδα"
+
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+msgid "Sphinx Book Theme"
+msgstr "Θέμα βιβλίου Sphinx"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Download notebook file"
+msgstr "Λήψη αρχείου σημειωματάριου"
+
+msgid "suggest edit"
+msgstr "προτείνω επεξεργασία"
+
+msgid "Search this book..."
+msgstr "Αναζήτηση σε αυτό το βιβλίο ..."
+
+msgid "Source repository"
+msgstr "Αποθήκη πηγής"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Launch"
+msgstr "Εκτόξευση"
+
+msgid "Download source file"
+msgstr "Λήψη αρχείου προέλευσης"
+
+msgid "By"
+msgstr "Με"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Copyright"
+msgstr "Πνευματική ιδιοκτησία"
+
+msgid "next page"
+msgstr "επόμενη σελίδα"
+
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+msgid "Sphinx Book Theme"
+msgstr "Θέμα βιβλίου Sphinx"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Download notebook file"
+msgstr "Λήψη αρχείου σημειωματάριου"
+
+msgid "suggest edit"
+msgstr "προτείνω επεξεργασία"
+
+msgid "Search this book..."
+msgstr "Αναζήτηση σε αυτό το βιβλίο ..."
+
+msgid "Source repository"
+msgstr "Αποθήκη πηγής"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Launch"
+msgstr "Εκτόξευση"
+
+msgid "Download source file"
+msgstr "Λήψη αρχείου προέλευσης"
+
+msgid "By"
+msgstr "Με"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Copyright"
+msgstr "Πνευματική ιδιοκτησία"
+
+msgid "next page"
+msgstr "επόμενη σελίδα"
+
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+msgid "Sphinx Book Theme"
+msgstr "Θέμα βιβλίου Sphinx"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Download notebook file"
+msgstr "Λήψη αρχείου σημειωματάριου"
+
+msgid "suggest edit"
+msgstr "προτείνω επεξεργασία"
+
+msgid "Search this book..."
+msgstr "Αναζήτηση σε αυτό το βιβλίο ..."
+
+msgid "Source repository"
+msgstr "Αποθήκη πηγής"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Launch"
+msgstr "Εκτόξευση"
+
+msgid "Download source file"
+msgstr "Λήψη αρχείου προέλευσης"
+
+msgid "By"
+msgstr "Με"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Copyright"
+msgstr "Πνευματική ιδιοκτησία"
+
+msgid "next page"
+msgstr "επόμενη σελίδα"
+
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+msgid "Sphinx Book Theme"
+msgstr "Θέμα βιβλίου Sphinx"
+
+msgid "Theme by the"
+msgstr "Θέμα από το"
+
+msgid "Edit this page"
+msgstr "Επεξεργαστείτε αυτήν τη σελίδα"
+
+msgid "repository"
+msgstr "αποθήκη"
+
+msgid "Print to PDF"
+msgstr "Εκτύπωση σε PDF"
+
+msgid "open issue"
+msgstr "ανοιχτό ζήτημα"
+
+msgid "Open an issue"
+msgstr "Ανοίξτε ένα ζήτημα"
+
+msgid "previous page"
+msgstr "προηγούμενη σελίδα"
+
+msgid "Fullscreen mode"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ"
+
+msgid "Search the docs ..."
+msgstr "Αναζήτηση στα έγγραφα ..."
+
+msgid "Download this page"
+msgstr "Λήψη αυτής της σελίδας"
+
+msgid "By the"
+msgstr "Από το"
+
+msgid "Download notebook file"
+msgstr "Λήψη αρχείου σημειωματάριου"
+
+msgid "suggest edit"
+msgstr "προτείνω επεξεργασία"
+
+msgid "Search this book..."
+msgstr "Αναζήτηση σε αυτό το βιβλίο ..."
+
+msgid "Source repository"
+msgstr "Αποθήκη πηγής"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "Launch"
+msgstr "Εκτόξευση"
+
+msgid "Download source file"
+msgstr "Λήψη αρχείου προέλευσης"
+
+msgid "By"
+msgstr "Με"
+
+msgid "Toggle navigation"
+msgstr "Εναλλαγή πλοήγησης"
+
+msgid "Copyright"
+msgstr "Πνευματική ιδιοκτησία"
+
+msgid "next page"
+msgstr "επόμενη σελίδα"
+
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+msgid "Sphinx Book Theme"
+msgstr "Θέμα βιβλίου Sphinx"

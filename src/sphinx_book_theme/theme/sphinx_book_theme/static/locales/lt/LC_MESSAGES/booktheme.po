@@ -1,0 +1,402 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Download notebook file"
+msgstr "Atsisiųsti nešiojamojo kompiuterio failą"
+
+msgid "suggest edit"
+msgstr "pasiūlyti redaguoti"
+
+msgid "Search this book..."
+msgstr "Ieškoti šioje knygoje ..."
+
+msgid "Source repository"
+msgstr "Šaltinio saugykla"
+
+msgid "Contents"
+msgstr "Turinys"
+
+msgid "Launch"
+msgstr "Paleiskite"
+
+msgid "Download source file"
+msgstr "Atsisiųsti šaltinio failą"
+
+msgid "By"
+msgstr "Iki"
+
+msgid "Toggle navigation"
+msgstr "Perjungti naršymą"
+
+msgid "Copyright"
+msgstr "Autorių teisės"
+
+msgid "next page"
+msgstr "Kitas puslapis"
+
+msgid "Last updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+msgid "Sphinx Book Theme"
+msgstr "Sfinkso knygos tema"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Download notebook file"
+msgstr "Atsisiųsti nešiojamojo kompiuterio failą"
+
+msgid "suggest edit"
+msgstr "pasiūlyti redaguoti"
+
+msgid "Search this book..."
+msgstr "Ieškoti šioje knygoje ..."
+
+msgid "Source repository"
+msgstr "Šaltinio saugykla"
+
+msgid "Contents"
+msgstr "Turinys"
+
+msgid "Launch"
+msgstr "Paleiskite"
+
+msgid "Download source file"
+msgstr "Atsisiųsti šaltinio failą"
+
+msgid "By"
+msgstr "Iki"
+
+msgid "Toggle navigation"
+msgstr "Perjungti naršymą"
+
+msgid "Copyright"
+msgstr "Autorių teisės"
+
+msgid "next page"
+msgstr "Kitas puslapis"
+
+msgid "Last updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+msgid "Sphinx Book Theme"
+msgstr "Sfinkso knygos tema"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Download notebook file"
+msgstr "Atsisiųsti nešiojamojo kompiuterio failą"
+
+msgid "suggest edit"
+msgstr "pasiūlyti redaguoti"
+
+msgid "Search this book..."
+msgstr "Ieškoti šioje knygoje ..."
+
+msgid "Source repository"
+msgstr "Šaltinio saugykla"
+
+msgid "Contents"
+msgstr "Turinys"
+
+msgid "Launch"
+msgstr "Paleiskite"
+
+msgid "Download source file"
+msgstr "Atsisiųsti šaltinio failą"
+
+msgid "By"
+msgstr "Iki"
+
+msgid "Toggle navigation"
+msgstr "Perjungti naršymą"
+
+msgid "Copyright"
+msgstr "Autorių teisės"
+
+msgid "next page"
+msgstr "Kitas puslapis"
+
+msgid "Last updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+msgid "Sphinx Book Theme"
+msgstr "Sfinkso knygos tema"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Download notebook file"
+msgstr "Atsisiųsti nešiojamojo kompiuterio failą"
+
+msgid "suggest edit"
+msgstr "pasiūlyti redaguoti"
+
+msgid "Search this book..."
+msgstr "Ieškoti šioje knygoje ..."
+
+msgid "Source repository"
+msgstr "Šaltinio saugykla"
+
+msgid "Contents"
+msgstr "Turinys"
+
+msgid "Launch"
+msgstr "Paleiskite"
+
+msgid "Download source file"
+msgstr "Atsisiųsti šaltinio failą"
+
+msgid "By"
+msgstr "Iki"
+
+msgid "Toggle navigation"
+msgstr "Perjungti naršymą"
+
+msgid "Copyright"
+msgstr "Autorių teisės"
+
+msgid "next page"
+msgstr "Kitas puslapis"
+
+msgid "Last updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+msgid "Sphinx Book Theme"
+msgstr "Sfinkso knygos tema"
+
+msgid "Theme by the"
+msgstr "Tema"
+
+msgid "Edit this page"
+msgstr "Redaguoti šį puslapį"
+
+msgid "repository"
+msgstr "saugykla"
+
+msgid "Print to PDF"
+msgstr "Spausdinti į PDF"
+
+msgid "open issue"
+msgstr "atviras klausimas"
+
+msgid "Open an issue"
+msgstr "Atidarykite problemą"
+
+msgid "previous page"
+msgstr "Ankstesnis puslapis"
+
+msgid "Fullscreen mode"
+msgstr "Pilno ekrano režimas"
+
+msgid "Search the docs ..."
+msgstr "Ieškoti dokumentuose ..."
+
+msgid "Download this page"
+msgstr "Atsisiųskite šį puslapį"
+
+msgid "By the"
+msgstr "Prie"
+
+msgid "Download notebook file"
+msgstr "Atsisiųsti nešiojamojo kompiuterio failą"
+
+msgid "suggest edit"
+msgstr "pasiūlyti redaguoti"
+
+msgid "Search this book..."
+msgstr "Ieškoti šioje knygoje ..."
+
+msgid "Source repository"
+msgstr "Šaltinio saugykla"
+
+msgid "Contents"
+msgstr "Turinys"
+
+msgid "Launch"
+msgstr "Paleiskite"
+
+msgid "Download source file"
+msgstr "Atsisiųsti šaltinio failą"
+
+msgid "By"
+msgstr "Iki"
+
+msgid "Toggle navigation"
+msgstr "Perjungti naršymą"
+
+msgid "Copyright"
+msgstr "Autorių teisės"
+
+msgid "next page"
+msgstr "Kitas puslapis"
+
+msgid "Last updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+msgid "Sphinx Book Theme"
+msgstr "Sfinkso knygos tema"

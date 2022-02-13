@@ -1,0 +1,402 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: iw\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Download notebook file"
+msgstr "הורד קובץ מחברת"
+
+msgid "suggest edit"
+msgstr "מציע לערוך"
+
+msgid "Search this book..."
+msgstr "חפש בספר זה ..."
+
+msgid "Source repository"
+msgstr "מאגר המקורות"
+
+msgid "Contents"
+msgstr "תוכן"
+
+msgid "Launch"
+msgstr "לְהַשִׁיק"
+
+msgid "Download source file"
+msgstr "הורד את קובץ המקור"
+
+msgid "By"
+msgstr "על ידי"
+
+msgid "Toggle navigation"
+msgstr "החלף ניווט"
+
+msgid "Copyright"
+msgstr "זכויות יוצרים"
+
+msgid "next page"
+msgstr "עמוד הבא"
+
+msgid "Last updated on"
+msgstr "עודכן לאחרונה ב"
+
+msgid "Sphinx Book Theme"
+msgstr "נושא ספר ספינקס"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Download notebook file"
+msgstr "הורד קובץ מחברת"
+
+msgid "suggest edit"
+msgstr "מציע לערוך"
+
+msgid "Search this book..."
+msgstr "חפש בספר זה ..."
+
+msgid "Source repository"
+msgstr "מאגר המקורות"
+
+msgid "Contents"
+msgstr "תוכן"
+
+msgid "Launch"
+msgstr "לְהַשִׁיק"
+
+msgid "Download source file"
+msgstr "הורד את קובץ המקור"
+
+msgid "By"
+msgstr "על ידי"
+
+msgid "Toggle navigation"
+msgstr "החלף ניווט"
+
+msgid "Copyright"
+msgstr "זכויות יוצרים"
+
+msgid "next page"
+msgstr "עמוד הבא"
+
+msgid "Last updated on"
+msgstr "עודכן לאחרונה ב"
+
+msgid "Sphinx Book Theme"
+msgstr "נושא ספר ספינקס"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Download notebook file"
+msgstr "הורד קובץ מחברת"
+
+msgid "suggest edit"
+msgstr "מציע לערוך"
+
+msgid "Search this book..."
+msgstr "חפש בספר זה ..."
+
+msgid "Source repository"
+msgstr "מאגר המקורות"
+
+msgid "Contents"
+msgstr "תוכן"
+
+msgid "Launch"
+msgstr "לְהַשִׁיק"
+
+msgid "Download source file"
+msgstr "הורד את קובץ המקור"
+
+msgid "By"
+msgstr "על ידי"
+
+msgid "Toggle navigation"
+msgstr "החלף ניווט"
+
+msgid "Copyright"
+msgstr "זכויות יוצרים"
+
+msgid "next page"
+msgstr "עמוד הבא"
+
+msgid "Last updated on"
+msgstr "עודכן לאחרונה ב"
+
+msgid "Sphinx Book Theme"
+msgstr "נושא ספר ספינקס"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Download notebook file"
+msgstr "הורד קובץ מחברת"
+
+msgid "suggest edit"
+msgstr "מציע לערוך"
+
+msgid "Search this book..."
+msgstr "חפש בספר זה ..."
+
+msgid "Source repository"
+msgstr "מאגר המקורות"
+
+msgid "Contents"
+msgstr "תוכן"
+
+msgid "Launch"
+msgstr "לְהַשִׁיק"
+
+msgid "Download source file"
+msgstr "הורד את קובץ המקור"
+
+msgid "By"
+msgstr "על ידי"
+
+msgid "Toggle navigation"
+msgstr "החלף ניווט"
+
+msgid "Copyright"
+msgstr "זכויות יוצרים"
+
+msgid "next page"
+msgstr "עמוד הבא"
+
+msgid "Last updated on"
+msgstr "עודכן לאחרונה ב"
+
+msgid "Sphinx Book Theme"
+msgstr "נושא ספר ספינקס"
+
+msgid "Theme by the"
+msgstr "נושא מאת"
+
+msgid "Edit this page"
+msgstr "ערוך דף זה"
+
+msgid "repository"
+msgstr "מאגר"
+
+msgid "Print to PDF"
+msgstr "הדפס לקובץ PDF"
+
+msgid "open issue"
+msgstr "בעיה פתוחה"
+
+msgid "Open an issue"
+msgstr "פתח גיליון"
+
+msgid "previous page"
+msgstr "עמוד קודם"
+
+msgid "Fullscreen mode"
+msgstr "מצב מסך מלא"
+
+msgid "Search the docs ..."
+msgstr "חפש במסמכים ..."
+
+msgid "Download this page"
+msgstr "הורד דף זה"
+
+msgid "By the"
+msgstr "דרך"
+
+msgid "Download notebook file"
+msgstr "הורד קובץ מחברת"
+
+msgid "suggest edit"
+msgstr "מציע לערוך"
+
+msgid "Search this book..."
+msgstr "חפש בספר זה ..."
+
+msgid "Source repository"
+msgstr "מאגר המקורות"
+
+msgid "Contents"
+msgstr "תוכן"
+
+msgid "Launch"
+msgstr "לְהַשִׁיק"
+
+msgid "Download source file"
+msgstr "הורד את קובץ המקור"
+
+msgid "By"
+msgstr "על ידי"
+
+msgid "Toggle navigation"
+msgstr "החלף ניווט"
+
+msgid "Copyright"
+msgstr "זכויות יוצרים"
+
+msgid "next page"
+msgstr "עמוד הבא"
+
+msgid "Last updated on"
+msgstr "עודכן לאחרונה ב"
+
+msgid "Sphinx Book Theme"
+msgstr "נושא ספר ספינקס"

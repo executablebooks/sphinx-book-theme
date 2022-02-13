@@ -58,7 +58,7 @@ var toggleFullScreen = () => {
 // Enable tooltips
 var initTooltips = () => {
   $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
   });
 };
 
