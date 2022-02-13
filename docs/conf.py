@@ -131,6 +131,12 @@ html_theme_options = {
     # "show_navbar_depth": 2,
 }
 
+linkcheck_ignore = [
+    "yahoo.com",
+    "https://doi.org*",
+    "http://someurl*",
+]
+
 # -- ABlog config -------------------------------------------------
 blog_path = "reference/blog"
 blog_post_pattern = "reference/blog/*.md"

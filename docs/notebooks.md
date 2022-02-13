@@ -154,8 +154,7 @@ ax.text(0, .5, thisvariable, fontsize=20, transform=ax.transAxes)
 ax.set_axis_off()
 ```
 
-And here we'll *only* display a Pandas DataFrame. Again, this was generated with Python code
-from [this original notebook](https://github.com/jupyter/textbooks-with-jupyter/blob/master/notebooks/introduction/notebooks.ipynb).
+And here we'll *only* display a Pandas DataFrame.
 
 ```{code-cell} ipython3
 :tags: [hide_input]
