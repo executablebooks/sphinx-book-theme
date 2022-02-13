@@ -87,6 +87,7 @@ jobs:
         unexpected = [ii for ii in text.split("\n") if "kitchen-sink" not in ii]
         assert len(unexpected) == 0
 
+    # Ref: https://github.com/lycheeverse/lychee-action
     - name: Check for broken links
       id: lychee
       uses: lycheeverse/lychee-action@v1.3.0
@@ -94,6 +95,7 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
         fail: true
+        args: --verbose --no-progress './docs/_build/html/**/*.html'
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
