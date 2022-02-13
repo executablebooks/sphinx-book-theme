@@ -2,21 +2,11 @@
 // ref: https://css-tricks.com/getting-javascript-to-talk-to-css-and-sass/
 import "../styles/index.scss";
 
-// NavBar scrolling
-var scrollToActive = () => {
-  var navbar = document.getElementById("site-navigation");
-  var active_pages = navbar.querySelectorAll(".active");
-  var active_page = active_pages[active_pages.length - 1];
-  // Only scroll the navbar if the active link is lower than 50% of the page
-  if (
-    active_page !== undefined &&
-    active_page.offsetTop > $(window).height() * 0.5
-  ) {
-    navbar.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
-  }
-};
-
-// Helper function to run when the DOM is finished
+/**
+ * A helper function to load scripts when the DOM is loaded.
+ * This waits for everything to be on the page first before running, since
+ * some functionality doesn't behave properly until everything is ready.
+ */
 var sbRunWhenDOMLoaded = (cb) => {
   if (document.readyState != "loading") {
     cb();
@@ -29,9 +19,13 @@ var sbRunWhenDOMLoaded = (cb) => {
   }
 };
 
-// Toggle full-screen with button
-// Safari requires a `webkit` prefix, so this uses conditionals to check for that
-// ref: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+/**
+ * Toggle full-screen with button
+ *
+ * There are some browser-specific hacks in here:
+ * - Safari requires a `webkit` prefix, so this uses conditionals to check for that
+ *   ref: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+ */
 var toggleFullScreen = () => {
   var isInFullScreen =
     (document.fullscreenElement && document.fullscreenElement !== null) ||
@@ -55,15 +49,41 @@ var toggleFullScreen = () => {
   }
 };
 
-// Enable tooltips
-var initTooltips = () => {
-  $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
+/**
+ * Sidebar scroll on load.
+ *
+ * Detect the active page in the sidebar, and scroll so that it is centered on
+ * the screen.
+ */
+var scrollToActive = () => {
+  var navbar = document.getElementById("site-navigation");
+  var active_pages = navbar.querySelectorAll(".active");
+  var active_page = active_pages[active_pages.length - 1];
+  // Only scroll the navbar if the active link is lower than 50% of the page
+  if (
+    active_page !== undefined &&
+    active_page.offsetTop > $(window).height() * 0.5
+  ) {
+    navbar.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
+  }
 };
 
 /**
- * Hide the Table of Contents any time sidebar content is on the screen.
+ * Functionality that is triggered before / after printing the page.
+ */
+var printPdf = (el) => {
+  // Detach the tooltip text from DOM to hide in PDF
+  // and then reattach it for HTML
+  let tooltipID = $(el).attr("aria-describedby");
+  let tooltipTextDiv = $("#" + tooltipID).detach();
+  window.print();
+  $("body").append(tooltipTextDiv);
+};
+
+/**
+ * Manage scrolling behavior. This is primarily two things:
+ *
+ * 1. Hide the Table of Contents any time sidebar content is on the screen.
  *
  * This will be triggered any time a sidebar item enters or exits the screen.
  * It adds/removes items from an array if they have entered the screen, and
@@ -71,6 +91,8 @@ var initTooltips = () => {
  * on-screen.
  *
  * ref: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ *
+ * 2. Add a `scrolled` class to <body> to trigger CSS changes.
  */
 var initTocHide = () => {
   var onScreenItems = [];
@@ -137,15 +159,9 @@ var initTocHide = () => {
   scrollObserver.observe(document.querySelector(".sbt-scroll-pixel-helper"));
 };
 
-var printPdf = (el) => {
-  // Detach the tooltip text from DOM to hide in PDF
-  // and then reattach it for HTML
-  let tooltipID = $(el).attr("aria-describedby");
-  let tooltipTextDiv = $("#" + tooltipID).detach();
-  window.print();
-  $("body").append(tooltipTextDiv);
-};
-
+/**
+ * Activate Thebe with a custom button click.
+ */
 var initThebeSBT = () => {
   var title = $("div.section h1")[0];
   if (!$(title).next().hasClass("thebe-launch-button")) {
@@ -154,10 +170,25 @@ var initThebeSBT = () => {
   initThebe();
 };
 
+/**
+ * Use Bootstrap helper function to enable tooltips.
+ */
+var initTooltips = () => {
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+};
+
+/**
+ * Functions that are called when a user takes some action.
+ */
 window.initThebeSBT = initThebeSBT;
 window.printPdf = printPdf;
 window.toggleFullScreen = toggleFullScreen;
 
+/**
+ * Functions that are called when we load the page.
+ */
 sbRunWhenDOMLoaded(initTooltips);
 sbRunWhenDOMLoaded(scrollToActive);
 sbRunWhenDOMLoaded(initTocHide);
