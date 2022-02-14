@@ -10,10 +10,6 @@ const staticPath = resolve(
   __dirname,
   "src/sphinx_book_theme/theme/sphinx_book_theme/static"
 );
-const partialPath = resolve(
-  __dirname,
-  "src/sphinx_book_theme/theme/sphinx_book_theme/partials"
-);
 
 //
 // Cache-busting Jinja2 macros (`webpack-macros.html`) used in `layout.html`
@@ -89,7 +85,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: resolve(partialPath, "sbt-webpack-macros.html"),
+      filename: resolve(staticPath, "sbt-webpack-macros.html"),
       inject: false,
       minify: false,
       css: true,
