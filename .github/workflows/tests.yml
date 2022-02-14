@@ -94,7 +94,8 @@ jobs:
     # - yahoo.com: Kitchen sink redirect we don't control
     # - someurl: dummy url
     # - mailto: fails test but works for people
-    # - pathto: accidental includes in our `_static` dir, ref: https://github.com/pradyunsg/sphinx-theme-builder/issues/18
+    # - pathto: accidental includes in our `_static` dir
+    #   HACK, ref: https://github.com/pradyunsg/sphinx-theme-builder/issues/18
     - name: Check for broken links
       id: lychee
       uses: lycheeverse/lychee-action@v1.3.0
