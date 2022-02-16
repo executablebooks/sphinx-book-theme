@@ -87,6 +87,31 @@ jobs:
         unexpected = [ii for ii in text.split("\n") if "kitchen-sink" not in ii]
         assert len(unexpected) == 0
 
+    # Ref: https://github.com/lycheeverse/lychee-action
+    # Excluded files:
+    # - nature.com: DOI redirect works but errors anyway
+    # - doi.org: DOI redirect works but errors anyway
+    # - yahoo.com: Kitchen sink redirect we don't control
+    # - someurl: dummy url
+    # - mailto: fails test but works for people
+    # - pathto: accidental includes in our `_static` dir
+    #   HACK, ref: https://github.com/pradyunsg/sphinx-theme-builder/issues/18
+    - name: Check for broken links
+      id: lychee
+      uses: lycheeverse/lychee-action@v1.3.0
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        fail: true
+        args: >
+          './docs/_build/html/**/*.html'
+          --exclude 'nature.com'
+          --exclude 'doi.org'
+          --exclude 'yahoo.com'
+          --exclude 'someurl'
+          --exclude 'mailto:docutils-develop'
+          --exclude 'pathto\('
+
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@v8
       with:
