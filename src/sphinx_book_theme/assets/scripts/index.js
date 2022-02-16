@@ -69,7 +69,8 @@ var scrollToActive = () => {
 };
 
 /**
- * Functionality that is triggered before / after printing the page.
+ * Called when the "print to PDF" button is clicked.
+ * This is a hack to prevent tooltips from showing up in the printed PDF.
  */
 var printPdf = (el) => {
   // Detach the tooltip text from DOM to hide in PDF
