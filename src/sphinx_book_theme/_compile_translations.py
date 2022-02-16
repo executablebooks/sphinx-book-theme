@@ -11,11 +11,10 @@ RENAME_LANGUAGE_CODES = {
 
 
 def convert_json(folder=None):
-    folder = folder or Path(__file__).parent
-
-    # remove exising
-    for path in (folder / "locales").glob("**/booktheme.po"):
-        path.unlink()
+    folder = folder or Path(__file__).parent / "assets" / "translations"
+    out_folder = (
+        folder or Path(__file__).parent / "theme" / "sphinx_book_theme" / "static"
+    )
 
     # compile po
     for path in (folder / "jsons").glob("*.json"):
@@ -26,7 +25,13 @@ def convert_json(folder=None):
             language = item["symbol"]
             if language in RENAME_LANGUAGE_CODES:
                 language = RENAME_LANGUAGE_CODES[language]
-            out_path = folder / "locales" / language / "LC_MESSAGES" / "booktheme.po"
+            out_path = (
+                out_folder
+                / "locales"
+                / language
+                / "LC_MESSAGES"
+                / "booktheme.po"  # noqa: E501
+            )
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
             if not out_path.exists():
@@ -49,7 +54,7 @@ msgstr ""
                 f.write(f'msgstr "{text}"\n')
 
     # compile mo
-    for path in (folder / "locales").glob("**/booktheme.po"):
+    for path in (out_folder / "locales").glob("**/booktheme.po"):
         print(path)
         subprocess.check_call(
             [
@@ -62,4 +67,5 @@ msgstr ""
 
 
 if __name__ == "__main__":
+    print("[SBT]: Compiling translations")
     convert_json()

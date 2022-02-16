@@ -6,7 +6,8 @@ build-backend = "sphinx_theme_builder"
 node-version = "16.13.2"
 theme-name = "sphinx_book_theme"
 additional-compiled-static-assets = [
-  "sbt-webpack-macros.html"
+  "sbt-webpack-macros.html",
+  "locales/"
 ]
 
 [tool.pytest.ini_options]
@@ -60,7 +61,7 @@ doc = [
     "sphinx~=4.0",  # Force Sphinx to be the latest version
     "sphinx-design",
     "sphinx-copybutton",
-    "sphinx_tabs",
+    "sphinx-tabs",
     "sphinx-togglebutton>=0.2.1",
     "sphinx-thebe>=0.1.1",
     "sphinxcontrib-bibtex~=2.2",
