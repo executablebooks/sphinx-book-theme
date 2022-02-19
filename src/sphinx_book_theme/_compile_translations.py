@@ -1,3 +1,4 @@
+"""Generate compiled static translation assets for Sphinx."""
 import json
 import os
 from pathlib import Path
@@ -10,11 +11,11 @@ RENAME_LANGUAGE_CODES = {
 }
 
 
-def convert_json(folder=None):
-    folder = folder or Path(__file__).parent / "assets" / "translations"
-    out_folder = (
-        folder or Path(__file__).parent / "theme" / "sphinx_book_theme" / "static"
-    )
+def convert_json():
+    # Raw translation JSONs that are hand-edited
+    folder = Path(__file__).parent / "assets" / "translations"
+    # Location of compiled static translation assets
+    out_folder = Path(__file__).parent / "theme" / "sphinx_book_theme" / "static"
 
     # compile po
     for path in (folder / "jsons").glob("*.json"):
