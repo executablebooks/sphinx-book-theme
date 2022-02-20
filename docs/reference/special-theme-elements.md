@@ -250,6 +250,11 @@ name: reference-margin-fig
 And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
 ```
 
+:::{note}
+:class: margin
+This note should not overlap with the margin caption!
+:::
+
 ## Nested admonitions
 
 These aren't theme-specific, but we still show below to make sure they work.
@@ -258,3 +263,28 @@ These aren't theme-specific, but we still show below to make sure they work.
 :::{tip} And a tip!
 :::
 ::::
+
+## MyST Markdown elements
+
+Here are a few design elements to show off MyST Markdown.
+
+### Table alignment
+
+To ensure that markdown alignment is rendered properly.
+
+| Default Header | Left Align | Right Align | Center Align |
+| -------------- | :--------- | ----------: | :----------: |
+| Cell 1 | Cell 2 | Cell 3 | Cell 4 |
+| Cell 1 | Cell 2 | Cell 3 | Cell 4 |
+
+### List table width
+
+Testing list tables take width as expected.
+
+```{list-table}
+:width: 100%
+* - a
+  - b
+* - c
+  - d
+```
