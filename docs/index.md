@@ -73,6 +73,7 @@ reference/extensions
 reference/notebooks
 reference/thebe
 reference/blog
+reference/api-numpy
 ```
 
 # Inspiration

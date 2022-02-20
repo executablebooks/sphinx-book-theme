@@ -54,6 +54,7 @@ doc = [
     "folium",
     "numpy",
     "matplotlib",
+    "numpydoc",
     "myst-nb~=0.13",
     "nbclient",
     "pandas",
