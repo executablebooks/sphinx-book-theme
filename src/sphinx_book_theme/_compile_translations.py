@@ -13,7 +13,6 @@ RENAME_LANGUAGE_CODES = {
 
 def convert_json(folder=None):
     """Convert JSON translations into .mo/.po files for Sphinx.
-
     folder:
         the source folder of the JSON translations. This function will put the
         compiled .mo/.po files in a specific folder relative to this source

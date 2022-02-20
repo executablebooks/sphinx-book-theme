@@ -101,3 +101,10 @@ This toggle is in the margin!
 
       Oranges are orange.
 ````
+
+## `sphinxcontrib.youtube` for videos
+
+[`sphinxcontrib.youtube`](https://github.com/sphinx-contrib/youtube) makes it possible to easily embed videos in your documentation.
+
+```{youtube} 2Z7wDaYt53Y
+```
