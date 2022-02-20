@@ -250,6 +250,11 @@ name: reference-margin-fig
 And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
 ```
 
+:::{note}
+:class: margin
+This note should not overlap with the margin caption!
+:::
+
 ## Nested admonitions
 
 These aren't theme-specific, but we still show below to make sure they work.
