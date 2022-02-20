@@ -271,3 +271,15 @@ To ensure that markdown alignment is rendered properly.
 | -------------- | :--------- | ----------: | :----------: |
 | Cell 1 | Cell 2 | Cell 3 | Cell 4 |
 | Cell 1 | Cell 2 | Cell 3 | Cell 4 |
+
+### List table width
+
+Testing list tables take width as expected.
+
+```{list-table}
+:width: 100%
+* - a
+  - b
+* - c
+  - d
+```
