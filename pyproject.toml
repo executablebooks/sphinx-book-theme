@@ -66,6 +66,7 @@ doc = [
     "sphinx-togglebutton>=0.2.1",
     "sphinx-thebe>=0.1.1",
     "sphinxcontrib-bibtex~=2.2",
+    "sphinxcontrib-youtube",
     "sphinxext-opengraph",
 ]
 test = [

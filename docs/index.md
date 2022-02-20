@@ -67,8 +67,8 @@ Reference pages demonstrate the visual look of this theme.
 :caption: Reference
 :maxdepth: 2
 
-reference/special-theme-elements
 reference/kitchen-sink/index
+reference/special-theme-elements
 reference/extensions
 reference/notebooks
 reference/thebe
