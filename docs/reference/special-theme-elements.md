@@ -258,3 +258,16 @@ These aren't theme-specific, but we still show below to make sure they work.
 :::{tip} And a tip!
 :::
 ::::
+
+## MyST Markdown elements
+
+Here are a few design elements to show off MyST Markdown.
+
+### Table alignment
+
+To ensure that markdown alignment is rendered properly.
+
+| Default Header | Left Align | Right Align | Center Align |
+| -------------- | :--------- | ----------: | :----------: |
+| Cell 1 | Cell 2 | Cell 3 | Cell 4 |
+| Cell 1 | Cell 2 | Cell 3 | Cell 4 |
