@@ -1,26 +1,14 @@
 /*********************************************
-* Buttons, mostly for the topbar             *
+* Buttons, mostly for the headers            *
 *********************************************/
-.topbarbtn,
-.topbarbtn--wide {
+/**
+ * Basic button style
+ */
+.headerbtn {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  img {
-    height: 1.15em;
-    padding-right: 6px;
-    margin-left: -5px;
-  }
-
-  // Icon inside the button
-  i {
-    vertical-align: baseline;
-    line-height: 1;
-  }
-}
-
-.topbarbtn {
   background-color: white;
   color: $non-content-grey;
   cursor: pointer;
@@ -35,47 +23,94 @@
     color: black;
     background-color: white;
     box-shadow: none;
+    text-decoration: none;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  img,
+  i {
+    margin: auto;
   }
 }
 
-// Buttons with a dropdown list underneath
-div.dropdown-buttons-trigger {
-  div.dropdown-buttons {
+/**
+ * Dropdown groups of buttons
+ */
+.menu-dropdown__trigger:hover + .menu-dropdown__content,
+.menu-dropdown__content:hover {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-70%); // To achieve a slight shift effect
+}
+
+.menu-dropdown__content {
+  // Hide by default, we'll show on hover
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-65%);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+
+  // Spacing and position
+  width: 13em;
+  z-index: 1000;
+  border-radius: $box-border-radius;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.5em;
+
+  // Style
+  font-size: 0.9em;
+  background-color: white;
+
+  .headerbtn {
+    justify-content: left;
+
+    // Center the icon in the available white space
+    i,
+    img {
+      margin: auto;
+    }
+
+    img {
+      width: 1em;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  a,
+  button {
+    padding: 0;
+  }
+
+  span {
+    display: flex;
+  }
+
+  span.headerbtn__icon-container {
+    width: 2em;
+  }
+
+  span.headerbtn__text-container {
+    flex-grow: 1;
+  }
+}
+
+/**
+ * In-page table of contents
+ */
+.headerbtn-page-toc {
+  // Hide the button on wide screens since we display the TOC.
+  display: block;
+  @media (min-width: $breakpoint-md) {
     display: none;
-    position: absolute;
-    max-width: 130px;
-    margin-top: 0;
-    z-index: 1000;
-    transform: translate(-70%);
-
-    // Create extra spacing for these icons since they have
-    i {
-      margin-right: 0.5em;
-    }
-
-    // Links shouldn't have any effect when hovered
-    a:hover {
-      text-decoration: none;
-    }
-
-    // Wide topbar buttons have dark backgrounds since they hover over text
-    .topbarbtn--wide {
-      font-size: 1em;
-      padding-top: 0.35rem;
-      padding-bottom: 0.35rem;
-      min-width: 125px !important;
-      border: 1px white solid !important;
-      background-color: $non-content-grey;
-      color: white;
-      border-radius: 0.5em;
-    }
   }
-
-  &:hover div.dropdown-buttons {
-    display: block;
-  }
-}
-
-a.dropdown-buttons i {
-  margin-right: 0.5em;
 }

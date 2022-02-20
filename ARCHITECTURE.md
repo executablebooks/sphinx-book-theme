@@ -17,7 +17,10 @@ This folder contains all of the source files for this theme, and most changes to
   This module does things like load in Sphinx's default HTML for the sidebar, and modify it in order to have dropdown nested lists.
   It also inserts several variables into the Jinja template context that are then used in our HTML templates.
 
-`launch.py`
+`header_buttons/`
+: Scripts to generate metadata for buttons in the header. We use [Jinja Macros](https://jinja.palletsprojects.com/en/3.0.x/templates/) (in the `macros/` folder) to generate the HTML for header buttons. The scripts in `header_buttons/` generate the data structure that is used to generate buttons with these macros (in the `header-article.html` template).
+
+`header_buttons/launch.py`
 : Logic to create the correct URLs for our launch buttons. This basically means building the URL for a given launch service in a proper fashion.
 
 The other folders in this section are described in the next few sections.
@@ -31,6 +34,9 @@ These follow the [`sphinx-basic-ng` template structure](https://sphinx-basic-ng.
 
 - `layout.html` inherits from the [pydata sphinx theme](https://pydata-sphinx-theme.readthedocs.io/) and modifies several sections.
 - `theme.conf` contains the Sphinx configuration file for this theme.
+- `macros/` contains HTML templates that define Jinja macros
+- `sections/` contains HTML templates for major sections of the page.
+- `components/` contains HTML templates for smaller, self-contained parts of the page.
 
 ### `/assets/scripts` - JavaScript assets
 
