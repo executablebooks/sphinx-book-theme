@@ -21,6 +21,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
+    "sphinxcontrib.youtube",
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_tabs.tabs",
