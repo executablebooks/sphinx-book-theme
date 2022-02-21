@@ -1,0 +1,23 @@
+.header-item {
+  width: 100%;
+  text-align: center;
+
+  &:empty {
+    display: none;
+  }
+
+  &.announcement {
+    background-color: #616161;
+    color: white;
+    padding: 0.4em 12.5%; // Horizontal padding so the width is 75%
+
+    @media (max-width: $breakpoint-md) {
+      // Announcements can take a bit more width on mobile
+      padding: 0.4em 2%;
+    }
+  }
+
+  &.header {
+    border-bottom: $border-thin;
+  }
+}

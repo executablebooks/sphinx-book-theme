@@ -1,0 +1,12 @@
+/*********************************************
+* Sphinx Tabs *
+* ref: https://github.com/executablebooks/sphinx-tabs
+*********************************************/
+div.sphinx-tabs > div.sphinx-menu {
+  padding: 0;
+}
+
+div.sphinx-tabs > div.sphinx-menu > a.item {
+  width: auto;
+  margin: 0px 0px -1px 0px;
+}

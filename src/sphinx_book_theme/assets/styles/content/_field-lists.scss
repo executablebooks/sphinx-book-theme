@@ -1,0 +1,16 @@
+// Field lists
+// See: https://docutils.sourceforge.io/docs/user/rst/quickref.html#definition-lists
+// TODO the field list should be a different format,
+// but be wary of issues like https://github.com/pandas-dev/pydata-sphinx-theme/issues/193
+dl.simple,
+dl.field-list {
+  & dd {
+    margin-left: 1.5em;
+  }
+  & dd:not(:last-child) {
+    margin-bottom: 0px;
+    p:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

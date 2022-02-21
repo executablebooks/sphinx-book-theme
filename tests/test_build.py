@@ -5,7 +5,7 @@ from subprocess import check_call
 
 from bs4 import BeautifulSoup
 import pytest
-from sphinx.errors import ThemeError
+import sphinx
 from sphinx.testing.util import SphinxTestApp
 from sphinx.testing.path import path as sphinx_path
 
@@ -17,6 +17,9 @@ class SphinxBuild:
     def __init__(self, app: SphinxTestApp, src: Path):
         self.app = app
         self.src = src
+        self.software_versions = (
+            f".sphinx{sphinx.version_info[0]}"  # software version tracking for fixtures
+        )
 
     def build(self, assert_pass=True):
         self.app.build()
@@ -69,7 +72,8 @@ def test_build_book(sphinx_build_factory, file_regression):
     sphinx_build.build(assert_pass=True)
     assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
 
-    # Check for correct kernel name in jupyter notebooks
+    # -- Notebooks ------------------------------------------------------------
+    # Check for correct kernel name
     kernels_expected = {
         "ntbk.html": "python3",
         "ntbk_octave.html": "octave",
@@ -82,15 +86,25 @@ def test_build_book(sphinx_build_factory, file_regression):
         if kernel_name not in thebe_config.prettify():
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
-    # Check a few components that should be true on each page
+    # -- Sidebar --------------------------------------------------------------
     index_html = sphinx_build.html_tree("index.html")
-    sidebar = index_html.find_all(attrs={"class": "bd-sidebar"})[0]
-    file_regression.check(sidebar.prettify(), extension=".html", encoding="utf8")
+    # Navigation entries
+    if sphinx_build.software_versions == ".sphinx4":
+        # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
+        sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
+        file_regression.check(
+            sidebar.prettify(),
+            basename="build__sidebar-primary__nav",
+            extension=".html",
+            encoding="utf8",
+        )
 
-    # Edit button should not be on page
-    assert '<a class="edit-button"' not in str(index_html)
-    # Title should be just text, no HTML
-    assert "Index with code in title" in str(index_html)
+    # By default we should have download buttons
+    download_btns = sphinx_build.html_tree("index.html").find_all(
+        "div", attrs={"class": "sb-download-buttons"}
+    )
+    assert len(download_btns) == 1
+
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
         "nav", id="bd-docs-nav"
@@ -99,13 +113,29 @@ def test_build_book(sphinx_build_factory, file_regression):
     assert "1. Page 1" in str(sidebar_ntbk)
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
 
+    # -- Topbar ---------------------------------------------------------------
+    header_article = sphinx_build.html_tree("section1", "ntbk.html").find(
+        "div", class_="header-article"
+    )
+    file_regression.check(
+        header_article.prettify(),
+        basename="build__header-article",
+        extension=".html",
+        encoding="utf8",
+    )
+    # Edit button should not be on page
+    assert '<a class="edit-button"' not in str(index_html)
+    # Title should be just text, no HTML
+    assert "Index with code in title" in str(index_html)
+
+    # -- Page TOC -------------------------------------------------------------
     # Test that the TOCtree is rendered properly across different title arrangements
     for page in sphinx_build.outdir.joinpath("titles").rglob("**/page-*"):
         page_html = BeautifulSoup(page.read_text("utf8"), "html.parser")
         page_toc = page_html.find("div", attrs={"class": "bd-toc"})
         file_regression.check(
             page_toc.prettify(),
-            basename=page.with_suffix("").name,
+            basename=f"build__pagetoc--{page.with_suffix('').name}",
             extension=".html",
             encoding="utf8",
         )
@@ -125,6 +155,7 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
 
 def test_navbar_options_single_page(sphinx_build_factory):
+    """Test that"""
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.single_page": True}
     ).build(
@@ -133,8 +164,8 @@ def test_navbar_options_single_page(sphinx_build_factory):
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
         "div", id="site-navigation"
     )
-    assert len(sidebar.find_all("div")) == 0
-    assert "col-md-2" in sidebar.attrs["class"]
+    assert len(sidebar.find_all("div")) == 0  # Sidebar should be empty
+    assert "single-page" in sidebar.attrs["class"]  # Class added on single page
 
 
 @pytest.mark.parametrize(
@@ -191,7 +222,7 @@ def test_topbar_launchbtns(sphinx_build_factory, file_regression):
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
-    )[1]
+    )[0]
     file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
@@ -202,7 +233,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
     ).build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         "div", attrs={"class": "dropdown-buttons"}
-    )[1]
+    )[0]
     file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
 
 
@@ -213,12 +244,6 @@ def test_singlehtml(sphinx_build_factory):
         assert_pass=True
     )
     assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
-
-
-def test_missing_title(sphinx_build_factory):
-    """Test building with a book w/ no title on the master page."""
-    with pytest.raises(ThemeError, match="Landing page missing a title: index"):
-        sphinx_build_factory("notitle").build()
 
 
 def test_docs_dirhtml(sphinx_build_factory):
@@ -246,18 +271,18 @@ def test_show_navbar_depth(sphinx_build_factory):
         assert "checked" not in checkbox.attrs
 
 
-def test_topbar_download_button_off(sphinx_build_factory, file_regression):
+def test_topbar_download_button_off(sphinx_build_factory):
+    """Download button should not show up in the topbar when configured as False."""
     confoverrides = {
         "html_theme_options.use_download_button": False,
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
     )
-
-    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "topbar-main"}
-    )[0]
-    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
+    download_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
+        "div", attrs={"class": "sb-download-buttons"}
+    )
+    assert len(download_btns) == 0
 
 
 def test_topbar_fullscreen_button_off(sphinx_build_factory, file_regression):

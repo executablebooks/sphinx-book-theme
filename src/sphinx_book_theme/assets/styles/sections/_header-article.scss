@@ -1,0 +1,30 @@
+/*********************************************
+* Top Bar *
+* TODO: Rename much of these to article-header to conform with sphinx-basic-ng
+*********************************************/
+.header-article {
+  height: $topbar-height; // Fix the height so the TOC doesn't grow it
+  background-color: white;
+  transition: left 0.2s;
+  font-size: var(--sbt-topbar-font-size);
+
+  .scrolled & {
+    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+  }
+
+  .topbar-main {
+    height: $topbar-height;
+
+    // Both topbar sections
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    // Right section of topbar
+    .topbar-right {
+      margin-left: auto;
+    }
+  }
+}

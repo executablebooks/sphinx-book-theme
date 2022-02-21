@@ -1,4 +1,4 @@
-# Get started with the theme
+# Get started
 
 This is a short step-by-step tutorial to get started with the Sphinx Book Theme.
 

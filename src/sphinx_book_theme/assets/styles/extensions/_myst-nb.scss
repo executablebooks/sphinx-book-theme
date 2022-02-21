@@ -1,0 +1,41 @@
+/*********************************************
+* MyST NB and Jupyter Notebooks *
+* ref: https://github.com/executablebooks/myst-nb
+*********************************************/
+div.cell {
+  div.highlight {
+    margin-bottom: 0em;
+  }
+
+  div.cell_input,
+  div.cell_output pre {
+    border-radius: $box-border-radius;
+    border: 1px #ccc solid;
+  }
+
+  div.cell_output {
+    padding-right: 0;
+  }
+
+  // On screens, we want to scoll, but on print show all
+  @mixin cell-scroll {
+    @include scrollbar-style();
+    max-height: 24em;
+    overflow-y: auto;
+    @media print {
+      max-height: unset;
+      overflow-y: visible;
+    }
+  }
+  &.tag_output_scroll,
+  &.tag_scroll-output {
+    div.cell_output {
+      @include cell-scroll;
+    }
+  }
+  &.tag_scroll-input {
+    div.cell_input {
+      @include cell-scroll;
+    }
+  }
+}
