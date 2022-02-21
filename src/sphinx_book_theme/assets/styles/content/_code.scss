@@ -1,0 +1,43 @@
+/*********************************************
+* Code and pre styling *
+*********************************************/
+
+code {
+  font-size: 87.5% !important;
+}
+
+pre {
+  border-radius: $box-border-radius;
+  @include scrollbar-style();
+}
+
+// Over-ride Sphinx default so that content fills whitespace w/ margin content
+pre,
+div[class*="highlight-"] {
+  clear: none;
+}
+
+.highlighttable {
+  .linenos {
+    vertical-align: baseline;
+  }
+}
+
+// Code blocks should have a margin, but code *cells* get margin from a parent
+div.highlight {
+  background: none;
+  margin-bottom: 1em;
+}
+
+// CodeMirror styles for live thebe cells.
+.cm-s-default {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: var(--jp-code-line-height);
+}
+
+.CodeMirror-focused {
+  background-color: var(--jp-cell-editor-active-background) !important;
+  border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+  margin: -1px;
+}

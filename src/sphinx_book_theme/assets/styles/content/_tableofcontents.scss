@@ -1,0 +1,72 @@
+// Table of Contents in the UI
+div.tableofcontents-wrapper p.caption {
+  font-weight: 600 !important;
+  margin-bottom: 0em !important;
+}
+
+// Table of Contents wrapper in page content
+div.toctree-wrapper {
+  p.caption {
+    font-size: 1.4em;
+  }
+
+  > ul {
+    padding-left: 1.5em;
+
+    // Top-level links should be a bit bigger
+    > li > a {
+      font-size: 1.1em;
+    }
+  }
+}
+
+// In-page contents
+div.contents {
+  border-radius: $box-border-radius;
+  padding: 1em 1em 2em 1em; // More padding on bottom to match whitespace from title
+  p.topic-title {
+    font-size: 1.5em;
+    padding: 0 0 0 0.5em;
+    margin-bottom: 0;
+  }
+
+  // Style the first few levels of this so it looks nice
+  > ul {
+    list-style: none;
+    padding-left: 1em;
+
+    > li {
+      > ul {
+        padding-left: 1.5em;
+      }
+
+      > p > a {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+// Print-only table of contents
+@media print {
+  #jb-print-toc {
+    margin-bottom: 1.5rem;
+
+    .section-nav {
+      border-left: 0px;
+      list-style-type: disc;
+      margin-left: 3em;
+      a {
+        text-decoration: none;
+        padding-left: 0px;
+      }
+      li {
+        display: list-item !important;
+      }
+      .nav {
+        display: none;
+      }
+    }
+  }
+}

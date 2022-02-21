@@ -1,0 +1,66 @@
+/*********************************************
+* Print-specific CSS *
+*********************************************/
+@media print {
+  // Structural elements
+  #jb-print-docs-body {
+    max-width: 90%;
+    margin: auto;
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+
+  // Main content adjustments to center it a bit more
+  #main-content {
+    max-width: 67% !important;
+    margin-left: 5% !important;
+    padding-top: 0;
+
+    // The first H1 is the title, we've already displayed above
+    h1:first-of-type {
+      display: none;
+    }
+  }
+
+  // HACK: Without this, some code cells take the whole width
+  .container {
+    min-width: 0% !important;
+  }
+
+  // Content
+  h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+    color: black;
+  }
+
+  table {
+    break-inside: avoid;
+  }
+
+  pre {
+    word-wrap: break-word;
+  }
+
+  a.headerlink {
+    display: none;
+  }
+
+  blockquote.epigraph {
+    border: none;
+  }
+
+  .footer {
+    margin-top: 1em;
+  }
+}

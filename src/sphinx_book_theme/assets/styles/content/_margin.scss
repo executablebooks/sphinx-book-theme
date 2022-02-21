@@ -1,0 +1,72 @@
+// Margin variables
+// The % is relative to our parent container, which has width == max-width
+// full-width = 100% = content-max-width + margin-width
+// We must express margin-width as a percentage of max-width. So:
+// So the width we want is:
+// max-width * x = 100% - max-width, so we solve for x.
+// Will be a decimal
+$content-margin-gutter: 3%;
+$content-margin-width: percentage(
+    (100% - $content-max-width) / $content-max-width
+  ) - $content-margin-gutter;
+$content-margin-offset: (-$content-margin-width - $content-margin-gutter);
+
+// Express 100% in parent container in % units of the child container.
+$content-fullwidth-width: percentage(100% / $content-max-width);
+
+// Note: Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
+// On narrow screens, margin content behaves like a sidebar
+
+// On wide screens, it "pops out" to the right margin
+
+@mixin margin-content() {
+  width: 40%;
+  float: right;
+  background-color: unset;
+  border-left: 1px #a4a6a7 solid;
+  font-size: 0.9em;
+
+  @media (min-width: $breakpoint-md) {
+    border: none;
+    width: $content-margin-width;
+    margin: 0 $content-margin-offset 0 0;
+    clear: right; // Prevent sequential margin content from overlapping
+
+    p.sidebar-title {
+      margin-bottom: 0.1em;
+    }
+  }
+}
+
+div.margin,
+aside.margin,
+.cell.tag_popout,
+.cell.tag_margin {
+  @include margin-content();
+
+  // Make cell outputs take up more space if they're in the margin
+  div.cell.tag_margin .cell_output {
+    padding-left: 0;
+  }
+}
+
+div.figure.margin-caption p.caption,
+div.figure.margin-caption figcaption {
+  @include margin-content();
+}
+
+// Full-width content
+div.cell.tag_full-width,
+div.cell.tag_full_width,
+.full_width,
+.full-width {
+  @media (min-width: $breakpoint-md) {
+    max-width: $content-fullwidth-width;
+    width: $content-fullwidth-width;
+  }
+}
+
+// Margin captions
+.margin-caption figcaption {
+  text-align: left;
+}

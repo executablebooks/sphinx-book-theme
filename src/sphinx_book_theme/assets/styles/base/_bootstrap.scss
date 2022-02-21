@@ -1,0 +1,9 @@
+/**
+* Bootstrap-specific hacks
+*/
+
+// Prevent columns w/ wide content from breaking the grid
+// ref: https://github.com/twbs/bootstrap/pull/30049/files
+.col {
+  min-width: 0;
+}

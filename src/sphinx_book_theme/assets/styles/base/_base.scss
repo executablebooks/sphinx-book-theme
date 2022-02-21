@@ -1,0 +1,39 @@
+/*********************************************
+* Utility classes used in a few places
+*********************************************/
+// For the helper pixel that we can watch to decide whether we've scrolled
+.sbt-scroll-pixel-helper {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 0;
+  left: 0;
+}
+
+// Hide an element without display: none but so that it takes no space
+.visually-hidden {
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+// Print-specific utility classes
+.onlyprint {
+  display: none;
+
+  @media print {
+    display: block !important;
+  }
+}
+
+.noprint {
+  @media print {
+    display: none !important;
+  }
+}

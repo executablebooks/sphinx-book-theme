@@ -54,7 +54,9 @@ The following topic areas will help you understand and use the theme.
 tutorials/get-started
 customize/index
 content-blocks
+notebooks
 launch
+contributing/index
 ```
 
 # Reference pages
@@ -65,25 +67,24 @@ Reference pages demonstrate the visual look of this theme.
 :caption: Reference
 :maxdepth: 2
 
-reference/special-theme-elements
-reference/notebooks
 reference/kitchen-sink/index
+reference/special-theme-elements
+reference/extensions
+reference/notebooks
+reference/thebe
 reference/blog
+reference/api-numpy
 ```
 
+# Inspiration
 
-```{toctree}
-:caption: About the theme
-:maxdepth: 2
+This theme draws inspiration and borrows design elements from the following themes:
 
-contributing
-```
-
-# Acknowledgements
-
-This theme is heavily inspired by (and dependent on)
-[PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/) for its base
-structure and configuration.
+- The [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/)
+- The [Furo theme](https://pradyunsg.me/furo/)
+- The [Edward Tufte CSS theme](https://edwardtufte.github.io/tufte-css/)
+- [GitBook](https://docs.gitbook.com/)
+- The [Tailwind CSS docs](https://tailwindcss.com/docs/installation)
 
 [pypi-badge]: https://img.shields.io/pypi/v/sphinx-book-theme.svg
 [pypi-link]: https://pypi.org/project/sphinx-book-theme

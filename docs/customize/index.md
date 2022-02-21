@@ -57,9 +57,6 @@ The following options are available via `html_theme_options`
 * - `toc_title`
   - str
   - The text to be displayed with the in-page TOC (`Contents` is default)
-* - `theme_dev_mode`
-  - bool
-  - (developers only) Trigger some features that make it easier to develop the theme.
 ```
 
 ## Customization Topics
@@ -69,6 +66,8 @@ The following sections describe a few ways to customize the theme in more depth.
 ```{toctree}
 sidebar-primary.md
 sidebar-secondary.md
+announcements.md
+header.md
 download.md
 source-files.md
 custom-css.md
