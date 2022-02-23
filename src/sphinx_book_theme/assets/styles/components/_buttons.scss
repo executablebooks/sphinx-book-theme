@@ -44,7 +44,6 @@
 .menu-dropdown__content:hover {
   visibility: visible;
   opacity: 1;
-  transform: translate(-70%); // To achieve a slight shift effect
 }
 
 .menu-dropdown__content {
@@ -52,8 +51,8 @@
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transform: translate(-65%);
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  transform: translateX(-75%);
+  transition: opacity 0.2s ease-out;
 
   // Spacing and position
   width: 13em;
