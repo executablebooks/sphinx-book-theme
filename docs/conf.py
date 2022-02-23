@@ -18,6 +18,7 @@ master_doc = "index"
 extensions = [
     "ablog",
     "myst_nb",
+    "numpydoc",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",

@@ -11,11 +11,11 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-python@v1
+    - uses: actions/checkout@v2.4.0
+    - uses: actions/setup-python@v2.3.2
       with:
         python-version: 3.9
-    - uses: pre-commit/action@v2.0.0
+    - uses: pre-commit/action@v2.0.3
 
   tests:
     strategy:
@@ -33,9 +33,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.4.0
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v2.3.2
       with:
         python-version: ${{ matrix.python-version }}
         cache: "pip"
@@ -52,7 +52,7 @@ jobs:
 
     - name: Upload to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v2.1.0
       with:
         name: ebp-sbt-pytests-py3.7
         flags: pytests
@@ -64,9 +64,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Audit Documentation
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.4.0
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v2.3.2
       with:
         python-version: '3.7'
         cache: "pip"
@@ -114,7 +114,7 @@ jobs:
           --exclude 'deepnote.com'
 
     - name: Audit with Lighthouse
-      uses: treosh/lighthouse-ci-action@v8
+      uses: treosh/lighthouse-ci-action@9.3.0
       with:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true
@@ -129,9 +129,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.0
       - name: Set up Python 3.7
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v2.3.2
         with:
           python-version: 3.7
 
@@ -141,7 +141,7 @@ jobs:
           python -m build
 
       - name: Publish
-        uses: pypa/gh-action-pypi-publish@v1.1.0
+        uses: pypa/gh-action-pypi-publish@v1.5.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_KEY }}
