@@ -59,7 +59,7 @@ html_theme_options = {
 }
 ```
 
-When you build your documentation, your topbar should now include a small GitHub logo that has a link to the repository.
+When you build your documentation, your header should now include a small GitHub logo that has a link to the repository.
 
 
 :::{seealso}

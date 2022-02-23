@@ -10,7 +10,7 @@ from shutil import copy2
 SPHINX_LOGGER = logging.getLogger(__name__)
 
 
-def add_hub_urls(
+def add_launch_buttons(
     app: Sphinx,
     pagename: str,
     templatename: str,
@@ -38,6 +38,9 @@ def add_hub_urls(
     launch_buttons = config_theme.get("launch_buttons", {})
     if not launch_buttons or not _is_notebook(app, pagename):
         return
+
+    # Grab the header buttons from context as it should already exist.
+    header_buttons = context["header_buttons"]
 
     # Check if we have a markdown notebook, and if so then add a link to the context
     if _is_notebook(app, pagename) and (
@@ -91,6 +94,9 @@ def add_hub_urls(
         book_relpath += "/"
     path_rel_repo = f"{book_relpath}{pagename}{extension}"
 
+    # Container for launch buttons
+    launch_buttons_list = []
+
     # Now build infrastructure-specific links
     jupyterhub_url = launch_buttons.get("jupyterhub_url")
     binderhub_url = launch_buttons.get("binderhub_url")
@@ -101,27 +107,85 @@ def add_hub_urls(
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
             f"urlpath={ui_pre}/{path_rel_repo}"
         )
-        context["binder_url"] = url
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "Binder",
+                "tooltip": "Launch on Binder",
+                "icon": "_static/images/logo_binder.svg",
+                "url": url,
+            }
+        )
 
     if jupyterhub_url:
         url = (
             f"{jupyterhub_url}/hub/user-redirect/git-pull?"
             f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}&branch={branch}"
         )
-        context["jupyterhub_url"] = url
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "JupyterHub",
+                "tooltip": "Launch on JupyterHub",
+                "icon": "_static/images/logo_jupyterhub.svg",
+                "url": url,
+            }
+        )
 
     if colab_url:
         url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
-        context["colab_url"] = url
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "Colab",
+                "tooltip": "Launch on Colab",
+                "icon": "_static/images/logo_colab.png",
+                "url": url,
+            }
+        )
 
     if deepnote_url:
         github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
         url = f"{deepnote_url}/launch?url=https%3A%2F%2Fgithub.com{github_path}"
-        context["deepnote_url"] = url
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "Deepnote",
+                "tooltip": "Launch on Deepnote",
+                "icon": "_static/images/logo_deepnote.svg",
+                "url": url,
+            }
+        )
 
     # Add thebe flag in context
     if launch_buttons.get("thebe", False):
+        launch_buttons_list.append(
+            {
+                "type": "javascript",
+                "text": "Live Code",
+                "tooltip": "Launch Thebe",
+                "javascript": "initThebeSBT()",
+                "icon": "fas fa-play",
+                "label": "launch-thebe",
+            }
+        )
         context["use_thebe"] = True
+
+    # Add the buttons to header_buttons
+    if len(launch_buttons_list) == 1:
+        header_buttons.extend(launch_buttons_list)
+    else:
+        for lb in launch_buttons_list:
+            lb["tooltip_placement"] = "left"
+        header_buttons.append(
+            {
+                "type": "group",
+                "tooltip": "Launch interactive content",
+                "icon": "fas fa-rocket",
+                "buttons": launch_buttons_list,
+                "label": "launch-buttons",
+            }
+        )
 
 
 def _split_repo_url(url):
