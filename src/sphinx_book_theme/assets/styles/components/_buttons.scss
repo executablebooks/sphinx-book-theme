@@ -86,19 +86,20 @@
 
   a,
   button {
+    color: $non-content-grey;
     padding: 0;
   }
 
   span {
     display: flex;
-  }
 
-  span.headerbtn__icon-container {
-    width: 2em;
-  }
+    &.headerbtn__icon-container {
+      width: 2em;
+    }
 
-  span.headerbtn__text-container {
-    flex-grow: 1;
+    &.headerbtn__text-container {
+      flex-grow: 1;
+    }
   }
 }
 
