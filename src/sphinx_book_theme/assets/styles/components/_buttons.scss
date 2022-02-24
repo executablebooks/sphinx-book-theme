@@ -90,12 +90,12 @@
 
 // HACK: Need this to be extra-selective to over-ride some too-specific PST CSS
 div.header-article-main {
-  .menu-dropdown__content {
+  .header-article__left,
+  .header-article__right {
     a,
     button,
     label {
       color: $non-content-grey;
-      padding: 0;
 
       // Over-ride bootstrap defaults for clicking
       &:hover,
