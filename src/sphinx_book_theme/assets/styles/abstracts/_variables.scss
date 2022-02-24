@@ -13,6 +13,10 @@ $grey--medium: #aaa;
 $grey--light: #ccc;
 $non-content-grey: $grey--dark;
 
+// Z-index stacking
+$zindex-overlay: 1100;
+
+// Spacing
 $header-article-height: 3em;
 $leftbar-width-mobile: 75%;
 $leftbar-width-wide: 275px;

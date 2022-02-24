@@ -63,11 +63,11 @@ label.overlay {
 @media (max-width: $breakpoint-md) {
   input:checked + label.overlay {
     &.overlay-navbar {
-      z-index: 1040; // This puts it above the header, below the sidebar
+      z-index: $zindex-overlay - 1; // This puts it just below the primary sidebar
     }
 
     &.overlay-pagetoc {
-      z-index: 1010; // This puts it *below* the header so the TOC shows
+      z-index: $zindex-overlay - 1; // This puts it just below the secondary sidebar
     }
     height: 100%;
     opacity: 1;
