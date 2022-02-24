@@ -8,7 +8,8 @@ from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
-from .launch import add_hub_urls
+from .header_buttons import prep_header_buttons, add_header_buttons
+from .header_buttons.launch import add_launch_buttons
 
 __version__ = "0.2.0"
 """sphinx-book-theme version"""
@@ -24,8 +25,8 @@ def get_html_theme_path():
     return theme_path
 
 
-def add_to_context(app, pagename, templatename, context, doctree):
-
+def add_metadata_to_page(app, pagename, templatename, context, doctree):
+    """Adds some metadata about the page that we re-use later."""
     # Add the site title to our context so it can be inserted into the navbar
     if not context.get("root_doc"):
         # TODO: Sphinx renamed master to root in 4.x, deprecate when we drop 3.x
@@ -49,43 +50,7 @@ def add_to_context(app, pagename, templatename, context, doctree):
     if app.config.author != "unknown":
         context["author"] = app.config.author
 
-    # Add HTML context variables that the pydata theme uses that we configure elsewhere
-    # For some reason the source_suffix sometimes isn't there even when doctree is
-    if doctree and context.get("page_source_suffix"):
-        config_theme = app.config.html_theme_options
-        repo_url = config_theme.get("repository_url", "")
-        # Only add the edit button if `repository_url` is given
-        if repo_url:
-            branch = config_theme.get("repository_branch")
-            if not branch:
-                # Explicitly check in cae branch is ""
-                branch = "master"
-            relpath = config_theme.get("path_to_docs", "")
-            org, repo = repo_url.strip("/").split("/")[-2:]
-            context.update(
-                {
-                    "github_user": org,
-                    "github_repo": repo,
-                    "github_version": branch,
-                    "doc_path": relpath,
-                }
-            )
-    else:
-        # Disable using the button so we don't get errors
-        context["theme_use_edit_page_button"] = False
-
-    # Make sure the context values are bool
-    btns = [
-        "theme_use_edit_page_button",
-        "theme_use_repository_button",
-        "theme_use_issues_button",
-        "theme_use_download_button",
-        "theme_use_fullscreen_button",
-    ]
-    for key in btns:
-        if key in context:
-            context[key] = _string_or_bool(context[key])
-
+    # Translations
     translation = get_translation(MESSAGE_CATALOG_NAME)
     context["translate"] = translation
     # this is set in the html_theme
@@ -128,15 +93,6 @@ def update_thebe_config(app):
     app.env.config.thebe_config = thebe_config
 
 
-def _string_or_bool(var):
-    if isinstance(var, str):
-        return var.lower() == "true"
-    elif isinstance(var, bool):
-        return var
-    else:
-        return var is None
-
-
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -159,16 +115,19 @@ class Margin(Sidebar):
 def setup(app: Sphinx):
     app.connect("builder-inited", update_thebe_config)
 
-    # Configuration for Juypter Book
-    app.connect("html-page-context", add_hub_urls)
-
     # add translations
     theme_dir = get_html_theme_path()
     locale_dir = os.path.join(theme_dir, "static", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.add_html_theme("sphinx_book_theme", theme_dir)
-    app.connect("html-page-context", add_to_context)
+    app.connect("html-page-context", add_metadata_to_page)
+
+    # Header buttons
+    app.connect("html-page-context", prep_header_buttons)
+    app.connect("html-page-context", add_launch_buttons)
+    # Bump priority by 1 so that it runs after the pydata theme sets up the edit URL.
+    app.connect("html-page-context", add_header_buttons, priority=501)
 
     app.add_directive("margin", Margin)
 

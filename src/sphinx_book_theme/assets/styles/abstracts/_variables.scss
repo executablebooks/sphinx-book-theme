@@ -13,7 +13,7 @@ $grey--medium: #aaa;
 $grey--light: #ccc;
 $non-content-grey: $grey--dark;
 
-$topbar-height: 3em;
+$header-article-height: 3em;
 $leftbar-width-mobile: 75%;
 $leftbar-width-wide: 275px;
 $leftbar-width: 275px;
@@ -59,7 +59,7 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
 
   // Variables for this theme
   --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
-  --sbt-topbar-font-size: var(--sbt-font-size-small-1);
+  --sbt-header-article-font-size: var(--sbt-font-size-small-1);
   --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
   --sbt-footer-font-size: var(--sbt-font-size-small-1);
 }

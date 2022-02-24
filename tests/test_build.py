@@ -99,12 +99,6 @@ def test_build_book(sphinx_build_factory, file_regression):
             encoding="utf8",
         )
 
-    # By default we should have download buttons
-    download_btns = sphinx_build.html_tree("index.html").find_all(
-        "div", attrs={"class": "sb-download-buttons"}
-    )
-    assert len(download_btns) == 1
-
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
         "nav", id="bd-docs-nav"
@@ -113,10 +107,11 @@ def test_build_book(sphinx_build_factory, file_regression):
     assert "1. Page 1" in str(sidebar_ntbk)
     assert "3.1. Section 1 page1" in str(sidebar_ntbk)
 
-    # -- Topbar ---------------------------------------------------------------
+    # -- Header ---------------------------------------------------------------
     header_article = sphinx_build.html_tree("section1", "ntbk.html").find(
         "div", class_="header-article"
     )
+
     file_regression.check(
         header_article.prettify(),
         basename="build__header-article",
@@ -185,56 +180,73 @@ def test_navbar_options(sphinx_build_factory, option, value):
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
 
 
-def test_topbar_edit_buttons_on(sphinx_build_factory, file_regression):
+@pytest.mark.parametrize(
+    "edit,repo,issues,name",
+    [
+        (True, True, True, "all-on"),
+        (True, False, False, "one-on"),
+        (False, False, False, "all-off"),
+    ],
+)
+def test_header_repository_buttons(
+    sphinx_build_factory, file_regression, edit, repo, issues, name
+):
+    # All buttons on
     confoverrides = {
-        "html_theme_options.use_edit_page_button": True,
-        "html_theme_options.use_repository_button": True,
-        "html_theme_options.use_issues_button": True,
+        "html_theme_options": {
+            "use_edit_page_button": edit,
+            "use_repository_button": repo,
+            "use_issues_button": issues,
+            "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+        }
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
     )
 
-    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "sourcebuttons"}
-    )[0]
-    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
-
-
-def test_topbar_edit_buttons_off(sphinx_build_factory, file_regression):
-    confoverrides = {
-        "html_theme_options.use_edit_page_button": False,
-        "html_theme_options.use_repository_button": False,
-        "html_theme_options.use_issues_button": True,
-    }
-    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
-        assert_pass=True
+    header = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".header-article__right"
+    )
+    file_regression.check(
+        header[0].prettify(),
+        basename=f"header__repo-buttons--{name}",
+        extension=".html",
+        encoding="utf8",
     )
 
-    source_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "sourcebuttons"}
-    )[0]
-    file_regression.check(source_btns.prettify(), extension=".html", encoding="utf8")
 
-
-def test_topbar_launchbtns(sphinx_build_factory, file_regression):
+def test_header_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
-    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "dropdown-buttons"}
-    )[0]
-    file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
+    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".menu-dropdown-launch-buttons"
+    )
+    file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
 
 
 def test_repo_custombranch(sphinx_build_factory, file_regression):
-    """Test custom branch for launch buttons."""
+    """Test custom branch for launch and edit buttons."""
     sphinx_build = sphinx_build_factory(
-        "base", confoverrides={"html_theme_options.repository_branch": "foo"}
+        "base",
+        confoverrides={
+            "html_theme_options": {
+                "repository_branch": "foo",
+                "use_edit_page_button": True,
+                "repository_url": "https://github.com/executablebooks/sphinx-book-theme",  # noqa: E501
+                "launch_buttons": {"binderhub_url": "https://mybinder.org"},
+            }
+        },
     ).build(assert_pass=True)
-    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "dropdown-buttons"}
-    )[0]
-    file_regression.check(launch_btns.prettify(), extension=".html", encoding="utf8")
+    header = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".header-article__right"
+    )
+    # The Binder link should point to `foo`, as should the `edit` button
+    file_regression.check(
+        header[0].prettify(),
+        basename="header__repo-buttons--custom-branch",
+        extension=".html",
+        encoding="utf8",
+    )
 
 
 @pytest.mark.skipif(os.name == "nt", reason="myst-nb path concatenation error (#212)")
@@ -271,21 +283,21 @@ def test_show_navbar_depth(sphinx_build_factory):
         assert "checked" not in checkbox.attrs
 
 
-def test_topbar_download_button_off(sphinx_build_factory):
-    """Download button should not show up in the topbar when configured as False."""
+def test_header_download_button_off(sphinx_build_factory):
+    """Download button should not show up in the header when configured as False."""
     confoverrides = {
         "html_theme_options.use_download_button": False,
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
     )
-    download_btns = sphinx_build.html_tree("section1", "ntbk.html").find_all(
-        "div", attrs={"class": "sb-download-buttons"}
+    download_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".menu-dropdown-download-buttons"
     )
     assert len(download_btns) == 0
 
 
-def test_topbar_fullscreen_button_off(sphinx_build_factory, file_regression):
+def test_header_fullscreen_button_off(sphinx_build_factory, file_regression):
     confoverrides = {
         "html_theme_options.use_fullscreen_button": False,
     }
@@ -327,12 +339,3 @@ def test_logo_only(sphinx_build_factory):
         "h1", attrs={"id": "site-title"}
     )
     assert not logo_text
-
-
-def test_copy_rendered_notebooks():
-    target = Path("build/outdir/_sources/section1/ntbkmd.ipynb")
-    if target.exists():
-        target.unlink()
-    # Switch to sphinx_build_factory if we figure out how to use outdir w/ it
-    check_call("sphinx-build -W -b dirhtml tests/sites/base build/outdir", shell=True)
-    assert target.exists()

@@ -1,0 +1,78 @@
+{# Utility macros we'll re-use below -#}
+{% macro render_tooltip_metadata(tooltip, tooltip_placement) -%}
+data-toggle="tooltip"
+data-placement="{{ tooltip_placement }}"
+title="{{ translate(tooltip) }}"
+{%- endmacro %}
+
+
+{% macro render_inner_html(icon, text) %}
+{# used across multiple button types #}
+{% if icon -%}
+<span class="headerbtn__icon-container">
+  {% if icon.startswith("fa") -%}
+    <i class="{{ icon }}"></i>
+  {% else %}
+    <img src="{{ pathto(icon, 1) }}">
+  {% endif -%}
+</span>
+{% endif %}
+{%- if text %}<span class="headerbtn__text-container">{{ translate(text) }}</span>{% endif -%}
+{% endmacro %}
+
+
+{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, tooltip_placement="bottom") -%}
+<a href="{{ url }}"
+   class="headerbtn{% if label %} headerbtn-{{ label }}{% endif %}"
+   {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
+>
+  {{ render_inner_html(icon, text) }}
+</a>
+{% endmacro %}
+
+
+{% macro render_js_button(javascript, tooltip=None, icon=None, text=None, label=None, tooltip_placement="bottom") %}
+<button onclick="{{ javascript }}"
+  class="headerbtn{% if label %} headerbtn-{{ label }}{% endif %}"
+  {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
+>
+  {{ render_inner_html(icon, text) }}
+</button>
+{% endmacro %}
+
+
+{% macro render_label_input_button(for_input, tooltip=None, icon=None, text=None, label=None, tooltip_placement="bottom") -%}
+<label for="{{ for_input }}"
+  class="headerbtn{% if label %} headerbtn-{{ label }}{% endif %}"
+  {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
+>
+  {{ render_inner_html(icon, text) }}
+</label>
+{% endmacro %}
+
+
+{% macro render_button_group(buttons, icon, tooltip=None, label=None) %}
+<div class="menu-dropdown{% if label %} menu-dropdown-{{ label }}{% endif %}">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="{{ tooltip }}">
+      <i class="{{ icon }}"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      {%- for button in buttons %}
+      <li>
+        {{ render_funcs[button.pop("type")](**button) }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endmacro %}
+
+{%- set render_funcs = {
+  "group" : render_button_group,
+  "javascript" : render_js_button,
+  "link": render_link_button,
+  "input_label": render_label_input_button,
+}
+-%}
