@@ -86,7 +86,7 @@
 
   a,
   button {
-    color: $non-content-grey;
+    color: $non-content-grey !important; // HACK: over-ride too-specific PST CSS
     padding: 0;
   }
 
