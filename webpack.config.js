@@ -19,16 +19,15 @@ const staticPath = resolve(
 // Cache-busting Jinja2 macros (`webpack-macros.html`) used in `layout.html`
 //
 function macroTemplate({ compilation }) {
-  const hash = compilation.hash;
   const css_files = ["styles/sphinx-book-theme.css"];
   const js_files = ["scripts/sphinx-book-theme.js"];
 
   function stylesheet(css) {
-    return `<link href="{{ pathto('_static/${css}', 1) }}?digest=${hash}" rel="stylesheet">`;
+    return `<link href="{{ pathto('_static/${css}', 1) }}" rel="stylesheet">`;
   }
 
   function script(js) {
-    return `<script src="{{ pathto('_static/${js}', 1) }}?digest=${hash}"></script>`;
+    return `<script src="{{ pathto('_static/${js}', 1) }}"></script>`;
   }
   return dedent(`\
     <!--
