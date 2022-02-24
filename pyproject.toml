@@ -6,7 +6,6 @@ build-backend = "sphinx_theme_builder"
 node-version = "16.13.2"
 theme-name = "sphinx_book_theme"
 additional-compiled-static-assets = [
-  "sbt-webpack-macros.html",
   "locales/"
 ]
 
