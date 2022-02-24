@@ -17,7 +17,7 @@
 
   // On narrow screens, this should be offset to the right side until button is clicked
   @media (max-width: $breakpoint-md) {
-    z-index: $zindex-overlay;
+    z-index: $zindex-offcanvas;
     top: 0;
     right: 0;
     position: fixed;

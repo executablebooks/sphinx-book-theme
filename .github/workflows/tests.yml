@@ -94,6 +94,7 @@ jobs:
     # - yahoo.com: Kitchen sink redirect we don't control
     # - someurl: dummy url
     # - mailto: fails test but works for people
+    # - pathto(: because the pydata theme packages invalid HTML w/ this in it
     - name: Check for broken links
       id: lychee
       uses: lycheeverse/lychee-action@v1.3.0
@@ -108,6 +109,7 @@ jobs:
           --exclude 'yahoo.com'
           --exclude 'someurl'
           --exclude 'mailto:docutils-develop'
+          --exclude 'pathto\('
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@9.3.0

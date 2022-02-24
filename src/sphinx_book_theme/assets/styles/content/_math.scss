@@ -4,7 +4,6 @@ div.math {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
 }
 
 // Equation labels to the right
@@ -30,6 +29,8 @@ span.eqno {
 
 .MathJax {
   overflow-x: auto;
+  margin-right: auto !important; // to over-ride MathJax default behavior
+  margin-left: auto !important;
   @include scrollbar-style();
 }
 

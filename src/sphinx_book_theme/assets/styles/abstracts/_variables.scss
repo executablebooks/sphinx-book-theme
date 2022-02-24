@@ -13,8 +13,10 @@ $grey--medium: #aaa;
 $grey--light: #ccc;
 $non-content-grey: $grey--dark;
 
-// Z-index stacking
-$zindex-overlay: 1100;
+// Z-index stacking (from Bootstrap)
+// ref: https://getbootstrap.com/docs/5.0/layout/z-index/
+$zindex-sticky: 1020;
+$zindex-offcanvas: 1050;
 
 // Spacing
 $header-article-height: 3em;
