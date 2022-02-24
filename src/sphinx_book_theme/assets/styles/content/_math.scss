@@ -1,15 +1,35 @@
 // Math and equations
-span.eqno {
-  position: absolute;
-  right: 1em;
-  top: 50%;
-  transform: translate(0, -50%);
-  font-size: 1.2em;
+div.math {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  .headerlink {
+    font-size: 1em;
+    padding: 0 0.2em;
+    margin-left: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .headerlink {
+    opacity: 0.5;
+  }
 }
 
-div.math {
+// Equation labels to the right
+span.eqno {
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}
+
+.MathJax {
   overflow-x: auto;
-  position: relative;
+  margin-right: auto !important; // HACK: to over-ride MathJax default behavior
+  margin-left: auto !important;
   @include scrollbar-style();
 }
 

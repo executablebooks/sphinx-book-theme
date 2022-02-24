@@ -98,10 +98,10 @@ def add_launch_buttons(
     launch_buttons_list = []
 
     # Now build infrastructure-specific links
-    jupyterhub_url = launch_buttons.get("jupyterhub_url")
-    binderhub_url = launch_buttons.get("binderhub_url")
-    colab_url = launch_buttons.get("colab_url")
-    deepnote_url = launch_buttons.get("deepnote_url")
+    jupyterhub_url = launch_buttons.get("jupyterhub_url", "").strip("/")
+    binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
+    colab_url = launch_buttons.get("colab_url", "").strip("/")
+    deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
     if binderhub_url:
         url = (
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"

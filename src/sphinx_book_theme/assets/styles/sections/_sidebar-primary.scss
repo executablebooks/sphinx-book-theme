@@ -11,7 +11,6 @@
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-  z-index: 2000 !important;
 
   @include scrollbar-style();
   @include scrollbar-on-hover();
@@ -21,6 +20,7 @@
     width: $leftbar-width-mobile;
     max-width: 300px;
     font-size: 1.2em;
+    z-index: $zindex-offcanvas;
   }
 
   nav ul.nav {

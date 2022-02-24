@@ -1,6 +1,8 @@
 """A lightweight book theme based on the pydata sphinx theme."""
+import hashlib
 import os
 from pathlib import Path
+from functools import lru_cache
 
 from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes
@@ -59,6 +61,34 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     )
 
 
+@lru_cache(maxsize=None)
+def _gen_hash(path: str) -> str:
+    path_asset = get_html_theme_path() / "static" / Path(path)
+    return "?digest=" + hashlib.sha1(path_asset.read_bytes()).hexdigest()
+
+
+def add_hashes_to_assets(app, pagename, templatename, context, doctree):
+    """Add ?digest={hash} to assets in order to bust cache when changes are made.
+
+    The source files are in `static` while the built HTML is in `_static`.
+    """
+    # Hash the CSS
+    css_to_hash = ["styles/sphinx-book-theme.css"]
+    if "css_files" in context:
+        for css_file in css_to_hash:
+            css_html_path = f"_static/{css_file}"
+            ix = context["css_files"].index(css_html_path)
+            context["css_files"][ix] = css_html_path + _gen_hash(css_file)
+
+    # Hash the JS
+    js_to_hash = ["scripts/sphinx-book-theme.js"]
+    if "script_files" in context:
+        for js_file in js_to_hash:
+            js_html_path = f"_static/{js_file}"
+            ix = context["script_files"].index(js_html_path)
+            context["script_files"][ix] = js_html_path + _gen_hash(js_file)
+
+
 def update_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
     theme_options = app.env.config.html_theme_options
@@ -113,15 +143,19 @@ class Margin(Sidebar):
 
 
 def setup(app: Sphinx):
-    app.connect("builder-inited", update_thebe_config)
-
-    # add translations
+    # Register theme
     theme_dir = get_html_theme_path()
+    app.add_html_theme("sphinx_book_theme", theme_dir)
+    app.add_js_file("scripts/sphinx-book-theme.js")
+
+    # Translations
     locale_dir = os.path.join(theme_dir, "static", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
-    app.add_html_theme("sphinx_book_theme", theme_dir)
+    # Events
+    app.connect("builder-inited", update_thebe_config)
     app.connect("html-page-context", add_metadata_to_page)
+    app.connect("html-page-context", add_hashes_to_assets)
 
     # Header buttons
     app.connect("html-page-context", prep_header_buttons)
@@ -129,6 +163,7 @@ def setup(app: Sphinx):
     # Bump priority by 1 so that it runs after the pydata theme sets up the edit URL.
     app.connect("html-page-context", add_header_buttons, priority=501)
 
+    # Directives
     app.add_directive("margin", Margin)
 
     # Update templates for sidebar
