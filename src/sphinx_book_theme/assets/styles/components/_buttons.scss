@@ -20,7 +20,7 @@
   // Over-ride bootstrap defaults for clicking
   &:hover,
   &:focus {
-    color: black;
+    color: black !important;
     background-color: white;
     box-shadow: none;
     text-decoration: none;
@@ -84,12 +84,6 @@
     margin-bottom: 0;
   }
 
-  a,
-  button {
-    color: $non-content-grey !important; // HACK: over-ride too-specific PST CSS
-    padding: 0;
-  }
-
   span {
     display: flex;
 
@@ -99,6 +93,17 @@
 
     &.headerbtn__text-container {
       flex-grow: 1;
+    }
+  }
+}
+
+// HACK: Need this to be extra-selective to over-ride some too-specific PST CSS
+div.header-article-main {
+  .menu-dropdown__content {
+    a,
+    button {
+      color: $non-content-grey;
+      padding: 0;
     }
   }
 }
