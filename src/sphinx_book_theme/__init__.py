@@ -63,32 +63,30 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
 
 @lru_cache(maxsize=None)
 def _gen_hash(path: str) -> str:
-    """Generate a hash for an asset, where `path` is relative to theme static folder."""
     path_asset = get_html_theme_path() / "static" / Path(path)
-    return hashlib.sha1(path_asset.read_bytes()).hexdigest()
+    return "?digest=" + hashlib.sha1(path_asset.read_bytes()).hexdigest()
 
 
 def add_hashes_to_assets(app, pagename, templatename, context, doctree):
-    """Add ?digest={hash} to assets in order to bust cache when changes are made."""
+    """Add ?digest={hash} to assets in order to bust cache when changes are made.
+
+    The source files are in `static` while the built HTML is in `_static`.
+    """
     # Hash the CSS
     css_to_hash = ["styles/sphinx-book-theme.css"]
     if "css_files" in context:
-        css_files = context["css_files"]
         for css_file in css_to_hash:
-            # Source folder is named `static`, built HTML is in `_static`
             css_html_path = f"_static/{css_file}"
-            ix = css_files.index(css_html_path)
-            css_files[ix] = css_html_path + f"?digest={_gen_hash(css_file)}"
+            ix = context["css_files"].index(css_html_path)
+            context["css_files"][ix] = css_html_path + _gen_hash(css_file)
 
     # Hash the JS
     js_to_hash = ["scripts/sphinx-book-theme.js"]
     if "script_files" in context:
-        js_files = context["script_files"]
         for js_file in js_to_hash:
-            # Source folder is named `static`, built HTML is in `_static`
             js_html_path = f"_static/{js_file}"
-            ix = js_files.index(js_html_path)
-            js_files[ix] = js_html_path + f"?digest={_gen_hash(js_file)}"
+            ix = context["script_files"].index(js_html_path)
+            context["script_files"][ix] = js_html_path + _gen_hash(js_file)
 
 
 def update_thebe_config(app):
