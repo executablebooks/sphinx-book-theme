@@ -3,57 +3,54 @@
 *********************************************/
 
 .content-container {
-  #main-content,
-  #print-main-content {
-    // Content links and link color
-    a.headerlink {
-      opacity: 0;
-      margin-left: 0.2em;
+  // Content links and link color
+  a.headerlink {
+    opacity: 0;
+    margin-left: 0.2em;
 
-      &:hover {
-        background-color: transparent;
-        color: rgba(var(--pst-color-link), 1);
-        opacity: 1 !important;
-      }
-    }
-
-    a,
-    a:visited {
+    &:hover {
+      background-color: transparent;
       color: rgba(var(--pst-color-link), 1);
+      opacity: 1 !important;
     }
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: black;
-      &:hover a.headerlink {
-        opacity: 0.5;
-      }
-      // Make sure titles don't become hyperlink color when there are labels
-      a.toc-backref {
-        color: inherit;
-      }
-    }
+  a,
+  a:visited {
+    color: rgba(var(--pst-color-link), 1);
+  }
 
-    // Lists
-    ul,
-    ol {
-      p {
-        margin-bottom: 0;
-      }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: black;
+    &:hover a.headerlink {
+      opacity: 0.5;
     }
+    // Make sure titles don't become hyperlink color when there are labels
+    a.toc-backref {
+      color: inherit;
+    }
+  }
 
-    // Misc text and directives
-    p.centered {
-      text-align: center;
+  // Lists
+  ul,
+  ol {
+    p {
+      margin-bottom: 0;
     }
+  }
 
-    // Footnotes and Citations
-    .footnote-reference,
-    a.bibtex.internal {
-      font-size: 1em;
-    }
+  // Misc text and directives
+  p.centered {
+    text-align: center;
+  }
+
+  // Footnotes and Citations
+  .footnote-reference,
+  a.bibtex.internal {
+    font-size: 1em;
   }
 }

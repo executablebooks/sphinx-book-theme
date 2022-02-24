@@ -4,32 +4,31 @@ div.math {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+
+  .headerlink {
+    font-size: 1em;
+    padding: 0 0.2em;
+    margin-left: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .headerlink {
+    opacity: 0.5;
+  }
 }
 
 // Equation labels to the right
 span.eqno {
   font-size: 1.2em;
   margin-left: 0.5em;
-
-  .headerlink {
-    font-size: 1em;
-    padding: 0 0 0 0.2em;
-    margin-left: 0 !important; // HACK: Overly-specific CSS rule
-    visibility: visible;
-  }
-
-  &:hover .headerlink {
-    opacity: 0.5 !important; // HACK: over-ride an overly-specific rule
-  }
-
-  .headerlink:hover {
-    opacity: 1;
-  }
 }
 
 .MathJax {
   overflow-x: auto;
-  margin-right: auto !important; // to over-ride MathJax default behavior
+  margin-right: auto !important; // HACK: to over-ride MathJax default behavior
   margin-left: auto !important;
   @include scrollbar-style();
 }
