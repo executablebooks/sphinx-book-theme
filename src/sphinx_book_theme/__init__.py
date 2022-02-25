@@ -63,30 +63,50 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
 
 @lru_cache(maxsize=None)
 def _gen_hash(path: str) -> str:
-    path_asset = get_html_theme_path() / "static" / Path(path)
-    return "?digest=" + hashlib.sha1(path_asset.read_bytes()).hexdigest()
+    return hashlib.sha1(path.read_bytes()).hexdigest()
 
 
-def add_hashes_to_assets(app, pagename, templatename, context, doctree):
+def hash_assets_for_files(assets: list, theme_static: Path, context):
+    """Generate a hash for assets, and append to its entry in context.
+
+    assets: a list of assets to hash, each path should be relative to
+         the theme's static folder.
+
+    theme_static: a path to the theme's static folder.
+
+    context: the Sphinx context object where asset links are stored. These are:
+        `css_files` and `script_files` keys.
+    """
+    for asset in assets:
+        # CSS assets are stored in css_files, JS assets in script_files
+        asset_type = "css_files" if asset.endswith(".css") else "script_files"
+        if asset_type in context:
+            # Define paths to the original asset file, and its linked file in Sphinx
+            asset_sphinx_link = f"_static/{asset}"
+            asset_source_path = theme_static / asset
+            if not asset_source_path.exists():
+                SPHINX_LOGGER.warn(
+                    f"Asset {asset_source_path} does not exist, not linking."
+                )
+            # Find this asset in context, and update it to include the digest
+            if asset_sphinx_link in context[asset_type]:
+                hash = _gen_hash(asset_source_path)
+                ix = context[asset_type].index(asset_sphinx_link)
+                context[asset_type][ix] = asset_sphinx_link + "?digest=" + hash
+
+
+def hash_html_assets(app, pagename, templatename, context, doctree):
     """Add ?digest={hash} to assets in order to bust cache when changes are made.
 
     The source files are in `static` while the built HTML is in `_static`.
     """
-    # Hash the CSS
-    css_to_hash = ["styles/sphinx-book-theme.css"]
-    if "css_files" in context:
-        for css_file in css_to_hash:
-            css_html_path = f"_static/{css_file}"
-            ix = context["css_files"].index(css_html_path)
-            context["css_files"][ix] = css_html_path + _gen_hash(css_file)
-
-    # Hash the JS
-    js_to_hash = ["scripts/sphinx-book-theme.js"]
-    if "script_files" in context:
-        for js_file in js_to_hash:
-            js_html_path = f"_static/{js_file}"
-            ix = context["script_files"].index(js_html_path)
-            context["script_files"][ix] = js_html_path + _gen_hash(js_file)
+    assets = ["scripts/sphinx-book-theme.js"]
+    # Only append the book theme CSS if it's explicitly this theme. Sub-themes
+    # will define their own CSS file, so if a sub-theme is used, this code is
+    # run but the book theme CSS file won't be linked in Sphinx.
+    if app.config.html_theme == "sphinx_book_theme":
+        assets.append("styles/sphinx-book-theme.css")
+    hash_assets_for_files(assets, get_html_theme_path() / "static", context)
 
 
 def update_thebe_config(app):
@@ -155,7 +175,7 @@ def setup(app: Sphinx):
     # Events
     app.connect("builder-inited", update_thebe_config)
     app.connect("html-page-context", add_metadata_to_page)
-    app.connect("html-page-context", add_hashes_to_assets)
+    app.connect("html-page-context", hash_html_assets)
 
     # Header buttons
     app.connect("html-page-context", prep_header_buttons)
