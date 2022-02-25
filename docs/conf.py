@@ -1,7 +1,5 @@
 # -- Project information -----------------------------------------------------
 import os
-from pathlib import Path
-from urllib import request
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -18,14 +16,11 @@ master_doc = "index"
 extensions = [
     "ablog",
     "myst_nb",
-    "numpydoc",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "sphinxcontrib.youtube",
     "sphinx_copybutton",
     "sphinx_design",
-    "sphinx_tabs.tabs",
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
@@ -55,7 +50,7 @@ numfig = True
 
 myst_enable_extensions = [
     "dollarmath",
-    "amsmath",
+    # "amsmath",
     "deflist",
     # "html_admonition",
     # "html_image",
@@ -65,6 +60,7 @@ myst_enable_extensions = [
     # "linkify",
     # "substitution",
 ]
+myst_url_schemes = ("http", "https", "mailto")
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -103,6 +99,7 @@ thebe_config = {
 }
 
 html_theme_options = {
+    "theme_dev_mode": True,
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
     # "repository_branch": "gh-pages",  # For testing
@@ -110,7 +107,6 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
         "colab_url": "https://colab.research.google.com/",
-        "deepnote_url": "https://deepnote.com/",
         "notebook_interface": "jupyterlab",
         "thebe": True,
     },
@@ -119,11 +115,6 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "logo_only": True,
-    "show_toc_level": 2,
-    "announcement": (
-        "⚠️The latest release refactored our HTML, "
-        "so double-check your custom CSS rules!⚠️"
-    ),
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
@@ -142,27 +133,4 @@ post_auto_image = 1
 post_auto_excerpt = 2
 execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
-# To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
-bibtex_default_style = "plain"
-
-# -- Download kitchen sink reference docs -------------------------------------
-# These are the kitchen sink files used by the Sphinx Themes gallery at
-# https://github.com/sphinx-themes/sphinx-themes.org
-# To re-download, delete the `references/kitchen-sink` folder and build the docs
-kitchen_sink_files = [
-    "api.rst",
-    "index.rst",
-    "lists-and-tables.rst",
-    "paragraph-markup.rst",
-]
-for ifile in kitchen_sink_files:
-    path_file = Path(f"reference/kitchen-sink/{ifile}")
-    path_file.parent.mkdir(exist_ok=True)
-    if not path_file.exists():
-        print(f"Downloading kitchen sink file {ifile}")
-        resp = request.urlopen(
-            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa
-        )
-        header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
-        path_file.write_text(header + resp.read().decode())

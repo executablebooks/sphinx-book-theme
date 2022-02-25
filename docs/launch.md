@@ -1,5 +1,5 @@
 (customize:launch)=
-# Launch buttons for interactivity
+# Add launch buttons for interactivity
 
 You can automatically add buttons that allow users to interact with your
 book's content. This is either by directing them to a BinderHub or JupyterHub
@@ -67,24 +67,6 @@ html_theme_options = {
     ...
 }
 ```
-## Deepnote
-
-To add [Deepnote](https://deepnote.com) links to your page, add the following configuration:
-
-```python
-html_theme_options = {
-    ...
-    "launch_buttons": {
-        "deepnote_url": "https://deepnote.com"
-    },
-    ...
-}
-```
-
-```{warning}
-This will create a new Deepnote project every time you click the launch button.
-```
-
 
 ## Live code cells with Thebe
 

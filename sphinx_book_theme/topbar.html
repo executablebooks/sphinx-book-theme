@@ -1,0 +1,35 @@
+<div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            {% if theme_single_page != True %}
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="{{ translate('Toggle navigation') }}" aria-controls="site-navigation"
+                title="{{ translate('Toggle navigation') }}" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            {% endif %}
+            {% include "topbar/download.html" %}
+            {% include "topbar/repobuttons.html" %}
+            {% include "topbar/fullscreen.html" %}
+            {% include "topbar/launchbuttons.html" %}
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            {% set page_toc = generate_toc_html() %}
+
+            {%- if page_toc | length >= 1 %}
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                {{ page_toc }}
+            </nav>
+            {%- endif %}
+        </div>
+    </div>
+</div>

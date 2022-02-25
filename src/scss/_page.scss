@@ -1,0 +1,722 @@
+/*********************************************
+* Whole page *
+*********************************************/
+
+body {
+    padding-top: 0px !important;
+    img {
+        max-width: 100%;
+    }
+
+}
+
+code {
+    font-size: 87.5% !important;
+}
+
+pre {
+    border-radius: $box-border-radius;
+}
+
+// Highlight search phrases
+dt:target, span.highlighted {
+    background-color: #fbe54e;
+}
+
+/*********************************************
+* Main body *
+*********************************************/
+
+main.bd-content {
+    padding-top: $topbar-height !important;
+    padding-bottom: 0px !important;
+
+    #main-content {
+        padding-top: 1.5em;
+
+        // Content links and link color
+        a.headerlink {
+            opacity: 0;
+            margin-left: .2em;
+
+            &:hover {
+                background-color: transparent;
+                color: rgba(var(--pst-color-link), 1);;
+                opacity: 1 !important;
+            }
+        }
+
+        a, a:visited {
+            color: rgba(var(--pst-color-link), 1);;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: black;
+            &:hover a.headerlink {
+                opacity: .5;
+            }
+            // Make sure titles don't become hyperlink color when there are labels
+            a.toc-backref {
+                color: inherit;
+            }
+        }
+
+        // Top-level sections have some padding to avoid overlap w/ sidebar
+        // Also add it to the bottom-of-page next/prev container
+        > div > div > div.section, .prev-next-bottom {
+            padding-right: 1em;
+        }
+
+        $prevnext-padding: .75rem;
+        .prev-next-bottom {
+            overflow: auto;
+            margin-top: 3em;
+            margin-bottom: 1em;
+            padding: 0;
+
+            .right-next, .left-prev {
+                border: none;
+                display: flex;
+                align-items: center;
+
+                .prevnext-info {
+                    flex-direction: column;
+                }
+
+                p {
+                    margin: 0;
+                    line-height: 1.3em;
+                }
+
+                .prevnext-label, {
+                    color: $non-content-grey;
+                }
+
+                .prevnext-title {
+                    font-size: 1.1em;
+                    color: rgba(var(--pst-color-link), 1);
+                    font-weight: 500;
+                }
+
+                // Remove the PyData default
+                &::after {
+                    content: none;
+                }
+            }
+
+            // Remove the PyData default
+            .left-prev {
+
+                i {
+                    padding-right: $prevnext-padding;
+                }
+
+                &::before {
+                    content: none;
+                }
+            }
+
+            // Right styling
+            .right-next {
+                .prevnext-info {
+                    text-align: right;
+                }
+
+                i {
+                    padding-left: $prevnext-padding;
+                }
+            }
+        }
+
+        div.section {
+            overflow: visible !important;  // So that sidebars don't cause a scroll
+
+            // List styles to avoid too much whitespace
+            ul, ol {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // Math equations
+        span.eqno {
+            position: absolute;
+            right: .5em;
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size: 1.2em;
+        }
+
+        div.math {
+            overflow-x: auto;
+            position: relative;
+        }
+
+        // Compensate for the extra bottom margin of a preceding paragraph
+        p ~ div.math {
+            margin-top: -1.15rem
+        }
+
+        // Images
+        img {
+
+            &.align-center {
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+            }
+
+            &.align-left {
+                clear: left;
+                float: left;
+                margin-right: 1em;
+            }
+
+            &.align-right {
+                clear: right;
+                float: right;
+                margin-left: 1em;
+            }
+        }
+
+        // Figures
+        div.figure {
+            width: 100%;
+            margin-bottom: 1em;
+            text-align: center;
+
+            &.align-left {
+                text-align: left;
+                p.caption {
+                    margin-left: 0;
+                }
+            }
+            &.align-right {
+                text-align: right;
+                p.caption {
+                    margin-right: 0;
+                }
+            }
+
+            p.caption {
+                margin: .5em 10%;
+            }
+
+            &.margin, &.margin-caption {
+                p.caption {
+                    margin: .5em 0;
+                }
+            }
+
+            &.margin-caption p.caption {
+                text-align: left;
+            }
+
+            span.caption-number {
+                font-weight: bold;
+            }
+
+            span {
+                font-size: .9rem;
+            }
+        }
+
+        // Within-page Table of contents
+        div.contents {
+            padding: 1em;
+            p.topic-title {
+                font-size: 1.5em;
+                padding: .5em 0 0 1em;
+            }
+        }
+
+        // Misc text and directives
+        p.centered {
+            text-align: center;
+        }
+
+        // Tables from sphinx-tabs
+
+        div.sphinx-tabs > div.sphinx-menu {
+            padding: 0;
+        }
+
+        div.sphinx-tabs > div.sphinx-menu > a.item {
+            width: auto;
+            margin: 0px 0px -1px 0px;
+        }
+
+        // Footnotes and Citations
+        span.brackets, a.brackets {
+            &:before {
+                content: "[";
+            }
+
+            &:after {
+                content: "]";
+            }
+        }
+
+        .footnote-reference, a.bibtex.internal {
+            font-size: 1em;
+        }
+
+        // See: https://docutils.sourceforge.io/docs/user/rst/quickref.html#definition-lists
+        // TODO the field list should be a different format,
+        // but be wary of issues like https://github.com/pandas-dev/pydata-sphinx-theme/issues/193
+        dl.simple, dl.field-list {
+            & dd {
+                margin-left: 1.5em;
+            }
+            & dd:not(:last-child) {
+                margin-bottom: 0px;
+                p:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        dl.glossary {
+            dd {
+                margin-left: 1.5em;
+            }
+        }
+
+        dl.footnote {
+
+            span.fn-backref {
+                font-size: 1em;
+                padding-left:.1em;
+            }
+
+            dd {
+                font-size:.9em;
+                margin-left: 3em;
+            }
+        }
+
+        dl.citation {
+            margin-left: 3em;
+        }
+
+        dl.footnote {
+            dt.label {
+                float: left;
+            }
+
+            dd p {
+                padding-left: 1.5em;
+            }
+        }
+
+        // auto-doc, see: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#directive-autoattribute
+        // adapted from https://github.com/readthedocs/readthedocs.org/blob/master/readthedocs/core/static/core/css/theme.css
+        dl.module, dl.class, dl.exception, dl.function, dl.decorator, dl.data, dl.method, dl.attribute {
+            dt {
+                .headerlink {
+                    &:before {
+                        -webkit-font-smoothing: antialiased;
+                        font-family: "FontAwesome";
+                        display: inline-block;
+                        font-style: normal;
+                        font-weight: normal;
+                        line-height: 1;
+                        text-decoration: inherit;
+                    }
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-family: inherit;
+                    visibility: hidden;
+                    font-size: 14px;
+                    &:after {
+                        content: "";
+                        font-family: FontAwesome;
+                    }
+                }
+                .fa-pull-left.headerlink {
+                    margin-right: .3em;
+                }
+                .fa-pull-right.headerlink {
+                    margin-left: .3em;
+                }
+                .pull-left.headerlink {
+                    margin-right: .3em;
+                }
+                .pull-right.headerlink {
+                    margin-left: .3em;
+                }
+                a {
+                    .headerlink {
+                        display: inline-block;
+                        text-decoration: inherit;
+                    }
+                }
+                .btn {
+                    .headerlink {
+                        display: inline;
+                    }
+                    .fa-large.headerlink {
+                        line-height: .9em;
+                    }
+                    .fa-spin.headerlink {
+                        display: inline-block;
+                    }
+                }
+                .nav {
+                    .headerlink {
+                        display: inline;
+                    }
+                    .fa-large.headerlink {
+                        line-height: .9em;
+                    }
+                    .fa-spin.headerlink {
+                        display: inline-block;
+                    }
+                }
+                .btn.headerlink {
+                    &:before {
+                        opacity: .5;
+                        -webkit-transition: opacity .05s ease-in;
+                        -moz-transition: opacity .05s ease-in;
+                        transition: opacity .05s ease-in;
+                    }
+                    &:hover {
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .btn-mini {
+                    .headerlink {
+                        &:before {
+                            font-size: 14px;
+                            vertical-align: -15%;
+                        }
+                    }
+                }
+                .rst-versions {
+                    .rst-current-version {
+                        .headerlink {
+                            color: #fcfcfc;
+                        }
+                    }
+                }
+                &:hover {
+                    .headerlink {
+                        &:after {
+                            visibility: visible;
+                        }
+                    }
+                }
+                font-weight: bold;
+            }
+            margin-bottom: 24px;
+            p {
+                margin-bottom: 12px !important;
+            }
+            table {
+                margin-bottom: 12px !important;
+            }
+            ul {
+                margin-bottom: 12px !important;
+            }
+            ol {
+                margin-bottom: 12px !important;
+            }
+            dd {
+                margin: 0 0 12px 24px;
+            }
+            &:not(.docutils) {
+                margin-bottom: 24px;
+                dt {
+                    display: table;
+                    margin: 6px 0;
+                    font-size: 90%;
+                    line-height: normal;
+                    background: #e7f2fa;
+                    color: #2980B9;
+                    border-top: solid 3px #6ab0de;
+                    padding: 6px;
+                    position: relative;
+                    &:before {
+                        color: #6ab0de;
+                    }
+                    .headerlink {
+                        color: #404040;
+                        font-size: 100% !important;
+                    }
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+                dl {
+                    dt {
+                        margin-bottom: 6px;
+                        border: none;
+                        border-left: solid 3px #ccc;
+                        background: #f0f0f0;
+                        color: #555;
+                        .headerlink {
+                            color: #404040;
+                            font-size: 100% !important;
+                        }
+                    }
+                }
+                tt {
+                    font-weight: bold;
+                    font-weight: bold;
+                }
+                code {
+                    font-weight: bold;
+                }
+                tt.descname {
+                    background-color: transparent;
+                    background-color: transparent;
+                    border: none;
+                    border: none;
+                    padding: 0;
+                    padding: 0;
+                    font-size: 100% !important;
+                    font-size: 100% !important;
+                    font-weight: bold;
+                    font-weight: bold;
+                }
+                tt.descclassname {
+                    background-color: transparent;
+                    background-color: transparent;
+                    border: none;
+                    border: none;
+                    padding: 0;
+                    padding: 0;
+                    font-size: 100% !important;
+                    font-size: 100% !important;
+                }
+                code.descname {
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    font-size: 100% !important;
+                    font-weight: bold;
+                }
+                code.descclassname {
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    font-size: 100% !important;
+                }
+                .optional {
+                    display: inline-block;
+                    padding: 0 4px;
+                    color: #000;
+                    font-weight: bold;
+                }
+                .property {
+                    display: inline-block;
+                    padding-right: 8px;
+                }
+            }
+            .viewcode-link {
+                display: inline-block;
+                color: #27AE60;
+                font-size: 80%;
+                padding-left: 24px;
+            }
+        }
+    }
+}
+
+// Cell-specific controls
+div.cell {
+
+    div.cell_output {
+        padding-right: 0;
+    }
+
+    &.tag_output_scroll, &.tag_scroll-output {
+        div.cell_output {
+            max-height: 24em;
+            overflow-y: auto;
+        }
+    }
+    &.tag_scroll-input {
+        div.cell_input {
+            max-height: 24em;
+            overflow-y: auto;
+        }
+    }
+}
+
+.highlighttable {
+    .linenos {
+        vertical-align: baseline;
+    }
+}
+
+// Extension over-rides
+// Toggle-button overrides
+.toggle.admonition button.toggle-button {
+    top: 0.5em !important;
+}
+
+.admonition {
+    // Soften admonition styling from the PyData Theme
+    border-radius: $box-border-radius;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
+
+    // Admonition seealso styling
+    &.seealso {
+        border-color: #28a745;
+
+        .admonition-title {
+            background-color:rgba(40, 167, 70, 0.1);
+
+            &:before {
+                color: #28a745;
+                content: "\f064"
+            }
+        }
+    }
+}
+
+button.toggle-button-hidden:before {
+    bottom: 0.2em !important;
+}
+
+// Margin and content-sidebar rules
+// Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
+div.sidebar, div.margin, div.margin-caption p.caption, .cell.tag_popout, .cell.tag_margin {
+    width: 40%;
+    float: right;
+    border-left: 1px #a4a6a7 solid;
+    margin-left: 0.5em;
+    padding: .2em 0 .2em 1em;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    p.sidebar-title {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+}
+
+
+// Right margin CSS, largely copied from https://edwardtufte.github.io/tufte-css/
+// 992px is the L breakpoint in bootstrap
+@media (min-width: $breakpoint-md) {
+    div.cell.tag_popout, div.cell.tag_margin, div.margin, div.margin-caption p.caption {
+        border: none;
+        clear: right;
+        width: 31% !important;
+        margin: 0 -35% 0 0 !important;
+        padding: 0 !important;
+        font-size: 0.9rem;
+        line-height: 1.3;
+        vertical-align: baseline;
+        position: relative;
+
+        p {
+            margin-bottom: .5em;
+
+            &.sidebar-title {
+                font-size: 1em;
+            }
+        }
+    }
+
+    // Make cell outputs take up more space if they're in the margin
+    div.cell.tag_margin .cell_output {
+        padding-left: 0;
+    }
+
+    div.sidebar:not(.margin) {
+        width: 60%;
+        margin-left: 1.5em;
+        margin-right: -28%;
+    }
+
+}
+
+
+@media (min-width: $breakpoint-md) {
+    div.cell.tag_full-width, div.cell.tag_full_width, div.full_width, div.full-width {
+        width: 134% !important;
+    }
+}
+
+blockquote {
+    margin: 1em;
+    padding: .2em 1.5em;
+    border-left: 4px solid #ccc;
+
+    &.pull-quote, &.epigraph, &.highlights {
+        font-size:1.25em;
+        border-left: none;
+    }
+
+    div > p {
+        margin-bottom: .5em;
+    }
+
+    div > p + p.attribution {
+        font-style: normal;
+        font-size: .9em;
+        text-align: right;
+        color: #6c757d;
+        padding-right: 2em;
+    }
+}
+
+// Code blocks should have a margin, but code *cells* get margin from a parent
+div.highlight {
+    background: none;
+    margin-bottom: 1em;
+}
+
+div.cell div.highlight {
+    margin-bottom: 0em;
+}
+
+// Thebelab over-rides
+.thebelab-cell {
+    border: none !important;
+    margin-right: .5em !important;
+}
+
+.thebelab-cell .thebelab-input {
+    padding-left: 10px !important;
+}
+
+.cell.docutils.container {
+    padding-right: 0px !important;
+}
+
+button.thebe-launch-button {
+    height: 2.5em;
+    font-size: 1em;
+}
+
+// toc directive styles
+div.tableofcontents-wrapper p.caption {
+    font-weight: 600 !important;
+    margin-bottom: 0em !important;
+}
+
+// CodeMirror styles for live thebe cells.
+.cm-s-default {
+    font-family: var(--jp-code-font-family);
+    font-size: var(--jp-code-font-size);
+    line-height: var(--jp-code-line-height);
+}
+
+.CodeMirror-focused {
+    background-color: var(--jp-cell-editor-active-background) !important;
+    border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+    margin: -1px;
+}
