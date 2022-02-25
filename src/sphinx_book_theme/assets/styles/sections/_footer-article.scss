@@ -1,0 +1,23 @@
+/*********************************************
+* Footer - article *
+*********************************************/
+
+// Previous and next area at the bottom
+footer.footer-article {
+  border-top: none;
+  padding: 0;
+
+  .prev-next-area {
+    font-size: var(--sbt-prevnext-font-size);
+
+    a {
+      margin-bottom: 1em;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    // On wide screens, make space for the right margin
+    @media (min-width: $breakpoint-md) {
+      max-width: $content-max-width;
+    }
+  }
+}

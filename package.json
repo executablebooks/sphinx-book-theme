@@ -1,0 +1,24 @@
+{
+  "name": "sphinx_book_theme",
+  "repository": "https://github.com/executablebooks/sphinx-book-theme",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "dedent": "^0.7.0",
+    "extract-loader": "^4.0.3",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^6.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "optimize-css-assets-webpack-plugin": "^5.0.3"
+  }
+}

@@ -1,0 +1,32 @@
+{# To trigger whether the TOC and its button show up #}
+{% set page_toc = generate_toc_html() %}
+{% from "../macros/buttons.html" import render_funcs, render_label_input_button with context %}
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        {% if theme_single_page != True %}
+        {{ render_label_input_button(for_input="__navigation", tooltip="Toggle navigation", icon="fas fa-bars", tooltip_placement="right") }}
+        {% endif %}
+    </div>
+    <div class="header-article__right">
+        {%- for button in header_buttons -%}
+        {{ render_funcs[button.pop("type")](**button) }}
+        {%- endfor -%}
+
+        {% if page_toc -%}
+        {{ render_label_input_button("__page-toc", icon="fas fa-list", label="page-toc") }}
+        {%- endif %}
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    {%- if page_toc | length >= 1 %}
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        {{ page_toc }}
+    </nav>
+    {%- endif %}
+</div>

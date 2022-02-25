@@ -26,16 +26,16 @@ The following options are available via `html_theme_options`
   - Branch of the repository for the documentation (e.g., `master`, `main`, `docs`). See [](source-files:repository).
 * - `use_issues_button`
   - bool
-  - Add an button in the topbar with a link to issues for the repository (used in conjunction with `repository_url` and `repository_branch`). See  [](source-files:repository).
+  - Add an button in the header with a link to issues for the repository (used in conjunction with `repository_url` and `repository_branch`). See  [](source-files:repository).
 * - `use_download_button`
   - bool
-  - Add a button in the topbar to download the source file of the page. See [](customize:source-files).
+  - Add a button in the header to download the source file of the page. See [](customize:source-files).
 * - `use_fullscreen_button`
   - bool
-  - Add a button in the topbar to trigger full-screen mode.
+  - Add a button in the header to trigger full-screen mode.
 * - `use_repository_button`
   - bool
-  - Add a button in the topbar that links to the repository of the documentation.See [](source-files:repository).
+  - Add a button in the header that links to the repository of the documentation.See [](source-files:repository).
 * - `launch_buttons`
   - bool
   - Include Binder launch buttons for pages that were built from Jupyter Notebooks. See [](customize:launch).
@@ -57,9 +57,6 @@ The following options are available via `html_theme_options`
 * - `toc_title`
   - str
   - The text to be displayed with the in-page TOC (`Contents` is default)
-* - `theme_dev_mode`
-  - bool
-  - (developers only) Trigger some features that make it easier to develop the theme.
 ```
 
 ## Customization Topics
@@ -69,6 +66,8 @@ The following sections describe a few ways to customize the theme in more depth.
 ```{toctree}
 sidebar-primary.md
 sidebar-secondary.md
+announcements.md
+header.md
 download.md
 source-files.md
 custom-css.md

@@ -1,21 +1,91 @@
 # Changelog
 
-# v0.1.3 - 2021-08-25
+## v0.1.10...v0.2.0
+
+This release includes a few under-the-hood and performance improvements to the CSS and HTML of the theme. While there are no major new features, some of these changes have restructured the HTML so double-check your documentation, especially if you had custom CSS rules the sidebar.
+
+Here are a few improvements:
+
+- The right Table of Contents is now hidden using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) which will reduce the number of JavaScript calls and improve reliability of this feature. [#448](https://github.com/executablebooks/sphinx-book-theme/pull/448) ([@choldgraf](https://github.com/choldgraf))
+
+- The left sidebar is now toggle-able **only with CSS**, which should make it less prone to failure due to other conflicting javascript on the page. It now includes a "sidebar drawer" on mobile that gives more vertical space for the sidebar. [#454](https://github.com/executablebooks/sphinx-book-theme/pull/454) ([@choldgraf](https://github.com/choldgraf))
+
+- You can now add Deepnote buttons for notebook launch buttons [#385](https://github.com/executablebooks/sphinx-book-theme/pull/385) ([@jakubzitny](https://github.com/jakubzitny))
+
+## v0.1.9 .. v0.1.10
+
+Maintenance release, to remove the unused `click` dependency.
+
+## v0.1.8 .. v0.1.9
+
+This is a minor release to fix a bug that was introduced which broke the right sidebar anchor links.
+
+## v0.1.7 .. v0.1.8
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.7...862632b892f6acd640aa080eb1f50ac6d3de7bc3))
+
+This is a minor release that makes a few bugfixes and small enhancements.
+
+- Printing to PDF from HTML is now formatted more elegantly [#438](https://github.com/executablebooks/sphinx-book-theme/pull/438) ([@AakashGfude](https://github.com/AakashGfude))
+- Minor stylistic bugfixes across the theme CSS
+
+# v0.1.6 .. v0.1.7
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.6...v0.1.7
+
+### Summary
+
+This release primarily updates the pydata theme to bring in a few new theme features and bug-fixes.
+
+### What's Changed
+* UPDATE: pydata sphinx theme v0.7.2 by @ocefpaf in https://github.com/executablebooks/sphinx-book-theme/pull/406
+* UPDATE: pydata-sphinx-theme 0.7.2 by @kousu in https://github.com/executablebooks/sphinx-book-theme/pull/429
+* IMPROVE: translation in the footer for Japanese language by @KengoTODA in https://github.com/executablebooks/sphinx-book-theme/pull/426
+
+## v0.1.5...v0.1.6
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.5...1515334eec40575b0a80c51ce78453ced2ff2484))
+
+### Enhancements made
+
+- Add pst prefix to variables [#413](https://github.com/executablebooks/sphinx-book-theme/pull/413) ([@choldgraf](https://github.com/choldgraf))
+- Note TOC level auto-show [#410](https://github.com/executablebooks/sphinx-book-theme/pull/410) ([@choldgraf](https://github.com/choldgraf))
+- Add note of margin CSS classes [#405](https://github.com/executablebooks/sphinx-book-theme/pull/405) ([@choldgraf](https://github.com/choldgraf))
+
+## v0.1.5 - 2021-09-23
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.4...c85925c0109a1038994947acb951d1d918a819f8))
+
+### Enhancements made
+
+- Move CSS hash to GET parameter so downstream themes can bust CSS properly [#397](https://github.com/executablebooks/sphinx-book-theme/pull/397) ([@jacobtomlinson](https://github.com/jacobtomlinson))
+
+## v0.1.4 - 2021-09-16
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.3...28358bbc0dc2f1e6e9fff0ac64321685c9edfc00))
+
+### Enhancements made
+
+- ⬆️ UPGRADE: Sphinx v4.0.0 [#364](https://github.com/executablebooks/sphinx-book-theme/pull/364) ([@choldgraf](https://github.com/choldgraf))
+- ✨ IMPROVE: Harmonize themes between static and live code [#393](https://github.com/executablebooks/sphinx-book-theme/pull/393) ([@patrickmineault](https://github.com/patrickmineault))
+- ✨ IMPROVE: Minor tweaks to footer css [#389](https://github.com/executablebooks/sphinx-book-theme/pull/389) ([@choldgraf](https://github.com/choldgraf))
+
+## v0.1.3 - 2021-08-25
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.2...9a2da30342ace86978ddbd345eb69f5b4479b31c))
 
-## Enhancements made
+### Enhancements made
 
 - ✨ IMPROVE: Add chevrons to prev/next [#386](https://github.com/executablebooks/sphinx-book-theme/pull/386) ([@choldgraf](https://github.com/choldgraf))
 - ✨ IMPROVE: Improving accessibility labeling [#375](https://github.com/executablebooks/sphinx-book-theme/pull/375) ([@choldgraf](https://github.com/choldgraf))
 - ✨ IMPROVE: improve math styling [#369](https://github.com/executablebooks/sphinx-book-theme/pull/369) ([@akhmerov](https://github.com/akhmerov))
 
-## Bugs fixed
+### Bugs fixed
 
 - 🐛 FIX: Fix translation for prev/next [#384](https://github.com/executablebooks/sphinx-book-theme/pull/384) ([@choldgraf](https://github.com/choldgraf))
 
 
-# v0.1.1...v0.1.2 - 2021-08-06
+## v0.1.1...v0.1.2 - 2021-08-06
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.1...v0.1.2))
 
@@ -24,21 +94,21 @@
 * 🐛 FIX: Dropdown menus on mobile [#367](https://github.com/executablebooks/sphinx-book-theme/pull/367):
   Menus are translated left, so that they are not clipped on small screens
 
-# v0.1.0...v0.1.1
+## v0.1.0...v0.1.1
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.0...e05def5b9a4fc777f702553a0bcaf7939440dbd3))
 
-## New features added
+### New features added
 
 * Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
 
-## Enhancements made
+### Enhancements made
 
 * Add css to highlight searched for phrases [#350](https://github.com/executablebooks/sphinx-book-theme/pull/350) ([@sanjayankur31](https://github.com/sanjayankur31))
 * Add logo_only theme option [#349](https://github.com/executablebooks/sphinx-book-theme/pull/349) ([@djangoliv](https://github.com/djangoliv))
 * Soften edges in admonitions and remove some ink [#352](https://github.com/executablebooks/sphinx-book-theme/pull/352) ([@choldgraf](https://github.com/choldgraf))
 
-## Bugs fixed
+### Bugs fixed
 
 * 🐛 FIX: Path to custom output directory for _sources [#346](https://github.com/executablebooks/sphinx-book-theme/pull/346) ([@dfm](https://github.com/dfm))
 * 🐛 FIX: Fixing sidebar animation [#333](https://github.com/executablebooks/sphinx-book-theme/pull/333) ([@choldgraf](https://github.com/choldgraf))
@@ -90,7 +160,7 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ### New features added
 
 - Added tag for cell-input [#259](https://github.com/executablebooks/sphinx-book-theme/pull/259) ([@AakashGfude](https://github.com/AakashGfude))
-- Add a shadow to topbar, on scroll [#255](https://github.com/executablebooks/sphinx-book-theme/pull/255) ([@pradyunsg](https://github.com/pradyunsg))
+- Add a shadow to header, on scroll [#255](https://github.com/executablebooks/sphinx-book-theme/pull/255) ([@pradyunsg](https://github.com/pradyunsg))
 - Add CSS to center align images with class [#292](https://github.com/executablebooks/sphinx-book-theme/pull/292) ([@DrDrij](https://github.com/DrDrij))
 
 ### Enhancements made
