@@ -1,4 +1,4 @@
-# Get started
+# Get started with the theme
 
 This is a short step-by-step tutorial to get started with the Sphinx Book Theme.
 
@@ -59,7 +59,7 @@ html_theme_options = {
 }
 ```
 
-When you build your documentation, your header should now include a small GitHub logo that has a link to the repository.
+When you build your documentation, your topbar should now include a small GitHub logo that has a link to the repository.
 
 
 :::{seealso}

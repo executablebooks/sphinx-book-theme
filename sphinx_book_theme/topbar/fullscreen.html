@@ -1,0 +1,7 @@
+<!-- Full screen (wrap in <a> to have style consistency -->
+{% if theme_use_fullscreen_button %}
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="{{ translate('Fullscreen mode') }}"
+        title="{{ translate('Fullscreen mode') }}"><i
+            class="fas fa-expand"></i></button></a>
+{% endif %}

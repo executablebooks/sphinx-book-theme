@@ -1,0 +1,73 @@
+{% extends "pydata_sphinx_theme/layout.html" %}
+
+{% block fonts %}
+  <!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
+  <!-- ... and optionally preload the `woff2` for snappier page loads -->
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="{{ pathto('_static/et-book/et-book-semi-bold-old-style-figures/et-book-semi-bold-old-style-figures.woff', 1) }}" as="font" type="font/woff" crossorigin>
+{% endblock %}
+
+
+{%- block extrahead %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="{{ language }}">
+    {% for favicon in theme_favicons %}
+      {% if favicon.href[:4] == 'http'%}
+      <link rel="{{ favicon.rel }}" sizes="{{ favicon.sizes }}" href="{{ favicon.href }}">
+      {% else %}
+      <link rel="{{ favicon.rel }}" sizes="{{ favicon.sizes }}" href="{{ pathto('_static/' + favicon.href, 1) }}">
+      {% endif %}
+    {% endfor %}
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@patrickmineault" />
+    <meta name="twitter:title" content="The Good Research Code Handbook" />
+    <meta name="twitter:description" content="This handbook is for grad students, postdocs and PIs who do a lot of programming as part of their research. It will teach you, in a practical manner, how to organize your code so that it is easy to understand and works reliably." />
+    <meta name="twitter:image" content="https://goodresearch.dev/_images/unicorn.png" />
+
+{%- endblock %}
+
+{% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
+{% if is_single_page %}
+    {%- set sidebar_width_class = "col-md-2" %}
+{% else %}
+    {%- set sidebar_width_class = "col-md-3" %}
+{% endif %}
+
+<!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
+{% block docs_sidebar %}
+<div class="col-12 {{ sidebar_width_class }} bd-sidebar site-navigation show{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+    {% if not is_single_page %}
+        {% include "sidebar.html" %}
+    {%- endif %}
+</div>
+{% endblock %}
+
+{% block docs_main %}
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    {% block docs_body %}
+    {% include "topbar.html" %}
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        {{ super() }}
+        {% if theme_show_prev_next %}
+            {% include "_templates/prev-next.html" %}
+        {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+    {%- include "footer.html" %}
+</main>
+{% endblock %}
+
+{% block docs_toc %}
+{% endblock %}
+
+{% block docs_navbar %}
+{%- endblock %}
+
+{%- block footer %}
+{%- endblock %}

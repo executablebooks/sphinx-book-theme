@@ -1,0 +1,28 @@
+exclude .binder
+recursive-exclude .binder *
+exclude docs
+recursive-exclude docs *
+exclude tests
+recursive-exclude tests *
+exclude src
+recursive-exclude src *
+
+exclude .flake8
+exclude .pre-commit-config.yaml
+exclude .readthedocs.yml
+exclude codecov.yml
+exclude tox.ini
+
+include CHANGELOG.md
+include LICENSE
+include MANIFEST.in
+include README.md
+include web-compile-config.yml
+
+include sphinx_book_theme/theme.conf
+recursive-include sphinx_book_theme *.html
+recursive-include sphinx_book_theme/static *.js *.png *.css *.svg
+include sphinx_book_theme/translations/README.md
+recursive-include sphinx_book_theme/translations *.mo
+exclude jsons
+recursive-exclude sphinx_book_theme/translations *.json

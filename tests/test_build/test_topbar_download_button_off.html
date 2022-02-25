@@ -1,0 +1,52 @@
+<div class="col pl-md-4 topbar-main">
+ <button aria-controls="site-navigation" aria-expanded="true" aria-label="Toggle navigation" class="navbar-toggler ml-0" data-placement="left" data-target=".site-navigation" data-toggle="tooltip" id="navbar-toggler" title="Toggle navigation" type="button">
+  <i class="fas fa-bars">
+  </i>
+  <i class="fas fa-arrow-left">
+  </i>
+  <i class="fas fa-arrow-up">
+  </i>
+ </button>
+ <!-- Source interaction buttons -->
+ <!-- Full screen (wrap in <a> to have style consistency -->
+ <a class="full-screen-button">
+  <button aria-label="Fullscreen mode" class="btn btn-secondary topbarbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode" type="button">
+   <i class="fas fa-expand">
+   </i>
+  </button>
+ </a>
+ <!-- Launch buttons -->
+ <div class="dropdown-buttons-trigger">
+  <button aria-label="Launch interactive content" class="btn btn-secondary topbarbtn" id="dropdown-buttons-trigger">
+   <i class="fas fa-rocket">
+   </i>
+  </button>
+  <div class="dropdown-buttons">
+   <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/section1/ntbk.ipynb">
+    <button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Launch Binder" type="button">
+     <img alt="Interact on binder" class="binder-button-logo" src="../_static/images/logo_binder.svg"/>
+     Binder
+    </button>
+   </a>
+   <a class="jupyterhub-button" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https://github.com/executablebooks/sphinx-book-theme&amp;urlpath=lab/tree/sphinx-book-theme/TESTPATH/section1/ntbk.ipynb&amp;branch=master">
+    <button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Launch JupyterHub" type="button">
+     <img alt="Interact on JupyterHub" class="jupyterhub-button-logo" src="../_static/images/logo_jupyterhub.svg"/>
+     JupyterHub
+    </button>
+   </a>
+   <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/sphinx-book-theme/blob/master/TESTPATH/section1/ntbk.ipynb">
+    <button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Launch Colab" type="button">
+     <img alt="Interact on Colab" class="colab-button-logo" src="../_static/images/logo_colab.png"/>
+     Colab
+    </button>
+   </a>
+   <button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" onclick="initThebeSBT()" title="Launch Thebe" type="button">
+    <i class="fas fa-play">
+    </i>
+    <span style="margin-left: .4em;">
+     Live Code
+    </span>
+   </button>
+  </div>
+ </div>
+</div>
