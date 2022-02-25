@@ -134,3 +134,7 @@ dmypy.json
 
 # VS Code
 .vscode/
+node_modules
+.nodeenv/
+.nodeenv/bin/
+booktheme.po
