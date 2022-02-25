@@ -136,4 +136,8 @@ node_modules/
 
 # Editors
 .vscode/
+node_modules
+.nodeenv/
+.nodeenv/bin/
+booktheme.po
 .idea
