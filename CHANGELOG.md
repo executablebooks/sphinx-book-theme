@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.3-pre - 2022-02-025
+
+This is a significant change in the HTML and CSS of the site, with the goal of making it more standardized and robust. There are several design tweaks that have been made. Here is a short overview:
+
+- The sidebars are now a slightly smaller font, with more padding, to give more attention to the page's content.
+- The HTML structure of the site has been re-worked to make `sticky` and other CSS behaviors more dependable.
+- The header buttons are now standardized and have an updated look and feel.
+- The in-page margin CSS is now more reliable
+- Improvements to scrollbar style throughout the site
+
+See the PRs below for where most of these changes occurred.
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.2.0...d9c1abc4197445faab7892291520de448f363274))
+
+## Enhancements made
+
+- ‼️ REFACTOR: HTML and CSS restructuring [#472](https://github.com/executablebooks/sphinx-book-theme/pull/472) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Standardize scrollbar behavior [#481](https://github.com/executablebooks/sphinx-book-theme/pull/481) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Standardize header buttons [#490](https://github.com/executablebooks/sphinx-book-theme/pull/490) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Updating search page style [#491](https://github.com/executablebooks/sphinx-book-theme/pull/491) ([@choldgraf](https://github.com/choldgraf))
+
 ## v0.1.10...v0.2.0
 
 This release includes a few under-the-hood and performance improvements to the CSS and HTML of the theme. While there are no major new features, some of these changes have restructured the HTML so double-check your documentation, especially if you had custom CSS rules the sidebar.
