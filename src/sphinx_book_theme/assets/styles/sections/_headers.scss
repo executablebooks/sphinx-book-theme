@@ -1,3 +1,6 @@
+/**
+ * A few different header CSS rules
+ */
 .header-item {
   width: 100%;
   text-align: center;
@@ -15,9 +18,5 @@
       // Announcements can take a bit more width on mobile
       padding: 0.4em 2%;
     }
-  }
-
-  &.header {
-    border-bottom: $border-thin;
   }
 }

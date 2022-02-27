@@ -30,3 +30,12 @@
     }
   }
 }
+
+/**
+ * Header behavior on mobile
+ */
+@mixin header-height-mobile {
+  @media (max-width: $breakpoint-md) {
+    height: $header-article-height + 0.75em;
+  }
+}
