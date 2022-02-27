@@ -7,6 +7,7 @@
   background-color: white;
   transition: left 0.2s;
   font-size: var(--sbt-header-article-font-size);
+
   @include header-height-mobile;
 
   .scrolled & {
