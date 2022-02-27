@@ -36,6 +36,6 @@
  */
 @mixin header-height-mobile {
   @media (max-width: $breakpoint-md) {
-    height: $header-article-height + 0.5em;
+    height: $header-article-height + 0.75em;
   }
 }
