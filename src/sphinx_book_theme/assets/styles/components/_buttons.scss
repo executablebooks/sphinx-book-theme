@@ -22,9 +22,12 @@
     align-items: center;
   }
 
+  // Icons and image icons
   img,
   i {
     margin: auto;
+    width: 1em;
+    text-align: center;
   }
 }
 
@@ -59,14 +62,9 @@
     justify-content: left;
     padding: 0.1rem 0rem;
 
-    // Center the icon in the available white space
-    i,
-    img {
-      margin: auto;
-    }
-
-    img {
-      width: 1em;
+    img,
+    i {
+      font-size: 0.9em;
     }
   }
 

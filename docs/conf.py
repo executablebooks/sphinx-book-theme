@@ -108,7 +108,7 @@ html_theme_options = {
     # "repository_branch": "gh-pages",  # For testing
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
-        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+        "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
         "colab_url": "https://colab.research.google.com/",
         "deepnote_url": "https://deepnote.com/",
         "notebook_interface": "jupyterlab",

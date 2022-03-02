@@ -173,6 +173,8 @@ def add_launch_buttons(
 
     # Add the buttons to header_buttons
     if len(launch_buttons_list) == 1:
+        # Remove the text since it's just a single button, want just an icon.
+        launch_buttons_list[0]["text"] = ""
         header_buttons.extend(launch_buttons_list)
     else:
         for lb in launch_buttons_list:
