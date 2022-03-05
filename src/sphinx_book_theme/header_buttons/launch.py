@@ -172,20 +172,17 @@ def add_launch_buttons(
         context["use_thebe"] = True
 
     # Add the buttons to header_buttons
-    if len(launch_buttons_list) == 1:
-        header_buttons.extend(launch_buttons_list)
-    else:
-        for lb in launch_buttons_list:
-            lb["tooltip_placement"] = "left"
-        header_buttons.append(
-            {
-                "type": "group",
-                "tooltip": "Launch interactive content",
-                "icon": "fas fa-rocket",
-                "buttons": launch_buttons_list,
-                "label": "launch-buttons",
-            }
-        )
+    for lb in launch_buttons_list:
+        lb["tooltip_placement"] = "left"
+    header_buttons.append(
+        {
+            "type": "group",
+            "tooltip": "Launch interactive content",
+            "icon": "fas fa-rocket",
+            "buttons": launch_buttons_list,
+            "label": "launch-buttons",
+        }
+    )
 
 
 def _split_repo_url(url):
