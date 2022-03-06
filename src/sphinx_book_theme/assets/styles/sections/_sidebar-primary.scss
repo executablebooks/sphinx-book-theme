@@ -2,7 +2,6 @@
 * Left Nav Bar *
 *********************************************/
 #site-navigation {
-  height: 100vh; // On wide screens force this to take up the whole viewport
   padding-top: 0;
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
@@ -13,8 +12,10 @@
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
+  @include fill-vertical-screen-space();
+
+  // On mobile, behave like a slide-out drawer
   @media (max-width: $breakpoint-md) {
-    height: 100%; // So that height behaves properly on mobile
     position: fixed;
     width: $leftbar-width-mobile;
     max-width: 300px;
