@@ -184,6 +184,25 @@ var initTooltips = () => {
 };
 
 /**
+ * MutationObserver to move the ReadTheDocs button
+ */
+var initRTDObserver = () => {
+  const mutated = (mutationList, observer) => {
+    mutationList.forEach((mutation) => {
+      if (mutation.type == "childList") {
+        mutation.addedNodes.forEach((node) => {
+          document.querySelector(".bd-sidebar__bottom").append(node);
+        });
+      }
+    });
+  };
+
+  const observer = new MutationObserver(mutated);
+  const config = { childList: true };
+  observer.observe(document.body, config);
+};
+
+/**
  * Functions that are called when a user takes some action.
  */
 window.initThebeSBT = initThebeSBT;
@@ -196,3 +215,4 @@ window.toggleFullScreen = toggleFullScreen;
 sbRunWhenDOMLoaded(initTooltips);
 sbRunWhenDOMLoaded(scrollToActive);
 sbRunWhenDOMLoaded(initTocHide);
+sbRunWhenDOMLoaded(initRTDObserver);

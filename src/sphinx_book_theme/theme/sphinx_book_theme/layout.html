@@ -28,10 +28,16 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
 <!-- Sidebar -->
-<div class="pl-4 pr-3 bd-sidebar site-navigation noprint {% if is_single_page %} single-page{% endif %}" id="site-navigation">
-    {% if not is_single_page %}
-        {%- include "sections/sidebar.html" -%}
-    {%- endif %}
+<div class="bd-sidebar noprint{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+    <div class="bd-sidebar__top">
+        {%- if not is_single_page %}
+            {%- include "sections/sidebar.html" -%}
+        {%- endif %}
+    </div>
+    <div class="bd-sidebar__bottom">
+        {#- This is a placeholder for if/when we want to put things here #}
+        {#- It will make the top section shrink if it exists -#}
+    </div>
 </div>
 {% endblock %}
 

@@ -3,6 +3,7 @@
 *********************************************/
 #site-navigation {
   height: 100vh !important;
+  padding-top: 0;
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
@@ -12,8 +13,16 @@
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
-  @include scrollbar-style();
-  @include scrollbar-on-hover();
+  .bd-sidebar__top {
+    padding: 0 1rem 0rem 1.5rem;
+    overflow-y: auto;
+    @include scrollbar-style();
+    @include scrollbar-on-hover();
+  }
+
+  .bd-sidebar__bottom {
+    margin-top: auto;
+  }
 
   @media (max-width: $breakpoint-md) {
     position: fixed;
