@@ -29,15 +29,15 @@
 {% block docs_sidebar %}
 <!-- Sidebar -->
 <div class="bd-sidebar noprint{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+    {%- if not is_single_page %}
     <div class="bd-sidebar__top">
-        {%- if not is_single_page %}
-            {%- include "sections/sidebar.html" -%}
-        {%- endif %}
+        {%- include "sections/sidebar.html" -%}
     </div>
     <div class="bd-sidebar__bottom">
-        {#- This is a placeholder for if/when we want to put things here #}
-        {#- It will make the top section shrink if it exists -#}
+        {# In the future we can add other bottom elements, for now just RTD #}
+        <div id="rtd-footer-container"></div>
     </div>
+    {%- endif %}
 </div>
 {% endblock %}
 
