@@ -2,7 +2,7 @@
 * Left Nav Bar *
 *********************************************/
 #site-navigation {
-  height: 100vh !important;
+  height: 100vh; // On wide screens force this to take up the whole viewport
   padding-top: 0;
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
@@ -13,6 +13,15 @@
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
+  @media (max-width: $breakpoint-md) {
+    height: 100%; // So that height behaves properly on mobile
+    position: fixed;
+    width: $leftbar-width-mobile;
+    max-width: 300px;
+    font-size: 1.2em;
+    z-index: $zindex-offcanvas;
+  }
+
   .bd-sidebar__top {
     padding: 0 1rem 0rem 1.5rem;
     overflow-y: auto;
@@ -22,14 +31,6 @@
 
   .bd-sidebar__bottom {
     margin-top: auto;
-  }
-
-  @media (max-width: $breakpoint-md) {
-    position: fixed;
-    width: $leftbar-width-mobile;
-    max-width: 300px;
-    font-size: 1.2em;
-    z-index: $zindex-offcanvas;
   }
 
   nav ul.nav {
