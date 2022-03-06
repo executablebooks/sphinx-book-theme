@@ -137,6 +137,3 @@ node_modules/
 # Editors
 .vscode/
 .idea
-
-# Programmatically created stuff
-docs/_static/rtd-data.js
