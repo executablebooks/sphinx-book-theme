@@ -7,6 +7,8 @@
   // Extra selective selector to over-ride RTD
   .rst-versions.rst-badge {
     position: unset;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 
     &.shift-up .rst-current-version {
       background-color: black;
@@ -16,6 +18,8 @@
     .rst-current-version {
       display: flex;
       align-items: center;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
       gap: 0.2rem;
       height: 2.5rem;
       background-color: $non-content-grey;
