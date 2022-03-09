@@ -6,7 +6,7 @@
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
-  overflow-y: auto;
+  overflow-y: unset; // Unset the pydata value this so that the footer can be sticky
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
@@ -32,6 +32,8 @@
 
   .bd-sidebar__bottom {
     margin-top: auto;
+    position: sticky;
+    bottom: 0;
   }
 
   nav ul.nav {

@@ -172,7 +172,7 @@ def setup(app):
     # -- To demonstrate ReadTheDocs switcher -------------------------------------
     # This links a few JS and CSS files that mimic the environment that RTD uses
     # so that we can test RTD-like behavior.
-    if not os.environ.get("READTHEDOCS"):
+    if not os.environ.get("READTHEDOCS") and not os.environ.get("GITHUB_ACTIONS"):
         app.add_css_file(
             "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css"
         )
