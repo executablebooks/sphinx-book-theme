@@ -171,7 +171,9 @@ for ifile in kitchen_sink_files:
 def setup(app):
     # -- To demonstrate ReadTheDocs switcher -------------------------------------
     # This links a few JS and CSS files that mimic the environment that RTD uses
-    # so that we can test RTD-like behavior.
+    # so that we can test RTD-like behavior. We don't need to run it on RTD and we
+    # don't wanted it loaded in GitHub Actions because it messes up the lighthouse
+    # results.
     if not os.environ.get("READTHEDOCS") and not os.environ.get("GITHUB_ACTIONS"):
         app.add_css_file(
             "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css"
