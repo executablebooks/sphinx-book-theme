@@ -9,7 +9,7 @@ from docutils import nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
-
+from sphinx.util.docutils import SphinxRole
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 
@@ -162,6 +162,31 @@ class Margin(Sidebar):
         return nodes
 
 
+class SideNote(SphinxRole):
+    """Goes in the margin to the right of the page,
+    along with superscript reference number.
+    """
+
+    index = 0
+    docname = None
+
+    def run(self):
+        """Each sidenote comes with a superscripted index. Which resets itself in every page.
+        The sidenote element itself is just a span for now.
+        """
+        if not self.docname or self.env.docname == self.docname:
+            self.index += 1
+        else:
+            self.index = 1
+        self.docname = self.env.docname
+
+        superscript = nodes.superscript("", self.index)
+        para = nodes.inline(superscript)
+        para.attributes["classes"].append("sidenote")
+        para.extend([superscript, nodes.Text(self.text)])
+        return [superscript, para], []
+
+
 def setup(app: Sphinx):
     # Register theme
     theme_dir = get_html_theme_path()
@@ -185,6 +210,9 @@ def setup(app: Sphinx):
 
     # Directives
     app.add_directive("margin", Margin)
+
+    # Roles
+    app.add_role("sidenote", SideNote())
 
     # Update templates for sidebar
     app.config.templates_path.append(os.path.join(theme_dir, "components"))

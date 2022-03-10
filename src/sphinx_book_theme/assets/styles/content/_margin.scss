@@ -38,6 +38,10 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   }
 }
 
+span.sidenote {
+  @include margin-content();
+}
+
 div.margin,
 aside.margin,
 .cell.tag_popout,
