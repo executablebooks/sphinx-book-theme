@@ -12,29 +12,29 @@
   // Extra selective selector to over-ride RTD
   .rst-versions.rst-badge {
     position: unset;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
     font-size: 0.9em;
-
-    &.shift-up .rst-current-version {
-      background-color: black;
-    }
 
     // This is the top part of the dropdown, lists the current versions
     .rst-current-version {
       display: flex;
       align-items: center;
-      border-top-left-radius: 0.5em;
-      border-top-right-radius: 0.5em;
       gap: 0.2rem;
-      height: 2rem;
-      background-color: $non-content-grey;
+      height: 2.5rem;
       transition: background-color 0.2s ease-out;
-      color: white;
+      background-color: white;
+      color: $non-content-grey;
+      border-top: $border-thin;
 
       &:hover {
-        background-color: black;
+        background-color: rgba(
+          var(--pst-color-sidebar-expander-background-hover),
+          1
+        );
         cursor: pointer;
+      }
+
+      .fa {
+        color: $non-content-grey;
       }
 
       .fa-book {

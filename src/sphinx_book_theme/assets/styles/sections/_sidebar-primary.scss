@@ -10,9 +10,7 @@
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-
-  @include scrollbar-style();
-  @include scrollbar-on-hover();
+  overflow-y: unset; // To over-ride the pydata theme and allow for sticky items
   @include fill-vertical-screen-space();
 
   // On mobile, behave like a slide-out drawer
@@ -24,6 +22,16 @@
     z-index: $zindex-offcanvas;
   }
 
+  // The container for the sidebar content (stuff that isn't the RTD button)
+  .bd-sidebar__content {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    @include scrollbar-style();
+    @include scrollbar-on-hover();
+  }
+
   // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
   .bd-sidebar__top,
   .bd-sidebar__bottom {
@@ -33,6 +41,7 @@
   // This should always snap to the bottom even if there's no sidebar content
   .bd-sidebar__bottom {
     margin-top: auto;
+    margin-bottom: 2em;
   }
 
   nav ul.nav {
