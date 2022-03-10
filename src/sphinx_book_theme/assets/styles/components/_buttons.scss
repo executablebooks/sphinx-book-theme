@@ -13,7 +13,6 @@
   color: $non-content-grey;
   cursor: pointer;
   border: none;
-  font-size: 1.4em;
   padding: 0.1rem 0.5rem; // Horizontal padding since labels have none
   margin: 0 0.1rem;
 
@@ -28,6 +27,7 @@
     margin: auto;
     width: 1em;
     text-align: center;
+    font-size: 1.5rem; // Slightly larger for icons
   }
 }
 
@@ -47,6 +47,7 @@
   opacity: 0;
   transform: translateX(-75%);
   transition: opacity 0.2s ease-out;
+  font-size: 1rem;
 
   // Spacing and position
   width: 13em;
@@ -55,7 +56,6 @@
   padding: 0.5em;
 
   // Style
-  font-size: 0.9em;
   background-color: white;
 
   .headerbtn {
@@ -64,7 +64,7 @@
 
     img,
     i {
-      font-size: 0.9em;
+      font-size: 1.2em;
     }
   }
 

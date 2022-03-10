@@ -25,6 +25,11 @@
       color: $non-content-grey;
       border-top: $border-thin;
 
+      @media (max-width: $breakpoint-md) {
+        // Slightly bigger on mobile so the button is more noticeable.
+        height: 3rem;
+      }
+
       &:hover {
         background-color: rgba(
           var(--pst-color-sidebar-expander-background-hover),
