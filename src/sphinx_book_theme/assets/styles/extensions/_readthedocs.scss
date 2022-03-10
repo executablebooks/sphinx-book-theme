@@ -4,11 +4,17 @@
  * selectors than what RTD CSS uses.
  */
 .bd-sidebar {
+  // Parent container for everything else
+  div#rtd-footer-container {
+    position: sticky;
+    bottom: 0;
+  }
   // Extra selective selector to over-ride RTD
   .rst-versions.rst-badge {
     position: unset;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
+    font-size: 0.9em;
 
     &.shift-up .rst-current-version {
       background-color: black;
@@ -21,7 +27,7 @@
       border-top-left-radius: 0.5em;
       border-top-right-radius: 0.5em;
       gap: 0.2rem;
-      height: 2.5rem;
+      height: 2rem;
       background-color: $non-content-grey;
       transition: background-color 0.2s ease-out;
       color: white;
@@ -39,6 +45,7 @@
           content: "ReadTheDocs";
           font-family: sans-serif;
           font-weight: bold;
+          margin-left: 0.2em;
         }
       }
     }

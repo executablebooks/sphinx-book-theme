@@ -89,7 +89,6 @@ html_sidebars = {
         "categories.html",
         "archives.html",
         "sbt-sidebar-nav.html",
-        "sbt-sidebar-footer.html",
     ]
 }
 # Add any paths that contain custom static files (such as style sheets) here,

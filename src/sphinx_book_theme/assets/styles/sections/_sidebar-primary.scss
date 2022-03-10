@@ -6,12 +6,13 @@
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
-  overflow-y: unset; // Unset the pydata value this so that the footer can be sticky
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
+  @include scrollbar-style();
+  @include scrollbar-on-hover();
   @include fill-vertical-screen-space();
 
   // On mobile, behave like a slide-out drawer
@@ -23,17 +24,15 @@
     z-index: $zindex-offcanvas;
   }
 
-  .bd-sidebar__top {
+  // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
+  .bd-sidebar__top,
+  .bd-sidebar__bottom {
     padding: 0 1rem 0rem 1.5rem;
-    overflow-y: auto;
-    @include scrollbar-style();
-    @include scrollbar-on-hover();
   }
 
+  // This should always snap to the bottom even if there's no sidebar content
   .bd-sidebar__bottom {
     margin-top: auto;
-    position: sticky;
-    bottom: 0;
   }
 
   nav ul.nav {
