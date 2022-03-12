@@ -1,0 +1,10 @@
+/**
+ * Comment JavaScript libraries
+ */
+// In general we want to hide any comment libraries on print
+@media only print {
+  hypothesis-sidebar,
+  div.utterances {
+    display: none !important;
+  }
+}
