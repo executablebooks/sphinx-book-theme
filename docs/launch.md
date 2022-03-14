@@ -85,6 +85,23 @@ html_theme_options = {
 This will create a new Deepnote project every time you click the launch button.
 ```
 
+## RetroLite
+
+To add [RetroLite](https://jupyterlite-sphinx.readthedocs.io/en/latest/retrolite.html) links to your page, add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "retrolite_url": "./lite/retro/notebooks/"
+    },
+    ...
+}
+```
+
+```{warning}
+This requires installation of [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/) and the publication of a RetroLite environment as part of your published Jupyter Book environment.
+```
 
 ## Live code cells with Thebe
 
