@@ -1,6 +1,9 @@
 /**
  * Comment JavaScript libraries
- */
+  * Libraries supported here are:
+  * - Hypothesis.is : https://web.hypothes.is/
+  * - Utteranc.es : https://utteranc.es/
+  */
 // In general we want to hide any comment libraries on print
 @media only print {
   hypothesis-sidebar,
