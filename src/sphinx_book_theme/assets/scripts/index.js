@@ -184,15 +184,42 @@ var initTooltips = () => {
 };
 
 /**
- * Functions that are called when a user takes some action.
+ * MutationObserver to move the ReadTheDocs button
+ */
+function initRTDObserver() {
+  const mutatedCallback = (mutationList, observer) => {
+    mutationList.forEach((mutation) => {
+      // Check whether the mutation is for RTD, which will have a specific structure
+      if (mutation.addedNodes.length === 0) {
+        return;
+      }
+      if (mutation.addedNodes[0].data === undefined) {
+        return;
+      }
+      if (mutation.addedNodes[0].data.search("Inserted RTD Footer") != -1) {
+        mutation.addedNodes.forEach((node) => {
+          document.getElementById("rtd-footer-container").append(node);
+        });
+      }
+    });
+  };
+
+  const observer = new MutationObserver(mutatedCallback);
+  const config = { childList: true };
+  observer.observe(document.body, config);
+}
+
+/**
+ * Set up callback functions for UI click actions
  */
 window.initThebeSBT = initThebeSBT;
 window.printPdf = printPdf;
 window.toggleFullScreen = toggleFullScreen;
 
 /**
- * Functions that are called when we load the page.
+ * Set up functions to load when the DOM is ready
  */
 sbRunWhenDOMLoaded(initTooltips);
 sbRunWhenDOMLoaded(scrollToActive);
 sbRunWhenDOMLoaded(initTocHide);
+sbRunWhenDOMLoaded(initRTDObserver);
