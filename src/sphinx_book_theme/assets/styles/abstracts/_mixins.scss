@@ -39,3 +39,15 @@
     height: $header-article-height + 0.75em;
   }
 }
+
+/**
+ * Forces an element to fill the vertical screen space,
+ * but uses % on mobile because `vh` units behave weirdly on mobile.
+ * ref: https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser
+ */
+@mixin fill-vertical-screen-space {
+  height: 100vh; // On wide screens force this to take up the whole viewport
+  @media (max-width: $breakpoint-md) {
+    height: 100%; // So that height behaves properly on mobile
+  }
+}

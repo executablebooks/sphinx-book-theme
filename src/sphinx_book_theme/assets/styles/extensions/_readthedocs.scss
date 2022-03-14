@@ -1,0 +1,64 @@
+/**
+ * ReadTheDocs pop-up menu over-rides.
+ * We nest everything under `.bd-sidebar` so that we use more selective
+ * selectors than what RTD CSS uses.
+ */
+.bd-sidebar {
+  // Parent container for everything else
+  div#rtd-footer-container {
+    position: sticky;
+    bottom: 0;
+  }
+  // Extra selective selector to over-ride RTD
+  .rst-versions.rst-badge {
+    position: unset;
+    font-size: 0.9em;
+
+    // This is the top part of the dropdown, lists the current versions
+    .rst-current-version {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      height: 2.5rem;
+      transition: background-color 0.2s ease-out;
+      background-color: white;
+      color: $non-content-grey;
+      border-top: $border-thin;
+
+      @media (max-width: $breakpoint-md) {
+        // Slightly bigger on mobile so the button is more noticeable.
+        height: 3rem;
+      }
+
+      &:hover {
+        background-color: rgba(
+          var(--pst-color-sidebar-expander-background-hover),
+          1
+        );
+        cursor: pointer;
+      }
+
+      .fa {
+        color: $non-content-grey;
+      }
+
+      .fa-book {
+        float: unset;
+        margin-right: auto;
+
+        &:after {
+          content: "ReadTheDocs";
+          font-family: sans-serif;
+          font-weight: bold;
+          margin-left: 0.2em;
+        }
+      }
+    }
+
+    .rst-other-versions {
+      dt {
+        color: #ccc;
+      }
+    }
+  }
+}

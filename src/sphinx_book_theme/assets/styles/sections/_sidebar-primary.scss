@@ -2,25 +2,46 @@
 * Left Nav Bar *
 *********************************************/
 #site-navigation {
-  height: 100vh !important;
+  padding-top: 0;
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
-  overflow-y: auto;
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+  overflow-y: unset; // To over-ride the pydata theme and allow for sticky items
+  @include fill-vertical-screen-space();
 
-  @include scrollbar-style();
-  @include scrollbar-on-hover();
-
+  // On mobile, behave like a slide-out drawer
   @media (max-width: $breakpoint-md) {
     position: fixed;
     width: $leftbar-width-mobile;
     max-width: 300px;
     font-size: 1.2em;
     z-index: $zindex-offcanvas;
+  }
+
+  // The container for the sidebar content (stuff that isn't the RTD button)
+  .bd-sidebar__content {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    @include scrollbar-style();
+    @include scrollbar-on-hover();
+  }
+
+  // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
+  .bd-sidebar__top,
+  .bd-sidebar__bottom {
+    padding: 0 1rem 0rem 1.5rem;
+  }
+
+  // This should always snap to the bottom even if there's no sidebar content
+  .bd-sidebar__bottom {
+    margin-top: auto;
+    margin-bottom: 2em;
   }
 
   nav ul.nav {

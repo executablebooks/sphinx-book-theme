@@ -50,7 +50,7 @@ The following options are available via `html_theme_options`
   - Show children in the navigation bar down to the depth listed here. See [](sidebar:navbar-depth).
 * - `extra_navbar`
   - str
-  - Extra HTML to add below the sidebar footer (if `sbt-sidebar-footer.html` is used in `html_sidebars`). See [](custom-footer).
+  - Extra HTML to add below the sidebar footer. See [](custom-footer).
 * - `extra_footer`
   - str
   - Extra HTML to add in the footer of each page.

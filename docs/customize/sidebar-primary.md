@@ -15,7 +15,7 @@ For example, the following configuration would include *only the footer* on page
 
 ```python
 html_sidebars = {
-    "posts/*": ["sbt-sidebar-footer.html"]
+    "posts/*": ["sbt-sidebar-nav.html"]
 }
 ```
 
@@ -23,7 +23,7 @@ You can also use `**` to apply a set of sidebars to **all** pages of your book. 
 
 ```python
 html_sidebars = {
-    "**": ["sbt-sidebar-nav.html", "sbt-sidebar-footer.html"]
+    "**": ["sbt-sidebar-nav.html"]
 }
 ```
 
