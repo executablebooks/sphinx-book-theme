@@ -269,7 +269,9 @@ your Jupyter Book as well!
 The traditional Jupyter Notebook interface allows you to toggle **output scrolling**
 for your cells. This allows you to visualize part of a long output without it taking up
 the entire page.
+Let us see how sidenotes{sidenote}`This is sidenote text` look like.
 
+Here is another sidenote for you{sidenote}`This is a second sidenote text`. Nothing too fancy.
 You can trigger this behavior in Jupyter Book by adding the following
 tag to a cell's metadata:
 

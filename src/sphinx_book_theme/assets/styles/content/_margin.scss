@@ -38,8 +38,33 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   }
 }
 
+label.margin-toggle {
+  @media (max-width: $breakpoint-md) {
+    cursor: pointer;
+  }
+}
+
+input.margin-toggle {
+  display: none;
+  @media (max-width: $breakpoint-md) {
+    &:checked + .sidenote {
+      display: block;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 1rem 2.5%;
+      position: relative;
+    }
+  }
+}
+
 span.sidenote {
   @include margin-content();
+  border-left: none;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 div.margin,

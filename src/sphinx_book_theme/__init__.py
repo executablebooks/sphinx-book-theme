@@ -5,11 +5,12 @@ from pathlib import Path
 from functools import lru_cache
 
 from docutils.parsers.rst.directives.body import Sidebar
-from docutils import nodes
+from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 from sphinx.util.docutils import SphinxRole
+from .nodes import SideNoteNode
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 
@@ -43,7 +44,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Add a shortened page text to the context using the sections text
     if doctree:
         description = ""
-        for section in doctree.traverse(nodes.section):
+        for section in doctree.traverse(docutil_nodes.section):
             description += section.astext().replace("\n", " ")
         description = description[:160]
         context["page_description"] = description
@@ -180,11 +181,15 @@ class SideNote(SphinxRole):
             self.index = 1
         self.docname = self.env.docname
 
-        superscript = nodes.superscript("", self.index)
-        para = nodes.inline(superscript)
+        superscript = docutil_nodes.superscript("", self.index)
+        para = docutil_nodes.inline(superscript)
         para.attributes["classes"].append("sidenote")
-        para.extend([superscript, nodes.Text(self.text)])
-        return [superscript, para], []
+        para.extend([superscript, docutil_nodes.Text(self.text)])
+
+        sidenote = SideNoteNode()
+        sidenote.attributes["names"].append(f"sidenote-role-{self.index}")
+        sidenote.append(superscript)
+        return [sidenote, para], []
 
 
 def setup(app: Sphinx):
@@ -207,6 +212,9 @@ def setup(app: Sphinx):
     app.connect("html-page-context", add_launch_buttons)
     # Bump priority by 1 so that it runs after the pydata theme sets up the edit URL.
     app.connect("html-page-context", add_header_buttons, priority=501)
+
+    # Nodes
+    SideNoteNode.add_node(app)
 
     # Directives
     app.add_directive("margin", Margin)
