@@ -26,8 +26,13 @@ def visit_SideNoteNode(self, node):
         pass
     else:
         tagid = node.attributes["names"][0]
-        self.body.append(f"<label for='{tagid}' class='margin-toggle'>")
-        self.body.append(self.starttag(node, "span"))
+        if "marginnote" in tagid:
+            self.body.append(
+                f"<label for='{tagid}' class='margin-toggle marginnote-label'>"
+            )
+        else:
+            self.body.append(f"<label for='{tagid}' class='margin-toggle'>")
+            self.body.append(self.starttag(node, "span"))
 
 
 def depart_SideNoteNode(self, node):
@@ -35,7 +40,8 @@ def depart_SideNoteNode(self, node):
         pass
     else:
         tagid = node.attributes["names"][0]
-        self.body.append("</span>\n\n")
+        if "sidenote" in tagid:
+            self.body.append("</span>\n\n")
         self.body.append("</label>")
         self.body.append(
             f"<input type='checkbox' id='{tagid}' name='{tagid}' class='margin-toggle'>"

@@ -163,6 +163,19 @@ class Margin(Sidebar):
         return nodes
 
 
+class MarginNote(SphinxRole):
+    """Goes in the margin to the right of the page."""
+
+    def run(self):
+        para = docutil_nodes.inline()
+        para.attributes["classes"].append("marginnote")
+        para.append(docutil_nodes.Text(self.text))
+
+        marginnote = SideNoteNode()
+        marginnote.attributes["names"].append("marginnote-role")
+        return [marginnote, para], []
+
+
 class SideNote(SphinxRole):
     """Goes in the margin to the right of the page,
     along with superscript reference number.
@@ -182,7 +195,7 @@ class SideNote(SphinxRole):
         self.docname = self.env.docname
 
         superscript = docutil_nodes.superscript("", self.index)
-        para = docutil_nodes.inline(superscript)
+        para = docutil_nodes.inline()
         para.attributes["classes"].append("sidenote")
         para.extend([superscript, docutil_nodes.Text(self.text)])
 
@@ -220,6 +233,7 @@ def setup(app: Sphinx):
     app.add_directive("margin", Margin)
 
     # Roles
+    app.add_role("marginnote", MarginNote())
     app.add_role("sidenote", SideNote())
 
     # Update templates for sidebar
