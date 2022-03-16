@@ -25,10 +25,10 @@ class HandleFootnoteTransform(SphinxPostTransform):
 
                         sidenote = SideNoteNode()
                         para = docutil_nodes.inline()
-                        if text.startswith("{>}"):
+                        if text.startswith("{-}"):
                             # marginnotes
                             para.attributes["classes"].append("marginnote")
-                            para.append(docutil_nodes.Text(text.replace("{>}", "")))
+                            para.append(docutil_nodes.Text(text.replace("{-}", "")))
 
                             sidenote.attributes["names"].append("marginnote-role")
                         else:

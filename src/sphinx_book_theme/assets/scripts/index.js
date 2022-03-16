@@ -133,6 +133,8 @@ var initTocHide = () => {
   // Set up the intersection observer to watch all margin content
   let tocObserver = new IntersectionObserver(hideTocCallback);
   const selectorClasses = [
+    "marginnote",
+    "sidenote",
     "margin",
     "margin-caption",
     "full-width",

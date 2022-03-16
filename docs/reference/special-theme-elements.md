@@ -255,6 +255,18 @@ And here is my figure caption, if you look to the left, you can see that COOL is
 This note should not overlap with the margin caption!
 :::
 
+## Sidenotes and marginnotes
+
+Here's a sentence[^sn1] with multiple [^sn2] sidenotes.
+
+[^sn1]: Test sidenote 1.
+[^sn2]: Test sidenote 2.
+
+Here's a sentence[^mn1] with multiple marginnotes[^mn2].
+
+[^mn1]: {-} Test marginnote 1.
+[^mn2]: {-} Test marginnote 2.
+
 ## Nested admonitions
 
 These aren't theme-specific, but we still show below to make sure they work.
