@@ -84,6 +84,17 @@ but I'll stop here.
 ```
 ````
 `````
+## Examples of marginnote and sidenotes
+
+One of the most distinctive features of Tufte’s style is his extensive use of sidenotes{sidenote}`This is a sidenote`.
+Sidenotes are like footnotes, except they don’t force the reader to jump their eye to the bottom of the page,
+but instead display off to the side in the margin. Here is another sidenote{sidenote}`This is a second sidenote`.
+
+If you want a sidenote without footnote-style numberings, then you want a margin note.
+{marginnote}`This is a margin note. Notice there isn’t a number preceding the note.` On large screens,
+a margin note is just a sidenote that omits the reference number.
+This lessens the distracting effect taking away from the flow of the main text,
+but can increase the cognitive load of matching a margin note to its referent text.
 
 ## Sidebars
 
