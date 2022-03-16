@@ -260,6 +260,8 @@ your Jupyter Book as well!
 !jupyter -h
 ```
 
+
+
 ## Formatting code cells
 
 ### Scrolling cell outputs
