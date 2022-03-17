@@ -90,6 +90,7 @@ div.navbar-brand-box {
   a.navbar-brand {
     width: 100%;
     height: auto;
+    flex-direction: column;
 
     img {
       display: block;
