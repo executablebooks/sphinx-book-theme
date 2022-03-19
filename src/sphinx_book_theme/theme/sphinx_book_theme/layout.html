@@ -28,9 +28,22 @@
 <!-- Docs TOC is "d-none d-xl-block col-xl-2" -->
 {% block docs_sidebar %}
 <!-- Sidebar -->
-<div class="pl-4 pr-3 bd-sidebar site-navigation noprint {% if is_single_page %} single-page{% endif %}" id="site-navigation">
-    {% if not is_single_page %}
-        {%- include "sections/sidebar.html" -%}
+<div class="bd-sidebar noprint{% if is_single_page %} single-page{% endif %}" id="site-navigation">
+    {%- if not is_single_page %}
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top">
+            {%- include "sections/sidebar.html" -%}
+        </div>
+        <div class="bd-sidebar__bottom">
+            {% if theme_navbar_footer_text %}{% set theme_extra_navbar=theme_navbar_footer_text %}{% endif %} <!-- To handle the deprecated key -->
+            {% if theme_extra_navbar %}
+            <div class="navbar_extra_footer">
+            {{ theme_extra_navbar }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
     {%- endif %}
 </div>
 {% endblock %}

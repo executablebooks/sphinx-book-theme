@@ -13,7 +13,6 @@
   color: $non-content-grey;
   cursor: pointer;
   border: none;
-  font-size: 1.4em;
   padding: 0.1rem 0.5rem; // Horizontal padding since labels have none
   margin: 0 0.1rem;
 
@@ -28,6 +27,7 @@
     margin: auto;
     width: 1em;
     text-align: center;
+    font-size: 1.5em; // Slightly larger for icons
   }
 }
 
@@ -49,23 +49,17 @@
   transition: opacity 0.2s ease-out;
 
   // Spacing and position
-  width: 13em;
+  width: 10rem;
   border-radius: $box-border-radius;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   padding: 0.5em;
 
   // Style
-  font-size: 0.9em;
   background-color: white;
 
   .headerbtn {
     justify-content: left;
     padding: 0.1rem 0rem;
-
-    img,
-    i {
-      font-size: 0.9em;
-    }
   }
 
   ul {
@@ -83,7 +77,13 @@
 
     &.headerbtn__text-container {
       flex-grow: 1;
+      margin-left: 0.5em;
     }
+  }
+
+  i,
+  img {
+    font-size: 1.2em; // Slightly smaller icons in a dropdown
   }
 }
 

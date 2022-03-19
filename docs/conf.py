@@ -89,7 +89,6 @@ html_sidebars = {
         "categories.html",
         "archives.html",
         "sbt-sidebar-nav.html",
-        "sbt-sidebar-footer.html",
     ]
 }
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -163,7 +162,28 @@ for ifile in kitchen_sink_files:
     if not path_file.exists():
         print(f"Downloading kitchen sink file {ifile}")
         resp = request.urlopen(
-            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa
+            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa: E501
         )
         header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
         path_file.write_text(header + resp.read().decode())
+
+
+def setup(app):
+    # -- To demonstrate ReadTheDocs switcher -------------------------------------
+    # This links a few JS and CSS files that mimic the environment that RTD uses
+    # so that we can test RTD-like behavior. We don't need to run it on RTD and we
+    # don't wanted it loaded in GitHub Actions because it messes up the lighthouse
+    # results.
+    if not os.environ.get("READTHEDOCS") and not os.environ.get("GITHUB_ACTIONS"):
+        app.add_css_file(
+            "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css"
+        )
+        app.add_css_file("https://assets.readthedocs.org/static/css/badge_only.css")
+
+        # Create the dummy data file so we can link it
+        # ref: https://github.com/readthedocs/readthedocs.org/blob/bc3e147770e5740314a8e8c33fec5d111c850498/readthedocs/core/static-src/core/js/doc-embed/footer.js  # noqa: E501
+        app.add_js_file("rtd-data.js")
+        app.add_js_file(
+            "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
+            priority=501,
+        )

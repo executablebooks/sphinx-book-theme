@@ -44,8 +44,10 @@
 
 // Content blocks from Sphinx extensions
 @import "extensions/ablog";
+@import "extensions/comments";
 @import "extensions/myst-nb";
 @import "extensions/sphinx-tabs";
+@import "extensions/readthedocs";
 @import "extensions/thebe";
 
 // Page-specific CSS
