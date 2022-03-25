@@ -208,11 +208,11 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.38...v0.0.39))
 
 ### New features added
-* sphinx sidebars functionality [#233](https://github.com/executablebooks/sphinx-book-theme/pull/233) ([@choldgraf](https://github.com/choldgraf)). You can now use the `html_sidebars` functionality that is native in Sphinx. [See the sidebars documentation](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#control-the-left-sidebar-items).
-* Collapsible lists in sidebars [#226](https://github.com/executablebooks/sphinx-book-theme/pull/226) ([@AakashGfude](https://github.com/AakashGfude)). Sidebars that have nested sections will now have an arrow that allows you to reveal these sections without changing the current page. You can [control the depth](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#control-the-depth-of-the-left-sidebar-lists-to-expand) of expanded sections with `show_navbar_depth`.
+* sphinx sidebars functionality [#233](https://github.com/executablebooks/sphinx-book-theme/pull/233) ([@choldgraf](https://github.com/choldgraf)). You can now use the `html_sidebars` functionality that is native in Sphinx. [See the sidebars documentation](https://sphinx-book-theme.readthedocs.io/en/latest/customize/sidebar-primary.html).
+* Collapsible lists in sidebars [#226](https://github.com/executablebooks/sphinx-book-theme/pull/226) ([@AakashGfude](https://github.com/AakashGfude)). Sidebars that have nested sections will now have an arrow that allows you to reveal these sections without changing the current page. You can [control the depth](https://sphinx-book-theme.readthedocs.io/en/latest/customize/sidebar-primary.html#control-the-depth-of-the-left-sidebar-lists-to-expand) of expanded sections with `show_navbar_depth`.
 
 ### Enhancements made
-* Option for download button [#245](https://github.com/executablebooks/sphinx-book-theme/pull/245) ([@bknaepen](https://github.com/bknaepen)). The "download" button used to be automatically added, but can now be removed. See [the download button configuration](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#download-page-button).
+* Option for download button [#245](https://github.com/executablebooks/sphinx-book-theme/pull/245) ([@bknaepen](https://github.com/bknaepen)). The "download" button used to be automatically added, but can now be removed. See [the download button configuration](https://sphinx-book-theme.readthedocs.io/en/latest/customize/download.html).
 
 ## v0.0.38
 
@@ -243,7 +243,7 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ## v0.0.36 2020-08-25
 
 👌 IMPROVED: The main theme change in this release, is the addition of CSS styling for definition lists, including those created by [sphinx.ext.autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html).
-See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#definition-and-field-lists), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/api/index.html).
+See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/lists-and-tables.html), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/api.html).
 
 🔧 MAINTENANCE: Under the hood, there has also been work undertaken to improve the development environment for working with the package. Thanks to [@pradyunsg](https://github.com/pradyunsg).
 
