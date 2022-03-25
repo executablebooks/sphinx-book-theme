@@ -16,16 +16,6 @@ div#search-results > h2 {
   margin-top: 0;
 }
 
-// HACK: For some reason there are two search results sections created.
-// This removes the first one.
-div#search-results {
-  > h2:first-of-type,
-  > p.search-summary:first-of-type,
-  > ul.search:first-of-type {
-    display: none;
-  }
-}
-
 // The results of a search
 ul.search {
   margin: 0;
