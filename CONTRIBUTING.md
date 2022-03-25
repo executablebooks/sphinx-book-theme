@@ -1,1 +1,1 @@
-See [the contributing documentation](./docs/contributing.md).
+See [the contributing documentation](./docs/contributing/index.md).
