@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3-pre - 2022-02-025
+## v0.3.0 - 2022-03-25
 
 This is a significant change in the HTML and CSS of the site, with the goal of making it more standardized and robust. There are several design tweaks that have been made. Here is a short overview:
 
@@ -14,12 +14,20 @@ See the PRs below for where most of these changes occurred.
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.2.0...d9c1abc4197445faab7892291520de448f363274))
 
-## Enhancements made
+### Enhancements made
 
 - ‼️ REFACTOR: HTML and CSS restructuring [#472](https://github.com/executablebooks/sphinx-book-theme/pull/472) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Standardize scrollbar behavior [#481](https://github.com/executablebooks/sphinx-book-theme/pull/481) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Standardize header buttons [#490](https://github.com/executablebooks/sphinx-book-theme/pull/490) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Updating search page style [#491](https://github.com/executablebooks/sphinx-book-theme/pull/491) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Add CSS for comments libraries [#524](https://github.com/executablebooks/sphinx-book-theme/pull/524) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Add support for ReadTheDocs popup [#518](https://github.com/executablebooks/sphinx-book-theme/pull/518) ([@choldgraf](https://github.com/choldgraf))
+- STYLE: Search color highlighting in-line with Jupyter orange [#532](https://github.com/executablebooks/sphinx-book-theme/pull/532) ([@choldgraf](https://github.com/choldgraf))
+
+### ‼️ Breaking changes
+
+This release modifies the HTML structure of some of the major theme sections (in particular, the sidebar and top-bar).
+If you had custom CSS or JavaScript that assumed a particular HTML structure, double-check that it still behaves the same way, as you may need to adjust things for the new structure.
 
 ## v0.1.10...v0.2.0
 
