@@ -24,5 +24,15 @@ ul.search {
   li {
     background-image: none;
     padding: 0;
+    margin-bottom: 2em;
+
+    p.context {
+      margin: 0;
+    }
+
+    // Highlighted search items are a slightly lighter version of Jupyter orange
+    span.highlighted {
+      background-color: #f3772642;
+    }
   }
 }
