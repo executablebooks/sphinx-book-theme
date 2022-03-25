@@ -58,7 +58,7 @@ This is a minor release that makes a few bugfixes and small enhancements.
 - Printing to PDF from HTML is now formatted more elegantly [#438](https://github.com/executablebooks/sphinx-book-theme/pull/438) ([@AakashGfude](https://github.com/AakashGfude))
 - Minor stylistic bugfixes across the theme CSS
 
-# v0.1.6 .. v0.1.7
+## v0.1.6 .. v0.1.7
 
 **Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.6...v0.1.7
 
