@@ -20,14 +20,25 @@ div#search-results > h2 {
 ul.search {
   margin: 0;
   list-style: none;
+  font-size: 1.1em;
 
   li {
     background-image: none;
     padding: 0;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: $border-thin;
 
-    p.context {
-      margin: 0;
+    .context {
+      margin: 0.5em 0 0 0;
+      font-size: 0.8em;
+
+      // Add a # before page section titles to make it clear they are sections
+      a:before {
+        content: "#";
+        padding-right: 0.2em;
+        color: $non-content-grey;
+      }
     }
 
     // Highlighted search items are a slightly lighter version of Jupyter orange
