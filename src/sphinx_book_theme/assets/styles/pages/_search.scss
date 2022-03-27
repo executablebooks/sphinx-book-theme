@@ -20,7 +20,6 @@ div#search-results > h2 {
 ul.search {
   margin: 0;
   list-style: none;
-  font-size: 1.1em;
 
   li {
     background-image: none;
@@ -29,15 +28,19 @@ ul.search {
     padding-bottom: 1em;
     border-bottom: $border-thin;
 
+    // First link is the page title, it should be a bit bigger
+    > a {
+      font-size: 1.2em;
+    }
+
     .context {
       margin: 0.5em 0 0 0;
-      font-size: 0.8em;
 
       // Add a # before page section titles to make it clear they are sections
       a:before {
         content: "#";
         padding-right: 0.2em;
-        color: $non-content-grey;
+        color: $grey--medium;
       }
     }
 
