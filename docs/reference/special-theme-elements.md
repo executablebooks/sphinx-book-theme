@@ -59,7 +59,7 @@ ax.imshow(wide)
 
 ### Markdown
 
-+++ {"tags": ["full_width"]}
+```{container} full-width
 
 This is some markdown that should be shown at full width.
 
@@ -67,7 +67,11 @@ Here's the Jupyter logo:
 
 ![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png)
 
-+++ {"tags": ["full_width"]}
+:::{note}
+Here's a full-width admonition!
+:::
+
+```
 
 ### Mathematics
 
