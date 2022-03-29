@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.2 -- 2022-03-28
+
+Two patch releases fixed two bugs for figure content in the margin.
+
 ## v0.3.0 - 2022-03-25
 
 This is a significant change in the HTML and CSS of the site, with the goal of making it more standardized and robust. There are several design tweaks that have been made. Here is a short overview:
