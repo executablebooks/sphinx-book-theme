@@ -259,6 +259,19 @@ And here is my figure caption, if you look to the left, you can see that COOL is
 This note should not overlap with the margin caption!
 :::
 
+
+Entire figures in the margin:
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+figclass: margin
+alt: My figure text
+---
+This figure should be entirely in the margin.
+```
+
+
 ## Nested admonitions
 
 These aren't theme-specific, but we still show below to make sure they work.
