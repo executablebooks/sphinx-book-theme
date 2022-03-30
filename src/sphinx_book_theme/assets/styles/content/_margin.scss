@@ -70,3 +70,13 @@ div.cell.tag_full_width,
 .margin-caption figcaption {
   text-align: left;
 }
+
+.footnote {
+  float: right;
+  top: -3em;
+  position: relative;
+  margin: 0 -35% 0 0 !important;
+  p {
+    display: inline-block;
+  }
+}

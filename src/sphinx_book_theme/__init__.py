@@ -12,6 +12,7 @@ from sphinx.util import logging
 
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
+from ._transforms import HandleFootnoteTransform
 
 __version__ = "0.3.0.rc2"
 """sphinx-book-theme version"""
@@ -185,6 +186,9 @@ def setup(app: Sphinx):
 
     # Directives
     app.add_directive("margin", Margin)
+
+    # Post-transforms
+    app.add_post_transform(HandleFootnoteTransform)
 
     # Update templates for sidebar
     app.config.templates_path.append(os.path.join(theme_dir, "components"))
