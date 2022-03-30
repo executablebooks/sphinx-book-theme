@@ -13,7 +13,10 @@ class HandleFootnoteTransform(SphinxPostTransform):
             parent = None
             for ftnode in self.document.traverse(nodes.footnote):
                 parent = ftnode.parent
-                if ftnode.attributes["backrefs"][0] == node.attributes["ids"][0]:
-                    ftnode.attributes["classes"].append("sidenote")
+                if (
+                    len(ftnode.attributes["backrefs"])
+                    and ftnode.attributes["backrefs"][0] == node.attributes["ids"][0]
+                ):
+                    ftnode.attributes["classes"].insert("sidenote")
                     node.parent.append(ftnode.deepcopy())
             parent.remove(ftnode)
