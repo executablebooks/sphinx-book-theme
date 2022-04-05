@@ -38,6 +38,47 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   }
 }
 
+label.margin-toggle {
+  margin-bottom: 0em;
+  &.marginnote-label {
+    display: none;
+  }
+  @media (max-width: $breakpoint-md) {
+    cursor: pointer;
+    &.marginnote-label {
+      display: inline;
+      &:after {
+        content: "\2295";
+      }
+    }
+  }
+}
+
+input.margin-toggle {
+  display: none;
+  @media (max-width: $breakpoint-md) {
+    &:checked + .sidenote,
+    &:checked + .marginnote {
+      display: block;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 1rem 2.5%;
+      position: relative;
+    }
+  }
+}
+
+span.sidenote,
+span.marginnote {
+  @include margin-content();
+  border-left: none;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
 div.margin,
 aside.margin,
 .cell.tag_popout,

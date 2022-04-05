@@ -5,11 +5,12 @@ from pathlib import Path
 from functools import lru_cache
 
 from docutils.parsers.rst.directives.body import Sidebar
-from docutils import nodes
+from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
+from .nodes import SideNoteNode
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 from ._transforms import HandleFootnoteTransform
@@ -44,7 +45,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Add a shortened page text to the context using the sections text
     if doctree:
         description = ""
-        for section in doctree.traverse(nodes.section):
+        for section in doctree.traverse(docutil_nodes.section):
             description += section.astext().replace("\n", " ")
         description = description[:160]
         context["page_description"] = description
@@ -177,6 +178,9 @@ def setup(app: Sphinx):
     app.connect("builder-inited", update_thebe_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
+
+    # Nodes
+    SideNoteNode.add_node(app)
 
     # Header buttons
     app.connect("html-page-context", prep_header_buttons)
