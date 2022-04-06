@@ -45,10 +45,8 @@ You may need to comment-out your `html_theme_options` configuration depending on
 
 ## Add a source repository button to your theme
 
-There are several ways that you can customize the Sphinx Book Theme[^myref].
+There are several ways that you can customize the Sphinx Book Theme.
 For this tutorial, we'll add a pointer to a GitHub repository for our theme.
-
-[^myref]: Some footnote text
 
 To add a button that links to the repository for your documentation, add the following configuration in `conf.py`.
 
