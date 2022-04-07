@@ -45,6 +45,7 @@ label.margin-toggle {
   }
   @media (max-width: $breakpoint-md) {
     cursor: pointer;
+    color: rgb(0, 113, 188);
     &.marginnote-label {
       display: inline;
       &:after {
