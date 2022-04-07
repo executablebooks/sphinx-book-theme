@@ -12,8 +12,6 @@ class HandleFootnoteTransform(SphinxPostTransform):
         theme_options = self.env.config.html_theme_options
         if theme_options.get("use_sidenotes", False) is True:
             for node in self.document.traverse(docutil_nodes.footnote_reference):
-                node.attributes["classes"].append("sidenote-reference")
-                sidenote = SideNoteNode()
                 parent = None
                 for ftnode in self.document.traverse(docutil_nodes.footnote):
                     # matching the footnote reference with footnote
@@ -23,18 +21,28 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         == node.attributes["ids"][0]
                     ):
                         parent = ftnode.parent
-                        label = ftnode.children[0].astext()
                         text = ftnode.children[1].astext()
 
-                        # creating an inline content element
-                        superscript = docutil_nodes.superscript("", label)
+                        sidenote = SideNoteNode()
                         para = docutil_nodes.inline()
-                        para.attributes["classes"].append("sidenote")
-                        para.extend([superscript, docutil_nodes.Text(text)])
+                        if text.startswith("{>}"):
+                            # marginnotes
+                            para.attributes["classes"].append("marginnote")
+                            para.append(docutil_nodes.Text(text.replace("{>}", "")))
 
-                        # creating a superscripted reference
-                        sidenote.attributes["names"].append(f"sidenote-{label}")
-                        sidenote.append(superscript)
+                            sidenote.attributes["names"].append("marginnote-role")
+                        else:
+                            # sidenotes
+                            label = ftnode.children[0].astext()
+
+                            superscript = docutil_nodes.superscript("", label)
+                            para.attributes["classes"].append("sidenote")
+                            para.extend([superscript, docutil_nodes.Text(text)])
+
+                            sidenote.attributes["names"].append(
+                                f"sidenote-role-{label}"
+                            )
+                            sidenote.append(superscript)
                         node.replace_self([sidenote, para])
                         break
                 if parent:
