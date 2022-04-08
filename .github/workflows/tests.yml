@@ -95,6 +95,8 @@ jobs:
     # - someurl: dummy url
     # - mailto: fails test but works for people
     # - pathto(: because the pydata theme packages invalid HTML w/ this in it
+    # - mybinder.org: because Binder sometimes incorrectly doesn't respond
+    # - github.com/search: because GitHub search results return a network error
     - name: Check for broken links
       id: lychee
       uses: lycheeverse/lychee-action@v1.3.2
@@ -110,6 +112,8 @@ jobs:
           --exclude 'someurl'
           --exclude 'mailto:docutils-develop'
           --exclude 'pathto\('
+          --exclude 'mybinder.org'
+          --exclude 'github.com/search'
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@9.3.0

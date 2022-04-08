@@ -15,7 +15,7 @@ from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 from ._transforms import HandleFootnoteTransform
 
-__version__ = "0.3.0.rc2"
+__version__ = "0.3.2"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)

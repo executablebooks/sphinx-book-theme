@@ -1,6 +1,10 @@
 # Changelog
 
-## v0.3-pre - 2022-02-025
+## v0.3.2 -- 2022-03-28
+
+Two patch releases fixed two bugs for figure content in the margin.
+
+## v0.3.0 - 2022-03-25
 
 This is a significant change in the HTML and CSS of the site, with the goal of making it more standardized and robust. There are several design tweaks that have been made. Here is a short overview:
 
@@ -14,12 +18,20 @@ See the PRs below for where most of these changes occurred.
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.2.0...d9c1abc4197445faab7892291520de448f363274))
 
-## Enhancements made
+### Enhancements made
 
 - ‼️ REFACTOR: HTML and CSS restructuring [#472](https://github.com/executablebooks/sphinx-book-theme/pull/472) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Standardize scrollbar behavior [#481](https://github.com/executablebooks/sphinx-book-theme/pull/481) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Standardize header buttons [#490](https://github.com/executablebooks/sphinx-book-theme/pull/490) ([@choldgraf](https://github.com/choldgraf))
 - ENH: Updating search page style [#491](https://github.com/executablebooks/sphinx-book-theme/pull/491) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Add CSS for comments libraries [#524](https://github.com/executablebooks/sphinx-book-theme/pull/524) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Add support for ReadTheDocs popup [#518](https://github.com/executablebooks/sphinx-book-theme/pull/518) ([@choldgraf](https://github.com/choldgraf))
+- STYLE: Search color highlighting in-line with Jupyter orange [#532](https://github.com/executablebooks/sphinx-book-theme/pull/532) ([@choldgraf](https://github.com/choldgraf))
+
+### ‼️ Breaking changes
+
+This release modifies the HTML structure of some of the major theme sections (in particular, the sidebar and top-bar).
+If you had custom CSS or JavaScript that assumed a particular HTML structure, double-check that it still behaves the same way, as you may need to adjust things for the new structure.
 
 ## v0.1.10...v0.2.0
 
@@ -50,7 +62,7 @@ This is a minor release that makes a few bugfixes and small enhancements.
 - Printing to PDF from HTML is now formatted more elegantly [#438](https://github.com/executablebooks/sphinx-book-theme/pull/438) ([@AakashGfude](https://github.com/AakashGfude))
 - Minor stylistic bugfixes across the theme CSS
 
-# v0.1.6 .. v0.1.7
+## v0.1.6 .. v0.1.7
 
 **Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v0.1.6...v0.1.7
 
@@ -200,11 +212,11 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v0.0.38...v0.0.39))
 
 ### New features added
-* sphinx sidebars functionality [#233](https://github.com/executablebooks/sphinx-book-theme/pull/233) ([@choldgraf](https://github.com/choldgraf)). You can now use the `html_sidebars` functionality that is native in Sphinx. [See the sidebars documentation](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#control-the-left-sidebar-items).
-* Collapsible lists in sidebars [#226](https://github.com/executablebooks/sphinx-book-theme/pull/226) ([@AakashGfude](https://github.com/AakashGfude)). Sidebars that have nested sections will now have an arrow that allows you to reveal these sections without changing the current page. You can [control the depth](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#control-the-depth-of-the-left-sidebar-lists-to-expand) of expanded sections with `show_navbar_depth`.
+* sphinx sidebars functionality [#233](https://github.com/executablebooks/sphinx-book-theme/pull/233) ([@choldgraf](https://github.com/choldgraf)). You can now use the `html_sidebars` functionality that is native in Sphinx. [See the sidebars documentation](https://sphinx-book-theme.readthedocs.io/en/latest/customize/sidebar-primary.html).
+* Collapsible lists in sidebars [#226](https://github.com/executablebooks/sphinx-book-theme/pull/226) ([@AakashGfude](https://github.com/AakashGfude)). Sidebars that have nested sections will now have an arrow that allows you to reveal these sections without changing the current page. You can [control the depth](https://sphinx-book-theme.readthedocs.io/en/latest/customize/sidebar-primary.html#control-the-depth-of-the-left-sidebar-lists-to-expand) of expanded sections with `show_navbar_depth`.
 
 ### Enhancements made
-* Option for download button [#245](https://github.com/executablebooks/sphinx-book-theme/pull/245) ([@bknaepen](https://github.com/bknaepen)). The "download" button used to be automatically added, but can now be removed. See [the download button configuration](https://sphinx-book-theme.readthedocs.io/en/latest/configure.html#download-page-button).
+* Option for download button [#245](https://github.com/executablebooks/sphinx-book-theme/pull/245) ([@bknaepen](https://github.com/bknaepen)). The "download" button used to be automatically added, but can now be removed. See [the download button configuration](https://sphinx-book-theme.readthedocs.io/en/latest/customize/download.html).
 
 ## v0.0.38
 
@@ -235,7 +247,7 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ## v0.0.36 2020-08-25
 
 👌 IMPROVED: The main theme change in this release, is the addition of CSS styling for definition lists, including those created by [sphinx.ext.autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html).
-See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#definition-and-field-lists), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/api/index.html).
+See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/lists-and-tables.html), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/api.html).
 
 🔧 MAINTENANCE: Under the hood, there has also been work undertaken to improve the development environment for working with the package. Thanks to [@pradyunsg](https://github.com/pradyunsg).
 
