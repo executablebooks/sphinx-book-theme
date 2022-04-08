@@ -2,7 +2,7 @@ from sphinx.transforms.post_transforms import SphinxPostTransform
 from typing import Any
 from docutils import nodes as docutil_nodes
 from .nodes import SideNoteNode
-from sphinx.builders.latex import LaTeXBuilder
+from sphinx.builders.html import StandaloneHTMLBuilder
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
@@ -10,9 +10,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
     default_priority = 1
 
     def apply(self, **kwargs: Any) -> None:
-        if isinstance(self.env.app.builder, LaTeXBuilder):
-            pass
-        else:
+        if isinstance(self.env.app.builder, StandaloneHTMLBuilder):
             theme_options = self.env.config.html_theme_options
             if theme_options.get("use_sidenotes", False) is True:
                 for node in self.document.traverse(docutil_nodes.footnote_reference):
