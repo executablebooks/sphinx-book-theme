@@ -12,12 +12,7 @@ class SideNoteNode(nodes.Element):
     @classmethod
     def add_node(cls, app: Sphinx) -> None:
         add_node = cast(Any, app.add_node)  # has the wrong typing for sphinx<4
-        add_node(
-            cls,
-            override=True,
-            html=(visit_SideNoteNode, depart_SideNoteNode),
-            latex=(visit_SideNoteNode, depart_SideNoteNode),
-        )
+        add_node(cls, override=True, html=(visit_SideNoteNode, depart_SideNoteNode))
 
 
 def visit_SideNoteNode(self, node):
