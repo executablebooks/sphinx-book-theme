@@ -40,6 +40,7 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
 
 div.margin,
 aside.margin,
+figure.margin,
 .cell.tag_popout,
 .cell.tag_margin {
   @include margin-content();
@@ -50,8 +51,10 @@ aside.margin,
   }
 }
 
+// A few permutations because docutils 0.18 switched to semantic tags
 div.figure.margin-caption p.caption,
-div.figure.margin-caption figcaption {
+div.figure.margin-caption figcaption,
+figure.margin-caption figcaption {
   @include margin-content();
 }
 

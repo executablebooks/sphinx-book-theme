@@ -7,7 +7,7 @@ exclude: >
     )$
 repos:
 
-  - repo: git://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0
     hooks:
     - id: check-toml
@@ -22,12 +22,12 @@ repos:
     - id: flake8
 
   - repo: https://github.com/psf/black
-    rev: 22.1.0
+    rev: 22.3.0
     hooks:
     - id: black
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.5.1
+    rev: v2.6.2
     hooks:
       - id: prettier
         types_or: [scss, javascript]

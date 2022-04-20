@@ -31,6 +31,10 @@ span.eqno {
   margin-right: auto !important; // HACK: to over-ride MathJax default behavior
   margin-left: auto !important;
   @include scrollbar-style();
+
+  // HACK: Prevents vertical scroll-bar due to tiny padding bug
+  // The div should be high enough to fit all math anyway, so no vertical scroll needed
+  overflow-y: hidden;
 }
 
 // Compensate for the extra bottom margin of a preceding paragraph

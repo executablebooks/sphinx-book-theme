@@ -24,5 +24,30 @@ ul.search {
   li {
     background-image: none;
     padding: 0;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: $border-thin;
+
+    // First link is the page title, it should be a bit bigger
+    > a {
+      font-size: 1.2em;
+    }
+
+    div.context,
+    p.context {
+      margin: 0.5em 0 0 0;
+
+      // Add a # before page section titles to make it clear they are sections
+      a:before {
+        content: "#";
+        padding-right: 0.2em;
+        color: $grey--medium;
+      }
+    }
+
+    // Highlighted search items are a slightly lighter version of Jupyter orange
+    span.highlighted {
+      background-color: #f3772642;
+    }
   }
 }

@@ -59,7 +59,7 @@ ax.imshow(wide)
 
 ### Markdown
 
-+++ {"tags": ["full_width"]}
+```{container} full-width
 
 This is some markdown that should be shown at full width.
 
@@ -67,7 +67,11 @@ Here's the Jupyter logo:
 
 ![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png)
 
-+++ {"tags": ["full_width"]}
+:::{note}
+Here's a full-width admonition!
+:::
+
+```
 
 ### Mathematics
 
@@ -254,6 +258,19 @@ And here is my figure caption, if you look to the left, you can see that COOL is
 :class: margin
 This note should not overlap with the margin caption!
 :::
+
+
+Entire figures in the margin:
+
+```{figure} ../images/cool.jpg
+---
+width: 60%
+figclass: margin
+alt: My figure text
+---
+This figure should be entirely in the margin.
+```
+
 
 ## Nested admonitions
 

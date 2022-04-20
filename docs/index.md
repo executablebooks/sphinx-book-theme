@@ -75,6 +75,7 @@ reference/thebe
 reference/blog
 reference/api-numpy
 reference/comments
+changelog
 ```
 
 # Inspiration
