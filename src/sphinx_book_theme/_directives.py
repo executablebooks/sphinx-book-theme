@@ -15,30 +15,43 @@ class ExampleDirective(SphinxDirective):
     final_argument_whitespace = True
     option_spec = {
         "class": directives.class_option,
+        "reverse": directives.flag,
+        "no-container": directives.flag,
     }
 
     def run(self) -> List[nodes.Node]:
         content_text = "\n".join(self.content)
 
         # Update our content and place it in a container
-        parent = nodes.container(classes=["bt-example"])
+        extra_classes = self.options.get("class", [])
+        output = nodes.container(classes=["bt-example"] + extra_classes)
+        container = nodes.container(classes=["bt-example__container"])
 
         # If we have a title, add it above the source code
         if self.arguments:
             title_container = nodes.container(classes=["bt-example__title"])
             title_container.append(nodes.paragraph(text=self.arguments[0]))
-            parent.append(title_container)
+            output.append(title_container)
 
         # Create the literal container, add a literal version of the content to it
         literal_container = nodes.container(classes=["bt-example__source"])
         literal_container.append(nodes.paragraph(text="Source"))
         literal_container.append(nodes.literal_block(text=content_text))
-        parent.append(literal_container)
+        container.append(literal_container)
 
         # Now render the content inside of a specific container
         rendered_container = nodes.container(classes=["bt-example__result"])
         rendered_container.append(nodes.paragraph(text="Result"))
         self.state.nested_parse(self.content, 0, rendered_container)
-        parent.append(rendered_container)
+        container.append(rendered_container)
 
-        return [parent]
+        # Result should come first
+        if "reverse" in self.options:
+            container.children = container.children[::-1]
+
+        # Remove the children from the parent container and create final output list
+        if "no-container" in self.options:
+            output += container.children
+        else:
+            output.append(container)
+        return [output]
