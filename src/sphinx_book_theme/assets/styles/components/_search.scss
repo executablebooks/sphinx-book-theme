@@ -2,8 +2,8 @@
 * Search bar and text styling from searches *
 *********************************************/
 
-// Highlight search phrases
+// Highlighted search items are a slightly lighter version of Jupyter orange
 dt:target,
 span.highlighted {
-  background-color: #fbe54e;
+  background-color: #f3772642;
 }

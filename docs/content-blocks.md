@@ -21,30 +21,20 @@ There are a few content blocks that are unique to this theme.
 
 Here is what quotations and epigraphs look like in `sphinx-book-theme`:
 
-A quote with no attribution:
-
+```{example} Default markdown quotes
 > Here's my quote, it's pretty neat.
 > I wonder how many lines I can create with
 > a single stream-of-consciousness quote.
 > I could try to add a list of ideas to talk about.
 > I suppose I could just keep going on forever,
 > but I'll stop here.
+```
 
 Sometimes you'd like to draw more attention to a quote. To do so, use the `{epigraph}` directive.
 Below is an epigraph, click the button to the right of it to show the code that was used
 to generate it:
 
-```{epigraph}
-Here's my quote, it's pretty neat.
-I wonder how many lines I can create with
-a single stream-of-consciousness quote.
-I could try to add a list of ideas to talk about.
-I suppose I could just keep going on forever,
-but I'll stop here.
-```
-
-`````{toggle}
-````
+````{example} A basic epigraph
 ```{epigraph}
 Here's my quote, it's pretty neat.
 I wonder how many lines I can create with
@@ -54,24 +44,11 @@ I suppose I could just keep going on forever,
 but I'll stop here.
 ```
 ````
-`````
 
 You can also add an attribution to epigraphs by adding a blank line,
 followed by a line that starts with `--`. This will be renderered like so:
 
-```{epigraph}
-Here's my quote, it's pretty neat.
-I wonder how many lines I can create with
-a single stream-of-consciousness quote.
-I could try to add a list of ideas to talk about.
-I suppose I could just keep going on forever,
-but I'll stop here.
-
--- Jo the Jovyan, *[the jupyter book docs](https://beta.jupyterbook.org)*
-```
-
-`````{toggle}
-````
+````{example} Epigraphs with attribution
 ```{epigraph}
 Here's my quote, it's pretty neat.
 I wonder how many lines I can create with
@@ -83,7 +60,22 @@ but I'll stop here.
 -- Jo the Jovyan, *[the jupyter book docs](https://beta.jupyterbook.org)*
 ```
 ````
-`````
+
+## Examples and demos
+
+The `{example}` directive allows you to show off some source markdown, and the result of rendering it.
+It is meant to help you demonstrate functionality of a theme, extension, syntax, etc.
+For example:
+
+````{example} Using the example directive
+```{example} Example title
+
+:::{note}
+An example note!
+:::
+
+```
+````
 
 ## Sidebars
 
@@ -129,6 +121,7 @@ You may also directly add CSS classes to elements on your page in order to make 
 To do so, add the `margin` CSS class to any element on the page.
 Many Sphinx directives allow you to directly add classes.
 For example, here's the syntax to add a `margin` class to a `{note}` directive:
+
 
 :::{note}
 :class: margin

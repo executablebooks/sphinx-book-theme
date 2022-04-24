@@ -12,6 +12,7 @@ from sphinx.util import logging
 
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
+from ._directives import ExampleDirective
 
 __version__ = "0.3.2"
 """sphinx-book-theme version"""
@@ -185,6 +186,7 @@ def setup(app: Sphinx):
 
     # Directives
     app.add_directive("margin", Margin)
+    app.add_directive("example", ExampleDirective)
 
     # Update templates for sidebar
     app.config.templates_path.append(os.path.join(theme_dir, "components"))
