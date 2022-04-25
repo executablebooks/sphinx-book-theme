@@ -145,6 +145,11 @@ bibtex_bibfiles = ["references.bib"]
 bibtex_reference_style = "author_year"
 bibtex_default_style = "plain"
 
+linkcheck_ignore = [
+    "http://someurl/release",  # This is a fake link
+    "doi.org",  # These don't resolve properly and cause SSL issues
+]
+
 # -- Download kitchen sink reference docs -------------------------------------
 # These are the kitchen sink files used by the Sphinx Themes gallery at
 # https://github.com/sphinx-themes/sphinx-themes.org
