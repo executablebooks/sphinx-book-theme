@@ -52,7 +52,7 @@ jobs:
 
     - name: Upload to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
-      uses: codecov/codecov-action@v2.1.0
+      uses: codecov/codecov-action@v3.1.0
       with:
         name: ebp-sbt-pytests-py3.7
         flags: pytests
@@ -99,7 +99,7 @@ jobs:
     # - github.com/search: because GitHub search results return a network error
     - name: Check for broken links
       id: lychee
-      uses: lycheeverse/lychee-action@v1.3.2
+      uses: lycheeverse/lychee-action@v1.4.1
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
