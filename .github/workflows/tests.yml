@@ -9,6 +9,7 @@ on:
 
 env:
   PY_COLORS: 1
+  COLORTERM: True
 
 jobs:
   pre-commit:
