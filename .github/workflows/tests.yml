@@ -78,7 +78,7 @@ jobs:
 
     - name: Check for broken links
       run: >
-        sphinx-build -b linkcheck docs docs/_build/linkcheck -w
+        sphinx-build -b linkcheck docs docs/_build/linkcheck
 
     - name: Build documentation to audit
       run: >
