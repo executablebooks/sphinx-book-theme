@@ -186,15 +186,8 @@ page to flow around them, rather than moving to the right margin.
 
 To add content sidebars, use this syntax:
 
-% NOTE: not using `{example}` because it overlaps w/ the example container
-`````
-````{sidebar} **My sidebar title**
-```{note}
-Here is my sidebar content, it is pretty cool!
-```
-![](images/cool.jpg)
-````
-`````
+`````{example}
+:no-container:
 
 ````{sidebar} **My sidebar title**
 ```{note}
@@ -202,6 +195,7 @@ Here is my sidebar content, it is pretty cool!
 ```
 ![](images/cool.jpg)
 ````
+`````
 
 Note how the content wraps around the sidebar to the right.
 However, the sidebar text will still be in line with your content. There are
@@ -229,60 +223,3 @@ If you are using a Jupyter Notebook as inputs to your documentation using the
 [MyST-NB extension](https://myst-nb.readthedocs.io/en/latest/), you can trigger
 this behavior with a code cell by adding a `full-width` tag to the cell.
 ```
-
-
-## Examples and demos
-
-The `{example}` directive allows you to show off some source markdown, and the result of rendering it.
-It is meant to help you demonstrate functionality of a theme, extension, syntax, etc.
-For example:
-
-````{example} Using the example directive
-```{example} Example title
-
-Here's my **example**!
-
-```
-````
-
-You can reverse the order of `source` and `result` by using the `:reverse:` flag, like so:
-
-````{example}
-```{example} Reversed source and result
-:reverse:
-
-Here's my **example**!
-```
-````
-
-You can also remove the parent container of the source/result blocks in case you wish to demonstrate something that would not work properly inside a container:
-
-
-You can reverse the order of `source` and `result` by using the `:reverse:` flag, like so:
-
-````{example}
-```{example} No container so we can show off a margin
-:no-container:
-:reverse:
-
-:::{margin}
-Here's my **margin content**!
-:::
-
-```
-````
-
-You can add your own classes to examples as well.
-For example:
-
-
-````{example}
-```{example} Reversed source and result
-:class: full-width
-
-:::{note}
-A full-width note!
-:::
-
-```
-````

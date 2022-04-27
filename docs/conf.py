@@ -24,6 +24,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinxcontrib.youtube",
     "sphinx_copybutton",
+    "sphinx_demo",
     "sphinx_design",
     "sphinx_tabs.tabs",
     "sphinx_thebe",
