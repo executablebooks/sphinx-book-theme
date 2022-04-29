@@ -54,7 +54,7 @@ doc = [
     "numpy",
     "matplotlib",
     "numpydoc",
-    "myst-nb~=0.13.0",
+    "myst-nb~=0.13.2",
     "nbclient",
     "pandas",
     "plotly",
