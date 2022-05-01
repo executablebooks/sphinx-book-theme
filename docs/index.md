@@ -1,5 +1,8 @@
 ---
 title: The Sphinx Book Theme
+theme:
+  collapse_sidebar: true
+  full_width: true
 ---
 
 ::::{grid}

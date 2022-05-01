@@ -6,7 +6,8 @@
 
 {% block content %}
 <!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+{% set checked=" checked" if collapse_sidebar == True else "" %}
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar"{{ checked }}>
 <label class="overlay overlay-navbar" for="__navigation">
     <div class="visually-hidden">Toggle navigation sidebar</div>
 </label>
@@ -77,7 +78,8 @@
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
+            {% set full_width = ' class="full-width"' if (full_width == True) else '' %}
+            <main id="main-content" role="main"{{ full_width }}>
                 {{ super() }}
             </main>
             <footer class="footer-article noprint">

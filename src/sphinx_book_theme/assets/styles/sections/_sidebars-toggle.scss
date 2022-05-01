@@ -18,8 +18,18 @@ input#__navigation {
 
       // When we hide the sidebar on widescreen, add some padding to content
       & ~ .container-xl #main-content {
-        padding-left: 4rem;
+        padding-left: 7rem;
         padding-right: 4rem;
+
+        // At full-width, there is no margin so add some extra padding
+        &.full-width {
+          padding-left: 4rem;
+          padding-right: 4rem;
+          margin: auto;
+          // Set the maximum width to an L container in bootstrap
+          // ref: https://getbootstrap.com/docs/5.0/layout/containers/
+          max-width: 960px;
+        }
       }
     }
   }

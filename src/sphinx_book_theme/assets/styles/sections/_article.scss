@@ -8,7 +8,7 @@ body {
 
 #main-content,
 #print-main-content {
-  transition: padding $animation-time ease-out;
+  transition: all $animation-time ease-out;
   padding-top: 1.5em;
 }
 
