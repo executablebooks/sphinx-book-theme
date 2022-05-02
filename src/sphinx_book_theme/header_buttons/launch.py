@@ -119,10 +119,12 @@ def add_launch_buttons(
         )
 
     if jupyterhub_url:
-        url_params = urlencode(dict(
-            repo=repo_url,
-            urlpath=f"{ui_pre}/{repo}/{path_rel_repo}",
-            branch=branch), safe="/")
+        url_params = urlencode(
+            dict(
+                repo=repo_url, urlpath=f"{ui_pre}/{repo}/{path_rel_repo}", branch=branch
+            ),
+            safe="/",
+        )
         url = f"{jupyterhub_url}/hub/user-redirect/git-pull?{url_params}"
         launch_buttons_list.append(
             {
