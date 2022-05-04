@@ -101,6 +101,10 @@ html_theme_options = {
 
 ```{warning}
 This requires installation of [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/) and the publication of a RetroLite environment as part of your published Jupyter Book environment.
+
+You __must__ also publish the Jupyter Book / JupyterLite environemt via a webserver in order to access the JupyterLite environment.
+
+*As of `jupyterlite-sphinx==0.4.7, you will have to manually ensure that notenook files are copied over to the `_build/html/lite/files` directory in order to work with them in JupyterLite.*
 ```
 
 ## Live code cells with Thebe
