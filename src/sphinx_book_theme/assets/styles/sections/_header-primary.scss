@@ -1,0 +1,141 @@
+/**
+ * A few different header CSS rules
+ */
+@mixin max-height-header() {
+  // Fix max height so our header items don't spill over
+  max-height: 4rem;
+  @media (max-width: $breakpoint-md) {
+    max-height: 3rem;
+  }
+}
+
+// The parent div that will expand / contract
+.header {
+  display: flex;
+  border-bottom: $border-thin;
+
+  // On narrow screens, cap the height unless you click the hamburger menu
+  @include max-height-header;
+  @media (max-width: $breakpoint-md) {
+    transition: max-height $animation-time ease-out;
+    overflow-y: hidden;
+  }
+
+  // Navigation links
+  a,
+  div.dropdown button {
+    color: $non-content-grey;
+
+    &:hover {
+      color: rgba(var(--pst-color-link), 1);
+      text-decoration: none;
+    }
+  }
+}
+
+// Header content should take up the whole remaining horizontal space
+.header__content {
+  flex-grow: 1;
+}
+
+.header__content,
+.header__brand,
+.header__start,
+.header__end {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+
+  // On narrow screens, the header items show flow vertically and snap to left
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+// Ensure the header items don't touch the screen edge
+.header__start {
+  padding-left: 1rem;
+}
+.header__end {
+  padding-right: 1rem;
+}
+
+@media (max-width: $breakpoint-md) {
+  // Only apply on narrow screens since we want it centered on sidebar on wide
+  .header__brand,
+  .header__end {
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+}
+
+// Only show up on narrow screens, and push to the far right
+.headerbtn.header-toggle-button {
+  display: none;
+  @media (max-width: $breakpoint-md) {
+    display: block;
+    margin-top: 0.7em; // HACK: to make this vertically-centered w/o using flexbox
+    margin-left: auto;
+    padding-right: 0; // Override headerbtn padding so header has same right/left pad
+  }
+}
+
+input#__header {
+  // Inputs never display, only used to control behavior
+  display: none;
+
+  // On narrow screens, checking the button opens the header
+  &:checked ~ div.header {
+    @media (max-width: $breakpoint-md) {
+      max-height: 20em;
+    }
+  }
+}
+
+// Header content contains the components
+.header__content {
+  flex-grow: 1;
+}
+
+// This is the logo or a bold docs title
+.header__brand {
+  font-size: 1.5em;
+
+  // Wide screens: header start has same width as the sidebar + center over logo
+  @media (min-width: $breakpoint-md) {
+    width: $leftbar-width-wide;
+    justify-content: center;
+  }
+}
+
+.header__end {
+  @media (min-width: $breakpoint-md) {
+    // Header end is right-justified
+    margin-left: auto;
+  }
+}
+
+ul#navbar-icon-links {
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.header-content-item {
+  display: flex;
+  align-items: center;
+
+  // Spacing is horizontal on wide, vertical on narrow
+  // Items should snap to left on mobile
+  @media (max-width: $breakpoint-md) {
+    align-items: start;
+  }
+
+  img {
+    padding: 0.4rem 0em;
+    @include max-height-header;
+  }
+
+  .dropdown-menu {
+    z-index: $zindex-sticky + 1;
+  }
+}

@@ -127,6 +127,54 @@ html_theme_options = {
         "so double-check your custom CSS rules!⚠️"
     ),
     # For testing
+    "header": {
+        "brand": {
+            "type": "image",
+            "src": "https://executablebooks.org/en/latest/_static/logo.svg",
+            "url": "https://sphinx-book-theme.readthedocs.io",
+        },
+        "start": [
+            {
+                "type": "text",
+                "content": "Jupyter Book",
+                "url": "https://jupyterbook.org",
+            },
+            {
+                "type": "dropdown",
+                "content": "EBP Projects",
+                "items": [
+                    {"content": "google", "url": "https://google.com"},
+                    {"content": "jupyter", "url": "https://jupyter.org"},
+                ],
+            },
+            {
+                "type": "dropdown",
+                "content": "MyST Markdown",
+                "items": [
+                    {"content": "google", "url": "https://google.com"},
+                    {"content": "jupyter", "url": "https://jupyter.org"},
+                ],
+            },
+        ],
+        "end": [
+            {"type": "button", "content": "end", "url": "https://google.com"},
+            {
+                "type": "icon-links",
+                "icons": [
+                    {
+                        "url": "https://twitter.com/executablebooks",
+                        "name": "Twitter",
+                        "icon": "fab fa-twitter-square",
+                    },
+                    {
+                        "url": "https://github.com/orgs/executablebooks/discussions",
+                        "name": "Forum",
+                        "icon": "fas fa-comments",
+                    },
+                ],
+            },
+        ],
+    }
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
     # "single_page": True,

@@ -16,12 +16,12 @@
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">
+<div class="announcement noprint">
     {%- include "sections/announcement.html" -%}
 </div>
-<div class="header header-item noprint">
-    {%- include "sections/header.html" -%}
-</div>
+
+{%- include "sections/header.html" -%}
+
 {{ super() }}
 {% endblock %}
 

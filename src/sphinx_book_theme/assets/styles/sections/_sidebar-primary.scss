@@ -35,7 +35,7 @@
   // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
   .bd-sidebar__top,
   .bd-sidebar__bottom {
-    padding: 0 1rem 0rem 1.5rem;
+    padding: $leftbar-padding;
   }
 
   // This should always snap to the bottom even if there's no sidebar content
@@ -83,10 +83,6 @@
 }
 
 div.navbar-brand-box {
-  @media (min-width: $breakpoint-md) {
-    padding-top: 2em;
-  }
-
   a.navbar-brand {
     width: 100%;
     height: auto;

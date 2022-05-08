@@ -14,6 +14,7 @@ from .nodes import SideNoteNode
 from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 from ._transforms import HandleFootnoteTransform
+from ._components import COMPONENT_FUNCS
 
 __version__ = "0.3.2"
 """sphinx-book-theme version"""
@@ -61,6 +62,26 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     context["theme_search_bar_text"] = translation(
         context.get("theme_search_bar_text", "Search the docs ...")
     )
+
+    # Define the function render the above
+    def render_component(component):
+        component_copy = component.copy()
+
+        # We use `type` to denote different kinds of components
+        kind = component_copy.pop("type")
+        if kind not in COMPONENT_FUNCS:
+            SPHINX_LOGGER.warn(f"Unknown component type: {kind}")
+            return
+        try:
+            output = COMPONENT_FUNCS[kind](app, context, **component_copy)
+        except Exception as exc:
+            msg = f"Component render failure for:\n{component}\n\n"
+            msg += f"Exception: {exc}"
+            SPHINX_LOGGER.warn(msg)
+            return
+        return output
+
+    context["theme_render_component"] = render_component
 
 
 @lru_cache(maxsize=None)

@@ -1,0 +1,44 @@
+{% if theme_header %}
+{% set start_items = theme_header.get("start", {}) %}
+{% set end_items = theme_header.get("end", {}) %}
+
+{%- if start_items or middle_items or end_items %}
+<input type="checkbox" class="header-toggle" name="__header" id="__header" aria-label="Toggle header">
+<div id="theme-header" class="container-xl header noprint">
+  <div class="row header__content">
+    <!-- If given, the brand will be the same width as sidebar -->
+    {% if theme_header.get("brand") %}
+    <div class="header__brand">
+      <div class="header-content-item">
+        {{ theme_render_component(theme_header.get("brand")) }}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Start is left-aligned -->
+    <div class="header__start">
+      {% for item in start_items %}
+      <div class="header-content-item">
+        {{ theme_render_component(item) }}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- End is right-aligned -->
+    <div class="header__end">
+      {% for item in end_items %}
+      <div class="header-content-item">
+        {{ theme_render_component(item) }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {# Dropdown button for mobile, will show on the right #}
+  <label class="header-toggle-button headerbtn" for="__header">
+    <div class="visually-hidden">{{ translate('Toggle Header') }}</div>
+    <i class="fas fa-bars"></i>
+  </label>
+</div>
+{% endif -%}
+
+{% endif %}
