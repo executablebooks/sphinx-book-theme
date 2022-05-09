@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 from urllib import request
+from yaml import safe_load
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -103,6 +104,8 @@ thebe_config = {
     "repository_branch": "master",
 }
 
+header_config = safe_load(Path("./config-header.yml").read_text())
+
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
@@ -126,55 +129,8 @@ html_theme_options = {
         "⚠️The latest release refactored our HTML, "
         "so double-check your custom CSS rules!⚠️"
     ),
+    "header": header_config,
     # For testing
-    "header": {
-        "brand": {
-            "type": "image",
-            "src": "https://executablebooks.org/en/latest/_static/logo.svg",
-            "url": "https://sphinx-book-theme.readthedocs.io",
-        },
-        "start": [
-            {
-                "type": "text",
-                "content": "Jupyter Book",
-                "url": "https://jupyterbook.org",
-            },
-            {
-                "type": "dropdown",
-                "content": "EBP Projects",
-                "items": [
-                    {"content": "google", "url": "https://google.com"},
-                    {"content": "jupyter", "url": "https://jupyter.org"},
-                ],
-            },
-            {
-                "type": "dropdown",
-                "content": "MyST Markdown",
-                "items": [
-                    {"content": "google", "url": "https://google.com"},
-                    {"content": "jupyter", "url": "https://jupyter.org"},
-                ],
-            },
-        ],
-        "end": [
-            {"type": "button", "content": "end", "url": "https://google.com"},
-            {
-                "type": "icon-links",
-                "icons": [
-                    {
-                        "url": "https://twitter.com/executablebooks",
-                        "name": "Twitter",
-                        "icon": "fab fa-twitter-square",
-                    },
-                    {
-                        "url": "https://github.com/orgs/executablebooks/discussions",
-                        "name": "Forum",
-                        "icon": "fas fa-comments",
-                    },
-                ],
-            },
-        ],
-    }
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
     # "single_page": True,

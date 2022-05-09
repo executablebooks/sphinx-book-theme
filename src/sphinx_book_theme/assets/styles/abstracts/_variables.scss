@@ -65,7 +65,11 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
 
   // Variables for this theme
   --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
-  --sbt-header-article-font-size: var(--sbt-font-size-small-1);
   --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
   --sbt-footer-font-size: var(--sbt-font-size-small-1);
+
+  // Header variables
+  --theme-header-article-font-size: var(--sbt-font-size-small-1);
+  --theme-header-button-color: #5a5a5a;
+  --theme-header-button-color-hover: black;
 }

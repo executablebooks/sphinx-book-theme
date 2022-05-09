@@ -1,11 +1,15 @@
 /**
  * A few different header CSS rules
  */
+
+$header-default-height-wide: 4rem;
+$header-default-height-narrow: 3rem;
+
 @mixin max-height-header() {
   // Fix max height so our header items don't spill over
-  max-height: 4rem;
+  max-height: $header-default-height-wide;
   @media (max-width: $breakpoint-md) {
-    max-height: 3rem;
+    max-height: $header-default-height-narrow;
   }
 }
 
@@ -16,7 +20,9 @@
 
   // On narrow screens, cap the height unless you click the hamburger menu
   @include max-height-header;
+  min-height: $header-default-height-wide;
   @media (max-width: $breakpoint-md) {
+    min-height: $header-default-height-narrow;
     transition: max-height $animation-time ease-out;
     overflow-y: hidden;
   }
@@ -24,18 +30,32 @@
   // Navigation links
   a,
   div.dropdown button {
-    color: $non-content-grey;
+    color: var(--theme-header-button-color);
 
     &:hover {
-      color: rgba(var(--pst-color-link), 1);
+      color: var(--theme-header-button-color-hover);
       text-decoration: none;
+    }
+  }
+
+  // Button component styling (won't apply to dropdowns)
+  button.btn-outline-primary {
+    color: rgba(var(--pst-color-primary), 1);
+    border-color: rgba(var(--pst-color-primary), 1);
+
+    &:hover {
+      color: white;
+      background-color: rgba(var(--pst-color-primary), 1);
     }
   }
 }
 
 // Header content should take up the whole remaining horizontal space
 .header__content {
+  display: flex;
   flex-grow: 1;
+  max-width: 1400px; // Bootstrap max-width for xl container, to match article
+  margin: 0 auto;
 }
 
 .header__content,
@@ -56,9 +76,6 @@
 .header__start {
   padding-left: 1rem;
 }
-.header__end {
-  padding-right: 1rem;
-}
 
 @media (max-width: $breakpoint-md) {
   // Only apply on narrow screens since we want it centered on sidebar on wide
@@ -76,7 +93,6 @@
     display: block;
     margin-top: 0.7em; // HACK: to make this vertically-centered w/o using flexbox
     margin-left: auto;
-    padding-right: 0; // Override headerbtn padding so header has same right/left pad
   }
 }
 
@@ -109,9 +125,14 @@ input#__header {
 }
 
 .header__end {
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: 1rem;
+  }
+
   @media (min-width: $breakpoint-md) {
     // Header end is right-justified
     margin-left: auto;
+    padding-right: 1.5rem;
   }
 }
 

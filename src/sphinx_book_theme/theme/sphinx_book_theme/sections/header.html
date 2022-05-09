@@ -4,8 +4,8 @@
 
 {%- if start_items or middle_items or end_items %}
 <input type="checkbox" class="header-toggle" name="__header" id="__header" aria-label="Toggle header">
-<div id="theme-header" class="container-xl header noprint">
-  <div class="row header__content">
+<div id="theme-header" class="header noprint">
+  <div class="header__content">
     <!-- If given, the brand will be the same width as sidebar -->
     {% if theme_header.get("brand") %}
     <div class="header__brand">

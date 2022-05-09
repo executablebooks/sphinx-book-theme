@@ -94,12 +94,12 @@ div.header-article-main {
     a,
     button,
     label {
-      color: $non-content-grey;
+      color: var(--theme-header-button-color);
 
       // Over-ride bootstrap defaults for clicking
       &:hover,
       &:focus {
-        color: black;
+        color: var(--theme-header-button-color-hover);
         box-shadow: none;
         text-decoration: none;
       }
