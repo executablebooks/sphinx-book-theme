@@ -88,7 +88,7 @@ but I'll stop here.
 (margin:sidenote)=
 ## Sidenotes and marginnotes
 
-This theme has support for [Tufte-stype margin / side notes](https://edwardtufte.github.io/tufte-css/), with a UX similar to [pandoc-sidenote](https://github.com/jez/pandoc-sidenote).
+This theme has support for [Tufte-style margin / side notes](https://edwardtufte.github.io/tufte-css/), with a UX similar to [pandoc-sidenote](https://github.com/jez/pandoc-sidenote).
 
 Sidenotes are numbered, and behave like footnotes, except they live in the margin and don’t force the reader to jump their eye to the bottom of the page.
 For example, here is a sidenote[^ex].
