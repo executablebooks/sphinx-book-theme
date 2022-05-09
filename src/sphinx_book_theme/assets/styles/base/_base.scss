@@ -3,11 +3,8 @@
 *********************************************/
 // For the helper pixel that we can watch to decide whether we've scrolled
 .sbt-scroll-pixel-helper {
-  position: absolute;
   width: 0px;
   height: 0px;
-  top: 0;
-  left: 0;
 }
 
 // Hide an element without display: none but so that it takes no space

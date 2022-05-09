@@ -44,7 +44,7 @@
 .header__end {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 
   // On narrow screens, the header items show flow vertically and snap to left
   @media (max-width: $breakpoint-md) {
@@ -117,7 +117,7 @@ input#__header {
 
 ul#navbar-icon-links {
   flex-direction: row;
-  gap: 0.5em;
+  gap: 0.75rem;
 }
 
 .header-content-item {
