@@ -72,7 +72,7 @@ doc = [
 test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
-    "myst_nb~=0.13",
+    "myst-nb~=0.13.2",
     "pytest~=6.0.1",
     "pytest-cov",
     "pytest-regressions~=2.0.1",

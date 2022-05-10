@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Any, Dict, Optional
+from urllib.parse import urlencode
 
 from docutils.nodes import document
 from sphinx.application import Sphinx
@@ -118,10 +119,13 @@ def add_launch_buttons(
         )
 
     if jupyterhub_url:
-        url = (
-            f"{jupyterhub_url}/hub/user-redirect/git-pull?"
-            f"repo={repo_url}&urlpath={ui_pre}/{repo}/{path_rel_repo}&branch={branch}"
+        url_params = urlencode(
+            dict(
+                repo=repo_url, urlpath=f"{ui_pre}/{repo}/{path_rel_repo}", branch=branch
+            ),
+            safe="/",
         )
+        url = f"{jupyterhub_url}/hub/user-redirect/git-pull?{url_params}"
         launch_buttons_list.append(
             {
                 "type": "link",
