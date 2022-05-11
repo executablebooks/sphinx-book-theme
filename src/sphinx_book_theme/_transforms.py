@@ -1,6 +1,7 @@
 from sphinx.transforms.post_transforms import SphinxPostTransform
 from typing import Any
 from docutils import nodes as docutil_nodes
+from sphinx import addnodes as sphinx_nodes
 from .nodes import SideNoteNode
 
 
@@ -27,6 +28,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         sidenote = SideNoteNode()
                         para = docutil_nodes.inline()
                         label = ftnode.children[0].astext()
+
                         if text.startswith("{-}"):
                             # marginnotes
                             para.attributes["classes"].append("marginnote")
@@ -45,7 +47,26 @@ class HandleFootnoteTransform(SphinxPostTransform):
                                 f"sidenote-role-{label}"
                             )
                             sidenote.append(superscript)
-                        node.replace_self([sidenote, para])
+
+                        # for nested footnotes/marginnotes
+                        node_parent = node.parent
+                        parent_replace = False
+                        # looping to check parent node
+                        while not isinstance(
+                            node_parent, (docutil_nodes.section, sphinx_nodes.document)
+                        ):
+                            # if parent node is another container
+                            if not isinstance(
+                                node_parent,
+                                (docutil_nodes.paragraph, docutil_nodes.footnote),
+                            ):
+                                node_parent.replace_self([para, node_parent])
+                                parent_replace = True
+                                break
+                            node_parent = node_parent.parent
+
+                        if not parent_replace:
+                            node.replace_self([sidenote, para])
                         break
                 if parent:
                     parent.remove(ftnode)
