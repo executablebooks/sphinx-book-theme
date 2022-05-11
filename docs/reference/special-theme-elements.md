@@ -282,6 +282,19 @@ Here's a sentence[^mn1] with multiple marginnotes[^mn2].
 [^mn1]: {-} Test marginnote 1.
 [^mn2]: {-} Test marginnote 2.
 
+
+Sidenotes inside of admonitions should behave the same:
+
+:::{note}
+An admonition with a sidenote defined in the admonition[^snam1] and another defined outside of the admonition [^snam2].
+
+[^snam1]: Sidenote defined in the admonition.
+
+:::
+
+[^snam2]: Sidenote defined outside the admonition.
+
+
 ## Nested admonitions
 
 These aren't theme-specific, but we still show below to make sure they work.
