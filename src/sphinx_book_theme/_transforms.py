@@ -39,7 +39,8 @@ class HandleFootnoteTransform(SphinxPostTransform):
                                 f"marginnote-role-{label}"
                             )
                         else:
-                            # sidenotes
+                            # sidenotes are the default behavior if no {-}
+                            # in this case we keep the number
                             superscript = docutil_nodes.superscript("", label)
                             para.attributes["classes"].append("sidenote")
                             para.extend([superscript, docutil_nodes.Text(text)])
