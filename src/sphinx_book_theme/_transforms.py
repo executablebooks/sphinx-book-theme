@@ -30,7 +30,8 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         label = ftnode.children[0].astext()
 
                         if text.startswith("{-}"):
-                            # marginnotes
+                            # marginnotes will have content starting with {-}
+                            # remove the number so it doesn't show
                             para.attributes["classes"].append("marginnote")
                             para.append(docutil_nodes.Text(text.replace("{-}", "")))
 
