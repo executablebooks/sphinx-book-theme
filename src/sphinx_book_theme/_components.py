@@ -8,6 +8,7 @@ their configuration.
 The remaining values in the user configuration are passed as kwargs to the func.
 """
 from sphinx.util import logging
+import hashlib
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -63,12 +64,14 @@ def component_dropdown(app, context, content="", items=[]):
         """
         dropdown_items.append(link)
     dropdown_items = "\n".join(dropdown_items)
+    dropdown_id = "menu-dropdown-"
+    dropdown_id += hashlib.md5(dropdown_items.encode("utf-8")).hexdigest()[:5]
     html = f"""
     <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn dropdown-toggle" type="button" id="{dropdown_id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {content}
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu" aria-labelledby="{dropdown_id}">
             {dropdown_items}
         </div>
     </div>

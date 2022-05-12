@@ -72,17 +72,20 @@ $header-default-height-narrow: 3rem;
   }
 }
 
+.header__brand {
+  padding: 0 1.5rem;
+}
+
 // Ensure the header items don't touch the screen edge
 .header__start {
   padding-left: 1rem;
 }
 
 @media (max-width: $breakpoint-md) {
-  // Only apply on narrow screens since we want it centered on sidebar on wide
   .header__brand,
+  .header__start,
   .header__end {
-    padding-left: 1rem;
-    padding-right: 0;
+    padding-left: 0.5rem;
   }
 }
 
