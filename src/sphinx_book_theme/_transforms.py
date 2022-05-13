@@ -16,6 +16,8 @@ class HandleFootnoteTransform(SphinxPostTransform):
         theme_options = self.env.config.html_theme_options
         if theme_options.get("use_sidenotes", False) is False:
             return None
+        # Cycle through footnote references, and move their content next to the reference
+        # This lets us display the reference in the margin, or just below on narrow screens.
         for node in self.document.traverse(docutil_nodes.footnote_reference):
             parent = None
             for ftnode in self.document.traverse(docutil_nodes.footnote):
