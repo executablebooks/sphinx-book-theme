@@ -6,8 +6,9 @@ from .nodes import SideNoteNode
 import copy
 
 
-class HandleFootnoteTransform(SphinxPostTransform):    
-    """Transform footnotes into side/marginnotes."""    
+class HandleFootnoteTransform(SphinxPostTransform):
+    """Transform footnotes into side/marginnotes."""
+
     default_priority = 1
     formats = ("html",)
 
