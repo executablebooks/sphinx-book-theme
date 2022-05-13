@@ -10,6 +10,10 @@
   left: 0;
 }
 
+.d-n {
+  display: none;
+}
+
 // Hide an element without display: none but so that it takes no space
 .visually-hidden {
   clip: rect(0, 0, 0, 0) !important;

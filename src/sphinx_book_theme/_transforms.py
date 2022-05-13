@@ -3,6 +3,7 @@ from typing import Any
 from docutils import nodes as docutil_nodes
 from sphinx import addnodes as sphinx_nodes
 from .nodes import SideNoteNode
+import copy
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
@@ -48,7 +49,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
 
                     # for nested footnotes/marginnotes
                     node_parent = node.parent
-                    parent_replace = False
+                    para_dup = copy.deepcopy(para)
                     # looping to check parent node
                     while not isinstance(
                         node_parent, (docutil_nodes.section, sphinx_nodes.document)
@@ -59,13 +60,11 @@ class HandleFootnoteTransform(SphinxPostTransform):
                             (docutil_nodes.paragraph, docutil_nodes.footnote),
                         ):
                             node_parent.replace_self([para, node_parent])
-                            node.replace_self([sidenote])
-                            parent_replace = True
+                            para_dup.attributes["classes"].append("d-n")
                             break
                         node_parent = node_parent.parent
 
-                    if not parent_replace:
-                        node.replace_self([sidenote, para])
+                    node.replace_self([sidenote, para_dup])
                     break
             if parent:
                 parent.remove(ftnode)
