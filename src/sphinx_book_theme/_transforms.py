@@ -20,6 +20,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
         # This lets us display the reference in the margin, or just below on narrow screens.
         for node in self.document.traverse(docutil_nodes.footnote_reference):
             parent = None
+            # Each footnote reference should have a single node it points to via `ids`
             for ftnode in self.document.traverse(docutil_nodes.footnote):
                 # matching the footnote reference with footnote
                 if (
