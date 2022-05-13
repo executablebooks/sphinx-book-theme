@@ -4,7 +4,8 @@ from typing import Any, cast
 
 
 class SideNoteNode(nodes.Element):
-    """A node that will not be rendered."""
+    """Handles rendering of side/marginnote content text for html outputs.
+    Inserts required html to handle both desktop and mobile."""
 
     def __init__(self, rawsource="", *children, **attributes):
         super().__init__("", **attributes)

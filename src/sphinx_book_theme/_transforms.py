@@ -15,20 +15,21 @@ class HandleFootnoteTransform(SphinxPostTransform):
         theme_options = self.env.config.html_theme_options
         if theme_options.get("use_sidenotes", False) is False:
             return None
-        for node in self.document.traverse(docutil_nodes.footnote_reference):
+        for ref_node in self.document.traverse(docutil_nodes.footnote_reference):
             parent = None
-            for ftnode in self.document.traverse(docutil_nodes.footnote):
+            for foot_node in self.document.traverse(docutil_nodes.footnote):
                 # matching the footnote reference with footnote
                 if (
-                    len(ftnode.attributes["backrefs"])
-                    and ftnode.attributes["backrefs"][0] == node.attributes["ids"][0]
+                    len(foot_node.attributes["backrefs"])
+                    and foot_node.attributes["backrefs"][0]
+                    == ref_node.attributes["ids"][0]
                 ):
-                    parent = ftnode.parent
-                    text = ftnode.children[1].astext()
+                    parent = foot_node.parent
+                    text = foot_node.children[1].astext()
 
                     sidenote = SideNoteNode()
                     para = docutil_nodes.inline()
-                    label = ftnode.children[0].astext()
+                    label = foot_node.children[0].astext()
 
                     if text.startswith("{-}"):
                         # marginnotes will have content starting with {-}
@@ -48,7 +49,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         sidenote.append(superscript)
 
                     # for nested footnotes/marginnotes
-                    node_parent = node.parent
+                    node_parent = ref_node.parent
                     para_dup = copy.deepcopy(para)
                     # looping to check parent node
                     while not isinstance(
@@ -64,7 +65,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
                             break
                         node_parent = node_parent.parent
 
-                    node.replace_self([sidenote, para_dup])
+                    ref_node.replace_self([sidenote, para_dup])
                     break
             if parent:
-                parent.remove(ftnode)
+                parent.remove(foot_node)
