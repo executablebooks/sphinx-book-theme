@@ -37,6 +37,7 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   }
 }
 
+// Sidenotes and marginnotes
 label.margin-toggle {
   margin-bottom: 0em;
   &.marginnote-label {

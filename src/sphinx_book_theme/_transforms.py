@@ -7,6 +7,7 @@ import copy
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
+    """Transform footnotes into side/marginnotes."""
 
     default_priority = 1
     formats = ("html",)
@@ -15,8 +16,12 @@ class HandleFootnoteTransform(SphinxPostTransform):
         theme_options = self.env.config.html_theme_options
         if theme_options.get("use_sidenotes", False) is False:
             return None
+        # Cycle through footnote references, and move their content next to the
+        # reference. This lets us display the reference in the margin,
+        # or just below on narrow screens.
         for ref_node in self.document.traverse(docutil_nodes.footnote_reference):
             parent = None
+            # Each footnote reference should have a single node it points to via `ids`
             for foot_node in self.document.traverse(docutil_nodes.footnote):
                 # matching the footnote reference with footnote
                 if (
@@ -48,7 +53,10 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         sidenote.attributes["names"].append(f"sidenote-role-{label}")
                         sidenote.append(superscript)
 
-                    # for nested footnotes/marginnotes
+                    # If the reference is nested (e.g. in an admonition), duplicate
+                    # the content node And place it just before the parent container,
+                    # so it works w/ margin. Only show one or another depending on
+                    # screen width.
                     node_parent = ref_node.parent
                     para_dup = copy.deepcopy(para)
                     # looping to check parent node
