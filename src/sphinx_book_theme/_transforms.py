@@ -51,7 +51,9 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         sidenote.attributes["names"].append(f"sidenote-role-{label}")
                         sidenote.append(superscript)
 
-                    # for nested footnotes/marginnotes
+                    # If the reference is nested (e.g. in an admonition), duplicate the content node
+                    # And place it just before the parent container, so it works w/ margin
+                    # Only show one or another depending on screen width.
                     node_parent = node.parent
                     para_dup = copy.deepcopy(para)
                     # looping to check parent node
