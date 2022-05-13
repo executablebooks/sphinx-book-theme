@@ -30,10 +30,12 @@ class HandleFootnoteTransform(SphinxPostTransform):
                     == ref_node.attributes["ids"][0]
                 ):
                     parent = foot_node.parent
+                    # second children of footnote node is the content text
                     text = foot_node.children[1].astext()
 
                     sidenote = SideNoteNode()
                     para = docutil_nodes.inline()
+                    # first children of footnote node is the label
                     label = foot_node.children[0].astext()
 
                     if text.startswith("{-}"):
