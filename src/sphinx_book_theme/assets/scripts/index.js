@@ -181,7 +181,7 @@ var initTooltips = () => {
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({
       trigger: "hover",
-      delay: { show: 500, hide: 100 },
+      delay: { show: 750, hide: 100 },
     });
   });
 };

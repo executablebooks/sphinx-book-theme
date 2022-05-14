@@ -104,7 +104,7 @@ thebe_config = {
     "repository_branch": "master",
 }
 
-header_config = safe_load(Path("./config-header.yml").read_text())
+header_config = safe_load(Path("./_data/config-header.yml").read_text())
 
 html_theme_options = {
     "path_to_docs": "docs",

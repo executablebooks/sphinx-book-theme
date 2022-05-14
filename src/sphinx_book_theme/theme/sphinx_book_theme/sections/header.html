@@ -34,10 +34,13 @@
     </div>
   </div>
   {# Dropdown button for mobile, will show on the right #}
-  <label class="header-toggle-button headerbtn" for="__header">
-    <div class="visually-hidden">{{ translate('Toggle Header') }}</div>
-    <i class="fas fa-bars"></i>
-  </label>
+  {{ theme_render_component({
+    "type": "button",
+    "label_for": "__header",
+    "icon": "fas fa-bars",
+    "title": "Toggle Header",
+    "id": "header-toggle-button"
+  }) }}
 </div>
 {% endif -%}
 

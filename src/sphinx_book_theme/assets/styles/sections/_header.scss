@@ -90,12 +90,13 @@ $header-default-height-narrow: 3rem;
 }
 
 // Only show up on narrow screens, and push to the far right
-.headerbtn.header-toggle-button {
+#header-toggle-button {
   display: none;
   @media (max-width: $breakpoint-md) {
     display: block;
-    margin-top: 0.7em; // HACK: to make this vertically-centered w/o using flexbox
-    margin-left: auto;
+    // HACK to keep it centered in a way that won't move when expanded
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
   }
 }
 

@@ -23,6 +23,11 @@ start:
     - content: Feature Voting
       url: https://executablebooks.org/en/latest/feature-vote.html
 
+  - type: button
+    content: Book gallery
+    url: http://gallery.jupyterbook.org/
+
+
 end:
   - type: icon-links
     icons:
@@ -35,6 +40,3 @@ end:
     - icon: fas fa-comments
       name: Forum
       url: https://github.com/orgs/executablebooks/discussions
-  - type: button
-    content: Book gallery
-    url: http://gallery.jupyterbook.org/

@@ -110,9 +110,9 @@ def add_launch_buttons(
         )
         launch_buttons_list.append(
             {
-                "type": "link",
-                "text": "Binder",
-                "tooltip": "Launch on Binder",
+                "type": "button",
+                "content": "Binder",
+                "title": "Launch on Binder",
                 "icon": "_static/images/logo_binder.svg",
                 "url": url,
             }
@@ -128,9 +128,9 @@ def add_launch_buttons(
         url = f"{jupyterhub_url}/hub/user-redirect/git-pull?{url_params}"
         launch_buttons_list.append(
             {
-                "type": "link",
-                "text": "JupyterHub",
-                "tooltip": "Launch on JupyterHub",
+                "type": "button",
+                "content": "JupyterHub",
+                "title": "Launch on JupyterHub",
                 "icon": "_static/images/logo_jupyterhub.svg",
                 "url": url,
             }
@@ -140,9 +140,9 @@ def add_launch_buttons(
         url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
         launch_buttons_list.append(
             {
-                "type": "link",
-                "text": "Colab",
-                "tooltip": "Launch on Colab",
+                "type": "button",
+                "content": "Colab",
+                "title": "Launch on Colab",
                 "icon": "_static/images/logo_colab.png",
                 "url": url,
             }
@@ -153,9 +153,9 @@ def add_launch_buttons(
         url = f"{deepnote_url}/launch?url=https%3A%2F%2Fgithub.com{github_path}"
         launch_buttons_list.append(
             {
-                "type": "link",
-                "text": "Deepnote",
-                "tooltip": "Launch on Deepnote",
+                "type": "button",
+                "content": "Deepnote",
+                "title": "Launch on Deepnote",
                 "icon": "_static/images/logo_deepnote.svg",
                 "url": url,
             }
@@ -165,12 +165,11 @@ def add_launch_buttons(
     if launch_buttons.get("thebe", False):
         launch_buttons_list.append(
             {
-                "type": "javascript",
-                "text": "Live Code",
-                "tooltip": "Launch Thebe",
-                "javascript": "initThebeSBT()",
+                "type": "button",
+                "content": "Live Code",
+                "title": "Launch Thebe",
+                "onclick": "initThebeSBT()",
                 "icon": "fas fa-play",
-                "label": "launch-thebe",
             }
         )
         context["use_thebe"] = True
@@ -180,11 +179,11 @@ def add_launch_buttons(
         lb["tooltip_placement"] = "left"
     header_buttons.append(
         {
-            "type": "group",
-            "tooltip": "Launch interactive content",
+            "type": "dropdown",
+            "title": "Launch interactive content",
             "icon": "fas fa-rocket",
-            "buttons": launch_buttons_list,
-            "label": "launch-buttons",
+            "items": launch_buttons_list,
+            "side": "right",
         }
     )
 

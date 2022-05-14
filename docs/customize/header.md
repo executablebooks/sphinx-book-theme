@@ -23,7 +23,7 @@ For one example, see the header configuration of this documentation, in YAML for
 Below is YAML configuration for this theme's header.
 It is read by `conf.py` and converted into a Python dictionary at build time.
 
-```{literalinclude} ../config-header.yml
+```{literalinclude} ../_data/config-header.yml
 :language: yaml
 ```
 ````
