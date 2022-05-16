@@ -108,3 +108,7 @@ This toggle is in the margin!
 
 ```{youtube} 2Z7wDaYt53Y
 ```
+
+## `sphinx-design` for UI components
+
+{bdg-primary}`Test badge`.
