@@ -14,105 +14,34 @@ SPHINX_LOGGER = logging.getLogger(__name__)
 
 
 # Add functions to render header components
-def component_text(app, context, content="", url="", classes=[]):
-    classes = " ".join(classes)
-    html = f"<span class='component-text {classes}'>{content}</span>"
-    if url:
-        html = f'<a href="{url}" class="link-primary">{html}</a>'
-    return html
-
-
-def component_button(
+def component_link(
     app,
     context,
     content="",
-    title="",
     icon="",
+    image="",
+    doc="",
     url="",
-    onclick="",
-    button_id="",
-    label_for="",
-    id="",
-    tooltip_placement="",
-    kwargs={},
+    newwindow=False,
+    external=False,
     classes=[],
 ):
-    kwargs = kwargs.copy()
-    kwargs.update({"type": "button", "class": ["btn", "icon-button"]})
-    kwargs["class"].extend(classes)
-    btn_content = ""
-    if url and onclick:
-        raise Exception("Button component cannot have both url and onclick specified.")
+    kwargs = {"class": classes.copy()}
+    if external is True:
+        kwargs["target"] = "_blank"
+    if newwindow is True:
+        classes.append("external-link")
 
-    if not (icon or content):
-        raise Exception("Button must have either icon or content specified.")
-
-    if onclick:
-        kwargs["onclick"] = onclick
-
-    if id:
-        kwargs["id"] = id
-
-    if icon:
-        if icon.startswith("fa"):
-            icon = f'<i class="{icon}"></i>'
-        else:
-            if not icon.startswith("http"):
-                icon = context["pathto"](icon, 1)
-            icon = f'<img src="{icon}">'
-        btn_content += f'<span class="btn__icon-container">{icon}</span>'
-
-    if not content:
-        kwargs["class"].append("icon-button-no-content")
-    else:
-        btn_content += content
-
-    if button_id:
-        kwargs["id"] = button_id
-
-    kwargs["aria-label"] = title
-
-    # Handle tooltips
-    title = context["translate"](title)
-    tooltip_placement = "bottom" if not tooltip_placement else tooltip_placement
-
-    # If we're already using data-toggle, wrap the button content in a span.
-    # This lets us use another data-toggle.
-    if "data-toggle" in kwargs:
-        btn_content = f"""
-        <span data-toggle="tooltip" data-placement="{tooltip_placement}" title="{title}">
-            {btn_content}
-        </span>
-        """  # noqa
-    else:
-        kwargs["data-placement"] = tooltip_placement
-        kwargs["title"] = title
-
-    # Convert all the options for the button into a string of HTML kwargs
-    kwargs["class"] = " ".join(kwargs["class"])
-    kwargs_str = " ".join([f'{key}="{val}"' for key, val in kwargs.items()])
-
-    # Generate the button HTML
-    if label_for:
-        html = f"""
-        <label for="{label_for}" {kwargs_str}>
-            {btn_content}
-        </label>
-        """
-    else:
-        html = f"""
-        <button {kwargs_str}>
-            {btn_content}
-        </button>
-        """
-
-    # Wrap the whole thing in a link if one is specified
-    if url:
-        # If it doesn't look like a web URL, assume it's a local page
-        if not url.startswith("http"):
-            url = context["pathto"](url)
-        html = f'<a href="{url}">{html}</a>'
-
+    html = component_button(
+        app,
+        context,
+        content=content,
+        icon=icon,
+        image=image,
+        classes=classes,
+        url=url,
+        kwargs=kwargs,
+    )
     return html
 
 
@@ -177,17 +106,6 @@ def component_dropdown(
     return html_dropdown
 
 
-def component_image(app, context, src="", url="", classes=[]):
-    if not src.startswith("http"):
-        src = context["pathto"](src, 1)
-    html = f"""
-    <img src={src}>
-    """
-    if url:
-        html = f"<a href={url}>{html}</a>"
-    return html
-
-
 def component_html(app, context, html=""):
     return html
 
@@ -198,11 +116,112 @@ def component_icon_links(app, context, icons, classes=[]):
     return app.builder.templates.render("icon-links.html", context)
 
 
+def component_button(
+    app,
+    context,
+    content="",
+    title="",
+    icon="",
+    image="",
+    url="",
+    onclick="",
+    button_id="",
+    label_for="",
+    id="",
+    tooltip_placement="",
+    kwargs={},
+    classes=[],
+):
+    kwargs = kwargs.copy()
+    kwargs.update({"type": "button", "class": ["btn", "icon-button"]})
+    kwargs["class"].extend(classes.copy())
+    btn_content = ""
+    if url and onclick:
+        raise Exception("Button component cannot have both url and onclick specified.")
+
+    if not (icon or content or image):
+        raise Exception("Button must have either icon, content, or image specified.")
+
+    if onclick:
+        kwargs["onclick"] = onclick
+
+    if id:
+        kwargs["id"] = id
+
+    if icon:
+        if icon.startswith("fa"):
+            icon = f'<i class="{icon}"></i>'
+        else:
+            if not icon.startswith("http"):
+                icon = context["pathto"](icon, 1)
+            icon = f'<img src="{icon}">'
+        btn_content += f'<span class="btn__icon-container">{icon}</span>'
+
+    if image:
+        if not image.startswith("http"):
+            image = context["pathto"](image, 1)
+        btn_content += f"""
+        <span class="btn__image-container"><img src="{image}" /></span>
+        """
+
+    if not content:
+        kwargs["class"].append("icon-button-no-content")
+    else:
+        btn_content += content
+
+    if button_id:
+        kwargs["id"] = button_id
+
+    kwargs["aria-label"] = title
+
+    # Handle tooltips
+    title = context["translate"](title)
+    tooltip_placement = "bottom" if not tooltip_placement else tooltip_placement
+
+    # If we're already using data-toggle, wrap the button content in a span.
+    # This lets us use another data-toggle.
+    if "data-toggle" in kwargs:
+        btn_content = f"""
+        <span data-toggle="tooltip" data-placement="{tooltip_placement}" title="{title}">
+            {btn_content}
+        </span>
+        """  # noqa
+    else:
+        kwargs["data-placement"] = tooltip_placement
+        kwargs["title"] = title
+
+    # Convert all the options for the button into a string of HTML kwargs
+    kwargs["class"] = " ".join(kwargs["class"])
+    kwargs_str = " ".join([f'{key}="{val}"' for key, val in kwargs.items()])
+
+    # Generate the button HTML
+    if label_for:
+        html = f"""
+        <label for="{label_for}" {kwargs_str}>
+            {btn_content}
+        </label>
+        """
+    else:
+        html = f"""
+        <button {kwargs_str}>
+            {btn_content}
+        </button>
+        """
+
+    # Wrap the whole thing in a link if one is specified
+    if url:
+        # If it doesn't look like a web URL, assume it's a local page
+        if not url.startswith("http"):
+            url = context["pathto"](url)
+        html = f'<a href="{url}">{html}</a>'
+
+    return html
+
+
 COMPONENT_FUNCS = {
-    "text": component_text,
+    "link": component_link,
     "button": component_button,
-    "html": component_html,
-    "image": component_image,
     "icon-links": component_icon_links,
     "dropdown": component_dropdown,
+    "html": component_html,
 }

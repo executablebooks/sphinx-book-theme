@@ -1,6 +1,6 @@
 brand:
-  type: image
-  src: https://executablebooks.org/en/latest/_static/logo.svg
+  type: link
+  image: https://executablebooks.org/en/latest/_static/logo.svg
   url: https://sphinx-book-theme.readthedocs.io
 start:
   - type: dropdown
@@ -23,8 +23,10 @@ start:
     - content: Feature Voting
       url: https://executablebooks.org/en/latest/feature-vote.html
 
-  - type: button
+  - type: link
     content: Book gallery
+    external: true
+    newwindow: true
     url: http://gallery.jupyterbook.org/
 
 

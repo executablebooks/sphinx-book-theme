@@ -67,9 +67,9 @@ html_theme_options = {
   "header": {
     "brand": {
       # Specifies that the brand area will use an image logo
-      "type": "image",
+      "type": "link",
       # Source of the image to be used
-      "src": "https://executablebooks.org/en/latest/_static/logo.svg",
+      "image": "https://executablebooks.org/en/latest/_static/logo.svg",
       # Link for the image
       "url": "https://sphinx-book-theme.readthedocs.io",
     },
