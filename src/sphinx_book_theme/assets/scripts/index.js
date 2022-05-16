@@ -56,7 +56,7 @@ var toggleFullScreen = () => {
  * the screen.
  */
 var scrollToActive = () => {
-  var navbar = document.getElementById("site-navigation");
+  var navbar = document.querySelector("#site-navigation .bd-sidebar__content");
   var active_pages = navbar.querySelectorAll(".active");
   var active_page = active_pages[active_pages.length - 1];
   // Only scroll the navbar if the active link is lower than 50% of the page
