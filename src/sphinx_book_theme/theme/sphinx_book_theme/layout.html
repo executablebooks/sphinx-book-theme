@@ -16,12 +16,12 @@
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement noprint">
+<div class="announcement header-item noprint">
     {%- include "sections/announcement.html" -%}
 </div>
-
-{%- include "sections/header.html" -%}
-
+<div class="header header-item noprint">
+    {%- include "sections/header.html" -%}
+</div>
 {{ super() }}
 {% endblock %}
 
@@ -49,11 +49,11 @@
 {% endblock %}
 
 {% block docs_main %}
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
 <!-- Main content -->
 <div class="col py-0 content-container">
     {% block docs_body %}
-    <!-- A tiny helper pixel to detect if we've scrolled past the top -->
-    <div class="sbt-scroll-pixel-helper"></div>
     <div class="header-article row sticky-top noprint">
         {% include "sections/header-article.html" %}
     </div>

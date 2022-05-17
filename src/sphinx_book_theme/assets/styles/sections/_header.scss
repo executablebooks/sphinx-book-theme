@@ -13,18 +13,28 @@ $header-default-height-narrow: 3rem;
   }
 }
 
-// The parent div that will expand / contract
+// Header container places the collapse button properly
 .header {
   display: flex;
   border-bottom: $border-thin;
+}
+
+// Header content contains the components
+.header__content {
+  display: flex;
+  flex-grow: 1;
+  max-width: 1400px; // Bootstrap max-width for xl container, to match article
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  @include max-height-header;
 
   // On narrow screens, cap the height unless you click the hamburger menu
-  @include max-height-header;
   min-height: $header-default-height-wide;
   @media (max-width: $breakpoint-md) {
     min-height: $header-default-height-narrow;
     transition: max-height $animation-time ease-out;
     overflow-y: hidden;
+    padding-bottom: 0.5rem;
   }
 
   // Navigation links
@@ -50,14 +60,6 @@ $header-default-height-narrow: 3rem;
   }
 }
 
-// Header content should take up the whole remaining horizontal space
-.header__content {
-  display: flex;
-  flex-grow: 1;
-  max-width: 1400px; // Bootstrap max-width for xl container, to match article
-  margin: 0 auto;
-}
-
 .header__content,
 .header__brand,
 .header__start,
@@ -76,15 +78,11 @@ $header-default-height-narrow: 3rem;
   padding: 0 1.5rem;
 }
 
-// Ensure the header items don't touch the screen edge
-.header__start {
-  padding-left: 1rem;
-}
-
-@media (max-width: $breakpoint-md) {
-  .header__brand,
-  .header__start,
-  .header__end {
+.header__brand,
+.header__start,
+.header__end {
+  // On narrow screens the header content sections display vertically
+  @media (max-width: $breakpoint-md) {
     padding-left: 0.5rem;
   }
 }
@@ -94,9 +92,9 @@ $header-default-height-narrow: 3rem;
   display: none;
   @media (max-width: $breakpoint-md) {
     display: block;
+    margin-right: 0.5rem;
     // HACK to keep it centered in a way that won't move when expanded
     margin-top: 0.2rem;
-    margin-right: 0.5rem;
   }
 }
 
@@ -105,16 +103,11 @@ input#__header {
   display: none;
 
   // On narrow screens, checking the button opens the header
-  &:checked ~ div.header {
+  &:checked ~ div.header__content {
     @media (max-width: $breakpoint-md) {
       max-height: 20em;
     }
   }
-}
-
-// Header content contains the components
-.header__content {
-  flex-grow: 1;
 }
 
 // This is the logo or a bold docs title
@@ -129,14 +122,9 @@ input#__header {
 }
 
 .header__end {
-  @media (max-width: $breakpoint-md) {
-    padding-bottom: 1rem;
-  }
-
+  // Header end is right-justified on wide screens
   @media (min-width: $breakpoint-md) {
-    // Header end is right-justified
     margin-left: auto;
-    padding-right: 1.5rem;
   }
 }
 
@@ -149,15 +137,20 @@ ul#navbar-icon-links {
   display: flex;
   align-items: center;
 
+  // Ensure that the items don't break out of their containers
+  @include max-height-header;
+
   // Spacing is horizontal on wide, vertical on narrow
   // Items should snap to left on mobile
   @media (max-width: $breakpoint-md) {
     align-items: start;
   }
 
+  // Images are capped a bit smaller so they have whitespace in the header
   img {
-    padding: 0.4rem 0em;
-    @include max-height-header;
+    @media (max-width: $breakpoint-md) {
+      max-height: 2rem;
+    }
   }
 
   .dropdown-menu {

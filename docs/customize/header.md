@@ -161,26 +161,101 @@ html_theme_options = {
 
 The rest of these sections describe the components you can use:
 
-### Link and text components
+### Buttons
 
-To add text and link components to header sections, use the following component configuration:
+Buttons are flexible UI components that trigger various actions when clicked.
+They can be links, or they can trigger arbitrary JavaScript that you provide.
+Use them as call-to-action items, or as a way to trigger events on your page if you are using custom JavaScript.
+
+Clicking a button can trigger one of two actions:
+
+- **Link to an internal or external page**
+- **Trigger a JavaScript function**
+
+Buttons have three visual sections that you may control, that roughly follow this structure:
+
+```html
+<button>
+  <button-icon><button-image><button-content>
+</button>
+```
+
+- **`icon`**: A small, square icon. May be configured with **FontAwesome** icons or a path to an image (local or remove).
+- **`image`**: A larger image that may be rectangular. May be configured with **FontAwesome** icons or a path to an image (local or remove).
+- **`content`**: Arbitrary text (or extra HTML) to put inside the button.
+
+To add buttons components to header sections, use the following component configuration:
 
 ```python
 
 # Provided as a list item to `start:` or `end:`
 {
-  # Specifies a `text` component
-  "type": "text",
-  # The URL to which the link points
-  "url": "https://jupyterbook.org",
-  # The text to be displayed
-  "content": "Jupyter Book",
+  # Specifies the `button` component
+  "type": "button",
+
+  ## Controls button behavior ##
+  # If provided, the button will be a link to another page.
+  "url": "https://google.com",
+  # If provided, clicking the button will trigger this JavaScript.
+  "onclick": "SomeFunction()",
+
+  ## Controls button style ##
+  # An icon that will be displayed before the text
+  # Can be a set of fontawesome classes, or a path to an image
+  "icon": "fas fa-bars",
+  # An image path that will be displayed before the text
+  "image": "https://executablebooks.org/en/latest/_static/logo.svg",
+  # The text that will be displayed inside the button.
+  "content": "My button's text",
   # An optional list of classes to add
   "classes": ["one", "two"]
-},
+}
 ```
 
-To add text without a link, simply omit the `url:` parameter.
+Note tha **url** and **onclick** cannot both be provided in the same button's configuration.
+
+#### Button icons
+
+There are two kinds of icons you can control with the `icon` parameter:
+
+- **FontAwesome icons**: FontAwesome icon classes like `fas fa-arrow-right`. See [the FontAwesome documentation](https://fontawesome.com/icons) for a list of classes and icons. For example:
+
+  ```python
+  # Provided as a list item to `start:` or `end:`
+  {
+    # Specifies the `button` component
+    "type": "button",
+    "icon": "fab fa-github"
+    "url": "https://github.com"
+  }
+  ```
+- **A path to an image**: Any local image you include with your documentation.
+
+  For example, with a remote image:
+
+  ```python
+  # Provided as a list item to `start:` or `end:`
+  {
+    # Specifies the `button` component
+    "type": "button",
+    "image": "https://executablebooks.org/en/latest/_static/logo.svg"
+    "url": "https://executablebooks.org"
+  }
+  ```
+
+  With a local image:
+
+  ```python
+  # Provided as a list item to `start:` or `end:`
+  {
+    # Specifies the `button` component
+    "type": "button",
+    "image": "./_static/myimage.png"
+    "url": "https://executablebooks.org"
+  }
+  ```
+
+Finally, if a button is configured **only with an icon**, it will have a special class `icon-button` added to it that will make it contract slightly in size and spacing.
 
 ### Dropdown menus
 
@@ -196,7 +271,7 @@ To add dropdown components to header sections, use the following component confi
   "type": "dropdown",
   # Text to be displayed on the button
   "content": "EBP Projects",
-  # A list of dropdown links. Each defines a content string and a url
+  # A list of dropdown links. Each is a configuration for a button.
   "items": [
     {
       "url": "https://executablebooks.org",
@@ -212,78 +287,37 @@ To add dropdown components to header sections, use the following component confi
 },
 ```
 
-### Icon links
+### Groups
 
-You can add a list of icon links to your header that link to external sites and services.
-These are often used to link to social media accoutns like GitHub, Twitter, discussion forums, etc.
-They will be displayed horizontally whether on wide or narrow screens.
+Groups are a way of telling the theme that several UI components should be grouped together.
+They will have a wrapping container, will have less spacing between them, and will be displayed _horizontally_ on narrow screens.
 
-There are two kinds of icons you can control with `icon-links`:
-
-- **FontAwesome icons**: FontAwesome icon classes like `fas fa-arrow-right`. See [the FontAwesome documentation](https://fontawesome.com/icons) for a list of classes and icons.
-- **A path to an image**: Any local image you include with your documentation.
-
-To add icon link components to header sections, use the following component configuration:
+For example, to group several icon buttons together use a configuration like so:
 
 ```python
 # Provided as a list item to `start:` or `end:`
 {
-  # Specifies the `icon-links` component
-  "type": "icon-links",
-  # A list of icon links to include
-  "icons": [
-    # Configuration for icon one uses FontAwesome
+  # Specifies a `group` type
+  "type": "group",
+  # A list of group items. Each is a configuration for a button.
+  "items": [
     {
-        # Specifies that this icon is a FontAwesome icon
-        "type": "fontawesome",
-        # A url for icon one
-        "url": "https://twitter.com/executablebooks",
-        # A tooltip for icon one
-        "name": "Twitter",
-        # A FontAwesome icon class
-        "icon": "fab fa-twitter-square",
+      "icon": "fab fa-github",
+      "url": "https://github.com
     },
-    # Configuration for icon two uses a local image path
     {
-        # Specifies that this icon is a local image
-        "type": "local",
-        # A url for icon two
-        "url": "https://github.com/orgs/executablebooks/discussions",
-        # A tooltip for icon two
-        "name": "Discussions image",
-        # A path to a local image relative to conf.py
-        "icon": "./path/to/image.png",
+      "icon": "fab fa-twitter",
+      "url": "https://twitter.com
+    },
+    {
+      "icon": "fab fa-discourse",
+      "url": "https://discourse.com
     },
   ],
-},
-```
-
-### Buttons
-
-Buttons are larger and more visually-noticeable.
-They can either be links, or they can trigger arbitrary JavaScript that you provide.
-Use them as call-to-action items, or as a way to trigger events on your page if you are using custom JavaScript.
-
-To add buttons components to header sections, use the following component configuration:
-
-```python
-
-# Provided as a list item to `start:` or `end:`
-{
-  # Specifies the `button` component
-  "type": "button",
-  # The text that will be displayed inside the button.
-  "content": "end",
-  # If provided, the button will be a link to another page.
-  "url": "https://google.com",
-  # If provided, clicking the button will trigger this JavaScript.
-  "onclick": "SomeFunction()",
   # An optional list of classes to add
   "classes": ["one", "two"]
-}
+},
 ```
-
-Note tha **url** and **onclick** cannot both be provided in the same button's configuration.
 
 ### HTML Snippets
 
