@@ -44,10 +44,5 @@ ul.search {
         color: $grey--medium;
       }
     }
-
-    // Highlighted search items are a slightly lighter version of Jupyter orange
-    span.highlighted {
-      background-color: #f3772642;
-    }
   }
 }

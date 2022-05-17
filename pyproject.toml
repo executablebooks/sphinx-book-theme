@@ -60,6 +60,7 @@ doc = [
     "plotly",
     "sphinx~=4.0",  # Force Sphinx to be the latest version
     "sphinx-design",
+    "sphinx-examples",
     "sphinx-copybutton",
     "sphinx-tabs",
     "sphinx-togglebutton>=0.2.1",
