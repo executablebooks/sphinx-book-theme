@@ -71,7 +71,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
                             (docutil_nodes.paragraph, docutil_nodes.footnote),
                         ):
                             node_parent.replace_self([para, node_parent])
-                            para_dup.attributes["classes"].append("d-none")
+                            para_dup.attributes["classes"].append("d-n")
                             break
                         node_parent = node_parent.parent
 
