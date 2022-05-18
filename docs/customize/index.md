@@ -9,6 +9,8 @@ The following options are available via `html_theme_options`
 ```{list-table}
 :widths: 10 5 40
 :header-rows: 1
+:class: full-width
+
 * - Key
   - Type
   - Description

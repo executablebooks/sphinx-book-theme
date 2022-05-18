@@ -1,4 +1,5 @@
 """A lightweight book theme based on the pydata sphinx theme."""
+import json
 import hashlib
 import os
 from pathlib import Path
@@ -28,7 +29,10 @@ def get_html_theme_path():
 
 
 def add_metadata_to_page(app, pagename, templatename, context, doctree):
-    """Adds some metadata about the page that we re-use later."""
+    """Adds some metadata about the page that we re-use later.
+
+    If page-metadata is specified, this over-rides global config.
+    """
     # Add the site title to our context so it can be inserted into the navbar
     if not context.get("root_doc"):
         # TODO: Sphinx renamed master to root in 4.x, deprecate when we drop 3.x
@@ -59,6 +63,29 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     context["theme_search_bar_text"] = translation(
         context.get("theme_search_bar_text", "Search the docs ...")
     )
+
+    # Configuration for page-level styling
+    page_theme_config = _get_page_theme_config(app, pagename)
+    theme_config_vals = [
+        # Collapse the sidebar if specified at the page- or site-level
+        "collapse_sidebar",
+        # Content expands to take up whole screen, TOC is hidden by default
+        "full_width",
+    ]
+    for config_key in theme_config_vals:
+        config_value = context.get(f"theme_{config_key}")
+        config_value = page_theme_config.get(config_key, config_value)
+        context[config_key] = config_value
+
+
+@lru_cache(maxsize=None)
+def _get_page_theme_config(app, pagename):
+    """Return theme config from page-level metadata."""
+    meta = app.env.metadata.get(pagename, {}).get("theme", {})
+    if meta:
+        # If page-level theme metadata is provided, it will be in JSON string form
+        meta = json.loads(meta)
+    return meta
 
 
 @lru_cache(maxsize=None)
