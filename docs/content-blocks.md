@@ -76,7 +76,7 @@ If you're on a mobile device, try clicking the sidenote number above.
     On narrow screens, this text won't show up unless you click the superscript number!
 
 Marginnotes are not numbered, but behave the same way as sidenotes.
-On mobile devices a symbol will be displayed that will display the marginnote when clicked[^exmn].
+On mobile devices you'll see a symbol that will show the marginnote when clicked[^exmn].
 For example, there's a marginnote in the previous sentence, and you should see a symbol show to display it on mobile screens.
 
 [^exmn]: {-} This is a margin note. Notice there isn’t a number preceding the note.
@@ -104,33 +104,30 @@ This will turn your **footnotes** into **sidenotes** or **marginnotes**.
 
 ### Create a sidenote
 
-For example, the following sentence defines a sidenote and its respective content:
+The following sentence defines a sidenote and its respective content:
 
-```markdown
+```{example}
+:no-container:
+:reverse:
+
 Here's my sentence and a sidenote[^sn1].
 
 [^sn1]: And here's my sidenote content.
 ```
-
-Here's my sentence and a sidenote[^sn1].
-
-[^sn1]: And here's my sidenote content.
 
 ### Create a marginnote
 
 Marginnotes are defined by adding `{-}` at the beginning of the content block.
-For example, the following syntax defines a marginnote:
+The following syntax defines a marginnote:
 
-```markdown
+```{example}
+:no-container:
+:reverse:
+
 Here's my sentence and a marginnote[^mn1].
 
 [^mn1]: {-} And here's my marginnote content.
 ```
-
-Here's my sentence and a marginnote[^mn1].
-
-[^mn1]: {-} And here's my marginnote content.
-
 
 (margin:block)=
 ## Block margin content with the `{margin}` directive

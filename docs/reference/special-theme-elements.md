@@ -189,14 +189,14 @@ This is my test
 Let's see what happens
 
 ```{code-cell} ipython3
-:tags: [popout]
+:tags: [margin]
 
 ## code cell in the margin with output
 fig, ax = plt.subplots()
 ax.imshow(wide)
 ```
 
-+++ {"tags": ["popout"]}
+````{margin}
 
 Markdown cell with code in margin
 
@@ -220,6 +220,7 @@ Markdown cell with images in sidebar
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" style="max-width:200px" />
 
+````
 +++
 
 ### More content after the margin content
