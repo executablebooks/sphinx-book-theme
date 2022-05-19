@@ -132,6 +132,7 @@ var initTocHide = () => {
 
   // Set up the intersection observer to watch all margin content
   let tocObserver = new IntersectionObserver(hideTocCallback);
+  // TODO: deprecate popout after v0.5.0
   const selectorClasses = [
     "marginnote",
     "sidenote",

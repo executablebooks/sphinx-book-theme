@@ -225,21 +225,21 @@ Markdown cell with images in sidebar
 
 ### More content after the margin content
 
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
 
 ```python
 a = 2
 ```
 
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
 
 ### Figures with margin captions
 
