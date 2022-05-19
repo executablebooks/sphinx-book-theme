@@ -23,6 +23,11 @@
   width: 1px !important;
 }
 
+// We define our own display-none class since bootstrap uses !important and we want to be able to over-ride
+.d-n {
+  display: none;
+}
+
 // Print-specific utility classes
 .onlyprint {
   display: none;

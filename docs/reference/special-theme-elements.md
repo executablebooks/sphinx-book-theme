@@ -189,14 +189,14 @@ This is my test
 Let's see what happens
 
 ```{code-cell} ipython3
-:tags: [popout]
+:tags: [margin]
 
 ## code cell in the margin with output
 fig, ax = plt.subplots()
 ax.imshow(wide)
 ```
 
-+++ {"tags": ["popout"]}
+````{margin}
 
 Markdown cell with code in margin
 
@@ -220,25 +220,26 @@ Markdown cell with images in sidebar
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" style="max-width:200px" />
 
+````
 +++
 
 ### More content after the margin content
 
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
 
 ```python
 a = 2
 ```
 
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
-This is extra content after the popouts to see if cells overlap and such.
-Also to make sure you can still interact with the popout content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
+This is extra content after the margins to see if cells overlap and such.
+Also to make sure you can still interact with the margin content.
 
 ### Figures with margin captions
 
@@ -259,7 +260,6 @@ And here is my figure caption, if you look to the left, you can see that COOL is
 This note should not overlap with the margin caption!
 :::
 
-
 Entire figures in the margin:
 
 ```{figure} ../images/cool.jpg
@@ -270,6 +270,30 @@ alt: My figure text
 ---
 This figure should be entirely in the margin.
 ```
+
+## Sidenotes and marginnotes
+
+Here's a sentence[^sn1] with multiple [^sn2] sidenotes.
+
+[^sn1]: Test sidenote 1.
+[^sn2]: Test sidenote 2.
+
+Here's a sentence[^mn1] with multiple marginnotes[^mn2].
+
+[^mn1]: {-} Test marginnote 1.
+[^mn2]: {-} Test marginnote 2.
+
+
+Sidenotes inside of admonitions should behave the same:
+
+:::{note}
+An admonition with a sidenote defined in the admonition[^snam1] and another defined outside of the admonition [^snam2].
+
+[^snam1]: Sidenote defined in the admonition.
+
+:::
+
+[^snam2]: Sidenote defined outside the admonition.
 
 
 ## Nested admonitions

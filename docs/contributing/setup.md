@@ -134,3 +134,17 @@ Anything passed after `--` will be passed directly to `pytest`.
 :::{seealso}
 See [](contribute/testing) for more information.
 :::
+
+## The `{example}` directive
+
+This theme uses the [sphinx-examples](https://github.com/executablebooks/sphinx-examples) extension to make it easy to quickly show off example snippets.
+
+Basic usage is like so:
+
+:::{example}
+```{example} Example title
+This will be both **rendered** and **shown as source code**.
+```
+:::
+
+See [the sphinx-examples documentation](https://ebp-sphinx-examples.readthedocs.io/en/latest/) for more details.

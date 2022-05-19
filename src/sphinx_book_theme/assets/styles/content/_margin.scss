@@ -25,7 +25,6 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
   background-color: unset;
   border-left: 1px #a4a6a7 solid;
   font-size: 0.9em;
-
   @media (min-width: $breakpoint-md) {
     border: none;
     width: $content-margin-width;
@@ -35,6 +34,55 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
     p.sidebar-title {
       margin-bottom: 0.1em;
     }
+  }
+}
+
+// Sidenotes and marginnotes
+label.margin-toggle {
+  margin-bottom: 0em;
+  &.marginnote-label {
+    display: none;
+  }
+  sup {
+    user-select: none;
+  }
+  @media (max-width: $breakpoint-md) {
+    cursor: pointer;
+    color: rgb(0, 113, 188);
+    &.marginnote-label {
+      display: inline;
+      &:after {
+        content: "\2295";
+      }
+    }
+  }
+}
+
+input.margin-toggle {
+  display: none;
+  @media (max-width: $breakpoint-md) {
+    &:checked + .sidenote,
+    &:checked + .marginnote {
+      display: block;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 1rem 2.5%;
+      position: relative;
+    }
+  }
+}
+
+span.sidenote,
+span.marginnote {
+  sup {
+    user-select: none;
+  }
+  @include margin-content();
+  border-left: none;
+  @media (max-width: $breakpoint-md) {
+    display: none;
   }
 }
 

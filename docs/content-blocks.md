@@ -61,18 +61,83 @@ but I'll stop here.
 ```
 ````
 
-## Margin content
+(margin:sidenote)=
+## Sidenotes and marginnotes
 
-You can specify content that should exist in the right margin. This will behave
-like a regular sidebar until the screen hits a certain width, at which point this
-content will "pop out" to the right white space.
+This theme has support for [Tufte-style margin / side notes](https://edwardtufte.github.io/tufte-css/), with a UX similar to [pandoc-sidenote](https://github.com/jez/pandoc-sidenote).
 
-There are two ways to add content to the margin: via the `{margin}` directive, and via adding CSS classes to your own content.
+Sidenotes are numbered, and behave like footnotes, except they live in the margin and don’t force the reader to jump their eye to the bottom of the page.
+For example, here is a sidenote[^ex].
+On narrow screens, sidenotes are hidden until a user clicks the number.
+If you're on a mobile device, try clicking the sidenote number above.
 
-### Use a `{margin}` directive to add margin content
+[^ex]: Here's my sidenote text!
 
-The `{margin}` directive allows you to create margin content with your own title and content block.
+    On narrow screens, this text won't show up unless you click the superscript number!
+
+Marginnotes are not numbered, but behave the same way as sidenotes.
+On mobile devices you'll see a symbol that will show the marginnote when clicked[^exmn].
+For example, there's a marginnote in the previous sentence, and you should see a symbol show to display it on mobile screens.
+
+[^exmn]: {-} This is a margin note. Notice there isn’t a number preceding the note.
+
+:::{seealso}
+Sidenotes and marginnotes are inline content - you cannot use block-level content inside of these notes.
+If you'd like to use block-level content in the margins, see [](margin:block).
+:::
+
+### Activate sidenotes and marginnotes
+
+The theme activates sidenotes and marginnotes by over-riding footnote syntax to instead exist in the margin.
+
+To convert your footnotes to *instead* be sidenotes/marginnotes, use this configuration:
+
+```python
+html_theme_options = {
+  ...
+  "use_sidenotes": True,
+  ...
+}
+```
+
+This will turn your **footnotes** into **sidenotes** or **marginnotes**.
+
+### Create a sidenote
+
+The following sentence defines a sidenote and its respective content:
+
+```{example}
+:no-container:
+:reverse:
+
+Here's my sentence and a sidenote[^sn1].
+
+[^sn1]: And here's my sidenote content.
+```
+
+### Create a marginnote
+
+Marginnotes are defined by adding `{-}` at the beginning of the content block.
+The following syntax defines a marginnote:
+
+```{example}
+:no-container:
+:reverse:
+
+Here's my sentence and a marginnote[^mn1].
+
+[^mn1]: {-} And here's my marginnote content.
+```
+
+(margin:block)=
+## Block margin content with the `{margin}` directive
+
+The `{margin}` directive allows you to create block-level margin content with an optional title.
 It is a wrapper around the Sphinx `{sidebar}` directive, and largely does its magic via CSS classes (see below).
+
+:::{seealso}
+If you'd like in-line margin content with numbered references, see [](margin:sidenote).
+:::
 
 Here's how you can use the `{margin}` directive:
 
@@ -85,7 +150,29 @@ It is pretty cool!
 ```
 ````
 
-### Use CSS classes to add margin content
+### Figure captions in the margin
+
+You can configure figures to use the margin for captions.
+Here is a figure with a caption to the right.
+
+::::{example}
+:no-container:
+
+```{figure} images/cool.jpg
+---
+width: 60%
+figclass: margin-caption
+alt: My figure text
+name: myfig5
+---
+And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
+```
+::::
+
+We can reference the figure with {ref}`this reference <myfig5>`. Or a numbered reference like
+{numref}`myfig5`.
+
+### CSS classes for custom margin content
 
 You may also directly add CSS classes to elements on your page in order to make them behave like margin content.
 To do so, add the `margin` CSS class to any element on the page.
@@ -104,11 +191,7 @@ This note will be in the margin!
 
 
 This works for most elements on the page, but in general this works best for "parent containers" that are the top-most element of a bundle of content.
-
-For example, we can even put a whole figure in the margin like so:
-
-
-You can also put the whole figure in the margin if you like.
+For example, you can also put the whole figure in the margin if you like.
 Here is a figure with a caption below. We'll add a note below to create
 some vertical space to see better.
 
@@ -129,36 +212,16 @@ And here is my figure caption
 We can reference the figure with {ref}`myfig4`. Or a numbered reference like
 {numref}`myfig4`.
 
-### Figure captions in the margin
 
-You can configure figures to use the margin for captions.
-Here is a figure with a caption to the right.
+### Content examples in the margin
 
-````{example}
-:no-container:
-:reverse:
+Margin content can include all kinds of things, such as code blocks:
 
-```{figure} images/cool.jpg
----
-width: 60%
-figclass: margin-caption
-alt: My figure text
-name: myfig5
----
-And here is my figure caption, if you look to the left, you can see that COOL is in big red letters. But you probably already noticed that, really I am just taking up space to see how the margin caption looks like when it is really long :-).
+````{margin} Code blocks in margins
+```python
+print("here is some python")
 ```
 ````
-
-We can reference the figure with {ref}`this reference <myfig5>`. Or a numbered reference like
-{numref}`myfig5`.
-
-### Examples of margin content
-
-There are many kinds of content you can put in the margin, here are some examples.
-
-`````{example} Code blocks in the margin
-:no-container:
-:reverse:
 
 ````{margin} Code blocks in margins
 ```python
