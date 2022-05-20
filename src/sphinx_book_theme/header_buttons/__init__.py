@@ -118,7 +118,6 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
             header_buttons.append(
                 {
                     "type": "dropdown",
-                    "title": "Source repositories",
                     "icon": "fab fa-github",
                     "items": repo_buttons,
                     "side": "right",
@@ -171,7 +170,6 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         header_buttons.append(
             {
                 "type": "dropdown",
-                "title": "Download this page",
                 "icon": "fas fa-download",
                 "items": download_buttons,
                 "side": "right",

@@ -180,7 +180,6 @@ def add_launch_buttons(
     header_buttons.append(
         {
             "type": "dropdown",
-            "title": "Launch interactive content",
             "icon": "fas fa-rocket",
             "items": launch_buttons_list,
             "side": "right",

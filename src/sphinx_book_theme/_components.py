@@ -16,22 +16,66 @@ SPHINX_LOGGER = logging.getLogger(__name__)
 def component_button(
     app,
     context,
-    content="",
-    title="",
-    icon="",
-    image="",
-    url="",
-    onclick="",
-    button_id="",
-    label_for="",
-    id="",
-    tooltip_placement="",
+    content=None,
+    title=None,
+    icon=None,
+    image=None,
+    outline=None,
+    id=None,
+    tooltip_placement=None,
+    url=None,
+    onclick=None,
+    button_id=None,
+    label_for=None,
     attributes={},
     classes=[],
 ):
+    """Render a clickable button.
+
+    There are three possible actions that will be triggered,
+    corresponding to different kwargs having values.
+
+    Meta Parameters
+    ---------------
+    app: An instance of sphinx.Application
+    context: A Sphinx build context dictionary
+
+    General parameters
+    ------------------
+    content: Content to populate inside the button.
+    title: A tooltip / accessibility-friendly title.
+    icon: A tiny square icon. A set of FontAwesome icon classes, or path to an image.
+    image: A larger image of any aspect ratio. A path to a local or remote image.
+    button_id: The ID to be added to this button.
+    outline: Whether to outline the button.
+    tooltip_placement: Whether the tooltip will be to the left, right, top, or bottom.
+    attributes: A dictionary of any key:val attributes to add to the button.
+    classes: A list of CSS classes to add to the button.
+
+    Action-specific parameters
+    --------------------------
+    url: The URL to which a button will direct when clicked.
+    onclick: JavaScript that will be called when a person clicks.
+    label_for: The input this label should trigger when clicked (button is a label).
+    """
+    # Set up attributes and classes that will be used to create HTML attributes at end
     attributes = attributes.copy()
-    attributes.update({"type": "button", "class": ["btn", "icon-button"]})
-    attributes["class"].extend(classes.copy())
+    attributes.update({"type": "button"})
+
+    # Update classes with custom added ones
+    default_classes = ["btn", "icon-button"]
+    if classes:
+        if isinstance(classes, str):
+            classes = [classes]
+    else:
+        classes = []
+    classes.extend(default_classes)
+
+    # Give an outline if desired.
+    if outline:
+        classes.append("btn-outline")
+
+    # Checks for proper arguments
     btn_content = ""
     if url and onclick:
         raise Exception("Button component cannot have both url and onclick specified.")
@@ -62,33 +106,23 @@ def component_button(
         """
 
     if not content:
-        attributes["class"].append("icon-button-no-content")
+        classes.append("icon-button-no-content")
     else:
-        btn_content += content
+        btn_content += f'<span class="btn__content-container">{content}</span>'
 
     if button_id:
         attributes["id"] = button_id
 
-    attributes["aria-label"] = title
-
-    # Handle tooltips
-    title = context["translate"](title)
-    tooltip_placement = "bottom" if not tooltip_placement else tooltip_placement
-
-    # If we're already using data-toggle, wrap the button content in a span.
-    # This lets us use another data-toggle.
-    if "data-toggle" in attributes:
-        btn_content = f"""
-        <span data-toggle="tooltip" data-placement="{tooltip_placement}" title="{title}">
-            {btn_content}
-        </span>
-        """  # noqa
-    else:
+    # Handle tooltips if a title is given
+    if title:
+        title = context["translate"](title)
+        tooltip_placement = "bottom" if not tooltip_placement else tooltip_placement
+        attributes["aria-label"] = title
         attributes["data-placement"] = tooltip_placement
         attributes["title"] = title
 
     # Convert all the options for the button into a string of HTML attributes
-    attributes["class"] = " ".join(attributes["class"])
+    attributes["class"] = " ".join(classes)
     attributes_str = " ".join([f'{key}="{val}"' for key, val in attributes.items()])
 
     # Generate the button HTML
@@ -163,13 +197,17 @@ def component_dropdown(
     dropdown_id = "menu-dropdown-"
     dropdown_id += hashlib.md5(dropdown_items.encode("utf-8")).hexdigest()[:5]
 
-    # Generate the button HTML
+    # Generate the dropdown button HTML
     dropdown_attributes = {
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false",
         "type": "button",
     }
+    if "title" in kwargs:
+        SPHINX_LOGGER.warn("Cannot use title / tooltip with dropdown menu. Removing.")
+        kwargs.pop("title")
+
     html_button = component_button(
         app,
         context,

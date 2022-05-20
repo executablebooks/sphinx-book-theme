@@ -76,9 +76,8 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
             output = COMPONENT_FUNCS[kind](app, context, **component_copy)
         except Exception as exc:
             msg = f"Component render failure for:\n{component}\n\n"
-            msg += f"Exception: {exc}"
             SPHINX_LOGGER.warn(msg)
-            return
+            raise exc
         return output
 
     context["theme_render_component"] = render_component

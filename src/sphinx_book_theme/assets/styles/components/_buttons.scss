@@ -13,14 +13,6 @@
   }
 }
 
-// TODO NEW RULES THAT I NEED TO INCORPORATE ABOVE and in other places
-// Used when there's a solo icon with no text, so make the icon a bit bigger
-
-div.dropdown-menu button.btn {
-  display: flex;
-  align-items: center;
-}
-
 .icon-button {
   padding: 0.2em 0.2em;
   margin-bottom: 0;
@@ -39,32 +31,73 @@ div.dropdown-menu button.btn {
   font-size: 1.3rem;
 }
 
-.dropdown-menu {
-  // Copied from dropdown menu style above
-  border-radius: $box-border-radius;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+div.dropdown {
+  // Control the dropdown menu display
 
-  button {
-    padding-left: 0.5rem;
-    width: 100%;
-    border-radius: 0;
-
-    &:hover {
-      background-color: #eee;
-    }
-  }
-  a:hover {
-    text-decoration: none;
+  // First, overwrite the Bootstrap default so we can make nicer animations
+  // These make it "displayed" but hidden
+  .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 50ms ease-out, opacity 150ms ease-out 50ms;
   }
 
-  span.btn__icon-container {
-    display: flex;
-    margin-right: 0.5rem;
+  // On hover, we display the contents via visibility and opacity
+  &:hover div.dropdown-menu,
+  div.dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+    // Remove the delay when hovering, which makes it appear instantly, but delay in disappear
+    transition-delay: 0ms;
+  }
 
-    img,
-    i {
-      width: 1.2rem; // Slightly wider to make the font match the images
-      font-size: 1rem;
+  // Other styling on the dropdown menu
+  .dropdown-menu {
+    // Copied from dropdown menu style above
+    border-radius: $box-border-radius;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+
+    button {
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+      width: 100%;
+      border-radius: 0;
+
+      &:hover {
+        background-color: #eee;
+      }
     }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    span.btn__icon-container {
+      display: flex;
+      margin-right: 0.5rem;
+
+      img,
+      i {
+        width: 1.2rem; // Slightly wider to make the font match the images
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Extra spacing when we have both icons and content
+span.btn__icon-container ~ .btn__content-container {
+  margin-left: 0.5em;
+}
+
+// Outline buttons need extra spacing
+button.btn-outline {
+  outline: 1px solid $non-content-grey;
+  padding: 0.3rem 0.5rem;
+
+  &:hover {
+    background-color: #ededed;
   }
 }

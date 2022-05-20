@@ -22,11 +22,16 @@
     .header-article__right {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
     }
 
     .header-article__right {
       margin-left: auto;
+
+      button,
+      label,
+      div {
+        padding-left: 0.25rem;
+      }
     }
   }
 }
