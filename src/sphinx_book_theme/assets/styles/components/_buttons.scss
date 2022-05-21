@@ -17,12 +17,9 @@
  * Header sections
  */
 
-// Reset default styling of labels and buttons so we can customize
+// Reset default button styling on Safari because it has opinionated / clashing design
 [type="button"] {
-  border-radius: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 div.dropdown {
