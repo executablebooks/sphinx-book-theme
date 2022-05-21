@@ -13,22 +13,16 @@
   }
 }
 
-.icon-button {
-  padding: 0 0.2em;
-  margin-bottom: 0;
-  color: var(--theme-header-button-color);
+/**
+ * Header sections
+ */
 
-  // Over-ride bootstrap defaults for clicking
-  &:hover,
-  &:focus {
-    color: var(--theme-header-button-color-hover);
-    box-shadow: none;
-    text-decoration: none;
-  }
-}
-
-.icon-button-no-content {
-  font-size: 1.3rem;
+// Reset default styling of labels and buttons so we can customize
+label {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 div.dropdown {
@@ -90,6 +84,29 @@ div.dropdown {
 // Extra spacing when we have both icons and content
 span.btn__icon-container ~ .btn__content-container {
   margin-left: 0.5em;
+}
+
+/*
+ * Button types classes
+ */
+// Basic button class
+.icon-button {
+  padding: 0 0.2em;
+  margin-bottom: 0;
+  color: var(--theme-header-button-color);
+
+  // Over-ride bootstrap defaults for clicking
+  &:hover,
+  &:focus {
+    color: var(--theme-header-button-color-hover);
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+// If no content, make the icon a bit bigger
+.icon-button-no-content {
+  font-size: 1.3rem;
 }
 
 // Outline buttons need extra spacing
