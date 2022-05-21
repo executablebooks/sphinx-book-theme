@@ -2,16 +2,7 @@
  * A few different header CSS rules
  */
 
-$header-default-height-wide: 4rem;
-$header-default-height-narrow: 3rem;
-
-@mixin max-height-header() {
-  // Fix max height so our header items don't spill over
-  max-height: $header-default-height-wide;
-  @media (max-width: $breakpoint-md) {
-    max-height: $header-default-height-narrow;
-  }
-}
+$header-default-height: 4rem;
 
 // Header container places the collapse button properly
 .header {
@@ -26,12 +17,10 @@ $header-default-height-narrow: 3rem;
   max-width: 1400px; // Bootstrap max-width for xl container, to match article
   margin: 0 auto;
   padding: 0 0.5rem;
-  @include max-height-header;
+  max-height: $header-default-height;
+  min-height: $header-default-height;
 
-  // On narrow screens, cap the height unless you click the hamburger menu
-  min-height: $header-default-height-wide;
   @media (max-width: $breakpoint-md) {
-    min-height: $header-default-height-narrow;
     transition: max-height $animation-time ease-out;
     overflow-y: hidden;
     padding-bottom: 0.5rem;
@@ -61,7 +50,6 @@ $header-default-height-narrow: 3rem;
 }
 
 .header__content,
-.header__brand,
 .header__start,
 .header__end {
   display: flex;
@@ -74,27 +62,12 @@ $header-default-height-narrow: 3rem;
   }
 }
 
-.header__brand {
-  padding: 0 1.5rem;
-}
-
 .header__brand,
 .header__start,
 .header__end {
   // On narrow screens the header content sections display vertically
   @media (max-width: $breakpoint-md) {
     padding-left: 0.5rem;
-  }
-}
-
-// Only show up on narrow screens, and push to the far right
-#header-toggle-button {
-  display: none;
-  @media (max-width: $breakpoint-md) {
-    display: block;
-    margin-right: 0.5rem;
-    // HACK to keep it centered in a way that won't move when expanded
-    margin-top: 0.2rem;
   }
 }
 
@@ -112,19 +85,48 @@ input#__header {
 
 // This is the logo or a bold docs title
 .header__brand {
+  display: flex;
   font-size: 1.5em;
 
-  // Wide screens: header start has same width as the sidebar + center over logo
-  @media (min-width: $breakpoint-md) {
-    width: $leftbar-width-wide;
-    justify-content: center;
+  // Align the brand vertically
+  .header-content-item {
+    height: $header-default-height;
+    align-items: center;
   }
+
+  // So the brand logo aligns with the toggle button
+  button {
+    padding: 0;
+  }
+
+  // Only show up on narrow screens, and push to the far right
+  #header-toggle-button {
+    display: none;
+    font-size: 1.5rem; // A bit bigger since it's prominent at top
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+      height: $header-default-height;
+      margin-left: auto;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+// Wide screens: header start has same width as the sidebar + center over logo
+@media (min-width: $breakpoint-md) {
+  width: $leftbar-width-wide;
+  justify-content: center;
 }
 
 .header__end {
   // Header end is right-justified on wide screens
   @media (min-width: $breakpoint-md) {
     margin-left: auto;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -138,19 +140,17 @@ ul#navbar-icon-links {
   align-items: center;
 
   // Ensure that the items don't break out of their containers
-  @include max-height-header;
+  max-height: $header-default-height;
+
+  // Images are capped a bit smaller so they have whitespace in the header
+  img {
+    max-height: $header-default-height * 0.8;
+  }
 
   // Spacing is horizontal on wide, vertical on narrow
   // Items should snap to left on mobile
   @media (max-width: $breakpoint-md) {
     align-items: start;
-  }
-
-  // Images are capped a bit smaller so they have whitespace in the header
-  img {
-    @media (max-width: $breakpoint-md) {
-      max-height: 2rem;
-    }
   }
 
   .dropdown-menu {

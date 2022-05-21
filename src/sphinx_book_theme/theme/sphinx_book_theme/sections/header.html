@@ -6,13 +6,23 @@
 <input type="checkbox" class="header-toggle" name="__header" id="__header" aria-label="Toggle header">
 <div class="header__content">
   <!-- If given, the brand will be the same width as sidebar -->
-  {% if theme_header.get("brand") %}
   <div class="header__brand">
+    {% if theme_header.get("brand") %}
     <div class="header-content-item">
       {{ theme_render_component(theme_header.get("brand")) }}
     </div>
+    {% endif %}
+
+    <!-- Dropdown button for mobile, will show on the right -->
+    {{ theme_render_component({
+      "type": "button",
+      "label_for": "__header",
+      "icon": "fas fa-bars",
+      "title": "Toggle Header",
+      "id": "header-toggle-button"
+    }) }}
+    {% endif -%}
   </div>
-  {% endif %}
 
   <!-- Start is left-aligned -->
   <div class="header__start">
@@ -32,15 +42,4 @@
     {% endfor %}
   </div>
 </div>
-
-<!-- Dropdown button for mobile, will show on the right -->
-{{ theme_render_component({
-  "type": "button",
-  "label_for": "__header",
-  "icon": "fas fa-bars",
-  "title": "Toggle Header",
-  "id": "header-toggle-button"
-}) }}
-{% endif -%}
-
 {% endif %}

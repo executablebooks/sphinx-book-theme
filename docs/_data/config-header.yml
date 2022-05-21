@@ -2,6 +2,8 @@ brand:
   type: button
   image: https://executablebooks.org/en/latest/_static/logo.svg
   url: https://sphinx-book-theme.readthedocs.io
+  # For testing
+  # content: Test site name
 start:
   - type: dropdown
     content: Projects
