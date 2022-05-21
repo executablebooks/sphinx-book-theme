@@ -18,7 +18,7 @@
  */
 
 // Reset default styling of labels and buttons so we can customize
-label {
+[type="button"] {
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
