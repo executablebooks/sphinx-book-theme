@@ -5,7 +5,7 @@
   padding-top: 0;
   width: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
-  top: 0px !important;
+  top: 0px;
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,

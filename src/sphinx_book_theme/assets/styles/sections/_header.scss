@@ -8,6 +8,7 @@ $header-default-height: 4rem;
 .header {
   display: flex;
   border-bottom: $border-thin;
+  background-color: var(--theme-header-background-color);
 }
 
 // Header content contains the components
@@ -113,10 +114,18 @@ input#__header {
   }
 }
 
-// Wide screens: header start has same width as the sidebar + center over logo
-@media (min-width: $breakpoint-md) {
-  width: $leftbar-width-wide;
-  justify-content: center;
+.header__start,
+.header__end {
+  // Increase the text size on mobile
+  @media (max-width: $breakpoint-md) {
+    button {
+      font-size: 1.1rem;
+    }
+
+    button.icon-button-no-content {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .header__end {
@@ -144,7 +153,7 @@ ul#navbar-icon-links {
 
   // Images are capped a bit smaller so they have whitespace in the header
   img {
-    max-height: $header-default-height * 0.8;
+    max-height: $header-default-height * 0.7;
   }
 
   // Spacing is horizontal on wide, vertical on narrow

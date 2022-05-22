@@ -67,7 +67,6 @@ div.dropdown {
 
     span.btn__icon-container {
       display: flex;
-      margin-right: 0.5rem;
 
       img,
       i {
@@ -76,11 +75,6 @@ div.dropdown {
       }
     }
   }
-}
-
-// Extra spacing when we have both icons and content
-span.btn__icon-container ~ .btn__content-container {
-  margin-left: 0.5em;
 }
 
 /*
@@ -98,6 +92,11 @@ span.btn__icon-container ~ .btn__content-container {
     color: var(--theme-header-button-color-hover);
     box-shadow: none;
     text-decoration: none;
+  }
+
+  // Spacing for the icon if it's present with text
+  .btn__icon-container + .btn__content-container {
+    margin-left: 0.5rem;
   }
 }
 

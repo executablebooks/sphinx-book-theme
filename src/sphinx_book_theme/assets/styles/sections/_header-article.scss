@@ -4,7 +4,7 @@
 *********************************************/
 .header-article {
   height: $header-article-height; // Fix the height so the TOC doesn't grow it
-  background-color: white;
+  background-color: var(--theme-header-background-color);
   transition: left 0.2s;
   font-size: var(--theme-header-article-font-size);
 
@@ -26,12 +26,7 @@
 
     .header-article__right {
       margin-left: auto;
-
-      button,
-      label,
-      div {
-        padding-left: 0.3rem;
-      }
+      gap: 0.5rem;
     }
   }
 }
