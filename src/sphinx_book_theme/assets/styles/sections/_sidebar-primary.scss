@@ -18,7 +18,7 @@
     position: fixed;
     width: $leftbar-width-mobile;
     max-width: 300px;
-    font-size: 1.2em;
+    font-size: var(--sbt-font-size-menu-mobile);
     z-index: $zindex-offcanvas;
   }
 

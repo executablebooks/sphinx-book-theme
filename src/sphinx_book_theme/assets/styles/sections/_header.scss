@@ -119,7 +119,7 @@ input#__header {
   // Increase the text size on mobile
   @media (max-width: $breakpoint-md) {
     button {
-      font-size: 1.1rem;
+      font-size: var(--sbt-font-size-menu-mobile);
     }
 
     button.icon-button-no-content {
@@ -162,6 +162,7 @@ ul#navbar-icon-links {
     align-items: start;
   }
 
+  // To put this on top of other sticky content on the page
   .dropdown-menu {
     z-index: $zindex-sticky + 1;
   }
