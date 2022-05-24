@@ -117,6 +117,7 @@ def component_button(
     if title:
         title = context["translate"](title)
         tooltip_placement = "bottom" if not tooltip_placement else tooltip_placement
+        attributes["data-toggle"] = "tooltip"
         attributes["aria-label"] = title
         attributes["data-placement"] = tooltip_placement
         attributes["title"] = title
@@ -171,9 +172,9 @@ def component_group(app, context, items=None, **kwargs):
 
 
 def component_dropdown(
-    app, context, content="", icon="", side="left", items=[], **kwargs
+    app, context, content="", icon="", side="left", classes=None, items=[], **kwargs
 ):
-    # Items to go inside dropdown
+    # Render the items inside the dropdown
     dropdown_items = []
     for component in items:
         # Pop the `button` type in case it was incorrectly given, since we force button
@@ -188,10 +189,10 @@ def component_dropdown(
         )
     dropdown_items = "\n".join(dropdown_items)
 
-    # These control the look of the button
-    button_classes = []
+    # Set up the classes for the dropdown
+    classes = [] if not classes else classes
     if content:
-        button_classes.append("dropdown-toggle")
+        classes.append("dropdown-toggle")
 
     # Unique ID to trigger the show event
     dropdown_id = "menu-dropdown-"
@@ -199,7 +200,6 @@ def component_dropdown(
 
     # Generate the dropdown button HTML
     dropdown_attributes = {
-        "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false",
         "type": "button",
@@ -214,7 +214,7 @@ def component_dropdown(
         content=content,
         icon=icon,
         attributes=dropdown_attributes,
-        classes=button_classes,
+        classes=classes,
         button_id=dropdown_id,
         **kwargs,
     )

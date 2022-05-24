@@ -181,8 +181,9 @@ def add_launch_buttons(
         {
             "type": "dropdown",
             "icon": "fas fa-rocket",
-            "items": launch_buttons_list,
             "side": "right",
+            "classes": ["launch-buttons"],
+            "items": launch_buttons_list,
         }
     )
 

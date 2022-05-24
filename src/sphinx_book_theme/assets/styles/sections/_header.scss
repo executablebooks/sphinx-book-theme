@@ -17,7 +17,7 @@ $header-default-height: 4rem;
   flex-grow: 1;
   max-width: 1400px; // Bootstrap max-width for xl container, to match article
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   max-height: $header-default-height;
   min-height: $header-default-height;
 
@@ -55,7 +55,6 @@ $header-default-height: 4rem;
 .header__end {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.75rem;
 
   // On narrow screens, the header items show flow vertically and snap to left
   @media (max-width: $breakpoint-md) {
@@ -63,9 +62,16 @@ $header-default-height: 4rem;
   }
 }
 
+// More rem for the content container
+.header__content {
+  gap: 1rem;
+}
+
 .header__brand,
 .header__start,
 .header__end {
+  gap: 0.75rem;
+
   // On narrow screens the header content sections display vertically
   @media (max-width: $breakpoint-md) {
     padding-left: 0.5rem;
@@ -116,14 +122,15 @@ input#__header {
 
 .header__start,
 .header__end {
+  // Solo icon buttons should be a bit bigger
+  .icon-button-no-content {
+    font-size: 1.5rem;
+  }
+
   // Increase the text size on mobile
   @media (max-width: $breakpoint-md) {
     button {
       font-size: var(--sbt-font-size-menu-mobile);
-    }
-
-    button.icon-button-no-content {
-      font-size: 1.5rem;
     }
   }
 }

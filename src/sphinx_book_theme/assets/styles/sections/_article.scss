@@ -12,6 +12,11 @@ body {
   padding-top: 1.5em;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+
 // On wide screens, make space for the right margin
 @media (min-width: $breakpoint-md) {
   #main-content {

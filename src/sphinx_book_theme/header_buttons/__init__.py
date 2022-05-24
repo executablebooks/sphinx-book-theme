@@ -121,11 +121,12 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "icon": "fab fa-github",
                     "items": repo_buttons,
                     "side": "right",
+                    "classes": ["repo-buttons"],
                 }
             )
         elif len(repo_buttons) == 1:
             # Remove the text since it's just a single button, want just an icon.
-            repo_buttons[0]["text"] = ""
+            repo_buttons[0]["content"] = ""
             header_buttons.extend(repo_buttons)
 
     # Download buttons for various source content.

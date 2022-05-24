@@ -45,5 +45,4 @@ end:
     icon: fas fa-comments
     outline: true
     content: Discussion
-    classes: text-primary
     url: https://github.com/orgs/executablebooks/discussions

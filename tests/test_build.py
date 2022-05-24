@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from shutil import copytree, rmtree
+from shutil import copytree
 from subprocess import check_call
 
 from bs4 import BeautifulSoup
@@ -94,7 +94,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
         file_regression.check(
             sidebar.prettify(),
-            basename="build__sidebar-primary__nav",
+            basename="sidebar-primary__nav",
             extension=".html",
             encoding="utf8",
         )
@@ -114,7 +114,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     file_regression.check(
         header_article.prettify(),
-        basename="build__header-article",
+        basename="header-article",
         extension=".html",
         encoding="utf8",
     )
@@ -130,7 +130,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         page_toc = page_html.find("div", attrs={"class": "bd-toc"})
         file_regression.check(
             page_toc.prettify(),
-            basename=f"build__pagetoc--{page.with_suffix('').name}",
+            basename=f"sidebar-secondary--{page.with_suffix('').name}",
             extension=".html",
             encoding="utf8",
         )
@@ -215,13 +215,18 @@ def test_header_repository_buttons(
     )
 
 
-def test_header_launchbtns(sphinx_build_factory, file_regression):
+def test_header_article_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".menu-dropdown-launch-buttons"
+        ".launch-buttons + .dropdown-menu"
     )
-    file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
+    file_regression.check(
+        launch_btns[0].prettify(),
+        basename="header-article__launch-buttons",
+        extension=".html",
+        encoding="utf8",
+    )
 
 
 def test_repo_custombranch(sphinx_build_factory, file_regression):
@@ -243,7 +248,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
     # The Binder link should point to `foo`, as should the `edit` button
     file_regression.check(
         header[0].prettify(),
-        basename="header__repo-buttons--custom-branch",
+        basename="header-article__repo-buttons--custom-branch",
         extension=".html",
         encoding="utf8",
     )
@@ -320,13 +325,12 @@ def test_right_sidebar_title(sphinx_build_factory, file_regression):
     sidebar_title = sphinx_build.html_tree("page1.html").find_all(
         "div", attrs={"class": "tocsection"}
     )[0]
-
-    file_regression.check(sidebar_title.prettify(), extension=".html", encoding="utf8")
-
-    # Testing the exception for empty title
-    rmtree(str(sphinx_build.src))
-
-    confoverrides = {"html_theme_options.toc_title": ""}
+    file_regression.check(
+        sidebar_title.prettify(),
+        basename="sidebar-secondary__toc--customtitle",
+        extension=".html",
+        encoding="utf8",
+    )
 
 
 def test_logo_only(sphinx_build_factory):
@@ -351,7 +355,10 @@ def test_sidenote(sphinx_build_factory, file_regression):
 
     sidenote_html = page2.select("section > #sidenotes")
     file_regression.check(
-        sidenote_html[0].prettify(), extension=".html", encoding="utf8"
+        sidenote_html[0].prettify(),
+        basename="article__margin--sidenote",
+        extension=".html",
+        encoding="utf8",
     )
 
 
@@ -365,5 +372,8 @@ def test_marginnote(sphinx_build_factory, file_regression):
 
     marginnote_html = page2.select("section > #marginnotes")
     file_regression.check(
-        marginnote_html[0].prettify(), extension=".html", encoding="utf8"
+        marginnote_html[0].prettify(),
+        basename="article__margin--marginnote",
+        extension=".html",
+        encoding="utf8",
     )
