@@ -132,7 +132,7 @@ var initTocHide = () => {
 
   // Set up the intersection observer to watch all margin content
   let options = {
-    // This makes the event trigger when the top of an item is mid-way
+    // Trigger callback when the top of a margin item is 1/3 up the screen
     rootMargin: "0px 0px -33% 0px",
   };
   let tocObserver = new IntersectionObserver(hideTocCallback, options);
