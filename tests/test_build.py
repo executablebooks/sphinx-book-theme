@@ -188,7 +188,7 @@ def test_navbar_options(sphinx_build_factory, option, value):
         (False, False, False, "all-off"),
     ],
 )
-def test_header_repository_buttons(
+def test_header_article_repository_buttons(
     sphinx_build_factory, file_regression, edit, repo, issues, name
 ):
     # All buttons on
@@ -209,7 +209,7 @@ def test_header_repository_buttons(
     )
     file_regression.check(
         header[0].prettify(),
-        basename=f"header__repo-buttons--{name}",
+        basename=f"header-article__repo-buttons--{name}",
         extension=".html",
         encoding="utf8",
     )
@@ -288,7 +288,7 @@ def test_show_navbar_depth(sphinx_build_factory):
         assert "checked" not in checkbox.attrs
 
 
-def test_header_download_button_off(sphinx_build_factory):
+def test_header_article_download_button_off(sphinx_build_factory):
     """Download button should not show up in the header when configured as False."""
     confoverrides = {
         "html_theme_options.use_download_button": False,
@@ -374,6 +374,68 @@ def test_marginnote(sphinx_build_factory, file_regression):
     file_regression.check(
         marginnote_html[0].prettify(),
         basename="article__margin--marginnote",
+        extension=".html",
+        encoding="utf8",
+    )
+
+
+def test_header(sphinx_build_factory, file_regression):
+    header_config = {
+        "logo": {
+            "type": "button",
+            "image": "https://executablebooks.org/en/latest/_static/logo.svg",
+            "url": "https://sphinx-book-theme.readthedocs.io",
+        },
+        # Split our component tests between start and end semi-randomly
+        "start": [
+            # Dropdown button
+            {
+                "type": "dropdown",
+                "classes": ["one", "two"],
+                "items": [
+                    {
+                        "type": "link",
+                        "url": "https://google.com",
+                        "content": "Test content 1",
+                    },
+                    {
+                        "type": "link",
+                        "url": "https://google.com/two",
+                        "icon": "fas fa-bars",
+                        "content": "Test content 2",
+                    },
+                ],
+            },
+            # JS button
+            {"type": "button", "onclick": "somejs()", "content": "Some content"},
+        ],
+        "end": [
+            # Link image
+            {"type": "button", "url": "https://google.com", "image": "noimage"},
+            # Icon image (FA)
+            {"type": "button", "url": "https://google.com", "icon": "fas fa-bars"},
+            # Icon image (local)
+            {"type": "button", "url": "https://google.com", "icon": "hi/there.png"},
+            # Local image
+            {"type": "button", "url": "https://google.com", "image": "hi/there.png"},
+            # Remote image
+            {
+                "type": "button",
+                "url": "https://google.com",
+                "icon": "https://google.com/hi/there.png",
+            },
+        ],
+    }
+    confoverrides = {"html_theme_options.header": header_config}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    index = sphinx_build.html_tree("index.html")
+    header_html = index.select(".header__content")[0]
+    file_regression.check(
+        header_html.prettify(),
+        basename="header",
         extension=".html",
         encoding="utf8",
     )

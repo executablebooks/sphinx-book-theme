@@ -48,6 +48,10 @@ div.dropdown {
     // Copied from dropdown menu style above
     border-radius: $box-border-radius;
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+    min-width: 13rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
     button {
       display: flex;
@@ -97,6 +101,11 @@ div.dropdown {
   // Spacing for the icon if it's present with text
   .btn__icon-container + .btn__content-container {
     margin-left: 0.5rem;
+  }
+
+  // Over-rides a pydata theme default to center it
+  .btn__content-container {
+    text-align: left;
   }
 }
 

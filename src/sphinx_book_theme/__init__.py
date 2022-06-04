@@ -10,11 +10,11 @@ from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
-from .nodes import SideNoteNode
+from .margin.nodes import SideNoteNode
 from .header_buttons import prep_header_buttons, add_header_buttons
-from .header_buttons.launch import add_launch_buttons
-from ._transforms import HandleFootnoteTransform
-from ._components import COMPONENT_FUNCS
+from .header_buttons._launch import add_launch_buttons, update_launch_button_config
+from .margin._transforms import HandleFootnoteTransform
+from .header_buttons._components import COMPONENT_FUNCS
 
 __version__ = "0.3.2"
 """sphinx-book-theme version"""
@@ -131,40 +131,6 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
     hash_assets_for_files(assets, get_html_theme_path() / "static", context)
 
 
-def update_thebe_config(app):
-    """Update thebe configuration with SBT-specific values"""
-    theme_options = app.env.config.html_theme_options
-    if theme_options.get("launch_buttons", {}).get("thebe") is True:
-        if not hasattr(app.env.config, "thebe_config"):
-            SPHINX_LOGGER.warning(
-                (
-                    "Thebe is activated but not added to extensions list. "
-                    "Add `sphinx_thebe` to your site's extensions list."
-                )
-            )
-            return
-        # Will be empty if it doesn't exist
-        thebe_config = app.env.config.thebe_config
-    else:
-        return
-
-    if not theme_options.get("launch_buttons", {}).get("thebe"):
-        return
-
-    # Update the repository branch and URL
-    # Assume that if there's already a thebe_config, then we don't want to over-ride
-    if "repository_url" not in thebe_config:
-        thebe_config["repository_url"] = theme_options.get("repository_url")
-    if "repository_branch" not in thebe_config:
-        branch = theme_options.get("repository_branch")
-        if not branch:
-            # Explicitly check in case branch is ""
-            branch = "master"
-        thebe_config["repository_branch"] = branch
-
-    app.env.config.thebe_config = thebe_config
-
-
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -195,7 +161,7 @@ def setup(app: Sphinx):
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     # Events
-    app.connect("builder-inited", update_thebe_config)
+    app.connect("builder-inited", update_launch_button_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
 

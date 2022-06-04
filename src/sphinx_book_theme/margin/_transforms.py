@@ -2,8 +2,8 @@ from sphinx.transforms.post_transforms import SphinxPostTransform
 from typing import Any
 from docutils import nodes as docutil_nodes
 from sphinx import addnodes as sphinx_nodes
-from .nodes import SideNoteNode
 import copy
+from .nodes import SideNoteNode
 
 
 class HandleFootnoteTransform(SphinxPostTransform):

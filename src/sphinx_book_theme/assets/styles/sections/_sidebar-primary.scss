@@ -3,7 +3,7 @@
 *********************************************/
 #site-navigation {
   padding-top: 0;
-  width: $leftbar-width-wide;
+  width: $sidebar-primary-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px;
   background: white;
@@ -16,7 +16,7 @@
   // On mobile, behave like a slide-out drawer
   @media (max-width: $breakpoint-md) {
     position: fixed;
-    width: $leftbar-width-mobile;
+    width: $sidebar-primary-width-mobile;
     max-width: 300px;
     font-size: var(--sbt-font-size-menu-mobile);
     z-index: $zindex-offcanvas;
@@ -35,7 +35,7 @@
   // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
   .bd-sidebar__top,
   .bd-sidebar__bottom {
-    padding: $leftbar-padding;
+    padding: $sidebar-primary-padding;
   }
 
   // This should always snap to the bottom even if there's no sidebar content
