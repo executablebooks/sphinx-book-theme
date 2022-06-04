@@ -131,7 +131,11 @@ var initTocHide = () => {
   };
 
   // Set up the intersection observer to watch all margin content
-  let tocObserver = new IntersectionObserver(hideTocCallback);
+  let options = {
+    // This makes the event trigger when the top of an item is mid-way
+    rootMargin: "0px 0px -33% 0px",
+  };
+  let tocObserver = new IntersectionObserver(hideTocCallback, options);
   // TODO: deprecate popout after v0.5.0
   const selectorClasses = [
     "marginnote",
