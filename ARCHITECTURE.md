@@ -2,7 +2,7 @@
 
 This is a short overview of the general architecture and structure of the repository, to help you orient yourself.
 
-This theme uses [sphinx-theme-builder](https://sphinx-theme-builder.readthedocs.io/en/latest/) as its build backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/reference/filesystem-layout/) recommended by it.
+This theme uses [sphinx-theme-builder](https://sphinx-theme-builder.readthedocs.io/en/latest/) as its build backend, and follows the [filesystem layout](https://sphinx-theme-builder.readthedocs.io/en/latest/filesystem-layout/) recommended by it.
 See below for some more specific sections
 
 ```{contents}
