@@ -164,10 +164,10 @@ class Margin(Sidebar):
         return nodes
 
 
-def update_config(app, config):
+def update_general_config(app):
     theme_dir = get_html_theme_path()
     # Update templates for sidebar
-    config.templates_path.append(os.path.join(theme_dir, "components"))
+    app.env.config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
 def setup(app: Sphinx):
@@ -182,7 +182,7 @@ def setup(app: Sphinx):
 
     # Events
     app.connect("builder-inited", update_thebe_config)
-    app.connect("config-inited", update_config)
+    app.connect("builder-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
 
@@ -200,6 +200,8 @@ def setup(app: Sphinx):
 
     # Post-transforms
     app.add_post_transform(HandleFootnoteTransform)
+
+    app.config.templates_path.append(os.path.join(theme_dir, "components"))
 
     return {
         "parallel_read_safe": True,
