@@ -201,6 +201,9 @@ def setup(app: Sphinx):
     # Post-transforms
     app.add_post_transform(HandleFootnoteTransform)
 
+    # Update templates for sidebar for cases when builder-inited is not emitted
+    app.config.templates_path.append(os.path.join(theme_dir, "components"))
+
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,
