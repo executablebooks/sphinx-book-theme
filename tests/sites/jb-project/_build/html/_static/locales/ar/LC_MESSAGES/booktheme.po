@@ -1,0 +1,4617 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"
+
+msgid "next page"
+msgstr "الصفحة التالية"
+
+msgid "Search the docs ..."
+msgstr "ابحث في المستندات ..."
+
+msgid "previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Last updated on"
+msgstr "آخر تحديث في"
+
+msgid "Sphinx Book Theme"
+msgstr "موضوع كتاب أبو الهول"
+
+msgid "Edit this page"
+msgstr "قم بتحرير هذه الصفحة"
+
+msgid "By the"
+msgstr "بواسطة"
+
+msgid "Search this book..."
+msgstr "بحث في هذا الكتاب ..."
+
+msgid "Print to PDF"
+msgstr "طباعة إلى PDF"
+
+msgid "repository"
+msgstr "مخزن"
+
+msgid "Download this page"
+msgstr "قم بتنزيل هذه الصفحة"
+
+msgid "Download source file"
+msgstr "تنزيل ملف المصدر"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Open an issue"
+msgstr "افتح قضية"
+
+msgid "Source repository"
+msgstr "مستودع المصدر"
+
+msgid "Contents"
+msgstr "محتويات"
+
+msgid "Theme by the"
+msgstr "موضوع بواسطة"
+
+msgid "Fullscreen mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Download notebook file"
+msgstr "تنزيل ملف دفتر الملاحظات"
+
+msgid "Launch"
+msgstr "إطلاق"
+
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+msgid "By"
+msgstr "بواسطة"
+
+msgid "open issue"
+msgstr "قضية مفتوحة"
+
+msgid "suggest edit"
+msgstr "أقترح تحرير"

@@ -1,0 +1,4617 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
+
+msgid "next page"
+msgstr "Naslednja stran"
+
+msgid "Search the docs ..."
+msgstr "Poiščite dokumente ..."
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "By the"
+msgstr "Avtor"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Download source file"
+msgstr "Prenesite izvorno datoteko"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "By"
+msgstr "Avtor"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"

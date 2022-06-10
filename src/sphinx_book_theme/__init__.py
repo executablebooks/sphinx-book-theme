@@ -164,10 +164,14 @@ class Margin(Sidebar):
         return nodes
 
 
-def update_general_config(app):
+def update_general_config(app, config):
     theme_dir = get_html_theme_path()
-    # Update templates for sidebar
-    app.env.config.templates_path.append(os.path.join(theme_dir, "components"))
+    # Update templates for sidebar. Needed for jupyter-book builds as jb
+    # uses an instance of Sphinx class from sphinx.application to build the app.
+    # The __init__ function of which calls self.config.init_values() just
+    # before emitting `config-inited` event. The init_values function overwrites
+    # templates_path variable.
+    config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
 def setup(app: Sphinx):
@@ -182,7 +186,7 @@ def setup(app: Sphinx):
 
     # Events
     app.connect("builder-inited", update_thebe_config)
-    app.connect("builder-inited", update_general_config)
+    app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
 
@@ -201,7 +205,8 @@ def setup(app: Sphinx):
     # Post-transforms
     app.add_post_transform(HandleFootnoteTransform)
 
-    # Update templates for sidebar for cases when builder-inited is not emitted
+    # Update templates for sidebar, for builds where config-inited is not called
+    # (does not work in case of jupyter-book)
     app.config.templates_path.append(os.path.join(theme_dir, "components"))
 
     return {

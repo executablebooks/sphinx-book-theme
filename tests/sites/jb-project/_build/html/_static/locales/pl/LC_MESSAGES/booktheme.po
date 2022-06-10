@@ -1,0 +1,4617 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "next page"
+msgstr "Następna strona"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "previous page"
+msgstr "Poprzednia strona"
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "By the"
+msgstr "Przez"
+
+msgid "Search this book..."
+msgstr "Przeszukaj tę książkę ..."
+
+msgid "Print to PDF"
+msgstr "Drukuj do PDF"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "Open an issue"
+msgstr "Otwórz problem"
+
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"
+
+msgid "Launch"
+msgstr "Uruchomić"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "By"
+msgstr "Przez"
+
+msgid "open issue"
+msgstr "otwarty problem"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"

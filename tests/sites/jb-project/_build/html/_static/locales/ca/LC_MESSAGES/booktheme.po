@@ -1,0 +1,3849 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx-Book-Theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
+
+msgid "next page"
+msgstr "pàgina següent"
+
+msgid "previous page"
+msgstr "Pàgina anterior"
+
+msgid "Last updated on"
+msgstr "Darrera actualització el"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema del llibre Esfinx"
+
+msgid "Edit this page"
+msgstr "Editeu aquesta pàgina"
+
+msgid "By the"
+msgstr "Per la"
+
+msgid "Search this book..."
+msgstr "Cerca en aquest llibre ..."
+
+msgid "Print to PDF"
+msgstr "Imprimeix a PDF"
+
+msgid "Download this page"
+msgstr "Descarregueu aquesta pàgina"
+
+msgid "Download source file"
+msgstr "Baixeu el fitxer font"
+
+msgid "Toggle navigation"
+msgstr "Commuta la navegació"
+
+msgid "Open an issue"
+msgstr "Obriu un número"
+
+msgid "Source repository"
+msgstr "Dipòsit de fonts"
+
+msgid "Theme by the"
+msgstr "Tema del"
+
+msgid "Download notebook file"
+msgstr "Descarregar fitxer de quadern"
+
+msgid "Launch"
+msgstr "Llançament"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "By"
+msgstr "Per"
+
+msgid "open issue"
+msgstr "número obert"
+
+msgid "suggest edit"
+msgstr "suggerir edició"
