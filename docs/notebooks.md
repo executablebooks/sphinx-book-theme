@@ -201,9 +201,9 @@ df.style.\
     set_table_attributes('style="font-size: 10px"')
 ```
 
-+++ {"tags": ["popout"]}
++++ {"tags": ["margin"]}
 
-Testing popouts before headers
+Testing margins before headers
 
 +++
 

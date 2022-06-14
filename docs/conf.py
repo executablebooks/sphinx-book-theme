@@ -25,6 +25,7 @@ extensions = [
     "sphinxcontrib.youtube",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_examples",
     "sphinx_tabs.tabs",
     "sphinx_thebe",
     "sphinx_togglebutton",
@@ -95,6 +96,7 @@ html_sidebars = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 jupyter_execute_notebooks = "cache"
 thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
@@ -118,6 +120,7 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
+    "use_sidenotes": True,
     "logo_only": True,
     "show_toc_level": 2,
     "announcement": (

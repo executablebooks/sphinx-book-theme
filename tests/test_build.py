@@ -339,3 +339,31 @@ def test_logo_only(sphinx_build_factory):
         "h1", attrs={"id": "site-title"}
     )
     assert not logo_text
+
+
+def test_sidenote(sphinx_build_factory, file_regression):
+    confoverrides = {"html_theme_options.use_sidenotes": True}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    page2 = sphinx_build.html_tree("page2.html")
+
+    sidenote_html = page2.select("section > #sidenotes")
+    file_regression.check(
+        sidenote_html[0].prettify(), extension=".html", encoding="utf8"
+    )
+
+
+def test_marginnote(sphinx_build_factory, file_regression):
+    confoverrides = {"html_theme_options.use_sidenotes": True}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    page2 = sphinx_build.html_tree("page2.html")
+
+    marginnote_html = page2.select("section > #marginnotes")
+    file_regression.check(
+        marginnote_html[0].prettify(), extension=".html", encoding="utf8"
+    )
