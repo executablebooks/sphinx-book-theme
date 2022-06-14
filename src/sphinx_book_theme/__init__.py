@@ -90,9 +90,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
         elif asset.endswith(".js"):
             asset_context = context.get("js_files", [])
         else:
-            SPHINX_LOGGER.warn(
-                f"Unrecognised asset type, not hashing."
-            )
+            SPHINX_LOGGER.warn(f"Unrecognised asset type, not hashing.")
             continue
 
         # Define paths to the original asset file, and its linked file in Sphinx
@@ -116,7 +114,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
         asset_context[ix] = type(asset_obj)(
             filename=f"{asset_sphinx_link}?digest={asset_hash}",
             priority=asset_obj.priority,
-            **asset_obj.attributes
+            **asset_obj.attributes,
         )
 
 
