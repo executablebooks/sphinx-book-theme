@@ -90,28 +90,32 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
                 f"Asset {asset_source_path} does not exist, not linking."
             )
             continue
-            
-        asset_hash = _gen_hash(asset_source_path)
-        new_asset_sphinx_link = f"{asset_sphinx_link}?digest={asset_hash}"
         
         # CSS assets are stored in css_files, JS assets in script_files
         if asset.endswith(".css"):
-            new_asset = Stylesheet(new_asset_sphinx_link)
             asset_context = context.get("css_files", [])
         elif asset.endswith(".js"):
-            new_asset = JavaScript(new_asset_sphinx_link)
             asset_context = context.get("js_files", [])
         else:
             SPHINX_LOGGER.warn(
                 f"Unrecognised asset type, not hashing."
             )
+            continue
             
         # Find this asset in context, and update it to include the digest
         try:
             ix = asset_context.index(asset)
         except ValueError:
             continue
-        asset_context[ix] = new_asset
+
+        asset_hash = _gen_hash(asset_source_path)
+
+        asset_obj = asset_context[ix]
+        asset_context[ix] = type(asset_obj)(
+            filename=f"{asset_sphinx_link}?digest={asset_hash}",
+            priority=asset_obj.priority,
+            **asset_obj.attributes
+        )
 
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
