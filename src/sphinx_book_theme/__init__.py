@@ -7,6 +7,7 @@ from functools import lru_cache
 from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
+from sphinx.builders.html import JavaScript, Stylesheet
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
@@ -68,6 +69,7 @@ def _gen_hash(path: str) -> str:
     return hashlib.sha1(path.read_bytes()).hexdigest()
 
 
+from sphinx.builders.html import JavaScript, Stylesheet
 def hash_assets_for_files(assets: list, theme_static: Path, context):
     """Generate a hash for assets, and append to its entry in context.
 
@@ -80,21 +82,36 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
         `css_files` and `script_files` keys.
     """
     for asset in assets:
+        # Define paths to the original asset file, and its linked file in Sphinx
+        asset_sphinx_link = f"_static/{asset}"
+        asset_source_path = theme_static / asset
+        if not asset_source_path.exists():
+            SPHINX_LOGGER.warn(
+                f"Asset {asset_source_path} does not exist, not linking."
+            )
+            continue
+            
+        asset_hash = _gen_hash(asset_source_path)
+        new_asset_sphinx_link = f"{asset_sphinx_link}?digest={asset_hash}"
+        
         # CSS assets are stored in css_files, JS assets in script_files
-        asset_type = "css_files" if asset.endswith(".css") else "script_files"
-        if asset_type in context:
-            # Define paths to the original asset file, and its linked file in Sphinx
-            asset_sphinx_link = f"_static/{asset}"
-            asset_source_path = theme_static / asset
-            if not asset_source_path.exists():
-                SPHINX_LOGGER.warn(
-                    f"Asset {asset_source_path} does not exist, not linking."
-                )
-            # Find this asset in context, and update it to include the digest
-            if asset_sphinx_link in context[asset_type]:
-                hash = _gen_hash(asset_source_path)
-                ix = context[asset_type].index(asset_sphinx_link)
-                context[asset_type][ix] = asset_sphinx_link + "?digest=" + hash
+        if asset.endswith(".css"):
+            new_asset = Stylesheet(new_asset_sphinx_link)
+            asset_context = context.get("css_files", [])
+        elif asset.endswith(".js"):
+            new_asset = JavaScript(new_asset_sphinx_link)
+            asset_context = context.get("js_files", [])
+        else:
+            SPHINX_LOGGER.warn(
+                f"Unrecognised asset type, not hashing."
+            )
+            
+        # Find this asset in context, and update it to include the digest
+        try:
+            ix = asset_context.index(asset)
+        except ValueError:
+            continue
+        asset_context[ix] = new_asset
 
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
