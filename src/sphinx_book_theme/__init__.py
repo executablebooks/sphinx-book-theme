@@ -7,7 +7,6 @@ from functools import lru_cache
 from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
-from sphinx.builders.html import JavaScript, Stylesheet
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
