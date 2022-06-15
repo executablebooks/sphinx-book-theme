@@ -104,16 +104,11 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
             ix = asset_context.index(asset)
         except ValueError:
             continue
-
-        asset_hash = _gen_hash(asset_source_path)
+        asset_obj = asset_context[ix]
 
         # Regenerate the asset type with the hashed filename
-        asset_obj = asset_context[ix]
-        asset_context[ix] = type(asset_obj)(
-            filename=f"{asset_sphinx_link}?digest={asset_hash}",
-            priority=asset_obj.priority,
-            **asset_obj.attributes,
-        )
+        asset_hash = _gen_hash(asset_source_path)
+        asset_obj.filename = f"{asset_sphinx_link}?digest={asset_hash}"
 
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
