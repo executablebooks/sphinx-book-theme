@@ -107,6 +107,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
 
         asset_hash = _gen_hash(asset_source_path)
 
+        # Regenerate the asset type with the hashed filename
         asset_obj = asset_context[ix]
         asset_context[ix] = type(asset_obj)(
             filename=f"{asset_sphinx_link}?digest={asset_hash}",
