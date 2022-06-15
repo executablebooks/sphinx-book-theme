@@ -81,7 +81,8 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
     """
     for asset in assets:
         # CSS assets are stored in css_files, JS assets in script_files
-        # Use the html context list of assets so we replace it in-place and retain ordering
+        # Use the html context list of assets so we replace it in-place
+        # and retain ordering
         if asset.endswith(".css"):
             asset_context = context.get("css_files", [])
         elif asset.endswith(".js"):
