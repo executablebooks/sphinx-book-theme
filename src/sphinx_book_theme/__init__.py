@@ -69,9 +69,6 @@ def _gen_hash(path: str) -> str:
     return hashlib.sha1(path.read_bytes()).hexdigest()
 
 
-from sphinx.builders.html import JavaScript, Stylesheet
-
-
 def hash_assets_for_files(assets: list, theme_static: Path, context):
     """Generate a hash for assets, and append to its entry in context.
 
