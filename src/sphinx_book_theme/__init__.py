@@ -87,17 +87,13 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
         elif asset.endswith(".js"):
             asset_context = context.get("js_files", [])
         else:
-            SPHINX_LOGGER.warn(f"Unrecognised asset type: {asset}. Not hashing.")
-            continue
+            raise ValueError(f"Unrecognised asset type: {asset}.")
 
         # Define paths to the original asset file, and its linked file in Sphinx
         asset_sphinx_link = f"_static/{asset}"
         asset_source_path = theme_static / asset
         if not asset_source_path.exists():
-            SPHINX_LOGGER.warn(
-                f"Asset {asset_source_path} does not exist, not linking."
-            )
-            continue
+            raise FileNotFoundError(f"Asset {asset_source_path} does not exist.")
 
         # Find this asset in context, and update it to include the digest
         try:
