@@ -93,7 +93,7 @@ To add [RetroLite](https://jupyterlite-sphinx.readthedocs.io/en/latest/retrolite
 html_theme_options = {
     ...
     "launch_buttons": {
-        "retrolite_url": "./lite/retro/notebooks/"
+        "retrolite_url": "/lite/retro/notebooks/"
     },
     ...
 }
