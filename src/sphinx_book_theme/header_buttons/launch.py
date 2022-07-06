@@ -102,6 +102,7 @@ def add_launch_buttons(
     jupyterhub_url = launch_buttons.get("jupyterhub_url", "").strip("/")
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
+    basthon_url = launch_buttons.get("basthon_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
     if binderhub_url:
         url = (
