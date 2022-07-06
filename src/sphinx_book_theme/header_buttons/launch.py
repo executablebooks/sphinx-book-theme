@@ -169,7 +169,7 @@ def add_launch_buttons(
                 "type": "link",
                 "text": "Basthon",
                 "tooltip": "Launch on Basthon",
-                "icon": "_static/images/logo_colab.png",
+                "icon": "_static/images/logo_basthon.svg",
                 "url": url,
             }
         )
