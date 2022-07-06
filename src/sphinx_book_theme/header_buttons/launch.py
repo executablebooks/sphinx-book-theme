@@ -141,7 +141,7 @@ def add_launch_buttons(
         launch_buttons_list.append(
             {
                 "type": "link",
-                "text": "ColabTest",
+                "text": "Colab",
                 "tooltip": "Launch on Colab",
                 "icon": "_static/images/logo_colab.png",
                 "url": url,
@@ -157,6 +157,18 @@ def add_launch_buttons(
                 "text": "Deepnote",
                 "tooltip": "Launch on Deepnote",
                 "icon": "_static/images/logo_deepnote.svg",
+                "url": url,
+            }
+        )
+
+    if basthon_url:
+        url = f"{basthon_url}/?from=https://raw.githubusercontent.com/{org}/{repo}/{branch}/{path_rel_repo}"
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "Basthon",
+                "tooltip": "Launch on Basthon",
+                "icon": "_static/images/logo_colab.png",
                 "url": url,
             }
         )
