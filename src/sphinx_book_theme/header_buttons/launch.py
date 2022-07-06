@@ -141,7 +141,7 @@ def add_launch_buttons(
         launch_buttons_list.append(
             {
                 "type": "link",
-                "text": "Colab",
+                "text": "ColabTest",
                 "tooltip": "Launch on Colab",
                 "icon": "_static/images/logo_colab.png",
                 "url": url,
