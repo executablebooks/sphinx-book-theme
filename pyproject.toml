@@ -72,7 +72,6 @@ doc = [
 test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
-    "jupyter-book",
     "myst-nb~=0.13.2",
     "pytest~=6.0.1",
     "pytest-cov",
