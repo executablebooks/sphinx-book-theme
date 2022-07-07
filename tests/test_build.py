@@ -66,10 +66,6 @@ def test_parallel_build():
     )
 
 
-def test_jb():
-    check_call("jb build tests/sites/jb-project", shell=True)
-
-
 def test_build_book(sphinx_build_factory, file_regression):
     """Test building the base book template and config."""
     sphinx_build = sphinx_build_factory("base")  # type: SphinxBuild

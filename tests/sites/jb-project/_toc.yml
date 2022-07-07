@@ -1,7 +1,0 @@
-format: jb-book
-root: intro
-parts:
-- caption: First Part
-  chapters:
-  - file: first-file
-  - file: second-file

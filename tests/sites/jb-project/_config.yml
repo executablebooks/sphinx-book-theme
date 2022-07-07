@@ -1,6 +1,0 @@
-execute:
-  execute_notebooks: cache
-
-sphinx:
-  config:
-    templates_path: ["_templ"]
