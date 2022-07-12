@@ -3,7 +3,7 @@
   { "language": "Arabic", "symbol": "ar", "text": "حقوق النشر" },
   { "language": "Bulgarian", "symbol": "bg", "text": "Авторско право" },
   { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "版权" },
-  { "language": "Chinese Traditional", "symbol": "zh-tw", "text": "版權" },
+  { "language": "Chinese Traditional", "symbol": "zh-tw", "text": "Copyright" },
   { "language": "Croatian", "symbol": "hr", "text": "Autorska prava" },
   { "language": "Czech", "symbol": "cs", "text": "autorská práva" },
   { "language": "Danish", "symbol": "da", "text": "ophavsret" },
