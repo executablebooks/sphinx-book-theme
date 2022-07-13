@@ -1,0 +1,48 @@
+brand:
+  type: button
+  image: https://executablebooks.org/en/latest/_static/logo.svg
+  url: https://sphinx-book-theme.readthedocs.io
+  # For testing
+  # content: Test site name
+start:
+  - type: dropdown
+    content: Projects
+    items:
+    - content: Jupyter Book
+      url: https://jupyterbook.org
+    - content: MyST Markdown
+      url: https://myst-parser.readthedocs.io
+    - content: MyST-NB
+      url: https://myst-nb.readthedocs.io
+
+  - type: dropdown
+    content: Community
+    items:
+    - content: Community guide
+      url: https://executablebooks.org
+    - content: Forum
+      url: https://github.com/orgs/executablebooks/discussions
+    - content: Feature Voting
+      url: https://executablebooks.org/en/latest/feature-vote.html
+
+  - type: button
+    content: Book gallery
+    url: http://gallery.jupyterbook.org/
+
+
+end:
+  - type: group
+    items:
+    - type: button
+      icon: fab fa-twitter-square
+      title: Twitter
+      url: https://twitter.com/executablebooks
+    - type: button
+      icon: fab fa-github-square
+      title: GitHub
+      url: https://github.com/executablebooks
+  - type: button
+    icon: fas fa-comments
+    outline: true
+    content: Discussion
+    url: https://github.com/orgs/executablebooks/discussions

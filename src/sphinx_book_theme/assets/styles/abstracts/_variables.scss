@@ -20,8 +20,9 @@ $zindex-offcanvas: 1100; // We increase this to be over the tooltips
 
 // Spacing
 $header-article-height: 3em;
-$leftbar-width-mobile: 75%;
-$leftbar-width-wide: 275px;
+$sidebar-primary-width-mobile: 75%;
+$sidebar-primary-width-wide: 275px;
+$sidebar-primary-padding: 1rem 1rem 0 1.5rem;
 $toc-width-mobile: 75%;
 // Main content, to leave room for the margin
 $content-max-width: 70%;
@@ -64,7 +65,14 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
 
   // Variables for this theme
   --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
-  --sbt-header-article-font-size: var(--sbt-font-size-small-1);
   --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
   --sbt-footer-font-size: var(--sbt-font-size-small-1);
+  --sbt-header-font-size: var(--sbt-font-size-regular);
+  --sbt-font-size-menu-mobile: 1.1rem;
+
+  // Header variables
+  --theme-header-article-font-size: var(--sbt-font-size-small-1);
+  --theme-header-button-color: #5a5a5a;
+  --theme-header-button-color-hover: black;
+  --theme-header-background-color: white;
 }

@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 from urllib import request
+from yaml import safe_load
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -98,23 +99,40 @@ html_sidebars = {
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 jupyter_execute_notebooks = "cache"
-thebe_config = {
-    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
-    "repository_branch": "master",
-}
+
+header_config = safe_load(Path("./_data/config-header.yml").read_text())
 
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+    "repository_branch": "master",
     # "repository_branch": "gh-pages",  # For testing
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        "colab_url": "https://colab.research.google.com/",
-        "deepnote_url": "https://deepnote.com/",
-        "notebook_interface": "jupyterlab",
-        "thebe": True,
-        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
-    },
+    "launch_buttons": [
+        {
+            "type": "binderhub",
+            "hub_url": "https://mybinder.org",
+            "notebook_interface": "jupyterlab",
+            "content": "Launch in Lab",
+        },
+        {
+            "type": "binderhub",
+            "hub_url": "https://mybinder.org",
+            "notebook_interface": "classic",
+            "content": "Launch in Notebook",
+        },
+        {
+            "type": "jupyterhub",
+            "hub_url": "https://datahub.berkeley.edu",
+        },  # For testing
+        {"type": "colab"},
+        {"type": "deepnote"},
+        {
+            "type": "thebe",
+            "hub_url": "https://mybinder.org",
+            "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",  # noqa
+            "repository_branch": "master",
+        },
+    ],
     "use_edit_page_button": True,
     "use_issues_button": True,
     "use_repository_button": True,
@@ -126,6 +144,7 @@ html_theme_options = {
         "⚠️The latest release refactored our HTML, "
         "so double-check your custom CSS rules!⚠️"
     ),
+    "header": header_config,
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,

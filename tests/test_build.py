@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from shutil import copytree, rmtree
+from shutil import copytree
 from subprocess import check_call
 
 from bs4 import BeautifulSoup
@@ -94,7 +94,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
         file_regression.check(
             sidebar.prettify(),
-            basename="build__sidebar-primary__nav",
+            basename="sidebar-primary__nav",
             extension=".html",
             encoding="utf8",
         )
@@ -114,7 +114,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     file_regression.check(
         header_article.prettify(),
-        basename="build__header-article",
+        basename="header-article",
         extension=".html",
         encoding="utf8",
     )
@@ -130,7 +130,7 @@ def test_build_book(sphinx_build_factory, file_regression):
         page_toc = page_html.find("div", attrs={"class": "bd-toc"})
         file_regression.check(
             page_toc.prettify(),
-            basename=f"build__pagetoc--{page.with_suffix('').name}",
+            basename=f"sidebar-secondary--{page.with_suffix('').name}",
             extension=".html",
             encoding="utf8",
         )
@@ -188,7 +188,7 @@ def test_navbar_options(sphinx_build_factory, option, value):
         (False, False, False, "all-off"),
     ],
 )
-def test_header_repository_buttons(
+def test_header_article_repository_buttons(
     sphinx_build_factory, file_regression, edit, repo, issues, name
 ):
     # All buttons on
@@ -209,19 +209,24 @@ def test_header_repository_buttons(
     )
     file_regression.check(
         header[0].prettify(),
-        basename=f"header__repo-buttons--{name}",
+        basename=f"header-article__repo-buttons--{name}",
         extension=".html",
         encoding="utf8",
     )
 
 
-def test_header_launchbtns(sphinx_build_factory, file_regression):
+def test_header_article_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".menu-dropdown-launch-buttons"
+        ".launch-buttons + .dropdown-menu"
     )
-    file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
+    file_regression.check(
+        launch_btns[0].prettify(),
+        basename="header-article__launch-buttons",
+        extension=".html",
+        encoding="utf8",
+    )
 
 
 def test_repo_custombranch(sphinx_build_factory, file_regression):
@@ -243,7 +248,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
     # The Binder link should point to `foo`, as should the `edit` button
     file_regression.check(
         header[0].prettify(),
-        basename="header__repo-buttons--custom-branch",
+        basename="header-article__repo-buttons--custom-branch",
         extension=".html",
         encoding="utf8",
     )
@@ -283,7 +288,7 @@ def test_show_navbar_depth(sphinx_build_factory):
         assert "checked" not in checkbox.attrs
 
 
-def test_header_download_button_off(sphinx_build_factory):
+def test_header_article_download_button_off(sphinx_build_factory):
     """Download button should not show up in the header when configured as False."""
     confoverrides = {
         "html_theme_options.use_download_button": False,
@@ -320,13 +325,12 @@ def test_right_sidebar_title(sphinx_build_factory, file_regression):
     sidebar_title = sphinx_build.html_tree("page1.html").find_all(
         "div", attrs={"class": "tocsection"}
     )[0]
-
-    file_regression.check(sidebar_title.prettify(), extension=".html", encoding="utf8")
-
-    # Testing the exception for empty title
-    rmtree(str(sphinx_build.src))
-
-    confoverrides = {"html_theme_options.toc_title": ""}
+    file_regression.check(
+        sidebar_title.prettify(),
+        basename="sidebar-secondary__toc--customtitle",
+        extension=".html",
+        encoding="utf8",
+    )
 
 
 def test_logo_only(sphinx_build_factory):
@@ -351,7 +355,10 @@ def test_sidenote(sphinx_build_factory, file_regression):
 
     sidenote_html = page2.select("section > #sidenotes")
     file_regression.check(
-        sidenote_html[0].prettify(), extension=".html", encoding="utf8"
+        sidenote_html[0].prettify(),
+        basename="article__margin--sidenote",
+        extension=".html",
+        encoding="utf8",
     )
 
 
@@ -365,5 +372,70 @@ def test_marginnote(sphinx_build_factory, file_regression):
 
     marginnote_html = page2.select("section > #marginnotes")
     file_regression.check(
-        marginnote_html[0].prettify(), extension=".html", encoding="utf8"
+        marginnote_html[0].prettify(),
+        basename="article__margin--marginnote",
+        extension=".html",
+        encoding="utf8",
+    )
+
+
+def test_header(sphinx_build_factory, file_regression):
+    header_config = {
+        "logo": {
+            "type": "button",
+            "image": "https://executablebooks.org/en/latest/_static/logo.svg",
+            "url": "https://sphinx-book-theme.readthedocs.io",
+        },
+        # Split our component tests between start and end semi-randomly
+        "start": [
+            # Dropdown button
+            {
+                "type": "dropdown",
+                "classes": ["one", "two"],
+                "items": [
+                    {
+                        "type": "link",
+                        "url": "https://google.com",
+                        "content": "Test content 1",
+                    },
+                    {
+                        "type": "link",
+                        "url": "https://google.com/two",
+                        "icon": "fas fa-bars",
+                        "content": "Test content 2",
+                    },
+                ],
+            },
+            # JS button
+            {"type": "button", "onclick": "somejs()", "content": "Some content"},
+        ],
+        "end": [
+            # Link image
+            {"type": "button", "url": "https://google.com", "image": "noimage"},
+            # Icon image (FA)
+            {"type": "button", "url": "https://google.com", "icon": "fas fa-bars"},
+            # Icon image (local)
+            {"type": "button", "url": "https://google.com", "icon": "hi/there.png"},
+            # Local image
+            {"type": "button", "url": "https://google.com", "image": "hi/there.png"},
+            # Remote image
+            {
+                "type": "button",
+                "url": "https://google.com",
+                "icon": "https://google.com/hi/there.png",
+            },
+        ],
+    }
+    confoverrides = {"html_theme_options.header": header_config}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+
+    index = sphinx_build.html_tree("index.html")
+    header_html = index.select(".header__content")[0]
+    file_regression.check(
+        header_html.prettify(),
+        basename="header",
+        extension=".html",
+        encoding="utf8",
     )

@@ -27,11 +27,11 @@
     background-color: white;
     border-left: $border-thin;
 
-    // Fonts are a bit bigger on mobile, and nested headers get smaller
-    font-size: 1.4em;
-
+    // Fonts and spacing
+    font-size: var(--sbt-font-size-menu-mobile);
     li {
-      font-size: 0.8em;
+      // This makes the nested list items smaller
+      font-size: 0.9em;
     }
   }
 

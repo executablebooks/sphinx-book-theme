@@ -13,7 +13,7 @@ input#__navigation {
       & ~ .container-xl #site-navigation {
         visibility: hidden;
         opacity: 0;
-        margin-left: -$leftbar-width-wide;
+        margin-left: -$sidebar-primary-width-wide;
       }
 
       // When we hide the sidebar on widescreen, add some padding to content
@@ -29,7 +29,7 @@ input#__navigation {
     &:not(:checked) ~ .container-xl #site-navigation {
       visibility: hidden;
       opacity: 0;
-      margin-left: -$leftbar-width-mobile;
+      margin-left: -$sidebar-primary-width-mobile;
     }
   }
 }
@@ -40,7 +40,7 @@ input#__page-toc {
     &:not(:checked) ~ .container-xl .bd-toc {
       visibility: hidden;
       opacity: 0;
-      margin-right: -$leftbar-width-mobile;
+      margin-right: -$sidebar-primary-width-mobile;
     }
   }
 }

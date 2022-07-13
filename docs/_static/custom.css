@@ -1,3 +1,6 @@
 :root {
-  --sd-color-primary: #f37726;
+  /* WONT WORK UNTIL THE NEXT PYDATA THEME IS RELEASED
+  --sbt-color-primary: #f37726;
+  --sd-color-primary: var(--sbt-color-primary);
+  */
 }

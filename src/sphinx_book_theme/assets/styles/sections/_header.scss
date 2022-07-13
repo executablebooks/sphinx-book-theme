@@ -1,0 +1,175 @@
+/**
+ * A few different header CSS rules
+ */
+
+$header-default-height: 4rem;
+
+// Header container places the collapse button properly
+.header {
+  display: flex;
+  border-bottom: $border-thin;
+  background-color: var(--theme-header-background-color);
+}
+
+// Header content contains the components
+.header__content {
+  display: flex;
+  flex-grow: 1;
+  max-width: 1400px; // Bootstrap max-width for xl container, to match article
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-height: $header-default-height;
+  min-height: $header-default-height;
+
+  @media (max-width: $breakpoint-md) {
+    transition: max-height $animation-time ease-out;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+  }
+
+  // Navigation links
+  a,
+  div.dropdown button {
+    color: var(--theme-header-button-color);
+
+    &:hover {
+      color: var(--theme-header-button-color-hover);
+      text-decoration: none;
+    }
+  }
+
+  // Button component styling (won't apply to dropdowns)
+  button.btn-outline-primary {
+    color: rgba(var(--pst-color-primary), 1);
+    border-color: rgba(var(--pst-color-primary), 1);
+
+    &:hover {
+      color: white;
+      background-color: rgba(var(--pst-color-primary), 1);
+    }
+  }
+}
+
+.header__content,
+.header__start,
+.header__end {
+  display: flex;
+  flex-wrap: nowrap;
+
+  // On narrow screens, the header items show flow vertically and snap to left
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+// More rem for the content container
+.header__content {
+  gap: 1rem;
+}
+
+.header__brand,
+.header__start,
+.header__end {
+  gap: 0.75rem;
+
+  // On narrow screens the header content sections display vertically
+  @media (max-width: $breakpoint-md) {
+    padding-left: 0.5rem;
+  }
+}
+
+input#__header {
+  // Inputs never display, only used to control behavior
+  display: none;
+
+  // On narrow screens, checking the button opens the header
+  &:checked ~ div.header__content {
+    @media (max-width: $breakpoint-md) {
+      max-height: 20em;
+    }
+  }
+}
+
+// This is the logo or a bold docs title
+.header__brand {
+  display: flex;
+  font-size: 1.5em;
+
+  // Align the brand vertically
+  .header-content-item {
+    height: $header-default-height;
+    align-items: center;
+  }
+
+  // So the brand logo aligns with the toggle button
+  button {
+    padding: 0;
+  }
+
+  // Only show up on narrow screens, and push to the far right
+  #header-toggle-button {
+    display: none;
+    font-size: 1.5rem; // A bit bigger since it's prominent at top
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+      height: $header-default-height;
+      margin-left: auto;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+.header__start,
+.header__end {
+  .icon-button-no-content {
+    font-size: 1.5rem;
+  }
+
+  // Increase the text size on mobile
+  @media (max-width: $breakpoint-md) {
+    button {
+      font-size: var(--sbt-font-size-menu-mobile);
+    }
+  }
+}
+
+.header__end {
+  // Header end is right-justified on wide screens
+  @media (min-width: $breakpoint-md) {
+    margin-left: auto;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 1rem;
+  }
+}
+
+ul#navbar-icon-links {
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.header-content-item {
+  display: flex;
+  align-items: center;
+
+  // Ensure that the items don't break out of their containers
+  max-height: $header-default-height;
+
+  // Images are capped a bit smaller so they have whitespace in the header
+  img {
+    max-height: $header-default-height * 0.7;
+  }
+
+  // Spacing is horizontal on wide, vertical on narrow
+  // Items should snap to left on mobile
+  @media (max-width: $breakpoint-md) {
+    align-items: start;
+  }
+
+  // To put this on top of other sticky content on the page
+  .dropdown-menu {
+    z-index: $zindex-sticky + 1;
+  }
+}

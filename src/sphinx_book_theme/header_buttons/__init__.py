@@ -36,9 +36,9 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
     if _as_bool(opts.get("use_fullscreen_button", True)):
         header_buttons.append(
             {
-                "type": "javascript",
-                "javascript": "toggleFullScreen()",
-                "tooltip": "Fullscreen mode",
+                "type": "button",
+                "onclick": "toggleFullScreen()",
+                "title": "Fullscreen mode",
                 "icon": "fas fa-expand",
             }
         )
@@ -65,10 +65,10 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         if opts.get("use_repository_button"):
             repo_buttons.append(
                 {
-                    "type": "link",
+                    "type": "button",
                     "url": repo_url,
-                    "tooltip": "Source repository",
-                    "text": "repository",
+                    "title": "Source repository",
+                    "content": "repository",
                     "icon": "fab fa-github",
                 }
             )
@@ -76,10 +76,10 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         if opts.get("use_issues_button"):
             repo_buttons.append(
                 {
-                    "type": "link",
+                    "type": "button",
                     "url": f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
-                    "text": "open issue",
-                    "tooltip": "Open an issue",
+                    "content": "open issue",
+                    "title": "Open an issue",
                     "icon": "fas fa-lightbulb",
                 }
             )
@@ -103,10 +103,10 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
 
             repo_buttons.append(
                 {
-                    "type": "link",
+                    "type": "button",
                     "url": context["get_edit_url"](),
-                    "tooltip": "Edit this page",
-                    "text": "suggest edit",
+                    "title": "Edit this page",
+                    "content": "suggest edit",
                     "icon": "fas fa-pencil-alt",
                 }
             )
@@ -117,16 +117,16 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 rb["tooltip_placement"] = "left"
             header_buttons.append(
                 {
-                    "type": "group",
-                    "tooltip": "Source repositories",
+                    "type": "dropdown",
                     "icon": "fab fa-github",
-                    "buttons": repo_buttons,
-                    "label": "repository-buttons",
+                    "items": repo_buttons,
+                    "side": "right",
+                    "classes": ["repo-buttons"],
                 }
             )
         elif len(repo_buttons) == 1:
             # Remove the text since it's just a single button, want just an icon.
-            repo_buttons[0]["text"] = ""
+            repo_buttons[0]["content"] = ""
             header_buttons.extend(repo_buttons)
 
     # Download buttons for various source content.
@@ -137,31 +137,31 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         if context.get("ipynb_source"):
             download_buttons.append(
                 {
-                    "type": "link",
+                    "type": "button",
                     "url": f'{pathto("_sources", 1)}/{context.get("ipynb_source")}',
-                    "text": ".ipynb",
+                    "content": ".ipynb",
                     "icon": "fas fa-code",
-                    "tooltip": "Download notebook file",
+                    "title": "Download notebook file",
                     "tooltip_placement": "left",
                 }
             )
 
         download_buttons.append(
             {
-                "type": "link",
+                "type": "button",
                 "url": f'{pathto("_sources", 1)}/{context["sourcename"]}',
-                "text": suff,
-                "tooltip": "Download source file",
+                "content": suff,
+                "title": "Download source file",
                 "tooltip_placement": "left",
                 "icon": "fas fa-file",
             }
         )
         download_buttons.append(
             {
-                "type": "javascript",
-                "javascript": "printPdf(this)",
-                "text": ".pdf",
-                "tooltip": "Print to PDF",
+                "type": "button",
+                "onclick": "printPdf(this)",
+                "content": ".pdf",
+                "title": "Print to PDF",
                 "tooltip_placement": "left",
                 "icon": "fas fa-file-pdf",
             }
@@ -170,10 +170,9 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         # Add the group
         header_buttons.append(
             {
-                "type": "group",
-                "tooltip": "Download this page",
+                "type": "dropdown",
                 "icon": "fas fa-download",
-                "buttons": download_buttons,
-                "label": "download-buttons",
+                "items": download_buttons,
+                "side": "right",
             }
         )

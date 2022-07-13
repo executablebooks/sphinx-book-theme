@@ -1,119 +1,125 @@
 /*********************************************
 * Buttons, mostly for the headers            *
 *********************************************/
+
 /**
- * Basic button style
+ * In-page table of contents
  */
-.headerbtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: white;
-  color: $non-content-grey;
-  cursor: pointer;
-  border: none;
-  padding: 0.1rem 0.5rem; // Horizontal padding since labels have none
-  margin: 0 0.1rem;
-
-  span {
-    display: flex;
-    align-items: center;
-  }
-
-  // Icons and image icons
-  img,
-  i {
-    margin: auto;
-    width: 1em;
-    text-align: center;
-    font-size: 1.5em; // Slightly larger for icons
+#header__page-toc-button {
+  // Hide the button on wide screens since we display the TOC.
+  display: block;
+  @media (min-width: $breakpoint-md) {
+    display: none;
   }
 }
 
 /**
- * Dropdown groups of buttons
+ * Header sections
  */
-.menu-dropdown__trigger:hover + .menu-dropdown__content,
-.menu-dropdown__content:hover {
-  visibility: visible;
-  opacity: 1;
+
+// Reset default button styling on Safari because it has opinionated / clashing design
+[type="button"] {
+  -webkit-appearance: none;
 }
 
-.menu-dropdown__content {
-  // Hide by default, we'll show on hover
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-75%);
-  transition: opacity 0.2s ease-out;
+div.dropdown {
+  // Control the dropdown menu display
 
-  // Spacing and position
-  width: 10rem;
-  border-radius: $box-border-radius;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
-  padding: 0.5em;
-
-  // Style
-  background-color: white;
-
-  .headerbtn {
-    justify-content: left;
-    padding: 0.1rem 0rem;
+  // First, overwrite the Bootstrap default so we can make nicer animations
+  // These make it "displayed" but hidden
+  .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 50ms ease-out, opacity 150ms ease-out 50ms;
   }
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
+  // On hover, we display the contents via visibility and opacity
+  &:hover div.dropdown-menu,
+  div.dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+    // Remove the delay when hovering, which makes it appear instantly, but delay in disappear
+    transition-delay: 0ms;
   }
 
-  span {
+  // Other styling on the dropdown menu
+  .dropdown-menu {
+    // Copied from dropdown menu style above
+    border-radius: $box-border-radius;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+    min-width: 13rem;
     display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
-    &.headerbtn__icon-container {
-      width: 2em;
+    button {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      width: 100%;
+      border-radius: 0;
+
+      &:hover {
+        background-color: #eee;
+      }
     }
 
-    &.headerbtn__text-container {
-      flex-grow: 1;
-      margin-left: 0.5em;
+    a:hover {
+      text-decoration: none;
     }
-  }
 
-  i,
-  img {
-    font-size: 1.2em; // Slightly smaller icons in a dropdown
-  }
-}
+    span.btn__icon-container {
+      display: flex;
 
-// HACK: Need this to be extra-selective to over-ride some too-specific PST CSS
-div.header-article-main {
-  .header-article__left,
-  .header-article__right {
-    a,
-    button,
-    label {
-      color: $non-content-grey;
-
-      // Over-ride bootstrap defaults for clicking
-      &:hover,
-      &:focus {
-        color: black;
-        box-shadow: none;
-        text-decoration: none;
+      img,
+      i {
+        width: 1.2rem; // Slightly wider to make the font match the images
+        font-size: 1rem;
       }
     }
   }
 }
 
-/**
- * In-page table of contents
+/*
+ * Button types classes
  */
-.headerbtn-page-toc {
-  // Hide the button on wide screens since we display the TOC.
-  display: block;
-  @media (min-width: $breakpoint-md) {
-    display: none;
+// Basic button class
+.icon-button {
+  padding: 0 0.2em;
+  margin-bottom: 0;
+  color: var(--theme-header-button-color);
+
+  // Over-ride bootstrap defaults for clicking
+  &:hover,
+  &:focus {
+    color: var(--theme-header-button-color-hover);
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  // Spacing for the icon if it's present with text
+  .btn__icon-container + .btn__content-container {
+    margin-left: 0.5rem;
+  }
+
+  // Over-rides a pydata theme default to center it
+  .btn__content-container {
+    text-align: left;
+  }
+}
+
+// If no content, make the icon a bit bigger
+.icon-button-no-content {
+  font-size: 1.3rem;
+}
+
+// Outline buttons need extra spacing
+button.btn-outline {
+  outline: 1px solid $non-content-grey;
+  padding: 0.3rem 0.5rem;
+
+  &:hover {
+    background-color: #ededed;
   }
 }
