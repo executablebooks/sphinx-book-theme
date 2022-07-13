@@ -7,10 +7,4 @@ dl.field-list {
   & dd {
     margin-left: 1.5em;
   }
-  & dd:not(:last-child) {
-    margin-bottom: 0px;
-    p:last-child {
-      margin-bottom: 0px;
-    }
-  }
 }
