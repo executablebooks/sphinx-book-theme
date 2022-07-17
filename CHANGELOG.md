@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.3.3 -- 2022-07-17
+
+### Fixes:
+
+- Style edits for last-child zero-margin on dd's
+- Escape colon in JupyterHub link to repo
+- Myst-nb pinning to 0.13.2
+- Stylizing ReadTheDocs in `_readthedocs.scss` as per guidelines
+- `templates_path` in config was overriding any value append to `templates_path` in this package.
+
+### Enhancements made:
+
+- Added sidenote and marginnote using footnote syntax
+
+### Docs:
+
+- Added Docs for sphinx-examples
+- Beta and lychee link fixes
+
 ## v0.3.2 -- 2022-03-28
 
 Two patch releases fixed two bugs for figure content in the margin.
