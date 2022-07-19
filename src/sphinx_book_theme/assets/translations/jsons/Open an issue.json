@@ -5,12 +5,12 @@
   {
     "language": "Chinese Simplified",
     "symbol": "zh_CN",
-    "text": "打开一个问题"
+    "text": "创建议题"
   },
   {
     "language": "Chinese Traditional",
     "symbol": "zh-tw",
-    "text": "打開一個問題"
+    "text": "開啟議題"
   },
   { "language": "Croatian", "symbol": "hr", "text": "Otvorite izdanje" },
   { "language": "Czech", "symbol": "cs", "text": "Otevřete problém" },

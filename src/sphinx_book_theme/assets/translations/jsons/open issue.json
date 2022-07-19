@@ -2,7 +2,7 @@
   { "language": "English", "symbol": "en", "text": "open issue" },
   { "language": "Arabic", "symbol": "ar", "text": "قضية مفتوحة" },
   { "language": "Bulgarian", "symbol": "bg", "text": "отворен брой" },
-  { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "公开的问题" },
+  { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "创建议题" },
   {
     "language": "Chinese Traditional",
     "symbol": "zh-tw",
