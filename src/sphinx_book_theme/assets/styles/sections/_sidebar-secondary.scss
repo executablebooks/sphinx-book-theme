@@ -54,13 +54,6 @@
     li.active > a.active {
       border-left: 2px solid rgba(var(--pst-color-link), 1);
     }
-
-    > .nav {
-      border-left: 1px solid #eee;
-      .nav {
-        border-left: none;
-      }
-    }
   }
 
   // Show / hide the in-page TOC items
@@ -88,7 +81,7 @@
   }
 
   .tocsection {
-    padding: 0.5rem 0 0.5rem 1rem !important;
+    padding: 0.5rem 0 0.5rem 0rem !important;
 
     &:after {
       content: "\f107";
