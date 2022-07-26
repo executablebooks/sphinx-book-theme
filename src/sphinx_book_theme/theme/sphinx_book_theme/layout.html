@@ -3,14 +3,20 @@
 
 {% set is_single_page = (theme_single_page == True) or (theme_single_page == "True") %}
 
+{% block docs_main %}
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+{{ super() }}
+{% endblock %}
 
-
+{%- block footer %}
+  <footer class="bd-footer">
+    {%- include "sections/footer-content.html" %}
+  </footer>
+{%- endblock %}
 
 {% block docs_toc %}
 {% endblock %}
 
 {% block docs_navbar %}
-{%- endblock %}
-
-{%- block footer %}
 {%- endblock %}
