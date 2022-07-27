@@ -1,0 +1,25 @@
+{% block docs_sidebar %}
+
+{% if sidebars %}
+    {# Only show if we have sidebars configured #}
+    <div class="bd-sidebar-primary bd-sidebar">
+        <div class="bd-sidebar__content">
+            <div class="sidebar-start-items">
+                {%- for sidebartemplate in sidebars %}
+                {%- include sidebartemplate %}
+                {%- endfor %}
+            </div>
+            <div class="sidebar-end-items">
+                {%- for leftsidebartemplate in theme_left_sidebar_end %}
+                {%- include leftsidebartemplate %}
+                {%- endfor %}
+                {% if theme_extra_navbar %}
+                    <div class="navbar_extra_footer">
+                    {{ theme_extra_navbar }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

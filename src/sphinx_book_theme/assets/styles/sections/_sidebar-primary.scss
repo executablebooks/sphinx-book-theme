@@ -1,9 +1,10 @@
 /*********************************************
 * Left Nav Bar *
 *********************************************/
-#site-navigation {
+.bd-sidebar-primary {
   padding-top: 0;
-  width: $leftbar-width-wide;
+  padding: 0em;
+  flex-basis: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
   background: white;
@@ -33,13 +34,13 @@
   }
 
   // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
-  .bd-sidebar__top,
-  .bd-sidebar__bottom {
+  .sidebar-start-items,
+  .sidebar-end-items {
     padding: 0 1rem 0rem 1.5rem;
   }
 
   // This should always snap to the bottom even if there's no sidebar content
-  .bd-sidebar__bottom {
+  .sidebar-end-items {
     margin-top: auto;
     margin-bottom: 2em;
   }
