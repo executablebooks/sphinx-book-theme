@@ -7,6 +7,7 @@
   flex-basis: $leftbar-width-wide;
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
+  max-height: 100vh;
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,

@@ -2,12 +2,14 @@
 * Table of Contents (right nav bar)          *
 *********************************************/
 
-.bd-toc {
+.bd-sidebar-secondary {
   padding: 0px !important;
   right: -1em;
   height: auto;
   transition: margin-right $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+  top: 0px;
+  max-height: 100vh;
 
   // Colors
   div.onthispage,
