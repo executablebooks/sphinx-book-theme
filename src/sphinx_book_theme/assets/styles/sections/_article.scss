@@ -5,4 +5,7 @@
 .bd-content {
   overflow: unset; // needed for postion:sticky header-article
   padding: 0rem;
+  .bd-article {
+    padding-right: 2rem;
+  }
 }

@@ -10,7 +10,8 @@
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
   top: 0px;
   max-height: 100vh;
-
+  z-index: 2;
+  
   // Colors
   div.onthispage,
   .toc-entry a {

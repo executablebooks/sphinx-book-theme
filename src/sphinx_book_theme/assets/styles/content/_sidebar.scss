@@ -13,4 +13,6 @@ aside.sidebar {
       margin: 0 -35% 0 $content-margin-gutter;
     }
   }
+  position: relative;
+  z-index: 10;
 }

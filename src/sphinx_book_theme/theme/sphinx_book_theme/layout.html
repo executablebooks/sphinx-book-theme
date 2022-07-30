@@ -6,8 +6,32 @@
 {% block docs_main %}
 <!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-{{ super() }}
+<div class="bd-content col">
+    <div class="bd-header-article">
+        {% include "sections/header-article.html" %}
+    </div>
+
+    {% block docs_body %}
+    <article class="bd-article" role="main">
+      {% block body %} {% endblock %}
+    </article>
+    {% endblock %}
+
+    {% if theme_show_prev_next %}
+    <footer class="bd-footer-article">
+        {% include "sections/footer-article.html" %}
+    </footer>
+    {% endif %}
+    <div class="footer-content">
+        <footer class="col bd-footer">
+            {%- include "sections/footer-content.html" %}
+        </footer>
+    </div>
+</div>
 {% endblock %}
+
+{%- block footer %}
+{%- endblock %}
 
 {% block docs_toc %}
 {% endblock %}
