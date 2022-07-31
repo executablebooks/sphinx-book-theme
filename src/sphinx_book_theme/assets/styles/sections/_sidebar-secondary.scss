@@ -6,18 +6,35 @@
   padding: 0px !important;
   right: -1em;
   height: auto;
-  transition: margin-right $animation-time ease 0s,
-    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
   top: 0px;
   max-height: 100vh;
   z-index: 2;
+  transition: margin-right .25s ease 0s,opacity .25s ease 0s,visibility .25s ease 0s;
   
+  .tocsection {
+    padding: 0.5rem 1rem !important;
+    box-shadow: 0 6px 6px -6px rgba(0,0,0,.3);
+
+    &:after {
+      content: "\f107";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      padding-left: 0.5em;
+      transition: opacity 0.3s ease;
+    }
+  }
+  .toc-h2 {
+    font-size: .85rem;
+  }
   // Colors
   div.onthispage,
   .toc-entry a {
     color: $non-content-grey;
   }
 
+  .toc-item {
+    padding: 0rem;
+  }
   // On narrow screens, this should be offset to the right side until button is clicked
   @media (max-width: $breakpoint-md) {
     z-index: $zindex-offcanvas;
@@ -42,7 +59,6 @@
   nav {
     opacity: 0;
     max-height: 0;
-    transition: opacity 0.2s ease, max-height 0.7s ease;
     overflow-y: hidden;
     background: white;
     @include scrollbar-style();
@@ -73,20 +89,9 @@
     @include show-inpage-toc;
   }
 
-  .tocsection {
-    padding: 0.5rem 0 0.5rem 0rem !important;
-
-    &:after {
-      content: "\f107";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      padding-left: 0.5em;
-      transition: opacity 0.3s ease;
-    }
-  }
-
-  .toc-entry a {
+  .toc-entry a.nav-link {
     padding: 0.125rem 1rem !important;
+    margin-left: 0rem;
   }
 
   // Make sure the pydata sphinx theme edit button doesn't show up
