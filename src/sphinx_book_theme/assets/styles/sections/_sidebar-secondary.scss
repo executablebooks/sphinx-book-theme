@@ -6,14 +6,16 @@
   padding: 0px !important;
   right: -1em;
   height: auto;
-  top: 0px;
-  max-height: 100vh;
-  z-index: 2;
+  position: static; // toc-item will be made sticky so that z-index works well
+  max-height: unset;
+  overflow-y: unset;
   transition: margin-right .25s ease 0s,opacity .25s ease 0s,visibility .25s ease 0s;
   
   .tocsection {
     padding: 0.5rem 1rem !important;
-    box-shadow: 0 6px 6px -6px rgba(0,0,0,.3);
+    .scrolled & {
+      box-shadow: 0 6px 6px -6px rgba(0,0,0,.3);
+    }
 
     &:after {
       content: "\f107";
@@ -23,6 +25,16 @@
       transition: opacity 0.3s ease;
     }
   }
+
+  .toc-item {
+    padding: 0rem;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    height: auto;
+    background: white;
+  }
+
   .toc-h2 {
     font-size: .85rem;
   }
@@ -32,9 +44,6 @@
     color: $non-content-grey;
   }
 
-  .toc-item {
-    padding: 0rem;
-  }
   // On narrow screens, this should be offset to the right side until button is clicked
   @media (max-width: $breakpoint-md) {
     z-index: $zindex-offcanvas;
