@@ -6,8 +6,8 @@
     "symbol": "bg",
     "text": "Превключване на навигацията"
   },
-  { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "切换导航" },
-  { "language": "Chinese Traditional", "symbol": "zh-tw", "text": "切換導航" },
+  { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "显示或隐藏导航栏" },
+  { "language": "Chinese Traditional", "symbol": "zh-tw", "text": "顯示或隱藏導覽列" },
   {
     "language": "Croatian",
     "symbol": "hr",

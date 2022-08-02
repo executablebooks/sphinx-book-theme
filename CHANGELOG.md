@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.3.3 -- 2022-07-17
+
+### Fixes:
+
+- Style edits for last-child zero-margin on dd's [#586](https://github.com/executablebooks/sphinx-book-theme/pull/586) ([@benjaoming](https://github.com/benjaoming))
+- Escape colon in JupyterHub link to repo [#556](https://github.com/executablebooks/sphinx-book-theme/pull/556) ([@matthew-brett](https://github.com/matthew-brett))
+- Myst-nb pinning to 0.13.2 [#560](https://github.com/executablebooks/sphinx-book-theme/pull/560) ([@choldgraf](https://github.com/choldgraf))
+- Stylizing ReadTheDocs in `_readthedocs.scss` as per guidelines [#579](https://github.com/executablebooks/sphinx-book-theme/pull/579) ([@pradyunsg](https://github.com/pradyunsg))
+- `templates_path` in config was overriding any value append to `templates_path` in this package. [#566](https://github.com/executablebooks/sphinx-book-theme/pull/566) ([@AakashGfude](https://github.com/AakashGfude))
+
+### Enhancements made:
+
+- Added sidenote and marginnote using footnote syntax [#546](https://github.com/executablebooks/sphinx-book-theme/pull/546) ([@AakashGfude](https://github.com/AakashGfude))
+
+### Docs:
+
+- Added Docs for sphinx-examples [#550](https://github.com/executablebooks/sphinx-book-theme/pull/550) ([@choldgraf](https://github.com/choldgraf))
+- Lychee link fixes [#553](https://github.com/executablebooks/sphinx-book-theme/pull/553) ([@choldgraf](https://github.com/choldgraf))
+- Beta and lychee link fix [#552](https://github.com/executablebooks/sphinx-book-theme/pull/552) ([@choldgraf](https://github.com/choldgraf))
+
+
 ## v0.3.2 -- 2022-03-28
 
 Two patch releases fixed two bugs for figure content in the margin.
