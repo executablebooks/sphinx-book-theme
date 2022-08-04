@@ -26,6 +26,20 @@
     }
   }
 
+  // Show / hide the in-page TOC items
+  @mixin show-inpage-toc {
+    nav {
+      max-height: 90vh;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    // Hide the arrow when we display the toc
+    .tocsection:after {
+      opacity: 0;
+    }
+  }
+
   .toc-item {
     padding: 0rem;
     position: sticky;
@@ -33,8 +47,16 @@
     top: 0;
     height: auto;
     background: white;
+    // On wide screens, show the TOC with hover or w/ a show class
+    &:hover {
+      @include show-inpage-toc;
+    }
   }
 
+  &.show {
+    @include show-inpage-toc;
+  }
+  
   .toc-h2 {
     font-size: 0.85rem;
   }
@@ -73,25 +95,6 @@
     transition: opacity .4s ease,max-height .7s ease;
     @include scrollbar-style();
     @include scrollbar-on-hover();
-  }
-
-  // Show / hide the in-page TOC items
-  @mixin show-inpage-toc {
-    nav {
-      max-height: 90vh;
-      opacity: 1;
-      overflow-y: auto;
-    }
-
-    // Hide the arrow when we display the toc
-    .tocsection:after {
-      opacity: 0;
-    }
-  }
-  // On wide screens, show the TOC with hover or w/ a show class
-  &:hover,
-  &.show {
-    @include show-inpage-toc;
   }
 
   // On narrow screens, it should always be shown because it's off to the right
