@@ -9,7 +9,8 @@
   position: static; // toc-item will be made sticky so that z-index works well
   max-height: unset;
   overflow-y: unset;
-  transition: margin-right .25s ease 0s,opacity .25s ease 0s,visibility .25s ease 0s;
+  transition: margin-right 0.25s ease 0s, opacity 0.25s ease 0s,
+    visibility 0.25s ease 0s;
 
   .tocsection {
     padding: 0.5rem 1rem !important;
@@ -70,7 +71,7 @@
     max-height: 0;
     overflow-y: hidden;
     background: white;
-    transition: opacity .4s ease,max-height .7s ease;
+    transition: opacity 0.4s ease, max-height 0.7s ease;
     @include scrollbar-style();
     @include scrollbar-on-hover();
   }
