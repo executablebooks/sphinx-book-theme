@@ -8,6 +8,7 @@
   font-size: var(--sbt-sidebar-font-size);
   top: 0px !important;
   max-height: 100vh;
+  max-width: 100%;
   background: white;
   border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
