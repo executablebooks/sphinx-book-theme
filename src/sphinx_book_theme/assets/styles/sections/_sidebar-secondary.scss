@@ -6,7 +6,7 @@
   padding: 0px !important;
   right: -1em;
   height: auto;
-  position: static; // toc-item will be made sticky so that z-index works well
+  position: static; // .toc-item is made sticky so that z-index works well, for margin content
   max-height: unset;
   overflow-y: unset;
   transition: margin-right 0.25s ease 0s, opacity 0.25s ease 0s,
@@ -43,7 +43,7 @@
 
   .toc-item {
     padding: 0rem;
-    position: sticky;
+    position: sticky; // this is made sticky so that z-index works well, for margin content
     z-index: 3;
     top: 0;
     height: auto;

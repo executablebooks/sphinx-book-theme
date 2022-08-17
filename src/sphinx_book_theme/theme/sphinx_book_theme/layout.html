@@ -1,5 +1,18 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 {# ref: https://github.com/pydata/pydata-sphinx-theme/blob/master/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/layout.html #}
 
+{% block docs_main %}
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+{{ super() }}
+{% endblock %}
+
+{# Secondary sidebar #}
+{% block docs_toc %}
+{% if not remove_sidebar_secondary %}
+    {% include "sections/sidebar-secondary.html" %}
+{% endif %}
+{% endblock %}
+
 {% block docs_navbar %}
 {% endblock %}

@@ -1,15 +1,20 @@
 /*********************************************
 * Main content layout *
 *********************************************/
-
-.bd-content {
-  overflow: unset; // needed for postion:sticky header-article
-  padding: 0rem;
-  .bd-article {
-    padding-right: 2rem;
-    @media (max-width: $breakpoint-md) {
-      padding-left: 1rem;
-      padding-right: 1rem;
+.bd-main {
+  .bd-content {
+    padding: 0rem;
+    .bd-article-container {
+      position: relative; // needed for postion:sticky header-article
+      overflow-x: unset; // needed for postion:sticky header-article
+      padding: 0%;
+    }
+    .bd-article {
+      padding-right: 2rem;
+      @media (max-width: $breakpoint-md) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
     }
   }
 }
