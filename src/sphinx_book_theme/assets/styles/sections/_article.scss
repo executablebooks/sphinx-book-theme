@@ -4,10 +4,12 @@
 .bd-main {
   .bd-content {
     padding: 0rem;
+    justify-content: revert;
     .bd-article-container {
       position: relative; // needed for postion:sticky header-article
       overflow-x: unset; // needed for postion:sticky header-article
       padding: 0%;
+      max-width: 50em;
     }
     .bd-article {
       padding-right: 2rem;
