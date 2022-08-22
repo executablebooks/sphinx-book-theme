@@ -28,6 +28,10 @@
   display: none;
 }
 
+a {
+  color: rgba(var(--pst-color-link),1);
+}
+
 // Print-specific utility classes
 .onlyprint {
   display: none;

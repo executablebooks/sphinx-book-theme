@@ -96,6 +96,16 @@
     transition: opacity 0.4s ease, max-height 0.7s ease;
     @include scrollbar-style();
     @include scrollbar-on-hover();
+     // TOC link color
+     a:hover,
+     li.active > a.active {
+       color: rgba(var(--pst-color-link), 1);
+     }
+ 
+     li.active > a.active {
+       border-left: 2px solid rgba(var(--pst-color-link), 1);
+     }
+
   }
 
   // On narrow screens, it should always be shown because it's off to the right

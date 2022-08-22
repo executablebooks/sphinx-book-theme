@@ -35,7 +35,7 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
 
 // Overrides for pydata sphinx theme.
 // See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
-:root {
+:root[data-theme="light"] {
   // Over-ride the pydata theme so that readers can use their system base
   --pst-font-size-base: none;
 
@@ -55,6 +55,7 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
   --pst-color-admonition-warning: var(--pst-color-danger);
 
   --pst-color-link: 0, 113, 188;
+  --pst-color-border: rgb(238, 238, 238);
 
   // Font sizes
   --sbt-font-size-regular: 100%;
