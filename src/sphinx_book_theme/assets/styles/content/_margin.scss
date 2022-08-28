@@ -6,9 +6,7 @@
 // max-width * x = 100% - max-width, so we solve for x.
 // Will be a decimal
 $content-margin-gutter: 2rem;
-$content-margin-width: (
-    (88rem - $content-max-width) 
-  ) - $content-margin-gutter;
+$content-margin-width: ((88rem - $content-max-width)) - $content-margin-gutter;
 $content-margin-offset: (-$content-margin-width - $content-margin-gutter);
 
 // Express 100% in parent container in % units of the child container.
