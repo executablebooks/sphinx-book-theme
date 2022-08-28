@@ -9,7 +9,8 @@
       position: relative; // needed for postion:sticky header-article
       overflow-x: unset; // needed for postion:sticky header-article
       padding: 0%;
-      max-width: 50em;
+      max-width: $content-max-width;
+      min-width: 0; // to prevent overflow in mobile website for flex containers
     }
     .bd-article {
       padding-right: 2rem;

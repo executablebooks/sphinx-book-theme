@@ -5,14 +5,14 @@
 // So the width we want is:
 // max-width * x = 100% - max-width, so we solve for x.
 // Will be a decimal
-$content-margin-gutter: 3%;
-$content-margin-width: percentage(
-    (100% - $content-max-width) / $content-max-width
+$content-margin-gutter: 2rem;
+$content-margin-width: (
+    (88rem - $content-max-width) 
   ) - $content-margin-gutter;
 $content-margin-offset: (-$content-margin-width - $content-margin-gutter);
 
 // Express 100% in parent container in % units of the child container.
-$content-fullwidth-width: percentage(100% / $content-max-width);
+$content-fullwidth-width: (88rem / $content-max-width);
 
 // Note: Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
 // On narrow screens, margin content behaves like a sidebar

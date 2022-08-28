@@ -38,7 +38,7 @@
   // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
   .sidebar-start-items,
   .sidebar-end-items {
-    padding: 0 1rem 0rem 1.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
   }
 
   // This should always snap to the bottom even if there's no sidebar content
@@ -52,6 +52,7 @@
     li a,
     ul li a {
       color: $non-content-grey;
+      padding-right: 1.5rem;
     }
     a:hover,
     li.active > a,

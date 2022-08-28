@@ -1,9 +1,34 @@
-.admonition {
+.admonition, div.admonition {
   // Soften admonition styling from the PyData Theme
   border-radius: $box-border-radius;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
     0 0 0.0625rem rgba(0, 0, 0, 0.1);
+  padding: 0 .6rem .8rem;
 
+  > .admonition-title {
+    background-color: rgba(var(--pst-color-admonition-default),.1);
+  }
+  &.note {
+    border-color: rgba(var(--pst-color-admonition-note),1);
+    .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-note),.1);
+      &::after {
+        color: rgba(var(--pst-color-admonition-note),1)
+      }
+    }
+  }
+  &.tip {
+    border-color: rgba(var(--pst-color-admonition-tip),1);
+    .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-tip),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-tip),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-tip),1);
+      }
+    }
+  } 
   // Admonition seealso styling
   &.seealso {
     border-color: #28a745;
@@ -11,9 +36,28 @@
     .admonition-title {
       background-color: rgba(40, 167, 70, 0.1);
 
-      &:before {
+      &:after {
         color: #28a745;
         content: "\f064";
+      }
+    }
+  }
+  // Admonition warning styling
+  &.warning {
+    .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-warning),.1);
+    }
+  }
+  // Admonition important styling
+  &.important {
+    border-color: rgba(var(--pst-color-admonition-important),1);
+    .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-important),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-tip),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-important),1);
       }
     }
   }
