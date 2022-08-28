@@ -4,9 +4,12 @@
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
     0 0 0.0625rem rgba(0, 0, 0, 0.1);
   padding: 0 .6rem .8rem;
-
+  border-color: rgba(var(--pst-color-admonition-default),1);
   > .admonition-title {
     background-color: rgba(var(--pst-color-admonition-default),.1);
+    &::after {
+      color: rgba(var(--pst-color-admonition-default),1)
+    }
   }
   &.note {
     border-color: rgba(var(--pst-color-admonition-note),1);
@@ -41,6 +44,54 @@
       }
     }
   } 
+  &.caution {
+    border-color: rgba(var(--pst-color-admonition-caution),1);
+    > .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-caution),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-caution),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-caution),1);
+      }
+    }
+  }
+  &.attention {
+    border-color: rgba(var(--pst-color-admonition-attention),1);
+    > .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-attention),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-attention),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-attention),1);
+      }
+    }
+  }
+  &.danger {
+    border-color: rgba(var(--pst-color-admonition-danger),1);
+    > .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-danger),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-danger),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-danger),1);
+      }
+    }
+  }
+  &.error {
+    border-color: rgba(var(--pst-color-admonition-error),1);
+    > .admonition-title {
+      background-color: rgba(var(--pst-color-admonition-error),.1);
+      &:before {
+        background-color: rgba(var(--pst-color-admonition-error),.1);
+      }
+      &:after {
+        color: rgba(var(--pst-color-admonition-error),1);
+      }
+    }
+  }
   // Admonition seealso styling
   &.seealso {
     border-color: #28a745;

@@ -52,9 +52,15 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
   --pst-color-admonition-important: var(--pst-color-info);
 
   --pst-color-warning: 245, 162, 82;
+  --pst-color-admonition-caution: var(--pst-color-warning);
+  --pst-color-admonition-attention: var(--pst-color-warning);
+
 
   --pst-color-danger: 230, 101, 129;
   --pst-color-admonition-warning: var(--pst-color-danger);
+  --pst-color-admonition-danger: var(--pst-color-danger);
+  --pst-color-admonition-error: var(--pst-color-danger);
+  
 
   --pst-color-link: 0, 113, 188;
   --pst-color-border: rgb(238, 238, 238);
