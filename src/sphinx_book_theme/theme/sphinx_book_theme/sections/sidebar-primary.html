@@ -1,6 +1,6 @@
 {% block docs_sidebar %}
 
-{% if sidebars %}
+{% if sidebars and not is_single_page%}
     <div class="bd-sidebar__content">
         <div class="sidebar-start-items">
             {%- for sidebartemplate in sidebars %}
@@ -11,6 +11,7 @@
             {%- for leftsidebartemplate in theme_left_sidebar_end %}
             {%- include leftsidebartemplate %}
             {%- endfor %}
+            {% if theme_navbar_footer_text %}{% set theme_extra_navbar=theme_navbar_footer_text %}{% endif %} <!-- To handle the deprecated key -->
             {% if theme_extra_navbar %}
                 <div class="navbar_extra_footer">
                 {{ theme_extra_navbar }}
