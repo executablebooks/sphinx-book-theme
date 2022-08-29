@@ -9,6 +9,8 @@
   position: static; // .toc-item is made sticky so that z-index works well, for margin content
   max-height: unset;
   overflow-y: unset;
+  max-width: 25%;
+  flex: 0 0 25%;
   transition: margin-right 0.25s ease 0s, opacity 0.25s ease 0s,
     visibility 0.25s ease 0s;
 
@@ -110,6 +112,10 @@
   // On narrow screens, it should always be shown because it's off to the right
   @media (max-width: $breakpoint-md) {
     @include show-inpage-toc;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 25%; // taken from col-md-3 used in prev HTML
   }
 
   .toc-entry a.nav-link {
