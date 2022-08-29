@@ -2,7 +2,7 @@
 * Basic text formatting and content structure *
 *********************************************/
 
-.content-container {
+.bd-article-container {
   // Content links and link color
   a.headerlink {
     opacity: 0;
@@ -15,8 +15,7 @@
     }
   }
 
-  a,
-  a:visited {
+  a, a.nav-link, a:visited {
     color: rgba(var(--pst-color-link), 1);
   }
 
@@ -54,11 +53,5 @@
   // Misc text and directives
   p.centered {
     text-align: center;
-  }
-
-  // Footnotes and Citations
-  .footnote-reference,
-  a.bibtex.internal {
-    font-size: 1em;
   }
 }
