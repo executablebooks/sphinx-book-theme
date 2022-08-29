@@ -15,7 +15,9 @@
     }
   }
 
-  a, a.nav-link, a:visited {
+  a,
+  a.nav-link,
+  a:visited {
     color: rgba(var(--pst-color-link), 1);
   }
 
