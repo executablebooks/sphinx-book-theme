@@ -48,7 +48,8 @@ input#__secondary {
 // **** Utility functions ****
 // Label at the top of the page
 label.overlay {
-  &.overlay-primary, &.overlay-secondary {
+  &.overlay-primary,
+  &.overlay-secondary {
     background-color: rgba(0, 0, 0, 0.54);
   }
   height: 0;
