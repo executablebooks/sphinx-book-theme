@@ -25,7 +25,7 @@ div[class*="highlight-"] {
 
 // Code blocks should have a margin, but code *cells* get margin from a parent
 div.highlight {
-  background: none !important;
+  background: none;
   margin-bottom: 1em;
 }
 

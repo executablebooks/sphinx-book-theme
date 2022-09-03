@@ -72,4 +72,11 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
   --sbt-header-article-font-size: var(--sbt-font-size-small-1);
   --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
   --sbt-footer-font-size: var(--sbt-font-size-small-1);
+
+  // Search variables
+  --sbt-color-search-highlighted: 243, 119, 38;
+  --sbt-color-search-icon: 164, 166, 167;
+
+  // Announcement
+  --sbt-color-announcement: 97, 97, 97;
 }

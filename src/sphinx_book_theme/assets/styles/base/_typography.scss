@@ -16,7 +16,7 @@
   }
 
   a,
-  a.nav-link,
+  a.nav-link, // to be more specific, so that pst style doesn't override
   a:visited {
     color: rgba(var(--pst-color-link), 1);
   }

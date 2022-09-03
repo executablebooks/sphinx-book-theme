@@ -12,6 +12,7 @@ div.admonition {
       color: rgba(var(--pst-color-admonition-default), 1);
     }
   }
+  // Admonition note styling
   &.note {
     border-color: rgba(var(--pst-color-admonition-note), 1);
     > .admonition-title {
@@ -21,6 +22,7 @@ div.admonition {
       }
     }
   }
+  // Admonition hint styling
   &.hint {
     border-color: rgba(var(--pst-color-admonition-hint), 1);
     > .admonition-title {
@@ -33,6 +35,7 @@ div.admonition {
       }
     }
   }
+  // Admonition tip styling
   &.tip {
     border-color: rgba(var(--pst-color-admonition-tip), 1);
     > .admonition-title {
@@ -45,6 +48,7 @@ div.admonition {
       }
     }
   }
+  // Admonition caution styling
   &.caution {
     border-color: rgba(var(--pst-color-admonition-caution), 1);
     > .admonition-title {
@@ -57,6 +61,7 @@ div.admonition {
       }
     }
   }
+  // Admonition attention styling
   &.attention {
     border-color: rgba(var(--pst-color-admonition-attention), 1);
     > .admonition-title {
@@ -69,6 +74,7 @@ div.admonition {
       }
     }
   }
+  // Admonition danger styling
   &.danger {
     border-color: rgba(var(--pst-color-admonition-danger), 1);
     > .admonition-title {
@@ -81,6 +87,7 @@ div.admonition {
       }
     }
   }
+  // Admonition error styling
   &.error {
     border-color: rgba(var(--pst-color-admonition-error), 1);
     > .admonition-title {
