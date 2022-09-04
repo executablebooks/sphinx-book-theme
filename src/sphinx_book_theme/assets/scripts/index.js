@@ -65,7 +65,8 @@ var scrollToActive = () => {
     active_page !== undefined &&
     active_page.offsetTop > $(window).height() * 0.5
   ) {
-    navbar_scrollable.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
+    navbar_scrollable.scrollTop =
+      active_page.offsetTop - $(window).height() * 0.2;
   }
 };
 
