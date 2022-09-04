@@ -57,6 +57,7 @@ var toggleFullScreen = () => {
  */
 var scrollToActive = () => {
   var navbar = document.getElementById("site-navigation");
+  var navbar_scrollable = navbar.children[0];
   var active_pages = navbar.querySelectorAll(".active");
   var active_page = active_pages[active_pages.length - 1];
   // Only scroll the navbar if the active link is lower than 50% of the page
@@ -64,7 +65,7 @@ var scrollToActive = () => {
     active_page !== undefined &&
     active_page.offsetTop > $(window).height() * 0.5
   ) {
-    navbar.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
+    navbar_scrollable.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
   }
 };
 
