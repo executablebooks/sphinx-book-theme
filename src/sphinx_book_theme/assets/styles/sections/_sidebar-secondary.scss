@@ -116,6 +116,9 @@
 
   @media (min-width: $breakpoint-md) {
     max-width: 25%; // taken from col-md-3 used in prev HTML
+    .toc-item {
+      border-left: 1px solid var(--pst-color-border);
+    }
   }
 
   .toc-entry a.nav-link {
