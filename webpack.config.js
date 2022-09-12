@@ -11,7 +11,7 @@ exec("python src/sphinx_book_theme/_compile_translations.py");
 // Paths for various assets (sources and destinations)
 const staticPath = resolve(
   __dirname,
-  "src/sphinx_book_theme/theme/sphinx_book_theme/static"
+  "src/sphinx_book_theme/theme/sphinx_book_theme/static",
 );
 
 module.exports = {
