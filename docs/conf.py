@@ -155,6 +155,7 @@ linkcheck_ignore = [
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
 
+
 def setup(app):
     # -- To demonstrate ReadTheDocs switcher -------------------------------------
     # This links a few JS and CSS files that mimic the environment that RTD uses
