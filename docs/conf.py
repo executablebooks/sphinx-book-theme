@@ -31,6 +31,8 @@ extensions = [
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
     "sphinxext.opengraph",
+    # For the kitchen sink
+    "sphinx.ext.todo",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -152,28 +154,6 @@ linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
-
-# -- Download kitchen sink reference docs -------------------------------------
-# These are the kitchen sink files used by the Sphinx Themes gallery at
-# https://github.com/sphinx-themes/sphinx-themes.org
-# To re-download, delete the `references/kitchen-sink` folder and build the docs
-kitchen_sink_files = [
-    "api.rst",
-    "index.rst",
-    "lists-and-tables.rst",
-    "paragraph-markup.rst",
-]
-for ifile in kitchen_sink_files:
-    path_file = Path(f"reference/kitchen-sink/{ifile}")
-    path_file.parent.mkdir(exist_ok=True)
-    if not path_file.exists():
-        print(f"Downloading kitchen sink file {ifile}")
-        resp = request.urlopen(
-            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa: E501
-        )
-        header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
-        path_file.write_text(header + resp.read().decode())
-
 
 def setup(app):
     # -- To demonstrate ReadTheDocs switcher -------------------------------------
