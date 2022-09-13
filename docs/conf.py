@@ -1,7 +1,5 @@
 # -- Project information -----------------------------------------------------
 import os
-from pathlib import Path
-from urllib import request
 
 project = "Sphinx Book Theme"
 copyright = "2020"
