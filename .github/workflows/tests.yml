@@ -93,8 +93,9 @@ jobs:
       run: |
         from pathlib import Path
         text = Path("./warnings.txt").read_text().strip()
+        expected_warning_snippets = ["kitchen-sink", "urllib/parse.py"]
         print("\n=== Sphinx Warnings ===\n\n" + text)  # Print just for reference so we can look at the logs
-        unexpected = [ii for ii in text.split("\n") if "kitchen-sink" not in ii]
+        unexpected = [ii for ii in text.split("\n") if not any(snippet in ii for snippet in expected_warning_snippets)]
         assert len(unexpected) == 0
 
     - name: Audit with Lighthouse
