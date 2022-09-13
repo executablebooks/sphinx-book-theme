@@ -11,7 +11,7 @@ Kitchen Sink
 
 .. note::
 
-   The Kitchen Sink was generated from the `Sphinx Themes website <https://sphinx-themes.org/>`_, a community-supported showcase of themes for `Sphinx <https://sphinx-doc.org>`_.
+   The Kitchen Sink was generated from the `Sphinx Themes website <https://sphinx-themes.org/>`_, a community-supported showcase of themes for `Sphinx <http://sphinx-doc.org>`_.
    Check it out to see other great themes.
 
    .. button-link:: https://sphinx-themes.org
