@@ -191,11 +191,11 @@ def add_launch_buttons(
 
 def _split_repo_url(url):
     """Split a repository URL into an org / repo combination."""
-    # remove github.com or gitlab.com 
+    # remove github.com or gitlab.com
     end = url.split("/", maxsplit=1)[-1]
-        # end = url.split("github.com/")[-1]
-        # what about names such github.com/company/group/project???
-        
+    # end = url.split("github.com/")[-1]
+    # what about names such github.com/company/group/project???
+
     org, repo = end.split("/")[:2]
     return org, repo
 
