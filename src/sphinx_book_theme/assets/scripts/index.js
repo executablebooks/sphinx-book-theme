@@ -136,7 +136,7 @@ var initTocHide = () => {
         `.tag_${ii}`,
         `.${ii.replace("-", "_")}`,
         `.tag_${ii.replace("-", "_")}`,
-      ]
+      ],
     );
   });
   document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {

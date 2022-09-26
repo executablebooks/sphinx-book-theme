@@ -20,9 +20,6 @@ And here's a bibliography:
 ```{bibliography}
 ```
 
-:::{seealso}
-See the [paragraph markup page](kitchen-sink/paragraph-markup.rst) for more references styling.
-:::
 
 ## `ABlog` - Blog post list
 
