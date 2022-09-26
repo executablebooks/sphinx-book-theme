@@ -101,11 +101,11 @@
     // TOC link color
     a:hover,
     li.active > a.active {
-      color: rgba(var(--pst-color-link), 1);
+      color: var(--pst-color-link);
     }
 
     li.active > a.active {
-      border-left: 2px solid rgba(var(--pst-color-link), 1);
+      border-left: 2px solid var(--pst-color-link);
     }
   }
 

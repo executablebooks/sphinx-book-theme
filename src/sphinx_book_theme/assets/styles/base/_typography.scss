@@ -10,7 +10,7 @@
 
     &:hover {
       background-color: transparent;
-      color: rgba(var(--pst-color-link), 1);
+      color: var(--pst-color-link);
       opacity: 1 !important;
     }
   }
@@ -18,7 +18,7 @@
   a,
   a.nav-link, // to be more specific, so that pst style doesn't override
   a:visited {
-    color: rgba(var(--pst-color-link), 1);
+    color: var(--pst-color-link);
   }
 
   h1,

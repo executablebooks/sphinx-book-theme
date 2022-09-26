@@ -30,7 +30,7 @@
 
 // default color for all the links
 a {
-  color: rgba(var(--pst-color-link), 1);
+  color: var(--pst-color-link);
 }
 
 // Print-specific utility classes

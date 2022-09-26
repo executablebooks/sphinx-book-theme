@@ -57,7 +57,7 @@
     a:hover,
     li.active > a,
     li.active > a:hover {
-      color: rgba(var(--pst-color-link), 1);
+      color: var(--pst-color-link);
     }
 
     // Adjust padding to be a bit tighter
