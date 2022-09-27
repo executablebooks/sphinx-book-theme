@@ -5,12 +5,12 @@
 // Highlighted search items are a slightly lighter version of Jupyter orange
 dt:target,
 span.highlighted {
-  background-color: rgba(var(--sbt-color-search-highlighted), 1);
+  background-color: var(--sbt-color-search-highlighted);
 }
 
 .bd-search {
   .icon {
-    color: rgba(var(--sbt-color-search-icon), 1);
+    color: var(--sbt-color-search-icon);
   }
   .search-button__kbd-shortcut {
     display: none;
