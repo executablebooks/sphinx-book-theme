@@ -117,3 +117,18 @@ div.header-article-main {
     display: none;
   }
 }
+
+.skip-link {
+  display: block;
+  left: -999px;
+  position: absolute;
+  top: -999px;
+
+  &:focus {
+    left: 0;
+    padding: 0.2rem 0.3rem;
+    position: relative;
+    top: 0;
+    z-index: 999999;
+  }
+}
