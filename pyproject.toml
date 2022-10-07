@@ -73,7 +73,7 @@ test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
     "myst-nb~=0.13.2",
-    "pytest~=6.0.1",
+    "pytest~=6.2.5",
     "pytest-cov",
     "pytest-regressions~=2.0.1",
     "sphinx_thebe"
