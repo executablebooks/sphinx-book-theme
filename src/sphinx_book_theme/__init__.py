@@ -173,6 +173,10 @@ def update_general_config(app, config):
     # templates_path variable.
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
+    # setting default mode to light for now.
+    # TODO: provide a button, and add css for dark theme.
+    app.config.html_context["default_mode"] = "light"
+
 
 def setup(app: Sphinx):
     # Register theme
