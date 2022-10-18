@@ -175,7 +175,7 @@ def update_general_config(app, config):
 
     # setting default mode to light for now.
     # TODO: provide a button, and add css for dark theme.
-    app.config.html_context["default_mode"] = "light"
+    config.html_context["default_mode"] = "light"
 
 
 def setup(app: Sphinx):
