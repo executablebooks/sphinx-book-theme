@@ -111,7 +111,7 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
     hash_assets_for_files(assets, get_html_theme_path() / "static", context)
 
 
-def update_thebe_config(app):
+def update_mode_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
     theme_options = app.env.config.html_theme_options
     if theme_options.get("launch_buttons", {}).get("thebe") is True:
@@ -144,6 +144,12 @@ def update_thebe_config(app):
 
     app.env.config.thebe_config = thebe_config
 
+    # setting default mode to light for now.
+    # TODO: provide a button, and add css for dark theme.
+    # sphinx-build command does not call config-inited,
+    # so setting this in builder-inited.
+    app.config.html_context["default_mode"] = "light"
+
 
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
@@ -173,10 +179,6 @@ def update_general_config(app, config):
     # templates_path variable.
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
-    # setting default mode to light for now.
-    # TODO: provide a button, and add css for dark theme.
-    config.html_context["default_mode"] = "light"
-
 
 def setup(app: Sphinx):
     # Register theme
@@ -189,7 +191,7 @@ def setup(app: Sphinx):
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     # Events
-    app.connect("builder-inited", update_thebe_config)
+    app.connect("builder-inited", update_mode_thebe_config)
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
