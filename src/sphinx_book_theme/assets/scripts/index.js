@@ -207,6 +207,17 @@ function addNoPrint() {
   $("div.bd-header-announcement").addClass("noprint");
   $("footer.bd-footer-article").addClass("noprint");
 }
+
+/**
+ * Set Mode of the theme
+ * Remove this function once all modes are supported.
+ */
+
+function setMode() {
+  document.documentElement.dataset.mode = "light";
+  document.documentElement.dataset.theme = "light";
+}
+
 /**
  * Set up callback functions for UI click actions
  */
@@ -221,3 +232,4 @@ sbRunWhenDOMLoaded(initTooltips);
 sbRunWhenDOMLoaded(initTocHide);
 sbRunWhenDOMLoaded(initRTDObserver);
 sbRunWhenDOMLoaded(addNoPrint);
+sbRunWhenDOMLoaded(setMode);
