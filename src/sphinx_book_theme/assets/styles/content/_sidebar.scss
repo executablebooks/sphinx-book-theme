@@ -13,4 +13,12 @@ aside.sidebar {
       margin: 0 -35% 0 $content-margin-gutter;
     }
   }
+  .admonition {
+    padding-left: 0.6rem;
+    padding-right: 0.8rem;
+  }
+  > p {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 }
