@@ -3,7 +3,7 @@
 from sphinx.errors import SphinxError
 
 
-def _as_bool(var):
+def as_bool(var):
     """Cast string as a boolean with some extra checks.
 
     If var is a string, it will be matched to 'true'/'false'
@@ -33,7 +33,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
     suff = context.get("page_source_suffix")
 
     # Full screen button
-    if _as_bool(opts.get("use_fullscreen_button", True)):
+    if as_bool(opts.get("use_fullscreen_button", True)):
         header_buttons.append(
             {
                 "type": "javascript",
@@ -52,7 +52,11 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         "use_repository_button",
     ]
     for key in repo_keywords:
-        opts[key] = _as_bool(opts.get(key))
+        opts[key] = as_bool(opts.get(key))
+
+    html_target = "_self"
+    if as_bool(opts.get("open_launch_buttons_link_in_new_window")):
+        html_target = "_blank"
 
     if any(opts.get(kw) for kw in repo_keywords):
         repo_url = opts.get("repository_url", "")
@@ -70,6 +74,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "tooltip": "Source repository",
                     "text": "repository",
                     "icon": "fab fa-github",
+                    "html_target": html_target,
                 }
             )
 
@@ -81,6 +86,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "text": "open issue",
                     "tooltip": "Open an issue",
                     "icon": "fas fa-lightbulb",
+                    "html_target": html_target,
                 }
             )
 
@@ -108,6 +114,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "tooltip": "Edit this page",
                     "text": "suggest edit",
                     "icon": "fas fa-pencil-alt",
+                    "html_target": html_target,
                 }
             )
 
@@ -130,7 +137,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
             header_buttons.extend(repo_buttons)
 
     # Download buttons for various source content.
-    if _as_bool(opts.get("use_download_button", True)) and suff:
+    if as_bool(opts.get("use_download_button", True)) and suff:
         download_buttons = []
 
         # Create the dropdown list of buttons
