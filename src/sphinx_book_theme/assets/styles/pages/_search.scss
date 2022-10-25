@@ -2,6 +2,10 @@
  * Search page special-cases
  */
 
+#search-input::placeholder {
+  color: var(--pst-color-text-muted);
+}
+
 // Turn off the extra search UI at the top of the page
 .bd-search-container {
   padding: 2rem;
