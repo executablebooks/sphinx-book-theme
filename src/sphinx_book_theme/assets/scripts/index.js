@@ -50,27 +50,6 @@ var toggleFullScreen = () => {
 };
 
 /**
- * Sidebar scroll on load.
- *
- * Detect the active page in the sidebar, and scroll so that it is centered on
- * the screen.
- */
-var scrollToActive = () => {
-  var navbar = document.getElementById("site-navigation");
-  var navbar_scrollable = navbar.children[0];
-  var active_pages = navbar.querySelectorAll(".active");
-  var active_page = active_pages[active_pages.length - 1];
-  // Only scroll the navbar if the active link is lower than 50% of the page
-  if (
-    active_page !== undefined &&
-    active_page.offsetTop > $(window).height() * 0.5
-  ) {
-    navbar_scrollable.scrollTop =
-      active_page.offsetTop - $(window).height() * 0.2;
-  }
-};
-
-/**
  * Called when the "print to PDF" button is clicked.
  * This is a hack to prevent tooltips from showing up in the printed PDF.
  */
@@ -118,9 +97,9 @@ var initTocHide = () => {
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-toc").removeClass("show");
+      $("div.bd-sidebar-secondary").removeClass("show");
     } else {
-      $("div.bd-toc").addClass("show");
+      $("div.bd-sidebar-secondary").addClass("show");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
@@ -219,6 +198,27 @@ function initRTDObserver() {
 }
 
 /**
+ * Add no print class to certain DOM elements
+ */
+
+function addNoPrint() {
+  $("div.bd-sidebar-primary").addClass("noprint");
+  $("div.bd-header-article").addClass("noprint");
+  $("div.bd-header-announcement").addClass("noprint");
+  $("footer.bd-footer-article").addClass("noprint");
+}
+
+/**
+ * Set Mode of the theme
+ * Remove this function once all modes are supported.
+ */
+
+function setMode() {
+  document.documentElement.dataset.mode = "light";
+  document.documentElement.dataset.theme = "light";
+}
+
+/**
  * Set up callback functions for UI click actions
  */
 window.initThebeSBT = initThebeSBT;
@@ -229,6 +229,7 @@ window.toggleFullScreen = toggleFullScreen;
  * Set up functions to load when the DOM is ready
  */
 sbRunWhenDOMLoaded(initTooltips);
-sbRunWhenDOMLoaded(scrollToActive);
 sbRunWhenDOMLoaded(initTocHide);
 sbRunWhenDOMLoaded(initRTDObserver);
+sbRunWhenDOMLoaded(addNoPrint);
+sbRunWhenDOMLoaded(setMode);

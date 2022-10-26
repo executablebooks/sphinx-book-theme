@@ -28,6 +28,11 @@
   display: none;
 }
 
+// default color for all the links
+a {
+  color: var(--pst-color-link);
+}
+
 // Print-specific utility classes
 .onlyprint {
   display: none;
