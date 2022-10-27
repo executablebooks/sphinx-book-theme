@@ -21,8 +21,8 @@ title="{{ translate(tooltip) }}"
 {% endmacro %}
 
 
-{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, tooltip_placement="bottom", html_target="_self") -%}
-<a href="{{ url }}" target="{{ html_target }}"
+{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, tooltip_placement="bottom") -%}
+<a href="{{ url }}" target="_blank"
    class="headerbtn{% if label %} headerbtn-{{ label }}{% endif %}"
    {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
 >

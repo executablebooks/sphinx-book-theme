@@ -6,7 +6,7 @@ from docutils.nodes import document
 from sphinx.application import Sphinx
 from sphinx.util import logging
 from shutil import copy2
-from . import as_bool
+
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -98,10 +98,6 @@ def add_launch_buttons(
     # Container for launch buttons
     launch_buttons_list = []
 
-    html_target = "_self"
-    if as_bool(config_theme.get("open_launch_buttons_link_in_new_window")):
-        html_target = "_blank"
-
     # Now build infrastructure-specific links
     jupyterhub_url = launch_buttons.get("jupyterhub_url", "").strip("/")
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
@@ -119,7 +115,6 @@ def add_launch_buttons(
                 "tooltip": "Launch on Binder",
                 "icon": "_static/images/logo_binder.svg",
                 "url": url,
-                "html_target": html_target,
             }
         )
 
@@ -138,7 +133,6 @@ def add_launch_buttons(
                 "tooltip": "Launch on JupyterHub",
                 "icon": "_static/images/logo_jupyterhub.svg",
                 "url": url,
-                "html_target": html_target,
             }
         )
 
@@ -151,7 +145,6 @@ def add_launch_buttons(
                 "tooltip": "Launch on Colab",
                 "icon": "_static/images/logo_colab.png",
                 "url": url,
-                "html_target": html_target,
             }
         )
 
@@ -165,7 +158,6 @@ def add_launch_buttons(
                 "tooltip": "Launch on Deepnote",
                 "icon": "_static/images/logo_deepnote.svg",
                 "url": url,
-                "html_target": html_target,
             }
         )
 

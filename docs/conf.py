@@ -119,7 +119,6 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    "open_launch_buttons_link_in_new_window": False,
     "use_sidenotes": True,
     "logo_only": True,
     "show_toc_level": 2,
