@@ -109,8 +109,8 @@ figure.margin-caption figcaption {
 // Full-width content
 div.cell.tag_full-width,
 div.cell.tag_full_width,
-.full_width,
-.full-width {
+div.full_width,
+div.full-width {
   @media (min-width: $breakpoint-md) {
     max-width: $content-fullwidth-width;
     width: $content-fullwidth-width;

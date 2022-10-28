@@ -24,7 +24,7 @@ $leftbar-width-mobile: 75%;
 $leftbar-width-wide: 275px;
 $toc-width-mobile: 75%;
 // Main content, to leave room for the margin
-$content-max-width: 70%;
+$content-max-width: 75%;
 
 // Consistent styling for page elements
 $box-border-radius: 0.4em;
@@ -35,26 +35,13 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
 
 // Overrides for pydata sphinx theme.
 // See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
-:root {
+:root[data-theme="light"] {
   // Over-ride the pydata theme so that readers can use their system base
   --pst-font-size-base: none;
 
-  // Pulling colors from the Binder logo since they are complementary and on-brand
-  --pst-color-primary: 87, 154, 202;
-  --pst-color-admonition-note: var(--pst-color-primary);
-  --pst-color-admonition-default: var(--pst-color-primary);
-
-  --pst-color-info: 255, 193, 7;
-  --pst-color-admonition-tip: var(--pst-color-info);
-  --pst-color-admonition-hint: var(--pst-color-info);
-  --pst-color-admonition-important: var(--pst-color-info);
-
-  --pst-color-warning: 245, 162, 82;
-
-  --pst-color-danger: 230, 101, 129;
-  --pst-color-admonition-warning: var(--pst-color-danger);
-
-  --pst-color-link: 0, 113, 188;
+  --pst-color-primary: rgb(87, 154, 202);
+  --pst-color-link: rgb(0, 113, 188);
+  --pst-color-border: rgb(238, 238, 238);
 
   // Font sizes
   --sbt-font-size-regular: 100%;
@@ -67,4 +54,11 @@ $border-thin: 1px solid rgba(0, 0, 0, 0.1);
   --sbt-header-article-font-size: var(--sbt-font-size-small-1);
   --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
   --sbt-footer-font-size: var(--sbt-font-size-small-1);
+
+  // Search variables
+  --sbt-color-search-highlighted: rgb(243, 119, 38);
+  --sbt-color-search-icon: rgb(164, 166, 167);
+
+  // Announcement
+  --sbt-color-announcement: rgb(97, 97, 97);
 }

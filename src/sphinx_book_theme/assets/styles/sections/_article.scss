@@ -1,20 +1,22 @@
 /*********************************************
 * Main content layout *
 *********************************************/
-
-body {
-  padding-top: 0px !important;
-}
-
-#main-content,
-#print-main-content {
-  transition: padding $animation-time ease-out;
-  padding-top: 1.5em;
-}
-
-// On wide screens, make space for the right margin
-@media (min-width: $breakpoint-md) {
-  #main-content {
-    max-width: $content-max-width;
+.bd-main {
+  .bd-content {
+    padding: 0rem;
+    justify-content: revert;
+    .bd-article-container {
+      position: relative; // needed for postion:sticky header-article
+      overflow-x: unset; // needed for postion:sticky header-article
+      padding: 0%;
+      min-width: 0; // to prevent overflow in mobile website for flex containers
+    }
+    .bd-article {
+      padding-right: 2rem;
+      @media (max-width: $breakpoint-md) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
   }
 }

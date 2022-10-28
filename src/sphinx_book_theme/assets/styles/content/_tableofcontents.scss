@@ -47,26 +47,3 @@ div.contents {
     }
   }
 }
-
-// Print-only table of contents
-@media print {
-  #jb-print-toc {
-    margin-bottom: 1.5rem;
-
-    .section-nav {
-      border-left: 0px;
-      list-style-type: disc;
-      margin-left: 3em;
-      a {
-        text-decoration: none;
-        padding-left: 0px;
-      }
-      li {
-        display: list-item !important;
-      }
-      .nav {
-        display: none;
-      }
-    }
-  }
-}

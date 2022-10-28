@@ -1,0 +1,16 @@
+<!-- Table of contents -->
+{% set page_toc = generate_toc_html() %}
+{% block docs_toc %}
+<div class="bd-sidebar-secondary bd-toc show noprint">
+    {%- if page_toc | length >= 1 %}
+    <div class="toc-item">
+        <div class="tocsection onthispage">
+            <i class="fas fa-list"></i> {{ translate(theme_toc_title) }}
+        </div>
+        <nav id="bd-toc-nav" aria-label="Page">
+            {{ page_toc }}
+        </nav>
+    </div>
+    {%- endif %}
+</div>
+{% endblock %}
