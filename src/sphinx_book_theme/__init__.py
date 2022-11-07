@@ -180,10 +180,9 @@ def update_general_config(app, config):
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
-
 def update_templates(app, pagename, templatename, context, doctree):
     """Update template names and assets for page build.
-    
+
     This is a copy of what the pydata theme does here to include a new section
     - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173
     """
