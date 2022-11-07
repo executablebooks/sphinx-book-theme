@@ -159,7 +159,6 @@ var initThebeSBT = () => {
   initThebe();
 };
 
-
 /**
  * Add no print class to certain DOM elements
  */

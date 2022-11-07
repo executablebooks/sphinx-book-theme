@@ -4,7 +4,7 @@
 
 .bd-sidebar-primary {
   transition: margin-left $animation-time ease 0s,
-      opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
   .navbar-brand {
     height: unset;
@@ -14,7 +14,7 @@
   .sidebar-header-items {
     display: none;
   }
-  
+
   // Remove the top border since there's no header items above
   .sidebar-start-items {
     border-top: none;
@@ -24,7 +24,7 @@
 // Default visibility for left sidebar is the reverse of what it is on mobile.
 // Mobile behavior is defined in the pydata sphinx theme
 @media (min-width: 960px) {
-  input#__primary:checked~.bd-container .bd-sidebar-primary {
+  input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$leftbar-width-wide;
     visibility: hidden;
   }
