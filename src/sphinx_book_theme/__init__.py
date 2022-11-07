@@ -180,6 +180,29 @@ def update_general_config(app, config):
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
+
+def update_templates(app, pagename, templatename, context, doctree):
+    """Update template names and assets for page build.
+    
+    This is a copy of what the pydata theme does here to include a new section
+    - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173
+    """
+    # Allow for more flexibility in template names
+    template_sections = ["theme_footer_content_items"]
+    for section in template_sections:
+        if context.get(section):
+            # Break apart `,` separated strings so we can use , in the defaults
+            if isinstance(context.get(section), str):
+                context[section] = [
+                    ii.strip() for ii in context.get(section).split(",")
+                ]
+
+            # Add `.html` to templates with no suffix
+            for ii, template in enumerate(context.get(section)):
+                if not os.path.splitext(template)[1]:
+                    context[section][ii] = template + ".html"
+
+
 def setup(app: Sphinx):
     # Register theme
     theme_dir = get_html_theme_path()
@@ -195,6 +218,7 @@ def setup(app: Sphinx):
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
+    app.connect("html-page-context", update_templates)
 
     # Nodes
     SideNoteNode.add_node(app)

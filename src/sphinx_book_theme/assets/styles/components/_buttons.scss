@@ -9,9 +9,15 @@
   align-items: center;
   justify-content: center;
 
-  background-color: white;
-  color: $non-content-grey;
+  // Color should be more muted than pydata theme
+  color: var(--pst-color-text-muted);
+  &:hover {
+    color: var(--pst-color-text-base);
+    text-decoration: none;
+  }
+  background-color: var(--pst-color-background);
   cursor: pointer;
+
   border: none;
   padding: 0.1rem 0.5rem; // Horizontal padding since labels have none
   margin: 0 0.1rem;
@@ -55,7 +61,7 @@
   padding: 0.5em;
 
   // Style
-  background-color: white;
+  background-color: var(--pst-color-background);
 
   .headerbtn {
     justify-content: left;
@@ -84,36 +90,5 @@
   i,
   img {
     font-size: 1.2em; // Slightly smaller icons in a dropdown
-  }
-}
-
-// HACK: Need this to be extra-selective to over-ride some too-specific PST CSS
-div.header-article-main {
-  .header-article__left,
-  .header-article__right {
-    a,
-    button,
-    label {
-      color: $non-content-grey;
-
-      // Over-ride bootstrap defaults for clicking
-      &:hover,
-      &:focus {
-        color: black;
-        box-shadow: none;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-/**
- * In-page table of contents
- */
-.headerbtn-secondary {
-  // Hide the button on wide screens since we display the TOC.
-  display: block;
-  @media (min-width: $breakpoint-md) {
-    display: none;
   }
 }

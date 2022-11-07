@@ -1,17 +1,14 @@
+/**
+ * Epigraphs and other "special" quote blocks
+ */
+ 
 blockquote {
-  margin: 1em;
-  padding: 0.2em 1.5em;
-  border-left: 4px solid #ccc;
-
   &.pull-quote,
   &.epigraph,
   &.highlights {
     font-size: 1.25em;
     border-left: none;
-  }
-
-  div > p {
-    margin-bottom: 0.5em;
+    background-color: var(--pst-color-background);
   }
 
   div > p + p.attribution {

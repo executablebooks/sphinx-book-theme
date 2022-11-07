@@ -1,122 +1,31 @@
 /*********************************************
 * Left Nav Bar *
 *********************************************/
+
 .bd-sidebar-primary {
-  padding-top: 0;
-  padding: 0em;
-  flex-basis: $leftbar-width-wide;
-  font-size: var(--sbt-sidebar-font-size);
-  top: 0px !important;
-  max-height: 100vh;
-  max-width: 100%;
-  background: white;
-  border-right: $border-thin;
   transition: margin-left $animation-time ease 0s,
-    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-  overflow-y: unset; // To over-ride the pydata theme and allow for sticky items
-  @include fill-vertical-screen-space();
+      opacity $animation-time ease 0s, visibility $animation-time ease 0s;
 
-  // On mobile, behave like a slide-out drawer
-  @media (max-width: $breakpoint-md) {
-    position: fixed;
-    width: $leftbar-width-mobile;
-    max-width: 300px;
-    font-size: 1.2em;
-    z-index: $zindex-offcanvas;
+  .navbar-brand {
+    height: unset;
   }
 
-  // The container for the sidebar content (stuff that isn't the RTD button)
-  .bd-sidebar__content {
-    overflow-y: auto;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    @include scrollbar-style();
-    @include scrollbar-on-hover();
+  // Remove the header items that pop into the sidebar in the pydata theme
+  .sidebar-header-items {
+    display: none;
   }
-
-  // Apply some basic padding so the dropdown buttons don't overlap w/ scrollbar
-  .sidebar-start-items,
-  .sidebar-end-items {
-    padding: 1rem 1rem 1rem 1.5rem;
-  }
-
-  // This should always snap to the bottom even if there's no sidebar content
-  .sidebar-end-items {
-    margin-top: auto;
-    margin-bottom: 2em;
-  }
-
-  nav ul.nav {
-    // Sidebar link color
-    li a,
-    ul li a {
-      color: $non-content-grey;
-      padding-right: 1.5rem;
-    }
-    a:hover,
-    li.active > a,
-    li.active > a:hover {
-      color: var(--pst-color-link);
-    }
-
-    // Adjust padding to be a bit tighter
-    ul {
-      padding-left: 1rem;
-    }
-  }
-
-  h1.site-logo {
-    margin: 0.5em 0 0 0;
-    font-size: 1.1em;
-    color: black;
-    text-align: center;
-  }
-
-  div.navbar_extra_footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: $non-content-grey;
-    margin-bottom: 3em;
-  }
-
-  // Single page
-  &.single-page {
-    border-right: 0;
+  
+  // Remove the top border since there's no header items above
+  .sidebar-start-items {
+    border-top: none;
   }
 }
 
-div.navbar-brand-box {
-  @media (min-width: $breakpoint-md) {
-    padding-top: 2em;
+// Default visibility for left sidebar is the reverse of what it is on mobile.
+// Mobile behavior is defined in the pydata sphinx theme
+@media (min-width: 960px) {
+  input#__primary:checked~.bd-container .bd-sidebar-primary {
+    margin-left: -$leftbar-width-wide;
+    visibility: hidden;
   }
-
-  a.navbar-brand {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-
-    img {
-      display: block;
-      height: auto;
-      width: auto;
-      max-height: 10vh;
-      max-width: 100%;
-      margin: 0 auto;
-      @media (min-width: $breakpoint-md) {
-        max-height: 15vh !important;
-      }
-    }
-  }
-}
-
-nav.bd-links {
-  margin-left: 0px; // Because the PST adds margin by default
-  p.caption,
-  .toctree-l1 a {
-    padding-left: 0em;
-  }
-  // Overriding PyData Theme Defaults so the navigation is always visible
-  overflow-y: visible;
-  max-height: none;
 }
