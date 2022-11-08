@@ -13,7 +13,7 @@ Some text to test out one sidenote[^myref] and another sidenote[^3]
 
 Some text to test out one marginnote[^somemargin] and another marginnote[^6]
 
-[^somemargin]: {>} This is a marginnote.
-[^6]: {>} This is *another* **marginnote**.
+[^somemargin]: {-} This is a marginnote.
+[^6]: {-} This is *another* **marginnote**.
 
 This is the end of Page 2.
