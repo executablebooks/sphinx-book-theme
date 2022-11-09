@@ -41,3 +41,7 @@ div.highlight {
   border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
   margin: -1px;
 }
+
+div.literal-block-wrapper {
+  border: none;
+}

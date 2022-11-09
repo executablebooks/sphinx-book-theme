@@ -109,7 +109,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     # -- Header ---------------------------------------------------------------
     header_article = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "div", class_="header-article"
+        "div", class_="bd-header-article"
     )
 
     file_regression.check(
@@ -157,10 +157,12 @@ def test_navbar_options_single_page(sphinx_build_factory):
         assert_pass=True
     )  # type: SphinxBuild
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "div", id="site-navigation"
+        "div", attrs={"class": "bd-sidebar-primary"}
     )
     assert len(sidebar.find_all("div")) == 0  # Sidebar should be empty
-    assert "single-page" in sidebar.attrs["class"]  # Class added on single page
+    # HTML structure for below assertion is not supported in the latest version,
+    # the class just removes a border as of now, which we can do without.
+    # assert "single-page" in sidebar.attrs["class"]  # Class added on single page
 
 
 @pytest.mark.parametrize(

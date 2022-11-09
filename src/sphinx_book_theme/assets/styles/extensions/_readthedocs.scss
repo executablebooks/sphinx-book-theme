@@ -1,9 +1,9 @@
 /**
  * ReadTheDocs pop-up menu over-rides.
- * We nest everything under `.bd-sidebar` so that we use more selective
+ * We nest everything under `.bd-sidebar-primary` so that we use more selective
  * selectors than what RTD CSS uses.
  */
-.bd-sidebar {
+.bd-sidebar-primary {
   // Parent container for everything else
   div#rtd-footer-container {
     position: sticky;

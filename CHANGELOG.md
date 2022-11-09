@@ -268,7 +268,7 @@ This updates to the latest PyData Sphinx Theme, which re-works some of the HTML 
 ## v0.0.36 2020-08-25
 
 👌 IMPROVED: The main theme change in this release, is the addition of CSS styling for definition lists, including those created by [sphinx.ext.autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html).
-See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/lists-and-tables.html), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/api.html).
+See [Definition and Field Lists](https://sphinx-book-theme.readthedocs.io/en/stable/reference/kitchen-sink/lists-and-tables.html), and the [Python API documentation](https://sphinx-book-theme.readthedocs.io/en/latest/reference/kitchen-sink/api.html).
 
 🔧 MAINTENANCE: Under the hood, there has also been work undertaken to improve the development environment for working with the package. Thanks to [@pradyunsg](https://github.com/pradyunsg).
 

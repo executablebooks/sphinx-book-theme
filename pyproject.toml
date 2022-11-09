@@ -22,11 +22,10 @@ readme = "README.md"
 
 requires-python = ">=3.7"
 dependencies = [
-  "sphinx>=3,<5",
-  "pydata-sphinx-theme~=0.8.0",
+  "sphinx>=3,<6",
+  "pydata-sphinx-theme~=0.10.1",
   "pyyaml",
 ]
-
 
 license = { file = "LICENSE" }
 # TODO: Add email of the maintainer
@@ -73,11 +72,15 @@ test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
     "myst-nb~=0.13.2",
-    "pytest~=6.0.1",
-    "pytest-cov",
-    "pytest-regressions~=2.0.1",
+    "pytest~=7.1",
+    "pytest-cov>=3,<5",
+    "pytest-regressions>=2.0.1,<2.5.0",
     "sphinx_thebe"
 ]
 
 [project.entry-points]
 "sphinx.html_themes" = { sphinx_book_theme = "sphinx_book_theme" }
+
+[project.urls]
+Repository = "https://github.com/executablebooks/sphinx-book-theme"
+Documentation = "https://sphinx-book-theme.readthedocs.io/"
