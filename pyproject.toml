@@ -75,7 +75,7 @@ test = [
     "myst-nb~=0.13.2",
     "pytest~=7.1",
     "pytest-cov>=3,<5",
-    "pytest-regressions~=2.0.1",
+    "pytest-regressions>=2.0.1,<2.5.0",
     "sphinx_thebe"
 ]
 
