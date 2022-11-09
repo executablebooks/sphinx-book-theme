@@ -53,7 +53,7 @@ doc = [
     "numpy",
     "matplotlib",
     "numpydoc",
-    "myst-nb~=0.13.2",
+    "myst-nb>=0.13.2,<0.18.0",
     "nbclient",
     "pandas",
     "plotly",
@@ -71,7 +71,7 @@ doc = [
 test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
-    "myst-nb~=0.13.2",
+    "myst-nb>=0.13.2,<0.18.0",
     "pytest~=7.1",
     "pytest-cov>=3,<5",
     "pytest-regressions>=2.0.1,<2.5.0",
