@@ -27,7 +27,6 @@ dependencies = [
   "pyyaml",
 ]
 
-
 license = { file = "LICENSE" }
 # TODO: Add email of the maintainer
 maintainers = [
@@ -81,3 +80,7 @@ test = [
 
 [project.entry-points]
 "sphinx.html_themes" = { sphinx_book_theme = "sphinx_book_theme" }
+
+[project.urls]
+Repository = "https://github.com/executablebooks/sphinx-book-theme"
+Documentation = "https://sphinx-book-theme.readthedocs.io/"
