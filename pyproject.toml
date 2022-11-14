@@ -44,7 +44,7 @@ classifiers = [
 
 [project.optional-dependencies]
 code_style = [
-    "pre-commit~=2.7.0"
+    "pre-commit>=2.7,<2.21"
 ]
 doc = [
     "ablog~=0.10.13",
