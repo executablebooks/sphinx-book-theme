@@ -196,9 +196,12 @@ def _split_repo_url(url):
         org, repo = end.split("/")[:2]
     else:
         SPHINX_LOGGER.warning(
-            f"Currently Binder/JupyterHub repositories must be on GitHub, got {url}"
+            "Currently only repositories on GitHub are supported for launch in Binder/JupterHub. "
+            "If you want to link to other servers "
+            "make sure the repository name is the last part of the url."
         )
-        org = repo = None
+        org = None
+        repo = url.split("/")[-1]
     return org, repo
 
 
