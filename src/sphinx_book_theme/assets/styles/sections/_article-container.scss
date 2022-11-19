@@ -5,4 +5,7 @@
 
   // Unset overflow x so that sticky: top works for the article header
   overflow-x: unset;
+  .bd-article {
+    padding-right: 2rem;
+  }
 }
