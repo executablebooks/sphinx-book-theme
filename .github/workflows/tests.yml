@@ -26,14 +26,14 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.7, 3.8, 3.9]
-        sphinx: [">=3,<4", ">=4,<5"]
+        sphinx: [">=4,<5", ">=5,<6"]
         include:
         - os: windows-latest
           python-version: 3.9
-          sphinx: ">=3,<4"
+          sphinx: ">=4,<5"
         - os: macos-latest
           python-version: 3.9
-          sphinx: ">=4,<5"
+          sphinx: ">=5,<6"
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -56,7 +56,7 @@ jobs:
 
     - name: Upload to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
-      uses: codecov/codecov-action@v3.1.0
+      uses: codecov/codecov-action@v3.1.1
       with:
         name: ebp-sbt-pytests-py3.7
         flags: pytests
@@ -99,7 +99,7 @@ jobs:
         assert len(unexpected) == 0
 
     - name: Audit with Lighthouse
-      uses: treosh/lighthouse-ci-action@9.3.0
+      uses: treosh/lighthouse-ci-action@9.3.1
       with:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true
