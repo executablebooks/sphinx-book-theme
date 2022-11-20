@@ -3,6 +3,91 @@
 *********************************************/
 
 .bd-sidebar-secondary {
+  position: static; // .toc-item is made sticky so that z-index works well, for margin content
+  max-height: unset;
+  overflow-y: unset;
+
+  .tocsection {
+    padding: 0.5rem 1rem !important;
+    .scrolled & {
+      box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    }
+
+    &:after {
+      opacity: 0;
+    }
+  }
+
+  // Show / hide the in-page TOC items
+  @mixin hide-inpage-toc {
+    nav {
+      opacity: 1;
+      max-height: 0;
+      overflow-y: hidden;
+      margin-bottom: 0rem;
+    }
+
+    // Hide the arrow when we display the toc
+    .tocsection:after {
+      opacity: 1;
+      content: "\f107";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      padding-left: 0.5em;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .toc-item {
+    padding: 0rem;
+    position: sticky; // this is made sticky so that z-index works well, for margin content
+    z-index: 3;
+    top: 0;
+    height: auto;
+    background: white;
+  }
+
+  &.hide {
+    @include hide-inpage-toc;
+  }
+
+  .toc-h2 {
+    font-size: 0.85rem;
+  }
+
+  // On narrow screens, this should be offset to the right side until button is clicked
+  @media (max-width: $breakpoint-md) {
+    z-index: $zindex-offcanvas;
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: $toc-width-mobile;
+    max-width: 300px;
+    background-color: white;
+
+    // Fonts are a bit bigger on mobile, and nested headers get smaller
+    font-size: 1.4em;
+
+    li {
+      font-size: 0.8em;
+    }
+  }
+
+  // By default the nav is shown
+  nav {
+    max-height: 90vh;
+    opacity: 1;
+    overflow-y: auto;
+    background: white;
+    transition: opacity 0.4s ease, max-height 0.7s ease;
+    @include scrollbar-style();
+    @include scrollbar-on-hover();
+    a.nav-link {
+      margin-left: 0rem;
+    }
+  }
+
   // Remove padding so that it's flush on the top and left
   padding-top: 0;
   padding-left: 0;

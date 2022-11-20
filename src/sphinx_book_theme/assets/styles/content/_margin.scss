@@ -91,6 +91,8 @@ aside.margin,
 figure.margin,
 .cell.tag_popout,
 .cell.tag_margin {
+  z-index: 2;
+  position: relative;
   @include margin-content();
 
   // Make cell outputs take up more space if they're in the margin

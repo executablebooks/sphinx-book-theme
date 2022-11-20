@@ -97,9 +97,9 @@ var initTocHide = () => {
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-sidebar-secondary").removeClass("show");
+      $("div.bd-sidebar-secondary").addClass("hide");
     } else {
-      $("div.bd-sidebar-secondary").addClass("show");
+      $("div.bd-sidebar-secondary").removeClass("hide");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
