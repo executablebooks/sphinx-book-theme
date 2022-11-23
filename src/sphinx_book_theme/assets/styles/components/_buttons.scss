@@ -92,3 +92,14 @@
     font-size: 1.2em; // Slightly smaller icons in a dropdown
   }
 }
+
+/**
+ * In-page table of contents
+ */
+.headerbtn-secondary {
+  // Hide the button on wide screens since we display the TOC.
+  display: block;
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
