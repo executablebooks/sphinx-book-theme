@@ -10,7 +10,7 @@
   font-size: 0.9em;
   position: sticky;
   top: 0;
-  padding-top: 0;
+  padding: 0 1rem;
   z-index: 1018;
 
   @include header-height-mobile;
