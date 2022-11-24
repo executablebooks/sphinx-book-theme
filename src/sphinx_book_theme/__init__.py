@@ -184,7 +184,7 @@ def update_templates(app, pagename, templatename, context, doctree):
     """Update template names and assets for page build.
 
     This is a copy of what the pydata theme does here to include a new section
-    - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173
+    - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173 # noqa: E501
     """
     # Allow for more flexibility in template names
     template_sections = ["theme_footer_content_items"]
