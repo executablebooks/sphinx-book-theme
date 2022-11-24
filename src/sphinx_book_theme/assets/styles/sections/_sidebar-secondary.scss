@@ -71,6 +71,15 @@
     @include show-inpage-toc();
   }
 
+  // Make sure the pydata sphinx theme edit button doesn't show up
+  div.editthispage {
+    display: none;
+  }
+
+  div.sourceLink {
+    display: none;
+  }
+
   // Remove padding so that it's flush on the top and left
   padding-top: 0;
   padding-left: 0;
