@@ -11,3 +11,10 @@
     color: var(--pst-color-text-muted);
   }
 }
+
+// counteracting pydata style on a::before, for citation style
+a.brackets::before {
+  color: inherit;
+  font-family: inherit;
+  margin-right: 0rem;
+}
