@@ -76,6 +76,8 @@ input.margin-toggle {
 
 span.sidenote,
 span.marginnote {
+  z-index: 2;
+  position: relative;
   sup {
     user-select: none;
   }
