@@ -6,6 +6,7 @@ on:
     tags:
       - 'v*'
   pull_request:
+  workflow_call:
 
 env:
   PY_COLORS: 1
@@ -105,28 +106,3 @@ jobs:
         temporaryPublicStorage: true
         uploadArtifacts: true
         runs: 5
-
-  publish:
-    name: Publish to PyPI
-    needs: [pre-commit, tests]
-    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.7
-
-      - name: Build package
-        run: |
-          python -m pip install -U pip build
-          python -m build
-
-      - name: Publish
-        uses: pypa/gh-action-pypi-publish@v1.5.1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_KEY }}
