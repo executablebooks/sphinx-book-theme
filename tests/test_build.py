@@ -128,12 +128,16 @@ def test_build_book(sphinx_build_factory, file_regression):
     for page in sphinx_build.outdir.joinpath("titles").rglob("**/page-*"):
         page_html = BeautifulSoup(page.read_text("utf8"), "html.parser")
         page_toc = page_html.find("div", attrs={"class": "bd-toc"})
-        file_regression.check(
-            page_toc.prettify(),
-            basename=f"build__pagetoc--{page.with_suffix('').name}",
-            extension=".html",
-            encoding="utf8",
-        )
+        if page_toc:
+            file_regression.check(
+                page_toc.prettify(),
+                basename=f"build__pagetoc--{page.with_suffix('').name}",
+                extension=".html",
+                encoding="utf8",
+            )
+        else:
+            # page with no subheadings now does not have the secondary sidebar markup
+            assert len(page_html.find_all("section")) == 1
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
