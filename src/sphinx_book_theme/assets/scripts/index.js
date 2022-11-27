@@ -165,6 +165,7 @@ var initThebeSBT = () => {
 
 function addNoPrint() {
   $("div.bd-sidebar-primary").addClass("noprint");
+  $("div.bd-sidebar-secondary").addClass("noprint");
   $("div.bd-header-article").addClass("noprint");
   $("div.bd-header-announcement").addClass("noprint");
   $("footer.bd-footer-article").addClass("noprint");
