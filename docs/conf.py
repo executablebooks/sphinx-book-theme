@@ -129,9 +129,7 @@ html_theme_options = {
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
-    # "single_page": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
-    # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
 }
 

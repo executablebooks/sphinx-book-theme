@@ -4,9 +4,7 @@
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        {% if theme_single_page != True %}
         {{ render_label_input_button(for_input="__primary", tooltip="Toggle navigation", icon="fas fa-bars", tooltip_placement="right") }}
-        {% endif %}
     </div>
     <div class="header-article__right">
         {%- for button in header_buttons -%}

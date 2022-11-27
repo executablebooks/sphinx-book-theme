@@ -153,27 +153,9 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     assert "Index with code in title" in str(li)
 
 
-def test_navbar_options_single_page(sphinx_build_factory):
-    """Test that"""
-    sphinx_build = sphinx_build_factory(
-        "base", confoverrides={"html_theme_options.single_page": True}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
-    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "div", attrs={"class": "bd-sidebar-primary"}
-    )
-    assert len(sidebar.find_all("div")) == 0  # Sidebar should be empty
-    # HTML structure for below assertion is not supported in the latest version,
-    # the class just removes a border as of now, which we can do without.
-    # assert "single-page" in sidebar.attrs["class"]  # Class added on single page
-
-
 @pytest.mark.parametrize(
     "option,value",
     [
-        ("extra_navbar", "<div>EXTRA NAVBAR</div>"),
-        ("navbar_footer_text", "<div>EXTRA NAVBAR</div>"),
         ("extra_footer", "<div>EXTRA FOOTER</div>"),
     ],
 )

@@ -12,9 +12,6 @@ The following options are available via `html_theme_options`
 * - Key
   - Type
   - Description
-* - `single_page`
-  - bool
-  - Remove the left sidebar and treat the site as a single page. See [](customize:single-page).
 * - `path_to_docs`
   - string
   - Path to the documentation, relative to the repository root (e.g. `docs/`). See [](customize:source-files).
@@ -48,9 +45,6 @@ The following options are available via `html_theme_options`
 * - `show_navbar_depth`
   - int
   - Show children in the navigation bar down to the depth listed here. See [](sidebar:navbar-depth).
-* - `extra_navbar`
-  - str
-  - Extra HTML to add below the sidebar footer. See [](custom-footer).
 * - `extra_footer`
   - str
   - Extra HTML to add in the footer of each page.
@@ -72,5 +66,4 @@ header.md
 download.md
 source-files.md
 custom-css.md
-single-page.md
 ```
