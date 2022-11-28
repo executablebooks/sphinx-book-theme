@@ -145,7 +145,7 @@ bibtex_bibfiles = ["references.bib"]
 # To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
 bibtex_default_style = "plain"
-numpydoc_show_class_members = False  # for urllib.parse autodoc stub file issue
+numpydoc_show_class_members = False  # for automodule:: urllib.parse stub file issue
 linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
