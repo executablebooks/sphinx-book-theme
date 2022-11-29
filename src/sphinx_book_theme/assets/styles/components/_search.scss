@@ -1,0 +1,8 @@
+.bd-search-container {
+  margin: 2em;
+  #search-results {
+    h2:first-child {
+      display: none;
+    }
+  }
+}

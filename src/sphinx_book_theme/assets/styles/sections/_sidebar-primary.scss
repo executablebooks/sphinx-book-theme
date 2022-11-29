@@ -27,5 +27,6 @@
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$leftbar-width-wide;
     visibility: hidden;
+    opacity: 0;
   }
 }
