@@ -38,6 +38,8 @@ html {
 // See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
 html[data-theme="light"] {
   --pst-color-primary: rgb(87, 154, 202);
+  // Announcement
+  --sbt-color-announcement: rgb(97, 97, 97);
 }
 
 html[data-theme="dark"] {
