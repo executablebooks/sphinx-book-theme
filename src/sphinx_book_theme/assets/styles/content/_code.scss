@@ -3,3 +3,9 @@ pre,
 div[class*="highlight-"] {
   clear: none;
 }
+
+div.cell.tag_output_scroll div.cell_output,
+div.cell.tag_scroll-output div.cell_output {
+  max-height: 24em;
+  overflow-y: auto;
+}
