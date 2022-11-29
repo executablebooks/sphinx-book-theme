@@ -107,6 +107,8 @@ figure.margin,
 div.figure.margin-caption p.caption,
 div.figure.margin-caption figcaption,
 figure.margin-caption figcaption {
+  z-index: 2;
+  position: relative;
   @include margin-content();
 }
 
@@ -115,6 +117,8 @@ div.cell.tag_full-width,
 div.cell.tag_full_width,
 div.full_width,
 div.full-width {
+  z-index: 2;
+  position: relative;
   @media (min-width: $breakpoint-md) {
     max-width: $content-fullwidth-width;
     width: $content-fullwidth-width;

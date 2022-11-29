@@ -10,6 +10,7 @@
       max-height: 0;
       overflow-y: hidden;
       margin-bottom: 0rem;
+      transition: opacity 0.4s ease, max-height 0.7s ease;
     }
 
     // Hide the arrow when we display the toc
@@ -42,6 +43,9 @@
     position: static; // .toc-item is made sticky so that z-index works well, for margin content
     max-height: unset;
     overflow-y: unset;
+    // Remove padding so that it's flush on the top and left
+    padding-top: 0;
+    padding-left: 0;
     .tocsection {
       padding: 0.5rem 1rem !important;
     }
@@ -67,9 +71,7 @@
   }
 
   // By default the nav is shown
-  nav {
-    @include show-inpage-toc();
-  }
+  @include show-inpage-toc;
 
   // Make sure the pydata sphinx theme edit button doesn't show up
   div.editthispage {
@@ -79,8 +81,4 @@
   div.sourcelink {
     display: none;
   }
-
-  // Remove padding so that it's flush on the top and left
-  padding-top: 0;
-  padding-left: 0;
 }
