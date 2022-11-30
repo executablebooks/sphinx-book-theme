@@ -1,8 +1,14 @@
 .bd-search-container {
   margin: 2em;
+  h1:first-child {
+    display: none;
+  }
   #search-results {
     h2:first-child {
       display: none;
     }
+  }
+  .bd-search {
+    display: none !important;
   }
 }
