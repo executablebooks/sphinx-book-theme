@@ -19,6 +19,7 @@ __version__ = "0.3.3"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
+DEFAULT_LOG_TYPE = "sphinxbooktheme"
 MESSAGE_CATALOG_NAME = "booktheme"
 
 
@@ -151,6 +152,19 @@ def update_mode_thebe_config(app):
     app.config.html_context["default_mode"] = "light"
 
 
+def check_deprecation_keys(app):
+    """Warns about the deprecated keys."""
+
+    deprecated_config_list = ["single_page"]
+    for key in deprecated_config_list:
+        if key in app.env.config.html_theme_options:
+            SPHINX_LOGGER.info(
+                f"'{key}' was deprecated for version >= 0.3.4. "
+                f"[{DEFAULT_LOG_TYPE}]",
+                type=DEFAULT_LOG_TYPE,
+            )
+
+
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -214,6 +228,7 @@ def setup(app: Sphinx):
 
     # Events
     app.connect("builder-inited", update_mode_thebe_config)
+    app.connect("builder-inited", check_deprecation_keys)
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
