@@ -159,7 +159,7 @@ def check_deprecation_keys(app):
     for key in deprecated_config_list:
         if key in app.env.config.html_theme_options:
             SPHINX_LOGGER.info(
-                f"'{key}' was deprecated for version >= 0.3.4. "
+                f"'{key}' was deprecated from version 0.3.4. Please see the CHANGELOG for more information."  # noqa: E501
                 f"[{DEFAULT_LOG_TYPE}]",
                 type=DEFAULT_LOG_TYPE,
             )
