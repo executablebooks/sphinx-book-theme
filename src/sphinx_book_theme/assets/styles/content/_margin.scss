@@ -34,6 +34,10 @@ $content-fullwidth-width: percentage(100% / $content-max-width);
     p.sidebar-title {
       margin-bottom: -1rem;
       border-bottom: none;
+      padding-left: 0px;
+      ~ * {
+        padding-left: 0px;
+      }
     }
   }
 }
@@ -89,9 +93,27 @@ span.marginnote {
   }
 }
 
+aside.sidebar {
+  .note {
+    // styling for notes inside sidebars
+    margin: 1rem;
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  // The titles sticking
+  .admonition-title {
+    margin: 0rem -1rem 0rem 0rem;
+  }
+}
+
+aside.sidebar.margin {
+  .note {
+    margin: 1rem 0rem;
+  }
+}
+
 div.margin,
-aside.margin,
 figure.margin,
+aside.margin,
 .cell.tag_popout,
 .cell.tag_margin {
   z-index: 2;
