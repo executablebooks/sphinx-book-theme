@@ -5,7 +5,8 @@
 .bd-sidebar-primary {
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-
+  flex: 0 0 20%;
+  font-size: $sbt-font-size-small-1;
   .navbar-brand {
     height: unset;
   }
