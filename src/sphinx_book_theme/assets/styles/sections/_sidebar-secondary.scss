@@ -10,7 +10,7 @@
       max-height: 0;
       overflow-y: hidden;
       margin-bottom: 0rem;
-      transition: opacity 0.4s ease, max-height 0.7s ease;
+      transition: opacity 0.4s ease, max-height 0.4s ease;
     }
 
     // Hide the arrow when we display the toc
@@ -35,7 +35,9 @@
       opacity: 1;
       overflow-y: auto;
       background: white;
-      transition: opacity 0.4s ease, max-height 0.7s ease;
+      transition: opacity 0.4s ease, max-height 0.4s ease;
+      @include scrollbar-style();
+      @include scrollbar-on-hover();
     }
   }
 
