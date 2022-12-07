@@ -15,6 +15,7 @@ master_doc = "index"
 # ones.
 extensions = [
     "ablog",
+    "jupyterlite_sphinx",
     "myst_nb",
     "numpydoc",
     "sphinx.ext.autodoc",
@@ -153,6 +154,10 @@ linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
+
+# JupyterLite Configuration
+jupyterlite_contents = ["./docs/"]
+
 
 
 def setup(app):

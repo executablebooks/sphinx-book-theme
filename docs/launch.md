@@ -87,11 +87,23 @@ This will create a new Deepnote project every time you click the launch button.
 
 ## JupyterLite and RetroLite
 
-```{warning}
-JupyterLite and RetroLite are experimental, and their behavior and configuration
-may change over time!
-Please provide feedback and suggestions.
+```{admonition} Experimental!
+:class: warning
+Behavior and configuration of JupyterLite may change over time!
 ```
+
+[JupyterLite](https://jupyterlite.readthedocs.io/) allows you to run a Jupyter environment entirely in the browser via [WebAssembly](https://webassembly.org/) and [Pyodide](https://pyodide.org/en/stable/).
+
+To use JupyterLite in your launch buttons, you'll first need to take these steps:
+
+1. **Install [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/)** by
+    [following the installation instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/installation.html).
+2. **Configure JupyterLite Sphinx to use your site content as a folder**.
+   You can configure JupyterLite Sphinx to look for notebooks in a specified directory. 
+   Put the notebooks you wish to expose in that directory, and [follow these configuration instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/configuration.html#jupyterlite-content).
+
+
+### Retrolite
 
 To add [RetroLite](https://jupyterlite-sphinx.readthedocs.io/en/latest/retrolite.html) links to your page, add the following configuration:
 
@@ -104,14 +116,13 @@ html_theme_options = {
     ...
 }
 ```
-[JupyterLite](https://jupyterlite.readthedocs.io/) allows you to run a Jupyter environment entirely in the browser via [WebAssembly](https://webassembly.org/) and [Pyodide](https://pyodide.org/en/stable/).
-To use JupyterLite in your launch buttons, you'll first need to take these steps:
-1. **Install [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/)**. And configure it to publish a JupyterLab environment as part of your published Jupyter Book environment by [following the installation instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/installation.html).
-2. **Configure JupyterLite Sphinx to use your site content as a folder**. You can configure JupyterLite Sphinx to look for notebooks in a specified directory. Put the notebooks you wish to expose in that directory, and [follow these configuration instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/configuration.html#jupyterlite-content).
-```
+
 There are two different interfaces that you can activate with JupyterLite, each is described below.
-### JupyterLab via JupyterLite
+
+### JupyterLab
+
 To add JupyterLab via JupyterLite to your launch buttons, use the following configuration:
+
 ```python
 html_theme_options = {
     ...
@@ -121,20 +132,10 @@ html_theme_options = {
     ...
 }
 ```
+
 Where `notebooks/` is a folder with a collection of Jupyter Notebooks you'd like to serve with JupyterLite.
-### RetroLab via JupyterLite
-RetroLab mimics the classic Jupyter Notebook interface, but using JupyterLab components.
-It will be the default Notebook interface in the near future.
-To add RetroLab via JupyterLite to your launch buttons, use the following configuration:
-```python
-html_theme_options = {
-    ...
-    "launch_buttons": {
-        "jupyterlite_url": "/lite/retro/notebooks/"
-    },
-    ...
-}
-```
+
+
 ## Live code cells with Thebe
 
 [Thebe](http://thebe.readthedocs.org/) converts your static code blocks into
