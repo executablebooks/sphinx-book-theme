@@ -159,7 +159,6 @@ linkcheck_ignore = [
 jupyterlite_contents = ["./docs/"]
 
 
-
 def setup(app):
     # -- To demonstrate ReadTheDocs switcher -------------------------------------
     # This links a few JS and CSS files that mimic the environment that RTD uses

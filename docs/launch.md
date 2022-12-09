@@ -99,7 +99,7 @@ To use JupyterLite in your launch buttons, you'll first need to take these steps
 1. **Install [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/)** by
     [following the installation instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/installation.html).
 2. **Configure JupyterLite Sphinx to use your site content as a folder**.
-   You can configure JupyterLite Sphinx to look for notebooks in a specified directory. 
+   You can configure JupyterLite Sphinx to look for notebooks in a specified directory.
    Put the notebooks you wish to expose in that directory, and [follow these configuration instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/configuration.html#jupyterlite-content).
 
 
