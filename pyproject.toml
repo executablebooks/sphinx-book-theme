@@ -49,6 +49,8 @@ code_style = [
 doc = [
     "ablog~=0.10.13",
     "ipywidgets",
+    # 8.7.0 broke the `ipython3` lexer in Sphinx so we want to avoid it
+    "ipython!=8.7.0",
     "folium",
     "numpy",
     "matplotlib",
