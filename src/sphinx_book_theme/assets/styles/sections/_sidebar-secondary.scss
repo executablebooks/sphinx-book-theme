@@ -36,9 +36,25 @@
       overflow-y: auto;
       background: white;
       transition: opacity 0.4s ease, max-height 0.4s ease;
-      @include scrollbar-style();
-      @include scrollbar-on-hover();
     }
+  }
+
+  // By default the nav is shown
+  @include show-inpage-toc;
+
+  // scrollbar styles
+  nav {
+    @include scrollbar-style();
+    @include scrollbar-on-hover();
+  }
+
+  // Make sure the pydata sphinx theme edit button doesn't show up
+  div.editthispage {
+    display: none;
+  }
+
+  div.sourcelink {
+    display: none;
   }
 
   @media (min-width: $breakpoint-md) {
@@ -72,15 +88,12 @@
     }
   }
 
-  // By default the nav is shown
-  @include show-inpage-toc;
-
-  // Make sure the pydata sphinx theme edit button doesn't show up
-  div.editthispage {
-    display: none;
-  }
-
-  div.sourcelink {
-    display: none;
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+    margin-right: 0px;
+    flex-basis: 25%;
+    visibility: visible;
+    z-index: 1;
+    height: auto;
+    font-size: 100%;
   }
 }

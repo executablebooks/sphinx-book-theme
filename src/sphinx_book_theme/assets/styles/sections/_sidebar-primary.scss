@@ -24,7 +24,7 @@
 
 // Default visibility for left sidebar is the reverse of what it is on mobile.
 // Mobile behavior is defined in the pydata sphinx theme
-@media (min-width: 960px) {
+@media (min-width: $breakpoint-md) {
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$leftbar-width-wide;
     visibility: hidden;
