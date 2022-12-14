@@ -6,6 +6,7 @@
   // Wide screen behavior
   @media (min-width: $breakpoint-md) {
     background: var(--pst-color-background);
+    height: fit-content;
     transition: max-height 0.4s ease;
 
     // To make sure it shows above the page content
@@ -16,19 +17,25 @@
 
     // This is the container div for the secondary sidebar nav
     .toc-item {
+      // Border is a bit less prominent
+      border-left-color: var(--pst-color-surface);
       // Flush with the top so that we can fix the height of the toc header div
       padding-top: 0;
 
-      // The 'on this page' title should take up the full header
+      // The 'on this page' title div should take up the full header
       .onthispage {
         height: $header-article-height;
         display: flex;
         align-items: center;
+      }
+
+      // The table of contents <ul> after the title div
+      nav.page-toc {
+        // Remove extra margin the PST adds for other sidebar items
+        margin-bottom: 0;
 
         // Items after "on this page' should fade in and out
-        + * {
-          transition: opacity 0.4s ease;
-        }
+        transition: opacity 0.4s ease;
       }
     }
 
@@ -44,7 +51,7 @@
         box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
       }
 
-      // Show a down carot when the sidebar is hidden
+      // Show a down carot
       .onthispage:after {
         opacity: 1;
         content: "\f107";
@@ -52,11 +59,11 @@
         font-weight: 900;
         padding-left: 0.5em;
         transition: opacity 0.3s ease;
+      }
 
-        // All subsequent elements are invisible when hidden
-        + * {
-          opacity: 0;
-        }
+      // The page-toc list is hidden
+      nav.page-toc {
+        opacity: 0;
       }
     }
   }

@@ -27,8 +27,8 @@
   }
 }
 
-@media (min-width: $breakpoint-md) {
 // Default visibility for left sidebar is the reverse of what it is on mobile.
+// It is shown by default, and hidden with a click.
 // Mobile behavior is defined in the pydata sphinx theme
 @media (min-width: $breakpoint-md) {
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
