@@ -1,7 +1,33 @@
 /*********************************************
 * Top Bar *
-* TODO: Rename much of these to article-header to conform with sphinx-basic-ng
 *********************************************/
+/**
+ * Mixin:
+ * Header behavior on mobile
+ */
+ @mixin header-height-mobile {
+  @media (max-width: $breakpoint-md) {
+    height: $header-article-height + 0.75rem;
+  }
+}
+
+/**
+ * Sidebar toggle over-rides for PST
+ */
+// Primary toggle is always visible
+label.sidebar-toggle.primary-toggle {
+  @media (min-width: $breakpoint-md) {
+    display: inline-block;
+  }
+}
+
+// Secondary toggle mimics behavior of "persistent header" div of PST
+label.sidebar-toggle.secondary-toggle {
+  @media (min-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
 // Wrapper container
 .bd-header-article {
   height: $header-article-height; // Fix the height so the TOC doesn't grow it
@@ -16,7 +42,7 @@
   @include header-height-mobile;
 
   .scrolled & {
-    box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 6px -6px var(--pst-color-shadow);
   }
 
   // Inner container with content
@@ -33,6 +59,61 @@
 
     .header-article__right {
       margin-left: auto;
+    }
+  }
+}
+
+/**
+ * Buttons in the header
+ */
+div.header-article-main {
+  .btn {
+    // Basic button size
+    font-size: 1.3rem;
+    color: var(--pst-color-text-muted);
+    border: none;
+
+    // Hover / active behavior
+    &.show,&:hover,&:focus,&:active {
+      color: var(--pst-color-text-base);
+      border: none;
+    }
+
+    &.dropdown-toggle {      
+      // Hide the bootstrap caret
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  // The menu that is normally hidden until you click
+  .dropdown-menu {
+    // Positioning and layout of dropdown items to be standardized
+    .dropdown-item {
+      display: inline-flex;
+      align-items: center;
+      padding-left: .5em;
+
+      // To prevent link underline from showing up
+      &:hover {
+        text-decoration: none;
+      }
+
+      // Slightly smaller font for everything
+      font-size: 1em;
+      
+      // Image icons should be the same height as <i> icons
+      span img {
+        height: 1em;
+      }
+
+      span.btn__icon-container {
+        width: 1.7em;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+      }
     }
   }
 }

@@ -5,8 +5,8 @@
 .bd-sidebar-primary {
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-  flex: 0 0 20%;
   font-size: $sbt-font-size-small-1;
+
   .navbar-brand {
     height: unset;
   }
@@ -20,13 +20,18 @@
   .sidebar-start-items {
     border-top: none;
   }
+
+  // On wide screens we have a smaller sidebar width than PST
+  @media (min-width: $breakpoint-md) {
+    width: $sidebar-primary-width-widescreen;
+  }
 }
 
-// Default visibility for left sidebar is the reverse of what it is on mobile.
-// Mobile behavior is defined in the pydata sphinx theme
-@media (min-width: 960px) {
+@media (min-width: $breakpoint-md) {
+  // Default visibility for left sidebar is the reverse of what it is on mobile.
+  // Mobile behavior is defined in the pydata sphinx theme
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
-    margin-left: -$leftbar-width-wide;
+    margin-left: -$sidebar-primary-width-widescreen;
     visibility: hidden;
     opacity: 0;
   }

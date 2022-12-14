@@ -1,10 +1,12 @@
 {# To trigger whether the TOC and its button show up #}
 {% set page_toc = generate_toc_html() %}
-{% from "../macros/buttons.html" import render_funcs, render_label_input_button with context %}
+{% from "../macros/buttons.html" import render_funcs with context %}
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        {{ render_label_input_button(for_input="__primary", tooltip="Toggle navigation", icon="fas fa-bars", tooltip_placement="right") }}
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
         {%- for button in header_buttons -%}
@@ -12,7 +14,9 @@
         {%- endfor -%}
 
         {% if page_toc -%}
-        {{ render_label_input_button("__secondary", icon="fas fa-list", label="secondary") }}
+        <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
         {%- endif %}
     </div>
 </div>

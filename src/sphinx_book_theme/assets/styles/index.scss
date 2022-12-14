@@ -27,7 +27,6 @@
 @import "sections/footer-article";
 
 // Re-usable components across the theme
-@import "components/buttons";
 @import "components/search";
 
 // Content blocks in standard Sphinx
@@ -35,6 +34,7 @@
 @import "content/margin";
 @import "content/quotes";
 @import "content/code";
+@import "content/notebooks";
 
 // Content blocks from Sphinx extensions
 

@@ -60,7 +60,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     context["translate"] = translation
     # this is set in the html_theme
     context["theme_search_bar_text"] = translation(
-        context.get("theme_search_bar_text", "Search the docs ...")
+        context.get("theme_search_bar_text", "Search...")
     )
 
 

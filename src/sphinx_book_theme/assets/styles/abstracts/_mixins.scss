@@ -2,40 +2,13 @@
 * SASS Mixins
 *********************************************/
 /**
-* Scrollbars should be thinner and slightly rounded, with a grey background
-*/
-@mixin scrollbar-style() {
-  &::-webkit-scrollbar {
-    width: 0.3rem;
-    height: 0.3rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 0.25rem;
-
-    &:hover {
-      background: #a0a0a0;
-    }
-  }
-}
-
-/**
-* Hide the scrollbar until the element is overed, so keep the page clean
+* Hide the scrollbar until the element is hovered, so keep the page clean
+* Use this sparingly because it's not a great UX pattern.
 */
 @mixin scrollbar-on-hover() {
   &:not(:hover) {
     &::-webkit-scrollbar-thumb {
       visibility: hidden;
     }
-  }
-}
-
-/**
- * Header behavior on mobile
- */
-@mixin header-height-mobile {
-  @media (max-width: $breakpoint-md) {
-    height: $header-article-height + 0.75em;
   }
 }
