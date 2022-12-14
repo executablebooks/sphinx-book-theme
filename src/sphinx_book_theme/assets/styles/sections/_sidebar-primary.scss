@@ -28,8 +28,9 @@
 }
 
 @media (min-width: $breakpoint-md) {
-  // Default visibility for left sidebar is the reverse of what it is on mobile.
-  // Mobile behavior is defined in the pydata sphinx theme
+// Default visibility for left sidebar is the reverse of what it is on mobile.
+// Mobile behavior is defined in the pydata sphinx theme
+@media (min-width: $breakpoint-md) {
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$sidebar-primary-width-widescreen;
     visibility: hidden;
