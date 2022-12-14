@@ -65,7 +65,7 @@ This is some markdown that should be shown at full width.
 
 Here's the Jupyter logo:
 
-![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png)
+![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/assets/logo.png)
 
 :::{note}
 Here's a full-width admonition!
