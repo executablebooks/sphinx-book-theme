@@ -5,7 +5,7 @@
  * Mixin:
  * Header behavior on mobile
  */
- @mixin header-height-mobile {
+@mixin header-height-mobile {
   @media (max-width: $breakpoint-md) {
     height: $header-article-height + 0.75rem;
   }
@@ -74,12 +74,15 @@ div.header-article-main {
     border: none;
 
     // Hover / active behavior
-    &.show,&:hover,&:focus,&:active {
+    &.show,
+    &:hover,
+    &:focus,
+    &:active {
       color: var(--pst-color-text-base);
       border: none;
     }
 
-    &.dropdown-toggle {      
+    &.dropdown-toggle {
       // Hide the bootstrap caret
       &:after {
         display: none;
@@ -93,7 +96,7 @@ div.header-article-main {
     .dropdown-item {
       display: inline-flex;
       align-items: center;
-      padding-left: .5em;
+      padding-left: 0.5em;
 
       // To prevent link underline from showing up
       &:hover {
@@ -102,7 +105,7 @@ div.header-article-main {
 
       // Slightly smaller font for everything
       font-size: 1em;
-      
+
       // Image icons should be the same height as <i> icons
       span img {
         height: 1em;
