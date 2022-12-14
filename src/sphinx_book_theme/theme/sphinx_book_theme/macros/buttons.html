@@ -44,7 +44,7 @@ title="{{ translate(tooltip) }}"
 {% macro render_button_group(buttons, icon, tooltip=None, label=None) %}
 {# A bootstrap dropdown #}
 {# Bootstrap dropdown ref: https://getbootstrap.com/docs/5.2/components/dropdowns/ #}
-<div class="dropdown">
+<div class="dropdown{% if label %} dropdown-{{ label }}{% endif %}">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{tooltip}}">
     <i class="{{ icon }}"></i>
   </button>

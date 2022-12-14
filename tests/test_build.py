@@ -207,7 +207,7 @@ def test_header_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".menu-dropdown-launch-buttons"
+        ".dropdown-launch-buttons"
     )
     file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
 
