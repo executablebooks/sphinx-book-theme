@@ -67,6 +67,9 @@ doc = [
     "sphinxcontrib-bibtex~=2.2",
     "sphinxcontrib-youtube",
     "sphinxext-opengraph",
+    # 8.7.0 broke the `ipython3` lexer in Sphinx so we want to avoid it
+    # remove this when 8.7.1 is released (and see below for another instance)
+    "ipython!=8.7.0",
 ]
 test = [
     "beautifulsoup4>=4.6.1,<5",
@@ -76,6 +79,8 @@ test = [
     "pytest-cov>=3,<5",
     "pytest-regressions>=2.0.1,<2.5.0",
     "sphinx_thebe",
+    # 8.7.0 broke the `ipython3` lexer in Sphinx so we want to avoid it
+    "ipython!=8.7.0",
 ]
 
 [project.entry-points]
