@@ -23,7 +23,7 @@
 
   // On wide screens we have a smaller sidebar width than PST
   @media (min-width: $breakpoint-md) {
-    width: $sidebar-primary-width-widescreen;
+    flex-basis: $sidebar-primary-width-widescreen;
   }
 }
 
