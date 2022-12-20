@@ -19,12 +19,18 @@ label.sidebar-toggle.primary-toggle {
   @media (min-width: $breakpoint-md) {
     display: inline-block;
   }
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 0px;
+  }
 }
 
 // Secondary toggle mimics behavior of "persistent header" div of PST
 label.sidebar-toggle.secondary-toggle {
   @media (min-width: $breakpoint-lg) {
     display: none;
+  }
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 0px;
   }
 }
 
