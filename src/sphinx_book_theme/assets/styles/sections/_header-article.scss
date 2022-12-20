@@ -72,14 +72,19 @@ div.header-article-main {
     font-size: 1.3rem;
     color: var(--pst-color-text-muted);
     border: none;
+    padding: 0 0.75rem;
 
     // Hover / active behavior
     &.show,
-    &:hover,
-    &:focus,
-    &:active {
+    &:hover {
       color: var(--pst-color-text-base);
       border: none;
+      & + .dropdown-menu {
+        display: block;
+      }
+    }
+    &:focus {
+      box-shadow: none;
     }
 
     &.dropdown-toggle {
@@ -90,9 +95,14 @@ div.header-article-main {
     }
   }
 
-  // The menu that is normally hidden until you click
+  // The menu that is normally hidden until you hover
   .dropdown-menu {
     // Positioning and layout of dropdown items to be standardized
+    margin-top: 0px;
+    transform: translateX(-75%);
+    &:hover {
+      display: block;
+    }
     .dropdown-item {
       display: inline-flex;
       align-items: center;
@@ -101,6 +111,7 @@ div.header-article-main {
       // To prevent link underline from showing up
       &:hover {
         text-decoration: none;
+        background-color: initial;
       }
 
       // Slightly smaller font for everything
