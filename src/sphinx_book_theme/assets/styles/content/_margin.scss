@@ -34,7 +34,6 @@ $margin-offset: -$margin-width-relative-to-content;
   @media (min-width: $breakpoint-lg) {
     width: $margin-width-width-gutter;
     margin: 0 $margin-offset 0 0;
-    padding: 0.5rem;
 
     // Prevent sequential margin content from overlapping
     clear: right;
@@ -104,6 +103,18 @@ span.marginnote {
   border-left: none;
   @media (max-width: $breakpoint-lg) {
     display: none;
+  }
+}
+
+aside.sidebar {
+  .note {
+    // styling for notes inside sidebars
+    margin: 1rem;
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  // The titles sticking
+  .admonition-title {
+    margin: 0rem -1rem 0rem 0rem;
   }
 }
 
