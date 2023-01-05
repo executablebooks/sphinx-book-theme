@@ -113,8 +113,6 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
 
         # If we have multiple repo buttons enabled, add a group, otherwise just 1 button
         if len(repo_buttons) > 1:
-            for rb in repo_buttons:
-                rb["tooltip_placement"] = "left"
             header_buttons.append(
                 {
                     "type": "group",
@@ -142,7 +140,6 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "text": ".ipynb",
                     "icon": "fas fa-code",
                     "tooltip": "Download notebook file",
-                    "tooltip_placement": "left",
                 }
             )
 
@@ -152,17 +149,15 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "url": f'{pathto("_sources", 1)}/{context["sourcename"]}',
                 "text": suff,
                 "tooltip": "Download source file",
-                "tooltip_placement": "left",
                 "icon": "fas fa-file",
             }
         )
         download_buttons.append(
             {
                 "type": "javascript",
-                "javascript": "printPdf(this)",
+                "javascript": "window.print()",
                 "text": ".pdf",
                 "tooltip": "Print to PDF",
-                "tooltip_placement": "left",
                 "icon": "fas fa-file-pdf",
             }
         )
