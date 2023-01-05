@@ -19,6 +19,7 @@ __version__ = "0.3.3"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
+DEFAULT_LOG_TYPE = "sphinxbooktheme"
 MESSAGE_CATALOG_NAME = "booktheme"
 
 
@@ -59,7 +60,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     context["translate"] = translation
     # this is set in the html_theme
     context["theme_search_bar_text"] = translation(
-        context.get("theme_search_bar_text", "Search the docs ...")
+        context.get("theme_search_bar_text", "Search...")
     )
 
 
@@ -151,6 +152,19 @@ def update_mode_thebe_config(app):
     app.config.html_context["default_mode"] = "light"
 
 
+def check_deprecation_keys(app):
+    """Warns about the deprecated keys."""
+
+    deprecated_config_list = ["single_page"]
+    for key in deprecated_config_list:
+        if key in app.env.config.html_theme_options:
+            SPHINX_LOGGER.warning(
+                f"'{key}' was deprecated from version 0.3.4 onwards. See the CHANGELOG for more information: https://github.com/executablebooks/sphinx-book-theme/blob/master/CHANGELOG.md"  # noqa: E501
+                f"[{DEFAULT_LOG_TYPE}]",
+                type=DEFAULT_LOG_TYPE,
+            )
+
+
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
 
@@ -180,6 +194,28 @@ def update_general_config(app, config):
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
+def update_templates(app, pagename, templatename, context, doctree):
+    """Update template names and assets for page build.
+
+    This is a copy of what the pydata theme does here to include a new section
+    - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173 # noqa: E501
+    """
+    # Allow for more flexibility in template names
+    template_sections = ["theme_footer_content_items"]
+    for section in template_sections:
+        if context.get(section):
+            # Break apart `,` separated strings so we can use , in the defaults
+            if isinstance(context.get(section), str):
+                context[section] = [
+                    ii.strip() for ii in context.get(section).split(",")
+                ]
+
+            # Add `.html` to templates with no suffix
+            for ii, template in enumerate(context.get(section)):
+                if not os.path.splitext(template)[1]:
+                    context[section][ii] = template + ".html"
+
+
 def setup(app: Sphinx):
     # Register theme
     theme_dir = get_html_theme_path()
@@ -192,9 +228,11 @@ def setup(app: Sphinx):
 
     # Events
     app.connect("builder-inited", update_mode_thebe_config)
+    app.connect("builder-inited", check_deprecation_keys)
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
+    app.connect("html-page-context", update_templates)
 
     # Nodes
     SideNoteNode.add_node(app)

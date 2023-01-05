@@ -10,27 +10,9 @@
   left: 0;
 }
 
-// Hide an element without display: none but so that it takes no space
-.visually-hidden {
-  clip: rect(0, 0, 0, 0) !important;
-  border: 0 !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  white-space: nowrap !important;
-  width: 1px !important;
-}
-
 // We define our own display-none class since bootstrap uses !important and we want to be able to over-ride
 .d-n {
   display: none;
-}
-
-// default color for all the links
-a {
-  color: var(--pst-color-link);
 }
 
 // Print-specific utility classes

@@ -3,57 +3,22 @@
 *********************************************/
 
 .bd-article-container {
-  // Content links and link color
-  a.headerlink {
-    opacity: 0;
-    margin-left: 0.2em;
-
-    &:hover {
-      background-color: transparent;
-      color: var(--pst-color-link);
-      opacity: 1 !important;
-    }
-  }
-
-  a,
-  a.nav-link, // to be more specific, so that pst style doesn't override
-  a:visited {
-    color: var(--pst-color-link);
-  }
-
   h1,
   h2,
   h3,
   h4,
   h5 {
-    color: black;
-    &:hover a.headerlink {
-      opacity: 0.5;
-    }
-    // Make sure titles don't become hyperlink color when there are labels
-    a.toc-backref {
-      color: inherit;
-    }
+    color: var(--pst-color-text-muted);
   }
+}
 
-  // Over-rides the pydata theme's large margins
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 1em;
-  }
+// counteracting pydata style on a::before, for citation style
+a.brackets::before {
+  color: inherit;
+  font-family: inherit;
+  margin-right: 0rem;
+}
 
-  // Lists
-  ul,
-  ol {
-    p {
-      margin-bottom: 0;
-    }
-  }
-
-  // Misc text and directives
-  p.centered {
-    text-align: center;
-  }
+table {
+  position: relative;
 }

@@ -1,20 +1,9 @@
-<p>
-  {% if author %}
-    {{ translate('By') }} {{ author }}<br/>
-  {% endif %}
-  {%- if show_copyright %}
-    {%- if hasdoc('copyright') %}
-      {% trans prefix=translate('Copyright'), path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">{{ prefix }}</a> {{ copyright }}.{% endtrans %}<br/>
-    {%- else %}
-      {% trans prefix=translate('Copyright'), copyright=copyright|e %}&copy; {{ prefix }} {{ copyright }}.{% endtrans %}<br/>
-    {%- endif %}
-  {%- endif %}
-  {%- if last_updated %}
-    {% trans prefix=translate('Last updated on'), last_updated=last_updated|e %}{{ prefix }} {{ last_updated }}.{% endtrans %}<br/>
-  {%- endif %}
-  {%- if theme_extra_footer %}
-    <div class="extra_footer">
-      {{ theme_extra_footer }}
-    </div>
-  {%- endif %}
-</p>
+{#- This is essentially sections/footer.html but in the content footer #}
+{# because we don't have a full-width footer in this theme-#}
+<div class="bd-footer-content__inner container">
+  {% for footer_item in theme_footer_content_items %}
+  <div class="footer-item">
+    {% include footer_item %}
+  </div>
+  {% endfor %}
+</div>

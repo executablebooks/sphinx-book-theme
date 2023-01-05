@@ -97,7 +97,7 @@ html_sidebars = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
-jupyter_execute_notebooks = "cache"
+nb_execution_mode = "cache"
 thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
     "repository_branch": "master",
@@ -129,9 +129,7 @@ html_theme_options = {
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
-    # "single_page": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
-    # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
 }
 
@@ -142,12 +140,12 @@ blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
 fontawesome_included = True
 post_auto_image = 1
 post_auto_excerpt = 2
-execution_show_tb = "READTHEDOCS" in os.environ
+nb_execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
 # To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
 bibtex_default_style = "plain"
-
+numpydoc_show_class_members = False  # for automodule:: urllib.parse stub file issue
 linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues

@@ -12,44 +12,31 @@
 
 // Basic styling applied throughout site
 @import "base/base";
-@import "base/bootstrap";
 @import "base/typography";
 @import "base/print";
 
 // Major theme layout, skeleton, and whitespace
 @import "sections/announcement";
 @import "sections/article";
-@import "sections/footer-article";
-@import "sections/footer-content";
+@import "sections/article-container";
 @import "sections/header-article";
-@import "sections/headers";
+@import "sections/header-primary";
 @import "sections/sidebar-primary";
 @import "sections/sidebar-secondary";
-@import "sections/sidebars-toggle";
+@import "sections/footer-content";
+@import "sections/footer-article";
 
 // Re-usable components across the theme
-@import "components/buttons";
-@import "components/search.scss";
+@import "components/search";
 
 // Content blocks in standard Sphinx
-@import "content/code";
-@import "content/field-lists";
-@import "content/footnotes";
-@import "content/glossary";
 @import "content/images";
 @import "content/margin";
-@import "content/math";
 @import "content/quotes";
-@import "content/sidebar";
-@import "content/tableofcontents";
+@import "content/code";
+@import "content/notebooks";
 
 // Content blocks from Sphinx extensions
-@import "extensions/ablog";
-@import "extensions/comments";
-@import "extensions/myst-nb";
-@import "extensions/sphinx-tabs";
-@import "extensions/readthedocs";
-@import "extensions/thebe";
 
-// Page-specific CSS
-@import "pages/search";
+@import "extensions/comments";
+@import "extensions/thebe";

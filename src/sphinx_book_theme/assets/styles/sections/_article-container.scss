@@ -1,0 +1,12 @@
+.bd-main .bd-content .bd-article-container {
+  // Re-adjust padding defaults to be flush on the top and right
+  padding: 0rem;
+
+  // Unset overflow x so that sticky: top works for the article header
+  overflow-x: unset;
+  min-width: 0; // prevent from overflowing the flex container
+  .bd-article {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}

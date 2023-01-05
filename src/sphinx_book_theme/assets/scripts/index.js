@@ -97,9 +97,9 @@ var initTocHide = () => {
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-sidebar-secondary").removeClass("show");
+      $("div.bd-sidebar-secondary").addClass("hide");
     } else {
-      $("div.bd-sidebar-secondary").addClass("show");
+      $("div.bd-sidebar-secondary").removeClass("hide");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
@@ -160,49 +160,12 @@ var initThebeSBT = () => {
 };
 
 /**
- * Use Bootstrap helper function to enable tooltips.
- */
-var initTooltips = () => {
-  $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-      trigger: "hover",
-      delay: { show: 500, hide: 100 },
-    });
-  });
-};
-
-/**
- * MutationObserver to move the ReadTheDocs button
- */
-function initRTDObserver() {
-  const mutatedCallback = (mutationList, observer) => {
-    mutationList.forEach((mutation) => {
-      // Check whether the mutation is for RTD, which will have a specific structure
-      if (mutation.addedNodes.length === 0) {
-        return;
-      }
-      if (mutation.addedNodes[0].data === undefined) {
-        return;
-      }
-      if (mutation.addedNodes[0].data.search("Inserted RTD Footer") != -1) {
-        mutation.addedNodes.forEach((node) => {
-          document.getElementById("rtd-footer-container").append(node);
-        });
-      }
-    });
-  };
-
-  const observer = new MutationObserver(mutatedCallback);
-  const config = { childList: true };
-  observer.observe(document.body, config);
-}
-
-/**
  * Add no print class to certain DOM elements
  */
 
 function addNoPrint() {
   $("div.bd-sidebar-primary").addClass("noprint");
+  $("div.bd-sidebar-secondary").addClass("noprint");
   $("div.bd-header-article").addClass("noprint");
   $("div.bd-header-announcement").addClass("noprint");
   $("footer.bd-footer-article").addClass("noprint");
@@ -228,8 +191,6 @@ window.toggleFullScreen = toggleFullScreen;
 /**
  * Set up functions to load when the DOM is ready
  */
-sbRunWhenDOMLoaded(initTooltips);
 sbRunWhenDOMLoaded(initTocHide);
-sbRunWhenDOMLoaded(initRTDObserver);
 sbRunWhenDOMLoaded(addNoPrint);
 sbRunWhenDOMLoaded(setMode);

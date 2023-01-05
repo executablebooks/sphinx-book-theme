@@ -1,17 +1,3 @@
-/*********************************************
-* Footer - article *
-*********************************************/
-
-// Previous and next area at the bottom
-footer.bd-footer-article {
-  border-top: none;
-  padding: 0;
-
-  .prev-next-area {
-    font-size: var(--sbt-prevnext-font-size);
-
-    p.prev-next-title {
-      color: var(--pst-color-link);
-    }
-  }
+.bd-footer-article {
+  padding: 0rem 1rem;
 }

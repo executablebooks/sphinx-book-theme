@@ -36,22 +36,6 @@ By default, this theme comes with these three theme-specific sidebar elements en
 - `sidebar-logo.html`: Displays the logo and site title.
 - `search-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
 - `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
-- `sbt-sidebar-footer`: A [configurable](custom-footer) snippet of HTML to add to the sidebar (by default it is placed at the bottom).
-
-(custom-footer)=
-## Customize the sidebar footer
-
-You may choose your own HTML to include in the footer of your sidebar (or set it to be empty). To do so, set the following option in `conf.py`:
-
-```python
-html_theme_options = {
-    ...
-    "extra_navbar": "<p>Your HTML</p>",
-    ...
-}
-```
-
-This text will be placed at the bottom of the sidebar by default.
 
 
 ## Add a header to your Table of Contents
