@@ -27,6 +27,9 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.7, 3.8, 3.9]
+        # Only test the latest major release of Sphinx because otherwise we need to
+        # keep multiple versions of regression tests on file and this creates lots of
+        # noise in the tests.
         sphinx: [">=5,<6"]
         include:
         - os: windows-latest
