@@ -29,6 +29,7 @@ $margin-offset: -$margin-width-relative-to-content;
   float: right;
   background-color: unset;
   font-size: 0.9em;
+  margin-left: 0.5rem;
 
   // This is the wide-screen behavior
   @media (min-width: $breakpoint-lg) {
@@ -119,7 +120,8 @@ aside.sidebar {
 }
 
 /**
- * Block-level margin content
+ * Sidebar content in the margin.
+ * This will be added by the `margin` directive or the `sidebar` directive
  */
 aside.sidebar.margin {
   // Margin content can have an empty title so this prevents an empty title block
