@@ -4,7 +4,9 @@
 html {
   // The PyData theme value for this is based on `header-height` variable.
   // We set the variable to 0, so here we manually set the scroll position.
-  scroll-padding-top: 20vh;
+  // Use 150px because the scrollspy will shift highlighted sections at 160px.
+  // So we want to be just below this.
+  scroll-padding-top: 150px;
 }
 
 /**
