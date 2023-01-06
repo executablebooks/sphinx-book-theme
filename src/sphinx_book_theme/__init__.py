@@ -58,10 +58,11 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Translations
     translation = get_translation(MESSAGE_CATALOG_NAME)
     context["translate"] = translation
-    # this is set in the html_theme
-    context["theme_search_bar_text"] = translation(
-        context.get("theme_search_bar_text", "Search...")
-    )
+
+    # If search text hasn't been manually specified, use a shorter one here
+    theme_options = app.config.html_theme_options or {}
+    if "search_bar_text" not in theme_options:
+        context["theme_search_bar_text"] = translation("Search") + "..."
 
 
 @lru_cache(maxsize=None)

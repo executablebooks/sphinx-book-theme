@@ -39,9 +39,6 @@ The following options are available via `html_theme_options`
 * - `home_page_in_toc`
   - bool
   - Whether to put the home page in the Navigation Bar (at the top). See [](sidebar-primary:home-page).
-* - `logo_only`
-  - bool
-  - Only display the logo, not `html_title` if it exists.
 * - `show_navbar_depth`
   - int
   - Show children in the navigation bar down to the depth listed here. See [](sidebar:navbar-depth).

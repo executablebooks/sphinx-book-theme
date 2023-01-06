@@ -9,8 +9,14 @@
 
   .navbar-brand {
     height: unset;
-    // Auto-center the image and title
+    // Auto-center the image and title and make items vertical
+    flex-direction: column;
     justify-content: center;
+  }
+
+  .bd-search input {
+    // Slightly reduce padding because it's a bit too big on this theme
+    padding-left: 2rem;
   }
 
   // Remove the header items that pop into the sidebar in the pydata theme
