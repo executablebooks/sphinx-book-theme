@@ -9,6 +9,8 @@
 
   .navbar-brand {
     height: unset;
+    // Auto-center the image and title
+    justify-content: center;
   }
 
   // Remove the header items that pop into the sidebar in the pydata theme
