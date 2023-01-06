@@ -1,6 +1,16 @@
-/*********************************************
+/**
+ * General structural things
+ */
+html {
+  // The PyData theme value for this is based on `header-height` variable.
+  // We set the variable to 0 and have our own $article-header-height SCSS variable.
+  // So here we follow the same pattern but now using our variable.
+  scroll-padding-top: $header-article-height + 1rem;
+}
+
+/**
 * Utility classes used in a few places
-*********************************************/
+*/
 // For the helper pixel that we can watch to decide whether we've scrolled
 .sbt-scroll-pixel-helper {
   position: absolute;
