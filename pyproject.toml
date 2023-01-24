@@ -23,6 +23,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=4,<7",
+  "docutils==0.17.1", # docutils 0.18, 0.19 need a patch fix https://sourceforge.net/p/docutils/patches/195/
   "pydata-sphinx-theme@git+https://github.com/pydata/pydata-sphinx-theme#egg=main",
 ]
 
@@ -59,12 +60,13 @@ doc = [
     "sphinx-design",
     "sphinx-examples",
     "sphinx-copybutton",
-    "sphinx-tabs",
+    "sphinx-tabs<=3.4.0",
     "sphinx-togglebutton",
     "sphinx-thebe",
     "sphinxcontrib-bibtex",
     "sphinxcontrib-youtube",
     "sphinxext-opengraph",
+    "docutils==0.17.1"
 ]
 test = [
     "beautifulsoup4>=4.6.1,<5",
