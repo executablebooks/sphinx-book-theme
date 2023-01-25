@@ -9,4 +9,10 @@
     padding-right: 2rem;
     padding-left: 2rem;
   }
+  details.above-input,
+  details.below-input {
+    summary {
+      border-left: 3px solid var(--pst-color-primary);
+    }
+  }
 }
