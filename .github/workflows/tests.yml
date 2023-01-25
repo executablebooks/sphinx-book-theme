@@ -29,15 +29,17 @@ jobs:
         python-version: [3.7, 3.8, 3.9]
         # Only test the latest major release of Sphinx because otherwise we need to
         # keep multiple versions of regression tests on file and this creates lots of
-        # noise in the tests.
-        sphinx: [">=6,<7"]
+        # noise in the tests. Pinning it to <6 atm as docutils 0.18, 0.19 needs a
+        # patch fix for HTML https://sourceforge.net/p/docutils/patches/195/,
+        # increase to >=6,<7 when 0.20 is released
+        sphinx: [">=5,<6"]
         include:
         - os: windows-latest
           python-version: 3.9
-          sphinx: ">=6,<7"
+          sphinx: ">=5,<6"
         - os: macos-latest
           python-version: 3.9
-          sphinx: ">=6,<7"
+          sphinx: ">=5,<6"
     runs-on: ${{ matrix.os }}
 
     steps:
