@@ -57,7 +57,7 @@ doc = [
     "nbclient",
     "pandas",
     "plotly",
-    "sphinx>=4.0,<6",
+    "sphinx>=4.0,<7",
     "sphinx-design",
     "sphinx-examples",
     "sphinx-copybutton",
