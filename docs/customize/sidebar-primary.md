@@ -33,7 +33,7 @@ See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/maste
 
 By default, this theme comes with these three theme-specific sidebar elements enabled on all pages:
 
-- `sidebar-logo.html`: Displays the logo and site title.
+- `navbar-logo.html`: Displays the logo and site title.
 - `search-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
 - `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
 
@@ -56,15 +56,10 @@ html_favicon = "path/to/favicon.ico"
 
 These will be placed in the top-left of your page.
 
-To **remove the site title** below the logo, add this line in `conf.py`:
+Alternatively you can use the `logo` field in `html_theme_options` to have more control over your logo.
 
-```python
-html_theme_options = {
-  ...
-  "logo_only": True,
-  ...
-}
-```
+For more details, see the {external:doc}`PyData Sphinx Theme <user_guide/branding>`.
+
 
 (sidebar-primary:home-page)=
 ## Add the home page to your table of contents

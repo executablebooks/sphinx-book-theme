@@ -22,7 +22,7 @@ This is a page to demonstrate the look and feel of Jupyter Notebook elements.
 ### Hiding inputs
 
 ```{code-cell} ipython3
-:tags: [remove_cell]
+:tags: [remove-cell]
 
 # Generate some code that we'll use later on in the page
 import numpy as np
@@ -33,7 +33,7 @@ wide = np.random.randn(100, 1000)
 ```
 
 ```{code-cell} ipython3
-:tags: [hide_input]
+:tags: [hide-input]
 
 # Hide input
 square = np.random.randn(100, 100)
@@ -49,7 +49,7 @@ ax.imshow(wide)
 ### Hiding outputs
 
 ```{code-cell} ipython3
-:tags: [hide_output]
+:tags: [hide-output]
 
 # Hide output
 square = np.random.randn(100, 100)
@@ -82,7 +82,7 @@ With a body!
 ### Hiding both inputs and outputs
 
 ```{code-cell} ipython3
-:tags: [hide_output, hide_input]
+:tags: [hide-output, hide-input]
 
 square = np.random.randn(100, 100)
 wide = np.random.randn(100, 1000)
@@ -97,7 +97,7 @@ ax.imshow(wide)
 ### Hiding the whole cell
 
 ```{code-cell} ipython3
-:tags: [hide_cell]
+:tags: [hide-cell]
 
 square = np.random.randn(100, 100)
 wide = np.random.randn(100, 1000)

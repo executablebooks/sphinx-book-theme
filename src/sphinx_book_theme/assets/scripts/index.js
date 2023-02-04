@@ -50,19 +50,6 @@ var toggleFullScreen = () => {
 };
 
 /**
- * Called when the "print to PDF" button is clicked.
- * This is a hack to prevent tooltips from showing up in the printed PDF.
- */
-var printPdf = (el) => {
-  // Detach the tooltip text from DOM to hide in PDF
-  // and then reattach it for HTML
-  let tooltipID = $(el).attr("aria-describedby");
-  let tooltipTextDiv = $("#" + tooltipID).detach();
-  window.print();
-  $("body").append(tooltipTextDiv);
-};
-
-/**
  * Manage scrolling behavior. This is primarily two things:
  *
  * 1. Hide the Table of Contents any time sidebar content is on the screen.
@@ -97,9 +84,11 @@ var initTocHide = () => {
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-sidebar-secondary").addClass("hide");
+      document.querySelector("div.bd-sidebar-secondary").classList.add("hide");
     } else {
-      $("div.bd-sidebar-secondary").removeClass("hide");
+      document
+        .querySelector("div.bd-sidebar-secondary")
+        .classList.remove("hide");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
@@ -152,10 +141,17 @@ var initTocHide = () => {
  * Activate Thebe with a custom button click.
  */
 var initThebeSBT = () => {
-  var title = $("div.section h1")[0];
-  if (!$(title).next().hasClass("thebe-launch-button")) {
-    $("<button class='thebe-launch-button'></button>").insertAfter($(title));
+  var title = document.querySelector("section h1");
+  var sibling = title.nextElementSibling;
+  // If the next element after the title isn't a thebe button, add one now.
+  // That way it is initiatlized when thebe is first-clicked and isn't re-added after.
+  if (!sibling.classList.contains("thebe-launch-button")) {
+    title.insertAdjacentHTML(
+      "afterend",
+      "<button class='thebe-launch-button'></button>",
+    );
   }
+  // This function is provided by sphinx-thebe
   initThebe();
 };
 
@@ -164,11 +160,11 @@ var initThebeSBT = () => {
  */
 
 function addNoPrint() {
-  $("div.bd-sidebar-primary").addClass("noprint");
-  $("div.bd-sidebar-secondary").addClass("noprint");
-  $("div.bd-header-article").addClass("noprint");
-  $("div.bd-header-announcement").addClass("noprint");
-  $("footer.bd-footer-article").addClass("noprint");
+  document.querySelector("div.bd-sidebar-primary").classList.add("noprint");
+  document.querySelector("div.bd-sidebar-secondary").classList.add("noprint");
+  document.querySelector("div.bd-header-article").classList.add("noprint");
+  document.querySelector("div.bd-header-announcement").classList.add("noprint");
+  document.querySelector("footer.bd-footer-article").classList.add("noprint");
 }
 
 /**
@@ -185,7 +181,6 @@ function setMode() {
  * Set up callback functions for UI click actions
  */
 window.initThebeSBT = initThebeSBT;
-window.printPdf = printPdf;
 window.toggleFullScreen = toggleFullScreen;
 
 /**

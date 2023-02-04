@@ -33,7 +33,7 @@ A Sphinx theme with a clean design, support for interactive content, and a moder
 [Launch buttons for online interactivity](launch)
 : For pages that are built with computational material, connect your site to an online BinderHub for interactive content.
 
-[Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 : To style visual elements and add functionality.
 
 International

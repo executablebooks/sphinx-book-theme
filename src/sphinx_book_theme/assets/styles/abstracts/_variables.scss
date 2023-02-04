@@ -7,11 +7,6 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
-// Z-index stacking (from Bootstrap)
-// ref: https://getbootstrap.com/docs/5.0/layout/z-index/
-$zindex-sticky: 1020;
-$zindex-offcanvas: 1100; // We increase this to be over the tooltips
-
 // A few semantic z-indices
 $zindex-bottom: 1;
 $zindex-middle: 2;

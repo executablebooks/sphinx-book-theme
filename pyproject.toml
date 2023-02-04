@@ -22,9 +22,8 @@ readme = "README.md"
 
 requires-python = ">=3.7"
 dependencies = [
-  "sphinx>=4,<6",
-  "pydata-sphinx-theme~=0.12.0",
-  "pyyaml",
+  "sphinx>=4,<7",
+  "pydata-sphinx-theme",
 ]
 
 license = { file = "LICENSE" }
@@ -44,43 +43,38 @@ classifiers = [
 
 [project.optional-dependencies]
 code_style = [
-    "pre-commit>=2.7,<2.22"
+    "pre-commit"
 ]
 doc = [
-    "ablog~=0.10.13",
+    "ablog",
     "ipywidgets",
     "folium",
     "numpy",
     "matplotlib",
     "numpydoc",
-    "myst-nb~=0.16.0",
+    "myst-nb",
     "nbclient",
     "pandas",
     "plotly",
-    "sphinx>=4.0,<6",
     "sphinx-design",
     "sphinx-examples",
     "sphinx-copybutton",
-    "sphinx-tabs",
-    "sphinx-togglebutton>=0.2.1",
-    "sphinx-thebe>=0.1.1",
-    "sphinxcontrib-bibtex~=2.2",
+    "sphinx-tabs<=3.4.0", # sphinx-tabs 3.4.1 needs docutils >.17, which would conflict with our pin above
+    "docutils==0.17.1", # docutils 0.18, 0.19 need a patch fix https://sourceforge.net/p/docutils/patches/195/, un-pin when 0.20 is released
+    "sphinx-togglebutton",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
     "sphinxcontrib-youtube",
     "sphinxext-opengraph",
-    # 8.7.0 broke the `ipython3` lexer in Sphinx so we want to avoid it
-    # remove this when 8.7.1 is released (and see below for another instance)
-    "ipython!=8.7.0",
 ]
 test = [
     "beautifulsoup4>=4.6.1,<5",
     "coverage",
-    "myst-nb~=0.16.0",
-    "pytest~=7.1",
-    "pytest-cov>=3,<5",
-    "pytest-regressions>=2.0.1,<2.5.0",
+    "myst-nb",
+    "pytest",
+    "pytest-cov",
+    "pytest-regressions",
     "sphinx_thebe",
-    # 8.7.0 broke the `ipython3` lexer in Sphinx so we want to avoid it
-    "ipython!=8.7.0",
 ]
 
 [project.entry-points]

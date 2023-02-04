@@ -1,11 +1,4 @@
 {# Utility macros we'll re-use below -#}
-{% macro render_tooltip_metadata(tooltip, tooltip_placement) -%}
-data-toggle="tooltip"
-data-placement="{{ tooltip_placement }}"
-title="{{ translate(tooltip) }}"
-{%- endmacro %}
-
-
 {% macro render_inner_html(icon, text) %}
 {# used across multiple button types #}
 {% if icon -%}
@@ -21,20 +14,20 @@ title="{{ translate(tooltip) }}"
 {% endmacro %}
 
 
-{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, classes="", tooltip_placement="bottom") -%}
+{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, classes="") -%}
 <a href="{{ url }}" target="_blank"
    class="btn btn-sm{% if label %} btn-{{ label }}{% endif %}{% if classes %} {{ classes }}{% endif %}"
-   {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
+   {% if tooltip %}title="{{ translate(tooltip) }}"{% endif %}
 >
   {{ render_inner_html(icon, text) }}
 </a>
 {% endmacro %}
 
 
-{% macro render_js_button(javascript, tooltip=None, icon=None, text=None, label=None, classes="", tooltip_placement="bottom") %}
+{% macro render_js_button(javascript, tooltip=None, icon=None, text=None, label=None, classes="") %}
 <button onclick="{{ javascript }}"
   class="btn btn-sm{% if label %} btn-{{ label }}{% endif %}{% if classes %} {{ classes }}{% endif %}"
-  {% if tooltip %}{{ render_tooltip_metadata(tooltip, tooltip_placement) }}{% endif %}
+  {% if tooltip %}title="{{ translate(tooltip) }}"{% endif %}
 >
   {{ render_inner_html(icon, text) }}
 </button>

@@ -44,6 +44,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.8", None),
     "sphinx": ("https://www.sphinx-doc.org/en/master", None),
+    "pst": ("https://pydata-sphinx-theme.readthedocs.io/en/latest/", None),
 }
 nitpick_ignore = [
     ("py:class", "docutils.nodes.document"),
@@ -82,7 +83,7 @@ html_last_updated_fmt = ""
 
 html_sidebars = {
     "reference/blog/*": [
-        "sidebar-logo.html",
+        "navbar-logo.html",
         "search-field.html",
         "postcard.html",
         "recentposts.html",
@@ -120,7 +121,9 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
-    "logo_only": True,
+    "logo": {
+        "text": html_title,
+    },
     "show_toc_level": 2,
     "announcement": (
         "⚠️The latest release refactored our HTML, "

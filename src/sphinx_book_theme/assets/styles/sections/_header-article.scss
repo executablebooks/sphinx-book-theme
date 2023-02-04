@@ -137,13 +137,3 @@ div.header-article-main {
     }
   }
 }
-
-/**
- * Tooltips added by bootstrap
- * These are added to the bottom of the `<body>` block by JavaScript.
- * We should consider removing custom tooltips as this is pretty hacky...
- */
-// Ensure that tooltips are *below* the sidebar toggles on mobile
-div.tooltip {
-  z-index: 1049;
-}
