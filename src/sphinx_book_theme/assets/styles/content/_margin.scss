@@ -1,43 +1,62 @@
-// Margin variables
-// The % is relative to our parent container, which has width == max-width
-// full-width = 100% = content-max-width + margin-width
-// We must express margin-width as a percentage of max-width. So:
-// So the width we want is:
-// max-width * x = 100% - max-width, so we solve for x.
-// Will be a decimal
-$content-margin-gutter: 3%;
-$content-margin-width: percentage(
-    (100% - $content-max-width) / $content-max-width
-  ) - $content-margin-gutter;
-$content-margin-offset: (-$content-margin-width - $content-margin-gutter);
+/**
+ * Margin content
+ * This is the area to the right of the main content
+ * normally covered by the in-page table of contents
+ * but if `.margin` classes are present, it shows up to the right in the margin
+ * and the in-page TOC is hidden.
+ * On narrow screens, margin content behaves like a sidebar
+ */
 
-// Express 100% in parent container in % units of the child container.
-$content-fullwidth-width: percentage(100% / $content-max-width);
+/**
+ * Variables for calculating margin widths
+ */
+// We want our margin content to be 1/3 the width of the main page content
+// after factoring in a small margin
+$margin-width-relative-to-content: 36%;
+$margin-gutter: 3%;
+$margin-width-width-gutter: $margin-width-relative-to-content - $margin-gutter;
 
-// Note: Need to add a few specifics for `tag_` because these won't have a parent `.sidebar` class
-// On narrow screens, margin content behaves like a sidebar
+// re-subtract the gutter width because we want it to leave a white-space
+// This is how much to offset the margin content.
+$margin-offset: -$margin-width-relative-to-content;
 
-// On wide screens, it "pops out" to the right margin
-
+/**
+ * This mixin will cause something to "pop out" to the margin on wide screens
+ */
 @mixin margin-content() {
+  // On narrow screens this is the width of margin content
   width: 40%;
   float: right;
   background-color: unset;
-  border-left: 1px #a4a6a7 solid;
   font-size: 0.9em;
-  @media (min-width: $breakpoint-md) {
-    border: none;
-    width: $content-margin-width;
-    margin: 0 $content-margin-offset 0 0;
-    clear: right; // Prevent sequential margin content from overlapping
+  margin-left: 0.5rem;
+
+  // This is the wide-screen behavior
+  @media (min-width: $breakpoint-lg) {
+    width: $margin-width-width-gutter;
+    margin: 0 $margin-offset 0 0;
+
+    // Prevent sequential margin content from overlapping
+    clear: right;
 
     p.sidebar-title {
-      margin-bottom: 0.1em;
+      margin-bottom: -1rem;
+      border-bottom: none;
+      padding-left: 0px;
+
+      // Content of admonitions has fewer horizontal white space to save space
+      ~ * {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
     }
   }
 }
 
-// Sidenotes and marginnotes
+/**
+ * Sidenotes and marginnotes
+ * over-rides the "footnote" behavior to pop out to the margin instead.
+ */
 label.margin-toggle {
   margin-bottom: 0em;
   &.marginnote-label {
@@ -46,7 +65,7 @@ label.margin-toggle {
   sup {
     user-select: none;
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     cursor: pointer;
     color: rgb(0, 113, 188);
     &.marginnote-label {
@@ -60,7 +79,7 @@ label.margin-toggle {
 
 input.margin-toggle {
   display: none;
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     &:checked + .sidenote,
     &:checked + .marginnote {
       display: block;
@@ -76,21 +95,76 @@ input.margin-toggle {
 
 span.sidenote,
 span.marginnote {
+  z-index: $zindex-middle;
+  position: relative;
   sup {
     user-select: none;
   }
   @include margin-content();
   border-left: none;
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     display: none;
   }
 }
 
+aside.sidebar {
+  .note {
+    // styling for notes inside sidebars
+    margin: 1rem;
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  // The titles sticking
+  .admonition-title {
+    margin: 0rem -1rem 0rem 0rem;
+  }
+}
+
+/**
+ * Sidebar content in the margin.
+ * This will be added by the `margin` directive or the `sidebar` directive
+ */
+aside.sidebar.margin {
+  // Margin content can have an empty title so this prevents an empty title block
+  // from showing up on mobile
+  .sidebar-title:empty {
+    display: none;
+  }
+
+  // On narrow screens padding is added to all sidebar content
+  // This replaces padding w/ margin for admonitions because padding is used
+  // for the title background color
+  .admonition {
+    margin: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    // Remove the title margin so it
+    .admonition-title {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    // No border for margin sidebars on wide screen
+    border: none;
+
+    // Admonitions don't need the extra whitespace in the margin
+    .admonition {
+      margin: 1rem 0rem;
+      padding: 0rem 0rem 1rem 0rem;
+    }
+  }
+}
+
 div.margin,
-aside.margin,
 figure.margin,
+aside.margin,
+.margin.docutils.container,
 .cell.tag_popout,
 .cell.tag_margin {
+  z-index: $zindex-middle;
+  position: relative;
   @include margin-content();
 
   // Make cell outputs take up more space if they're in the margin
@@ -103,21 +177,31 @@ figure.margin,
 div.figure.margin-caption p.caption,
 div.figure.margin-caption figcaption,
 figure.margin-caption figcaption {
+  z-index: $zindex-middle;
+  position: relative;
   @include margin-content();
-}
-
-// Full-width content
-div.cell.tag_full-width,
-div.cell.tag_full_width,
-.full_width,
-.full-width {
-  @media (min-width: $breakpoint-md) {
-    max-width: $content-fullwidth-width;
-    width: $content-fullwidth-width;
-  }
 }
 
 // Margin captions
 .margin-caption figcaption {
   text-align: left;
+}
+
+/**
+ * Full width content
+ */
+
+// Grow 100% by the ratio of the margin to the content width.
+$content-fullwidth-width: 100% + $margin-width-relative-to-content;
+
+div.cell.tag_full-width,
+div.cell.tag_full_width,
+div.full_width,
+div.full-width {
+  z-index: $zindex-middle;
+  position: relative;
+  @media (min-width: $breakpoint-lg) {
+    max-width: $content-fullwidth-width;
+    width: $content-fullwidth-width;
+  }
 }

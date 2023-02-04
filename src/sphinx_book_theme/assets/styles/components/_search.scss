@@ -1,9 +1,15 @@
-/*********************************************
-* Search bar and text styling from searches *
-*********************************************/
-
-// Highlighted search items are a slightly lighter version of Jupyter orange
-dt:target,
-span.highlighted {
-  background-color: #f3772642;
+.bd-search-container {
+  margin: 2em;
+  // Remove the search field on the search page since we have one in the sidebar
+  h1:first-child {
+    display: none;
+  }
+  #search-results {
+    h2:first-child {
+      display: none;
+    }
+  }
+  .bd-search {
+    display: none !important;
+  }
 }

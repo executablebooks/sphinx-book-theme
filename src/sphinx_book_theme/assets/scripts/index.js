@@ -50,38 +50,6 @@ var toggleFullScreen = () => {
 };
 
 /**
- * Sidebar scroll on load.
- *
- * Detect the active page in the sidebar, and scroll so that it is centered on
- * the screen.
- */
-var scrollToActive = () => {
-  var navbar = document.getElementById("site-navigation");
-  var active_pages = navbar.querySelectorAll(".active");
-  var active_page = active_pages[active_pages.length - 1];
-  // Only scroll the navbar if the active link is lower than 50% of the page
-  if (
-    active_page !== undefined &&
-    active_page.offsetTop > $(window).height() * 0.5
-  ) {
-    navbar.scrollTop = active_page.offsetTop - $(window).height() * 0.2;
-  }
-};
-
-/**
- * Called when the "print to PDF" button is clicked.
- * This is a hack to prevent tooltips from showing up in the printed PDF.
- */
-var printPdf = (el) => {
-  // Detach the tooltip text from DOM to hide in PDF
-  // and then reattach it for HTML
-  let tooltipID = $(el).attr("aria-describedby");
-  let tooltipTextDiv = $("#" + tooltipID).detach();
-  window.print();
-  $("body").append(tooltipTextDiv);
-};
-
-/**
  * Manage scrolling behavior. This is primarily two things:
  *
  * 1. Hide the Table of Contents any time sidebar content is on the screen.
@@ -116,9 +84,11 @@ var initTocHide = () => {
 
     // Hide the TOC if any margin content is displayed on the screen
     if (onScreenItems.length > 0) {
-      $("div.bd-toc").removeClass("show");
+      document.querySelector("div.bd-sidebar-secondary").classList.add("hide");
     } else {
-      $("div.bd-toc").addClass("show");
+      document
+        .querySelector("div.bd-sidebar-secondary")
+        .classList.remove("hide");
     }
   };
   let manageScrolledClassOnBody = (entries, observer) => {
@@ -155,7 +125,7 @@ var initTocHide = () => {
         `.tag_${ii}`,
         `.${ii.replace("-", "_")}`,
         `.tag_${ii.replace("-", "_")}`,
-      ]
+      ],
     );
   });
   document.querySelectorAll(marginSelector.join(", ")).forEach((ii) => {
@@ -171,62 +141,51 @@ var initTocHide = () => {
  * Activate Thebe with a custom button click.
  */
 var initThebeSBT = () => {
-  var title = $("div.section h1")[0];
-  if (!$(title).next().hasClass("thebe-launch-button")) {
-    $("<button class='thebe-launch-button'></button>").insertAfter($(title));
+  var title = document.querySelector("section h1");
+  var sibling = title.nextElementSibling;
+  // If the next element after the title isn't a thebe button, add one now.
+  // That way it is initiatlized when thebe is first-clicked and isn't re-added after.
+  if (!sibling.classList.contains("thebe-launch-button")) {
+    title.insertAdjacentHTML(
+      "afterend",
+      "<button class='thebe-launch-button'></button>",
+    );
   }
+  // This function is provided by sphinx-thebe
   initThebe();
 };
 
 /**
- * Use Bootstrap helper function to enable tooltips.
+ * Add no print class to certain DOM elements
  */
-var initTooltips = () => {
-  $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-      trigger: "hover",
-      delay: { show: 500, hide: 100 },
-    });
-  });
-};
+
+function addNoPrint() {
+  document.querySelector("div.bd-sidebar-primary").classList.add("noprint");
+  document.querySelector("div.bd-sidebar-secondary").classList.add("noprint");
+  document.querySelector("div.bd-header-article").classList.add("noprint");
+  document.querySelector("div.bd-header-announcement").classList.add("noprint");
+  document.querySelector("footer.bd-footer-article").classList.add("noprint");
+}
 
 /**
- * MutationObserver to move the ReadTheDocs button
+ * Set Mode of the theme
+ * Remove this function once all modes are supported.
  */
-function initRTDObserver() {
-  const mutatedCallback = (mutationList, observer) => {
-    mutationList.forEach((mutation) => {
-      // Check whether the mutation is for RTD, which will have a specific structure
-      if (mutation.addedNodes.length === 0) {
-        return;
-      }
-      if (mutation.addedNodes[0].data === undefined) {
-        return;
-      }
-      if (mutation.addedNodes[0].data.search("Inserted RTD Footer") != -1) {
-        mutation.addedNodes.forEach((node) => {
-          document.getElementById("rtd-footer-container").append(node);
-        });
-      }
-    });
-  };
 
-  const observer = new MutationObserver(mutatedCallback);
-  const config = { childList: true };
-  observer.observe(document.body, config);
+function setMode() {
+  document.documentElement.dataset.mode = "light";
+  document.documentElement.dataset.theme = "light";
 }
 
 /**
  * Set up callback functions for UI click actions
  */
 window.initThebeSBT = initThebeSBT;
-window.printPdf = printPdf;
 window.toggleFullScreen = toggleFullScreen;
 
 /**
  * Set up functions to load when the DOM is ready
  */
-sbRunWhenDOMLoaded(initTooltips);
-sbRunWhenDOMLoaded(scrollToActive);
 sbRunWhenDOMLoaded(initTocHide);
-sbRunWhenDOMLoaded(initRTDObserver);
+sbRunWhenDOMLoaded(addNoPrint);
+sbRunWhenDOMLoaded(setMode);

@@ -65,7 +65,7 @@ This is some markdown that should be shown at full width.
 
 Here's the Jupyter logo:
 
-![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/logo.png)
+![](https://raw.githubusercontent.com/adebar/awesome-jupyter/master/assets/logo.png)
 
 :::{note}
 Here's a full-width admonition!
@@ -218,7 +218,7 @@ how does it look?
 
 Markdown cell with images in sidebar
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" style="max-width:200px" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" />
 
 ````
 +++

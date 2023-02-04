@@ -1,7 +1,5 @@
 # -- Project information -----------------------------------------------------
 import os
-from pathlib import Path
-from urllib import request
 
 project = "Sphinx Book Theme"
 copyright = "2020"
@@ -31,6 +29,8 @@ extensions = [
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
     "sphinxext.opengraph",
+    # For the kitchen sink
+    "sphinx.ext.todo",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,6 +44,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.8", None),
     "sphinx": ("https://www.sphinx-doc.org/en/master", None),
+    "pst": ("https://pydata-sphinx-theme.readthedocs.io/en/latest/", None),
 }
 nitpick_ignore = [
     ("py:class", "docutils.nodes.document"),
@@ -82,7 +83,7 @@ html_last_updated_fmt = ""
 
 html_sidebars = {
     "reference/blog/*": [
-        "sidebar-logo.html",
+        "navbar-logo.html",
         "search-field.html",
         "postcard.html",
         "recentposts.html",
@@ -97,7 +98,7 @@ html_sidebars = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
-jupyter_execute_notebooks = "cache"
+nb_execution_mode = "cache"
 thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
     "repository_branch": "master",
@@ -120,7 +121,9 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
-    "logo_only": True,
+    "logo": {
+        "text": html_title,
+    },
     "show_toc_level": 2,
     "announcement": (
         "⚠️The latest release refactored our HTML, "
@@ -129,9 +132,7 @@ html_theme_options = {
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
-    # "single_page": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
-    # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
 }
 
@@ -142,37 +143,16 @@ blog_baseurl = "https://sphinx-book-theme.readthedocs.io"
 fontawesome_included = True
 post_auto_image = 1
 post_auto_excerpt = 2
-execution_show_tb = "READTHEDOCS" in os.environ
+nb_execution_show_tb = "READTHEDOCS" in os.environ
 bibtex_bibfiles = ["references.bib"]
 # To test that style looks good with common bibtex config
 bibtex_reference_style = "author_year"
 bibtex_default_style = "plain"
-
+numpydoc_show_class_members = False  # for automodule:: urllib.parse stub file issue
 linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
-
-# -- Download kitchen sink reference docs -------------------------------------
-# These are the kitchen sink files used by the Sphinx Themes gallery at
-# https://github.com/sphinx-themes/sphinx-themes.org
-# To re-download, delete the `references/kitchen-sink` folder and build the docs
-kitchen_sink_files = [
-    "api.rst",
-    "index.rst",
-    "lists-and-tables.rst",
-    "paragraph-markup.rst",
-]
-for ifile in kitchen_sink_files:
-    path_file = Path(f"reference/kitchen-sink/{ifile}")
-    path_file.parent.mkdir(exist_ok=True)
-    if not path_file.exists():
-        print(f"Downloading kitchen sink file {ifile}")
-        resp = request.urlopen(
-            f"https://github.com/sphinx-themes/sphinx-themes.org/raw/master/sample-docs/kitchen-sink/{ifile}"  # noqa: E501
-        )
-        header = ".. DOWNLOADED FROM sphinx-themes.org, DO NOT MANUALLY EDIT\n"
-        path_file.write_text(header + resp.read().decode())
 
 
 def setup(app):

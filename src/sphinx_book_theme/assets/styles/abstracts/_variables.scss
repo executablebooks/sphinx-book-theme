@@ -7,64 +7,41 @@ $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 576px;
 
-// Colors
-$grey--dark: #5a5a5a;
-$grey--medium: #aaa;
-$grey--light: #ccc;
-$non-content-grey: $grey--dark;
-
-// Z-index stacking (from Bootstrap)
-// ref: https://getbootstrap.com/docs/5.0/layout/z-index/
-$zindex-sticky: 1020;
-$zindex-offcanvas: 1100; // We increase this to be over the tooltips
+// A few semantic z-indices
+$zindex-bottom: 1;
+$zindex-middle: 2;
+$zindex-top: 3;
 
 // Spacing
-$header-article-height: 3em;
-$leftbar-width-mobile: 75%;
-$leftbar-width-wide: 275px;
+$header-article-height: 3rem;
+$sidebar-primary-width-widescreen: 20%;
 $toc-width-mobile: 75%;
-// Main content, to leave room for the margin
-$content-max-width: 70%;
 
 // Consistent styling for page elements
 $box-border-radius: 0.4em;
 
 $animation-time: 0.25s;
 
-$border-thin: 1px solid rgba(0, 0, 0, 0.1);
+// Font sizes
+$sbt-font-size-small-1: 87.5%;
+
+/**
+ * Variables that aren't impacted by light/dark
+ */
+html {
+  // Over-ride the pydata theme so that readers can use their system base
+  --pst-font-size-base: none;
+  --pst-header-height: 0px;
+}
 
 // Overrides for pydata sphinx theme.
 // See https://github.com/pydata/pydata-sphinx-theme/blob/master/pydata_sphinx_theme/static/css/theme.css
-:root {
-  // Over-ride the pydata theme so that readers can use their system base
-  --pst-font-size-base: none;
+html[data-theme="light"] {
+  --pst-color-primary: rgb(87, 154, 202);
+  // Announcement
+  --sbt-color-announcement: rgb(97, 97, 97);
+}
 
-  // Pulling colors from the Binder logo since they are complementary and on-brand
-  --pst-color-primary: 87, 154, 202;
-  --pst-color-admonition-note: var(--pst-color-primary);
-  --pst-color-admonition-default: var(--pst-color-primary);
-
-  --pst-color-info: 255, 193, 7;
-  --pst-color-admonition-tip: var(--pst-color-info);
-  --pst-color-admonition-hint: var(--pst-color-info);
-  --pst-color-admonition-important: var(--pst-color-info);
-
-  --pst-color-warning: 245, 162, 82;
-
-  --pst-color-danger: 230, 101, 129;
-  --pst-color-admonition-warning: var(--pst-color-danger);
-
-  --pst-color-link: 0, 113, 188;
-
-  // Font sizes
-  --sbt-font-size-regular: 100%;
-  --sbt-font-size-large: 112.5%;
-  --sbt-font-size-small-1: 87.5%;
-  --sbt-font-size-small-2: 70%;
-
-  // Variables for this theme
-  --sbt-sidebar-font-size: var(--sbt-font-size-small-1);
-  --sbt-header-article-font-size: var(--sbt-font-size-small-1);
-  --sbt-prevnext-font-size: var(--sbt-font-size-small-1);
-  --sbt-footer-font-size: var(--sbt-font-size-small-1);
+html[data-theme="dark"] {
+  --pst-color-primary: rgb(87, 154, 202);
 }

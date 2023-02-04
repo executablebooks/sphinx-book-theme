@@ -1,83 +1,79 @@
 <div class="header-article__right">
- <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
-  <span class="headerbtn__icon-container">
+ <button class="btn btn-sm" onclick="toggleFullScreen()" title="Fullscreen mode">
+  <span class="btn__icon-container">
    <i class="fas fa-expand">
    </i>
   </span>
  </button>
- <div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+ <div class="dropdown dropdown-repository-buttons">
+  <button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
    <i class="fab fa-github">
    </i>
   </button>
-  <div class="menu-dropdown__content">
-   <ul>
+  <ul class="dropdown-menu">
+   <li>
+    <a class="btn btn-sm dropdown-item" href="https://github.com/executablebooks/sphinx-book-theme" target="_blank" title="Source repository">
+     <span class="btn__icon-container">
+      <i class="fab fa-github">
+      </i>
+     </span>
+     <span class="btn__text-container">
+      repository
+     </span>
+    </a>
     <li>
-     <a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/executablebooks/sphinx-book-theme" title="Source repository">
-      <span class="headerbtn__icon-container">
-       <i class="fab fa-github">
-       </i>
-      </span>
-      <span class="headerbtn__text-container">
-       repository
-      </span>
-     </a>
-    </li>
-    <li>
-     <a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/executablebooks/sphinx-book-theme/issues/new?title=Issue%20on%20page%20%2Fsection1/ntbk.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
-      <span class="headerbtn__icon-container">
+     <a class="btn btn-sm dropdown-item" href="https://github.com/executablebooks/sphinx-book-theme/issues/new?title=Issue%20on%20page%20%2Fsection1/ntbk.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+      <span class="btn__icon-container">
        <i class="fas fa-lightbulb">
        </i>
       </span>
-      <span class="headerbtn__text-container">
+      <span class="btn__text-container">
        open issue
       </span>
      </a>
+     <li>
+      <a class="btn btn-sm dropdown-item" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/section1/ntbk.ipynb" target="_blank" title="Edit this page">
+       <span class="btn__icon-container">
+        <i class="fas fa-pencil-alt">
+        </i>
+       </span>
+       <span class="btn__text-container">
+        suggest edit
+       </span>
+      </a>
+     </li>
     </li>
-    <li>
-     <a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/section1/ntbk.ipynb" title="Edit this page">
-      <span class="headerbtn__icon-container">
-       <i class="fas fa-pencil-alt">
-       </i>
-      </span>
-      <span class="headerbtn__text-container">
-       suggest edit
-      </span>
-     </a>
-    </li>
-   </ul>
-  </div>
+   </li>
+  </ul>
  </div>
- <div class="menu-dropdown menu-dropdown-download-buttons">
-  <button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+ <div class="dropdown dropdown-download-buttons">
+  <button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
    <i class="fas fa-download">
    </i>
   </button>
-  <div class="menu-dropdown__content">
-   <ul>
+  <ul class="dropdown-menu">
+   <li>
+    <a class="btn btn-sm dropdown-item" href="../_sources/section1/ntbk.ipynb" target="_blank" title="Download source file">
+     <span class="btn__icon-container">
+      <i class="fas fa-file">
+      </i>
+     </span>
+     <span class="btn__text-container">
+      .ipynb
+     </span>
+    </a>
     <li>
-     <a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/section1/ntbk.ipynb" title="Download source file">
-      <span class="headerbtn__icon-container">
-       <i class="fas fa-file">
-       </i>
-      </span>
-      <span class="headerbtn__text-container">
-       .ipynb
-      </span>
-     </a>
-    </li>
-    <li>
-     <button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
-      <span class="headerbtn__icon-container">
+     <button class="btn btn-sm dropdown-item" onclick="window.print()" title="Print to PDF">
+      <span class="btn__icon-container">
        <i class="fas fa-file-pdf">
        </i>
       </span>
-      <span class="headerbtn__text-container">
+      <span class="btn__text-container">
        .pdf
       </span>
      </button>
     </li>
-   </ul>
-  </div>
+   </li>
+  </ul>
  </div>
 </div>

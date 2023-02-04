@@ -12,9 +12,6 @@ The following options are available via `html_theme_options`
 * - Key
   - Type
   - Description
-* - `single_page`
-  - bool
-  - Remove the left sidebar and treat the site as a single page. See [](customize:single-page).
 * - `path_to_docs`
   - string
   - Path to the documentation, relative to the repository root (e.g. `docs/`). See [](customize:source-files).
@@ -42,9 +39,6 @@ The following options are available via `html_theme_options`
 * - `home_page_in_toc`
   - bool
   - Whether to put the home page in the Navigation Bar (at the top). See [](sidebar-primary:home-page).
-* - `logo_only`
-  - bool
-  - Only display the logo, not `html_title` if it exists.
 * - `show_navbar_depth`
   - int
   - Show children in the navigation bar down to the depth listed here. See [](sidebar:show-navbar-depth).
@@ -72,10 +66,10 @@ The following sections describe a few ways to customize the theme in more depth.
 ```{toctree}
 sidebar-primary.md
 sidebar-secondary.md
+footer-content.md
 announcements.md
 header.md
 download.md
 source-files.md
 custom-css.md
-single-page.md
 ```

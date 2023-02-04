@@ -3,7 +3,6 @@ from typing import Any
 from docutils import nodes as docutil_nodes
 from sphinx import addnodes as sphinx_nodes
 from .nodes import SideNoteNode
-import copy
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
@@ -31,18 +30,21 @@ class HandleFootnoteTransform(SphinxPostTransform):
                 ):
                     parent = foot_node.parent
                     # second children of footnote node is the content text
-                    text = foot_node.children[1].astext()
+                    foot_node_content = foot_node.children[1].children
 
                     sidenote = SideNoteNode()
                     para = docutil_nodes.inline()
                     # first children of footnote node is the label
                     label = foot_node.children[0].astext()
 
-                    if text.startswith("{-}"):
+                    if foot_node_content[0].astext().startswith("{-}"):
                         # marginnotes will have content starting with {-}
                         # remove the number so it doesn't show
                         para.attributes["classes"].append("marginnote")
-                        para.append(docutil_nodes.Text(text.replace("{-}", "")))
+                        foot_node_content[0] = docutil_nodes.Text(
+                            foot_node_content[0].replace("{-}", "")
+                        )
+                        para.children = foot_node_content
 
                         sidenote.attributes["names"].append(f"marginnote-role-{label}")
                     else:
@@ -50,7 +52,8 @@ class HandleFootnoteTransform(SphinxPostTransform):
                         # in this case we keep the number
                         superscript = docutil_nodes.superscript("", label)
                         para.attributes["classes"].append("sidenote")
-                        para.extend([superscript, docutil_nodes.Text(text)])
+                        parachildren = [superscript] + foot_node_content
+                        para.children = parachildren
 
                         sidenote.attributes["names"].append(f"sidenote-role-{label}")
                         sidenote.append(superscript)
@@ -60,7 +63,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
                     # so it works w/ margin. Only show one or another depending on
                     # screen width.
                     node_parent = ref_node.parent
-                    para_dup = copy.deepcopy(para)
+                    para_dup = para.deepcopy()
                     # looping to check parent node
                     while not isinstance(
                         node_parent, (docutil_nodes.section, sphinx_nodes.document)

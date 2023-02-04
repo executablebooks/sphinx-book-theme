@@ -176,8 +176,6 @@ def add_launch_buttons(
         context["use_thebe"] = True
 
     # Add the buttons to header_buttons
-    for lb in launch_buttons_list:
-        lb["tooltip_placement"] = "left"
     header_buttons.append(
         {
             "type": "group",

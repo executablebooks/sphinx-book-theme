@@ -7,7 +7,7 @@
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
 interactive book. It has the following primary features:
 
-* **Bootstrap 4**
+* **Bootstrap 5**
   for visual elements and functionality.
 * **Flexible content layout** that is inspired by beautiful online books,
   such as [the Edward Tufte CSS guide](https://edwardtufte.github.io/tufte-css/)

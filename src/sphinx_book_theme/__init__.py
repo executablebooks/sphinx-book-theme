@@ -15,10 +15,11 @@ from .header_buttons import prep_header_buttons, add_header_buttons
 from .header_buttons.launch import add_launch_buttons
 from ._transforms import HandleFootnoteTransform
 
-__version__ = "0.3.3"
+__version__ = "0.4.0rc1"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
+DEFAULT_LOG_TYPE = "sphinxbooktheme"
 MESSAGE_CATALOG_NAME = "booktheme"
 
 
@@ -57,10 +58,11 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Translations
     translation = get_translation(MESSAGE_CATALOG_NAME)
     context["translate"] = translation
-    # this is set in the html_theme
-    context["theme_search_bar_text"] = translation(
-        context.get("theme_search_bar_text", "Search the docs ...")
-    )
+
+    # If search text hasn't been manually specified, use a shorter one here
+    theme_options = app.config.html_theme_options or {}
+    if "search_bar_text" not in theme_options:
+        context["theme_search_bar_text"] = translation("Search") + "..."
 
 
 @lru_cache(maxsize=None)
@@ -111,7 +113,7 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
     hash_assets_for_files(assets, get_html_theme_path() / "static", context)
 
 
-def update_thebe_config(app):
+def update_mode_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
     theme_options = app.env.config.html_theme_options
     if theme_options.get("launch_buttons", {}).get("thebe") is True:
@@ -144,6 +146,25 @@ def update_thebe_config(app):
 
     app.env.config.thebe_config = thebe_config
 
+    # setting default mode to light for now.
+    # TODO: provide a button, and add css for dark theme.
+    # sphinx-build command does not call config-inited,
+    # so setting this in builder-inited.
+    app.config.html_context["default_mode"] = "light"
+
+
+def check_deprecation_keys(app):
+    """Warns about the deprecated keys."""
+
+    deprecated_config_list = ["single_page"]
+    for key in deprecated_config_list:
+        if key in app.env.config.html_theme_options:
+            SPHINX_LOGGER.warning(
+                f"'{key}' was deprecated from version 0.3.4 onwards. See the CHANGELOG for more information: https://github.com/executablebooks/sphinx-book-theme/blob/master/CHANGELOG.md"  # noqa: E501
+                f"[{DEFAULT_LOG_TYPE}]",
+                type=DEFAULT_LOG_TYPE,
+            )
+
 
 class Margin(Sidebar):
     """Goes in the margin to the right of the page."""
@@ -174,6 +195,28 @@ def update_general_config(app, config):
     config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
+def update_templates(app, pagename, templatename, context, doctree):
+    """Update template names and assets for page build.
+
+    This is a copy of what the pydata theme does here to include a new section
+    - https://github.com/pydata/pydata-sphinx-theme/blob/0a4894fab49befc59eb497811949a1d0ede626eb/src/pydata_sphinx_theme/__init__.py#L173 # noqa: E501
+    """
+    # Allow for more flexibility in template names
+    template_sections = ["theme_footer_content_items"]
+    for section in template_sections:
+        if context.get(section):
+            # Break apart `,` separated strings so we can use , in the defaults
+            if isinstance(context.get(section), str):
+                context[section] = [
+                    ii.strip() for ii in context.get(section).split(",")
+                ]
+
+            # Add `.html` to templates with no suffix
+            for ii, template in enumerate(context.get(section)):
+                if not os.path.splitext(template)[1]:
+                    context[section][ii] = template + ".html"
+
+
 def setup(app: Sphinx):
     # Register theme
     theme_dir = get_html_theme_path()
@@ -185,10 +228,12 @@ def setup(app: Sphinx):
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     # Events
-    app.connect("builder-inited", update_thebe_config)
+    app.connect("builder-inited", update_mode_thebe_config)
+    app.connect("builder-inited", check_deprecation_keys)
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
+    app.connect("html-page-context", update_templates)
 
     # Nodes
     SideNoteNode.add_node(app)

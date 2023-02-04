@@ -109,7 +109,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     # -- Header ---------------------------------------------------------------
     header_article = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "div", class_="header-article"
+        "div", class_="bd-header-article"
     )
 
     file_regression.check(
@@ -128,12 +128,16 @@ def test_build_book(sphinx_build_factory, file_regression):
     for page in sphinx_build.outdir.joinpath("titles").rglob("**/page-*"):
         page_html = BeautifulSoup(page.read_text("utf8"), "html.parser")
         page_toc = page_html.find("div", attrs={"class": "bd-toc"})
-        file_regression.check(
-            page_toc.prettify(),
-            basename=f"build__pagetoc--{page.with_suffix('').name}",
-            extension=".html",
-            encoding="utf8",
-        )
+        if page_toc:
+            file_regression.check(
+                page_toc.prettify(),
+                basename=f"build__pagetoc--{page.with_suffix('').name}",
+                extension=".html",
+                encoding="utf8",
+            )
+        else:
+            # page with no subheadings now does not have the secondary sidebar markup
+            assert len(page_html.find_all("section")) == 1
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
@@ -149,25 +153,9 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     assert "Index with code in title" in str(li)
 
 
-def test_navbar_options_single_page(sphinx_build_factory):
-    """Test that"""
-    sphinx_build = sphinx_build_factory(
-        "base", confoverrides={"html_theme_options.single_page": True}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
-    sidebar = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "div", id="site-navigation"
-    )
-    assert len(sidebar.find_all("div")) == 0  # Sidebar should be empty
-    assert "single-page" in sidebar.attrs["class"]  # Class added on single page
-
-
 @pytest.mark.parametrize(
     "option,value",
     [
-        ("extra_navbar", "<div>EXTRA NAVBAR</div>"),
-        ("navbar_footer_text", "<div>EXTRA NAVBAR</div>"),
         ("extra_footer", "<div>EXTRA FOOTER</div>"),
     ],
 )
@@ -219,7 +207,7 @@ def test_header_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".menu-dropdown-launch-buttons"
+        ".dropdown-launch-buttons"
     )
     file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
 
@@ -327,18 +315,6 @@ def test_right_sidebar_title(sphinx_build_factory, file_regression):
     rmtree(str(sphinx_build.src))
 
     confoverrides = {"html_theme_options.toc_title": ""}
-
-
-def test_logo_only(sphinx_build_factory):
-    confoverrides = {"html_theme_options.logo_only": True}
-    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
-        assert_pass=True
-    )
-
-    logo_text = sphinx_build.html_tree("page1.html").find_all(
-        "h1", attrs={"id": "site-title"}
-    )
-    assert not logo_text
 
 
 def test_sidenote(sphinx_build_factory, file_regression):
