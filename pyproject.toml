@@ -49,6 +49,7 @@ doc = [
     "ablog",
     "ipywidgets",
     "folium",
+    "jupyterlite-sphinx",
     "numpy",
     "matplotlib",
     "numpydoc",

@@ -85,6 +85,56 @@ html_theme_options = {
 This will create a new Deepnote project every time you click the launch button.
 ```
 
+## JupyterLite and RetroLite
+
+```{admonition} Experimental!
+:class: warning
+Behavior and configuration of JupyterLite may change over time!
+```
+
+[JupyterLite](https://jupyterlite.readthedocs.io/) allows you to run a Jupyter environment entirely in the browser via [WebAssembly](https://webassembly.org/) and [Pyodide](https://pyodide.org/en/stable/).
+
+To use JupyterLite in your launch buttons, you'll first need to take these steps:
+
+1. **Install [`jupyterlite-sphinx`](https://jupyterlite-sphinx.readthedocs.io/)** by
+    [following the installation instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/installation.html).
+2. **Configure JupyterLite Sphinx to use your site content as a folder**.
+   You can configure JupyterLite Sphinx to look for notebooks in a specified directory.
+   Put the notebooks you wish to expose in that directory, and [follow these configuration instructions](https://jupyterlite-sphinx.readthedocs.io/en/latest/configuration.html#jupyterlite-content).
+
+
+### Retrolite
+
+To add [RetroLite](https://jupyterlite-sphinx.readthedocs.io/en/latest/retrolite.html) links to your page, add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "retrolite_url": "/lite/retro/notebooks/"
+    },
+    ...
+}
+```
+
+There are two different interfaces that you can activate with JupyterLite, each is described below.
+
+### JupyterLab
+
+To add JupyterLab via JupyterLite to your launch buttons, use the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "jupyterlite_url": "/lite/lab/notebooks/"
+    },
+    ...
+}
+```
+
+Where `notebooks/` is a folder with a collection of Jupyter Notebooks you'd like to serve with JupyterLite.
+
 
 ## Live code cells with Thebe
 

@@ -103,6 +103,9 @@ def add_launch_buttons(
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
+    # retrolite_url could be absolute but without a domain, so we only
+    # strip trailing slashes, not leading ones
+    retrolite_url = launch_buttons.get("retrolite_url", "").rstrip("/")
     if binderhub_url:
         url = (
             f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
@@ -157,6 +160,18 @@ def add_launch_buttons(
                 "text": "Deepnote",
                 "tooltip": "Launch on Deepnote",
                 "icon": "_static/images/logo_deepnote.svg",
+                "url": url,
+            }
+        )
+
+    if retrolite_url:
+        url = f"{retrolite_url}?path={path_rel_repo}"
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "RetroLite",
+                "tooltip": "Launch via RetroLite",
+                "icon": "_static/images/logo_jupyterlite.svg",
                 "url": url,
             }
         )
