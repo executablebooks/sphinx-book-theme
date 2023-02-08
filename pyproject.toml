@@ -23,7 +23,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=4,<7",
-  "pydata-sphinx-theme",
+  "pydata-sphinx-theme@git+https://github.com/pydata/pydata-sphinx-theme",
 ]
 
 license = { file = "LICENSE" }
@@ -68,7 +68,7 @@ doc = [
     "sphinxext-opengraph",
 ]
 test = [
-    "beautifulsoup4>=4.6.1,<5",
+    "beautifulsoup4",
     "coverage",
     "myst-nb",
     "pytest",

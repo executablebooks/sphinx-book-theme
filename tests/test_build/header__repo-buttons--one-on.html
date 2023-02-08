@@ -1,11 +1,11 @@
 <div class="header-article__right">
- <button class="btn btn-sm" onclick="toggleFullScreen()" title="Fullscreen mode">
+ <button class="btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
   <span class="btn__icon-container">
    <i class="fas fa-expand">
    </i>
   </span>
  </button>
- <a class="btn btn-sm" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/section1/ntbk.ipynb" target="_blank" title="Edit this page">
+ <a class="btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/executablebooks/sphinx-book-theme/edit/master/section1/ntbk.ipynb" target="_blank" title="Edit this page">
   <span class="btn__icon-container">
    <i class="fas fa-pencil-alt">
    </i>
@@ -18,7 +18,7 @@
   </button>
   <ul class="dropdown-menu">
    <li>
-    <a class="btn btn-sm dropdown-item" href="../_sources/section1/ntbk.ipynb" target="_blank" title="Download source file">
+    <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../_sources/section1/ntbk.ipynb" target="_blank" title="Download source file">
      <span class="btn__icon-container">
       <i class="fas fa-file">
       </i>
@@ -27,18 +27,36 @@
       .ipynb
      </span>
     </a>
-    <li>
-     <button class="btn btn-sm dropdown-item" onclick="window.print()" title="Print to PDF">
-      <span class="btn__icon-container">
-       <i class="fas fa-file-pdf">
-       </i>
-      </span>
-      <span class="btn__text-container">
-       .pdf
-      </span>
-     </button>
-    </li>
+   </li>
+   <li>
+    <button class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+     <span class="btn__icon-container">
+      <i class="fas fa-file-pdf">
+      </i>
+     </span>
+     <span class="btn__text-container">
+      .pdf
+     </span>
+    </button>
    </li>
   </ul>
  </div>
+ <button aria-label="light/dark" class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" data-bs-placement="bottom" data-bs-toggle="tooltip" title="light/dark">
+  <span class="theme-switch" data-mode="light">
+   <i class="fa-solid fa-sun">
+   </i>
+  </span>
+  <span class="theme-switch" data-mode="dark">
+   <i class="fa-solid fa-moon">
+   </i>
+  </span>
+  <span class="theme-switch" data-mode="auto">
+   <i class="fa-solid fa-circle-half-stroke">
+   </i>
+  </span>
+ </button>
+ <button aria-label="Search" class="btn btn-sm navbar-btn search-button search-button__button" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+  <i class="fa-solid fa-magnifying-glass">
+  </i>
+ </button>
 </div>

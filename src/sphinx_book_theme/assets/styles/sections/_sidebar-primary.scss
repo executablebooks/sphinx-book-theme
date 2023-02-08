@@ -9,9 +9,11 @@
 
   .navbar-brand {
     height: unset;
+    max-height: unset;
     // Auto-center the image and title and make items vertical
     flex-direction: column;
     justify-content: center;
+    gap: 0.25rem;
   }
 
   .bd-search input {
@@ -27,6 +29,19 @@
   // Remove the top border since there's no header items above
   .sidebar-start-items {
     border-top: none;
+  }
+
+  // Tighter spacing in the sidebar than the PST
+  .sidebar-start-items__item,
+  .sidebar-end-items__item {
+    padding: 0.25rem 0;
+  }
+
+  // Search button is hidden on mobile because it is in the article header
+  @media (max-width: $breakpoint-lg) {
+    .search-button {
+      display: none;
+    }
   }
 
   // On wide screens we have a smaller sidebar width than PST

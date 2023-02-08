@@ -121,9 +121,6 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
-    "logo": {
-        "text": html_title,
-    },
     "show_toc_level": 2,
     "announcement": (
         "⚠️The latest release refactored our HTML, "

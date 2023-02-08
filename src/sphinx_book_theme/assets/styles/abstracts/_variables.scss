@@ -12,8 +12,19 @@ $zindex-bottom: 1;
 $zindex-middle: 2;
 $zindex-top: 3;
 
+// Semantic Z-index from bootstrap. Copied here so we can re-use if needed.
+// ref: https://getbootstrap.com/docs/5.0/layout/z-index/
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-offcanvas: 1050;
+$zindex-modal: 1060;
+$zindex-popover: 1070;
+$zindex-tooltip: 1080;
+
 // Spacing
-$header-article-height: 3rem;
+$header-article-height: 2.5rem;
 $sidebar-primary-width-widescreen: 20%;
 $toc-width-mobile: 75%;
 

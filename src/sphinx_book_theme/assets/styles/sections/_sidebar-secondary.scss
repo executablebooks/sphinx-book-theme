@@ -27,6 +27,8 @@
         height: $header-article-height;
         display: flex;
         align-items: center;
+        margin: 0;
+        color: var(--pst-color-muted);
       }
 
       // The table of contents <ul> after the title div

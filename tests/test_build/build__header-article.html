@@ -1,7 +1,7 @@
 <div class="bd-header-article">
  <div class="col py-1 d-flex header-article-main">
   <div class="header-article__left">
-   <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar">
+   <label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
     <span class="fa-solid fa-bars">
     </span>
    </label>
@@ -14,7 +14,7 @@
     </button>
     <ul class="dropdown-menu">
      <li>
-      <a class="btn btn-sm dropdown-item" href="https://mybinder.org/v2/gh/executablebooks/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Binder">
+      <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/executablebooks/sphinx-book-theme/master?urlpath=lab/tree/TESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Binder">
        <span class="btn__icon-container">
         <img src="../_static/images/logo_binder.svg"/>
        </span>
@@ -22,51 +22,51 @@
         Binder
        </span>
       </a>
-      <li>
-       <a class="btn btn-sm dropdown-item" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/executablebooks/sphinx-book-theme&amp;urlpath=lab/tree/sphinx-book-theme/TESTPATH/section1/ntbk.ipynb&amp;branch=master" target="_blank" title="Launch on JupyterHub">
-        <span class="btn__icon-container">
-         <img src="../_static/images/logo_jupyterhub.svg"/>
-        </span>
-        <span class="btn__text-container">
-         JupyterHub
-        </span>
-       </a>
-       <li>
-        <a class="btn btn-sm dropdown-item" href="https://colab.research.google.com/github/executablebooks/sphinx-book-theme/blob/master/TESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Colab">
-         <span class="btn__icon-container">
-          <img src="../_static/images/logo_colab.png"/>
-         </span>
-         <span class="btn__text-container">
-          Colab
-         </span>
-        </a>
-        <li>
-         <a class="btn btn-sm dropdown-item" href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fexecutablebooks%2Fsphinx-book-theme%2Fblob%2Fmaster%2FTESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Deepnote">
-          <span class="btn__icon-container">
-           <img src="../_static/images/logo_deepnote.svg"/>
-          </span>
-          <span class="btn__text-container">
-           Deepnote
-          </span>
-         </a>
-         <li>
-          <button class="btn btn-sm btn-launch-thebe dropdown-item" onclick="initThebeSBT()" title="Launch Thebe">
-           <span class="btn__icon-container">
-            <i class="fas fa-play">
-            </i>
-           </span>
-           <span class="btn__text-container">
-            Live Code
-           </span>
-          </button>
-         </li>
-        </li>
-       </li>
-      </li>
+     </li>
+     <li>
+      <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/executablebooks/sphinx-book-theme&amp;urlpath=lab/tree/sphinx-book-theme/TESTPATH/section1/ntbk.ipynb&amp;branch=master" target="_blank" title="Launch on JupyterHub">
+       <span class="btn__icon-container">
+        <img src="../_static/images/logo_jupyterhub.svg"/>
+       </span>
+       <span class="btn__text-container">
+        JupyterHub
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/executablebooks/sphinx-book-theme/blob/master/TESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Colab">
+       <span class="btn__icon-container">
+        <img src="../_static/images/logo_colab.png"/>
+       </span>
+       <span class="btn__text-container">
+        Colab
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fexecutablebooks%2Fsphinx-book-theme%2Fblob%2Fmaster%2FTESTPATH/section1/ntbk.ipynb" target="_blank" title="Launch on Deepnote">
+       <span class="btn__icon-container">
+        <img src="../_static/images/logo_deepnote.svg"/>
+       </span>
+       <span class="btn__text-container">
+        Deepnote
+       </span>
+      </a>
+     </li>
+     <li>
+      <button class="btn btn-sm btn-launch-thebe dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="initThebeSBT()" title="Launch Thebe">
+       <span class="btn__icon-container">
+        <i class="fas fa-play">
+        </i>
+       </span>
+       <span class="btn__text-container">
+        Live Code
+       </span>
+      </button>
      </li>
     </ul>
    </div>
-   <button class="btn btn-sm" onclick="toggleFullScreen()" title="Fullscreen mode">
+   <button class="btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
     <span class="btn__icon-container">
      <i class="fas fa-expand">
      </i>
@@ -79,7 +79,7 @@
     </button>
     <ul class="dropdown-menu">
      <li>
-      <a class="btn btn-sm dropdown-item" href="../_sources/section1/ntbk.ipynb" target="_blank" title="Download source file">
+      <a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../_sources/section1/ntbk.ipynb" target="_blank" title="Download source file">
        <span class="btn__icon-container">
         <i class="fas fa-file">
         </i>
@@ -88,20 +88,38 @@
         .ipynb
        </span>
       </a>
-      <li>
-       <button class="btn btn-sm dropdown-item" onclick="window.print()" title="Print to PDF">
-        <span class="btn__icon-container">
-         <i class="fas fa-file-pdf">
-         </i>
-        </span>
-        <span class="btn__text-container">
-         .pdf
-        </span>
-       </button>
-      </li>
+     </li>
+     <li>
+      <button class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+       <span class="btn__icon-container">
+        <i class="fas fa-file-pdf">
+        </i>
+       </span>
+       <span class="btn__text-container">
+        .pdf
+       </span>
+      </button>
      </li>
     </ul>
    </div>
+   <button aria-label="light/dark" class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" data-bs-placement="bottom" data-bs-toggle="tooltip" title="light/dark">
+    <span class="theme-switch" data-mode="light">
+     <i class="fa-solid fa-sun">
+     </i>
+    </span>
+    <span class="theme-switch" data-mode="dark">
+     <i class="fa-solid fa-moon">
+     </i>
+    </span>
+    <span class="theme-switch" data-mode="auto">
+     <i class="fa-solid fa-circle-half-stroke">
+     </i>
+    </span>
+   </button>
+   <button aria-label="Search" class="btn btn-sm navbar-btn search-button search-button__button" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+    <i class="fa-solid fa-magnifying-glass">
+    </i>
+   </button>
   </div>
  </div>
 </div>

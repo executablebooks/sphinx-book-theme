@@ -43,7 +43,11 @@ label.sidebar-toggle.secondary-toggle {
   position: sticky;
   top: 0;
   padding: 0 1rem;
-  z-index: 1018;
+  @media (max-width: $breakpoint-md) {
+    // Give mobile view a bit more space for text
+    padding: 0 0.5rem;
+  }
+  z-index: $zindex-sticky;
 
   @include header-height-mobile;
 
@@ -78,7 +82,7 @@ div.header-article-main {
     font-size: 1.3rem;
     color: var(--pst-color-text-muted);
     border: none;
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
 
     // Hover / active behavior
     &.show,
@@ -101,14 +105,49 @@ div.header-article-main {
     }
   }
 
+  .theme-switch-button {
+    // Removing some special-casing that was needed in PST
+    margin: 0;
+
+    // Remove extra padding since it is already there between sidebar items
+    span,
+    i,
+    button {
+      padding: 0;
+    }
+
+    // No background on hover. Need important to over-ride the PST which uses it too.
+    span,
+    i {
+      transition: color $animation-time ease-out;
+    }
+    &:active,
+    &:hover {
+      background-color: unset !important;
+      span,
+      i {
+        color: var(--pst-color-text-base);
+      }
+    }
+  }
+
   // The menu that is normally hidden until you hover
   .dropdown-menu {
-    // Positioning and layout of dropdown items to be standardized
-    margin-top: 0px;
-    transform: translateX(-75%);
+    // Hidden unless we are hovering
     &:hover {
       display: block;
     }
+
+    // Positioning and layout of dropdown items to be standardized
+    margin-top: 0px;
+    transform: translateX(-75%);
+    @include pst-box-shadow;
+
+    // Color and shadowing
+    border-color: var(--pst-color-border);
+    background-color: var(--pst-color-background);
+    color: var(--pst-color-text-muted);
+
     .dropdown-item {
       display: inline-flex;
       align-items: center;
@@ -118,6 +157,7 @@ div.header-article-main {
       &:hover {
         text-decoration: none;
         background-color: initial;
+        color: var(--pst-color-text-base);
       }
 
       // Slightly smaller font for everything

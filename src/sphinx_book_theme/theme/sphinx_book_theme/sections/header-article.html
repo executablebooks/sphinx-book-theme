@@ -4,7 +4,7 @@
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
             <span class="fa-solid fa-bars"></span>
         </label>
     </div>
@@ -13,8 +13,12 @@
         {{ render_funcs[button.pop("type")](**button) }}
         {%- endfor -%}
 
+        {# Special theme buttons #}
+        {# TODO: At some point we should move these into a different space than the article header #}
+        {% include "components/theme-switcher.html" %}
+        {% include "components/search-button.html" %}
         {% if page_toc -%}
-        <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar">
+        <label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
             <span class="fa-solid fa-list"></span>
         </label>
         {%- endif %}
