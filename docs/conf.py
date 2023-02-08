@@ -133,6 +133,11 @@ html_theme_options = {
     # "show_navbar_depth": 2,
 }
 
+# sphinxext.opengraph
+ogp_social_cards = {
+    "image": "_static/logo-square.png",
+}
+
 # -- ABlog config -------------------------------------------------
 blog_path = "reference/blog"
 blog_post_pattern = "reference/blog/*.md"
