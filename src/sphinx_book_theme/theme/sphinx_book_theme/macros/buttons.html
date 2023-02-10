@@ -45,7 +45,10 @@
   </button>
   <ul class="dropdown-menu">
       {%- for button in buttons %}
-      <li>{{ render_funcs[button.pop("type")](classes="dropdown-item", tooltip_placement="left", **button) }}</li>
+      {% set btype = button.get("type") %}
+      {% set bopts = button.copy() %}
+      {% set _ = bopts.pop("type") %}
+      <li>{{ render_funcs[btype](classes="dropdown-item", tooltip_placement="left", **bopts) }}</li>
       {% endfor %}
   </ul>
 </div>

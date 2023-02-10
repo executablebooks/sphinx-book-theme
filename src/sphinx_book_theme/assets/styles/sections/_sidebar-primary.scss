@@ -37,15 +37,8 @@
     padding: 0.25rem 0;
   }
 
-  // Search button is hidden on mobile because it is in the article header
-  @media (max-width: $breakpoint-lg) {
-    .search-button {
-      display: none;
-    }
-  }
-
   // On wide screens we have a smaller sidebar width than PST
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     flex-basis: $sidebar-primary-width-widescreen;
   }
 }
@@ -53,7 +46,7 @@
 // Default visibility for left sidebar is the reverse of what it is on mobile.
 // It is shown by default, and hidden with a click.
 // Mobile behavior is defined in the pydata sphinx theme
-@media (min-width: $breakpoint-md) {
+@media (min-width: $breakpoint-lg) {
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$sidebar-primary-width-widescreen;
     visibility: hidden;

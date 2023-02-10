@@ -4,7 +4,7 @@
 
 .bd-sidebar-secondary {
   // Wide screen behavior
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     background: var(--pst-color-background);
     height: fit-content;
     transition: max-height 0.4s ease;
