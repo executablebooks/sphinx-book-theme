@@ -58,6 +58,11 @@ label.sidebar-toggle.secondary-toggle {
     box-shadow: 0 6px 6px -6px var(--pst-color-shadow);
   }
 
+  // Remove inner padding so that spacing of buttons is a bit tighter
+  .header-article__inner {
+    padding: 0;
+  }
+
   // Inner container with items in it
   .header-article-items {
     display: flex;

@@ -12,6 +12,10 @@
     display: none;
   }
 
+  .navbar-persistent--mobile {
+    display: none;
+  }
+
   // The start items of the navbar need a width defined because it isn't defined
   // in the PST
   #navbar-start > * {
