@@ -193,7 +193,7 @@ def test_header_repository_buttons(
     )
 
     header = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".header-article__right"
+        ".header-article-items__end"
     )
     file_regression.check(
         header[0].prettify(),
@@ -226,7 +226,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
         },
     ).build(assert_pass=True)
     header = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".header-article__right"
+        ".header-article-items__end"
     )
     # The Binder link should point to `foo`, as should the `edit` button
     file_regression.check(
