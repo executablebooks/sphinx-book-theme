@@ -131,6 +131,9 @@ html_theme_options = {
     # "home_page_in_toc": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "show_navbar_depth": 2,
+    # "navbar_start": ["header-test.html"],
+    # "navbar_center": ["header-test.html"],
+    # "navbar_end": ["header-test.html"],
 }
 
 # sphinxext.opengraph

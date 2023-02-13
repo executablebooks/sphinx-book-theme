@@ -3,6 +3,9 @@
 *********************************************/
 
 .bd-sidebar-primary {
+  // So that it sticks to the top of the page instead of the header height
+  top: 0;
+
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
   font-size: $sbt-font-size-small-1;

@@ -3,6 +3,9 @@
 *********************************************/
 
 .bd-sidebar-secondary {
+  // So that it sticks to the top of the page instead of the header height
+  top: 0;
+
   // Wide screen behavior
   @media (min-width: $breakpoint-lg) {
     background: var(--pst-color-background);

@@ -42,7 +42,6 @@ $sbt-font-size-small-1: 87.5%;
 html {
   // Over-ride the pydata theme so that readers can use their system base
   --pst-font-size-base: none;
-  --pst-header-height: 0px;
 }
 
 // Overrides for pydata sphinx theme.

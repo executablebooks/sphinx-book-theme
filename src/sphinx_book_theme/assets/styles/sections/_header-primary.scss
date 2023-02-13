@@ -1,0 +1,21 @@
+.bd-header {
+  // Turn off sticky positioning so that it scrolls
+  position: inherit;
+
+  // Turn these off because we'll show it in the article header
+  // The primary sidebar toggle
+  label.sidebar-toggle {
+    display: none;
+  }
+  // This contains the search button that shows up on mobile
+  .navbar-header-items .navbar-end-item.navbar-persistent--container {
+    display: none;
+  }
+
+  // The start items of the navbar need a width defined because it isn't defined
+  // in the PST
+  #navbar-start > * {
+    height: var(--pst-header-height);
+    min-height: var(--pst-header-height);
+  }
+}

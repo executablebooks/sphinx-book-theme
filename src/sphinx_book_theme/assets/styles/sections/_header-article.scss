@@ -36,21 +36,6 @@ label.sidebar-toggle.secondary-toggle {
 
 // Wrapper container
 .bd-header-article {
-  // TEMPORARY REMOVE WHEN WE RELEASE A NEW PYDATA THEME
-  .header-article-items {
-    display: flex;
-    .header-article-items__start,
-    .header-article-items__end {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .header-article-items__end {
-      margin-left: auto;
-    }
-  }
-  // ENDTEPMORARY
-
   display: flex;
   align-items: center;
   position: sticky;
