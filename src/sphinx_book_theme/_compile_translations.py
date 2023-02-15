@@ -1,8 +1,6 @@
 """Generate compiled static translation assets for Sphinx."""
 import json
-import os
 from pathlib import Path
-import subprocess
 
 # In case the smodin.io code is different from the Sphinx code
 RENAME_LANGUAGE_CODES = {
@@ -59,19 +57,20 @@ msgstr ""
                 f.write(f'msgid "{english}"\n')
                 text = item["text"].replace('"', '\\"')
                 f.write(f'msgstr "{text}"\n')
-    print("is it coming here?")
-    print(out_folder)
     # compile mo
     for path in (out_folder / "locales").glob("**/booktheme.po"):
-        print(path)
-        subprocess.check_call(
-            [
-                "msgfmt",
-                os.path.abspath(path),
-                "-o",
-                os.path.abspath(path.parent / "booktheme.mo"),
-            ]
-        )
+        if path.exists():
+            file = path.parent / "booktheme.mo"
+            with file.open("a") as f:
+                f.write("This is something")
+        # subprocess.check_call(
+        #     [
+        #         "msgfmt",
+        #         os.path.abspath(path),
+        #         "-o",
+        #         os.path.abspath(path.parent / "booktheme.mo"),
+        #     ]
+        # )
 
 
 if __name__ == "__main__":
