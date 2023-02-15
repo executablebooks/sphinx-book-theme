@@ -59,7 +59,8 @@ msgstr ""
                 f.write(f'msgid "{english}"\n')
                 text = item["text"].replace('"', '\\"')
                 f.write(f'msgstr "{text}"\n')
-
+    print("is it coming here?")
+    print(out_folder)
     # compile mo
     for path in (out_folder / "locales").glob("**/booktheme.po"):
         print(path)
