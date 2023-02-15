@@ -24,6 +24,7 @@ jobs:
 
       - name: Build package
         run: |
+          apt-get install gettext
           python -m pip install -U pip build
           python -m build
       - name: Archive production artifacts
