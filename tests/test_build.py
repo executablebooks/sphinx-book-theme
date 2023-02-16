@@ -141,7 +141,6 @@ def test_build_book(sphinx_build_factory, file_regression):
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
-
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.home_page_in_toc": True}
     ).build(
