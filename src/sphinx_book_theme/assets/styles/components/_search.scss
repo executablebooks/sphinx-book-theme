@@ -1,15 +1,15 @@
+// Clean up the search page so that it has less unnecessary text
 .bd-search-container {
   margin: 2em;
-  // Remove the search field on the search page since we have one in the sidebar
-  h1:first-child {
-    display: none;
-  }
+
   #search-results {
     h2:first-child {
       display: none;
     }
   }
-  .bd-search {
-    display: none !important;
-  }
+}
+
+// Make the search buttons smaller so that it is centered properly
+.search-button i {
+  font-size: 1.1rem;
 }

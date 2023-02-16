@@ -1,4 +1,4 @@
-# Customize the secondary sidebar
+# Secondary sidebar and table of contents
 
 The secondary sidebar contains information about the current page.
 It begins at the top of the page (in the header), and extends downwards (by default, from the right side of the page).

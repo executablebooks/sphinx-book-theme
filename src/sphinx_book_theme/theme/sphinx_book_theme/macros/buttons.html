@@ -14,20 +14,22 @@
 {% endmacro %}
 
 
-{% macro render_link_button(url, tooltip=None, icon=None, text=None, label=None, classes="") -%}
+{% macro render_link_button(url, tooltip=None, tooltip_placement="bottom", icon=None, text=None, label=None, classes="") -%}
 <a href="{{ url }}" target="_blank"
    class="btn btn-sm{% if label %} btn-{{ label }}{% endif %}{% if classes %} {{ classes }}{% endif %}"
    {% if tooltip %}title="{{ translate(tooltip) }}"{% endif %}
+   data-bs-placement="{{ tooltip_placement }}" data-bs-toggle="tooltip"
 >
   {{ render_inner_html(icon, text) }}
 </a>
 {% endmacro %}
 
 
-{% macro render_js_button(javascript, tooltip=None, icon=None, text=None, label=None, classes="") %}
+{% macro render_js_button(javascript, tooltip=None, tooltip_placement="bottom", icon=None, text=None, label=None, classes="") %}
 <button onclick="{{ javascript }}"
   class="btn btn-sm{% if label %} btn-{{ label }}{% endif %}{% if classes %} {{ classes }}{% endif %}"
   {% if tooltip %}title="{{ translate(tooltip) }}"{% endif %}
+  data-bs-placement="{{ tooltip_placement }}" data-bs-toggle="tooltip"
 >
   {{ render_inner_html(icon, text) }}
 </button>
@@ -43,7 +45,10 @@
   </button>
   <ul class="dropdown-menu">
       {%- for button in buttons %}
-      <li>{{ render_funcs[button.pop("type")](classes="dropdown-item", **button) }}</a>
+      {% set btype = button.get("type") %}
+      {% set bopts = button.copy() %}
+      {% set _ = bopts.pop("type") %}
+      <li>{{ render_funcs[btype](classes="dropdown-item", tooltip_placement="left", **bopts) }}</li>
       {% endfor %}
   </ul>
 </div>

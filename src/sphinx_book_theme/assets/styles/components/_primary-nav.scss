@@ -1,0 +1,11 @@
+/**
+ * Primary navigation links in the sidebar
+ */
+
+// UPSTREAM
+.bd-sidenav {
+  // Prevent really long words from spilling out of sidebar
+  li {
+    word-wrap: break-word;
+  }
+}

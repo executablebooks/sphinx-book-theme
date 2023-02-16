@@ -27,6 +27,8 @@
 @import "sections/footer-article";
 
 // Re-usable components across the theme
+@import "components/logo";
+@import "components/primary-nav";
 @import "components/search";
 
 // Content blocks in standard Sphinx

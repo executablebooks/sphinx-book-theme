@@ -168,16 +168,6 @@ function addNoPrint() {
 }
 
 /**
- * Set Mode of the theme
- * Remove this function once all modes are supported.
- */
-
-function setMode() {
-  document.documentElement.dataset.mode = "light";
-  document.documentElement.dataset.theme = "light";
-}
-
-/**
  * Set up callback functions for UI click actions
  */
 window.initThebeSBT = initThebeSBT;
