@@ -1,5 +1,5 @@
 (customize:source-files)=
-# Add buttons to link to your source
+# Buttons that link to source files
 
 There are a collection of buttons that you can use to link back to your source
 repository. This lets users browse the repository, or take actions like suggest

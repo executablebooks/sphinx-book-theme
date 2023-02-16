@@ -25,7 +25,10 @@ html {
   display: none;
 }
 
-// Print-specific utility classes
+/**
+ * Printing behavior
+ */
+// Only display upon printing
 .onlyprint {
   display: none;
 
@@ -34,6 +37,7 @@ html {
   }
 }
 
+// Prevent an item from being printed
 .noprint {
   @media print {
     display: none !important;

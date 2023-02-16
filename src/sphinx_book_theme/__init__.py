@@ -117,6 +117,8 @@ def update_mode_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
     theme_options = app.env.config.html_theme_options
     if theme_options.get("launch_buttons", {}).get("thebe") is True:
+        # In case somebody specifies they want thebe in a launch button
+        # but has not activated the sphinx_thebe extension.
         if not hasattr(app.env.config, "thebe_config"):
             SPHINX_LOGGER.warning(
                 (
@@ -145,12 +147,6 @@ def update_mode_thebe_config(app):
         thebe_config["repository_branch"] = branch
 
     app.env.config.thebe_config = thebe_config
-
-    # setting default mode to light for now.
-    # TODO: provide a button, and add css for dark theme.
-    # sphinx-build command does not call config-inited,
-    # so setting this in builder-inited.
-    app.config.html_context["default_mode"] = "light"
 
 
 def check_deprecation_keys(app):

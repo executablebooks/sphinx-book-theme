@@ -1,4 +1,4 @@
-# Customize the content footer
+# Content footer
 
 There is a content footer that spans the width of the page, and is visibile when you scroll to the bottom of the content.
 

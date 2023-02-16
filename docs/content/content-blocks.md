@@ -158,7 +158,7 @@ Here is a figure with a caption to the right.
 ::::{example}
 :no-container:
 
-```{figure} images/cool.jpg
+```{figure} ../images/cool.jpg
 ---
 width: 60%
 figclass: margin-caption
@@ -199,7 +199,7 @@ some vertical space to see better.
 :no-container:
 :reverse:
 
-```{figure} images/cool.jpg
+```{figure} ../images/cool.jpg
 ---
 figclass: margin
 alt: My figure text
@@ -237,7 +237,7 @@ print("here is some python")
 ````{margin} **Notes in margins**
 ```{note}
 Wow, a note with an image in a margin!
-![](images/cool.jpg)
+![](../images/cool.jpg)
 ```
 ````
 `````
@@ -256,7 +256,7 @@ To add content sidebars, use this syntax:
 ```{note}
 Here is my sidebar content, it is pretty cool!
 ```
-![](images/cool.jpg)
+![](../images/cool.jpg)
 ````
 `````
 

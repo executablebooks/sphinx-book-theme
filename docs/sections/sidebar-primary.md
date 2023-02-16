@@ -1,4 +1,4 @@
-# Customize the primary sidebar
+# Primary sidebar and navigation
 
 The primary sidebar generally contains the site navigation and logo.
 By default it is on the left side of the site.
@@ -37,28 +37,10 @@ By default, this theme comes with these three theme-specific sidebar elements en
 - `search-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
 - `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
 
-
 ## Add a header to your Table of Contents
 
 If you'd like to add a header above a section of TOC links, use `:caption: My header text`
 in your `toctree` directive for that section.
-
-(sidebar-primary:logo)=
-## Customize the logo, title, and favicon
-
-You can customize the logo, title, and favicon of your site with the following Sphinx configuration in `conf.py`:
-
-```python
-html_title = "Your title"
-html_logo = "path/to/logo.png"
-html_favicon = "path/to/favicon.ico"
-```
-
-These will be placed in the top-left of your page.
-
-Alternatively you can use the `logo` field in `html_theme_options` to have more control over your logo.
-
-For more details, see the {external:doc}`PyData Sphinx Theme <user_guide/branding>`.
 
 
 (sidebar-primary:home-page)=

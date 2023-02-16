@@ -82,7 +82,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     for filename, kernel in kernels_expected.items():
         ntbk_html = sphinx_build.html_tree("section1", filename)
         thebe_config = ntbk_html.find("script", attrs={"type": "text/x-thebe-config"})
-        kernel_name = 'kernelName: "{}",'.format(kernel)
+        kernel_name = 'name: "{}",'.format(kernel)
         if kernel_name not in thebe_config.prettify():
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 
@@ -141,7 +141,6 @@ def test_build_book(sphinx_build_factory, file_regression):
 
 
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
-
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.home_page_in_toc": True}
     ).build(
@@ -193,7 +192,7 @@ def test_header_repository_buttons(
     )
 
     header = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".header-article__right"
+        ".header-article-items__end"
     )
     file_regression.check(
         header[0].prettify(),
@@ -226,7 +225,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
         },
     ).build(assert_pass=True)
     header = sphinx_build.html_tree("section1", "ntbk.html").select(
-        ".header-article__right"
+        ".header-article-items__end"
     )
     # The Binder link should point to `foo`, as should the `edit` button
     file_regression.check(
