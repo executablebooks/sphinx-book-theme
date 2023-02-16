@@ -61,20 +61,14 @@ msgstr ""
                 f.write(f'msgstr "{text}"\n')
     # compile mo
     for path in (out_folder / "locales").glob("**/booktheme.po"):
-        if path.exists():
-            file = path.parent / "booktheme.mo"
-            with file.open("a") as f:
-                f.write("This is something n")
-            subprocess.check_call(
-                [
-                    "msgfmt",
-                    os.path.abspath(path),
-                    "-o",
-                    os.path.abspath(path.parent / "booktheme.mo"),
-                ]
-            )
-            # with file.open("a") as f:
-            #     f.write(f'returncode="{returncode}"\n')
+        subprocess.check_call(
+            [
+                "msgfmt",
+                os.path.abspath(path),
+                "-o",
+                os.path.abspath(path.parent / "booktheme.mo"),
+            ]
+        )
 
 
 if __name__ == "__main__":
