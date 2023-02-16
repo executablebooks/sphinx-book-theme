@@ -1,8 +1,6 @@
 """Generate compiled static translation assets for Sphinx."""
 import json
 from pathlib import Path
-import os
-import subprocess
 
 # In case the smodin.io code is different from the Sphinx code
 RENAME_LANGUAGE_CODES = {
@@ -65,16 +63,16 @@ msgstr ""
             file = path.parent / "booktheme.mo"
             with file.open("a") as f:
                 f.write("This is something n")
-            returncode = subprocess.check_call(
-                [
-                    "msgfmt",
-                    os.path.abspath(path),
-                    "-o",
-                    os.path.abspath(path.parent / "booktheme.mo"),
-                ]
-            )
-            with file.open("a") as f:
-                f.write(f'returncode="{returncode}"\n')
+            # returncode = subprocess.check_call(
+            #     [
+            #         "msgfmt",
+            #         os.path.abspath(path),
+            #         "-o",
+            #         os.path.abspath(path.parent / "booktheme.mo"),
+            #     ]
+            # )
+            # with file.open("a") as f:
+            #     f.write(f'returncode="{returncode}"\n')
 
 
 if __name__ == "__main__":
