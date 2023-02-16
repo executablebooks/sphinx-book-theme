@@ -13,3 +13,19 @@
 .search-button i {
   font-size: 1.1rem;
 }
+
+// The "clear search results" button
+// Make it line up with our content better
+#searchbox {
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  p.highlight-link a {
+    font-size: 1rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
