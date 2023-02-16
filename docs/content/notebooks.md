@@ -22,7 +22,7 @@ This page demonstrates some extra functionality that works with this theme.
 
 As it is markdown, you can embed images, HTML, etc into your posts!
 
-![](./images/cool.jpg)
+![](../images/cool.jpg)
 
 You an also $add_{math}$ and
 

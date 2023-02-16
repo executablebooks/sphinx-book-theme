@@ -71,6 +71,12 @@ label.sidebar-toggle.secondary-toggle {
     width: 100%;
   }
 
+  // Contains the individual item components so we want it centered
+  .header-article-item {
+    display: flex;
+    align-items: center;
+  }
+
   /**
   * Buttons in the header
   */

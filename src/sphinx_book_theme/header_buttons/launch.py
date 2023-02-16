@@ -4,11 +4,15 @@ from urllib.parse import urlencode
 
 from docutils.nodes import document
 from sphinx.application import Sphinx
+from sphinx.locale import get_translation
 from sphinx.util import logging
 from shutil import copy2
 
 
 SPHINX_LOGGER = logging.getLogger(__name__)
+
+MESSAGE_CATALOG_NAME = "booktheme"
+translation = get_translation(MESSAGE_CATALOG_NAME)
 
 
 def add_launch_buttons(
@@ -112,7 +116,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "Binder",
-                "tooltip": "Launch on Binder",
+                "tooltip": translation("Launch on") + "Binder",
                 "icon": "_static/images/logo_binder.svg",
                 "url": url,
             }
@@ -130,7 +134,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "JupyterHub",
-                "tooltip": "Launch on JupyterHub",
+                "tooltip": translation("Launch on") + "JupyterHub",
                 "icon": "_static/images/logo_jupyterhub.svg",
                 "url": url,
             }
@@ -142,7 +146,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "Colab",
-                "tooltip": "Launch on Colab",
+                "tooltip": translation("Launch on") + "Colab",
                 "icon": "_static/images/logo_colab.png",
                 "url": url,
             }
@@ -155,7 +159,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "Deepnote",
-                "tooltip": "Launch on Deepnote",
+                "tooltip": translation("Launch on") + "Deepnote",
                 "icon": "_static/images/logo_deepnote.svg",
                 "url": url,
             }
@@ -166,8 +170,8 @@ def add_launch_buttons(
         launch_buttons_list.append(
             {
                 "type": "javascript",
-                "text": "Live Code",
-                "tooltip": "Launch Thebe",
+                "text": translation("Live Code"),
+                "tooltip": translation("Launch Thebe"),
                 "javascript": "initThebeSBT()",
                 "icon": "fas fa-play",
                 "label": "launch-thebe",
@@ -179,7 +183,7 @@ def add_launch_buttons(
     header_buttons.append(
         {
             "type": "group",
-            "tooltip": "Launch interactive content",
+            "tooltip": translation("Launch interactive content"),
             "icon": "fas fa-rocket",
             "buttons": launch_buttons_list,
             "label": "launch-buttons",

@@ -126,14 +126,20 @@ html_theme_options = {
         "⚠️The latest release refactored our HTML, "
         "so double-check your custom CSS rules!⚠️"
     ),
+    "logo": {
+        "image_dark": "_static/logo-wide-dark.svg",
+    }
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "show_navbar_depth": 2,
-    # "navbar_start": ["header-test.html"],
-    # "navbar_center": ["header-test.html"],
-    # "navbar_end": ["header-test.html"],
+    # Testing layout areas
+    # "navbar_start": ["test.html"],
+    # "navbar_center": ["test.html"],
+    # "navbar_end": ["test.html"],
+    # "footer_start": ["test.html"],
+    # "footer_end": ["test.html"]
 }
 
 # sphinxext.opengraph

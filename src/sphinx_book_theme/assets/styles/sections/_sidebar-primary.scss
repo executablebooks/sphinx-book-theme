@@ -9,29 +9,17 @@
 
   transition: margin-left $animation-time ease 0s,
     opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-  font-size: $sbt-font-size-small-1;
 
-  .navbar-brand {
-    height: unset;
-    max-height: unset;
-    // Auto-center the image and title and make items vertical
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-  }
+  // To prevent a phantom gap when there's no header
+  gap: 0;
 
   .bd-search input {
     // Slightly reduce padding because it's a bit too big on this theme
     padding-left: 2rem;
   }
 
-  // Remove the header items that pop into the sidebar in the pydata theme
-  .sidebar-header-items {
-    display: none;
-  }
-
-  // Remove the top border since there's no header items above
-  .sidebar-start-items {
+  // Remove the top border since there's often no header items above
+  .sidebar-primary-items__start {
     border-top: none;
   }
 

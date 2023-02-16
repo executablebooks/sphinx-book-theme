@@ -30,7 +30,7 @@ A Sphinx theme with a clean design, support for interactive content, and a moder
 [Visual classes designed for Jupyter Notebooks](reference/notebooks)
 : Cell inputs, outputs, and interactive functionality are all supported.
 
-[Launch buttons for online interactivity](launch)
+[Launch buttons for online interactivity](content/launch)
 : For pages that are built with computational material, connect your site to an online BinderHub for interactive content.
 
 [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
@@ -52,19 +52,20 @@ The following topic areas will help you understand and use the theme.
 :caption: Topic Areas
 
 tutorials/get-started
-customize/index
-content-blocks
-notebooks
-launch
+content/index
+sections/index
+components/index
+reference
 contributing/index
+changelog
 ```
 
-# Reference pages
+# Example pages
 
-Reference pages demonstrate the visual look of this theme.
+Examples pages demonstrate the visual look of this theme.
 
 ```{toctree}
-:caption: Reference
+:caption: Example pages
 :maxdepth: 2
 
 reference/kitchen-sink/index
@@ -75,7 +76,6 @@ reference/thebe
 reference/blog
 reference/api-numpy
 reference/comments
-changelog
 ```
 
 # Inspiration

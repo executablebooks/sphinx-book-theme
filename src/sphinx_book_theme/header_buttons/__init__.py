@@ -1,6 +1,10 @@
 """Generate metadata for header buttons."""
 
 from sphinx.errors import SphinxError
+from sphinx.locale import get_translation
+
+MESSAGE_CATALOG_NAME = "booktheme"
+translation = get_translation(MESSAGE_CATALOG_NAME)
 
 
 def _as_bool(var):
@@ -38,7 +42,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
             {
                 "type": "javascript",
                 "javascript": "toggleFullScreen()",
-                "tooltip": "Fullscreen mode",
+                "tooltip": translation("Fullscreen mode"),
                 "icon": "fas fa-expand",
             }
         )
@@ -67,7 +71,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 {
                     "type": "link",
                     "url": repo_url,
-                    "tooltip": "Source repository",
+                    "tooltip": translation("Source repository"),
                     "text": "repository",
                     "icon": "fab fa-github",
                 }
@@ -78,8 +82,8 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 {
                     "type": "link",
                     "url": f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
-                    "text": "open issue",
-                    "tooltip": "Open an issue",
+                    "text": translation("open issue"),
+                    "tooltip": translation("Open an issue"),
                     "icon": "fas fa-lightbulb",
                 }
             )
@@ -101,12 +105,13 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 }
             )
 
+            provider, url = context["get_edit_provider_and_url"]()
             repo_buttons.append(
                 {
                     "type": "link",
-                    "url": context["get_edit_url"](),
-                    "tooltip": "Edit this page",
-                    "text": "suggest edit",
+                    "url": url,
+                    "tooltip": translation("Edit on") + f"{provider}",
+                    "text": translation("suggest edit"),
                     "icon": "fas fa-pencil-alt",
                 }
             )
@@ -116,7 +121,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
             header_buttons.append(
                 {
                     "type": "group",
-                    "tooltip": "Source repositories",
+                    "tooltip": translation("Source repositories"),
                     "icon": "fab fa-github",
                     "buttons": repo_buttons,
                     "label": "repository-buttons",
@@ -139,7 +144,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "url": f'{pathto("_sources", 1)}/{context.get("ipynb_source")}',
                     "text": ".ipynb",
                     "icon": "fas fa-code",
-                    "tooltip": "Download notebook file",
+                    "tooltip": translation("Download notebook file"),
                 }
             )
 
@@ -148,7 +153,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "type": "link",
                 "url": f'{pathto("_sources", 1)}/{context["sourcename"]}',
                 "text": suff,
-                "tooltip": "Download source file",
+                "tooltip": translation("Download source file"),
                 "icon": "fas fa-file",
             }
         )
@@ -157,7 +162,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "type": "javascript",
                 "javascript": "window.print()",
                 "text": ".pdf",
-                "tooltip": "Print to PDF",
+                "tooltip": translation("Print to PDF"),
                 "icon": "fas fa-file-pdf",
             }
         )
@@ -166,7 +171,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         header_buttons.append(
             {
                 "type": "group",
-                "tooltip": "Download this page",
+                "tooltip": translation("Download this page"),
                 "icon": "fas fa-download",
                 "buttons": download_buttons,
                 "label": "download-buttons",

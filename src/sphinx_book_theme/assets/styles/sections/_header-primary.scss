@@ -7,11 +7,11 @@
   label.sidebar-toggle {
     display: none;
   }
+
   // This contains the search button that shows up on mobile
-  .navbar-header-items .navbar-end-item.navbar-persistent--container {
+  .navbar-header-items .navbar-persistent--container {
     display: none;
   }
-
   .navbar-persistent--mobile {
     display: none;
   }
@@ -21,5 +21,15 @@
   #navbar-start > * {
     height: var(--pst-header-height);
     min-height: var(--pst-header-height);
+  }
+
+  // UPSTREAM to fix this bug
+  // These rules are applied too-selectively in the PST so they don't apply
+  // to the `navbar_start` items. This just applies the same rule to *all* items.
+  .navbar-item {
+    align-items: center;
+    display: flex;
+    height: var(--pst-header-height);
+    max-height: var(--pst-header-height);
   }
 }
