@@ -16,16 +16,21 @@
 
 // The "clear search results" button
 // Make it line up with our content better
-#searchbox {
+div#searchbox {
   padding-right: 2rem;
   padding-left: 2rem;
-
-  p.highlight-link a {
-    font-size: 1rem;
-  }
-
   @media (max-width: $breakpoint-md) {
     padding-right: 1rem;
     padding-left: 1rem;
+  }
+
+  p.highlight-link {
+    // Remove the extra margin that is added
+    @media (min-width: $breakpoint-md) {
+      margin-left: 0;
+      a {
+        font-size: 1rem;
+      }
+    }
   }
 }
