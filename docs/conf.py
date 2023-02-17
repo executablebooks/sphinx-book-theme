@@ -182,8 +182,11 @@ if not path_content_file.exists():
             ix_title + 1,
             "\nThis is a collection of content blocks with special support from this theme's parent theme, [the PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/theme-elements.html)\n",  # noqa
         )  # noqa
+        content = "\n".join(content)
+        # Replace a relative link in the pydata docs w/ the respective one here
+        content = content.replace("../examples/pydata.md", "notebooks.md")
         # Write to disk in a location that will be ignored by git
-        path_content_file.write_text("\n".join(content))
+        path_content_file.write_text(content)
 
 
 def setup(app):
