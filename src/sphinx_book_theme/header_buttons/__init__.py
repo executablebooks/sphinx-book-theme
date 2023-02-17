@@ -136,7 +136,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
     if _as_bool(opts.get("use_download_button", True)) and suff:
         download_buttons = []
 
-        # Create the dropdown list of buttons
+        # An ipynb file if it was created as part of the build (e.g. by MyST-NB)
         if context.get("ipynb_source"):
             download_buttons.append(
                 {
@@ -148,6 +148,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 }
             )
 
+        # Download the source file
         download_buttons.append(
             {
                 "type": "link",
@@ -177,3 +178,17 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "label": "download-buttons",
             }
         )
+
+
+def update_sourcename(app):
+    # Download the source file
+    # Sphinx defaults to .txt for html_source_suffix even though the pages almost
+    # always are stored in their native suffix (.rst, .md, or .ipynb). So unless
+    # the user manually specifies an html_source_suffix, default to an empty string.
+    # _raw_config is the configuration as provided by the user.
+    # If a key isn't in it, then the user didn't provide it
+    config = app.config
+    if not any(
+        "html_sourcelink_suffix" in ii for ii in [config._raw_config, config.overrides]
+    ):
+        app.config.html_sourcelink_suffix = ""

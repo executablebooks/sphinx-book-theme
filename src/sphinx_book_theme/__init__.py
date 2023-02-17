@@ -11,7 +11,7 @@ from sphinx.locale import get_translation
 from sphinx.util import logging
 
 from .nodes import SideNoteNode
-from .header_buttons import prep_header_buttons, add_header_buttons
+from .header_buttons import prep_header_buttons, add_header_buttons, update_sourcename
 from .header_buttons.launch import add_launch_buttons
 from ._transforms import HandleFootnoteTransform
 
@@ -226,6 +226,7 @@ def setup(app: Sphinx):
     # Events
     app.connect("builder-inited", update_mode_thebe_config)
     app.connect("builder-inited", check_deprecation_keys)
+    app.connect("builder-inited", update_sourcename)
     app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
