@@ -4,7 +4,7 @@ from urllib.request import urlopen
 from pathlib import Path
 
 project = "Sphinx Book Theme"
-copyright = "2020"
+copyright = "2023"
 author = "the Executable Book Project"
 # language = "fr"  # For testing language translations
 
