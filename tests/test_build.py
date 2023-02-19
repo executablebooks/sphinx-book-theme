@@ -299,7 +299,7 @@ def test_header_fullscreen_button_off(sphinx_build_factory, file_regression):
 
 
 def test_right_sidebar_title(sphinx_build_factory, file_regression):
-    confoverrides = {"html_theme_options.toc_title": "My Contents"}
+    confoverrides = {"html_theme_options.toc_title": "My test content title"}
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
     )

@@ -12,7 +12,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
     formats = ("html",)
 
     def run(self, **kwargs: Any) -> None:
-        theme_options = self.env.config.html_theme_options
+        theme_options = self.app.builder.theme_options
         if theme_options.get("use_sidenotes", False) is False:
             return None
         # Cycle through footnote references, and move their content next to the

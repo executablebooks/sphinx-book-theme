@@ -13,3 +13,24 @@
 .search-button i {
   font-size: 1.1rem;
 }
+
+// The "clear search results" button
+// Make it line up with our content better
+div#searchbox {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  @media (max-width: $breakpoint-md) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  p.highlight-link {
+    // Remove the extra margin that is added
+    @media (min-width: $breakpoint-md) {
+      margin-left: 0;
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}

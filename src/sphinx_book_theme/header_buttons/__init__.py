@@ -22,6 +22,12 @@ def _as_bool(var):
         return False
 
 
+def _config_provided_by_user(app, key):
+    """Check if the user has manually provided the config."""
+    # TODO: Remove this when we bump pydata to the latest version and import from there.
+    return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
+
+
 def prep_header_buttons(app, pagename, templatename, context, doctree):
     """Prep an empty list that we'll populate with header buttons."""
     context["header_buttons"] = []
@@ -29,7 +35,7 @@ def prep_header_buttons(app, pagename, templatename, context, doctree):
 
 def add_header_buttons(app, pagename, templatename, context, doctree):
     """Populate the context with header button metadata we'll insert in templates."""
-    opts = app.config.html_theme_options
+    opts = app.builder.theme_options
     pathto = context["pathto"]
     header_buttons = context["header_buttons"]
 
@@ -136,7 +142,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
     if _as_bool(opts.get("use_download_button", True)) and suff:
         download_buttons = []
 
-        # Create the dropdown list of buttons
+        # An ipynb file if it was created as part of the build (e.g. by MyST-NB)
         if context.get("ipynb_source"):
             download_buttons.append(
                 {
@@ -148,6 +154,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 }
             )
 
+        # Download the source file
         download_buttons.append(
             {
                 "type": "link",
@@ -177,3 +184,14 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "label": "download-buttons",
             }
         )
+
+
+def update_sourcename(app):
+    # Download the source file
+    # Sphinx defaults to .txt for html_source_suffix even though the pages almost
+    # always are stored in their native suffix (.rst, .md, or .ipynb). So unless
+    # the user manually specifies an html_source_suffix, default to an empty string.
+    # _raw_config is the configuration as provided by the user.
+    # If a key isn't in it, then the user didn't provide it
+    if not _config_provided_by_user(app, "html_sourcelink_suffix"):
+        app.config.html_sourcelink_suffix = ""
