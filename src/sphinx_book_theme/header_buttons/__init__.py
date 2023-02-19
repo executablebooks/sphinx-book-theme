@@ -22,6 +22,12 @@ def _as_bool(var):
         return False
 
 
+def _config_provided_by_user(app, key):
+    """Check if the user has manually provided the config."""
+    # TODO: Remove this when we bump pydata to the latest version and import from there.
+    return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
+
+
 def prep_header_buttons(app, pagename, templatename, context, doctree):
     """Prep an empty list that we'll populate with header buttons."""
     context["header_buttons"] = []
@@ -29,7 +35,7 @@ def prep_header_buttons(app, pagename, templatename, context, doctree):
 
 def add_header_buttons(app, pagename, templatename, context, doctree):
     """Populate the context with header button metadata we'll insert in templates."""
-    opts = app.config.html_theme_options
+    opts = app.builder.theme_options
     pathto = context["pathto"]
     header_buttons = context["header_buttons"]
 
@@ -187,8 +193,5 @@ def update_sourcename(app):
     # the user manually specifies an html_source_suffix, default to an empty string.
     # _raw_config is the configuration as provided by the user.
     # If a key isn't in it, then the user didn't provide it
-    config = app.config
-    if not any(
-        "html_sourcelink_suffix" in ii for ii in [config._raw_config, config.overrides]
-    ):
+    if not _config_provided_by_user(app, "html_sourcelink_suffix"):
         app.config.html_sourcelink_suffix = ""
