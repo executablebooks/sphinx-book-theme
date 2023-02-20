@@ -31,7 +31,7 @@ $margin-offset: -$margin-width-relative-to-content;
   font-size: 0.9em;
   margin-left: 0.5rem;
 
-  // This is the wide-screen behavior
+  // Wide screens and printing should force margin behavior
   @media (min-width: $breakpoint-lg), print {
     width: $margin-width-width-gutter;
     margin: 0 $margin-offset 0 0;
