@@ -7,8 +7,15 @@
   h2,
   h3,
   h4,
-  h5 {
-    color: var(--pst-color-text);
+  h5,
+  p.caption {
+    color: var(--pst-color-muted);
+  }
+
+  // Top two headers are slightly bolder
+  h1,
+  h2 {
+    font-weight: 500;
   }
 }
 
