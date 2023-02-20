@@ -129,6 +129,7 @@ html_theme_options = {
     ),
     "logo": {
         "image_dark": "_static/logo-wide-dark.svg",
+        # "text": html_title,  # Uncomment to try text with logo
     },
     # For testing
     # "use_fullscreen_button": False,
