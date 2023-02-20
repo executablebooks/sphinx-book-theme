@@ -7,31 +7,21 @@
   top: 0;
   max-height: 100vh;
 
+  // Tighter padding so the spacing is more equal
+  padding: 1rem;
+
+  // Draw open/close animation
+  transition: margin-left $animation-time ease 0s,
+    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+
   @media (max-width: $breakpoint-md) {
     // So that tooltips don't overlap
     z-index: $zindex-tooltip + 1;
   }
 
-  transition: margin-left $animation-time ease 0s,
-    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-
-  // To prevent a phantom gap when there's no header
-  gap: 0;
-
-  .bd-search input {
-    // Slightly reduce padding because it's a bit too big on this theme
-    padding-left: 2rem;
-  }
-
   // Remove the top border since there's often no header items above
   .sidebar-primary-items__start {
     border-top: none;
-  }
-
-  // Tighter spacing in the sidebar than the PST
-  .sidebar-start-items__item,
-  .sidebar-end-items__item {
-    padding: 0.25rem 0;
   }
 
   // On wide screens we have a smaller sidebar width than PST

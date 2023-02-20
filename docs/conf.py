@@ -129,6 +129,7 @@ html_theme_options = {
     ),
     "logo": {
         "image_dark": "_static/logo-wide-dark.svg",
+        # "text": html_title,  # Uncomment to try text with logo
     },
     # For testing
     # "use_fullscreen_button": False,
@@ -139,6 +140,7 @@ html_theme_options = {
     # "navbar_start": ["test.html"],
     # "navbar_center": ["test.html"],
     # "navbar_end": ["test.html"],
+    # "navbar_persistent": ["test.html"],
     # "footer_start": ["test.html"],
     # "footer_end": ["test.html"]
 }
