@@ -140,6 +140,7 @@ html_theme_options = {
     # "navbar_start": ["test.html"],
     # "navbar_center": ["test.html"],
     # "navbar_end": ["test.html"],
+    # "navbar_persistent": ["test.html"],
     # "footer_start": ["test.html"],
     # "footer_end": ["test.html"]
 }
