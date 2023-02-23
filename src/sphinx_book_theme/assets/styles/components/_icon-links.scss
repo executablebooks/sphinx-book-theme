@@ -9,12 +9,12 @@
       // There are few kinds of elements that can be icon links and each is different
       i,
       span {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
-      // Images usually fill more vertical space so this
+      // Images usually fill more vertical space so we make them a bit smaller
       img {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
     }
   }
