@@ -131,6 +131,25 @@ html_theme_options = {
         "image_dark": "_static/logo-wide-dark.svg",
         # "text": html_title,  # Uncomment to try text with logo
     },
+    "icon_links": [
+        {
+            "name": "Executable Books",
+            "url": "https://executablebooks.org/",
+            "icon": "_static/ebp-logo.png",
+            "type": "local",
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/executablebooks/sphinx-book-theme",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/sphinx-book-theme/",
+            "icon": "https://img.shields.io/pypi/dd/sphinx-book-theme",
+            "type": "url",
+        },
+    ],
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
