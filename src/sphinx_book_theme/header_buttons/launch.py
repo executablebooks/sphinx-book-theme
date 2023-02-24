@@ -41,7 +41,11 @@ def add_launch_buttons(
     # If so, insert the URLs depending on the configuration
     config_theme = app.config["html_theme_options"]
     launch_buttons = config_theme.get("launch_buttons", {})
-    if not launch_buttons or not _is_notebook(app, pagename):
+    if (
+        not launch_buttons
+        or not _is_notebook(app, pagename)
+        or launch_buttons.get("disable", False)
+    ):
         return
 
     # Grab the header buttons from context as it should already exist.
@@ -198,7 +202,8 @@ def _split_repo_url(url):
         org, repo = end.split("/")[:2]
     else:
         SPHINX_LOGGER.warning(
-            f"Currently Binder/JupyterHub repositories must be on GitHub, got {url}"
+            f"Currently Binder/JupyterHub repositories must be on GitHub, got {url}. "
+            'Use `launch_buttons: {"disable": true}` to silence this warning.'
         )
         org = repo = None
     return org, repo
