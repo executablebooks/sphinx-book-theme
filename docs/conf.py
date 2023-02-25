@@ -147,7 +147,7 @@ html_theme_options = {
         {
             "name": "PyPI",
             "url": "https://pypi.org/project/sphinx-book-theme/",
-            "icon": "https://img.shields.io/pypi/dd/sphinx-book-theme",
+            "icon": "https://img.shields.io/pypi/dw/sphinx-book-theme",
             "type": "url",
         },
     ],
