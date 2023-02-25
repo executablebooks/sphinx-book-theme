@@ -45,7 +45,7 @@ def add_launch_buttons(
     launch_buttons = config_theme.get("launch_buttons", {})
     if (
         not launch_buttons
-        or not _is_notebook(app, pagename)
+        or not _is_notebook(app, context)
         or not any(
             launch_buttons.get(key)
             for key in ("binderhub_url", "jupyterhub_url", "thebe", "colab_url")
@@ -57,7 +57,7 @@ def add_launch_buttons(
     header_buttons = context["header_buttons"]
 
     # Check if we have a markdown notebook, and if so then add a link to the context
-    if _is_notebook(app, pagename) and (
+    if _is_notebook(app, context) and (
         context["sourcename"].endswith(".md")
         or context["sourcename"].endswith(".md.txt")
     ):
@@ -227,8 +227,17 @@ def _split_repo_url(url):
     return org, repo
 
 
-def _is_notebook(app, pagename):
-    return app.env.metadata[pagename].get("kernelspec")
+def _is_notebook(app, context):
+    pagename = context["pagename"]
+    metadata = app.env.metadata[pagename]
+    if "kernelspec" in metadata:
+        # Most notebooks will have this
+        return True
+    elif "ipynb" in context.get("page_source_suffix", ""):
+        # Just in case, check for the suffix since some people remove the kernelspec
+        return True
+    else:
+        return False
 
 
 def _get_branch(config_theme):
