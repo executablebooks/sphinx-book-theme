@@ -202,6 +202,54 @@ def test_header_repository_buttons(
     )
 
 
+@pytest.mark.parametrize(
+    "provider, repo",
+    [
+        ("", "https://github.com/executablebooks/sphinx-book-theme"),
+        ("", "https://gitlab.com/gitlab-org/gitlab"),
+        ("", "https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities"),
+        ("gitlab", "https://mywebsite.com/gitlab/gitlab-org/gitlab"),
+    ],
+)
+def test_source_button_url(sphinx_build_factory, file_regression, provider, repo):
+    """Test that source button URLs are properly constructed."""
+    # All buttons on
+    use_issues = "github.com" in repo
+    confoverrides = {
+        "html_theme_options": {
+            "repository_url": repo,
+            "use_repository_button": True,
+            "use_edit_page_button": True,
+            "use_source_button": True,
+            "use_issues_button": use_issues,
+        }
+    }
+    if provider == "":
+        provider = [ii for ii in ["github", "gitlab", "bitbucket"] if ii in repo][0]
+    else:
+        provider += "_manual"
+
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+    # Check that link of each button is correct, and that the icon has right provider
+    links = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".dropdown-source-buttons .dropdown-menu a"
+    )
+    icons = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".dropdown-source-buttons .dropdown-menu i"
+    )
+    links = [ii["href"] for ii in links]
+    icons = [ii.prettify() for ii in icons]
+    check = "\n".join(["\n".join(ii) for ii in zip(links, icons)])
+    file_regression.check(
+        check,
+        basename=f"header__source-buttons--{provider}",
+        extension=".html",
+        encoding="utf8",
+    )
+
+
 def test_header_launchbtns(sphinx_build_factory, file_regression):
     """Test launch buttons."""
     sphinx_build = sphinx_build_factory("base").build(assert_pass=True)

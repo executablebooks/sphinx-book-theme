@@ -1,8 +1,11 @@
 """Generate metadata for header buttons."""
-
 from sphinx.errors import SphinxError
 from sphinx.locale import get_translation
+from pydata_sphinx_theme import _get_theme_options, _config_provided_by_user
+from sphinx.util import logging
 
+
+LOGGER = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "booktheme"
 translation = get_translation(MESSAGE_CATALOG_NAME)
 
@@ -22,10 +25,59 @@ def _as_bool(var):
         return False
 
 
-def _config_provided_by_user(app, key):
-    """Check if the user has manually provided the config."""
-    # TODO: Remove this when we bump pydata to the latest version and import from there.
-    return any(key in ii for ii in [app.config.overrides, app.config._raw_config])
+def _update_context_with_repository_info(opts, context):
+    """Use the pydata theme to get the "edit this page" link."""
+    # Check for manually given options first
+    repo_url = opts.get("repository_url", "")
+    branch = opts.get("repository_branch", "")
+    provider = opts.get("repository_provider", "")
+    relpath = opts.get("path_to_docs", "")
+    if branch == "":
+        branch = "main"
+
+    # We assume the final two parts of the repository URL are the org/repo
+    parts = repo_url.strip("/").split("/")
+    org, repo = parts[-2:]
+
+    # Infer the provider if it wasn't manually given
+    provider_url = ""
+    if provider == "":
+        # We assume the provider URL is all of the parts that come before org/repo
+        provider_url = "/".join(parts[:-2])
+        for iprov in ["github", "gitlab", "bitbucket"]:
+            if iprov in provider_url.lower():
+                provider = iprov
+                break
+
+    # If provider is still empty, raise an error because we don't recognize it
+    if provider == "":
+        raise SphinxError(f"Provider not recognized in repository url {repo_url}")
+
+    # Update the context because this is what the get_edit_url function uses.
+    repository_information = {
+        f"{provider}_user": org,
+        f"{provider}_repo": repo,
+        f"{provider}_version": branch,
+        "doc_path": relpath,
+    }
+
+    # In case a self-hosted GitLab or BitBucket instance is used
+    if provider_url != "":
+        repository_information[f"{provider}_url"] = provider_url
+    context.update(repository_information)
+
+
+def _get_repo_url(context):
+    """Return the provider URL based on what is defined in context."""
+    for provider in ["github", "bitbucket", "gitlab"]:
+        if f"{provider.lower()}_url" in context:
+            source_user = f"{provider.lower()}_user"
+            source_repo = f"{provider.lower()}_repo"
+            provider_url = f"{provider.lower()}_url"
+            repo_url = (
+                f"{context[provider_url]}/{context[source_user]}/{context[source_repo]}"
+            )
+            return repo_url, provider
 
 
 def prep_header_buttons(app, pagename, templatename, context, doctree):
@@ -35,7 +87,7 @@ def prep_header_buttons(app, pagename, templatename, context, doctree):
 
 def add_header_buttons(app, pagename, templatename, context, doctree):
     """Populate the context with header button metadata we'll insert in templates."""
-    opts = app.builder.theme_options
+    opts = _get_theme_options(app)
     pathto = context["pathto"]
     header_buttons = context["header_buttons"]
 
@@ -50,6 +102,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "javascript": "toggleFullScreen()",
                 "tooltip": translation("Fullscreen mode"),
                 "icon": "fas fa-expand",
+                "label": "fullscreen-button",
             }
         )
 
@@ -58,69 +111,87 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
     # For some reason the source_suffix sometimes isn't there even when doctree is
     repo_keywords = [
         "use_issues_button",
+        "use_source_button",
         "use_edit_page_button",
         "use_repository_button",
     ]
     for key in repo_keywords:
         opts[key] = _as_bool(opts.get(key))
 
+    # Update pydata `html_context` options by inferring them from `repository_url`
+    if "repository_url" in opts:
+        _update_context_with_repository_info(opts, context)
+
+    # Create source buttons for any that are enabled
     if any(opts.get(kw) for kw in repo_keywords):
-        repo_url = opts.get("repository_url", "")
-        if not repo_url:
-            raise SphinxError(
-                "Repository buttons enabled, but repository_url not given. "
-                "Please add a repository_url."
-            )
+        # Loop through the possible buttons and construct+add their URL
         repo_buttons = []
         if opts.get("use_repository_button"):
+            repo_url, provider = _get_repo_url(context)
+
             repo_buttons.append(
                 {
                     "type": "link",
                     "url": repo_url,
                     "tooltip": translation("Source repository"),
-                    "text": "repository",
-                    "icon": "fab fa-github",
+                    "text": "Repository",
+                    "icon": f"fab fa-{provider.lower()}",
+                    "label": "source-repository-button",
                 }
             )
 
-        if opts.get("use_issues_button"):
+        if opts.get("use_source_button") and doctree and suff:
+            # We'll re-use this to make action-specific URLs
+            provider, edit_url = context["get_edit_provider_and_url"]()
+            # Convert URL to a blob so it's for viewing
+            if provider.lower() == "github":
+                # Use plain=1 to ensure the source text is shown, not rendered
+                source_url = edit_url.replace("/edit/", "/blob/") + "?plain=1"
+            elif provider.lower() == "gitlab":
+                source_url = edit_url.replace("/edit/", "/blob/")
+            elif provider.lower() == "bitbucket":
+                source_url = edit_url.replace("?mode=edit", "")
+
             repo_buttons.append(
                 {
                     "type": "link",
-                    "url": f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
-                    "text": translation("open issue"),
-                    "tooltip": translation("Open an issue"),
-                    "icon": "fas fa-lightbulb",
+                    "url": source_url,
+                    "tooltip": translation("Show source"),
+                    "text": translation("Show source"),
+                    "icon": "fas fa-code",
+                    "label": "source-file-button",
                 }
             )
 
         if opts.get("use_edit_page_button") and doctree and suff:
-            branch = opts.get("repository_branch", "")
-            if branch == "":
-                branch = "master"
-            relpath = opts.get("path_to_docs", "")
-            org, repo = repo_url.strip("/").split("/")[-2:]
-
-            # Update the context because this is what the get_edit_url function uses.
-            context.update(
-                {
-                    "github_user": org,
-                    "github_repo": repo,
-                    "github_version": branch,
-                    "doc_path": relpath,
-                }
-            )
-
-            provider, url = context["get_edit_provider_and_url"]()
+            # We'll re-use this to make action-specific URLs
+            provider, edit_url = context["get_edit_provider_and_url"]()
             repo_buttons.append(
                 {
                     "type": "link",
-                    "url": url,
-                    "tooltip": translation("Edit on") + f"{provider}",
-                    "text": translation("suggest edit"),
+                    "url": edit_url,
+                    "tooltip": translation("Suggest edit"),
+                    "text": translation("Suggest edit"),
                     "icon": "fas fa-pencil-alt",
+                    "label": "source-edit-button",
                 }
             )
+
+        if opts.get("use_issues_button"):
+            repo_url, provider = _get_repo_url(context)
+            if "github.com" not in repo_url:
+                LOGGER.warn(f"Open issue button not yet supported for {provider}")
+            else:
+                repo_buttons.append(
+                    {
+                        "type": "link",
+                        "url": f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
+                        "text": translation("Open issue"),
+                        "tooltip": translation("Open an issue"),
+                        "icon": "fas fa-lightbulb",
+                        "label": "source-issues-button",
+                    }
+                )
 
         # If we have multiple repo buttons enabled, add a group, otherwise just 1 button
         if len(repo_buttons) > 1:
@@ -128,9 +199,9 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 {
                     "type": "group",
                     "tooltip": translation("Source repositories"),
-                    "icon": "fab fa-github",
+                    "icon": f"fab fa-{provider.lower()}",
                     "buttons": repo_buttons,
-                    "label": "repository-buttons",
+                    "label": "source-buttons",
                 }
             )
         elif len(repo_buttons) == 1:
@@ -151,6 +222,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                     "text": ".ipynb",
                     "icon": "fas fa-code",
                     "tooltip": translation("Download notebook file"),
+                    "label": "download-notebook-button",
                 }
             )
 
@@ -162,6 +234,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "text": suff,
                 "tooltip": translation("Download source file"),
                 "icon": "fas fa-file",
+                "label": "download-source-button",
             }
         )
         download_buttons.append(
@@ -171,6 +244,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "text": ".pdf",
                 "tooltip": translation("Print to PDF"),
                 "icon": "fas fa-file-pdf",
+                "label": "download-pdf-button",
             }
         )
 
