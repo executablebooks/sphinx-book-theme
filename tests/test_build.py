@@ -259,6 +259,76 @@ def test_header_launchbtns(sphinx_build_factory, file_regression):
     file_regression.check(launch_btns[0].prettify(), extension=".html", encoding="utf8")
 
 
+def test_empty_header_launchbtns(sphinx_build_factory, file_regression):
+    """Launch buttons should not show at all if no valid launch providers."""
+    # Here we define part of the launch button config, but no valid provider
+    sphinx_build = sphinx_build_factory(
+        "base",
+        confoverrides={
+            "html_theme_options": {"launch_buttons": {"notebook_interface": "notebook"}}
+        },
+    ).build(assert_pass=True)
+    launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
+        ".dropdown-launch-buttons"
+    )
+    assert len(launch_btns) == 0
+
+
+@pytest.mark.parametrize(
+    "provider, repo",
+    [
+        ("", "https://github.com/executablebooks/sphinx-book-theme"),
+        ("", "https://gitlab.com/gitlab-org/gitlab"),
+        ("", "https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities"),
+        ("gitlab", "https://mywebsite.com/gitlab/gitlab-org/gitlab"),
+    ],
+)
+def test_launch_button_url(sphinx_build_factory, file_regression, provider, repo):
+    """Test that source button URLs are properly constructed."""
+
+    launch_buttons = {
+        "binderhub_url": "https://mybinder.org",
+        "jupyterhub_url": "https://hub.myorg.edu",
+    }
+    if "github.com" in repo:
+        launch_buttons["colab_url"] = "https://colab.research.google.com"
+        launch_buttons["deepnote_url"] = "https://deepnote.com"
+
+    confoverrides = {
+        "html_theme_options": {
+            "repository_url": repo,
+            "repository_branch": "foo",
+            "path_to_docs": "docs",
+            "launch_buttons": launch_buttons,
+        }
+    }
+
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
+        assert_pass=True
+    )
+    # Check that link of each button is correct
+    all_links = []
+    for ifile in (("section1", "ntbk.html"), ("section1", "ntbkmd.html")):
+        links = sphinx_build.html_tree(*ifile).select(
+            ".dropdown-launch-buttons .dropdown-menu a"
+        )
+        links = [ii["href"] for ii in links]
+        all_links.append("/".join(ifile))
+        all_links.append("\n".join(links) + "\n")
+
+    if provider == "":
+        provider = [ii for ii in ["github", "gitlab", "bitbucket"] if ii in repo][0]
+    else:
+        provider += "_manual"
+
+    file_regression.check(
+        "\n".join(all_links),
+        basename=f"header__launch-buttons--{provider}",
+        extension=".html",
+        encoding="utf8",
+    )
+
+
 def test_repo_custombranch(sphinx_build_factory, file_regression):
     """Test custom branch for launch and edit buttons."""
     sphinx_build = sphinx_build_factory(
