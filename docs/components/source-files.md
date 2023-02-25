@@ -24,7 +24,9 @@ html_theme_options = {
 Three providers are supported:
 
 - **GitHub**: For example, `https://github.com/executablebooks/sphinx-book-theme`.
+  This includes custom URLs for self-hosted GitHub.
 - **GitLab**: For example, `https://gitlab.com/gitlab-org/gitlab`.
+  This includes custom URLs for self-hosted GitLab.
 - **BitBucket**: For example, `https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities`.
 
 In each case, we **assume the final two URL items are the `org/repo` pair**.
@@ -37,6 +39,7 @@ If your provider URL is more complex (e.g., if you're self-hosting your provider
 html_theme_options = {
     ...
     "repository_provider": "gitlab"  # or "github", "bitbucket",
+    "repository_url": "selfhostedgh.mycompany.org/user/repo",
     ...
 }
 ```

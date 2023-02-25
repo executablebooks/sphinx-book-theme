@@ -132,7 +132,12 @@ def update_sourcename(app):
 
 
 def update_context_with_repository_info(app):
-    """Update pydata `html_context` options for source from `repository_url`"""
+    """Update pydata `html_context` options for source from `repository_url`.
+
+    We do this because we use repository_url as one config to define the URL,
+    while the PST uses a collection of {provider}_{key} pairs in html_context.
+    So here we insert those context variables on our own.
+    """
     opts = _get_theme_options(app)
     context = app.config.html_context
 
@@ -149,32 +154,37 @@ def update_context_with_repository_info(app):
         branch = "main"
 
     # We assume the final two parts of the repository URL are the org/repo
-    parts = repo_url.strip("/").split("/")
-    org, repo = parts[-2:]
+    provider_url, org, repo = repo_url.strip("/").rsplit("/", 2)
 
     # Infer the provider if it wasn't manually given
-    provider_url = ""
+    default_provider_urls = {
+        "bitbucket": "bitbucket.org",
+        "github": "github.com",
+        "gitlab": "gitlab.com",
+    }
+
+    # If no provider is given, try to infer one from the repo url
     if provider == "":
-        # We assume the provider URL is all of the parts that come before org/repo
-        provider_url = "/".join(parts[:-2])
-        for iprov in ["github", "gitlab", "bitbucket"]:
+        for iprov in default_provider_urls.keys():
             if iprov in provider_url.lower():
                 provider = iprov
                 break
 
     # If provider is still empty, raise an error because we don't recognize it
     if provider == "":
-        raise SphinxError(f"Provider not recognized in repository url {repo_url}")
+        raise SphinxError(
+            (
+                f"Provider not recognized in repository url {repo_url}. "
+                "If you're using a custom provider URL, specify `repository_provider`"
+            )
+        )
 
     # Update the context because this is what the get_edit_url function uses.
     repository_information = {
         f"{provider}_user": org,
         f"{provider}_repo": repo,
         f"{provider}_version": branch,
+        f"{provider}_url": provider_url,
         "doc_path": relpath,
     }
-
-    # In case a self-hosted GitLab or BitBucket instance is used
-    if provider_url != "":
-        repository_information[f"{provider}_url"] = provider_url
     context.update(repository_information)

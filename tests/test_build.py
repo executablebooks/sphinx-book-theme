@@ -206,6 +206,7 @@ def test_header_repository_buttons(
     "provider, repo",
     [
         ("", "https://github.com/executablebooks/sphinx-book-theme"),
+        ("github", "https://gh.mycompany.com/executablebooks/sphinx-book-theme"),
         ("", "https://gitlab.com/gitlab-org/gitlab"),
         ("", "https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities"),
         ("gitlab", "https://mywebsite.com/gitlab/gitlab-org/gitlab"),
@@ -224,10 +225,20 @@ def test_source_button_url(sphinx_build_factory, file_regression, provider, repo
             "use_issues_button": use_issues,
         }
     }
-    if provider == "":
-        provider = [ii for ii in ["github", "gitlab", "bitbucket"] if ii in repo][0]
-    else:
-        provider += "_manual"
+    # Decide if we've manually given the provider
+    manual = provider != ""
+
+    # Infer the provider from the names so we can name the regression tests
+    if not provider:
+        for iprov in ["github", "gitlab", "bitbucket"]:
+            if iprov in repo:
+                provider = iprov
+                break
+
+    provider_reg_file = provider
+    if manual:
+        confoverrides["html_theme_options"]["repository_provider"] = provider
+        provider_reg_file = provider_reg_file + "_manual"
 
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
@@ -240,11 +251,11 @@ def test_source_button_url(sphinx_build_factory, file_regression, provider, repo
         ".dropdown-source-buttons .dropdown-menu i"
     )
     links = [ii["href"] for ii in links]
-    icons = [ii.prettify() for ii in icons]
+    icons = [str(ii) for ii in icons]
     check = "\n".join(["\n".join(ii) for ii in zip(links, icons)])
     file_regression.check(
         check,
-        basename=f"header__source-buttons--{provider}",
+        basename=f"header__source-buttons--{provider_reg_file}",
         extension=".html",
         encoding="utf8",
     )

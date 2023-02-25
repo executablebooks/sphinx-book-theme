@@ -86,7 +86,7 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
 
         if opts.get("use_issues_button"):
             repo_url, provider = get_repo_url(context)
-            if "github.com" not in repo_url:
+            if provider != "github":
                 LOGGER.warning(f"Open issue button not yet supported for {provider}")
             else:
                 repo_buttons.append(
