@@ -41,7 +41,14 @@ def add_launch_buttons(
     # If so, insert the URLs depending on the configuration
     config_theme = app.config["html_theme_options"]
     launch_buttons = config_theme.get("launch_buttons", {})
-    if not launch_buttons or not _is_notebook(app, pagename):
+    if (
+        not launch_buttons
+        or not _is_notebook(app, pagename)
+        or not any(
+            launch_buttons[key]
+            for key in ("binderhub_url", "jupyterhub_url", "thebe", "colab_url")
+        )
+    ):
         return
 
     # Grab the header buttons from context as it should already exist.
