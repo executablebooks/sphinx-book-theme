@@ -1,12 +1,15 @@
+"""Launch buttons for Binder / Thebe / Colab / etc."""
 from pathlib import Path
 from typing import Any, Dict, Optional
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 
 from docutils.nodes import document
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 from shutil import copy2
+
+from . import get_repo_parts, get_repo_url
 
 
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -34,18 +37,17 @@ def add_launch_buttons(
 
     """
 
-    # First decide if we'll insert any links
     path = app.env.doc2path(pagename)
     extension = Path(path).suffix
 
-    # If so, insert the URLs depending on the configuration
+    # Don't do anything if no launch provider is configured
     config_theme = app.config["html_theme_options"]
     launch_buttons = config_theme.get("launch_buttons", {})
     if (
         not launch_buttons
-        or not _is_notebook(app, pagename)
+        or not _is_notebook(app, context)
         or not any(
-            launch_buttons[key]
+            launch_buttons.get(key)
             for key in ("binderhub_url", "jupyterhub_url", "thebe", "colab_url")
         )
     ):
@@ -55,7 +57,7 @@ def add_launch_buttons(
     header_buttons = context["header_buttons"]
 
     # Check if we have a markdown notebook, and if so then add a link to the context
-    if _is_notebook(app, pagename) and (
+    if _is_notebook(app, context) and (
         context["sourcename"].endswith(".md")
         or context["sourcename"].endswith(".md.txt")
     ):
@@ -72,10 +74,9 @@ def add_launch_buttons(
         copy2(path_ntbk, path_new_notebook)
         context["ipynb_source"] = pagename + ".ipynb"
 
-    repo_url = _get_repo_url(config_theme)
-
-    # Parse the repo parts from the URL
-    org, repo = _split_repo_url(repo_url)
+    # Get repository URL information that we'll use to build links
+    repo_url, _ = get_repo_url(context)
+    provider_url, org, repo, provider = get_repo_parts(context)
     if org is None and repo is None:
         # Skip the rest because the repo_url isn't right
         return
@@ -114,11 +115,20 @@ def add_launch_buttons(
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
+
+    # Loop through each provider and add a button for it if needed
     if binderhub_url:
-        url = (
-            f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}?"
-            f"urlpath={ui_pre}/{path_rel_repo}"
-        )
+        # Any non-standard repository URL should be passed-through raw
+        if provider_url not in ["https://github.com", "https://gitlab.com"]:
+            # Generic git repository using the full repo URL as a fallback
+            url = f"{binderhub_url}/v2/git/{quote(repo_url)}/{branch}"
+        elif provider.lower() == "github":
+            url = f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}"
+        elif provider.lower() == "gitlab":
+            # Binder uses %2F for gitlab for some reason
+            url = f"{binderhub_url}/v2/gl/{org}%2F{repo}/{branch}"
+
+        url = f"{url}?urlpath={ui_pre}/{path_rel_repo}"
         launch_buttons_list.append(
             {
                 "type": "link",
@@ -148,29 +158,35 @@ def add_launch_buttons(
         )
 
     if colab_url:
-        url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
-        launch_buttons_list.append(
-            {
-                "type": "link",
-                "text": "Colab",
-                "tooltip": translation("Launch on") + "Colab",
-                "icon": "_static/images/logo_colab.png",
-                "url": url,
-            }
-        )
+        if provider.lower() != "github":
+            SPHINX_LOGGER.warning(f"Provider {provider} not supported on colab.")
+        else:
+            url = f"{colab_url}/github/{org}/{repo}/blob/{branch}/{path_rel_repo}"
+            launch_buttons_list.append(
+                {
+                    "type": "link",
+                    "text": "Colab",
+                    "tooltip": translation("Launch on") + "Colab",
+                    "icon": "_static/images/logo_colab.png",
+                    "url": url,
+                }
+            )
 
     if deepnote_url:
-        github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
-        url = f"{deepnote_url}/launch?url=https%3A%2F%2Fgithub.com{github_path}"
-        launch_buttons_list.append(
-            {
-                "type": "link",
-                "text": "Deepnote",
-                "tooltip": translation("Launch on") + "Deepnote",
-                "icon": "_static/images/logo_deepnote.svg",
-                "url": url,
-            }
-        )
+        if provider.lower() != "github":
+            SPHINX_LOGGER.warning(f"Provider {provider} not supported on Deepnote.")
+        else:
+            github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
+            url = f"{deepnote_url}/launch?url=https%3A%2F%2Fgithub.com{github_path}"
+            launch_buttons_list.append(
+                {
+                    "type": "link",
+                    "text": "Deepnote",
+                    "tooltip": translation("Launch on") + "Deepnote",
+                    "icon": "_static/images/logo_deepnote.svg",
+                    "url": url,
+                }
+            )
 
     # Add thebe flag in context
     if launch_buttons.get("thebe", False):
@@ -211,17 +227,17 @@ def _split_repo_url(url):
     return org, repo
 
 
-def _get_repo_url(config):
-    repo_url = config.get("repository_url")
-    if not repo_url:
-        raise ValueError(
-            "You must provide the key: `repository_url` to use launch buttons."
-        )
-    return repo_url
-
-
-def _is_notebook(app, pagename):
-    return app.env.metadata[pagename].get("kernelspec")
+def _is_notebook(app, context):
+    pagename = context["pagename"]
+    metadata = app.env.metadata[pagename]
+    if "kernelspec" in metadata:
+        # Most notebooks will have this
+        return True
+    elif "ipynb" in context.get("page_source_suffix", ""):
+        # Just in case, check for the suffix since some people remove the kernelspec
+        return True
+    else:
+        return False
 
 
 def _get_branch(config_theme):

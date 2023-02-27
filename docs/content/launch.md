@@ -62,7 +62,7 @@ To add Google Colab links to your page, add the following configuration:
 html_theme_options = {
     ...
     "launch_buttons": {
-        "colab_url": "https://{your-colab-url}"
+        "colab_url": "https://colab.research.google.com"
     },
     ...
 }

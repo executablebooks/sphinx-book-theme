@@ -23,7 +23,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=4,<7",
-  "pydata-sphinx-theme>=0.13.0rc4",
+  "pydata-sphinx-theme>=0.13.0rc5",
 ]
 
 license = { file = "LICENSE" }

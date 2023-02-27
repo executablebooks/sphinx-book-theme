@@ -108,7 +108,7 @@ thebe_config = {
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
-    # "repository_branch": "gh-pages",  # For testing
+    "repository_branch": "master",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "colab_url": "https://colab.research.google.com/",
@@ -118,8 +118,9 @@ html_theme_options = {
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
     "use_edit_page_button": True,
+    "use_source_button": True,
     "use_issues_button": True,
-    "use_repository_button": True,
+    # "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
     "show_toc_level": 2,
@@ -131,6 +132,25 @@ html_theme_options = {
         "image_dark": "_static/logo-wide-dark.svg",
         # "text": html_title,  # Uncomment to try text with logo
     },
+    "icon_links": [
+        {
+            "name": "Executable Books",
+            "url": "https://executablebooks.org/",
+            "icon": "_static/ebp-logo.png",
+            "type": "local",
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/executablebooks/sphinx-book-theme",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/sphinx-book-theme/",
+            "icon": "https://img.shields.io/pypi/dw/sphinx-book-theme",
+            "type": "url",
+        },
+    ],
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
