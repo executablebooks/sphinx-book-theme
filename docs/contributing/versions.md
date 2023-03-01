@@ -42,6 +42,7 @@ This should get more energy than deciding whether to bump the major/minor versio
 We're likely be breaking things here and there throughout, not every single breaking change.
 Reserve major version changes for significant overhauls (for example, ones that require someone to comprehensively re-work thier CSS rules).
 
-**Major versions do have any special meaning**.
+**Major versions do not have any special meaning other than semver**.
 While we generally try not to bump major versions, they also carry no special meaning other than reflecting how much changed since the last version.
-We don't make any promises about long term support and stability of major versions.
+We try to follow [SemVer](https://semver.org) and this is all that major versions signify.
+We don't make any promises about long term support and stability.
