@@ -1,5 +1,55 @@
 # Changelog
 
+## v1.0.0 -- 2023-03-01
+
+This is a major release that brings in the latest PyData Sphinx Theme and a number of new features with it.
+It also overhauls and standardizes the HTML structure of the theme.
+
+### Enhancements made
+
+- PyData Sphinx Theme `v0.13`. See [the PyData Sphinx Theme `v0.13` release notes](https://github.com/pydata/pydata-sphinx-theme/releases/tag/v0.13.0) for details.
+- Icon links, more source providers, and bug fixes [#691](https://github.com/executablebooks/sphinx-book-theme/pull/691) ([@choldgraf](https://github.com/choldgraf), [@mmcky](https://github.com/mmcky))
+  - **We now support GitHub, GitLab, and BitBucket source providers**.
+  - **You can now include lists of icon links in your primary sidebar**.
+- Allowing inline elements in sidenotes and marginnotes [#641](https://github.com/executablebooks/sphinx-book-theme/pull/641) ([@AakashGfude](https://github.com/AakashGfude))
+- Improve Chinese (Taiwan) and Chinese (China) translation [#585](https://github.com/executablebooks/sphinx-book-theme/pull/585) ([@whyjz](https://github.com/whyjz))
+- sphinx >=4,<6 [#644](https://github.com/executablebooks/sphinx-book-theme/pull/644) ([@AakashGfude](https://github.com/AakashGfude))
+
+### Bugs fixed
+
+- FIX: Scroll padding on top for anchor links [#669](https://github.com/executablebooks/sphinx-book-theme/pull/669) ([@choldgraf](https://github.com/choldgraf))
+- 🐛 FIX: Correcting a broken link in CHANGELOG.md [#623](https://github.com/executablebooks/sphinx-book-theme/pull/623) ([@AakashGfude](https://github.com/AakashGfude))
+- FIX: Scroll to active navigation item [#609](https://github.com/executablebooks/sphinx-book-theme/pull/609) ([@ksuess](https://github.com/ksuess))
+- [FIX] Use logo url as is to allow for web urls. [#661](https://github.com/executablebooks/sphinx-book-theme/pull/661) ([@feanil](https://github.com/feanil))
+
+### Maintenance and upkeep improvements
+
+- MAINT: Update pre-commit versions and fix minor bugs in tests [#660](https://github.com/executablebooks/sphinx-book-theme/pull/660) ([@choldgraf](https://github.com/choldgraf))
+- MAINT: Move dependabot updates to monthly [#658](https://github.com/executablebooks/sphinx-book-theme/pull/658) ([@choldgraf](https://github.com/choldgraf))
+- MAINT: Factor publish to pypi workflow into dedicated file [#645](https://github.com/executablebooks/sphinx-book-theme/pull/645) ([@choldgraf](https://github.com/choldgraf))
+- MAINT: Remove duplication with pydata-sphinx-theme [#640](https://github.com/executablebooks/sphinx-book-theme/pull/640) ([@choldgraf](https://github.com/choldgraf))
+- MAINT: remove incorrect comment from sphinx pin. [#588](https://github.com/executablebooks/sphinx-book-theme/pull/588) ([@rossbar](https://github.com/rossbar))
+- IntersectionObserver at 1/3 screen [#567](https://github.com/executablebooks/sphinx-book-theme/pull/567) ([@choldgraf](https://github.com/choldgraf))
+
+### Documentation improvements
+
+- DOCS: Minor typo correction [#649](https://github.com/executablebooks/sphinx-book-theme/pull/649) ([@bmorris3](https://github.com/bmorris3))
+- DOC: Update kitchen sink [#610](https://github.com/executablebooks/sphinx-book-theme/pull/610) ([@choldgraf](https://github.com/choldgraf))
+
+### Breaking changes to structure and API
+
+- UPGRADE/BREAKING: PyData v0.13 and HTML refactoring [#677](https://github.com/executablebooks/sphinx-book-theme/pull/677) ([@choldgraf](https://github.com/choldgraf))
+- Remove JQuery and update versions [#668](https://github.com/executablebooks/sphinx-book-theme/pull/668) ([@choldgraf](https://github.com/choldgraf))
+
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/executablebooks/sphinx-book-theme/graphs/contributors?from=2022-07-17&to=2023-02-19&type=c))
+
+
+@12rambau ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3A12rambau+updated%3A2022-07-17..2023-03-01&type=Issues)) | @AakashGfude ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AAakashGfude+updated%3A2022-07-17..2023-03-01&type=Issues)) | @akhmerov ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aakhmerov+updated%3A2022-07-17..2023-03-01&type=Issues)) | @AllenDowney ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AAllenDowney+updated%3A2022-07-17..2023-03-01&type=Issues)) | @avivajpeyi ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aavivajpeyi+updated%3A2022-07-17..2023-03-01&type=Issues)) | @bmorris3 ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Abmorris3+updated%3A2022-07-17..2023-03-01&type=Issues)) | @choldgraf ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Acholdgraf+updated%3A2022-07-17..2023-03-01&type=Issues)) | @chrisjsewell ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Achrisjsewell+updated%3A2022-07-17..2023-03-01&type=Issues)) | @consideRatio ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AconsideRatio+updated%3A2022-07-17..2023-03-01&type=Issues)) | @dependabot ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Adependabot+updated%3A2022-07-17..2023-03-01&type=Issues)) | @feanil ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Afeanil+updated%3A2022-07-17..2023-03-01&type=Issues)) | @fm75 ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Afm75+updated%3A2022-07-17..2023-03-01&type=Issues)) | @ghutchis ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aghutchis+updated%3A2022-07-17..2023-03-01&type=Issues)) | @guillaume-haerinck ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aguillaume-haerinck+updated%3A2022-07-17..2023-03-01&type=Issues)) | @haklc ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ahaklc+updated%3A2022-07-17..2023-03-01&type=Issues)) | @iasbusi ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aiasbusi+updated%3A2022-07-17..2023-03-01&type=Issues)) | @ivirshup ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aivirshup+updated%3A2022-07-17..2023-03-01&type=Issues)) | @James11222 ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AJames11222+updated%3A2022-07-17..2023-03-01&type=Issues)) | @kloczek ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Akloczek+updated%3A2022-07-17..2023-03-01&type=Issues)) | @ksuess ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aksuess+updated%3A2022-07-17..2023-03-01&type=Issues)) | @martinfleis ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Amartinfleis+updated%3A2022-07-17..2023-03-01&type=Issues)) | @mathbunnyru ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Amathbunnyru+updated%3A2022-07-17..2023-03-01&type=Issues)) | @mcjulian1107 ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Amcjulian1107+updated%3A2022-07-17..2023-03-01&type=Issues)) | @melund ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Amelund+updated%3A2022-07-17..2023-03-01&type=Issues)) | @mmcky ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ammcky+updated%3A2022-07-17..2023-03-01&type=Issues)) | @paugier ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Apaugier+updated%3A2022-07-17..2023-03-01&type=Issues)) | @PhilipVinc ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3APhilipVinc+updated%3A2022-07-17..2023-03-01&type=Issues)) | @pradyunsg ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Apradyunsg+updated%3A2022-07-17..2023-03-01&type=Issues)) | @pre-commit-ci ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Apre-commit-ci+updated%3A2022-07-17..2023-03-01&type=Issues)) | @rkdarst ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Arkdarst+updated%3A2022-07-17..2023-03-01&type=Issues)) | @rossbar ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Arossbar+updated%3A2022-07-17..2023-03-01&type=Issues)) | @scmmmh ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ascmmmh+updated%3A2022-07-17..2023-03-01&type=Issues)) | @sieler ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Asieler+updated%3A2022-07-17..2023-03-01&type=Issues)) | @SilverRainZ ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3ASilverRainZ+updated%3A2022-07-17..2023-03-01&type=Issues)) | @stevepiercy ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Astevepiercy+updated%3A2022-07-17..2023-03-01&type=Issues)) | @trallard ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Atrallard+updated%3A2022-07-17..2023-03-01&type=Issues)) | @whyjz ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Awhyjz+updated%3A2022-07-17..2023-03-01&type=Issues)) | @yuvipanda ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ayuvipanda+updated%3A2022-07-17..2023-03-01&type=Issues)) | @ZedThree ([activity](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AZedThree+updated%3A2022-07-17..2023-03-01&type=Issues))
+
+
 ## v0.3.3 -- 2022-07-17
 
 ### Fixes:
