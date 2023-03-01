@@ -41,7 +41,7 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
                     "type": "link",
                     "url": repo_url,
                     "tooltip": translation("Source repository"),
-                    "text": "Repository",
+                    "text": translation("Repository"),
                     "icon": f"fab fa-{provider.lower()}",
                     "label": "source-repository-button",
                 }
