@@ -43,6 +43,15 @@ Note that this doesn't imply any new long-term support or stability, we will con
 - UPGRADE/BREAKING: PyData v0.13 and HTML refactoring [#677](https://github.com/executablebooks/sphinx-book-theme/pull/677) ([@choldgraf](https://github.com/choldgraf))
 - Remove JQuery and update versions [#668](https://github.com/executablebooks/sphinx-book-theme/pull/668) ([@choldgraf](https://github.com/choldgraf))
 
+### Tips for migration
+
+**Long sidebar entries now wrap**. If you'd like to un-do this and revert to old behavior (where they are cut off if too long), then use the following CSS rule in your custom Sphinx CSS:
+
+```css
+.bd-sidebar-primary a {
+  word-wrap: unset;
+}
+```
 
 ### Contributors to this release
 
