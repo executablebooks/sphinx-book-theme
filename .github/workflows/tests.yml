@@ -58,9 +58,9 @@ jobs:
       run: >
         pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
 
-    # Only check for broken links on pull requests so that we don't trigger rate limit blocks
+    # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
     - name: Upload to Codecov
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme && github.event_name == 'pull_request''
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
       uses: codecov/codecov-action@v3.1.1
       with:
         name: ebp-sbt-pytests-py3.7
