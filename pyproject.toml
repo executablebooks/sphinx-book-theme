@@ -23,13 +23,13 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=4,<7",
-  "pydata-sphinx-theme>=0.13.0rc5",
+  "pydata-sphinx-theme>=0.13.0",
 ]
 
 license = { file = "LICENSE" }
 # TODO: Add email of the maintainer
 maintainers = [
-  { name = "Chris Holdgraf", email = "choldgraf@gmail.com" },
+  { name = "Executable Books Team", email = "executablebooks@gmail.com" },
 ]
 
 classifiers = [
