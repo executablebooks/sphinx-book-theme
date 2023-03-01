@@ -4,6 +4,8 @@
 
 This is a major release that brings in the latest PyData Sphinx Theme and a number of new features with it.
 It also overhauls and standardizes the HTML structure of the theme.
+Because of this large refactor, we are bumping the major version to `1.0`.
+Note that this doesn't imply any new long-term support or stability, we will continue to try not to make major breaking changes but will continue incrementing major versions if we must do so.
 
 ### Enhancements made
 
