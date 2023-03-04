@@ -129,6 +129,13 @@ def add_launch_buttons(
             url = f"{binderhub_url}/v2/gl/{org}%2F{repo}/{branch}"
 
         url = f"{url}?urlpath={ui_pre}/{path_rel_repo}"
+
+        # We hardcode our Binder env here
+        url = (
+            f"{binderhub_url}/v2/gh/OGGM/binder/stable?urlpath=git-pull%3F"
+            f"repo={repo_url}%26urlpath%3Dlab%252Ftree%252F{repo}/{path_rel_repo}%26branch%3D{branch}"
+        )
+
         launch_buttons_list.append(
             {
                 "type": "link",
