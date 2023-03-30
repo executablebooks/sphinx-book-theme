@@ -1,6 +1,6 @@
 """Source file buttons that point to the online repository."""
 
-from pydata_sphinx_theme import _get_theme_options
+from pydata_sphinx_theme import _get_theme_options_dict
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
@@ -13,7 +13,7 @@ translation = get_translation(MESSAGE_CATALOG_NAME)
 
 def add_source_buttons(app, pagename, templatename, context, doctree):
     """Add the source repository buttons."""
-    opts = _get_theme_options(app)
+    opts = _get_theme_options_dict(app)
     header_buttons = context["header_buttons"]
     # If we have a suffix, then we have a source file
     suff = context.get("page_source_suffix")
