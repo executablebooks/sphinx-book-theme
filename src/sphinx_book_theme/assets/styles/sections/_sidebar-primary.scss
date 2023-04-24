@@ -11,8 +11,10 @@
   padding: 1rem;
 
   // Draw open/close animation
-  transition: margin-left $animation-time ease 0s,
-    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
+  transition:
+    margin-left $animation-time ease 0s,
+    opacity $animation-time ease 0s,
+    visibility $animation-time ease 0s;
 
   @media (max-width: $breakpoint-md) {
     // So that tooltips don't overlap
