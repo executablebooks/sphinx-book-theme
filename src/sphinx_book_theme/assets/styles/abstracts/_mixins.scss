@@ -18,6 +18,7 @@
  * Copied here in csae we need to re-use.
 */
 @mixin pst-box-shadow() {
-  box-shadow: 0 0.2rem 0.5rem var(--pst-color-shadow),
+  box-shadow:
+    0 0.2rem 0.5rem var(--pst-color-shadow),
     0 0 0.0625rem var(--pst-color-shadow) !important;
 }
