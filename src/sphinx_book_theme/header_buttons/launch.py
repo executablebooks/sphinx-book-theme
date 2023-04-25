@@ -216,14 +216,13 @@ def add_launch_buttons(
 
 def _split_repo_url(url):
     """Split a repository URL into an org / repo combination."""
-    if "github.com/" in url:
-        end = url.split("github.com/")[-1]
-        org, repo = end.split("/")[:2]
-    else:
-        SPHINX_LOGGER.warning(
-            f"Currently Binder/JupyterHub repositories must be on GitHub, got {url}"
-        )
-        org = repo = None
+    # remove http:// or https://
+    end = url.split("//", maxsplit=1)[-1]
+    # remove name of server, e.g. github.com or gitlab.com
+    end = end.split("/", maxsplit=1)[-1]
+    # end = url.split("github.com/")[-1]
+    # what about names such github.com/company/group/project???
+    org, repo = end.split("/", maxsplit=1)
     return org, repo
 
 
