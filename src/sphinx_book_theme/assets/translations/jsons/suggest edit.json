@@ -25,7 +25,7 @@
   { "language": "Thai", "symbol": "th", "text": "แนะนำแก้ไข" },
   { "language": "Czech", "symbol": "cs", "text": "navrhnout úpravy" },
   { "language": "Slovenian", "symbol": "sl", "text": "predlagajte urejanje" },
-  { "language": "Swedish", "symbol": "sv", "text": "föreslå redigering" },
+  { "language": "Swedish", "symbol": "sv", "text": "föreslå ändring" },
   { "language": "Norwegian", "symbol": "no", "text": "foreslå redigering" },
   { "language": "Korean", "symbol": "ko", "text": "편집 제안" },
   { "language": "Indonesian", "symbol": "id", "text": "menyarankan edit" },
