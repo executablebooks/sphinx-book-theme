@@ -1,0 +1,7 @@
+{# The in-page Table of Contents -#}
+{% set page_toc = generate_toc_html() -%}
+{% if page_toc -%}
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+{%- endif %}

@@ -58,8 +58,9 @@ jobs:
       run: >
         pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
 
+    # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
     - name: Upload to Codecov
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme'
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
       uses: codecov/codecov-action@v3.1.1
       with:
         name: ebp-sbt-pytests-py3.7
@@ -84,7 +85,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e .[doc]
 
+    # Only check for broken links on pull requests so that we don't block releases
     - name: Check for broken links
+      if: github.event_name == 'pull_request'
       run: >
         sphinx-build -b linkcheck docs docs/_build/linkcheck
 
@@ -103,7 +106,7 @@ jobs:
         assert len(unexpected) == 0
 
     - name: Audit with Lighthouse
-      uses: treosh/lighthouse-ci-action@9.3.1
+      uses: treosh/lighthouse-ci-action@10.1.0
       with:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true

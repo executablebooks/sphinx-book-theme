@@ -160,21 +160,19 @@ var initThebeSBT = () => {
  */
 
 function addNoPrint() {
-  document.querySelector("div.bd-sidebar-primary").classList.add("noprint");
-  document.querySelector("div.bd-sidebar-secondary").classList.add("noprint");
-  document.querySelector("div.bd-header-article").classList.add("noprint");
-  document.querySelector("div.bd-header-announcement").classList.add("noprint");
-  document.querySelector("footer.bd-footer-article").classList.add("noprint");
-}
-
-/**
- * Set Mode of the theme
- * Remove this function once all modes are supported.
- */
-
-function setMode() {
-  document.documentElement.dataset.mode = "light";
-  document.documentElement.dataset.theme = "light";
+  var noPrintSelector = [
+    ".bd-header-announcement",
+    ".bd-header",
+    ".bd-header-article",
+    ".bd-sidebar-primary",
+    ".bd-sidebar-secondary",
+    ".bd-footer-article",
+    ".bd-footer-content",
+    ".bd-footer",
+  ].join(",");
+  document.querySelectorAll(noPrintSelector).forEach((ii) => {
+    ii.classList.add("noprint");
+  });
 }
 
 /**
@@ -188,4 +186,3 @@ window.toggleFullScreen = toggleFullScreen;
  */
 sbRunWhenDOMLoaded(initTocHide);
 sbRunWhenDOMLoaded(addNoPrint);
-sbRunWhenDOMLoaded(setMode);

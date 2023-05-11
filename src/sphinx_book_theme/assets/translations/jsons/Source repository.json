@@ -30,7 +30,7 @@
   { "language": "Slovak", "symbol": "sk", "text": "Zdrojové úložisko" },
   { "language": "Slovenian", "symbol": "sl", "text": "Izvorno skladišče" },
   { "language": "Spanish", "symbol": "es", "text": "Repositorio de origen" },
-  { "language": "Swedish", "symbol": "sv", "text": "Källförvar" },
+  { "language": "Swedish", "symbol": "sv", "text": "Källkodsrepositorium" },
   { "language": "Tajik", "symbol": "tg", "text": "Анбори манбаъ" },
   { "language": "Thai", "symbol": "th", "text": "ที่เก็บซอร์ส" },
   { "language": "Turkish", "symbol": "tr", "text": "Kaynak kod deposu" },

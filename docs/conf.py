@@ -1,8 +1,10 @@
 # -- Project information -----------------------------------------------------
 import os
+from urllib.request import urlopen
+from pathlib import Path
 
 project = "Sphinx Book Theme"
-copyright = "2020"
+copyright = "2023"
 author = "the Executable Book Project"
 # language = "fr"  # For testing language translations
 
@@ -77,7 +79,6 @@ html_theme = "sphinx_book_theme"
 html_logo = "_static/logo-wide.svg"
 html_title = "Sphinx Book Theme"
 html_copy_source = True
-html_sourcelink_suffix = ""
 html_favicon = "_static/logo-square.svg"
 html_last_updated_fmt = ""
 
@@ -107,7 +108,7 @@ thebe_config = {
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
-    # "repository_branch": "gh-pages",  # For testing
+    "repository_branch": "master",
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         "colab_url": "https://colab.research.google.com/",
@@ -117,23 +118,56 @@ html_theme_options = {
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
     },
     "use_edit_page_button": True,
+    "use_source_button": True,
     "use_issues_button": True,
-    "use_repository_button": True,
+    # "use_repository_button": True,
     "use_download_button": True,
     "use_sidenotes": True,
-    "logo": {
-        "text": html_title,
-    },
     "show_toc_level": 2,
     "announcement": (
         "⚠️The latest release refactored our HTML, "
         "so double-check your custom CSS rules!⚠️"
     ),
+    "logo": {
+        "image_dark": "_static/logo-wide-dark.svg",
+        # "text": html_title,  # Uncomment to try text with logo
+    },
+    "icon_links": [
+        {
+            "name": "Executable Books",
+            "url": "https://executablebooks.org/",
+            "icon": "_static/ebp-logo.png",
+            "type": "local",
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/executablebooks/sphinx-book-theme",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/sphinx-book-theme/",
+            "icon": "https://img.shields.io/pypi/dw/sphinx-book-theme",
+            "type": "url",
+        },
+    ],
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
     # "extra_footer": "<a href='https://google.com'>Test</a>",  # DEPRECATED KEY
     # "show_navbar_depth": 2,
+    # Testing layout areas
+    # "navbar_start": ["test.html"],
+    # "navbar_center": ["test.html"],
+    # "navbar_end": ["test.html"],
+    # "navbar_persistent": ["test.html"],
+    # "footer_start": ["test.html"],
+    # "footer_end": ["test.html"]
+}
+
+# sphinxext.opengraph
+ogp_social_cards = {
+    "image": "_static/logo-square.png",
 }
 
 # -- ABlog config -------------------------------------------------
@@ -153,6 +187,27 @@ linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
+
+
+# -- Download latest theme elements page from PyData -----------------------------
+
+path_pydata_content = "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/user_guide/theme-elements.md"  # noqa
+path_content_file = Path(__file__).parent / "content/pydata-content-blocks.md"
+if not path_content_file.exists():
+    with urlopen(path_pydata_content) as resp:
+        # Read in the content page file, then update the title and add context
+        content = resp.read().decode().split("\n")
+        ix_title = content.index("# Theme-specific elements")
+        content[ix_title] = "# PyData Theme Elements"
+        content.insert(
+            ix_title + 1,
+            "\nThis is a collection of content blocks with special support from this theme's parent theme, [the PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/theme-elements.html)\n",  # noqa
+        )  # noqa
+        content = "\n".join(content)
+        # Replace a relative link in the pydata docs w/ the respective one here
+        content = content.replace("../examples/pydata.md", "notebooks.md")
+        # Write to disk in a location that will be ignored by git
+        path_content_file.write_text(content)
 
 
 def setup(app):

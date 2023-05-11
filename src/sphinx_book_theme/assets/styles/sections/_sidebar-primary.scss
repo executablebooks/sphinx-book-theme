@@ -3,34 +3,31 @@
 *********************************************/
 
 .bd-sidebar-primary {
-  transition: margin-left $animation-time ease 0s,
-    opacity $animation-time ease 0s, visibility $animation-time ease 0s;
-  font-size: $sbt-font-size-small-1;
+  // So that it sticks to the top of the page instead of the header height
+  top: 0;
+  max-height: 100vh;
 
-  .navbar-brand {
-    height: unset;
-    // Auto-center the image and title and make items vertical
-    flex-direction: column;
-    justify-content: center;
+  // Tighter padding so the spacing is more equal
+  padding: 1rem;
+
+  // Draw open/close animation
+  transition:
+    margin-left $animation-time ease 0s,
+    opacity $animation-time ease 0s,
+    visibility $animation-time ease 0s;
+
+  @media (max-width: $breakpoint-md) {
+    // So that tooltips don't overlap
+    z-index: $zindex-tooltip + 1;
   }
 
-  .bd-search input {
-    // Slightly reduce padding because it's a bit too big on this theme
-    padding-left: 2rem;
-  }
-
-  // Remove the header items that pop into the sidebar in the pydata theme
-  .sidebar-header-items {
-    display: none;
-  }
-
-  // Remove the top border since there's no header items above
-  .sidebar-start-items {
+  // Remove the top border since there's often no header items above
+  .sidebar-primary-items__start {
     border-top: none;
   }
 
   // On wide screens we have a smaller sidebar width than PST
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     flex-basis: $sidebar-primary-width-widescreen;
   }
 }
@@ -38,7 +35,7 @@
 // Default visibility for left sidebar is the reverse of what it is on mobile.
 // It is shown by default, and hidden with a click.
 // Mobile behavior is defined in the pydata sphinx theme
-@media (min-width: $breakpoint-md) {
+@media (min-width: $breakpoint-lg) {
   input#__primary:checked ~ .bd-container .bd-sidebar-primary {
     margin-left: -$sidebar-primary-width-widescreen;
     visibility: hidden;

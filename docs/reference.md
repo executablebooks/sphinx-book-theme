@@ -1,10 +1,11 @@
-# Customization
 
-These sections describe a few ways that you may customize the look and feel of your theme.
+# Reference of theme options
 
-## Theme options
+The following theme-specific options are available via `html_theme_options`.
 
-The following options are available via `html_theme_options`
+```{admonition} See the PyData Theme as well
+These are **in addition to** all of the {external:doc}`options available in the PyData Sphinx Theme <user_guide/index>`.
+```
 
 ```{list-table}
 :widths: 10 5 40
@@ -57,19 +58,4 @@ The following options are available via `html_theme_options`
 * - `toc_title`
   - str
   - The text to be displayed with the in-page TOC (`Contents` is default)
-```
-
-## Customization Topics
-
-The following sections describe a few ways to customize the theme in more depth.
-
-```{toctree}
-sidebar-primary.md
-sidebar-secondary.md
-footer-content.md
-announcements.md
-header.md
-download.md
-source-files.md
-custom-css.md
 ```

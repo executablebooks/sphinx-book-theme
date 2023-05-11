@@ -8,6 +8,10 @@
   .bd-article {
     padding-right: 2rem;
     padding-left: 2rem;
+    @media (max-width: $breakpoint-md) {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
   }
   details.above-input,
   details.below-input {

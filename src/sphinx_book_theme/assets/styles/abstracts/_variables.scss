@@ -1,7 +1,8 @@
 /*********************************************
 * Variables *
 *********************************************/
-// Breakpoints from Bootstrap: https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+// Breakpoints from Bootstrap: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+$breakpoint-xxl: 1200px;
 $breakpoint-xl: 1200px;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
@@ -11,6 +12,17 @@ $breakpoint-sm: 576px;
 $zindex-bottom: 1;
 $zindex-middle: 2;
 $zindex-top: 3;
+
+// Semantic Z-index from bootstrap. Copied here so we can re-use if needed.
+// ref: https://getbootstrap.com/docs/5.0/layout/z-index/
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-offcanvas: 1050;
+$zindex-modal: 1060;
+$zindex-popover: 1070;
+$zindex-tooltip: 1080;
 
 // Spacing
 $header-article-height: 3rem;
@@ -31,7 +43,6 @@ $sbt-font-size-small-1: 87.5%;
 html {
   // Over-ride the pydata theme so that readers can use their system base
   --pst-font-size-base: none;
-  --pst-header-height: 0px;
 }
 
 // Overrides for pydata sphinx theme.

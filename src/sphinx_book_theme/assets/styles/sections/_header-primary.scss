@@ -1,3 +1,10 @@
 .bd-header {
-  display: none;
+  // Turn off sticky positioning so that it scrolls
+  position: inherit;
+
+  // Turn these off because we'll show it in the article header
+  // The primary sidebar toggle
+  label.sidebar-toggle {
+    display: none;
+  }
 }

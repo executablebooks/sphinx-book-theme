@@ -23,13 +23,13 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "sphinx>=4,<7",
-  "pydata-sphinx-theme",
+  "pydata-sphinx-theme>=0.13.3",
 ]
 
 license = { file = "LICENSE" }
 # TODO: Add email of the maintainer
 maintainers = [
-  { name = "Chris Holdgraf", email = "choldgraf@gmail.com" },
+  { name = "Executable Books Team", email = "executablebooks@gmail.com" },
 ]
 
 classifiers = [
@@ -68,7 +68,7 @@ doc = [
     "sphinxext-opengraph",
 ]
 test = [
-    "beautifulsoup4>=4.6.1,<5",
+    "beautifulsoup4",
     "coverage",
     "myst-nb",
     "pytest",

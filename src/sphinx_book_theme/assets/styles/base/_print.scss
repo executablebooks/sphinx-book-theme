@@ -4,7 +4,7 @@
 @media print {
   .bd-main {
     .bd-content {
-      margin-left: 3rem;
+      margin-left: 2rem;
       height: auto;
       // Structural elements
       #jb-print-docs-body {
@@ -56,7 +56,10 @@
         display: none;
       }
 
-      blockquote.epigraph {
+      // Remove borders to save some ink
+      blockquote.epigraph,
+      aside.margin,
+      aside.sidebar {
         border: none;
       }
 
@@ -82,6 +85,11 @@
           }
         }
       }
+    }
+
+    // Hide the footer on printing
+    .bd-footer-content {
+      display: none !important;
     }
   }
 }
