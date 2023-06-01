@@ -61,7 +61,7 @@ jobs:
     # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
     - name: Upload to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
-      uses: codecov/codecov-action@v3.1.1
+      uses: codecov/codecov-action@v3.1.4
       with:
         name: ebp-sbt-pytests-py3.7
         flags: pytests
