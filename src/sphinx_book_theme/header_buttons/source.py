@@ -88,9 +88,9 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
             repo_url, provider = get_repo_url(context)
             if provider in ("github", "gitlab"):
                 if provider == "github":
-                    url = f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
+                    url = f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here."  # noqa: E501
                 elif provider == "gitlab":
-                    url = f"{repo_url}/-/issues/new?issue[title]=Issue%20on%20page%20%2F{context['pagename']}.html&issue[description]=Your%20issue%20content%20here.",  # noqa: E501
+                    url = f"{repo_url}/-/issues/new?issue[title]=Issue%20on%20page%20%2F{context['pagename']}.html&issue[description]=Your%20issue%20content%20here."  # noqa: E501
                 repo_buttons.append(
                     {
                         "type": "link",
