@@ -215,7 +215,7 @@ def test_header_repository_buttons(
 def test_source_button_url(sphinx_build_factory, file_regression, provider, repo):
     """Test that source button URLs are properly constructed."""
     # All buttons on
-    use_issues = "github.com" in repo
+    use_issues = "github.com" in repo or "gitlab.com" in repo or provider == "gitlab"
     confoverrides = {
         "html_theme_options": {
             "repository_url": repo,
