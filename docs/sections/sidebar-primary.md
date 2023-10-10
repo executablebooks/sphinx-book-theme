@@ -58,7 +58,7 @@ html_theme_options = {
 }
 ```
 
-(sidebar:navbar-depth)=
+(sidebar:show-navbar-depth)=
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,
@@ -73,3 +73,36 @@ html_theme_options = {
 ```
 
 The default value is `1`, which shows only top-level sections of the documentation (and is used in this documentation).
+
+(sidebar:max-navbar-depth)=
+
+## Control the maximum depth of the left sidebar lists
+
+You can control the level of toc items included in the left sidebar,
+using the following configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "max_navbar_depth": <level>,
+    ...
+}
+```
+
+The default value is `4`.
+
+(sidebar:collapse-navbar)=
+## Turn off expandable left sidebar lists
+
+You can turn off the sidebar expanding,
+using the following configuration in `conf.py`:
+
+```python
+html_theme_options = {
+    ...
+    "collapse_navbar": True,
+    ...
+}
+```
+
+The default value is `False`, which allows the navbar to be expanded.

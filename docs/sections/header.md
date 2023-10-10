@@ -14,7 +14,7 @@ There are three configuration options you can use in `html_theme_options`:
 
 **`navbar_end`**: Adds components to the end of the header. **Moved to the sizebar on mobile**. Use this for extra social links or buttons.
 
-## An eample
+## An example
 
 For example, you can add a button to the header like so:
 
