@@ -19,24 +19,24 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.11
     - uses: pre-commit/action@v3.0.0
 
   tests:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.7, 3.8, 3.9]
+        python-version: ["3.9", "3.10", "3.11"]
         # Only test the latest major release of Sphinx because otherwise we need to
         # keep multiple versions of regression tests on file and this creates lots of
         # noise in the tests.
         sphinx: [">=6,<7"]
         include:
         - os: windows-latest
-          python-version: 3.9
+          python-version: 3.11
           sphinx: ">=6,<7"
         - os: macos-latest
-          python-version: 3.9
+          python-version: 3.11
           sphinx: ">=6,<7"
     runs-on: ${{ matrix.os }}
 
@@ -60,7 +60,7 @@ jobs:
 
     # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
     - name: Upload to Codecov
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7 && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.9 && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
       uses: codecov/codecov-action@v3.1.4
       with:
         name: ebp-sbt-pytests-py3.7
@@ -77,7 +77,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7'
+        python-version: '3.9'
         cache: "pip"
         cache-dependency-path: "pyproject.toml"
     - name: Install dependencies
