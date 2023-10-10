@@ -86,11 +86,11 @@ html_sidebars = {
     "reference/blog/*": [
         "navbar-logo.html",
         "search-field.html",
-        "postcard.html",
-        "recentposts.html",
-        "tagcloud.html",
-        "categories.html",
-        "archives.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/tagcloud.html",
+        "ablog/categories.html",
+        "ablog/archives.html",
         "sbt-sidebar-nav.html",
     ]
 }
