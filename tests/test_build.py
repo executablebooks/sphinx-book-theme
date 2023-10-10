@@ -91,7 +91,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Navigation entries
     if sphinx_build.software_versions == ".sphinx4":
         # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
-        sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
+        sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
         file_regression.check(
             sidebar.prettify(),
             basename="build__sidebar-primary__nav",
@@ -101,7 +101,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "nav", id="bd-docs-nav"
+        "nav", attrs={"class": "bd-docs-nav"}
     )
     # Pages and sub-pages should be numbered
     assert "1. Page 1" in str(sidebar_ntbk)
@@ -146,7 +146,9 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     ).build(
         assert_pass=True
     )  # type: SphinxBuild
-    navbar = sphinx_build.html_tree("index.html").find("nav", id="bd-docs-nav")
+    navbar = sphinx_build.html_tree("index.html").find(
+        "nav", attrs={"class": "bd-docs-nav"}
+    )
     # double checks if the master_doc has the current class
     li = navbar.find("li", attrs={"class": "current"})
     assert "Index with code in title" in str(li)
@@ -215,7 +217,7 @@ def test_header_repository_buttons(
 def test_source_button_url(sphinx_build_factory, file_regression, provider, repo):
     """Test that source button URLs are properly constructed."""
     # All buttons on
-    use_issues = "github.com" in repo
+    use_issues = "github.com" in repo or "gitlab.com" in repo or provider == "gitlab"
     confoverrides = {
         "html_theme_options": {
             "repository_url": repo,

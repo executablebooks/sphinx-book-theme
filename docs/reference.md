@@ -42,7 +42,16 @@ These are **in addition to** all of the {external:doc}`options available in the 
   - Whether to put the home page in the Navigation Bar (at the top). See [](sidebar-primary:home-page).
 * - `show_navbar_depth`
   - int
-  - Show children in the navigation bar down to the depth listed here. See [](sidebar:navbar-depth).
+  - Show children in the navigation bar down to the depth listed here. See [](sidebar:show-navbar-depth).
+* - `max_navbar_depth`
+  - int
+  - The maximum number of levels to show in the navbar. See [](sidebar:max-navbar-depth). (4 is default)
+* - `collapse_navbar`
+  - bool
+  - Whether to collapse the navbar, stopping the tree from being expanded. See [](sidebar:max-navbar-depth), (False is default)
+* - `extra_navbar`
+  - str
+  - Extra HTML to add below the sidebar footer. See [](custom-footer).
 * - `extra_footer`
   - str
   - Extra HTML to add in the footer of each page.
