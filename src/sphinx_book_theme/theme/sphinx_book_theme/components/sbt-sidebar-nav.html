@@ -15,10 +15,10 @@
         {{- generate_toctree_html(
             startdepth=0,
             kind="sidebar",
-            maxdepth=4,
-            collapse=False,
+            maxdepth=theme_max_navbar_depth|int,
+            collapse=theme_collapse_navbar|tobool,
             includehidden=True,
             titles_only=True,
-            show_nav_level=theme_show_navbar_depth) }}
+            show_nav_level=theme_show_navbar_depth|int) }}
     </div>
 </nav>
