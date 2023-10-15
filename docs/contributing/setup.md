@@ -15,7 +15,7 @@ Follow these steps:
    cd sphinx-book-theme
    ```
 
-2. Ensure you have Python 3.7 or newer!
+2. Ensure you have Python 3.9 or newer!
 3. Install `tox`.
    `tox` is a tool for managing virtual environments for test suites or common jobs that are run with a repository.
    It ensures that your environment is consistent each time you build the docs or run tests.
