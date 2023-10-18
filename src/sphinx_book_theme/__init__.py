@@ -188,7 +188,7 @@ class Margin(Sidebar):
         return nodes
 
 
-def update_general_config(app):
+def update_general_config(app, config):
     theme_dir = get_html_theme_path()
     # Update templates for sidebar. Needed for jupyter-book builds as jb
     # uses an instance of Sphinx class from sphinx.application to build the app.
@@ -235,7 +235,7 @@ def setup(app: Sphinx):
     app.connect("builder-inited", check_deprecation_keys)
     app.connect("builder-inited", update_sourcename)
     app.connect("builder-inited", update_context_with_repository_info)
-    app.connect("builder-inited", update_general_config)
+    app.connect("config-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
     app.connect("html-page-context", update_templates)
