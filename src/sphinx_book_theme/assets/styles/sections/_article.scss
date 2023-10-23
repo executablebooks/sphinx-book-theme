@@ -1,3 +1,4 @@
-.bd-main {
-  flex-grow: 0;
+.bd-main .bd-content {
+  // make article container left aligned in absence of sidebar
+  justify-content: left;
 }
