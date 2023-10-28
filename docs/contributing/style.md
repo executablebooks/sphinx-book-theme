@@ -23,7 +23,7 @@ This theme draws inspiration and borrows design elements from the following them
 ## SCSS build process
 
 Our SCSS source files at in `src/sphinx_book_theme/assets/styles`.
-We use the [Sphinx Theme Builder](https://github.com/pradyunsg/sphinx-theme-builder) tp compile these assets and bundle them with the theme at `src/sphinx_book_theme/theme/sphinx_book_theme/static/styles`.
+We use the [Sphinx Theme Builder](https://github.com/pradyunsg/sphinx-theme-builder) to compile these assets and bundle them with the theme at `src/sphinx_book_theme/theme/sphinx_book_theme/static/styles`.
 
 These compiled files are **not checked in to `git` history**.
 
