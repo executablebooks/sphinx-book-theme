@@ -10,7 +10,8 @@ import pytest
 import sphinx
 from sphinx.testing.util import SphinxTestApp
 
-if parse(version("sphinx")).major < 7:
+sphinx_version = parse(version("sphinx"))
+if sphinx_version.major < 7:
     from sphinx.testing.path import path as sphinx_path
 else:
     from pathlib import Path as sphinx_path
@@ -476,8 +477,12 @@ def test_sidenote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     sidenote_html = page2.select("section > #sidenotes")
+    regression_file = "test_sidenote_6" if sphinx_version.major < 7 else "test_sidenote"
     file_regression.check(
-        sidenote_html[0].prettify(), extension=".html", encoding="utf8"
+        sidenote_html[0].prettify(),
+        extension=".html",
+        encoding="utf8",
+        basename=regression_file,
     )
 
 
@@ -490,6 +495,12 @@ def test_marginnote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     marginnote_html = page2.select("section > #marginnotes")
+    regression_file = (
+        "test_marginnote_6" if sphinx_version.major < 7 else "test_marginnote"
+    )
     file_regression.check(
-        marginnote_html[0].prettify(), extension=".html", encoding="utf8"
+        marginnote_html[0].prettify(),
+        extension=".html",
+        encoding="utf8",
+        basename=regression_file,
     )
