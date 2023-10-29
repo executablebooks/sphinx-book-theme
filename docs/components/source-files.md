@@ -10,7 +10,6 @@ an edit or open an issue.
 
 You need to define a **source repository** for this functionality to work.
 This is the online space where your code / documentation is hosted.
-To
 In each case, they require the following configuration to exist:
 
 ```python
