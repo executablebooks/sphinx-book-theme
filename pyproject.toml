@@ -22,7 +22,7 @@ readme = "README.md"
 
 requires-python = ">=3.9"
 dependencies = [
-  "sphinx>=4",
+  "sphinx>=5",
   "pydata-sphinx-theme>=0.14",
 ]
 

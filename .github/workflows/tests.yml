@@ -23,6 +23,7 @@ jobs:
     - uses: pre-commit/action@v3.0.0
 
   tests:
+    continue-on-error: ${{ matrix.experimental || false }}
     strategy:
       fail-fast: false
       matrix:
@@ -31,7 +32,7 @@ jobs:
         # Only test the latest major release of Sphinx because otherwise we need to
         # keep multiple versions of regression tests on file and this creates lots of
         # noise in the tests.
-        sphinx: ["~=4.0","~=5.0","~=6.0","~=7.0"]
+        sphinx: ["~=5.0","~=6.0","~=7.0"]
         include:
         - os: windows-latest
           python-version: 3.x
