@@ -2,12 +2,18 @@ import os
 from pathlib import Path
 from shutil import copytree, rmtree
 from subprocess import check_call
+from importlib.metadata import version
+from packaging.version import parse
 
 from bs4 import BeautifulSoup
 import pytest
 import sphinx
 from sphinx.testing.util import SphinxTestApp
-from sphinx.testing.path import path as sphinx_path
+
+if parse(version("sphinx")).major < 7:
+    from sphinx.testing.path import path as sphinx_path
+else:
+    from pathlib import Path as sphinx_path
 
 
 path_tests = Path(__file__).parent
@@ -50,7 +56,7 @@ def sphinx_build_factory(make_app, tmp_path):
     def _func(src_folder, **kwargs):
         copytree(path_tests / "sites" / src_folder, tmp_path / src_folder)
         app = make_app(
-            srcdir=sphinx_path(os.path.abspath((tmp_path / src_folder))), **kwargs
+            srcdir=sphinx_path(tmp_path / src_folder), **kwargs
         )
         return SphinxBuild(app, tmp_path / src_folder)
 
@@ -62,7 +68,8 @@ def test_parallel_build():
     # not have a way to pass parallel=2 to the Sphinx constructor
     # https://github.com/sphinx-doc/sphinx/blob/d8c006f1c0e612d0dc595ae463b8e4c3ebee5ca4/sphinx/testing/util.py#L101
     check_call(
-        "sphinx-build -j 2 -W -b html tests/sites/parallel-build build", shell=True
+        f"sphinx-build -j 2 -W -b html {path_tests}/sites/parallel-build build",
+        shell=True,
     )
 
 
@@ -187,6 +194,7 @@ def test_header_repository_buttons(
             "use_repository_button": repo,
             "use_issues_button": issues,
             "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+            "navigation_with_keys": True,
         }
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
@@ -225,6 +233,7 @@ def test_source_button_url(sphinx_build_factory, file_regression, provider, repo
             "use_edit_page_button": True,
             "use_source_button": True,
             "use_issues_button": use_issues,
+            "navigation_with_keys": True,
         }
     }
     # Decide if we've manually given the provider
@@ -278,7 +287,10 @@ def test_empty_header_launchbtns(sphinx_build_factory, file_regression):
     sphinx_build = sphinx_build_factory(
         "base",
         confoverrides={
-            "html_theme_options": {"launch_buttons": {"notebook_interface": "notebook"}}
+            "html_theme_options": {
+                "launch_buttons": {"notebook_interface": "notebook"},
+                "navigation_with_keys": True,
+            }
         },
     ).build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
@@ -313,6 +325,7 @@ def test_launch_button_url(sphinx_build_factory, file_regression, provider, repo
             "repository_branch": "foo",
             "path_to_docs": "docs",
             "launch_buttons": launch_buttons,
+            "navigation_with_keys": True,
         }
     }
 
@@ -352,6 +365,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
                 "use_edit_page_button": True,
                 "repository_url": "https://github.com/executablebooks/sphinx-book-theme",  # noqa: E501
                 "launch_buttons": {"binderhub_url": "https://mybinder.org"},
+                "navigation_with_keys": True,
             }
         },
     ).build(assert_pass=True)
@@ -388,7 +402,12 @@ def test_show_navbar_depth(sphinx_build_factory):
     """Test with different levels of show_navbar_depth."""
     sphinx_build = sphinx_build_factory(
         "base",
-        confoverrides={"html_theme_options.show_navbar_depth": 2},
+        confoverrides={
+            "html_theme_options": {
+                "show_navbar_depth": 2,
+                "navigation_with_keys": True,
+            }
+        },
     ).build(
         assert_pass=True
     )  # type: SphinxBuild
@@ -404,7 +423,10 @@ def test_show_navbar_depth(sphinx_build_factory):
 def test_header_download_button_off(sphinx_build_factory):
     """Download button should not show up in the header when configured as False."""
     confoverrides = {
-        "html_theme_options.use_download_button": False,
+        "html_theme_options": {
+            "use_download_button": False,
+            "navigation_with_keys": True,
+        }
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
