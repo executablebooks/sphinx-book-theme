@@ -28,7 +28,7 @@ file instead of the text file.
 
 ## Binder / BinderHub
 
-To add Binder links your page, add the following configuration:
+To add Binder links to your page, add the following configuration:
 
 ```python
 html_theme_options = {
