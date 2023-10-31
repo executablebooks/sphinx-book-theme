@@ -30,4 +30,5 @@ html_theme_options = {
         "notebook_interface": "jupyterlab",
         "thebe": True,
     },
+    "navigation_with_keys": True,
 }
