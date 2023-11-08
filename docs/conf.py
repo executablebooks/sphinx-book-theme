@@ -205,7 +205,7 @@ if not path_content_file.exists():
         )  # noqa
         content = "\n".join(content)
         # Replace a relative link in the pydata docs w/ the respective one here
-        content = content.replace("../examples/pydata.md", "notebooks.md")
+        content = content.replace("../examples/pydata.ipynb", "notebooks.ipynb")
         # Write to disk in a location that will be ignored by git
         path_content_file.write_text(content)
 

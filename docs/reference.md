@@ -51,7 +51,7 @@ These are **in addition to** all of the {external:doc}`options available in the 
   - Whether to collapse the navbar, stopping the tree from being expanded. See [](sidebar:max-navbar-depth), (False is default)
 * - `extra_navbar`
   - str
-  - Extra HTML to add below the sidebar footer. See [](custom-footer).
+  - Extra HTML to add below the sidebar footer. See [](content-footer:extra-footer).
 * - `extra_footer`
   - str
   - Extra HTML to add in the footer of each page.
