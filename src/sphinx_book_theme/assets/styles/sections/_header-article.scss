@@ -93,6 +93,11 @@ label.sidebar-toggle.secondary-toggle {
     border: none;
     padding: 0 0.5rem;
 
+    // Fix width of buttons so they're all the same
+    svg {
+      width: 1.3rem;
+    }
+
     // Hover / active behavior
     &.show,
     &:hover {
