@@ -7,6 +7,8 @@
   }
   // Move this to the lower-right of the screen to be less intrusive
   top: 85vh;
-  left: 90vw;
+  left: unset;
+  right: 0vw;
   width: 5rem;
+  font-size: 0.8rem;
 }
