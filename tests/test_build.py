@@ -149,9 +149,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.home_page_in_toc": True}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
+    ).build(assert_pass=True)  # type: SphinxBuild
     navbar = sphinx_build.html_tree("index.html").find(
         "nav", attrs={"class": "bd-docs-nav"}
     )
@@ -169,9 +167,7 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 def test_navbar_options(sphinx_build_factory, option, value):
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={f"html_theme_options.{option}": value}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
+    ).build(assert_pass=True)  # type: SphinxBuild
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
 
 
@@ -407,9 +403,7 @@ def test_show_navbar_depth(sphinx_build_factory):
                 "navigation_with_keys": True,
             }
         },
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
+    ).build(assert_pass=True)  # type: SphinxBuild
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         attrs={"class": "bd-sidebar"}
     )[0]
