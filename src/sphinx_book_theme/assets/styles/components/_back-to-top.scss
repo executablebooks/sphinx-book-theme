@@ -1,0 +1,11 @@
+#pst-back-to-top {
+  // We should only display the back-to-top button when the TOC is not available.
+  // AKA, on narrow-ish screens.
+  // This over-rides a PST default
+  @media (min-width: $breakpoint-xl) {
+    display: none !important;
+  }
+  // Move this to the lower-right of the screen to be less intrusive
+  top: 90vh;
+  left: 90vw;
+}
