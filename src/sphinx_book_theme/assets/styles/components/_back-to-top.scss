@@ -5,10 +5,7 @@
   @media (min-width: $breakpoint-xl) {
     display: none !important;
   }
-  // Move this to the lower-right of the screen to be less intrusive
-  top: 85vh;
-  left: unset;
-  right: 0vw;
-  width: 5rem;
+
+  // Reduce size to be slightly less intrusive on the page
   font-size: 0.8rem;
 }
