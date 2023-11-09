@@ -33,11 +33,7 @@ def convert_json(folder=None):
             if language in RENAME_LANGUAGE_CODES:
                 language = RENAME_LANGUAGE_CODES[language]
             out_path = (
-                out_folder
-                / "locales"
-                / language
-                / "LC_MESSAGES"
-                / "booktheme.po"  # noqa: E501
+                out_folder / "locales" / language / "LC_MESSAGES" / "booktheme.po"  # noqa: E501
             )
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
