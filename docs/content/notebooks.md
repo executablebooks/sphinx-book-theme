@@ -121,7 +121,7 @@ Math("\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
 ## Removing content before publishing
 
 You can also remove some content before publishing your book to the web. For example,
-in {download}`./notebooks.ipynb`, there used to be a cell below...
+in {download}`./notebooks.md`, there used to be a cell below...
 
 ```{code-cell} ipython3
 :tags: [remove_cell]
@@ -139,7 +139,7 @@ ax.set_axis_off()
 You can also **remove only the code** so that images and other output still show up.
 
 Below we'll *only* display an image. It was generated with Python code in a cell,
-which you can {download}`see in the original notebook <./notebooks.ipynb>`.
+which you can {download}`see in the original notebook <./notebooks.md>`.
 
 ```{code-cell} ipython3
 :tags: [hide_input]
