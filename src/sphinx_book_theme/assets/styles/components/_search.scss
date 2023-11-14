@@ -24,7 +24,7 @@
 // Rules to switch off visibility of the field button and the header button
 @media (min-width: $breakpoint-lg) {
   .search-button {
-    display: none;
+    display: none !important;
   }
 
   .search-button-field {
