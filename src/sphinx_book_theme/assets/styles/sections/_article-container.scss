@@ -5,8 +5,11 @@
   overflow-x: unset;
   // prevent from overflowing the flex container
   min-width: 0;
-  // keep article at reasonable width in absence of sidebar
-  max-width: calc(100% - var(--pst-sidebar-secondary));
+
+  @media (min-width: $breakpoint-xl) {
+    // keep article at reasonable width in absence of sidebar
+    max-width: calc(100% - var(--pst-sidebar-secondary));
+  }
 
   .bd-article {
     padding-right: 2rem;

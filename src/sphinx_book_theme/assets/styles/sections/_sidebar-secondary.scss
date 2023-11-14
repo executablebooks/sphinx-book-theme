@@ -29,6 +29,7 @@
     height: $header-article-height;
     min-height: $header-article-height;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
     margin: 0;
     color: var(--pst-color-muted);
