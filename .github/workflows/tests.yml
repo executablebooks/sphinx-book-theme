@@ -35,7 +35,9 @@ jobs:
         sphinx: ["~=5.0","~=6.0","~=7.0"]
         include:
         - os: windows-latest
-          python-version: 3.x
+          # Python 3.12 is broken on windows builds until the following PR is released:
+          # https://github.com/pradyunsg/sphinx-theme-builder/pull/47
+          python-version: 3.11
           # Windows pulling in dependencies fails
           experimental: true
         - os: macos-latest
