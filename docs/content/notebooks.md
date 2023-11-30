@@ -223,13 +223,15 @@ import folium
 m = folium.Map(
     location=[45.372, -121.6972],
     zoom_start=12,
-    tiles='Stamen Terrain'
+    tiles='Stamen Terrain',
+    attr="Placeholder attr"
 )
 
 folium.Marker(
     location=[45.3288, -121.6625],
     popup='Mt. Hood Meadows',
-    icon=folium.Icon(icon='cloud')
+    icon=folium.Icon(icon='cloud'),
+    attr="Placeholder attr"
 ).add_to(m)
 
 folium.Marker(
@@ -241,7 +243,8 @@ folium.Marker(
 folium.Marker(
     location=[45.3300, -121.6823],
     popup='Some Other Location',
-    icon=folium.Icon(color='red', icon='info-sign')
+    icon=folium.Icon(color='red', icon='info-sign'),
+    attr="Placeholder attr"
 ).add_to(m)
 
 
