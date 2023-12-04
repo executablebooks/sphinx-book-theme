@@ -1,6 +1,6 @@
 """Source file buttons that point to the online repository."""
 
-from pydata_sphinx_theme import _get_theme_options
+from pydata_sphinx_theme.utils import get_theme_options_dict
 from sphinx.locale import get_translation
 from sphinx.util import logging
 
@@ -13,7 +13,7 @@ translation = get_translation(MESSAGE_CATALOG_NAME)
 
 def add_source_buttons(app, pagename, templatename, context, doctree):
     """Add the source repository buttons."""
-    opts = _get_theme_options(app)
+    opts = get_theme_options_dict(app)
     header_buttons = context["header_buttons"]
     # If we have a suffix, then we have a source file
     suff = context.get("page_source_suffix")
@@ -86,19 +86,23 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
 
         if opts.get("use_issues_button"):
             repo_url, provider = get_repo_url(context)
-            if provider != "github":
-                LOGGER.warning(f"Open issue button not yet supported for {provider}")
-            else:
+            if provider in ("github", "gitlab"):
+                if provider == "github":
+                    url = f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here."  # noqa: E501
+                elif provider == "gitlab":
+                    url = f"{repo_url}/-/issues/new?issue[title]=Issue%20on%20page%20%2F{context['pagename']}.html&issue[description]=Your%20issue%20content%20here."  # noqa: E501
                 repo_buttons.append(
                     {
                         "type": "link",
-                        "url": f"{repo_url}/issues/new?title=Issue%20on%20page%20%2F{context['pagename']}.html&body=Your%20issue%20content%20here.",  # noqa: E501
+                        "url": url,
                         "text": translation("Open issue"),
                         "tooltip": translation("Open an issue"),
                         "icon": "fas fa-lightbulb",
                         "label": "source-issues-button",
                     }
                 )
+            else:
+                LOGGER.warning(f"Open issue button not yet supported for {provider}")
 
         # If we have multiple repo buttons enabled, add a group, otherwise just 1 button
         if len(repo_buttons) > 1:

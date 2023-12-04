@@ -93,6 +93,15 @@ label.sidebar-toggle.secondary-toggle {
     border: none;
     padding: 0 0.5rem;
 
+    // Make sure anything inside is aligned vertically
+    display: flex;
+    align-items: center;
+
+    // Fix width of buttons so they're all the same
+    svg {
+      width: 1.3rem;
+    }
+
     // Hover / active behavior
     &.show,
     &:hover {
@@ -112,6 +121,12 @@ label.sidebar-toggle.secondary-toggle {
         display: none;
       }
     }
+  }
+
+  // Vertically align dropdown buttons
+  div.dropdown {
+    display: flex;
+    align-items: center;
   }
 
   .theme-switch-button {
@@ -148,7 +163,7 @@ label.sidebar-toggle.secondary-toggle {
     }
 
     // Positioning and layout of dropdown items to be standardized
-    margin-top: 0px;
+    top: 2rem;
     transform: translateX(-75%);
     @include pst-box-shadow;
 

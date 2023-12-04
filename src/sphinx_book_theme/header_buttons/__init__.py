@@ -1,7 +1,7 @@
 """Generate metadata for header buttons."""
 from sphinx.errors import SphinxError
 from sphinx.locale import get_translation
-from pydata_sphinx_theme import _config_provided_by_user, _get_theme_options
+from pydata_sphinx_theme.utils import config_provided_by_user, get_theme_options_dict
 
 from sphinx.util import logging
 
@@ -50,7 +50,7 @@ def prep_header_buttons(app, pagename, templatename, context, doctree):
 
 def add_header_buttons(app, pagename, templatename, context, doctree):
     """Add basic and general header buttons, we'll add source/launch later."""
-    opts = _get_theme_options(app)
+    opts = get_theme_options_dict(app)
     pathto = context["pathto"]
     header_buttons = context["header_buttons"]
 
@@ -127,7 +127,7 @@ def update_sourcename(app):
     # the user manually specifies an html_source_suffix, default to an empty string.
     # _raw_config is the configuration as provided by the user.
     # If a key isn't in it, then the user didn't provide it
-    if not _config_provided_by_user(app, "html_sourcelink_suffix"):
+    if not config_provided_by_user(app, "html_sourcelink_suffix"):
         app.config.html_sourcelink_suffix = ""
 
 
@@ -138,7 +138,7 @@ def update_context_with_repository_info(app):
     while the PST uses a collection of {provider}_{key} pairs in html_context.
     So here we insert those context variables on our own.
     """
-    opts = _get_theme_options(app)
+    opts = get_theme_options_dict(app)
     context = app.config.html_context
 
     # This is the way to give repository info. If it doesn't exist, do nothing.

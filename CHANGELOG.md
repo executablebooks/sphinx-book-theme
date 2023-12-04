@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1 -- 2023-03-31
+
+This is a minor release supporting pydata>=0.13.3, with a few import changes from pydata.
+
 ## v1.0.0 -- 2023-03-01
 
 This is a major release that brings in the latest PyData Sphinx Theme and a number of new features with it.

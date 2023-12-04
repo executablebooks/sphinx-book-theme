@@ -2,12 +2,19 @@ import os
 from pathlib import Path
 from shutil import copytree, rmtree
 from subprocess import check_call
+from importlib.metadata import version
+from packaging.version import parse
 
 from bs4 import BeautifulSoup
 import pytest
 import sphinx
 from sphinx.testing.util import SphinxTestApp
-from sphinx.testing.path import path as sphinx_path
+
+sphinx_version = parse(version("sphinx"))
+if sphinx_version.major < 7:
+    from sphinx.testing.path import path as sphinx_path
+else:
+    from pathlib import Path as sphinx_path
 
 
 path_tests = Path(__file__).parent
@@ -49,9 +56,7 @@ class SphinxBuild:
 def sphinx_build_factory(make_app, tmp_path):
     def _func(src_folder, **kwargs):
         copytree(path_tests / "sites" / src_folder, tmp_path / src_folder)
-        app = make_app(
-            srcdir=sphinx_path(os.path.abspath((tmp_path / src_folder))), **kwargs
-        )
+        app = make_app(srcdir=sphinx_path(tmp_path / src_folder), **kwargs)
         return SphinxBuild(app, tmp_path / src_folder)
 
     yield _func
@@ -62,7 +67,8 @@ def test_parallel_build():
     # not have a way to pass parallel=2 to the Sphinx constructor
     # https://github.com/sphinx-doc/sphinx/blob/d8c006f1c0e612d0dc595ae463b8e4c3ebee5ca4/sphinx/testing/util.py#L101
     check_call(
-        "sphinx-build -j 2 -W -b html tests/sites/parallel-build build", shell=True
+        f"sphinx-build -j 2 -W -b html {path_tests}/sites/parallel-build build",
+        shell=True,
     )
 
 
@@ -91,7 +97,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     # Navigation entries
     if sphinx_build.software_versions == ".sphinx4":
         # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
-        sidebar = index_html.find(attrs={"id": "bd-docs-nav"})
+        sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
         file_regression.check(
             sidebar.prettify(),
             basename="build__sidebar-primary__nav",
@@ -101,7 +107,7 @@ def test_build_book(sphinx_build_factory, file_regression):
 
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
-        "nav", id="bd-docs-nav"
+        "nav", attrs={"class": "bd-docs-nav"}
     )
     # Pages and sub-pages should be numbered
     assert "1. Page 1" in str(sidebar_ntbk)
@@ -143,10 +149,10 @@ def test_build_book(sphinx_build_factory, file_regression):
 def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={"html_theme_options.home_page_in_toc": True}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
-    navbar = sphinx_build.html_tree("index.html").find("nav", id="bd-docs-nav")
+    ).build(assert_pass=True)  # type: SphinxBuild
+    navbar = sphinx_build.html_tree("index.html").find(
+        "nav", attrs={"class": "bd-docs-nav"}
+    )
     # double checks if the master_doc has the current class
     li = navbar.find("li", attrs={"class": "current"})
     assert "Index with code in title" in str(li)
@@ -161,9 +167,7 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 def test_navbar_options(sphinx_build_factory, option, value):
     sphinx_build = sphinx_build_factory(
         "base", confoverrides={f"html_theme_options.{option}": value}
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
+    ).build(assert_pass=True)  # type: SphinxBuild
     assert value in str(sphinx_build.html_tree("section1", "ntbk.html"))
 
 
@@ -185,6 +189,7 @@ def test_header_repository_buttons(
             "use_repository_button": repo,
             "use_issues_button": issues,
             "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
+            "navigation_with_keys": True,
         }
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
@@ -215,7 +220,7 @@ def test_header_repository_buttons(
 def test_source_button_url(sphinx_build_factory, file_regression, provider, repo):
     """Test that source button URLs are properly constructed."""
     # All buttons on
-    use_issues = "github.com" in repo
+    use_issues = "github.com" in repo or "gitlab.com" in repo or provider == "gitlab"
     confoverrides = {
         "html_theme_options": {
             "repository_url": repo,
@@ -223,6 +228,7 @@ def test_source_button_url(sphinx_build_factory, file_regression, provider, repo
             "use_edit_page_button": True,
             "use_source_button": True,
             "use_issues_button": use_issues,
+            "navigation_with_keys": True,
         }
     }
     # Decide if we've manually given the provider
@@ -276,7 +282,10 @@ def test_empty_header_launchbtns(sphinx_build_factory, file_regression):
     sphinx_build = sphinx_build_factory(
         "base",
         confoverrides={
-            "html_theme_options": {"launch_buttons": {"notebook_interface": "notebook"}}
+            "html_theme_options": {
+                "launch_buttons": {"notebook_interface": "notebook"},
+                "navigation_with_keys": True,
+            }
         },
     ).build(assert_pass=True)
     launch_btns = sphinx_build.html_tree("section1", "ntbk.html").select(
@@ -311,6 +320,7 @@ def test_launch_button_url(sphinx_build_factory, file_regression, provider, repo
             "repository_branch": "foo",
             "path_to_docs": "docs",
             "launch_buttons": launch_buttons,
+            "navigation_with_keys": True,
         }
     }
 
@@ -350,6 +360,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
                 "use_edit_page_button": True,
                 "repository_url": "https://github.com/executablebooks/sphinx-book-theme",  # noqa: E501
                 "launch_buttons": {"binderhub_url": "https://mybinder.org"},
+                "navigation_with_keys": True,
             }
         },
     ).build(assert_pass=True)
@@ -386,10 +397,13 @@ def test_show_navbar_depth(sphinx_build_factory):
     """Test with different levels of show_navbar_depth."""
     sphinx_build = sphinx_build_factory(
         "base",
-        confoverrides={"html_theme_options.show_navbar_depth": 2},
-    ).build(
-        assert_pass=True
-    )  # type: SphinxBuild
+        confoverrides={
+            "html_theme_options": {
+                "show_navbar_depth": 2,
+                "navigation_with_keys": True,
+            }
+        },
+    ).build(assert_pass=True)  # type: SphinxBuild
     sidebar = sphinx_build.html_tree("section1", "ntbk.html").find_all(
         attrs={"class": "bd-sidebar"}
     )[0]
@@ -402,7 +416,10 @@ def test_show_navbar_depth(sphinx_build_factory):
 def test_header_download_button_off(sphinx_build_factory):
     """Download button should not show up in the header when configured as False."""
     confoverrides = {
-        "html_theme_options.use_download_button": False,
+        "html_theme_options": {
+            "use_download_button": False,
+            "navigation_with_keys": True,
+        }
     }
     sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides).build(
         assert_pass=True
@@ -454,8 +471,12 @@ def test_sidenote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     sidenote_html = page2.select("section > #sidenotes")
+    regression_file = "test_sidenote_6" if sphinx_version.major < 7 else "test_sidenote"
     file_regression.check(
-        sidenote_html[0].prettify(), extension=".html", encoding="utf8"
+        sidenote_html[0].prettify(),
+        extension=".html",
+        encoding="utf8",
+        basename=regression_file,
     )
 
 
@@ -468,6 +489,12 @@ def test_marginnote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     marginnote_html = page2.select("section > #marginnotes")
+    regression_file = (
+        "test_marginnote_6" if sphinx_version.major < 7 else "test_marginnote"
+    )
     file_regression.check(
-        marginnote_html[0].prettify(), extension=".html", encoding="utf8"
+        marginnote_html[0].prettify(),
+        extension=".html",
+        encoding="utf8",
+        basename=regression_file,
     )

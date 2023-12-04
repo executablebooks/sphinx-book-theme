@@ -9,7 +9,7 @@ from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
-from pydata_sphinx_theme import _get_theme_options
+from pydata_sphinx_theme.utils import get_theme_options_dict
 
 from .nodes import SideNoteNode
 from .header_buttons import (
@@ -22,7 +22,7 @@ from .header_buttons.launch import add_launch_buttons
 from .header_buttons.source import add_source_buttons
 from ._transforms import HandleFootnoteTransform
 
-__version__ = "1.0.0"
+__version__ = "1.1.0rc1"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -67,7 +67,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     context["translate"] = translation
 
     # If search text hasn't been manually specified, use a shorter one here
-    theme_options = _get_theme_options(app)
+    theme_options = get_theme_options_dict(app)
     if "search_bar_text" not in theme_options:
         context["theme_search_bar_text"] = translation("Search") + "..."
 
@@ -122,7 +122,7 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
 
 def update_mode_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
-    theme_options = _get_theme_options(app)
+    theme_options = get_theme_options_dict(app)
     if theme_options.get("launch_buttons", {}).get("thebe") is True:
         # In case somebody specifies they want thebe in a launch button
         # but has not activated the sphinx_thebe extension.
@@ -161,7 +161,7 @@ def check_deprecation_keys(app):
 
     deprecated_config_list = ["single_page"]
     for key in deprecated_config_list:
-        if key in _get_theme_options(app):
+        if key in get_theme_options_dict(app):
             SPHINX_LOGGER.warning(
                 f"'{key}' was deprecated from version 0.3.4 onwards. See the CHANGELOG for more information: https://github.com/executablebooks/sphinx-book-theme/blob/master/CHANGELOG.md"  # noqa: E501
                 f"[{DEFAULT_LOG_TYPE}]",

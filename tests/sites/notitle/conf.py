@@ -11,4 +11,5 @@ html_theme = "sphinx_book_theme"
 
 html_theme_options = {
     "home_page_in_toc": True,
+    "navigation_with_keys": True,
 }

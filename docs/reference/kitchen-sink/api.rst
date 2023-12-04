@@ -25,5 +25,5 @@ Using Sphinx's ``sphinx.ext.autodoc`` plugin, it is possible to auto-generate do
         # Don't show class signature with the class' name.
         autodoc_class_signature = "separated"
 
-.. automodule:: urllib.parse
+.. automodule:: datetime
     :members:

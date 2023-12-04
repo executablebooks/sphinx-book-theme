@@ -86,11 +86,11 @@ html_sidebars = {
     "reference/blog/*": [
         "navbar-logo.html",
         "search-field.html",
-        "postcard.html",
-        "recentposts.html",
-        "tagcloud.html",
-        "categories.html",
-        "archives.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/tagcloud.html",
+        "ablog/categories.html",
+        "ablog/archives.html",
         "sbt-sidebar-nav.html",
     ]
 }
@@ -205,7 +205,7 @@ if not path_content_file.exists():
         )  # noqa
         content = "\n".join(content)
         # Replace a relative link in the pydata docs w/ the respective one here
-        content = content.replace("../examples/pydata.md", "notebooks.md")
+        content = content.replace("../examples/pydata.ipynb", "notebooks.md")
         # Write to disk in a location that will be ignored by git
         path_content_file.write_text(content)
 
