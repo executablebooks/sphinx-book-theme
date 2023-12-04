@@ -40,7 +40,7 @@ This should get more energy than deciding whether to bump the major/minor versio
 
 **Major version bumps should be for truly major overhauls**.
 We're likely be breaking things here and there throughout, not every single breaking change.
-Reserve major version changes for significant overhauls (for example, ones that require someone to comprehensively re-work thier CSS rules).
+Reserve major version changes for significant overhauls (for example, ones that require someone to comprehensively re-work their CSS rules).
 
 **Major versions do not have any special meaning other than semver**.
 While we generally try not to bump major versions, they also carry no special meaning other than reflecting how much changed since the last version.

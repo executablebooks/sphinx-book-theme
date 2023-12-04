@@ -48,7 +48,7 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
             )
 
         if opts.get("use_source_button") and doctree and suff:
-            # We'll re-use this to make action-specific URLs
+            # We'll reuse this to make action-specific URLs
             provider, edit_url = context["get_edit_provider_and_url"]()
             # Convert URL to a blob so it's for viewing
             if provider.lower() == "github":
@@ -71,7 +71,7 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
             )
 
         if opts.get("use_edit_page_button") and doctree and suff:
-            # We'll re-use this to make action-specific URLs
+            # We'll reuse this to make action-specific URLs
             provider, edit_url = context["get_edit_provider_and_url"]()
             repo_buttons.append(
                 {

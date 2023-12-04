@@ -46,7 +46,7 @@ but I'll stop here.
 ````
 
 You can also add an attribution to epigraphs by adding a blank line,
-followed by a line that starts with `--`. This will be renderered like so:
+followed by a line that starts with `--`. This will be rendered like so:
 
 ````{example} Epigraphs with attribution
 ```{epigraph}
