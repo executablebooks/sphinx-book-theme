@@ -11,7 +11,7 @@ There are no promises that we won't make breaking changes here, so be sure to te
 ## Hashing your assets
 
 This theme defines a function called `hash_html_assets` that can be used to create hashes for your style files, and updates the Sphinx links to include them with `?digest=`.
-You can re-use this function in a sub-theme if you wish - to do so, look at the function signature of `hash_html_assets`.
+You can reuse this function in a sub-theme if you wish - to do so, look at the function signature of `hash_html_assets`.
 
 For example, here's a Python snippet that reuses this function:
 

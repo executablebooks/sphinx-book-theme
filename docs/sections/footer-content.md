@@ -1,6 +1,6 @@
 # Content footer
 
-There is a content footer that spans the width of the page, and is visibile when you scroll to the bottom of the content.
+There is a content footer that spans the width of the page, and is visible when you scroll to the bottom of the content.
 
 By default, the content footer has the following items:
 

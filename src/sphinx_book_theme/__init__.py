@@ -38,7 +38,7 @@ def get_html_theme_path():
 
 
 def add_metadata_to_page(app, pagename, templatename, context, doctree):
-    """Adds some metadata about the page that we re-use later."""
+    """Adds some metadata about the page that we reuse later."""
     # Add the site title to our context so it can be inserted into the navbar
     if not context.get("root_doc"):
         # TODO: Sphinx renamed master to root in 4.x, deprecate when we drop 3.x
