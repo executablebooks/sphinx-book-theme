@@ -1,7 +1,7 @@
 # Header and navbar
 
 By default, this theme does not contain any header content, it only has a sidebar and a main content window.
-However, you may [use the PyData Sphinx Theme's header configuraiton](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#header-navigation-bar) to add your own header components.
+However, you may [use the PyData Sphinx Theme's header configuration](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#header-navigation-bar) to add your own header components.
 If any of this configuration is set, then your header will show at the top of the page.
 
 ## Add components to the header navbar
