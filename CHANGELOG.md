@@ -57,6 +57,13 @@ Note that this doesn't imply any new long-term support or stability, we will con
 }
 ```
 
+**`single_page` is deprecated**. If you'd like to restore the old behavior (hiding sidebars), then use the following configuration in your `conf.py`:
+```python
+html_sidebars = {
+    "**": []
+}
+```
+
 ### Contributors to this release
 
 ([GitHub contributors page for this release](https://github.com/executablebooks/sphinx-book-theme/graphs/contributors?from=2022-07-17&to=2023-02-19&type=c))
