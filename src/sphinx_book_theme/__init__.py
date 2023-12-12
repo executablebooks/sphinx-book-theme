@@ -100,7 +100,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context, app):
                     f"Asset {asset_source_path} does not exist, not linking."
                 )
             # Find this asset in context, and update it to include the digest
-            for i, other_asset in enumerate(context[asset_type]):
+            for ii, other_asset in enumerate(context[asset_type]):
                 # TODO: eventually the contents of context['css_files'] etc should probably
                 #       only be _CascadingStyleSheet etc. For now, assume mixed with strings.
                 if (
@@ -111,7 +111,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context, app):
                 # Take priority from existing asset or use default priority (500)
                 priority = getattr(other_asset, "priority", 500)
                 # Remove existing asset
-                del context[asset_type][i]
+                del context[asset_type][ii]
                 # Add new asset
                 app.add_css_file(
                     asset_sphinx_link,
