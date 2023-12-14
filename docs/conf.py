@@ -2,7 +2,6 @@
 import os
 from urllib.request import urlopen
 from pathlib import Path
-import warnings
 
 project = "Sphinx Book Theme"
 copyright = "2023"
@@ -35,11 +34,6 @@ extensions = [
     # For the kitchen sink
     "sphinx.ext.todo",
 ]
-
-# Ignore Glyph 10024 (\N{SPARKLES}) missing from current font from "sphinxext.opengraph"
-warnings.filterwarnings(
-    "ignore", "Glyph 10024 .*? missing from current font", UserWarning
-)
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
