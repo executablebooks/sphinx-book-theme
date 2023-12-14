@@ -30,7 +30,7 @@ extensions = [
     "sphinx_tabs.tabs",
     "sphinx_thebe",
     "sphinx_togglebutton",
-    #    "sphinxcontrib.bibtex",
+    "sphinxcontrib.bibtex",
     "sphinxext.opengraph",
     # For the kitchen sink
     "sphinx.ext.todo",
