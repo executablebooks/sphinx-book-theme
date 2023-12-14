@@ -93,7 +93,6 @@ def hash_assets_for_files(assets: list, theme_static: Path, context, app):
         asset_type = "css_files" if asset_path.endswith(".css") else "script_files"
         if asset_type in context:
             # Define paths to the original asset file, and its linked file in Sphinx
-            asset_sphinx_link = f"_static/{asset_path}"
             asset_source_path = theme_static / asset_path
             if not asset_source_path.exists():
                 SPHINX_LOGGER.warning(
@@ -103,10 +102,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context, app):
             for ii, other_asset in enumerate(context[asset_type]):
                 # TODO: eventually the contents of context['css_files'] etc should probably
                 #       only be _CascadingStyleSheet etc. For now, assume mixed with strings.
-                if (
-                    getattr(other_asset, "filename", str(other_asset))
-                    != asset_sphinx_link
-                ):
+                if getattr(other_asset, "filename", str(other_asset)) != asset_path:
                     continue
                 # Take priority from existing asset or use default priority (500)
                 priority = getattr(other_asset, "priority", 500)
@@ -114,7 +110,7 @@ def hash_assets_for_files(assets: list, theme_static: Path, context, app):
                 del context[asset_type][ii]
                 # Add new asset
                 app.add_css_file(
-                    asset_sphinx_link,
+                    asset_path,
                     digest=_gen_hash(asset_source_path),
                     priority=priority,
                 )
