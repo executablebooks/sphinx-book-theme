@@ -84,6 +84,10 @@ jobs:
         python-version: '3.9'
         cache: "pip"
         cache-dependency-path: "pyproject.toml"
+    - name: Install fonts
+      # This is required until sphinx-opengraph fixes their fallback
+      run: sudo apt-get install -y fonts-roboto
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -103,11 +107,12 @@ jobs:
       shell: python
       run: |
         from pathlib import Path
+        import re
         text = Path("./warnings.txt").read_text().strip()
-        expected_warning_snippets = ["kitchen-sink", "urllib/parse.py"]
+        expected_warning_patterns = [r"kitchen\-sink", r"urllib/parse\.py", r"Glyph 10024 .*? missing from current font"]
         print("\n=== Sphinx Warnings ===\n\n" + text)  # Print just for reference so we can look at the logs
-        unexpected = [ii for ii in text.split("\n") if not any(snippet in ii for snippet in expected_warning_snippets)]
-        assert len(unexpected) == 0
+        unexpected = [l for l in text.splitlines() if not any(re.search(p, ii) for p in expected_warning_patterns)]
+        assert len(unexpected) == 0, unexpected
 
     - name: Audit with Lighthouse
       uses: treosh/lighthouse-ci-action@10.1.0

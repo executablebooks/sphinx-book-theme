@@ -77,7 +77,7 @@ def _gen_hash(path: str) -> str:
     return hashlib.sha1(path.read_bytes()).hexdigest()
 
 
-def hash_assets_for_files(assets: list, theme_static: Path, context):
+def hash_assets_for_files(assets: list, theme_static: Path, context, app):
     """Generate a hash for assets, and append to its entry in context.
 
     assets: a list of assets to hash, each path should be relative to
@@ -88,22 +88,36 @@ def hash_assets_for_files(assets: list, theme_static: Path, context):
     context: the Sphinx context object where asset links are stored. These are:
         `css_files` and `script_files` keys.
     """
-    for asset in assets:
+    for asset_path in assets:
         # CSS assets are stored in css_files, JS assets in script_files
-        asset_type = "css_files" if asset.endswith(".css") else "script_files"
+        asset_type = "css_files" if asset_path.endswith(".css") else "script_files"
         if asset_type in context:
             # Define paths to the original asset file, and its linked file in Sphinx
-            asset_sphinx_link = f"_static/{asset}"
-            asset_source_path = theme_static / asset
+            asset_sphinx_link = f"_static/{asset_path}"
+            asset_source_path = theme_static / asset_path
             if not asset_source_path.exists():
                 SPHINX_LOGGER.warning(
                     f"Asset {asset_source_path} does not exist, not linking."
                 )
             # Find this asset in context, and update it to include the digest
-            if asset_sphinx_link in context[asset_type]:
-                hash = _gen_hash(asset_source_path)
-                ix = context[asset_type].index(asset_sphinx_link)
-                context[asset_type][ix] = asset_sphinx_link + "?digest=" + hash
+            for ii, other_asset in enumerate(context[asset_type]):
+                # TODO: eventually the contents of context['css_files'] etc should probably
+                #       only be _CascadingStyleSheet etc. For now, assume mixed with strings.
+                if (
+                    getattr(other_asset, "filename", str(other_asset))
+                    != asset_sphinx_link
+                ):
+                    continue
+                # Take priority from existing asset or use default priority (500)
+                priority = getattr(other_asset, "priority", 500)
+                # Remove existing asset
+                del context[asset_type][ii]
+                # Add new asset
+                app.add_css_file(
+                    asset_sphinx_link,
+                    digest=_gen_hash(asset_source_path),
+                    priority=priority,
+                )
 
 
 def hash_html_assets(app, pagename, templatename, context, doctree):
@@ -117,7 +131,7 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
     # run but the book theme CSS file won't be linked in Sphinx.
     if app.config.html_theme == "sphinx_book_theme":
         assets.append("styles/sphinx-book-theme.css")
-    hash_assets_for_files(assets, get_html_theme_path() / "static", context)
+    hash_assets_for_files(assets, get_html_theme_path() / "static", context, app)
 
 
 def update_mode_thebe_config(app):
