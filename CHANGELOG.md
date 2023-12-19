@@ -1,5 +1,73 @@
 # Changelog
 
+## v1.1.0 -- 2023-12-19
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v1.0.1...v1.1.0))
+
+### Enhancements made
+
+- ENH: prepare for 1.1.0rc2 [#793](https://github.com/executablebooks/sphinx-book-theme/pull/793) ([@agoose77](https://github.com/agoose77))
+- ENH: Add search field back to sidebar [#775](https://github.com/executablebooks/sphinx-book-theme/pull/775) ([@choldgraf](https://github.com/choldgraf))
+- ENH: Update Swedish translations [#724](https://github.com/executablebooks/sphinx-book-theme/pull/724) ([@Kladdy](https://github.com/Kladdy))
+
+### Bugs fixed
+
+- FIX: don't include `_static` in css_files [#794](https://github.com/executablebooks/sphinx-book-theme/pull/794) ([@agoose77](https://github.com/agoose77))
+- FIX: properly handle CSS objects in css_files [#791](https://github.com/executablebooks/sphinx-book-theme/pull/791) ([@agoose77](https://github.com/agoose77))
+- FIX: builds on Windows and docs errors [#784](https://github.com/executablebooks/sphinx-book-theme/pull/784) ([@choldgraf](https://github.com/choldgraf))
+- FIX: Correctly disappear search button icon on wide screens [#781](https://github.com/executablebooks/sphinx-book-theme/pull/781) ([@choldgraf](https://github.com/choldgraf))
+- FIX: set bd-docs-nav as a class attribute instead of an id to restore compat with pydata-sphinx-theme JS [#754](https://github.com/executablebooks/sphinx-book-theme/pull/754) ([@ogrisel](https://github.com/ogrisel))
+- FIX: typos in navbar documentation [#707](https://github.com/executablebooks/sphinx-book-theme/pull/707) ([@CalMacCQ](https://github.com/CalMacCQ))
+
+### Maintenance and upkeep improvements
+
+- MAINT: use codespell in pre-commit [#788](https://github.com/executablebooks/sphinx-book-theme/pull/788) ([@agoose77](https://github.com/agoose77))
+- MAINT: use ruff instead of black [#776](https://github.com/executablebooks/sphinx-book-theme/pull/776) ([@agoose77](https://github.com/agoose77))
+- MAINT: Fix tests with updated upstream [#766](https://github.com/executablebooks/sphinx-book-theme/pull/766) ([@choldgraf](https://github.com/choldgraf))
+
+### Documentation improvements
+
+- DOCS: update CHANGELOG for deprecation [#790](https://github.com/executablebooks/sphinx-book-theme/pull/790) ([@agoose77](https://github.com/agoose77))
+- DOCS: use `datetime` as kitchen-sink API module [#787](https://github.com/executablebooks/sphinx-book-theme/pull/787) ([@agoose77](https://github.com/agoose77))
+- DOCS: Update required minimum Python version to 3.9 in docs [#767](https://github.com/executablebooks/sphinx-book-theme/pull/767) ([@stevepiercy](https://github.com/stevepiercy))
+- DOCS: Typo correction [#730](https://github.com/executablebooks/sphinx-book-theme/pull/730) ([@Alex-JG3](https://github.com/Alex-JG3))
+
+### Other merged PRs
+
+- [pre-commit.ci] pre-commit autoupdate [#789](https://github.com/executablebooks/sphinx-book-theme/pull/789) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- Build(deps): Bump pypa/gh-action-pypi-publish from 1.8.10 to 1.8.11 [#785](https://github.com/executablebooks/sphinx-book-theme/pull/785) ([@dependabot](https://github.com/dependabot))
+- [pre-commit.ci] pre-commit autoupdate [#783](https://github.com/executablebooks/sphinx-book-theme/pull/783) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- RLS: v1.1.0rc1 [#780](https://github.com/executablebooks/sphinx-book-theme/pull/780) ([@choldgraf](https://github.com/choldgraf))
+- [pre-commit.ci] pre-commit autoupdate [#779](https://github.com/executablebooks/sphinx-book-theme/pull/779) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- Update style.md [#774](https://github.com/executablebooks/sphinx-book-theme/pull/774) ([@callezenwaka](https://github.com/callezenwaka))
+- Update launch.md [#773](https://github.com/executablebooks/sphinx-book-theme/pull/773) ([@callezenwaka](https://github.com/callezenwaka))
+- [pre-commit.ci] pre-commit autoupdate [#772](https://github.com/executablebooks/sphinx-book-theme/pull/772) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- Make article width take up whole page in absence of secondary sidebar [#771](https://github.com/executablebooks/sphinx-book-theme/pull/771) ([@flying-sheep](https://github.com/flying-sheep))
+- Build(deps): Bump actions/checkout from 3 to 4 [#764](https://github.com/executablebooks/sphinx-book-theme/pull/764) ([@dependabot](https://github.com/dependabot))
+- Update footer.md [#756](https://github.com/executablebooks/sphinx-book-theme/pull/756) ([@Sdaher21](https://github.com/Sdaher21))
+- Build(deps): Bump pypa/gh-action-pypi-publish from 1.8.7 to 1.8.10 [#755](https://github.com/executablebooks/sphinx-book-theme/pull/755) ([@dependabot](https://github.com/dependabot))
+- [pre-commit.ci] pre-commit autoupdate [#748](https://github.com/executablebooks/sphinx-book-theme/pull/748) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- Build(deps): Bump pypa/gh-action-pypi-publish from 1.8.6 to 1.8.7 [#747](https://github.com/executablebooks/sphinx-book-theme/pull/747) ([@dependabot](https://github.com/dependabot))
+- Sphinx 7 support [#744](https://github.com/executablebooks/sphinx-book-theme/pull/744) ([@LecrisUT](https://github.com/LecrisUT))
+- update python requirements according to NEP 29 [#741](https://github.com/executablebooks/sphinx-book-theme/pull/741) ([@akhmerov](https://github.com/akhmerov))
+- add support for gitlab issue button [#740](https://github.com/executablebooks/sphinx-book-theme/pull/740) ([@akhmerov](https://github.com/akhmerov))
+- Build(deps): Bump pypa/gh-action-pypi-publish from 1.8.4 to 1.8.6 [#739](https://github.com/executablebooks/sphinx-book-theme/pull/739) ([@dependabot](https://github.com/dependabot))
+- Build(deps): Bump codecov/codecov-action from 3.1.1 to 3.1.4 [#738](https://github.com/executablebooks/sphinx-book-theme/pull/738) ([@dependabot](https://github.com/dependabot))
+- Build(deps): Bump treosh/lighthouse-ci-action from 9.3.1 to 10.1.0 [#725](https://github.com/executablebooks/sphinx-book-theme/pull/725) ([@dependabot](https://github.com/dependabot))
+- Build(deps): Bump treosh/lighthouse-ci-action from 9.3.1 to 9.6.8 [#718](https://github.com/executablebooks/sphinx-book-theme/pull/718) ([@dependabot](https://github.com/dependabot))
+- Build(deps): Bump pypa/gh-action-pypi-publish from 1.6.4 to 1.8.4 [#717](https://github.com/executablebooks/sphinx-book-theme/pull/717) ([@dependabot](https://github.com/dependabot))
+- RLS: v1.0.1 [#716](https://github.com/executablebooks/sphinx-book-theme/pull/716) ([@AakashGfude](https://github.com/AakashGfude))
+- [pre-commit.ci] pre-commit autoupdate [#705](https://github.com/executablebooks/sphinx-book-theme/pull/705) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+- [ENH, DOC] Allow setting the `navbar_max_depth` and `collapse_navbar` [#605](https://github.com/executablebooks/sphinx-book-theme/pull/605) ([@gilbertbw](https://github.com/gilbertbw))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/executablebooks/sphinx-book-theme/graphs/contributors?from=2023-03-31&to=2023-12-19&type=c))
+
+[@AakashGfude](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AAakashGfude+updated%3A2023-03-31..2023-12-19&type=Issues) | [@adam-grant-hendry](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aadam-grant-hendry+updated%3A2023-03-31..2023-12-19&type=Issues) | [@agoose77](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aagoose77+updated%3A2023-03-31..2023-12-19&type=Issues) | [@akhmerov](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aakhmerov+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Alex-JG3](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AAlex-JG3+updated%3A2023-03-31..2023-12-19&type=Issues) | [@avivajpeyi](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aavivajpeyi+updated%3A2023-03-31..2023-12-19&type=Issues) | [@bradbell](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Abradbell+updated%3A2023-03-31..2023-12-19&type=Issues) | [@callezenwaka](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Acallezenwaka+updated%3A2023-03-31..2023-12-19&type=Issues) | [@CalMacCQ](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3ACalMacCQ+updated%3A2023-03-31..2023-12-19&type=Issues) | [@choldgraf](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Acholdgraf+updated%3A2023-03-31..2023-12-19&type=Issues) | [@dependabot](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Adependabot+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Eutropios](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AEutropios+updated%3A2023-03-31..2023-12-19&type=Issues) | [@flying-sheep](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aflying-sheep+updated%3A2023-03-31..2023-12-19&type=Issues) | [@gilbertbw](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Agilbertbw+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Gouvernathor](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AGouvernathor+updated%3A2023-03-31..2023-12-19&type=Issues) | [@jackshiwl](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ajackshiwl+updated%3A2023-03-31..2023-12-19&type=Issues) | [@jayaddison](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Ajayaddison+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Kladdy](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AKladdy+updated%3A2023-03-31..2023-12-19&type=Issues) | [@LecrisUT](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3ALecrisUT+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Maetveis](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3AMaetveis+updated%3A2023-03-31..2023-12-19&type=Issues) | [@ogrisel](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aogrisel+updated%3A2023-03-31..2023-12-19&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Apre-commit-ci+updated%3A2023-03-31..2023-12-19&type=Issues) | [@Sdaher21](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3ASdaher21+updated%3A2023-03-31..2023-12-19&type=Issues) | [@stevepiercy](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Astevepiercy+updated%3A2023-03-31..2023-12-19&type=Issues) | [@welcome](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Awelcome+updated%3A2023-03-31..2023-12-19&type=Issues)
+
+
+
 ## v1.0.1 -- 2023-03-31
 
 This is a minor release supporting pydata>=0.13.3, with a few import changes from pydata.
