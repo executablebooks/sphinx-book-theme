@@ -65,6 +65,7 @@ doc = [
     "sphinxcontrib-bibtex",
     "sphinxcontrib-youtube",
     "sphinxext-opengraph",
+    "docutils!=0.17.*,!=0.18.*"
 ]
 test = [
     "beautifulsoup4",
