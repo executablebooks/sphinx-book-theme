@@ -26,7 +26,7 @@ label.sidebar-toggle.primary-toggle {
 
 // Secondary toggle mimics behavior of "persistent header" div of PST
 label.sidebar-toggle.secondary-toggle {
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $breakpoint-xl) {
     display: none;
   }
   @media (max-width: $breakpoint-md) {
