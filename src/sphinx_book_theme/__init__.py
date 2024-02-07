@@ -133,7 +133,7 @@ def hash_html_assets(app, pagename, templatename, context, doctree):
 def update_mode_thebe_config(app):
     """Update thebe configuration with SBT-specific values"""
     theme_options = get_theme_options_dict(app)
-    if theme_options.get("launch_buttons", {}).get("thebe") is True:
+    if theme_options.get("launch_buttons", {}).get("thebe"):
         # In case somebody specifies they want thebe in a launch button
         # but has not activated the sphinx_thebe extension.
         if not hasattr(app.env.config, "thebe_config"):
@@ -147,9 +147,6 @@ def update_mode_thebe_config(app):
         # Will be empty if it doesn't exist
         thebe_config = app.env.config.thebe_config
     else:
-        return
-
-    if not theme_options.get("launch_buttons", {}).get("thebe"):
         return
 
     # Update the repository branch and URL
