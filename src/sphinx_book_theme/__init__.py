@@ -10,7 +10,8 @@ from sphinx.locale import get_translation
 from sphinx.util import logging
 from pydata_sphinx_theme.utils import get_theme_options_dict
 
-from .nodes import Margin, SideNoteNode
+from .directives import Margin
+from .nodes import SideNoteNode
 from .header_buttons import (
     prep_header_buttons,
     add_header_buttons,
