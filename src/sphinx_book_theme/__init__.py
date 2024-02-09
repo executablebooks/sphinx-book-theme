@@ -230,7 +230,7 @@ def setup(app: Sphinx):
     # Themes are initialised immediately before use, thus we cannot
     # rely on an event to set the config - the theme config must be
     # set in setup(app):
-    update_general_config_config(app)
+    update_general_config(app)
     # Meanwhile, extensions are initialised _first_, and any config
     # values set during setup() will be overwritten. We must therefore
     # register the `config-inited` event to set these config options
