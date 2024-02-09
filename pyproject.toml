@@ -13,6 +13,13 @@ additional-compiled-static-assets = [
 testpaths = [
     "tests"
 ]
+filterwarnings = [
+  "error",
+  'ignore:Jupyter is migrating its paths to use standard platformdirs:DeprecationWarning',
+  'ignore:The frontend\.OptionParser class will be replaced:DeprecationWarning',
+  'ignore:The frontend\.Option class will be removed:DeprecationWarning',
+  'ignore:nodes\.Node\.traverse\(\) is obsoleted by Node\.findall\(\):PendingDeprecationWarning',
+]
 
 [project]
 name = "sphinx-book-theme"
@@ -82,3 +89,5 @@ test = [
 [project.urls]
 Repository = "https://github.com/executablebooks/sphinx-book-theme"
 Documentation = "https://sphinx-book-theme.readthedocs.io/"
+
+
