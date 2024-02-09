@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from shutil import copytree, rmtree
-from subprocess import check_call
 from importlib.metadata import version
 from packaging.version import parse
 
@@ -65,7 +64,9 @@ def sphinx_build_factory(make_app, tmp_path):
 
 def test_parallel_build(sphinx_build_factory):
     sphinx_build = sphinx_build_factory("parallel-build", parallel=2)  # type: SphinxBuild
-    sphinx_build.build(assert_pass=True, assert_no_warnings=False)  # TODO: filter these warnings
+    sphinx_build.build(
+        assert_pass=True, assert_no_warnings=False
+    )  # TODO: filter these warnings
     assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
 
 
