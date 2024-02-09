@@ -182,9 +182,7 @@ def check_deprecation_keys(app):
 def update_general_config(app):
     theme_dir = get_html_theme_path()
 
-    app.config.templates_path.append(
-        os.path.join(theme_dir, "components")
-    )
+    app.config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
 def update_templates(app, pagename, templatename, context, doctree):
@@ -230,9 +228,9 @@ def setup(app: Sphinx):
 
     # This extension has both theme-like and extension-like features.
     # Themes are initialised immediately before use, thus we cannot
-    # rely on an event to set the config - the theme config must be 
+    # rely on an event to set the config - the theme config must be
     # set in setup(app):
-    update_general_config_config(app)    
+    update_general_config_config(app)
     # Meanwhile, extensions are initialised _first_, and any config
     # values set during setup() will be overwritten. We must therefore
     # register the `config-inited` event to set these config options
