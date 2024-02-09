@@ -89,5 +89,3 @@ test = [
 [project.urls]
 Repository = "https://github.com/executablebooks/sphinx-book-theme"
 Documentation = "https://sphinx-book-theme.readthedocs.io/"
-
-
