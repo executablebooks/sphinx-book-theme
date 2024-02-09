@@ -35,4 +35,3 @@ def depart_SideNoteNode(self, node):
     self.body.append(
         f"<input type='checkbox' id='{tagid}' name='{tagid}' class='margin-toggle'>"
     )
-
