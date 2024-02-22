@@ -31,10 +31,11 @@ See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/maste
 
 ### Default sidebar elements
 
-By default, this theme comes with these three theme-specific sidebar elements enabled on all pages:
+By default, this theme comes with these theme-specific sidebar elements enabled on all pages:
 
 - `navbar-logo.html`: Displays the logo and site title.
-- `search-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
+- `icon-links.html`: Displays [icon links](icon-links)
+- `search-button-field.html`: A bootstrap-based search bar (from the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/))
 - `sbt-sidebar-nav.html`: A bootstrap-based navigation menu for your book.
 
 ## Add a header to your Table of Contents
