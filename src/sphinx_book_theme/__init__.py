@@ -20,6 +20,7 @@ from .header_buttons import (
 )
 from .header_buttons.launch import add_launch_buttons
 from .header_buttons.source import add_source_buttons
+from ._compat import findall
 from ._transforms import HandleFootnoteTransform
 
 __version__ = "1.1.2"
@@ -53,7 +54,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Add a shortened page text to the context using the sections text
     if doctree:
         description = ""
-        for section in doctree.traverse(docutil_nodes.section):
+        for section in findall(doctree, docutil_nodes.section):
             description += section.astext().replace("\n", " ")
         description = description[:160]
         context["page_description"] = description
