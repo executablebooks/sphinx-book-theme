@@ -13,6 +13,18 @@ additional-compiled-static-assets = [
 testpaths = [
     "tests"
 ]
+filterwarnings = [
+  "error",
+  'ignore:Jupyter is migrating its paths to use standard platformdirs:DeprecationWarning',
+  'ignore:The frontend\.OptionParser class will be replaced:DeprecationWarning',
+  'ignore:The frontend\.Option class will be removed:DeprecationWarning',
+  'ignore:nodes\.Node\.traverse\(\) is obsoleted by Node\.findall\(\):PendingDeprecationWarning',
+  # jupyter-client throws this
+  'ignore:datetime\.datetime\.utcfromtimestamp\(\) is deprecated:DeprecationWarning',
+  'ignore:datetime\.datetime\.utcnow\(\) is deprecated:DeprecationWarning',
+  # Sphinx triggers this
+  '''ignore:'imghdr' is deprecated and slated for removal in Python 3\.13:DeprecationWarning''',
+]
 
 [project]
 name = "sphinx-book-theme"
