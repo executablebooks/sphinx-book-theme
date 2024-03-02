@@ -27,6 +27,7 @@ html_theme_options = {
         "jupyterhub_url": "https://datahub.berkeley.edu",
         "colab_url": "https://colab.research.google.com",
         "deepnote_url": "https://deepnote.com",
+        "basthon_url": "https://notebook.basthon.fr",
         "notebook_interface": "jupyterlab",
         "thebe": True,
     },
