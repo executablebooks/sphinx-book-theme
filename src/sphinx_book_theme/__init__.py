@@ -4,13 +4,13 @@ import os
 from pathlib import Path
 from functools import lru_cache
 
-from docutils.parsers.rst.directives.body import Sidebar
 from docutils import nodes as docutil_nodes
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
 from pydata_sphinx_theme.utils import get_theme_options_dict
 
+from .directives import Margin
 from .nodes import SideNoteNode
 from .header_buttons import (
     prep_header_buttons,
@@ -20,9 +20,10 @@ from .header_buttons import (
 )
 from .header_buttons.launch import add_launch_buttons
 from .header_buttons.source import add_source_buttons
+from ._compat import findall
 from ._transforms import HandleFootnoteTransform
 
-__version__ = "1.1.0"
+__version__ = "1.1.2"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
@@ -53,7 +54,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
     # Add a shortened page text to the context using the sections text
     if doctree:
         description = ""
-        for section in doctree.traverse(docutil_nodes.section):
+        for section in findall(doctree, docutil_nodes.section):
             description += section.astext().replace("\n", " ")
         description = description[:160]
         context["page_description"] = description
@@ -179,33 +180,10 @@ def check_deprecation_keys(app):
             )
 
 
-class Margin(Sidebar):
-    """Goes in the margin to the right of the page."""
-
-    optional_arguments = 1
-    required_arguments = 0
-
-    def run(self):
-        """Run the directive."""
-        if not self.arguments:
-            self.arguments = [""]
-        nodes = super().run()
-        nodes[0].attributes["classes"].append("margin")
-
-        # Remove the "title" node if it is empty
-        if not self.arguments:
-            nodes[0].children.pop(0)
-        return nodes
-
-
-def update_general_config(app):
+def update_general_config(app, config):
     theme_dir = get_html_theme_path()
-    # Update templates for sidebar. Needed for jupyter-book builds as jb
-    # uses an instance of Sphinx class from sphinx.application to build the app.
-    # The __init__ function of which calls self.config.init_values() just
-    # before emitting `config-inited` event. The init_values function overwrites
-    # templates_path variable.
-    app.config.templates_path.append(os.path.join(theme_dir, "components"))
+
+    config.templates_path.append(os.path.join(theme_dir, "components"))
 
 
 def update_templates(app, pagename, templatename, context, doctree):
@@ -245,10 +223,19 @@ def setup(app: Sphinx):
     app.connect("builder-inited", check_deprecation_keys)
     app.connect("builder-inited", update_sourcename)
     app.connect("builder-inited", update_context_with_repository_info)
-    app.connect("builder-inited", update_general_config)
     app.connect("html-page-context", add_metadata_to_page)
     app.connect("html-page-context", hash_html_assets)
     app.connect("html-page-context", update_templates)
+
+    # This extension has both theme-like and extension-like features.
+    # Themes are initialised immediately before use, thus we cannot
+    # rely on an event to set the config - the theme config must be
+    # set in setup(app):
+    update_general_config(app, app.config)
+    # Meanwhile, extensions are initialised _first_, and any config
+    # values set during setup() will be overwritten. We must therefore
+    # register the `config-inited` event to set these config options
+    app.connect("config-inited", update_general_config)
 
     # Nodes
     SideNoteNode.add_node(app)
@@ -265,10 +252,6 @@ def setup(app: Sphinx):
 
     # Post-transforms
     app.add_post_transform(HandleFootnoteTransform)
-
-    # Update templates for sidebar, for builds where config-inited is not called
-    # (does not work in case of jupyter-book)
-    app.config.templates_path.append(os.path.join(theme_dir, "components"))
 
     return {
         "parallel_read_safe": True,

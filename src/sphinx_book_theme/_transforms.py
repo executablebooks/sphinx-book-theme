@@ -4,6 +4,7 @@ from docutils import nodes as docutil_nodes
 from sphinx import addnodes as sphinx_nodes
 from pydata_sphinx_theme.utils import get_theme_options_dict
 from .nodes import SideNoteNode
+from ._compat import findall
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
@@ -19,10 +20,10 @@ class HandleFootnoteTransform(SphinxPostTransform):
         # Cycle through footnote references, and move their content next to the
         # reference. This lets us display the reference in the margin,
         # or just below on narrow screens.
-        for ref_node in self.document.traverse(docutil_nodes.footnote_reference):
+        for ref_node in findall(self.document, docutil_nodes.footnote_reference):
             parent = None
             # Each footnote reference should have a single node it points to via `ids`
-            for foot_node in self.document.traverse(docutil_nodes.footnote):
+            for foot_node in findall(self.document, docutil_nodes.footnote):
                 # matching the footnote reference with footnote
                 if (
                     len(foot_node.attributes["backrefs"])
