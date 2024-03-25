@@ -1,4 +1,5 @@
 """Launch buttons for Binder / Thebe / Colab / etc."""
+
 from pathlib import Path
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode, quote
