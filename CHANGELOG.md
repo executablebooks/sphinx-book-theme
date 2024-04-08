@@ -1,5 +1,47 @@
 # Changelog
 
+## v1.1.2 -- 2024-02-13
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v1.1.1...3da24da74f6042599fe6c9e2d612f5cbdef42280))
+
+### Enhancements made
+
+- ENH: bump version [#818](https://github.com/executablebooks/sphinx-book-theme/pull/818) ([@agoose77](https://github.com/agoose77))
+
+### Bugs fixed
+
+- FIX: correct event-handler signature [#817](https://github.com/executablebooks/sphinx-book-theme/pull/817) ([@agoose77](https://github.com/agoose77))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/executablebooks/sphinx-book-theme/graphs/contributors?from=2024-02-13&to=2024-02-13&type=c))
+
+[@agoose77](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aagoose77+updated%3A2024-02-13..2024-02-13&type=Issues)
+
+## v1.1.1 -- 2024-02-13
+
+([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v1.1.0...9335ab99b0bc77b826cb2c5afcef3432f14e8780))
+
+### Enhancements made
+
+- ENH: bump version for 1.1.1 [#815](https://github.com/executablebooks/sphinx-book-theme/pull/815) ([@agoose77](https://github.com/agoose77))
+
+### Bugs fixed
+
+- FIX: use `config-inited` event to register config [#814](https://github.com/executablebooks/sphinx-book-theme/pull/814) ([@agoose77](https://github.com/agoose77))
+
+### Other merged PRs
+
+- Build(deps): Bump actions/setup-python from 4 to 5 [#803](https://github.com/executablebooks/sphinx-book-theme/pull/803) ([@dependabot](https://github.com/dependabot))
+- [pre-commit.ci] pre-commit autoupdate [#801](https://github.com/executablebooks/sphinx-book-theme/pull/801) ([@pre-commit-ci](https://github.com/pre-commit-ci))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/executablebooks/sphinx-book-theme/graphs/contributors?from=2023-12-19&to=2024-02-13&type=c))
+
+[@agoose77](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aagoose77+updated%3A2023-12-19..2024-02-13&type=Issues) | [@choldgraf](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Acholdgraf+updated%3A2023-12-19..2024-02-13&type=Issues) | [@dependabot](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Adependabot+updated%3A2023-12-19..2024-02-13&type=Issues) | [@ghisvail](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Aghisvail+updated%3A2023-12-19..2024-02-13&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Apre-commit-ci+updated%3A2023-12-19..2024-02-13&type=Issues) | [@welcome](https://github.com/search?q=repo%3Aexecutablebooks%2Fsphinx-book-theme+involves%3Awelcome+updated%3A2023-12-19..2024-02-13&type=Issues)
+
+
 ## v1.1.0 -- 2023-12-19
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v1.0.1...v1.1.0))

@@ -91,7 +91,8 @@ label.sidebar-toggle.secondary-toggle {
     font-size: 1.3rem;
     color: var(--pst-color-text-muted);
     border: none;
-    padding: 0 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 
     // Make sure anything inside is aligned vertically
     display: flex;

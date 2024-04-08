@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from shutil import copytree, rmtree
-from subprocess import check_call
 from importlib.metadata import version
 from packaging.version import parse
 
@@ -28,9 +27,10 @@ class SphinxBuild:
             f".sphinx{sphinx.version_info[0]}"  # software version tracking for fixtures
         )
 
-    def build(self, assert_pass=True):
+    def build(self, assert_pass=True, assert_no_warnings=True):
         self.app.build()
-        assert self.warnings == "", self.status
+        if assert_no_warnings:
+            assert self.warnings == "", self.status
         return self
 
     @property
@@ -62,14 +62,12 @@ def sphinx_build_factory(make_app, tmp_path):
     yield _func
 
 
-def test_parallel_build():
-    # We cannot use the sphinx_build_factory because SpinxTestApp does
-    # not have a way to pass parallel=2 to the Sphinx constructor
-    # https://github.com/sphinx-doc/sphinx/blob/d8c006f1c0e612d0dc595ae463b8e4c3ebee5ca4/sphinx/testing/util.py#L101
-    check_call(
-        f"sphinx-build -j 2 -W -b html {path_tests}/sites/parallel-build build",
-        shell=True,
-    )
+def test_parallel_build(sphinx_build_factory):
+    sphinx_build = sphinx_build_factory("parallel-build", parallel=2)  # type: SphinxBuild
+    sphinx_build.build(
+        assert_pass=True, assert_no_warnings=False
+    )  # TODO: filter these warnings
+    assert (sphinx_build.outdir / "index.html").exists(), sphinx_build.outdir.glob("*")
 
 
 def test_build_book(sphinx_build_factory, file_regression):
