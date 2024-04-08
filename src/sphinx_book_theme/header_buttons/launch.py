@@ -1,4 +1,5 @@
 """Launch buttons for Binder / Thebe / Colab / etc."""
+
 from pathlib import Path
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode, quote
@@ -133,7 +134,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "Binder",
-                "tooltip": translation("Launch on") + "Binder",
+                "tooltip": translation("Launch on") + " Binder",
                 "icon": "_static/images/logo_binder.svg",
                 "url": url,
             }
@@ -151,7 +152,7 @@ def add_launch_buttons(
             {
                 "type": "link",
                 "text": "JupyterHub",
-                "tooltip": translation("Launch on") + "JupyterHub",
+                "tooltip": translation("Launch on") + " JupyterHub",
                 "icon": "_static/images/logo_jupyterhub.svg",
                 "url": url,
             }
@@ -166,7 +167,7 @@ def add_launch_buttons(
                 {
                     "type": "link",
                     "text": "Colab",
-                    "tooltip": translation("Launch on") + "Colab",
+                    "tooltip": translation("Launch on") + " Colab",
                     "icon": "_static/images/logo_colab.png",
                     "url": url,
                 }
@@ -182,7 +183,7 @@ def add_launch_buttons(
                 {
                     "type": "link",
                     "text": "Deepnote",
-                    "tooltip": translation("Launch on") + "Deepnote",
+                    "tooltip": translation("Launch on") + " Deepnote",
                     "icon": "_static/images/logo_deepnote.svg",
                     "url": url,
                 }
