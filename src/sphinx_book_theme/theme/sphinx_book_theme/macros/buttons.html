@@ -6,7 +6,7 @@
   {% if icon.startswith("fa") -%}
     <i class="{{ icon }}"></i>
   {% else %}
-    <img src="{{ pathto(icon, 1) }}">
+    <img alt="{{ translate(text) }} {{ translate("logo") }}" src="{{ pathto(icon, 1) }}">
   {% endif -%}
 </span>
 {% endif %}
