@@ -139,8 +139,8 @@ def update_mode_thebe_config(app):
         # but has not activated the sphinx_thebe extension.
         if not hasattr(app.env.config, "thebe_config"):
             SPHINX_LOGGER.warning(
-                    "Thebe is activated but not added to extensions list. "
-                    "Add `sphinx_thebe` to your site's extensions list."
+                "Thebe is activated but not added to extensions list. "
+                "Add `sphinx_thebe` to your site's extensions list."
             )
             return
         # Will be empty if it doesn't exist
