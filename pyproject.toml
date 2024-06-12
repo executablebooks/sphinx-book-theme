@@ -35,7 +35,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "sphinx>=5",
-  "pydata-sphinx-theme>=0.14",
+  "pydata-sphinx-theme>=0.15.2"
 ]
 
 license = { file = "LICENSE" }
@@ -87,7 +87,6 @@ test = [
     "pytest-cov",
     "pytest-regressions",
     "sphinx_thebe",
-    "pydata-sphinx-theme>=0.15.2"
 ]
 
 [project.entry-points]
