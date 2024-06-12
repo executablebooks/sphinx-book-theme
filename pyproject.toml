@@ -81,11 +81,13 @@ doc = [
 test = [
     "beautifulsoup4",
     "coverage",
+    "defusedxml",
     "myst-nb",
     "pytest",
     "pytest-cov",
     "pytest-regressions",
     "sphinx_thebe",
+    "pydata-sphinx-theme>=0.15.2"
 ]
 
 [project.entry-points]
