@@ -187,7 +187,7 @@ linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
 ]
-
+linkcheck_exclude_documents = ["changelog"]
 
 # -- Download latest theme elements page from PyData -----------------------------
 
