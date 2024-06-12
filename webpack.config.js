@@ -1,10 +1,7 @@
 // Webpack configuration for sphinx-book-theme
 const { resolve } = require("path");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const dedent = require("dedent");
-
-// Compile our translation files
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // Compile our translation files
 const { exec } = require("child_process");
 exec("python src/sphinx_book_theme/_compile_translations.py");
 
@@ -24,36 +21,22 @@ module.exports = {
     filename: "scripts/[name].js",
     path: staticPath,
   },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({ sourceMap: true }),
-      new OptimizeCssAssetsPlugin({}),
-    ],
-  },
+  optimization: { minimizer: ["...", new CssMinimizerPlugin()] },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: "file-loader", // using the string as content, emits a file into the output directory.
-            options: {
-              name: "styles/sphinx-book-theme.css", // the output file name
-            },
-          },
-          {
-            loader: "extract-loader", // extracts the css from the source js file into a string
-          },
-          {
-            // Use the css-loader with url()-inlining turned off.
-            loader: "css-loader?-url", // loads the css into the main js
-          },
-          {
-            loader: "sass-loader", // turns scss into css
-          },
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: "css-loader", options: { url: false } },
+          { loader: "sass-loader" },
         ],
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles/[name].css",
+    }),
+  ],
 };
