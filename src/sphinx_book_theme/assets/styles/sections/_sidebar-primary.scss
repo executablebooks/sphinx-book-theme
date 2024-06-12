@@ -36,7 +36,9 @@
 // It is shown by default, and hidden with a click.
 // Mobile behavior is defined in the pydata sphinx theme
 @media (min-width: $breakpoint-lg) {
-  input#__primary:checked ~ .bd-container .bd-sidebar-primary {
+  input#pst-primary-sidebar-checkbox:checked
+    ~ .bd-container
+    .bd-sidebar-primary {
     margin-left: -$sidebar-primary-width-widescreen;
     visibility: hidden;
     opacity: 0;

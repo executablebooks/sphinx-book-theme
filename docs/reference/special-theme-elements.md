@@ -301,8 +301,10 @@ An admonition with a sidenote defined in the admonition[^snam1] and another defi
 These aren't theme-specific, but we still show below to make sure they work.
 
 ::::{note} Here's a note!
-:::{tip} And a tip!
-:::
+
+```{tip} And a tip!
+```
+
 ::::
 
 ## MyST Markdown elements
