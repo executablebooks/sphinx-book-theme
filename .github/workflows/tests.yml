@@ -112,7 +112,7 @@ jobs:
         text = Path("./warnings.txt").read_text().strip()
         expected_warning_patterns = [r"kitchen\-sink", r"urllib/parse\.py", r"Glyph 10024 .*? missing from current font"]
         print("\n=== Sphinx Warnings ===\n\n" + text)  # Print just for reference so we can look at the logs
-        unexpected = [l for l in text.splitlines() if not any(re.search(p, ii) for p in expected_warning_patterns)]
+        unexpected = [l for l in text.splitlines() if not any(re.search(p, l) for p in expected_warning_patterns)]
         assert len(unexpected) == 0, unexpected
 
     - name: Audit with Lighthouse
