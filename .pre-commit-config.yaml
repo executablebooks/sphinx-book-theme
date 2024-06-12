@@ -4,6 +4,7 @@
 exclude: >
     (?x)^(
       \.vscode/settings\.json|
+      package-lock\.json|
     )$
 
 # Fix the node version to avoid a GLIBC error
