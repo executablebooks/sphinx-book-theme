@@ -15,7 +15,7 @@
  * Sidebar toggle over-rides for PST
  */
 // Primary toggle is always visible
-label.sidebar-toggle.primary-toggle {
+button.sidebar-toggle.primary-toggle {
   @media (min-width: $breakpoint-md) {
     display: inline-block;
   }
@@ -25,7 +25,7 @@ label.sidebar-toggle.primary-toggle {
 }
 
 // Secondary toggle mimics behavior of "persistent header" div of PST
-label.sidebar-toggle.secondary-toggle {
+button.sidebar-toggle.secondary-toggle {
   @media (min-width: $breakpoint-lg) {
     display: none;
   }
