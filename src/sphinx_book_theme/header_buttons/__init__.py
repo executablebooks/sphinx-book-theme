@@ -1,4 +1,5 @@
 """Generate metadata for header buttons."""
+
 from sphinx.errors import SphinxError
 from sphinx.locale import get_translation
 from pydata_sphinx_theme.utils import config_provided_by_user, get_theme_options_dict

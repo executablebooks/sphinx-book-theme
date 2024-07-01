@@ -1,4 +1,5 @@
 """A lightweight book theme based on the pydata sphinx theme."""
+
 import hashlib
 import os
 from pathlib import Path
