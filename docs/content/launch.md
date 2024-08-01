@@ -85,6 +85,22 @@ html_theme_options = {
 This will create a new Deepnote project every time you click the launch button.
 ```
 
+## Lightning Studio
+
+To add [Ligthning Studio](https://lightning.ai) links to your page, add the following configuration:
+
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "lightning_studio_url": "https://lightning.ai"
+    },
+    ...
+}
+```
+
+
 
 ## Live code cells with Thebe
 
