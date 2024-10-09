@@ -86,7 +86,7 @@ def test_build_book(sphinx_build_factory, file_regression):
     for filename, kernel in kernels_expected.items():
         ntbk_html = sphinx_build.html_tree("section1", filename)
         thebe_config = ntbk_html.find("script", attrs={"type": "text/x-thebe-config"})
-        kernel_name = 'name: "{}",'.format(kernel)
+        kernel_name = f'name: "{kernel}",'
         if kernel_name not in thebe_config.prettify():
             raise AssertionError(f"{kernel_name} not in {kernels_expected}")
 

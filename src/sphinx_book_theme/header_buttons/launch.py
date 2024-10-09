@@ -1,7 +1,7 @@
 """Launch buttons for Binder / Thebe / Colab / etc."""
 
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Optional
 from urllib.parse import urlencode, quote
 
 from docutils.nodes import document
@@ -23,7 +23,7 @@ def add_launch_buttons(
     app: Sphinx,
     pagename: str,
     templatename: str,
-    context: Dict[str, Any],
+    context: dict[str, Any],
     doctree: Optional[document],
 ):
     """Builds a binder link and inserts it in HTML context for use in templating.
@@ -89,11 +89,9 @@ def add_launch_buttons(
     notebook_interface = launch_buttons.get("notebook_interface", "classic")
     if notebook_interface not in notebook_interface_prefixes:
         raise ValueError(
-            (
-                "Notebook UI for Binder/JupyterHub links must be one"
-                f"of {tuple(notebook_interface_prefixes.keys())},"
-                f"not {notebook_interface}"
-            )
+            "Notebook UI for Binder/JupyterHub links must be one"
+            f"of {tuple(notebook_interface_prefixes.keys())},"
+            f"not {notebook_interface}"
         )
     ui_pre = notebook_interface_prefixes[notebook_interface]
 
