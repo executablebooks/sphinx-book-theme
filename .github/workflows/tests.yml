@@ -116,7 +116,7 @@ jobs:
         assert len(unexpected) == 0, unexpected
 
     - name: Audit with Lighthouse
-      uses: treosh/lighthouse-ci-action@10.1.0
+      uses: treosh/lighthouse-ci-action@12.1.0
       with:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true
