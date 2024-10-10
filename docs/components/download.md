@@ -13,7 +13,7 @@ html_theme_options = {
 ```
 
 ```{note}
-This theme over-rides the Sphinx default for `html_source_suffix` to be `''` instead of `.txt`.
+This theme over-rides the Sphinx default for `html_sourcelink_suffix` to be `''` instead of `.txt`.
 This is because most users of this theme want to download source files of the pages themselves, which do not begin with `.txt`.
-If you wish to add a different source suffix, manually specify `html_source_suffix` in `conf.py`.
+If you wish to add a different source suffix, manually specify `html_sourcelink_suffix` in `conf.py`.
 ```
