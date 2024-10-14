@@ -1,4 +1,5 @@
 """Generate compiled static translation assets for Sphinx."""
+
 import json
 import os
 from pathlib import Path
