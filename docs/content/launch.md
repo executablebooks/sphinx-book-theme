@@ -87,7 +87,7 @@ This will create a new Deepnote project every time you click the launch button.
 
 ## Lightning Studio
 
-To add [Ligthning Studio](https://lightning.ai) links to your page, add the following configuration:
+To add [Lightning Studio](https://lightning.ai) links to your page, add the following configuration:
 
 
 ```python
