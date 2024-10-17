@@ -49,7 +49,8 @@ def add_launch_buttons(
         or not _is_notebook(app, context)
         or not any(
             launch_buttons.get(key)
-            for key in ("binderhub_url", "jupyterhub_url", "thebe", "colab_url")
+            for key in ("binderhub_url", "jupyterhub_url", "thebe",
+                        "colab_url", "jupyterlite_url")
         )
     ):
         return
@@ -114,6 +115,9 @@ def add_launch_buttons(
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
+    # jupyterlite_url could be absolute but without a domain, so we only
+    # strip trailing slashes, not leading ones
+    jupyterlite_url = launch_buttons.get("jupyterlite_url", "").rstrip("/")
 
     # Loop through each provider and add a button for it if needed
     if binderhub_url:
@@ -186,6 +190,20 @@ def add_launch_buttons(
                     "url": url,
                 }
             )
+
+    if jupyterlite_url:
+        jl_ext = launch_buttons.get("jupyterlite_ext", extension).strip()
+        jl_rel_repo = f"{book_relpath}{pagename}{jl_ext}"
+        url = f"{jupyterlite_url}?path={jl_rel_repo}"
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "JupyterLite",
+                "tooltip": "Launch via JupyterLite",
+                "icon": "_static/images/logo_jupyterlite.svg",
+                "url": url,
+            }
+        )
 
     # Add thebe flag in context
     if launch_buttons.get("thebe", False):
