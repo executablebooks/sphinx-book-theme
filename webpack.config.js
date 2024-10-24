@@ -28,8 +28,22 @@ module.exports = {
         test: /\.scss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          { loader: "css-loader", options: { url: false } },
-          { loader: "sass-loader" },
+          // Interprets `@import` and `url()` like `import/require()` and will resolve them
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false,
+            },
+          },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              sassOptions: { outputStyle: "expanded" },
+            },
+          },
         ],
       },
     ],
