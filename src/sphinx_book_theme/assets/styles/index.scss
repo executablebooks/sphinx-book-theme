@@ -7,39 +7,39 @@
  * https://sass-guidelin.es/#architecture
  */
 // Variables and re-usable SCSS functions
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@use "abstracts/mixins";
+@use "abstracts/variables";
 
 // Basic styling applied throughout site
-@import "base/base";
-@import "base/typography";
-@import "base/print";
+@use "base/base";
+@use "base/typography";
+@use "base/print";
 
 // Major theme layout, skeleton, and whitespace
-@import "sections/announcement";
-@import "sections/article";
-@import "sections/article-container";
-@import "sections/header-article";
-@import "sections/header-primary";
-@import "sections/sidebar-primary";
-@import "sections/sidebar-secondary";
-@import "sections/footer-content";
-@import "sections/footer-article";
+@use "sections/announcement";
+@use "sections/article";
+@use "sections/article-container";
+@use "sections/header-article";
+@use "sections/header-primary";
+@use "sections/sidebar-primary";
+@use "sections/sidebar-secondary";
+@use "sections/footer-content";
+@use "sections/footer-article";
 
 // Re-usable components across the theme
-@import "components/back-to-top";
-@import "components/icon-links";
-@import "components/logo";
-@import "components/search";
+@use "components/back-to-top";
+@use "components/icon-links";
+@use "components/logo";
+@use "components/search";
 
 // Content blocks in standard Sphinx
-@import "content/images";
-@import "content/margin";
-@import "content/quotes";
-@import "content/code";
-@import "content/notebooks";
+@use "content/images";
+@use "content/margin";
+@use "content/quotes";
+@use "content/code";
+@use "content/notebooks";
 
 // Content blocks from Sphinx extensions
 
-@import "extensions/comments";
-@import "extensions/thebe";
+@use "extensions/comments";
+@use "extensions/thebe";

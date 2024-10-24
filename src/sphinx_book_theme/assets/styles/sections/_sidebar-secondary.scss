@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 /*********************************************
 * Table of Contents (right nav bar)          *
 *********************************************/
@@ -6,9 +8,9 @@
   // So that it sticks to the top of the page instead of the header height
   top: 0;
 
-  @media (max-width: $breakpoint-xl) {
+  @media (max-width: variables.$breakpoint-xl) {
     // So that tooltips don't overlap
-    z-index: $zindex-tooltip + 1;
+    z-index: variables.$zindex-tooltip + 1;
   }
 
   // So that we can center the TOC button with the article header buttons
@@ -26,8 +28,8 @@
 
   // The 'on this page' title div should take up the full header
   .onthispage {
-    height: $header-article-height;
-    min-height: $header-article-height;
+    height: variables.$header-article-height;
+    min-height: variables.$header-article-height;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -36,13 +38,13 @@
   }
 
   // Wide screen behavior
-  @media (min-width: $breakpoint-xl) {
+  @media (min-width: variables.$breakpoint-xl) {
     background: var(--pst-color-background);
     height: fit-content;
     transition: max-height 0.4s ease;
 
     // To make sure it shows above the page content
-    z-index: $zindex-middle;
+    z-index: variables.$zindex-middle;
 
     // Remove padding so that it's flush on the top and left
     padding: 0;
@@ -68,7 +70,7 @@
     // the `not:hover` means that hovering over the sidebar will show it again.
     &.hide:not(:hover) {
       // Cap the height, and remove the scrollbar
-      max-height: $header-article-height;
+      max-height: variables.$header-article-height;
       overflow-y: hidden;
 
       // Shadow matches what we have in the article header
