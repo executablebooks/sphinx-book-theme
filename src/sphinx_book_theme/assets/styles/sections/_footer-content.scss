@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 /*********************************************
 * Footer - content *
 *********************************************/
@@ -8,7 +10,7 @@ footer {
     flex-wrap: wrap;
     padding: 15px;
     border-top: 1px solid #ccc;
-    font-size: $sbt-font-size-small-1;
+    font-size: variables.$sbt-font-size-small-1;
     .bd-footer-content__inner {
       padding-left: 0px;
       p {

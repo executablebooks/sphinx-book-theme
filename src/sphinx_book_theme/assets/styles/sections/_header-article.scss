@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 /*********************************************
 * Top Bar *
 *********************************************/
@@ -6,8 +9,8 @@
  * Header behavior on mobile
  */
 @mixin header-height-mobile {
-  @media (max-width: $breakpoint-md) {
-    height: $header-article-height + 0.5rem;
+  @media (max-width: variables.$breakpoint-md) {
+    height: variables.$header-article-height + 0.5rem;
   }
 }
 
@@ -16,20 +19,20 @@
  */
 // Primary toggle is always visible
 button.sidebar-toggle.primary-toggle {
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: variables.$breakpoint-md) {
     display: inline-block;
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: variables.$breakpoint-md) {
     margin-bottom: 0px;
   }
 }
 
 // Secondary toggle mimics behavior of "persistent header" div of PST
 button.sidebar-toggle.secondary-toggle {
-  @media (min-width: $breakpoint-xl) {
+  @media (min-width: variables.$breakpoint-xl) {
     display: none;
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: variables.$breakpoint-md) {
     margin-bottom: 0px;
   }
 }
@@ -44,14 +47,14 @@ button.sidebar-toggle.secondary-toggle {
   transition: left 0.2s;
   font-size: 0.9em;
   padding: 0 1rem;
+  z-index: variables.$zindex-sticky;
 
-  @media (max-width: $breakpoint-md) {
+  @include header-height-mobile;
+
+  @media (max-width: variables.$breakpoint-md) {
     // Give mobile view a bit more space for text
     padding: 0 0.5rem;
   }
-  z-index: $zindex-sticky;
-
-  @include header-height-mobile;
 
   // The box shadow that shows up when you've scrolled past the top
   .scrolled & {
@@ -67,7 +70,7 @@ button.sidebar-toggle.secondary-toggle {
   .header-article-items {
     display: flex;
     align-items: center;
-    height: $header-article-height;
+    height: variables.$header-article-height;
     width: 100%;
   }
 
@@ -144,7 +147,7 @@ button.sidebar-toggle.secondary-toggle {
     // No background on hover. Need important to over-ride the PST which uses it too.
     span,
     i {
-      transition: color $animation-time ease-out;
+      transition: color variables.$animation-time ease-out;
     }
     &:active,
     &:hover {
@@ -166,7 +169,7 @@ button.sidebar-toggle.secondary-toggle {
     // Positioning and layout of dropdown items to be standardized
     top: 2rem;
     transform: translateX(-75%);
-    @include pst-box-shadow;
+    @include mixins.pst-box-shadow;
 
     // Color and shadowing
     border-color: var(--pst-color-border);

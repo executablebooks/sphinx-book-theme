@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 /**
  * Margin content
  * This is the area to the right of the main content
@@ -32,7 +34,7 @@ $margin-offset: -$margin-width-relative-to-content;
   margin-left: 0.5rem;
 
   // Wide screens and printing should force margin behavior
-  @media (min-width: $breakpoint-lg), print {
+  @media (min-width: variables.$breakpoint-lg), print {
     width: $margin-width-width-gutter;
     margin: 0 $margin-offset 0 0;
 
@@ -65,7 +67,7 @@ label.margin-toggle {
   sup {
     user-select: none;
   }
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: variables.$breakpoint-lg) {
     cursor: pointer;
     color: rgb(0, 113, 188);
     &.marginnote-label {
@@ -79,7 +81,7 @@ label.margin-toggle {
 
 input.margin-toggle {
   display: none;
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: variables.$breakpoint-lg) {
     &:checked + .sidenote,
     &:checked + .marginnote {
       display: block;
@@ -95,14 +97,14 @@ input.margin-toggle {
 
 span.sidenote,
 span.marginnote {
-  z-index: $zindex-middle;
+  z-index: variables.$zindex-middle;
   position: relative;
+  border-left: none;
+  @include margin-content();
   sup {
     user-select: none;
   }
-  @include margin-content();
-  border-left: none;
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: variables.$breakpoint-lg) {
     display: none;
   }
 }
@@ -145,7 +147,7 @@ aside.sidebar.margin {
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: variables.$breakpoint-lg) {
     // No border for margin sidebars on wide screen
     border: none;
 
@@ -163,7 +165,7 @@ aside.margin,
 .margin.docutils.container,
 .cell.tag_popout,
 .cell.tag_margin {
-  z-index: $zindex-middle;
+  z-index: variables.$zindex-middle;
   position: relative;
   @include margin-content();
 
@@ -177,7 +179,7 @@ aside.margin,
 div.figure.margin-caption p.caption,
 div.figure.margin-caption figcaption,
 figure.margin-caption figcaption {
-  z-index: $zindex-middle;
+  z-index: variables.$zindex-middle;
   position: relative;
   @include margin-content();
 }
@@ -198,9 +200,9 @@ div.cell.tag_full-width,
 div.cell.tag_full_width,
 div.full_width,
 div.full-width {
-  z-index: $zindex-middle;
+  z-index: variables.$zindex-middle;
   position: relative;
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: variables.$breakpoint-lg) {
     max-width: $content-fullwidth-width;
     width: $content-fullwidth-width;
   }
