@@ -87,8 +87,6 @@ test = [
     "pytest-cov",
     "pytest-regressions",
     "sphinx_thebe",
-    # Reduce sensitivity to AST changes
-    "myst-parser==3.*"
 ]
 
 [project.entry-points]
