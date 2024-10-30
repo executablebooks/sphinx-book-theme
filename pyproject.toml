@@ -24,7 +24,8 @@ filterwarnings = [
   'ignore:datetime\.datetime\.utcnow\(\) is deprecated:DeprecationWarning',
   # Sphinx triggers this
   '''ignore:'imghdr' is deprecated and slated for removal in Python 3\.13:DeprecationWarning''',
-  '''ignore:'sphinx.util.import_object' is deprecated.:PendingDeprecationWarning'''
+  '''ignore:'sphinx.util.import_object' is deprecated.:PendingDeprecationWarning''',
+  'ignore:Parsing dates involving a day of month without a year specified is ambiguious:DeprecationWarning'
 ]
 
 [project]
