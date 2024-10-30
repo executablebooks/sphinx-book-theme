@@ -28,11 +28,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.9", "3.10", "3.11", "3.12.*", "3.13"]
         # Only test the latest major release of Sphinx because otherwise we need to
         # keep multiple versions of regression tests on file and this creates lots of
         # noise in the tests.
-        sphinx: ["~=6.0","~=7.0", "~8.0"]
+        sphinx: ["~=6.0","~=7.0", "~=8.0"]
         include:
         - os: windows-latest
           # Python 3.12 is broken on windows builds until the following PR is released:
