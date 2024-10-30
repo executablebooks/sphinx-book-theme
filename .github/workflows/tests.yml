@@ -28,7 +28,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.9", "3.10", "3.11", "3.12.*", "3.13"]
+        python-version: ["3.10", "3.11", "3.12.*", "3.13"]
         # Only test the latest major release of Sphinx because otherwise we need to
         # keep multiple versions of regression tests on file and this creates lots of
         # noise in the tests.
@@ -42,6 +42,14 @@ jobs:
           experimental: true
         - os: macos-latest
           python-version: 3.x
+        # Sphinx <8 is 3.9+
+        - os: ubuntu-latest
+          python-version: "3.9"
+          sphinx: "~=7.0"
+        - os: ubuntu-latest
+          python-version: "3.9"
+          sphinx: "~=6.0"
+
     runs-on: ${{ matrix.os }}
 
     steps:
