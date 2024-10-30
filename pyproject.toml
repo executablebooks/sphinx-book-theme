@@ -87,6 +87,9 @@ test = [
     "pytest-cov",
     "pytest-regressions",
     "sphinx_thebe",
+    # Our regression testing is sensitive to DOM changes
+    # So, pin pydata-sphinx-theme
+    "pydata-sphinx-theme~=0.16.0"
 ]
 
 [project.entry-points]
