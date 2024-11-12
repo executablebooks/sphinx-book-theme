@@ -44,5 +44,6 @@ repos:
         (?x)^(
             docs/reference/kitchen-sink/.*|
             src/sphinx_book_theme/assets/.*|
-            tests/.*
+            tests/.*|
+            pyproject\.toml
         )$
