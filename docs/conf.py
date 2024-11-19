@@ -170,6 +170,9 @@ ogp_social_cards = {
     "image": "_static/logo-square.png",
 }
 
+# -- sphinx-copybutton config -------------------------------------
+copybutton_exclude = ".linenos, .gp"
+
 # -- ABlog config -------------------------------------------------
 blog_path = "reference/blog"
 blog_post_pattern = "reference/blog/*.md"
