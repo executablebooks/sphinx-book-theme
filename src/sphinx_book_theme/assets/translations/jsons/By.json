@@ -6,7 +6,7 @@
   { "language": "German", "symbol": "de", "text": "Durch" },
   { "language": "Italian", "symbol": "it", "text": "Di" },
   { "language": "Japanese", "symbol": "ja", "text": "著者" },
-  { "language": "Russian", "symbol": "ru", "text": "По" },
+  { "language": "Russian", "symbol": "ru", "text": "Автор:" },
   { "language": "Spanish", "symbol": "es", "text": "Por" },
   { "language": "Catalan", "symbol": "ca", "text": "Per" },
   { "language": "Czech", "symbol": "cs", "text": "Podle" },
