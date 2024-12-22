@@ -115,7 +115,7 @@ print("this works for code cells too, if you add a `margin` tag to them")
 ```{code-cell} ipython3
 # You can also include enriched outputs like Math
 from IPython.display import Math
-Math("\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
+Math(r"\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
 ```
 
 ## Removing content before publishing
