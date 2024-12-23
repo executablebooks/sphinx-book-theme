@@ -1,7 +1,7 @@
 # Translation workflow
 
 This folder contains code and translations for supporting multiple languages with Sphinx.
-See [the Sphinx internationalization documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-internationalization) for more details.
+See [the Sphinx internationalization documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html) for more details.
 
 ## Structure of translation files
 
