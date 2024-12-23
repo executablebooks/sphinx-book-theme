@@ -268,4 +268,4 @@ voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
 Download Links
 ==============
 
-:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://source.unsplash.com/200x200/daily?cute+puppy>`
+:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg>`
