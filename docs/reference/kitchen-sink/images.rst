@@ -12,18 +12,18 @@ Images
 
 An image:
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
    :height: 200
    :width: 200
 
 A clickable image:
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
-   :target: https://unsplash.com/
+.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+   :target: https://jupyter.org/
    :height: 200
    :width: 200
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: right
    :height: 200
    :width: 200
@@ -43,7 +43,7 @@ sapiente veritatis doloribus accusantium molestiae modi recusandae
 excepturi facere, corrupti expedita sit nihil temporibus eius sequi
 animi, illo libero labore fuga.
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: left
    :height: 200
    :width: 200
@@ -66,7 +66,7 @@ animi, illo libero labore fuga.
 Figures
 -------
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
    :alt: reStructuredText, the markup syntax
 
    A figure is an image with a caption and/or a legend:
@@ -83,7 +83,7 @@ Figures
 
 A figure directive with center alignment
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: center
 
    This caption should be centered.

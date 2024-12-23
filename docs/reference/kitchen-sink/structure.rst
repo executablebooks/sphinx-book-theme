@@ -83,7 +83,7 @@ luctus efficitur arcu. Cras ut dictum mi. Nulla congue interdum lorem, semper se
 Document Subsection
 -------------------
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
     :align: right
     :figwidth: 200px
 

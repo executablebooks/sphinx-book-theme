@@ -2,9 +2,10 @@
 import os
 from urllib.request import urlopen
 from pathlib import Path
+from datetime import datetime
 
 project = "Sphinx Book Theme"
-copyright = "2023"
+copyright = str(datetime.now().year)
 author = "the Executable Book Project"
 # language = "fr"  # For testing language translations
 
