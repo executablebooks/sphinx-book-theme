@@ -25,7 +25,7 @@ def convert_json(folder=None):
     out_folder = folder / ".." / ".." / "theme" / "sphinx_book_theme" / "static"
 
     # compile po
-    for path in (folder / "jsons").glob("*.json"):
+    for path in sorted((folder / "jsons").glob("*.json")):
         data = json.loads(path.read_text("utf8"))
         assert data[0]["symbol"] == "en"
         english = data[0]["text"]
