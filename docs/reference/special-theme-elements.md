@@ -31,6 +31,8 @@ through and see how things look!
 import numpy as np
 import matplotlib.pyplot as plt
 
+np.random.seed(0)
+
 square = np.random.randn(100, 100)
 wide = np.random.randn(100, 1000)
 ```
@@ -41,6 +43,7 @@ wide = np.random.randn(100, 1000)
 ## A full-width square figure
 fig, ax = plt.subplots()
 ax.imshow(square)
+plt.show()
 ```
 
 ```{code-cell} ipython3
@@ -49,12 +52,14 @@ ax.imshow(square)
 ## A full-width wide figure
 fig, ax = plt.subplots()
 ax.imshow(wide)
+plt.show()
 ```
 
 ```{code-cell} ipython3
 # Now here's the same figure at regular width
 fig, ax = plt.subplots()
 ax.imshow(wide)
+plt.show()
 ```
 
 ### Markdown
@@ -194,6 +199,7 @@ Let's see what happens
 ## code cell in the margin with output
 fig, ax = plt.subplots()
 ax.imshow(wide)
+plt.show()
 ```
 
 ````{margin}
