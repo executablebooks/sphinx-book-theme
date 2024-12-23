@@ -174,10 +174,8 @@ def update_context_with_repository_info(app):
     # If provider is still empty, raise an error because we don't recognize it
     if provider == "":
         raise SphinxError(
-            (
-                f"Provider not recognized in repository url {repo_url}. "
-                "If you're using a custom provider URL, specify `repository_provider`"
-            )
+            f"Provider not recognized in repository url {repo_url}. "
+            "If you're using a custom provider URL, specify `repository_provider`"
         )
 
     # Update the context because this is what the get_edit_url function uses.
