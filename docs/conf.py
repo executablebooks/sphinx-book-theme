@@ -5,9 +5,7 @@ from pathlib import Path
 from datetime import datetime
 
 project = "Sphinx Book Theme"
-now = datetime.now()
-year = str(now.year)
-copyright = year
+copyright = str(datetime.now().year)
 author = "the Executable Book Project"
 # language = "fr"  # For testing language translations
 
