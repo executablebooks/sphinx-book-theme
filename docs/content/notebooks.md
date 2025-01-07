@@ -115,7 +115,7 @@ print("this works for code cells too, if you add a `margin` tag to them")
 ```{code-cell} ipython3
 # You can also include enriched outputs like Math
 from IPython.display import Math
-Math("\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
+Math(r"\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}")
 ```
 
 ## Removing content before publishing
@@ -171,6 +171,7 @@ See [the Pandas Styling docs](https://pandas.pydata.org/pandas-docs/stable/user_
 :tags: [hide-input]
 
 import pandas as pd
+from pandas.io.formats.style import Styler
 
 np.random.seed(24)
 df = pd.DataFrame({'A': np.linspace(1, 10, 10)})
@@ -195,8 +196,8 @@ def highlight_max(s):
     is_max = s == s.max()
     return ['background-color: yellow' if v else '' for v in is_max]
 
-df.style.\
-    applymap(color_negative_red).\
+Styler(df, uuid="1").\
+    map(color_negative_red).\
     apply(highlight_max).\
     set_table_attributes('style="font-size: 10px"')
 ```

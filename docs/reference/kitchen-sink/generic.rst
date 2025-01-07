@@ -3,7 +3,7 @@
    Licensed under Creative Commons Attribution-ShareAlike 4.0 International License
    SPDX-License-Identifier: CC-BY-SA-4.0
 
-.. |EXAMPLE| image:: https://source.unsplash.com/32x32/daily?icon
+.. |EXAMPLE| image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
     :width: 1em
 
 =============
@@ -110,7 +110,7 @@ Sidebar
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-    .. image:: https://source.unsplash.com/200x200/daily?cute+puppy
+    .. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
@@ -268,4 +268,4 @@ voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
 Download Links
 ==============
 
-:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://source.unsplash.com/200x200/daily?cute+puppy>`
+:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg>`

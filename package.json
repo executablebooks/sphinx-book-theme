@@ -7,10 +7,10 @@
   "devDependencies": {
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
-    "dedent": "^0.7.0",
+    "dedent": "^1.5.3",
     "html-webpack-plugin": "^5.0.0",
     "mini-css-extract-plugin": "^2.7.5",
-    "sass": "^1.59.3",
+    "sass": "^1.81.0",
     "sass-loader": "^10.3.1",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.0.0",
