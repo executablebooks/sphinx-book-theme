@@ -193,7 +193,9 @@ def add_launch_buttons(
             SPHINX_LOGGER.warning(f"Provider {provider} not supported on Lightning.")
         else:
             github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
-            url = f"{lightning_studios_url}/new?repo_url=https://github.com{github_path}"
+            url = (
+                f"{lightning_studios_url}/new?repo_url=https://github.com{github_path}"
+            )
             launch_buttons_list.append(
                 {
                     "type": "link",
