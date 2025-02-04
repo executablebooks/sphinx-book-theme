@@ -13,3 +13,4 @@ python:
 
 sphinx:
   builder: html
+  configuration: docs/conf.py
