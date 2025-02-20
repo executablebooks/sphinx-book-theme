@@ -24,7 +24,7 @@ from .header_buttons.source import add_source_buttons
 from ._compat import findall
 from ._transforms import HandleFootnoteTransform
 
-__version__ = "1.1.3"
+__version__ = "1.1.4"
 """sphinx-book-theme version"""
 
 SPHINX_LOGGER = logging.getLogger(__name__)
