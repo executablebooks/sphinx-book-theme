@@ -114,6 +114,7 @@ def add_launch_buttons(
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
+    lightning_studios_url = launch_buttons.get("lightning_studios_url", "").strip("/")
 
     # Loop through each provider and add a button for it if needed
     if binderhub_url:
@@ -183,6 +184,24 @@ def add_launch_buttons(
                     "text": "Deepnote",
                     "tooltip": translation("Launch on") + " Deepnote",
                     "icon": "_static/images/logo_deepnote.svg",
+                    "url": url,
+                }
+            )
+
+    if lightning_studios_url:
+        if provider.lower() != "github":
+            SPHINX_LOGGER.warning(f"Provider {provider} not supported on Lightning.")
+        else:
+            github_path = f"%2F{org}%2F{repo}%2Fblob%2F{branch}%2F{path_rel_repo}"
+            url = (
+                f"{lightning_studios_url}/new?repo_url=https://github.com{github_path}"
+            )
+            launch_buttons_list.append(
+                {
+                    "type": "link",
+                    "text": "Lightning Studios",
+                    "tooltip": translation("Launch on") + " Lightning Studios",
+                    "icon": "_static/images/logo_lightning_studios.svg",
                     "url": url,
                 }
             )
