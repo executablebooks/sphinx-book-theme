@@ -113,6 +113,7 @@ def add_launch_buttons(
     jupyterhub_url = launch_buttons.get("jupyterhub_url", "").strip("/")
     binderhub_url = launch_buttons.get("binderhub_url", "").strip("/")
     colab_url = launch_buttons.get("colab_url", "").strip("/")
+    basthon_url = launch_buttons.get("basthon_url", "").strip("/")
     deepnote_url = launch_buttons.get("deepnote_url", "").strip("/")
 
     # Loop through each provider and add a button for it if needed
@@ -186,6 +187,19 @@ def add_launch_buttons(
                     "url": url,
                 }
             )
+
+    if basthon_url:
+        gh = "https://raw.githubusercontent.com"
+        url = f"{basthon_url}/?from={gh}/{org}/{repo}/{branch}/{path_rel_repo}"
+        launch_buttons_list.append(
+            {
+                "type": "link",
+                "text": "Basthon",
+                "tooltip": "Launch on Basthon",
+                "icon": "_static/images/logo_basthon.png",
+                "url": url,
+            }
+        )
 
     # Add thebe flag in context
     if launch_buttons.get("thebe", False):

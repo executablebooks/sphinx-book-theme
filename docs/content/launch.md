@@ -67,6 +67,7 @@ html_theme_options = {
     ...
 }
 ```
+
 ## Deepnote
 
 To add [Deepnote](https://deepnote.com) links to your page, add the following configuration:
@@ -85,6 +86,23 @@ html_theme_options = {
 This will create a new Deepnote project every time you click the launch button.
 ```
 
+## Basthon
+
+To add [Basthon](https://basthon.fr/) links to your page, add the following configuration:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "basthon_url": "https://notebook.basthon.fr"
+    },
+    ...
+}
+```
+
+```{tip}
+By default, a Python kernel is used. You can add "/sql" or "/ocaml" to basthon_url to run a notebook with another language.
+```
 
 ## Live code cells with Thebe
 
