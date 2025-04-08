@@ -8,6 +8,11 @@ that runs in the cloud, or by making your page interactive using Thebe.
 To use either Binder or JupyterHub links, you'll first need to configure your
 documentation's repository url:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
     ...
@@ -17,6 +22,22 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    url: "https://github.com/{your-docs-url}"
+    branch: "{your-branch}"
+    path_to_book: "{path-relative-to-site-root}"
+```
+
+````
+
+`````
 
 ```{margin} Paired ipynb files
 
@@ -30,6 +51,11 @@ file instead of the text file.
 
 To add Binder links to your page, add the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
     ...
@@ -40,23 +66,60 @@ html_theme_options = {
 }
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    binderhub_url: "https://{your-binderhub-url}"
+```
+
+````
+
+`````
+
 ## JupyterHub
 
 To add JupyterHub links to your page, add the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
     ...
     "launch_buttons": {
         "jupyterhub_url": "https://{your-binderhub-url}"
-    },
     ...
 }
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    jupyterhub_url: "https://{your-binderhub-url}"
+```
+
+````
+
+`````
+
 ## Google Colab
 
 To add Google Colab links to your page, add the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
@@ -67,9 +130,29 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    colab_url: "https://colab.research.google.com"
+```
+
+````
+
+`````
+
 ## Deepnote
 
 To add [Deepnote](https://deepnote.com) links to your page, add the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
@@ -80,6 +163,20 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    deepnote_url: "https://deepnote.com"
+```
+
+````
+
+`````
 
 ```{warning}
 This will create a new Deepnote project every time you click the launch button.
@@ -99,6 +196,11 @@ You can use the Sphinx extension
 live code functionality to your documentation. You can install `sphinx-thebe` from `pip`,
 then activate it by putting it in your `conf.py` extensions list:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 extensions = [
     ...
@@ -107,8 +209,27 @@ extensions = [
 ]
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+execute:
+    execute_notebooks: auto
+```
+
+````
+
+`````
+
 If you'd like to activate UI elements for `sphinx-thebe` in the `sphinx-book-theme`,
 add the following theme configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
@@ -120,10 +241,29 @@ html_theme_options = {
 }
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    thebe: True
+```
+
+````
+
+`````
+
 This will add a custom launch button and some UI elements will be added for Thebe.
 
 If you also specify a `repository_url` with your theme configuration, `sphinx-thebe`
 will use this repository for its environment:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
@@ -132,6 +272,20 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    url: "https://github.com/{your-docs-url}"
+```
+
+````
+
+`````
 
 ```{tip}
 You can also manually customize Thebe with the `thebe_config` dictionary.
@@ -144,6 +298,11 @@ documentation for what you can configure.
 
 To configure a relative path to your documentation, add the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
     ...
@@ -152,10 +311,29 @@ html_theme_options = {
 }
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    path_to_book: "{path-relative-to-repo-root}"
+```
+
+````
+
+`````
+
 ## Control the user interface that is opened
 
 You can control the interface that is opened when somebody clicks on a launch button.
 To do so, add the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
@@ -166,3 +344,17 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+launch_buttons:
+    notebook_interface: jupyterlab
+```
+
+````
+
+`````
