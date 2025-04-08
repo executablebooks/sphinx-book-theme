@@ -30,8 +30,8 @@ repos:
       args: ["--fix", "--show-fixes"]
     - id: ruff-format
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: 787fb9f542b140ba0b2aced38e6a3e68021647a3 # frozen: v3.5.3
     hooks:
       - id: prettier
         types_or: [scss, javascript]
