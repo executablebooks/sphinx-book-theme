@@ -120,7 +120,7 @@ def add_launch_buttons(
         # Any non-standard repository URL should be passed-through raw
         if provider_url not in ["https://github.com", "https://gitlab.com"]:
             # Generic git repository using the full repo URL as a fallback
-            url = f"{binderhub_url}/v2/git/{quote(repo_url)}/{branch}"
+            url = f"{binderhub_url}/v2/git/{quote(repo_url, safe="")}/{branch}"
         elif provider.lower() == "github":
             url = f"{binderhub_url}/v2/gh/{org}/{repo}/{branch}"
         elif provider.lower() == "gitlab":
