@@ -30,7 +30,7 @@ file instead of the text file.
 
 ## JupyterLite
 
-If you are adding JupyterLite links to your page, first work out where your
+If you are adding [JupyterLite](https://github.com/jupyterlite/jupyterlite) links to your page, first work out where your
 JupyterLite instance will be serving from, then add the URL to your
 configuration. In the example below, we've set up JupyterLite pages at the
 base URL of the main pages site, and at subdirectory `interact/lab`:
