@@ -49,8 +49,13 @@ def add_launch_buttons(
         or not _is_notebook(app, context)
         or not any(
             launch_buttons.get(key)
-            for key in ("binderhub_url", "jupyterhub_url", "thebe",
-                        "colab_url", "jupyterlite_url")
+            for key in (
+                "binderhub_url",
+                "jupyterhub_url",
+                "thebe",
+                "colab_url",
+                "jupyterlite_url",
+            )
         )
     ):
         return
