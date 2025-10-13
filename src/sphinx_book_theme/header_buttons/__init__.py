@@ -67,7 +67,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
             download_buttons.append(
                 {
                     "type": "link",
-                    "url": f'{pathto("_sources", 1)}/{context.get("ipynb_source")}',
+                    "url": f"{pathto('_sources', 1)}/{context.get('ipynb_source')}",
                     "text": ".ipynb",
                     "icon": "fas fa-code",
                     "tooltip": translation("Download notebook file"),
@@ -79,7 +79,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
         download_buttons.append(
             {
                 "type": "link",
-                "url": f'{pathto("_sources", 1)}/{context["sourcename"]}',
+                "url": f"{pathto('_sources', 1)}/{context['sourcename']}",
                 "text": suff,
                 "tooltip": translation("Download source file"),
                 "icon": "fas fa-file",
