@@ -196,7 +196,7 @@ def add_launch_buttons(
                     "url": url,
                 }
             )
-            
+
     if jupyterlite_url:
         jl_ext = launch_buttons.get("jupyterlite_ext", extension).strip()
         jl_rel_repo = f"{book_relpath}{pagename}{jl_ext}"
@@ -210,7 +210,7 @@ def add_launch_buttons(
                 "url": url,
             }
         )
-        
+
     if lightning_studios_url:
         if provider.lower() != "github":
             SPHINX_LOGGER.warning(f"Provider {provider} not supported on Lightning.")
