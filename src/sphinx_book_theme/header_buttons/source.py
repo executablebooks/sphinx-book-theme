@@ -55,7 +55,7 @@ def add_source_buttons(app, pagename, templatename, context, doctree):
                 # Use plain=1 to ensure the source text is shown, not rendered
                 source_url = edit_url.replace("/edit/", "/blob/") + "?plain=1"
             elif provider.lower() == "gitlab":
-                source_url = edit_url.replace("/edit/", "/blob/")
+                source_url = edit_url.replace("/edit/", "/blob/") + "?plain=1"
             elif provider.lower() == "bitbucket":
                 source_url = edit_url.replace("?mode=edit", "")
 

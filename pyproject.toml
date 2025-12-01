@@ -3,7 +3,7 @@ requires = ["sphinx-theme-builder >= 0.2.0a7"]
 build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
-node-version = "16.13.2"
+node-version = "20.9.0"
 theme-name = "sphinx_book_theme"
 additional-compiled-static-assets = [
   "locales/"
@@ -37,7 +37,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "sphinx>=6.1",
-  "pydata-sphinx-theme>=0.16.0"
+  "pydata-sphinx-theme==0.15.4"
 ]
 
 license = { file = "LICENSE" }
