@@ -182,13 +182,36 @@ window.initThebeSBT = initThebeSBT;
 window.toggleFullScreen = toggleFullScreen;
 
 /**
+ * Add blur behavior to buttons with tooltips
+ * This prevents tooltips from persisting after clicking buttons
+ */
+function addBlurToButtons() {
+  // List of button selectors that should blur on click to dismiss tooltips
+  const buttonSelectors = [
+    '.theme-switch-button',
+    '.search-button',
+    '.primary-toggle',
+    '.secondary-toggle',
+  ];
+
+  // Add blur on click for each button type
+  buttonSelectors.forEach(selector => {
+    const button = document.querySelector(selector);
+    if (button) {
+      button.addEventListener('click', () => {
+        button.blur();
+      }, true);
+    }
+  });
+}
+
+/**
  * Fix sidebar toggle behavior for wide screens
  * On wide screens (>= 992px), clicking the toggle should collapse the sidebar,
  * not open it as a dialog modal. The dialog behavior is only for narrow screens.
  */
 function fixSidebarToggle() {
   const primaryToggle = document.querySelector('.primary-toggle');
-  const secondaryToggle = document.querySelector('.secondary-toggle');
   const primarySidebar = document.querySelector('#pst-primary-sidebar');
   const primaryDialog = document.querySelector('#pst-primary-sidebar-modal');
 
@@ -206,19 +229,7 @@ function fixSidebarToggle() {
         // Toggle a class to hide/show the sidebar
         primarySidebar.classList.toggle('pst-sidebar-hidden');
       }
-
-      // Blur the button so it loses focus and tooltip dismisses naturally
-      // This works for both wide screens (after collapse) and narrow screens (before dialog opens)
-      primaryToggle.blur();
     }, true); // Use capture phase to run before PST's handler
-  }
-
-  // Fix secondary sidebar toggle
-  if (secondaryToggle) {
-    secondaryToggle.addEventListener('click', () => {
-      // Blur the button so tooltip dismisses naturally
-      secondaryToggle.blur();
-    }, true);
   }
 }
 
@@ -227,4 +238,5 @@ function fixSidebarToggle() {
  */
 sbRunWhenDOMLoaded(initTocHide);
 sbRunWhenDOMLoaded(addNoPrint);
+sbRunWhenDOMLoaded(addBlurToButtons);
 sbRunWhenDOMLoaded(fixSidebarToggle);
