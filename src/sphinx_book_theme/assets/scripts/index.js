@@ -188,19 +188,23 @@ window.toggleFullScreen = toggleFullScreen;
 function addBlurToButtons() {
   // List of button selectors that should blur on click to dismiss tooltips
   const buttonSelectors = [
-    '.theme-switch-button',
-    '.search-button',
-    '.primary-toggle',
-    '.secondary-toggle',
+    ".theme-switch-button",
+    ".search-button",
+    ".primary-toggle",
+    ".secondary-toggle",
   ];
 
   // Add blur on click for each button type
-  buttonSelectors.forEach(selector => {
+  buttonSelectors.forEach((selector) => {
     const button = document.querySelector(selector);
     if (button) {
-      button.addEventListener('click', () => {
-        button.blur();
-      }, true);
+      button.addEventListener(
+        "click",
+        () => {
+          button.blur();
+        },
+        true,
+      );
     }
   });
 }
@@ -211,25 +215,29 @@ function addBlurToButtons() {
  * not open it as a dialog modal. The dialog behavior is only for narrow screens.
  */
 function fixSidebarToggle() {
-  const primaryToggle = document.querySelector('.primary-toggle');
-  const primarySidebar = document.querySelector('#pst-primary-sidebar');
-  const primaryDialog = document.querySelector('#pst-primary-sidebar-modal');
+  const primaryToggle = document.querySelector(".primary-toggle");
+  const primarySidebar = document.querySelector("#pst-primary-sidebar");
+  const primaryDialog = document.querySelector("#pst-primary-sidebar-modal");
 
   // Fix primary sidebar toggle
   if (primaryToggle && primarySidebar && primaryDialog) {
     // Intercept clicks on the toggle button BEFORE pydata-sphinx-theme's handler
-    primaryToggle.addEventListener('click', (event) => {
-      const isWideScreen = window.matchMedia('(min-width: 992px)').matches;
+    primaryToggle.addEventListener(
+      "click",
+      (event) => {
+        const isWideScreen = window.matchMedia("(min-width: 992px)").matches;
 
-      if (isWideScreen) {
-        // On wide screens, prevent the dialog from opening and toggle sidebar visibility instead
-        event.preventDefault();
-        event.stopImmediatePropagation();
+        if (isWideScreen) {
+          // On wide screens, prevent the dialog from opening and toggle sidebar visibility instead
+          event.preventDefault();
+          event.stopImmediatePropagation();
 
-        // Toggle a class to hide/show the sidebar
-        primarySidebar.classList.toggle('pst-sidebar-hidden');
-      }
-    }, true); // Use capture phase to run before PST's handler
+          // Toggle a class to hide/show the sidebar
+          primarySidebar.classList.toggle("pst-sidebar-hidden");
+        }
+      },
+      true,
+    ); // Use capture phase to run before PST's handler
   }
 }
 
