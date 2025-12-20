@@ -182,7 +182,49 @@ window.initThebeSBT = initThebeSBT;
 window.toggleFullScreen = toggleFullScreen;
 
 /**
+ * Fix sidebar toggle behavior for wide screens
+ * On wide screens (>= 992px), clicking the toggle should collapse the sidebar,
+ * not open it as a dialog modal. The dialog behavior is only for narrow screens.
+ */
+function fixSidebarToggle() {
+  const primaryToggle = document.querySelector('.primary-toggle');
+  const secondaryToggle = document.querySelector('.secondary-toggle');
+  const primarySidebar = document.querySelector('#pst-primary-sidebar');
+  const primaryDialog = document.querySelector('#pst-primary-sidebar-modal');
+
+  // Fix primary sidebar toggle
+  if (primaryToggle && primarySidebar && primaryDialog) {
+    // Intercept clicks on the toggle button BEFORE pydata-sphinx-theme's handler
+    primaryToggle.addEventListener('click', (event) => {
+      const isWideScreen = window.matchMedia('(min-width: 992px)').matches;
+
+      if (isWideScreen) {
+        // On wide screens, prevent the dialog from opening and toggle sidebar visibility instead
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        // Toggle a class to hide/show the sidebar
+        primarySidebar.classList.toggle('pst-sidebar-hidden');
+      }
+
+      // Blur the button so it loses focus and tooltip dismisses naturally
+      // This works for both wide screens (after collapse) and narrow screens (before dialog opens)
+      primaryToggle.blur();
+    }, true); // Use capture phase to run before PST's handler
+  }
+
+  // Fix secondary sidebar toggle
+  if (secondaryToggle) {
+    secondaryToggle.addEventListener('click', () => {
+      // Blur the button so tooltip dismisses naturally
+      secondaryToggle.blur();
+    }, true);
+  }
+}
+
+/**
  * Set up functions to load when the DOM is ready
  */
 sbRunWhenDOMLoaded(initTocHide);
 sbRunWhenDOMLoaded(addNoPrint);
+sbRunWhenDOMLoaded(fixSidebarToggle);
