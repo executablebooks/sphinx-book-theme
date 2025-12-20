@@ -18,6 +18,15 @@
     opacity variables.$animation-time ease 0s,
     visibility variables.$animation-time ease 0s;
 
+  // Hide sidebar when toggle button is clicked on wide screens
+  &.pst-sidebar-hidden {
+    @media (min-width: variables.$breakpoint-lg) {
+      margin-left: -(variables.$sidebar-primary-width-widescreen);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
   @media (max-width: variables.$breakpoint-md) {
     // So that tooltips don't overlap
     z-index: variables.$zindex-tooltip + 1;
