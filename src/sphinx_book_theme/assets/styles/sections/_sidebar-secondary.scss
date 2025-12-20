@@ -46,8 +46,8 @@
     // To make sure it shows above the page content
     z-index: variables.$zindex-middle;
 
-    // Remove padding so that it's flush on the top and left
-    padding: 0;
+    // Add comfortable horizontal padding, keep flush with top
+    padding: 0 1.5rem;
 
     // This is the container div for the secondary sidebar nav
     .toc-item {
