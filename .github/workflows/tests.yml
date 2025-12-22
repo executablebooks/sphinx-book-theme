@@ -28,27 +28,16 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.10", "3.11", "3.12.*", "3.13"]
-        # Only test the latest major release of Sphinx because otherwise we need to
-        # keep multiple versions of regression tests on file and this creates lots of
-        # noise in the tests.
-        sphinx: ["~=6.0","~=7.0", "~=8.0"]
+        python-version: ["3.11", "3.12", "3.13"]
+        # Test last 2 major releases of Sphinx; regression fixtures target the latest.
+        sphinx: ["~=7.0", "~=8.0"]
         include:
         - os: windows-latest
-          # Python 3.12 is broken on windows builds until the following PR is released:
-          # https://github.com/pradyunsg/sphinx-theme-builder/pull/47
-          python-version: 3.11
+          python-version: 3.13
           # Windows pulling in dependencies fails
           experimental: true
         - os: macos-latest
           python-version: 3.x
-        # Sphinx <8 is 3.9+
-        - os: ubuntu-latest
-          python-version: "3.9"
-          sphinx: "~=7.0"
-        - os: ubuntu-latest
-          python-version: "3.9"
-          sphinx: "~=6.0"
 
     runs-on: ${{ matrix.os }}
 
@@ -73,10 +62,10 @@ jobs:
     # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
     # Disabled for now with false &&
     - name: Upload to Codecov
-      if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == 3.9 && matrix.sphinx == '~=7.0' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
+      if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' && matrix.sphinx == '~=8.0' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
       uses: codecov/codecov-action@v5.0.7
       with:
-        name: ebp-sbt-pytests-py3.7
+        name: ebp-sbt-pytests-py3.11
         flags: pytests
         file: ./coverage.xml
         fail_ci_if_error: true
@@ -90,7 +79,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.13'
         cache: "pip"
         cache-dependency-path: "pyproject.toml"
     - name: Install fonts
