@@ -38,7 +38,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "sphinx>=6.1",
-  "pydata-sphinx-theme==0.15.4"
+  "pydata-sphinx-theme==0.16.1"
 ]
 
 license = { file = "LICENSE" }
