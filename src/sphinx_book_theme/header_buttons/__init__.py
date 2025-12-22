@@ -117,6 +117,7 @@ def add_header_buttons(app, pagename, templatename, context, doctree):
                 "tooltip": translation("Fullscreen mode"),
                 "icon": "fas fa-expand",
                 "label": "fullscreen-button",
+                "classes": "pst-navbar-icon",
             }
         )
 

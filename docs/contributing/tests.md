@@ -14,8 +14,8 @@ $ tox
 You can specify a specific environment like so:
 
 ```console
-# Run the tests with Python 3.9, Sphinx 4
-$ tox -e py39-sphinx4
+# Run the tests with Python 3.10, Sphinx 6
+$ tox -e py310-sphinx6
 ```
 
 ## List all test environments
@@ -46,7 +46,7 @@ By default, `tox` will only install the necessary environment **once**.
 If you'd like to force a re-build, use the `-r` parameter. For example:
 
 ```console
-$ tox -r -e py38-sphinx3
+$ tox -r -e py310-sphinx6
 ```
 
 ## Test audits with lighthouse
@@ -63,8 +63,8 @@ To preview the output of these tests:
 
 ## Test multiple Sphinx versions
 
-This theme is tested against the latest two major versions of Sphinx.
-We try to set up our regression tests such that there are no differences between these two Sphinx versions.
+This theme is tested against Sphinx 6-9.
+We try to set up our regression tests such that there are no differences between these Sphinx versions.
 
 ### Unit tests
 
@@ -73,9 +73,9 @@ Use the variable `sphinx_build.software_versions` to conditionally run tests bas
 For example:
 
 ```python
-if sphinx_build.software_versions == ".sphinx3":
+if sphinx_build.software_versions == ".sphinx8":
    foo
-elif sphinx_build.software_versions == ".sphinx4":
+elif sphinx_build.software_versions == ".sphinx9":
    bar
 ```
 

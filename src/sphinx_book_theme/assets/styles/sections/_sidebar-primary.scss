@@ -18,6 +18,15 @@
     opacity variables.$animation-time ease 0s,
     visibility variables.$animation-time ease 0s;
 
+  // Hide sidebar when toggle button is clicked on wide screens
+  &.pst-sidebar-hidden {
+    @media (min-width: variables.$breakpoint-lg) {
+      margin-left: -(variables.$sidebar-primary-width-widescreen);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
   @media (max-width: variables.$breakpoint-md) {
     // So that tooltips don't overlap
     z-index: variables.$zindex-tooltip + 1;
@@ -26,6 +35,13 @@
   // Remove the top border since there's often no header items above
   .sidebar-primary-items__start {
     border-top: none;
+  }
+
+  // Left-align icon badges with standard gap spacing instead of centering
+  .navbar-icon-links {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
   }
 
   // On wide screens we have a smaller sidebar width than PST
