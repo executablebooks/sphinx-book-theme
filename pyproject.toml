@@ -25,7 +25,8 @@ filterwarnings = [
   # Sphinx triggers this
   '''ignore:'imghdr' is deprecated and slated for removal in Python 3\.13:DeprecationWarning''',
   '''ignore:'sphinx.util.import_object' is deprecated.:PendingDeprecationWarning''',
-  'ignore:Parsing dates involving a day of month without a year specified is ambiguious:DeprecationWarning'
+  'ignore:Parsing dates involving a day of month without a year specified is ambiguious:DeprecationWarning',
+  'ignore:Argument "parser_name" will be removed in Docutils 2.0.:PendingDeprecationWarning',
 ]
 
 [project]
@@ -37,7 +38,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "sphinx>=6.1",
-  "pydata-sphinx-theme==0.15.4"
+  "pydata-sphinx-theme==0.16.1"
 ]
 
 license = { file = "LICENSE" }

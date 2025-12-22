@@ -1,0 +1,19 @@
+/**
+ * sphinx-togglebutton extension
+ * Improves contrast and readability in dark mode
+ * Fixes: https://github.com/executablebooks/sphinx-book-theme/issues/743
+ */
+
+// Ensure toggle button expand links have proper contrast in dark mode
+html[data-theme="dark"] {
+  details.above-input,
+  details.below-input {
+    summary {
+      color: var(--pst-color-link);
+
+      &:hover {
+        color: var(--pst-color-link-hover);
+      }
+    }
+  }
+}
