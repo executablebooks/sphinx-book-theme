@@ -12,10 +12,33 @@ However, there are two configuration points where you can add items to your foot
 For example, the configuration below assumes there is a template at `_templates/test.html`.
 It adds the `_templates` folder to Sphinx's templates path, and adds the template to both the start and end section of the footer.
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 templates_path = ["_templates"]
 html_theme_options = {
-  "footer_start": ["test.html"],
-  "footer_end": ["test.html"]
+    "footer-start": ["test.html"],
+    "footer-end": ["test.html"],
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        templates_path: ["_templates"]
+        html_theme_options:
+            footer-start: ["test.html"]
+            footer-end: ["test.html"]
+```
+
+````
+
+`````
