@@ -31,7 +31,7 @@ repos:
     - id: ruff-format
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: 787fb9f542b140ba0b2aced38e6a3e68021647a3 # frozen: v3.5.3
+    rev: 309e9b0af1bbf98f1f6cd8e2b283b68cf87814e7 # frozen: v3.8.0
     hooks:
       - id: prettier
         types_or: [scss, javascript]
