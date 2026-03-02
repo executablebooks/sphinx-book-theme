@@ -65,7 +65,7 @@ jobs:
     # Disabled for now with false &&
     - name: Upload to Codecov
       if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' && matrix.sphinx == '~=8.0' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
-      uses: codecov/codecov-action@v5.0.7
+      uses: codecov/codecov-action@v5.4.0
       with:
         name: ebp-sbt-pytests-py3.11
         flags: pytests
