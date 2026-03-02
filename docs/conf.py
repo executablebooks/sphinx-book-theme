@@ -190,6 +190,8 @@ numpydoc_show_class_members = False  # for automodule:: urllib.parse stub file i
 linkcheck_ignore = [
     "http://someurl/release",  # This is a fake link
     "https://doi.org",  # These don't resolve properly and cause SSL issues
+    "https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html",  # anchors throw a 403 forbidden error
+    "https://docutils.sourceforge.io/docs/ref/rst/directives.html",  # anchors throw a 403 forbidden error
 ]
 linkcheck_exclude_documents = ["changelog"]
 
