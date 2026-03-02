@@ -2,11 +2,13 @@
 # Launch buttons for interactivity
 
 You can automatically add buttons that allow users to interact with your
-book's content. This is either by directing them to a BinderHub or JupyterHub
-that runs in the cloud, or by making your page interactive using Thebe.
+book's content. This is can be by directing them to
+a [JupyterLite](https://jupyterlite.readthedocs.io) installation (that runs in
+the user's browser) or one of BinderHub or JupyterHub (that runs in the
+cloud), or by making your page interactive using Thebe.
 
-To use either Binder or JupyterHub links, you'll first need to configure your
-documentation's repository url:
+To use any of JupyterLite or Binder or JupyterHub links, you'll first need to
+configure your documentation's repository url:
 
 ```python
 html_theme_options = {
@@ -25,6 +27,28 @@ pair an ipynb file with your text files, and that ipynb file is in the same
 folder as your content, then Binder/JupyterHub links will point to the ipynb
 file instead of the text file.
 ```
+
+## JupyterLite
+
+If you are adding [JupyterLite](https://github.com/jupyterlite/jupyterlite) links to your page, first work out where your
+JupyterLite instance will be serving from, then add the URL to your
+configuration. In the example below, we've set up JupyterLite pages at the
+base URL of the main pages site, and at subdirectory `interact/lab`:
+
+```python
+html_theme_options = {
+    ...
+    "launch_buttons": {
+        "jupyterlite_url": "interact/lab/index.html"
+    },
+    ...
+}
+```
+
+See <https://odsti.github.io/cfd-textbook> for an example
+[JupyterBook](https://jupyterbook.org) project serving JupyterLite using this
+configuration, and <https://github.com/odsti/cfd-textbook> for the driving
+repository.
 
 ## Binder / BinderHub
 

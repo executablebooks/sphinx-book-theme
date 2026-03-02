@@ -93,8 +93,8 @@ def test_build_book(sphinx_build_factory, file_regression):
     # -- Sidebar --------------------------------------------------------------
     index_html = sphinx_build.html_tree("index.html")
     # Navigation entries
-    if sphinx_build.software_versions == ".sphinx4":
-        # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
+    if sphinx_version.major >= 8:
+        # Only run this regression on the latest Sphinx series to avoid duplicates.
         sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
         file_regression.check(
             sidebar.prettify(),

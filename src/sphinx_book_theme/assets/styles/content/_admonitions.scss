@@ -1,0 +1,29 @@
+/**
+ * Standard Sphinx admonitions
+ * Improves contrast and readability in dark mode
+ * Fixes: https://github.com/executablebooks/sphinx-book-theme/issues/743
+ */
+
+// Ensure admonition titles have proper contrast in dark mode
+html[data-theme="dark"] {
+  .admonition {
+    .admonition-title {
+      // Ensure text is always readable by using a color that contrasts well
+      // with the admonition background colors
+      color: var(--pst-color-text-base);
+
+      // Add a slight text shadow for better readability on colored backgrounds
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Light mode improvements for consistency
+html[data-theme="light"] {
+  .admonition {
+    .admonition-title {
+      // Ensure consistent text rendering
+      color: var(--pst-color-text-base);
+    }
+  }
+}

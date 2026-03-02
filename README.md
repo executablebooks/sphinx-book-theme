@@ -2,6 +2,9 @@
 
 [![codecov][codecov-badge]][codecov-link] [![Documentation Status][rtd-badge]][rtd-link] [![PyPI][pypi-badge]][pypi-link]
 
+> [!NOTE]
+> **Maintenance Mode**: This project is currently in maintenance mode. We are accepting bug fixes as best we can, but there are not dedicated resources to review and merge. New feature development is not likely. If you're interested in becoming a maintainer and helping keep this project actively developed, please reach out by opening an issue!
+
 **An interactive book theme for Sphinx**.
 
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an

@@ -108,4 +108,25 @@ This toggle is in the margin!
 
 ## `sphinx-design` for UI components
 
+[`sphinx-design`](https://sphinx-design.readthedocs.io/) provides various UI components like badges, cards, and dropdowns.
+
+**Badge:**
+
 {bdg-primary}`Test badge`.
+
+**Card:**
+
+::::{card} Card Title
+:class-card: sd-border-0
+Card header.
+^^^
+Card content goes here. This demonstrates how cards look in both light and dark modes.
++++
+Card footer.
+::::
+
+**Dropdown:**
+
+:::{dropdown} Click to expand
+This is the dropdown content. It should be readable in both light and dark modes.
+:::

@@ -48,7 +48,7 @@ Once this is provided, you may add source buttons by following the following sec
 (source-buttons:source)=
 ## Add a button to the page source
 
-Show the raw source of the page on the provider you've proivded.
+Show the raw source of the page on the provider you've provided.
 To add a button to the page source, first [configure your source repository](source-buttons:repository) and then add:
 
 ```python
