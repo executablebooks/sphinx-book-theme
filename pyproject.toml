@@ -63,7 +63,7 @@ code_style = [
     "pre-commit"
 ]
 doc = [
-    "ablog",
+    "ablog>=0.11.13",
     "ipywidgets",
     "folium",
     "numpy",
