@@ -141,10 +141,17 @@ If you'd like in-line margin content with numbered references, see [](margin:sid
 
 Here's how you can use the `{margin}` directive:
 
-````{example}
-:no-container:
-:reverse:
+```{margin} **Here is my margin content**
+It is pretty cool!
+```
 
+:::{important}
+The `{margin}` directive should not be nested under other elements such as topics or admonitions.
+:::
+
+**Source**
+
+````
 ```{margin} **Here is my margin content**
 It is pretty cool!
 ```
@@ -217,12 +224,17 @@ We can reference the figure with {ref}`myfig4`. Or a numbered reference like
 
 Margin content can include all kinds of things, such as code blocks:
 
+**Code blocks in the margin**
+
 ````{margin} Code blocks in margins
 ```python
 print("here is some python")
 ```
 ````
 
+**Source**
+
+`````
 ````{margin} Code blocks in margins
 ```python
 print("here is some python")
@@ -230,10 +242,18 @@ print("here is some python")
 ````
 `````
 
-`````{example} Admonitions and images in the margin
-:no-container:
-:reverse:
+**Admonitions and images in the margin**
 
+````{margin} **Notes in margins**
+```{note}
+Wow, a note with an image in a margin!
+![](../images/cool.jpg)
+```
+````
+
+**Source**
+
+`````
 ````{margin} **Notes in margins**
 ```{note}
 Wow, a note with an image in a margin!
@@ -249,9 +269,16 @@ page to flow around them, rather than moving to the right margin.
 
 To add content sidebars, use this syntax:
 
-`````{example}
-:no-container:
+````{sidebar} **My sidebar title**
+```{note}
+Here is my sidebar content, it is pretty cool!
+```
+![](../images/cool.jpg)
+````
 
+**Source**
+
+`````
 ````{sidebar} **My sidebar title**
 ```{note}
 Here is my sidebar content, it is pretty cool!
@@ -264,6 +291,10 @@ Note how the content wraps around the sidebar to the right.
 However, the sidebar text will still be in line with your content. There are
 certain kinds of elements, such as "note" blocks and code cells, that may
 clash with your sidebar. If this happens, try using a `{margin}` instead.
+
+:::{important}
+The `{sidebar}` directive should not be nested under other elements such as topics or admonitions.
+:::
 
 ## Full-width content
 
