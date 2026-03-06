@@ -232,23 +232,12 @@ print("here is some python")
 ```
 ````
 
-````{margin} Code blocks in margins
-```python
-print("here is some python")
-```
-````
-
 **Source**
+
 `````
 ````{margin} Code blocks in margins
 ```python
 print("here is some python")
-```
-````
-
-````{margin} Code blocks in margins
-```python
-print("here is some other python")
 ```
 ````
 `````
