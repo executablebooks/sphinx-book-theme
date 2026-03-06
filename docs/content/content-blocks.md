@@ -149,7 +149,7 @@ It is pretty cool!
 The `{margin}` directive should not be nested under other elements such as topics or admonitions.
 :::
 
-**Source:**
+**Source**
 
 ````
 ```{margin} **Here is my margin content**
@@ -238,7 +238,7 @@ print("here is some python")
 ```
 ````
 
-**Source:**
+**Source**
 `````
 ````{margin} Code blocks in margins
 ```python
@@ -248,7 +248,7 @@ print("here is some python")
 
 ````{margin} Code blocks in margins
 ```python
-print("here is some python")
+print("here is some other python")
 ```
 ````
 `````
@@ -262,7 +262,7 @@ Wow, a note with an image in a margin!
 ```
 ````
 
-**Source:**
+**Source**
 
 `````
 ````{margin} **Notes in margins**
@@ -287,7 +287,7 @@ Here is my sidebar content, it is pretty cool!
 ![](../images/cool.jpg)
 ````
 
-**Source:**
+**Source**
 
 `````
 ````{sidebar} **My sidebar title**
