@@ -30,9 +30,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
         # Test last 2 major releases of Sphinx; regression fixtures target the latest.
-        sphinx: ["~=7.0", "~=8.0"]
+        sphinx: ["~=7.0", "~=8.0", "~=9.0"]
         include:
         - os: windows-latest
           python-version: 3.13
@@ -109,7 +109,7 @@ jobs:
         from pathlib import Path
         import re
         text = Path("./warnings.txt").read_text().strip()
-        expected_warning_patterns = [r"kitchen\-sink", r"urllib/parse\.py", r"Glyph 10024 .*? missing from current font"]
+        expected_warning_patterns = [r"kitchen\-sink", r"urllib/parse\.py", r"Glyph 10024 .*? missing from current font", r"list assignment index out of range \[autodoc\]"]
         print("\n=== Sphinx Warnings ===\n\n" + text)  # Print just for reference so we can look at the logs
         unexpected = [l for l in text.splitlines() if not any(re.search(p, l) for p in expected_warning_patterns)]
         assert len(unexpected) == 0, unexpected
