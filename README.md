@@ -45,7 +45,7 @@ theme. See the pages to the left for information about what you can configure wi
 See [the Sphinx Book Theme documentation](https://sphinx-book-theme.readthedocs.io/en/latest/)
 for more information.
 
-[codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/master/graph/badge.svg
+[codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/main/graph/badge.svg
 [codecov-link]: https://codecov.io/gh/executablebooks/sphinx-book-theme
 
 [rtd-badge]: https://readthedocs.org/projects/sphinx-book-theme/badge/?version=latest
