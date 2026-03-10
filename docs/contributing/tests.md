@@ -14,8 +14,8 @@ $ tox
 You can specify a specific environment like so:
 
 ```console
-# Run the tests with Python 3.10, Sphinx 6
-$ tox -e py310-sphinx6
+# Run the tests with Python 3.12, Sphinx 8
+$ tox -e py312-sphinx8
 ```
 
 ## List all test environments
@@ -46,7 +46,7 @@ By default, `tox` will only install the necessary environment **once**.
 If you'd like to force a re-build, use the `-r` parameter. For example:
 
 ```console
-$ tox -r -e py310-sphinx6
+$ tox -r -e py312-sphinx8
 ```
 
 ## Test audits with lighthouse
@@ -63,7 +63,7 @@ To preview the output of these tests:
 
 ## Test multiple Sphinx versions
 
-This theme is tested against Sphinx 6-9.
+This theme is tested against Sphinx 7-9.
 We try to set up our regression tests such that there are no differences between these Sphinx versions.
 
 ### Unit tests
