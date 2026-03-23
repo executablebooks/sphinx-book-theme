@@ -4,7 +4,11 @@
   { "language": "Bulgarian", "symbol": "bg", "text": "Режим на цял екран" },
   { "language": "Chinese Simplified", "symbol": "zh_CN", "text": "全屏模式" },
   { "language": "Chinese Traditional", "symbol": "zh-tw", "text": "全螢幕模式" },
-  { "language": "Croatian", "symbol": "hr", "text": "Način preko cijelog zaslona" },
+  {
+    "language": "Croatian",
+    "symbol": "hr",
+    "text": "Način preko cijelog zaslona"
+  },
   { "language": "Czech", "symbol": "cs", "text": "Režim celé obrazovky" },
   { "language": "Danish", "symbol": "da", "text": "Fuldskærmstilstand" },
   { "language": "Dutch", "symbol": "nl", "text": "Volledig scherm" },
@@ -30,7 +34,11 @@
   { "language": "Serbian", "symbol": "sr", "text": "Режим целог екрана" },
   { "language": "Slovak", "symbol": "sk", "text": "Režim celej obrazovky" },
   { "language": "Slovenian", "symbol": "sl", "text": "Celozaslonski način" },
-  { "language": "Spanish", "symbol": "es", "text": "Modo de pantalla completa" },
+  {
+    "language": "Spanish",
+    "symbol": "es",
+    "text": "Modo de pantalla completa"
+  },
   { "language": "Swedish", "symbol": "sv", "text": "Fullskärmsläge" },
   { "language": "Tajik", "symbol": "tg", "text": "Ҳолати экрани пурра" },
   { "language": "Thai", "symbol": "th", "text": "โหมดเต็มหน้าจอ" },
