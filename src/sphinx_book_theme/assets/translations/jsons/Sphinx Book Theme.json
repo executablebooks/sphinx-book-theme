@@ -23,7 +23,7 @@
   { "language": "German", "symbol": "de", "text": "Sphinx-Buch-Thema" },
   { "language": "Greek", "symbol": "el", "text": "Θέμα βιβλίου Sphinx" },
   { "language": "Hebrew", "symbol": "iw", "text": "נושא ספר ספינקס" },
-  { "language": "Hungarian", "symbol": "hu", "text": "Sphinx könyvtéma" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Sphinx könyvsablon" },
   { "language": "Indonesian", "symbol": "id", "text": "Tema Buku Sphinx" },
   {
     "language": "Italian",

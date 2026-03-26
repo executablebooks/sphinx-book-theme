@@ -15,7 +15,7 @@
   { "language": "German", "symbol": "de", "text": "Quell-Repository" },
   { "language": "Greek", "symbol": "el", "text": "Αποθήκη πηγής" },
   { "language": "Hebrew", "symbol": "iw", "text": "מאגר המקורות" },
-  { "language": "Hungarian", "symbol": "hu", "text": "Forrástároló" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Forráskódtároló" },
   { "language": "Indonesian", "symbol": "id", "text": "Repositori sumber" },
   { "language": "Italian", "symbol": "it", "text": "Repository di origine" },
   { "language": "Japanese", "symbol": "ja", "text": "ソースリポジトリ" },
