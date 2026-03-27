@@ -35,6 +35,7 @@
   { "language": "German", "symbol": "de", "text": "Quelldatei herunterladen" },
   { "language": "Greek", "symbol": "el", "text": "Λήψη αρχείου προέλευσης" },
   { "language": "Hebrew", "symbol": "iw", "text": "הורד את קובץ המקור" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Forrásfájl letöltése" },
   { "language": "Indonesian", "symbol": "id", "text": "Unduh file sumber" },
   { "language": "Italian", "symbol": "it", "text": "Scarica il file sorgente" },
   {

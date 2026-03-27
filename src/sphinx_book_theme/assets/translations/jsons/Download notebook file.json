@@ -59,6 +59,11 @@
     "text": "Λήψη αρχείου σημειωματάριου"
   },
   { "language": "Hebrew", "symbol": "iw", "text": "הורד קובץ מחברת" },
+  {
+    "language": "Hungarian",
+    "symbol": "hu",
+    "text": "Jegyzettömbfájl letöltése"
+  },
   { "language": "Indonesian", "symbol": "id", "text": "Unduh file notebook" },
   {
     "language": "Italian",

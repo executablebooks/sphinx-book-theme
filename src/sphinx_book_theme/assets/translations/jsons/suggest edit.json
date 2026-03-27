@@ -17,6 +17,7 @@
   { "language": "Danish", "symbol": "da", "text": "foreslå redigering" },
   { "language": "Estonian", "symbol": "et", "text": "soovita muuta" },
   { "language": "Hebrew", "symbol": "iw", "text": "מציע לערוך" },
+  { "language": "Hungarian", "symbol": "hu", "text": "szerkesztési javaslat" },
   { "language": "Lithuanian", "symbol": "lt", "text": "pasiūlyti redaguoti" },
   { "language": "Portuguese", "symbol": "pt", "text": "sugerir edição" },
   { "language": "Serbian", "symbol": "sr", "text": "предложи уређивање" },

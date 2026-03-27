@@ -15,6 +15,7 @@
   { "language": "German", "symbol": "de", "text": "Starten" },
   { "language": "Greek", "symbol": "el", "text": "Εκτόξευση" },
   { "language": "Hebrew", "symbol": "iw", "text": "לְהַשִׁיק" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Indítás" },
   { "language": "Indonesian", "symbol": "id", "text": "Meluncurkan" },
   { "language": "Italian", "symbol": "it", "text": "Lanciare" },
   { "language": "Japanese", "symbol": "ja", "text": "起動" },

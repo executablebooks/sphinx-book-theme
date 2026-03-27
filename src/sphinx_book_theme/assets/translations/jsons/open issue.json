@@ -19,6 +19,7 @@
   { "language": "German", "symbol": "de", "text": "offenes Thema" },
   { "language": "Greek", "symbol": "el", "text": "ανοιχτό ζήτημα" },
   { "language": "Hebrew", "symbol": "iw", "text": "בעיה פתוחה" },
+  { "language": "Hungarian", "symbol": "hu", "text": "problémajegy nyitása" },
   { "language": "Indonesian", "symbol": "id", "text": "masalah terbuka" },
   { "language": "Italian", "symbol": "it", "text": "questione aperta" },
   { "language": "Japanese", "symbol": "ja", "text": "未解決の問題" },
