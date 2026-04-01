@@ -18,8 +18,8 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
+    - uses: actions/checkout@v6
+    - uses: actions/setup-python@v6
       with:
         python-version: 3.11
     - uses: pre-commit/action@v3.0.1
@@ -44,9 +44,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
         cache: "pip"
@@ -65,7 +65,7 @@ jobs:
     # Disabled for now with false &&
     - name: Upload to Codecov
       if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' && matrix.sphinx == '~=8.0' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
-      uses: codecov/codecov-action@v5.4.0
+      uses: codecov/codecov-action@v6.0.0
       with:
         name: ebp-sbt-pytests-py3.11
         flags: pytests
@@ -77,9 +77,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Audit Documentation
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.13'
         cache: "pip"
@@ -115,7 +115,7 @@ jobs:
         assert len(unexpected) == 0, unexpected
 
     - name: Audit with Lighthouse
-      uses: treosh/lighthouse-ci-action@12.1.0
+      uses: treosh/lighthouse-ci-action@12.6.2
       with:
         configPath: ".github/workflows/lighthouserc.json"
         temporaryPublicStorage: true
