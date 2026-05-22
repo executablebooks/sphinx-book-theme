@@ -29,13 +29,32 @@ First install `sphinx-book-theme` with `pip`:
 pip install sphinx-book-theme
 ```
 
-then, activate the theme in your Sphinx configuration (`conf.py`):
+Then, activate the theme in your Sphinx configuration (`conf.py` or
+`_config.yml` if you're using [Jupyter Book](https://jupyterbook.org/)):
 
-```
-...
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
+```python
 html_theme = "sphinx_book_theme"
-...
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme: sphinx_book_theme
+```
+
+````
+
+`````
 
 This will activate the Sphinx Book Theme for your documentation.
 
