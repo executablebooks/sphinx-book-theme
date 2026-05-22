@@ -5,7 +5,7 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "css-loader": "^6.8.1",
+    "css-loader": "^7.1.4",
     "css-minimizer-webpack-plugin": "^8.0.0",
     "dedent": "^1.5.3",
     "html-webpack-plugin": "^5.0.0",
