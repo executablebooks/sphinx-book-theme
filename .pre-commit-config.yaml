@@ -27,14 +27,14 @@ repos:
     - id: trailing-whitespace
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.9
+    rev: v0.15.20
     hooks:
     - id: ruff
       args: ["--fix", "--show-fixes"]
     - id: ruff-format
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: c2bc67fe8f8f549cc489e00ba8b45aa18ee713b1  # frozen: v3.8.1
+    rev: 39e2973981e6d2f9b6c543b0086a2d2393abdc89  # frozen: v3.9.4
     hooks:
       - id: prettier
         types_or: [scss, javascript]
