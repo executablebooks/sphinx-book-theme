@@ -1,5 +1,26 @@
 # Changelog
 
+
+## v1.4.0 -- 2026-07-19
+
+* Updating pydata-sphinx-theme to 0.20 and sphinx to >=8.2 by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/975
+
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v1.3.0...v1.4.0
+
+
+## v1.3.0 -- 2026-07-19
+
+
+* MAINT: default branch has been renamed to main by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/933
+* MAINT: switch to maintained prettier fork by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/909
+* feat: add Hungarian translations by @urbalazs in https://github.com/executablebooks/sphinx-book-theme/pull/936
+* MAINT: update pydata theme version to 0.17.0 by @AllanChain in https://github.com/executablebooks/sphinx-book-theme/pull/952
+* CI: adding workflow_dispatch for easier CI triggering by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/973
+
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v1.2.0...v1.3.0
+
 ## v1.2.0 -- 2026-03-09
 
 * Jupyterlite button - patched, merged version of #655 by @matthew-brett in https://github.com/executablebooks/sphinx-book-theme/pull/914
