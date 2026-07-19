@@ -88,15 +88,15 @@ def test_build_book(sphinx_build_factory, file_regression):
     # -- Sidebar --------------------------------------------------------------
     index_html = sphinx_build.html_tree("index.html")
     # Navigation entries
-    if sphinx_version.major >= 8:
-        # Only run this regression on the latest Sphinx series to avoid duplicates.
-        sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
-        file_regression.check(
-            sidebar.prettify(),
-            basename="build__sidebar-primary__nav",
-            extension=".html",
-            encoding="utf8",
-        )
+
+    # Only run this regression on the latest Sphinx series to avoid duplicates.
+    sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
+    file_regression.check(
+        sidebar.prettify(),
+        basename="build__sidebar-primary__nav",
+        extension=".html",
+        encoding="utf8",
+    )
 
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
