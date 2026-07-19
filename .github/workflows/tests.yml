@@ -9,6 +9,7 @@ on:
   schedule:
     - cron: '0 6 * * 1'
   workflow_call:
+  workflow_dispatch:
 
 env:
   PY_COLORS: 1
@@ -18,7 +19,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: actions/setup-python@v6
       with:
         python-version: 3.11
@@ -44,7 +45,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v6
       with:
@@ -65,7 +66,7 @@ jobs:
     # Disabled for now with false &&
     - name: Upload to Codecov
       if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' && matrix.sphinx == '~=8.0' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
-      uses: codecov/codecov-action@v6.0.1
+      uses: codecov/codecov-action@v7.0.0
       with:
         name: ebp-sbt-pytests-py3.11
         flags: pytests
@@ -77,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Audit Documentation
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
