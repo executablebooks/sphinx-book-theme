@@ -1,4 +1,4 @@
-{% if author %}
+{% if author and author != 'Author name not set' %}
 <p class="component-author">
 {{ translate('By') }} {{ author }}
 </p>
