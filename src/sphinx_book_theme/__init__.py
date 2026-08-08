@@ -227,7 +227,9 @@ def setup(app: Sphinx):
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     # Events
-    app.connect("builder-inited", update_navbar_defaults, priority=400)  # before pydata theme
+    app.connect(
+        "builder-inited", update_navbar_defaults, priority=400
+    )  # before pydata theme
     app.connect("builder-inited", update_mode_thebe_config)
     app.connect("builder-inited", check_deprecation_keys)
     app.connect("builder-inited", update_sourcename)

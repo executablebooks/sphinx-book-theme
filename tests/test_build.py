@@ -153,9 +153,7 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
 
 def test_no_navbar_by_default(sphinx_build_factory):
     """The top navbar is opt-in, so nothing should be rendered for it."""
-    sphinx_build = sphinx_build_factory("base").build(
-        assert_pass=True
-    )  # type: SphinxBuild
+    sphinx_build = sphinx_build_factory("base").build(assert_pass=True)  # type: SphinxBuild
     index = sphinx_build.html_tree("index.html")
     assert index.find(id="pst-header") is None
     # The only search button is the one in the primary sidebar
