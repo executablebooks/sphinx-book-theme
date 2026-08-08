@@ -13,7 +13,24 @@ h1 {
 ```
 
 You also need these two lines in your `conf.py` file
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+Not needed for Jupyter Book.
+
+````
+
+`````

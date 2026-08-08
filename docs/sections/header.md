@@ -26,13 +26,37 @@ For example, you can add a button to the header like so:
 
 Make sure that `_templates` is [on your templates path](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-templates_path).
 
-**Add the following to `conf.py`**:
+**Add the following to configuration file.**:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
+templates_path = ["_templates"]
+
 html_theme_options = {
-  "navbar_end": ["mybutton.html"]
+    "navbar_end": ["mybutton.html"]
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        templates_path: ["_templates"]
+        html_theme_options:
+            navbar_end: ["mybutton.html"]
+```
+
+````
+
+`````
 
 Your header should now be visible, and the `mybutton.html` content should now show up in the upper-right.
 

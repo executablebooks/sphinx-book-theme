@@ -4,6 +4,11 @@
 You can add a button allowing users to download the currently viewed page in several formats: `raw source`, `pdf` or `ipynb` if one was generated as part of the build.
 To include this button, use the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
     ...
@@ -11,6 +16,23 @@ html_theme_options = {
     ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            use_download_button: true
+```
+
+````
+
+`````
+
 
 ```{note}
 This theme over-rides the Sphinx default for `html_sourcelink_suffix` to be `''` instead of `.txt`.
