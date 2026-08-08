@@ -151,6 +151,28 @@ def test_navbar_options_home_page_in_toc(sphinx_build_factory):
     assert "Index with code in title" in str(li)
 
 
+def test_no_navbar_by_default(sphinx_build_factory):
+    """The top navbar is opt-in, so nothing should be rendered for it."""
+    sphinx_build = sphinx_build_factory("base").build(
+        assert_pass=True
+    )  # type: SphinxBuild
+    index = sphinx_build.html_tree("index.html")
+    assert index.find(id="pst-header") is None
+    # The only search button is the one in the primary sidebar
+    search_buttons = index.select("button.search-button-field")
+    assert len(search_buttons) == 1
+    assert search_buttons[0].find_parent(id="pst-primary-sidebar") is not None
+
+
+def test_navbar_opt_in(sphinx_build_factory):
+    """Filling in any navbar area brings the top navbar back."""
+    sphinx_build = sphinx_build_factory(
+        "base",
+        confoverrides={"html_theme_options.navbar_center": ["navbar-nav.html"]},
+    ).build(assert_pass=True)  # type: SphinxBuild
+    assert sphinx_build.html_tree("index.html").find(id="pst-header") is not None
+
+
 @pytest.mark.parametrize(
     "option,value",
     [

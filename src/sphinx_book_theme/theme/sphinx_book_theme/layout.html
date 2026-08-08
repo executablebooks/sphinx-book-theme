@@ -1,6 +1,14 @@
 {% extends "pydata_sphinx_theme/layout.html" %}
 {# ref: https://github.com/pydata/pydata-sphinx-theme/blob/master/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/layout.html #}
 
+{# Skip <header> when no navbar area has any content in it. #}
+{% block docs_navbar %}
+{%- if theme_navbar_start or theme_navbar_center or theme_navbar_end or theme_navbar_persistent %}
+{{ super() }}
+{%- endif %}
+{% endblock docs_navbar %}
+
+
 {% block docs_main %}
 {# A tiny helper pixel to detect if we've scrolled #}
 <div class="sbt-scroll-pixel-helper"></div>
