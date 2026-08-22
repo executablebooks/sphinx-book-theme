@@ -15,6 +15,7 @@
   { "language": "German", "symbol": "de", "text": "Inhalt" },
   { "language": "Greek", "symbol": "el", "text": "Περιεχόμενα" },
   { "language": "Hebrew", "symbol": "iw", "text": "תוכן" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Tartalom" },
   { "language": "Indonesian", "symbol": "id", "text": "Isi" },
   { "language": "Italian", "symbol": "it", "text": "Contenuti" },
   { "language": "Japanese", "symbol": "ja", "text": "目次" },

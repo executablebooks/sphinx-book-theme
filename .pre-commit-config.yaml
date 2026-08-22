@@ -12,10 +12,13 @@ exclude: >
 default_language_version:
     node: 16.14.2
 
+ci:
+  autoupdate_schedule: 'monthly'
+
 repos:
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
     - id: check-toml
     - id: check-json
@@ -24,20 +27,20 @@ repos:
     - id: trailing-whitespace
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
+    rev: v0.15.20
     hooks:
     - id: ruff
       args: ["--fix", "--show-fixes"]
     - id: ruff-format
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: 39e2973981e6d2f9b6c543b0086a2d2393abdc89  # frozen: v3.9.4
     hooks:
       - id: prettier
         types_or: [scss, javascript]
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.2
     hooks:
     - id: codespell
       exclude: >

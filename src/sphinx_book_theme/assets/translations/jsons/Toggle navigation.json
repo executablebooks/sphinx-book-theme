@@ -27,6 +27,11 @@
   { "language": "German", "symbol": "de", "text": "Navigation umschalten" },
   { "language": "Greek", "symbol": "el", "text": "Εναλλαγή πλοήγησης" },
   { "language": "Hebrew", "symbol": "iw", "text": "החלף ניווט" },
+  {
+    "language": "Hungarian",
+    "symbol": "hu",
+    "text": "Navigáció ki- és bekapcsolása"
+  },
   { "language": "Indonesian", "symbol": "id", "text": "Alihkan navigasi" },
   {
     "language": "Italian",

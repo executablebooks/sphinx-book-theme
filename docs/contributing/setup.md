@@ -39,17 +39,17 @@ Follow these steps:
    $ pre-commit install
    ```
 
-   :::{margin}
-   You can also run pre-commit via `tox`:
-   ```console
-   $ tox -e py38-pre-commit -- --all
-   ```
-   or manually run all `pre-commit` jobs for this repository:
+:::{margin}
+You can also run pre-commit via `tox`:
+```console
+$ tox -e py38-pre-commit -- --all
+```
+or manually run all `pre-commit` jobs for this repository:
 
-   ```console
-   $ pre-commit run --all-files
-   ```
-   :::
+```console
+$ pre-commit run --all-files
+```
+:::
 
 The rest of these instructions use `tox` to automate the installation and commands necessary to do many common things.
 

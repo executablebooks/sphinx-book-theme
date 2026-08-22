@@ -15,6 +15,7 @@
   { "language": "German", "symbol": "de", "text": "In PDF drucken" },
   { "language": "Greek", "symbol": "el", "text": "Εκτύπωση σε PDF" },
   { "language": "Hebrew", "symbol": "iw", "text": "הדפס לקובץ PDF" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Nyomtatás PDF-be" },
   { "language": "Indonesian", "symbol": "id", "text": "Cetak ke PDF" },
   { "language": "Italian", "symbol": "it", "text": "Stampa in PDF" },
   { "language": "Japanese", "symbol": "ja", "text": "PDFに印刷" },

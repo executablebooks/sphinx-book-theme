@@ -2,6 +2,9 @@
 
 [![codecov][codecov-badge]][codecov-link] [![Documentation Status][rtd-badge]][rtd-link] [![PyPI][pypi-badge]][pypi-link]
 
+> [!NOTE]
+> **Maintenance Mode**: This project is currently in maintenance mode. We are accepting bug fixes as best we can, but there are not dedicated resources to review and merge. New feature development is not likely. If you're interested in becoming a maintainer and helping keep this project actively developed, please reach out by opening an issue!
+
 **An interactive book theme for Sphinx**.
 
 This is a lightweight Sphinx theme designed to mimic the look-and-feel of an
@@ -42,7 +45,7 @@ theme. See the pages to the left for information about what you can configure wi
 See [the Sphinx Book Theme documentation](https://sphinx-book-theme.readthedocs.io/en/latest/)
 for more information.
 
-[codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/master/graph/badge.svg
+[codecov-badge]: https://codecov.io/gh/executablebooks/sphinx-book-theme/branch/main/graph/badge.svg
 [codecov-link]: https://codecov.io/gh/executablebooks/sphinx-book-theme
 
 [rtd-badge]: https://readthedocs.org/projects/sphinx-book-theme/badge/?version=latest

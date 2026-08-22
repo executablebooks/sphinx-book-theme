@@ -15,6 +15,7 @@
   { "language": "German", "symbol": "de", "text": "Bis zum" },
   { "language": "Greek", "symbol": "el", "text": "Από το" },
   { "language": "Hebrew", "symbol": "iw", "text": "דרך" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Szerző:" },
   { "language": "Indonesian", "symbol": "id", "text": "Oleh" },
   { "language": "Italian", "symbol": "it", "text": "Dal" },
   { "language": "Japanese", "symbol": "ja", "text": "によって" },

@@ -40,6 +40,7 @@
   },
   { "language": "Finnish", "symbol": "fi", "text": "Viimeksi päivitetty" },
   { "language": "Hebrew", "symbol": "iw", "text": "עודכן לאחרונה ב" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Utoljára frissítve:" },
   { "language": "Korean", "symbol": "ko", "text": "마지막 업데이트" },
   {
     "language": "Malayalam",

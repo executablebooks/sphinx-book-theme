@@ -33,6 +33,7 @@
 @use "components/search";
 
 // Content blocks in standard Sphinx
+@use "content/admonitions";
 @use "content/images";
 @use "content/margin";
 @use "content/quotes";
@@ -42,4 +43,8 @@
 // Content blocks from Sphinx extensions
 
 @use "extensions/comments";
+@use "extensions/myst-nb";
+@use "extensions/sphinx-design";
+@use "extensions/sphinx-tabs";
+@use "extensions/sphinx-togglebutton";
 @use "extensions/thebe";

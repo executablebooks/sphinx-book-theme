@@ -1,5 +1,42 @@
 # Changelog
 
+
+## v1.4.0 -- 2026-07-19
+
+* Updating pydata-sphinx-theme to 0.20 and sphinx to >=8.2 by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/975
+
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v1.3.0...v1.4.0
+
+
+## v1.3.0 -- 2026-07-19
+
+
+* MAINT: default branch has been renamed to main by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/933
+* MAINT: switch to maintained prettier fork by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/909
+* feat: add Hungarian translations by @urbalazs in https://github.com/executablebooks/sphinx-book-theme/pull/936
+* MAINT: update pydata theme version to 0.17.0 by @AllanChain in https://github.com/executablebooks/sphinx-book-theme/pull/952
+* CI: adding workflow_dispatch for easier CI triggering by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/973
+
+
+**Full Changelog**: https://github.com/executablebooks/sphinx-book-theme/compare/v1.2.0...v1.3.0
+
+## v1.2.0 -- 2026-03-09
+
+* Jupyterlite button - patched, merged version of #655 by @matthew-brett in https://github.com/executablebooks/sphinx-book-theme/pull/914
+* [ENH] Show source text on GitLab projects by @tymcauley in https://github.com/executablebooks/sphinx-book-theme/pull/916
+* Fix typo in docs by @user27182 in https://github.com/executablebooks/sphinx-book-theme/pull/913
+* prepare for latest pydata and python releases by @choldgraf in https://github.com/executablebooks/sphinx-book-theme/pull/920
+* Ignore PendingDeprecationWarning about parser_name deprecation with Docutils 0.22 by @mitya57 in https://github.com/executablebooks/sphinx-book-theme/pull/919
+* CI: adding cronjob by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/926
+* DOC: Fix margin directive documentation by @melissawm in https://github.com/executablebooks/sphinx-book-theme/pull/930
+* MAINT: adding sphinx9 and python3.14 support and bumping minimum sphinx to 7 and python to 3.11 by @bsipocz in https://github.com/executablebooks/sphinx-book-theme/pull/927
+
+
+**Full Changelog**:
+https://github.com/executablebooks/sphinx-book-theme/compare/v1.1.4...v1.2
+
+
 ## v1.1.2 -- 2024-02-13
 
 ([full changelog](https://github.com/executablebooks/sphinx-book-theme/compare/v1.1.1...3da24da74f6042599fe6c9e2d612f5cbdef42280))

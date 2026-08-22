@@ -9,13 +9,8 @@ import pytest
 import sphinx
 from sphinx.testing.util import SphinxTestApp
 
+
 sphinx_version = parse(version("sphinx"))
-if sphinx_version.major < 7:
-    from sphinx.testing.path import path as sphinx_path
-else:
-    from pathlib import Path as sphinx_path
-
-
 path_tests = Path(__file__).parent
 
 
@@ -56,7 +51,7 @@ class SphinxBuild:
 def sphinx_build_factory(make_app, tmp_path):
     def _func(src_folder, **kwargs):
         copytree(path_tests / "sites" / src_folder, tmp_path / src_folder)
-        app = make_app(srcdir=sphinx_path(tmp_path / src_folder), **kwargs)
+        app = make_app(srcdir=Path(tmp_path / src_folder), **kwargs)
         return SphinxBuild(app, tmp_path / src_folder)
 
     yield _func
@@ -93,15 +88,15 @@ def test_build_book(sphinx_build_factory, file_regression):
     # -- Sidebar --------------------------------------------------------------
     index_html = sphinx_build.html_tree("index.html")
     # Navigation entries
-    if sphinx_build.software_versions == ".sphinx4":
-        # Sphinx 4 adds some aria labeling that isn't in sphinx3, so just test sphinx4
-        sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
-        file_regression.check(
-            sidebar.prettify(),
-            basename="build__sidebar-primary__nav",
-            extension=".html",
-            encoding="utf8",
-        )
+
+    # Only run this regression on the latest Sphinx series to avoid duplicates.
+    sidebar = index_html.find(attrs={"class": "bd-docs-nav"})
+    file_regression.check(
+        sidebar.prettify(),
+        basename="build__sidebar-primary__nav",
+        extension=".html",
+        encoding="utf8",
+    )
 
     # Check navbar numbering
     sidebar_ntbk = sphinx_build.html_tree("section1", "ntbk.html").find(
@@ -469,7 +464,7 @@ def test_sidenote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     sidenote_html = page2.select("section > #sidenotes")
-    regression_file = "test_sidenote_6" if sphinx_version.major < 7 else "test_sidenote"
+    regression_file = "test_sidenote"
     file_regression.check(
         sidenote_html[0].prettify(),
         extension=".html",
@@ -487,9 +482,8 @@ def test_marginnote(sphinx_build_factory, file_regression):
     page2 = sphinx_build.html_tree("page2.html")
 
     marginnote_html = page2.select("section > #marginnotes")
-    regression_file = (
-        "test_marginnote_6" if sphinx_version.major < 7 else "test_marginnote"
-    )
+    regression_file = "test_marginnote"
+
     file_regression.check(
         marginnote_html[0].prettify(),
         extension=".html",

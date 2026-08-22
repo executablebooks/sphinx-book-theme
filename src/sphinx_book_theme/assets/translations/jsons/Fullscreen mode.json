@@ -19,6 +19,7 @@
   { "language": "German", "symbol": "de", "text": "Vollbildmodus" },
   { "language": "Greek", "symbol": "el", "text": "ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ" },
   { "language": "Hebrew", "symbol": "iw", "text": "מצב מסך מלא" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Teljes képernyős mód" },
   { "language": "Indonesian", "symbol": "id", "text": "Mode layar penuh" },
   { "language": "Italian", "symbol": "it", "text": "Modalità schermo intero" },
   { "language": "Japanese", "symbol": "ja", "text": "全画面モード" },

@@ -15,6 +15,7 @@
   { "language": "German", "symbol": "de", "text": "Repository" },
   { "language": "Greek", "symbol": "el", "text": "αποθήκη" },
   { "language": "Hebrew", "symbol": "iw", "text": "מאגר" },
+  { "language": "Hungarian", "symbol": "hu", "text": "tároló" },
   { "language": "Indonesian", "symbol": "id", "text": "gudang" },
   { "language": "Italian", "symbol": "it", "text": "repository" },
   { "language": "Japanese", "symbol": "ja", "text": "リポジトリ" },

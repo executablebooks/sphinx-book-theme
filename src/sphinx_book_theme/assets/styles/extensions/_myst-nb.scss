@@ -1,0 +1,18 @@
+/**
+ * MyST-NB extension
+ * Improves contrast and readability in dark mode
+ * Fixes: https://github.com/executablebooks/sphinx-book-theme/issues/743
+ */
+
+// Ensure hide-input tags have proper contrast in dark mode
+html[data-theme="dark"] {
+  .tag_hide_input .cell_input {
+    summary {
+      color: var(--pst-color-link);
+
+      &:hover {
+        color: var(--pst-color-link-hover);
+      }
+    }
+  }
+}

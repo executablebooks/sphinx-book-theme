@@ -23,6 +23,7 @@
   { "language": "German", "symbol": "de", "text": "Öffnen Sie ein Problem" },
   { "language": "Greek", "symbol": "el", "text": "Ανοίξτε ένα ζήτημα" },
   { "language": "Hebrew", "symbol": "iw", "text": "פתח גיליון" },
+  { "language": "Hungarian", "symbol": "hu", "text": "Problémajegy nyitása" },
   { "language": "Indonesian", "symbol": "id", "text": "Buka masalah" },
   { "language": "Italian", "symbol": "it", "text": "Apri un problema" },
   { "language": "Japanese", "symbol": "ja", "text": "問題を報告" },
