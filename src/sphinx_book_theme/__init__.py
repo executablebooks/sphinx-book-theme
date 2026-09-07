@@ -2,27 +2,27 @@
 
 import hashlib
 import os
+from functools import cache, lru_cache
 from pathlib import Path
-from functools import lru_cache
 
 from docutils import nodes as docutil_nodes
+from pydata_sphinx_theme.utils import get_theme_options_dict
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
-from pydata_sphinx_theme.utils import get_theme_options_dict
 
+from ._compat import findall
+from ._transforms import HandleFootnoteTransform
 from .directives import Margin
-from .nodes import SideNoteNode
 from .header_buttons import (
-    prep_header_buttons,
     add_header_buttons,
-    update_sourcename,
+    prep_header_buttons,
     update_context_with_repository_info,
+    update_sourcename,
 )
 from .header_buttons.launch import add_launch_buttons
 from .header_buttons.source import add_source_buttons
-from ._compat import findall
-from ._transforms import HandleFootnoteTransform
+from .nodes import SideNoteNode
 
 __version__ = "1.5.0.dev"
 """sphinx-book-theme version"""
@@ -74,7 +74,7 @@ def add_metadata_to_page(app, pagename, templatename, context, doctree):
         context["theme_search_bar_text"] = translation("Search") + "..."
 
 
-@lru_cache(maxsize=None)
+@cache
 def _gen_hash(path: str) -> str:
     return hashlib.sha1(path.read_bytes()).hexdigest()
 
@@ -173,7 +173,7 @@ def check_deprecation_keys(app):
     for key in deprecated_config_list:
         if key in get_theme_options_dict(app):
             SPHINX_LOGGER.warning(
-                f"'{key}' was deprecated from version 0.3.4 onwards. See the CHANGELOG for more information: https://github.com/executablebooks/sphinx-book-theme/blob/master/CHANGELOG.md"  # noqa: E501
+                f"'{key}' was deprecated from version 0.3.4 onwards. See the CHANGELOG for more information: https://github.com/executablebooks/sphinx-book-theme/blob/master/CHANGELOG.md"
                 f"[{DEFAULT_LOG_TYPE}]",
                 type=DEFAULT_LOG_TYPE,
             )

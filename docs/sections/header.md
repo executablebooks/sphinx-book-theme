@@ -29,9 +29,7 @@ Make sure that `_templates` is [on your templates path](https://www.sphinx-doc.o
 **Add the following to `conf.py`**:
 
 ```python
-html_theme_options = {
-  "navbar_end": ["mybutton.html"]
-}
+html_theme_options = {"navbar_end": ["mybutton.html"]}
 ```
 
 Your header should now be visible, and the `mybutton.html` content should now show up in the upper-right.

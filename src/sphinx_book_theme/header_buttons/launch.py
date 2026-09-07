@@ -1,17 +1,16 @@
 """Launch buttons for Binder / Thebe / Colab / etc."""
 
 from pathlib import Path
-from typing import Any, Optional
-from urllib.parse import urlencode, quote
+from shutil import copy2
+from typing import Any
+from urllib.parse import quote, urlencode
 
 from docutils.nodes import document
 from sphinx.application import Sphinx
 from sphinx.locale import get_translation
 from sphinx.util import logging
-from shutil import copy2
 
 from . import get_repo_parts, get_repo_url
-
 
 SPHINX_LOGGER = logging.getLogger(__name__)
 
@@ -24,7 +23,7 @@ def add_launch_buttons(
     pagename: str,
     templatename: str,
     context: dict[str, Any],
-    doctree: Optional[document],
+    doctree: document | None,
 ):
     """Builds a binder link and inserts it in HTML context for use in templating.
 

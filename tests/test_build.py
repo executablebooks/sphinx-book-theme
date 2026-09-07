@@ -1,14 +1,13 @@
 import os
+from importlib.metadata import version
 from pathlib import Path
 from shutil import copytree, rmtree
-from importlib.metadata import version
-from packaging.version import parse
 
-from bs4 import BeautifulSoup
 import pytest
 import sphinx
+from bs4 import BeautifulSoup
+from packaging.version import parse
 from sphinx.testing.util import SphinxTestApp
-
 
 sphinx_version = parse(version("sphinx"))
 path_tests = Path(__file__).parent
@@ -351,7 +350,7 @@ def test_repo_custombranch(sphinx_build_factory, file_regression):
             "html_theme_options": {
                 "repository_branch": "foo",
                 "use_edit_page_button": True,
-                "repository_url": "https://github.com/executablebooks/sphinx-book-theme",  # noqa: E501
+                "repository_url": "https://github.com/executablebooks/sphinx-book-theme",
                 "launch_buttons": {"binderhub_url": "https://mybinder.org"},
                 "navigation_with_keys": True,
             }
