@@ -1,11 +1,9 @@
 """Generate metadata for header buttons."""
 
+from pydata_sphinx_theme.utils import config_provided_by_user, get_theme_options_dict
 from sphinx.errors import SphinxError
 from sphinx.locale import get_translation
-from pydata_sphinx_theme.utils import config_provided_by_user, get_theme_options_dict
-
 from sphinx.util import logging
-
 
 LOGGER = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "booktheme"
@@ -167,7 +165,7 @@ def update_context_with_repository_info(app):
 
     # If no provider is given, try to infer one from the repo url
     if provider == "":
-        for iprov in default_provider_urls.keys():
+        for iprov in default_provider_urls:
             if iprov in provider_url.lower():
                 provider = iprov
                 break

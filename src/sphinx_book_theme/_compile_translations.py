@@ -2,8 +2,8 @@
 
 import json
 import os
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 # In case the smodin.io code is different from the Sphinx code
 RENAME_LANGUAGE_CODES = {
@@ -34,7 +34,7 @@ def convert_json(folder=None):
             if language in RENAME_LANGUAGE_CODES:
                 language = RENAME_LANGUAGE_CODES[language]
             out_path = (
-                out_folder / "locales" / language / "LC_MESSAGES" / "booktheme.po"  # noqa: E501
+                out_folder / "locales" / language / "LC_MESSAGES" / "booktheme.po"
             )
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
