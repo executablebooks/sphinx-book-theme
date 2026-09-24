@@ -6,13 +6,15 @@ If any of this configuration is set, then your header will show at the top of th
 
 ## Add components to the header navbar
 
-There are three configuration options you can use in `html_theme_options`:
+There are four configuration options you can use in `html_theme_options`:
 
 **`navbar_start`**: Adds components to the beginning of the header. **Visible on all screen sizes**. Use this for adding a logo that you want to persist over time.
 
 **`navbar_center`**: Adds components to the center of the header, or to the left if no `navbar_start` is defined. **Moved to the sizebar on mobile**. Use this for extra navigation content to external pages.
 
 **`navbar_end`**: Adds components to the end of the header. **Moved to the sizebar on mobile**. Use this for extra social links or buttons.
+
+**`navbar_persistent`**: Adds components to the end of the header that stay there on mobile rather than moving to the sidebar.
 
 ## An example
 

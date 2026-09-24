@@ -166,6 +166,15 @@ def update_mode_thebe_config(app):
     app.env.config.thebe_config = thebe_config
 
 
+def update_navbar_defaults(app):
+    """Keep the top navbar empty unless the user asks for something in it.
+
+    Without this, the pydata theme adds a search button to the navbar.
+    """
+    theme_options = get_theme_options_dict(app)
+    theme_options.setdefault("navbar_persistent", [])
+
+
 def check_deprecation_keys(app):
     """Warns about the deprecated keys."""
 
@@ -218,6 +227,9 @@ def setup(app: Sphinx):
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     # Events
+    app.connect(
+        "builder-inited", update_navbar_defaults, priority=400
+    )  # before pydata theme
     app.connect("builder-inited", update_mode_thebe_config)
     app.connect("builder-inited", check_deprecation_keys)
     app.connect("builder-inited", update_sourcename)
