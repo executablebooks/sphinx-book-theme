@@ -213,32 +213,55 @@ function addBlurToButtons() {
  * Fix sidebar toggle behavior for wide screens
  * On wide screens (>= 992px), clicking the toggle should collapse the sidebar,
  * not open it as a dialog modal. The dialog behavior is only for narrow screens.
+ *
+ * Bind every matching button. When navbar_* is non-empty, pydata-sphinx-theme
+ * emits a hidden navbar .primary-toggle / .secondary-toggle earlier in the DOM
+ * than the visible article-header control; querySelector() would bind only the
+ * hidden one.
  */
 function fixSidebarToggle() {
-  const primaryToggle = document.querySelector(".primary-toggle");
   const primarySidebar = document.querySelector("#pst-primary-sidebar");
   const primaryDialog = document.querySelector("#pst-primary-sidebar-modal");
+  const secondarySidebar = document.querySelector("#pst-secondary-sidebar");
+  const secondaryDialog = document.querySelector(
+    "#pst-secondary-sidebar-modal",
+  );
 
-  // Fix primary sidebar toggle
-  if (primaryToggle && primarySidebar && primaryDialog) {
-    // Intercept clicks on the toggle button BEFORE pydata-sphinx-theme's handler
-    primaryToggle.addEventListener(
-      "click",
-      (event) => {
-        const isWideScreen = window.matchMedia("(min-width: 992px)").matches;
+  const bindToggles = (toggles, sidebar, dialog) => {
+    if (!sidebar || !dialog) {
+      return;
+    }
+    toggles.forEach((toggle) => {
+      // Intercept clicks BEFORE pydata-sphinx-theme's handler
+      toggle.addEventListener(
+        "click",
+        (event) => {
+          const isWideScreen = window.matchMedia("(min-width: 992px)").matches;
 
-        if (isWideScreen) {
-          // On wide screens, prevent the dialog from opening and toggle sidebar visibility instead
-          event.preventDefault();
-          event.stopImmediatePropagation();
+          if (isWideScreen) {
+            // On wide screens, prevent the dialog from opening and toggle sidebar visibility instead
+            event.preventDefault();
+            event.stopImmediatePropagation();
 
-          // Toggle a class to hide/show the sidebar
-          primarySidebar.classList.toggle("pst-sidebar-hidden");
-        }
-      },
-      true,
-    ); // Use capture phase to run before PST's handler
-  }
+            // Toggle a class to hide/show the sidebar
+            sidebar.classList.toggle("pst-sidebar-hidden");
+          }
+        },
+        true,
+      ); // Use capture phase to run before PST's handler
+    });
+  };
+
+  bindToggles(
+    document.querySelectorAll(".primary-toggle"),
+    primarySidebar,
+    primaryDialog,
+  );
+  bindToggles(
+    document.querySelectorAll(".secondary-toggle"),
+    secondarySidebar,
+    secondaryDialog,
+  );
 }
 
 /**
