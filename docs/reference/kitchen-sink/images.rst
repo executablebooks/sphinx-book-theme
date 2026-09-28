@@ -12,18 +12,18 @@ Images
 
 An image:
 
-.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :height: 200
    :width: 200
 
 A clickable image:
 
-.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :target: https://jupyter.org/
    :height: 200
    :width: 200
 
-.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: right
    :height: 200
    :width: 200
@@ -43,7 +43,7 @@ sapiente veritatis doloribus accusantium molestiae modi recusandae
 excepturi facere, corrupti expedita sit nihil temporibus eius sequi
 animi, illo libero labore fuga.
 
-.. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: left
    :height: 200
    :width: 200
@@ -66,7 +66,7 @@ animi, illo libero labore fuga.
 Figures
 -------
 
-.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. figure:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :alt: reStructuredText, the markup syntax
 
    A figure is an image with a caption and/or a legend:
@@ -83,7 +83,7 @@ Figures
 
 A figure directive with center alignment
 
-.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. figure:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
    :align: center
 
    This caption should be centered.
