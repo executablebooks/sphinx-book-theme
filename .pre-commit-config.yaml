@@ -27,20 +27,20 @@ repos:
     - id: trailing-whitespace
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.20
+    rev: v0.16.6
     hooks:
     - id: ruff
       args: ["--fix", "--show-fixes"]
     - id: ruff-format
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: 39e2973981e6d2f9b6c543b0086a2d2393abdc89  # frozen: v3.9.4
+    rev: 0ee178619d696787ca73d210cc191d720868c631  # frozen: v3.9.6
     hooks:
       - id: prettier
         types_or: [scss, javascript]
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.2
+    rev: v2.4.3
     hooks:
     - id: codespell
       exclude: >

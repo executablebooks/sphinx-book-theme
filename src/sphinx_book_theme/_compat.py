@@ -1,5 +1,6 @@
-from docutils.nodes import Element
 from collections.abc import Iterator
+
+from docutils.nodes import Element
 
 
 def findall(node: Element, *args, **kwargs) -> Iterator[Element]:

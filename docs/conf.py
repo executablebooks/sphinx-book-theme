@@ -1,8 +1,8 @@
 # -- Project information -----------------------------------------------------
 import os
-from urllib.request import urlopen
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from urllib.request import urlopen
 
 project = "Sphinx Book Theme"
 copyright = str(datetime.now().year)
@@ -198,7 +198,7 @@ linkcheck_exclude_documents = ["changelog"]
 
 # -- Download latest theme elements page from PyData -----------------------------
 
-path_pydata_content = "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/user_guide/theme-elements.md"  # noqa
+path_pydata_content = "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/user_guide/theme-elements.md"
 path_content_file = Path(__file__).parent / "content/pydata-content-blocks.md"
 if not path_content_file.exists():
     with urlopen(path_pydata_content) as resp:
@@ -208,8 +208,8 @@ if not path_content_file.exists():
         content[ix_title] = "# PyData Theme Elements"
         content.insert(
             ix_title + 1,
-            "\nThis is a collection of content blocks with special support from this theme's parent theme, [the PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/theme-elements.html)\n",  # noqa
-        )  # noqa
+            "\nThis is a collection of content blocks with special support from this theme's parent theme, [the PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/theme-elements.html)\n",
+        )
         content = "\n".join(content)
         # Replace a relative link in the pydata docs w/ the respective one here
         content = content.replace("../examples/pydata.ipynb", "notebooks.md")
@@ -230,7 +230,7 @@ def setup(app):
         app.add_css_file("https://assets.readthedocs.org/static/css/badge_only.css")
 
         # Create the dummy data file so we can link it
-        # ref: https://github.com/readthedocs/readthedocs.org/blob/bc3e147770e5740314a8e8c33fec5d111c850498/readthedocs/core/static-src/core/js/doc-embed/footer.js  # noqa: E501
+        # ref: https://github.com/readthedocs/readthedocs.org/blob/bc3e147770e5740314a8e8c33fec5d111c850498/readthedocs/core/static-src/core/js/doc-embed/footer.js
         app.add_js_file("rtd-data.js")
         app.add_js_file(
             "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
