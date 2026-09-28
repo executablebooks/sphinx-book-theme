@@ -97,11 +97,11 @@ List Tables
 
 .. list-table:: This is a list table with images in it.
 
-    * - .. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+    * - .. figure:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
 
            This is a short caption for a figure.
 
-      - .. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+      - .. figure:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
 
            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.

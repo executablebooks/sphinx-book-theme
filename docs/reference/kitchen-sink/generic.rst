@@ -3,7 +3,7 @@
    Licensed under Creative Commons Attribution-ShareAlike 4.0 International License
    SPDX-License-Identifier: CC-BY-SA-4.0
 
-.. |EXAMPLE| image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. |EXAMPLE| image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
     :width: 1em
 
 =============
@@ -110,7 +110,7 @@ Sidebar
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-    .. image:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+    .. image:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
@@ -268,4 +268,4 @@ voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
 Download Links
 ==============
 
-:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg>`
+:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg>`
