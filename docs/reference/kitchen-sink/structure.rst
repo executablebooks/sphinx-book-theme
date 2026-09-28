@@ -83,7 +83,7 @@ luctus efficitur arcu. Cras ut dictum mi. Nulla congue interdum lorem, semper se
 Document Subsection
 -------------------
 
-.. figure:: https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg
+.. figure:: https://raw.githubusercontent.com/jupyter/design/refs/heads/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg
     :align: right
     :figwidth: 200px
 

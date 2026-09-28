@@ -12,7 +12,7 @@ They are checked in to `git` history with this repository.
 
 `src/sphinx_book_theme/assets/translations/jsons` contains a collection of JSON files that define the translation for various phrases in this repository.
 Each file is a different phrase, and its contents define language codes and translated phrases for each language we support.
-They were originally created with [the smodin.io language translator](https://smodin.me/translate-one-text-into-multiple-languages) (see below for how to update them).
+They were originally created with the smodin.io language translator.
 
 ### Compiled translation files
 
@@ -27,9 +27,9 @@ Here's a brief explanation of each:
 
 ## Workflow of translations
 
-Here's a short workflow of how to add a new translation, assuming that you are translating using the [smodin.io service](https://smodin.io/translate-one-text-into-multiple-languages).
+Here's a short workflow of how to add a new translation, assuming that you are translating using the .smodin.io service (the URL used to be ``https://smodin.io/translate-one-text-into-multiple-languages``).
 
-1. Go to [the smodin.io service](https://smodin.io/translate-one-text-into-multiple-languages)
+1. Go to the smodin.io service.
 2. Select as many languages as you like.
 3. Type in the phrase you'd like to translate.
 4. Click `TRANSLATE` and then `Download JSON`.
