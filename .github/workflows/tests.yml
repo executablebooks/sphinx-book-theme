@@ -62,17 +62,6 @@ jobs:
       run: >
         pytest --durations=10 --cov=sphinx_book_theme --cov-report=xml --cov-report=term-missing
 
-    # Only upload to codecov on pull requests so that we don't trigger rate limit blocks
-    # Disabled for now with false &&
-    - name: Upload to Codecov
-      if: false && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11' && matrix.sphinx == '~=8.2' && github.repository == 'executablebooks/sphinx-book-theme' && github.event_name == 'pull_request'
-      uses: codecov/codecov-action@v7.0.0
-      with:
-        name: ebp-sbt-pytests-py3.11
-        flags: pytests
-        file: ./coverage.xml
-        fail_ci_if_error: true
-
   # Build the docs and fail if an *unexpected* warning occurs.
   docs-audit:
     runs-on: ubuntu-latest
