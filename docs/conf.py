@@ -45,7 +45,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 intersphinx_mapping = {
-    "python": ("https://docs.python.org/3.8", None),
+    "python": ("https://docs.python.org/3.11", None),
     "sphinx": ("https://www.sphinx-doc.org/en/master", None),
     "pst": ("https://pydata-sphinx-theme.readthedocs.io/en/latest/", None),
 }
