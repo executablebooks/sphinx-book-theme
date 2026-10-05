@@ -14,17 +14,13 @@ To do so, use the `html_sidebars` variable in your `conf.py` file. This takes a 
 For example, the following configuration would include *only the footer* on pages under the `posts/` folder:
 
 ```python
-html_sidebars = {
-    "posts/*": ["sbt-sidebar-nav.html"]
-}
+html_sidebars = {"posts/*": ["sbt-sidebar-nav.html"]}
 ```
 
 You can also use `**` to apply a set of sidebars to **all** pages of your book. For example:
 
 ```python
-html_sidebars = {
-    "**": ["sbt-sidebar-nav.html"]
-}
+html_sidebars = {"**": ["sbt-sidebar-nav.html"]}
 ```
 
 See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars) for more information.
