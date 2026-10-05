@@ -1,10 +1,12 @@
-from sphinx.transforms.post_transforms import SphinxPostTransform
 from typing import Any
+
 from docutils import nodes as docutil_nodes
-from sphinx import addnodes as sphinx_nodes
 from pydata_sphinx_theme.utils import get_theme_options_dict
-from .nodes import SideNoteNode
+from sphinx import addnodes as sphinx_nodes
+from sphinx.transforms.post_transforms import SphinxPostTransform
+
 from ._compat import findall
+from .nodes import SideNoteNode
 
 
 class HandleFootnoteTransform(SphinxPostTransform):
@@ -16,7 +18,7 @@ class HandleFootnoteTransform(SphinxPostTransform):
     def run(self, **kwargs: Any) -> None:
         theme_options = get_theme_options_dict(self.app)
         if theme_options.get("use_sidenotes", False) is False:
-            return None
+            return
         # Cycle through footnote references, and move their content next to the
         # reference. This lets us display the reference in the margin,
         # or just below on narrow screens.

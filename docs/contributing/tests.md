@@ -74,9 +74,9 @@ For example:
 
 ```python
 if sphinx_build.software_versions == ".sphinx8":
-   foo
+    foo
 elif sphinx_build.software_versions == ".sphinx9":
-   bar
+    bar
 ```
 
 ### Regression tests
@@ -105,9 +105,9 @@ Do we gain something meaningful by testing both major versions of Sphinx, or is 
 
    ```python
    file_regression.check(
-     html.prettify(),
-     basename="foo",
-     extension=f"{sphinx_build.software_versions}.html",
-     encoding="utf8",
+       html.prettify(),
+       basename="foo",
+       extension=f"{sphinx_build.software_versions}.html",
+       encoding="utf8",
    )
    ```
