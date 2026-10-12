@@ -8,11 +8,32 @@ This page describes ways to control and customize the secondary sidebar.
 
 You can rename the title of the in-page table of contents, in the right sidebar:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
     "toc_title": "{your-title}"
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            toc_title: "{your-title}"
+```
+
+````
+
+`````
 
 The default value of the title is `Contents`.
 
@@ -22,10 +43,31 @@ Normally only the 2nd-level headers of a page are shown in the within-page table
 
 You can show deeper levels by default by using the following configuration, indicating how many levels should be displayed:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-  "show_toc_level": 2
+    "show_toc_level": 2
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            show_toc_level: 2
+```
+
+````
+
+`````
 
 All headings up to and including the level specified will now be shown regardless of what is displayed on the page.

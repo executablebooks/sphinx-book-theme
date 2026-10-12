@@ -9,9 +9,14 @@ This page describes ways that you can control and customize the primary sidebar.
 
 You can control what kind of content goes underneath the logo and name of your website in the top left.
 
-To do so, use the `html_sidebars` variable in your `conf.py` file. This takes a dictionary of filename patterns as keys, and a list of sidebar elements as values. Any files that match a key will have the corresponding sidebar elements placed in that page's sidebar.
+To do so, use the `html_sidebars` variable in your configuration file. This takes a dictionary of filename patterns as keys, and a list of sidebar elements as values. Any files that match a key will have the corresponding sidebar elements placed in that page's sidebar.
 
 For example, the following configuration would include *only the footer* on pages under the `posts/` folder:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_sidebars = {
@@ -19,13 +24,50 @@ html_sidebars = {
 }
 ```
 
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_sidebars:
+            "posts/*": ["sbt-sidebar-nav.html"]
+```
+
+````
+
+`````
+
 You can also use `**` to apply a set of sidebars to **all** pages of your book. For example:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_sidebars = {
     "**": ["sbt-sidebar-nav.html"]
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_sidebars:
+            "**": ["sbt-sidebar-nav.html"]
+```
+
+````
+
+`````
 
 See the [Sphinx HTML sidebars documentation](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars) for more information.
 
@@ -51,27 +93,65 @@ By default, your table of contents will begin with the first file that you add t
 
 To add the landing page of your site to the table of contents, use the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "home_page_in_toc": True
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            home_page_in_toc: true
+```
+
+````
+
+`````
 
 (sidebar:show-navbar-depth)=
 ## Control the depth of the left sidebar lists to expand
 
 You can control the level of toc items in the left sidebar to remain expanded,
-using the following configuration in `conf.py`:
+using the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
-    ...
     "show_navbar_depth": <level>,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            show_navbar_depth: <level>
+```
+
+````
+
+`````
 
 The default value is `1`, which shows only top-level sections of the documentation (and is used in this documentation).
 
@@ -80,15 +160,34 @@ The default value is `1`, which shows only top-level sections of the documentati
 ## Control the maximum depth of the left sidebar lists
 
 You can control the level of toc items included in the left sidebar,
-using the following configuration in `conf.py`:
+using the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
-    ...
     "max_navbar_depth": <level>,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            max_navbar_depth: <level>
+```
+
+````
+
+`````
 
 The default value is `4`.
 
@@ -96,14 +195,33 @@ The default value is `4`.
 ## Turn off expandable left sidebar lists
 
 You can turn off the sidebar expanding,
-using the following configuration in `conf.py`:
+using the following configuration:
+
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
 
 ```python
 html_theme_options = {
-    ...
     "collapse_navbar": True,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            collapse_navbar: true
+```
+
+````
+
+`````
 
 The default value is `False`, which allows the navbar to be expanded.

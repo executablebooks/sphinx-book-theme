@@ -12,13 +12,34 @@ You need to define a **source repository** for this functionality to work.
 This is the online space where your code / documentation is hosted.
 In each case, they require the following configuration to exist:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
-    "repository_url": "https://{your-provider}/{org}/{repo}",
-    ...
+    "repository_url": "https://github.com/{your-docs-url}",
+    "use_repository_button": True,
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+html:
+    use_repository_button: true
+
+repository:
+    url: "https://github.com/{your-docs-url}"
+```
+
+````
+
+`````
 
 Three providers are supported:
 
@@ -34,14 +55,36 @@ In each case, we **assume the final two URL items are the `org/repo` pair**.
 
 If your provider URL is more complex (e.g., if you're self-hosting your provider), you can manually specify the provider with the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "repository_provider": "gitlab"  # or "github", "bitbucket",
     "repository_url": "selfhostedgh.mycompany.org/user/repo",
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    url: "selfhostedgh.mycompany.org/user/repo"
+
+sphinx:
+    config:
+        html_theme_options:
+            repository_provider: "gitlab"  # or "github", "bitbucket"
+```
+
+````
+
+`````
 
 Once this is provided, you may add source buttons by following the following sections.
 
@@ -51,48 +94,118 @@ Once this is provided, you may add source buttons by following the following sec
 Show the raw source of the page on the provider you've provided.
 To add a button to the page source, first [configure your source repository](source-buttons:repository) and then add:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "use_source_button": True,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+sphinx:
+    config:
+        html_theme_options:
+            use_source_button: true
+```
+
+````
+
+`````
 
 Then configure the **repository branch** to use for your source.
 By default it is `main`, but if you'd like to change this, use the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "repository_branch": "{your-branch}",
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    branch: "{your-branch}"
+```
+
+````
+
+`````
 
 Finally, **configure the relative path to your documentation**.
 By default, this is the root of the repository, but if your documentation is hosted in a sub-folder, use the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "path_to_docs": "{path-relative-to-site-root}",
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+repository:
+    path_to_book: "{path-relative-to-site-root}"
+```
+
+````
+
+`````
 
 ## Add a button to suggest edits
 
 Allow users to edit the page text directly on the provider and submit a pull request to update the documentation.
 To add a button to edit the page, first [configure your source repository](source-buttons:repository) and then add:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "use_edit_page_button": True,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+html:
+    use_edit_page_button: true
+```
+
+````
+
+`````
 
 Then follow the [branch and relative path instructions in the source file section](source-buttons:source).
 
@@ -102,23 +215,57 @@ Then follow the [branch and relative path instructions in the source file sectio
 
 To add a link to your repository, add the following configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "use_repository_button": True,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+html:
+    use_repository_button: true
+```
+
+````
+
+`````
 
 ## Add a button to open issues
 
 To add a button to open an issue about the current page, use the following
 configuration:
 
+`````{tab-set}
+
+````{tab-item} conf.py
+:sync: conf.py
+
 ```python
 html_theme_options = {
-    ...
     "use_issues_button": True,
-    ...
 }
 ```
+
+````
+
+````{tab-item} _config.yml
+:sync: _config.yml
+
+```yaml
+html:
+    use_issues_button: true
+```
+
+````
+
+`````
