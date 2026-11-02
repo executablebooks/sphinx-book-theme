@@ -9,9 +9,7 @@ This page describes ways to control and customize the secondary sidebar.
 You can rename the title of the in-page table of contents, in the right sidebar:
 
 ```python
-html_theme_options = {
-    "toc_title": "{your-title}"
-}
+html_theme_options = {"toc_title": "{your-title}"}
 ```
 
 The default value of the title is `Contents`.
@@ -23,9 +21,7 @@ Normally only the 2nd-level headers of a page are shown in the within-page table
 You can show deeper levels by default by using the following configuration, indicating how many levels should be displayed:
 
 ```python
-html_theme_options = {
-  "show_toc_level": 2
-}
+html_theme_options = {"show_toc_level": 2}
 ```
 
 All headings up to and including the level specified will now be shown regardless of what is displayed on the page.

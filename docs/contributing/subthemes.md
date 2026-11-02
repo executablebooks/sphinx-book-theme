@@ -18,13 +18,15 @@ For example, here's a Python snippet that reuses this function:
 ```python
 from sphinx_book_theme import hash_assets_for_files
 
+
 def hash_html_assets(app, pagename, templatename, context, doctree):
     assets = ["styles/your-css-asset.css", "scripts/your-js-asset.js"]
     STATIC_PATH = "path to your theme's static folder"
     hash_assets_for_files(assets, STATIC_PATH, context)
 
+
 def setup(app):
-  app.connect("html-page-context", hash_html_assets)
+    app.connect("html-page-context", hash_html_assets)
 ```
 
 ## Defining your own CSS
