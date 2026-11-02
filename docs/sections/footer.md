@@ -14,8 +14,5 @@ It adds the `_templates` folder to Sphinx's templates path, and adds the templat
 
 ```python
 templates_path = ["_templates"]
-html_theme_options = {
-  "footer_start": ["test.html"],
-  "footer_end": ["test.html"]
-}
+html_theme_options = {"footer_start": ["test.html"], "footer_end": ["test.html"]}
 ```

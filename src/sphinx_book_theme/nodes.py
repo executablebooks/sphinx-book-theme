@@ -1,6 +1,7 @@
+from typing import Any, cast
+
 from docutils import nodes
 from sphinx.application import Sphinx
-from typing import Any, cast
 
 
 class SideNoteNode(nodes.Element):
