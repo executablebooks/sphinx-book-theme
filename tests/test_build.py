@@ -1,13 +1,19 @@
+import json
 import os
 from pathlib import Path
 from shutil import copytree, rmtree
 from importlib.metadata import version
 from packaging.version import parse
 
+from babel.messages.catalog import Catalog
+from babel.messages.mofile import write_mo
 from bs4 import BeautifulSoup
 import pytest
 import sphinx
+import sphinx.locale
 from sphinx.testing.util import SphinxTestApp
+
+import sphinx_book_theme
 
 
 sphinx_version = parse(version("sphinx"))
@@ -510,3 +516,44 @@ def test_marginnote(sphinx_build_factory, file_regression):
         encoding="utf8",
         basename=regression_file,
     )
+
+
+def test_sidebar_toggle_tooltips_translated(sphinx_build_factory, tmp_path):
+    """The tooltips of the two sidebar toggle buttons go through the catalog.
+
+    Regression test for #998, where "Toggle primary sidebar" and
+    "Toggle secondary sidebar" were hard-coded in English.
+
+    The theme's compiled ``booktheme.mo`` catalogs are produced by ``stb compile``
+    and are not present in every test environment, so the Hungarian strings are
+    compiled from the translation JSONs here and registered for the ``booktheme``
+    domain next to whatever catalog the theme itself registered.
+    """
+    path_jsons = (
+        Path(sphinx_book_theme.__file__).parent / "assets" / "translations" / "jsons"
+    )
+    catalog = Catalog(locale="hu")
+    expected = {}
+    for msgid in ("Toggle primary sidebar", "Toggle secondary sidebar"):
+        entries = json.loads((path_jsons / f"{msgid}.json").read_text("utf8"))
+        assert entries[0]["symbol"] == "en" and entries[0]["text"] == msgid
+        expected[msgid] = next(e["text"] for e in entries if e["symbol"] == "hu")
+        catalog.add(msgid, expected[msgid])
+    path_mo = tmp_path / "locale" / "hu" / "LC_MESSAGES" / "booktheme.mo"
+    path_mo.parent.mkdir(parents=True)
+    with path_mo.open("wb") as f:
+        write_mo(f, catalog)
+
+    # docutils has no Hungarian localisation and warns about it; the warning is
+    # unrelated to the theme, so it is suppressed here.
+    confoverrides = {"language": "hu", "suppress_warnings": ["docutils"]}
+    sphinx_build = sphinx_build_factory("base", confoverrides=confoverrides)
+    # The theme registered its own catalog in setup(); add ours as well.
+    sphinx.locale.init([tmp_path / "locale"], "hu", "booktheme")
+    sphinx_build.build(assert_pass=True)
+
+    page = sphinx_build.html_tree("page1.html")
+    primary = page.select_one("button.primary-toggle")
+    secondary = page.select_one("button.secondary-toggle")
+    assert primary["title"] == expected["Toggle primary sidebar"]
+    assert secondary["title"] == expected["Toggle secondary sidebar"]
