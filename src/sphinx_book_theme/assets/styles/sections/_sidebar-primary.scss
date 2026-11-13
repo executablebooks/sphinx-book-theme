@@ -49,16 +49,3 @@
     flex-basis: variables.$sidebar-primary-width-widescreen;
   }
 }
-
-// Default visibility for left sidebar is the reverse of what it is on mobile.
-// It is shown by default, and hidden with a click.
-// Mobile behavior is defined in the pydata sphinx theme
-@media (min-width: variables.$breakpoint-lg) {
-  input#pst-primary-sidebar-checkbox:checked
-    ~ .bd-container
-    .bd-sidebar-primary {
-    margin-left: -(variables.$sidebar-primary-width-widescreen);
-    visibility: hidden;
-    opacity: 0;
-  }
-}
